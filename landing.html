@@ -34,8 +34,8 @@
   }
 
   .fa-map-panel.active-me {
-    border-color: #063756;
-    box-shadow: 0 0 0 2px #06375620;
+    border-color: #de3244;
+    box-shadow: 0 0 0 2px #de324420;
   }
 
   .fa-map-panel.active-af {
@@ -90,7 +90,7 @@
   }
 
   .fa-map-footer-me {
-    color: #063756;
+    color: #de3244;
   }
 
   .fa-map-footer-af {
@@ -111,8 +111,8 @@
   }
 
   .fa-selected-badge-me {
-    background: #06375615;
-    color: #063756;
+    background: #de324415;
+    color: #de3244;
   }
 
   .fa-selected-badge-af {
@@ -166,8 +166,7 @@
   }
 
   .fa-tile {
-    display: block;
-    text-decoration: none;
+    position: relative;
   }
 
   .fa-tile-img {
@@ -191,8 +190,19 @@
     font-family: "PT Sans", sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: #1d1d1b;
     margin: 0 0 3px;
+  }
+
+  .fa-tile-name a {
+    color: #1d1d1b;
+    text-decoration: none;
+  }
+
+  /* stretched link — makes the whole tile clickable */
+  .fa-tile-name a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
   }
 
   .fa-tile-desc {
@@ -283,41 +293,41 @@
     <p class="fa-tiles-heading">Explore <strong>Middle East</strong> analyses:</p>
     <div class="fa-tile-grid">
 
-      <a class="fa-tile" href="/[ME-DIPLOMATIC-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/me_dip.png"
           alt="Diplomatic outreach — Middle East">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Diplomatic outreach</p>
+          <p class="fa-tile-name"><a href="/[ME-DIPLOMATIC-NODE-URL]">Diplomatic outreach</a></p>
           <p class="fa-tile-desc">How foreign powers are reshaping diplomatic ties across the region.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="fa-tile" href="/[ME-SOFTPOWER-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/me_sop.png"
           alt="Soft power — Middle East">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Soft power</p>
+          <p class="fa-tile-name"><a href="/[ME-SOFTPOWER-NODE-URL]">Soft power</a></p>
           <p class="fa-tile-desc">Cultural influence, media, and education as tools of foreign engagement.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="fa-tile" href="/[ME-ECONOMIC-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/me_eco.png"
           alt="Economic power — Middle East">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Economic power</p>
+          <p class="fa-tile-name"><a href="/[ME-ECONOMIC-NODE-URL]">Economic power</a></p>
           <p class="fa-tile-desc">Investment, trade, and infrastructure as levers of influence.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="fa-tile" href="/[ME-SECURITY-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/me_sec.png"
           alt="Security footprint — Middle East">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Security footprint</p>
+          <p class="fa-tile-name"><a href="/[ME-SECURITY-NODE-URL]">Security footprint</a></p>
           <p class="fa-tile-desc">Military presence, arms transfers, and security partnerships.</p>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
@@ -338,41 +348,41 @@
     <p class="fa-tiles-heading">Explore <strong>Africa</strong> analyses:</p>
     <div class="fa-tile-grid">
 
-      <a class="fa-tile" href="/[AF-DIPLOMATIC-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/af_dip.png"
           alt="Diplomatic outreach — Africa">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Diplomatic outreach</p>
+          <p class="fa-tile-name"><a href="/[AF-DIPLOMATIC-NODE-URL]">Diplomatic outreach</a></p>
           <p class="fa-tile-desc">How foreign powers are reshaping diplomatic ties across the continent.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="fa-tile" href="/[AF-SOFTPOWER-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/af_sop.png"
           alt="Soft power — Africa">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Soft power</p>
+          <p class="fa-tile-name"><a href="/[AF-SOFTPOWER-NODE-URL]">Soft power</a></p>
           <p class="fa-tile-desc">Cultural influence, media, and education as tools of foreign engagement.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="fa-tile" href="/[AF-ECONOMIC-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/af_eco.png"
           alt="Economic power — Africa">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Economic power</p>
+          <p class="fa-tile-name"><a href="/[AF-ECONOMIC-NODE-URL]">Economic power</a></p>
           <p class="fa-tile-desc">Investment, trade, and infrastructure as levers of influence.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="fa-tile" href="/[AF-SECURITY-NODE-URL]">
+      <div class="fa-tile">
         <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_06-OD-Empowering-Ukraine/src/af_sec.png"
           alt="Security footprint — Africa">
         <div class="fa-tile-body">
-          <p class="fa-tile-name">Security footprint</p>
+          <p class="fa-tile-name"><a href="/[AF-SECURITY-NODE-URL]">Security footprint</a></p>
           <p class="fa-tile-desc">Military presence, arms transfers, and security partnerships.</p>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
