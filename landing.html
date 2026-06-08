@@ -125,17 +125,21 @@
   .fa-tile-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 24px;
   }
 
   .fa-tile {
     position: relative;
+    align-items: center;
+    justify-content: center;
   }
 
   .fa-tile-img {
-    width: 50%;
-    aspect-ratio: 16 / 9;
+    width: 100%;
+    margin: 0 auto;
     object-fit: cover;
+    align-items: center;
+    justify-content: center;
     display: block;
     transition: box-shadow .15s;
   }
@@ -145,15 +149,19 @@
   }
 
   .fa-tile-body {
-    padding: 10px 12px 12px;
-    border-top: 1px solid #eee;
+    padding: 0px 12px 12px;
+    /* border-top: 1px solid #eee; */
   }
 
   .fa-tile-name {
     font-family: "PT Sans", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    margin: 0 0 3px;
+    font-weight: 700 !important;
+    margin: 0 !important;
+  }
+
+  .fa-tile-catch {
+    font-weight: 700 !important;
+    margin: 3px 0 3px !important;
   }
 
   .fa-tile-name a {
@@ -172,7 +180,7 @@
     font-family: "PT Sans", sans-serif;
     font-size: 13px;
     color: #666;
-    margin: 0;
+    margin: 0 !important;
     line-height: 1.4;
   }
 
@@ -200,7 +208,8 @@
   commodo consequat.
   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
   occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
+  amet, consectetur adipiscing elit.</p>
+<p>Sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
   occaecat cupidatat non proident, Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -208,11 +217,7 @@
   eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
   voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
   voluptatem sequi nesciunt. sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+  amet, consectetur adipiscing elit.</p>
 <p>
   Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
   eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
@@ -275,22 +280,7 @@
         aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
         rem
         aperiam,
-        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-        ipsam
-        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-        ea
-        commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-        dolor sit
-        amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-        sint
-        occaecat cupidatat non proident, Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        eaque non proident, Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
         doloremque
         laudantium, totam rem aperiam,
         eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
@@ -313,10 +303,11 @@
     <div class="fa-tile-grid">
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_dip.png"
-          alt="Diplomatic outreach — Middle East">
+        <p class="h3 fa-tile-name"><a href="/[ME-DIPLOMATIC-NODE-URL]">Talking Power</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_dip.png"
+            alt="Diplomatic outreach — Middle East"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[ME-DIPLOMATIC-NODE-URL]">Diplomatic outreach</a></p>
+          <p class="fa-tile-catch">Diplomatic ties and political influence</p>
           <p class="fa-tile-desc">How foreign powers are reshaping diplomatic ties across the region. From summit
             diplomacy and bilateral agreements to UN positioning and regional forum engagement, external actors are
             rewriting the rules of diplomatic engagement across the Middle East.</p>
@@ -324,10 +315,11 @@
       </div>
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_sop.png"
-          alt="Soft power — Middle East">
+        <p class="h3 fa-tile-name"><a href="/[ME-SOFTPOWER-NODE-URL]">Shaping Perceptions</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_sop.png"
+            alt="Soft power — Middle East"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[ME-SOFTPOWER-NODE-URL]">Soft power</a></p>
+          <p class="fa-tile-catch">Media, education, and cultural reach</p>
           <p class="fa-tile-desc">Cultural influence, media, and education as tools of foreign engagement. State-backed
             broadcasters, cultural centres, and scholarship programmes are being deployed by competing powers to build
             long-term affinity and shape narratives across the region.</p>
@@ -335,10 +327,11 @@
       </div>
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_eco.png"
-          alt="Economic power — Middle East">
+        <p class="h3 fa-tile-name"><a href="/[ME-ECONOMIC-NODE-URL]">Financing Influence</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_eco.png"
+            alt="Economic power — Middle East"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[ME-ECONOMIC-NODE-URL]">Economic power</a></p>
+          <p class="fa-tile-catch">Economic links and strategic investments</p>
           <p class="fa-tile-desc">Investment, trade, and infrastructure as levers of influence. Port concessions, energy
             contracts, and large-scale infrastructure projects are binding Middle Eastern states into webs of economic
             dependency that translate into lasting political leverage.</p>
@@ -346,10 +339,12 @@
       </div>
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_sec.png"
-          alt="Security footprint — Middle East">
+        <p class="h3 fa-tile-name"><a href="/[ME-SECURITY-NODE-URL]">Securing Interests</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/me_sec.png"
+            alt="Security footprint — Middle East"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[ME-SECURITY-NODE-URL]">Security footprint</a></p>
+          <p class="fa-tile-catch">Security partnerships and military engagement
+          </p>
           <p class="fa-tile-desc">Military presence, arms transfers, and security partnerships. From permanent bases and
             naval deployments to arms deals and proxy force support, foreign powers are projecting hard power across the
             region with growing reach and ambition.</p>
@@ -365,9 +360,7 @@
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+        consequat. Excepteur sint iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
         aperiam, eaque ipsa quae ab illo inventore.
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
         sint
@@ -391,14 +384,7 @@
         aperiam,
         eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
         ipsam
-        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-        ea
-        commodo consequat.
-        Duis aute irure dolor in rem aperiam,
-        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-        ipsam
-        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem quia voluptas sit aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
         voluptatem sequi nesciunt. sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
         amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -413,10 +399,11 @@
     <div class="fa-tile-grid">
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_dip.png"
-          alt="Diplomatic outreach — Africa">
+        <p class="h3 fa-tile-name"><a href="/[AF-DIPLOMATIC-NODE-URL]">Talking Power</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_dip.png"
+            alt="Diplomatic outreach — Africa"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[AF-DIPLOMATIC-NODE-URL]">Diplomatic outreach</a></p>
+          <p class="fa-tile-catch">Diplomatic ties and political influence</p>
           <p class="fa-tile-desc">How foreign powers are reshaping diplomatic ties across the continent. A new
             generation of embassies, summits, and bilateral frameworks is connecting African states to external patrons
             whose interests do not always align with those of the continent itself.</p>
@@ -424,10 +411,11 @@
       </div>
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_sop.png"
-          alt="Soft power — Africa">
+        <p class="h3 fa-tile-name"><a href="/[AF-SOFTPOWER-NODE-URL]">Shaping Perceptions</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_sop.png"
+            alt="Soft power — Africa"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[AF-SOFTPOWER-NODE-URL]">Soft power</a></p>
+          <p class="fa-tile-catch">Media, education, and cultural reach</p>
           <p class="fa-tile-desc">Cultural influence, media, and education as tools of foreign engagement. From
             disinformation networks and state broadcasters to Confucius Institutes, aid organisations, and Gulf-funded
             religious institutions, soft-power competition is intensifying across Africa.</p>
@@ -435,10 +423,11 @@
       </div>
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_eco.png"
-          alt="Economic power — Africa">
+        <p class="h3 fa-tile-name"><a href="/[AF-ECONOMIC-NODE-URL]">Financing Influence</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_eco.png"
+            alt="Economic power — Africa"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[AF-ECONOMIC-NODE-URL]">Economic power</a></p>
+          <p class="fa-tile-catch">Economic links and strategic investments</p>
           <p class="fa-tile-desc">Investment, trade, and infrastructure as levers of influence. Chinese infrastructure
             lending, Gulf sovereign wealth investment, and commodity deals from non-Western actors are reshaping African
             economies and creating new dependencies with geopolitical consequences.</p>
@@ -446,10 +435,12 @@
       </div>
 
       <div class="fa-tile">
-        <img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_sec.png"
-          alt="Security footprint — Africa">
+        <p class="h3 fa-tile-name"><a href="/[AF-SECURITY-NODE-URL]">Securing Interests</a></p>
+        <div><img class="fa-tile-img" src="https://euissr.github.io/analysis_2026_05-Actors-in-the-MEA/src/af_sec.png"
+            alt="Security footprint — Africa"></div>
         <div class="fa-tile-body">
-          <p class="fa-tile-name"><a href="/[AF-SECURITY-NODE-URL]">Security footprint</a></p>
+          <p class="h3 fa-tile-name">Security partnerships and military engagement
+          </p>
           <p class="fa-tile-desc">Military presence, arms transfers, and security partnerships. Paramilitary
             deployments, French withdrawal, US base negotiations, and a surge in arms transfers from non-Western
             suppliers are redrawing the security map of the continent.</p>
