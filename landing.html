@@ -9,229 +9,44 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Sans+Narrow:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
   rel="stylesheet">
-<style>
-  /* ── REGION SELECTOR ──────────────────────────────────────── */
-  .fa-map-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 1.5em 0 0.5em;
-  }
-
-  .fa-region-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 20px;
-    border: 1px solid #d8d8d8;
-    border-radius: 6px;
-    background: #fff;
-    text-decoration: none;
-    font-family: "PT Sans", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #1d1d1b;
-    cursor: pointer;
-    transition: border-color .2s, box-shadow .2s, color .2s;
-  }
-
-  .fa-region-link:hover {
-    border-color: #888;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-    text-decoration: none;
-  }
-
-  .fa-region-icon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  .fa-region-label {
-    flex: 1;
-  }
-
-  .fa-region-arrow {
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 1;
-    transition: transform .15s;
-  }
-
-  .fa-region-link--me .fa-region-arrow {
-    color: #de3244;
-  }
-
-  .fa-region-link--af .fa-region-arrow {
-    color: #00aac5;
-  }
-
-  .fa-region-link:hover .fa-region-arrow {
-    transform: translateX(4px);
-  }
-
-  .fa-region-link.active-me {
-    border-color: #de3244;
-    color: #de3244;
-    box-shadow: 0 0 0 2px #de324420;
-  }
-
-  .fa-region-link.active-af {
-    border-color: #00aac5;
-    color: #00aac5;
-    box-shadow: 0 0 0 2px #00aac520;
-  }
-
-  /* ── PROMPT TEXT ──────────────────────────────────────────── */
-  .fa-prompt {
-    font-family: "PT Sans", sans-serif;
-    font-size: 14px;
-    color: #888;
-    margin: 0.8em 0 0.5em;
-    font-style: italic;
-    text-align: center;
-    transition: opacity .3s;
-  }
-
-  .fa-prompt.hidden {
-    opacity: 0;
-  }
-
-  /* ── TILE GRID ────────────────────────────────────────────── */
-  .fa-tiles-wrap {
-    margin-top: 0.5em;
-  }
-
-  .fa-tiles-region {
-    display: none;
-  }
-
-  .fa-tiles-region.on {
-    display: block;
-  }
-
-  .fa-tiles-heading {
-    font-family: "PT Sans", sans-serif;
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-
-  .fa-tiles-heading strong {
-    color: #1d1d1b;
-  }
-
-  .fa-tile-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  .fa-tile {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .fa-tile-img {
-    width: 100%;
-    margin: 0 auto;
-    object-fit: cover;
-    align-items: center;
-    justify-content: center;
-    display: block;
-    transition: box-shadow .15s;
-  }
-
-  .fa-tile:hover .fa-tile-img {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-  }
-
-  .fa-tile-body {
-    padding: 0px 12px 12px;
-    /* border-top: 1px solid #eee; */
-  }
-
-  .fa-tile-name {
-    font-family: "PT Sans", sans-serif;
-    font-weight: 700 !important;
-    margin: 0 !important;
-  }
-
-  .fa-tile-catch {
-    font-weight: 700 !important;
-    margin: 3px 0 3px !important;
-  }
-
-  .fa-tile-name a {
-    color: #1d1d1b;
-    text-decoration: none;
-  }
-
-  /* stretched link — makes the whole tile clickable */
-  .fa-tile-name a::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-  }
-
-  .fa-tile-desc {
-    font-family: "PT Sans", sans-serif;
-    font-size: 13px;
-    color: #666;
-    margin: 0 !important;
-    line-height: 1.4;
-  }
-
-  /* ── RESPONSIVE ───────────────────────────────────────────── */
-  @media (max-width: 640px) {
-
-    .fa-map-row,
-    .fa-tile-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
 <!-- ── INTRODUCTION ────────────────────────────────────────── -->
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-  aperiam, commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-  nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit.</p>
-<p>Sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-  laudantium, totam rem aperiam,
-  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-  voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-  voluptatem sequi nesciunt. sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit.</p>
-<p>
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-  voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-  voluptatem sequi nesciunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-  commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-  laudantium, totam rem aperiam,
-  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-  voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-  voluptatem sequi nesciunt. sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-  amet, consectetur adipiscing elit.
-</p>
+<div class="fa-intro-row">
+  <div class="fa-intro-text">
+    <p>Competing Horizons in the Middle East and Africa analyses who is doing what in two key regions for the EU. Much
+      is being said about competition among external actors, and we wanted to understand whether these perceptions
+      correspond to reality and how the EU positions itself within this landscape.
+    </p>
+    <p>
+      Scope: We consider 16 external actors — the European Union, Bahrain, China, India, Iran, Israel, Japan, Kuwait,
+      Oman, Qatar, Russia, Saudi Arabia, South Korea, Türkiye, the UAE, and the United States — across four dimensions:
+      diplomatic relations, soft power projection, economic ties, and military cooperation.
+    </p>
+    <p>
+      Preliminary results confirm some commonly observed trends, such as China's widespread presence in Africa across
+      all four dimensions and US preponderance in the military dimension in the Middle East – despite its comparatively
+      limited economic weight there. At the same time, they reveal the growing role of actors such as India, Türkiye,
+      and the Gulf states, including through involvement in maritime security, infrastructure investment, and the
+      projection of influence well beyond formal diplomatic ties through networks of cooperation agencies.
+    </p>
+    <p>
+      At the same time, we find that the broad patterns conceal considerable nuance: many actors exert influence through
+      specific sectors, instruments or geographic niches that become visible only after we zoom in on them.
+    </p>
+    <p>
+      Overall, the EU performs relatively well across the different dimensions and remains one of the most broadly
+      engaged actors. However, it does not manage to fully translate the breadth and scale of its engagement,
+      investments, and relationships into political capital.
+    </p>
+  </div>
+
+  <!-- Both cycle through PNGs in img/slider/; filenames are set in the
+       FA_SLIDER_1_IMAGES / FA_SLIDER_2_IMAGES arrays in the script below. -->
+  <div class="fa-slider-stack">
+    <div class="fa-slider" id="fa-slider-1"></div>
+    <div class="fa-slider" id="fa-slider-2"></div>
+  </div>
+</div>
 
 <!-- ── REGION SELECTOR ────────────────────────────────────────── -->
 <div class="fa-map-row">
@@ -434,6 +249,258 @@
 
 </div>
 
+<style>
+  /* ── REGION SELECTOR ──────────────────────────────────────── */
+  .fa-map-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 1.5em 0 0.5em;
+  }
+
+  .fa-region-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+    background: #fff;
+    text-decoration: none;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d1d1b;
+    cursor: pointer;
+    transition: border-color .2s, box-shadow .2s, color .2s;
+  }
+
+  .fa-region-link:hover {
+    border-color: #888;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    text-decoration: none;
+  }
+
+  .fa-region-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .fa-region-label {
+    flex: 1;
+  }
+
+  .fa-region-arrow {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1;
+    transition: transform .15s;
+  }
+
+  .fa-region-link--me .fa-region-arrow {
+    color: #de3244;
+  }
+
+  .fa-region-link--af .fa-region-arrow {
+    color: #00aac5;
+  }
+
+  .fa-region-link:hover .fa-region-arrow {
+    transform: translateX(4px);
+  }
+
+  .fa-region-link.active-me {
+    border-color: #de3244;
+    color: #de3244;
+    box-shadow: 0 0 0 2px #de324420;
+  }
+
+  .fa-region-link.active-af {
+    border-color: #00aac5;
+    color: #00aac5;
+    box-shadow: 0 0 0 2px #00aac520;
+  }
+
+  /* ── PROMPT TEXT ──────────────────────────────────────────── */
+  .fa-prompt {
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    color: #888;
+    margin: 0.8em 0 0.5em;
+    font-style: italic;
+    text-align: center;
+    transition: opacity .3s;
+  }
+
+  .fa-prompt.hidden {
+    opacity: 0;
+  }
+
+  /* ── TILE GRID ────────────────────────────────────────────── */
+  .fa-tiles-wrap {
+    margin-top: 0.5em;
+  }
+
+  .fa-tiles-region {
+    display: none;
+  }
+
+  .fa-tiles-region.on {
+    display: block;
+  }
+
+  .fa-tiles-heading {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .fa-tiles-heading strong {
+    color: #1d1d1b;
+  }
+
+  .fa-tile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .fa-tile {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fa-tile-img {
+    width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    transition: box-shadow .15s;
+  }
+
+  .fa-tile:hover .fa-tile-img {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  }
+
+  .fa-tile-body {
+    padding: 0px 12px 12px;
+    /* border-top: 1px solid #eee; */
+  }
+
+  .fa-tile-name {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700 !important;
+    margin: 0 !important;
+  }
+
+  .fa-tile-catch {
+    font-weight: 700 !important;
+    margin: 3px 0 3px !important;
+  }
+
+  .fa-tile-name a {
+    color: #1d1d1b;
+    text-decoration: none;
+  }
+
+  /* stretched link — makes the whole tile clickable */
+  .fa-tile-name a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .fa-tile-desc {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    color: #666;
+    margin: 0 !important;
+    line-height: 1.4;
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────────────── */
+  @media (max-width: 640px) {
+
+    .fa-map-row,
+    .fa-tile-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── INTRO + SLIDER ───────────────────────────────────────── */
+  .fa-intro-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .fa-slider-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .fa-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #f2f2f2;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .fa-slider-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .6s ease;
+  }
+
+  .fa-slider-img.on {
+    opacity: 1;
+  }
+
+  .fa-slider-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .fa-slider-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .6);
+    border: 1px solid rgba(0, 0, 0, .15);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .fa-slider-dot.on {
+    background: #1d1d1b;
+  }
+
+  @media (max-width: 640px) {
+    .fa-intro-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 <!-- ── JS (inlined — no main.js on landing page) ──────────────── -->
 <script>
   function faSelectRegion(r) {
@@ -462,4 +529,84 @@
     e.preventDefault();
     faSelectRegion(link.classList.contains('fa-region-link--af') ? 'af' : 'me');
   });
+
+  // ── INTRO SLIDERS ─────────────────────────────────────────────
+  // Add/remove filenames here as images are dropped into img/slider/.
+  var FA_SLIDER_1_IMAGES = [
+    'key visual overview_actors.png',
+    'key visual overview_regions.png',
+  ];
+  var FA_SLIDER_2_IMAGES = [
+    'key visual mil_ex.png',
+    'key visual sop_dia_ext.png',
+    'key visual eco_fdi.png',
+  ];
+  var FA_SLIDER_BASE = 'img/slider/';
+  var FA_SLIDER_INTERVAL = 5000;
+
+  function faInitSlider(elId, images) {
+    var el = document.getElementById(elId);
+    if (!el || !images.length) {
+      if (el) el.style.display = 'none';
+      return;
+    }
+
+    var imgs = images.map(function (file, i) {
+      var img = document.createElement('img');
+      img.className = 'fa-slider-img' + (i === 0 ? ' on' : '');
+      img.src = FA_SLIDER_BASE + file;
+      img.alt = '';
+      el.appendChild(img);
+      return img;
+    });
+
+    var dotsWrap = null;
+    var dots = [];
+    if (imgs.length > 1) {
+      dotsWrap = document.createElement('div');
+      dotsWrap.className = 'fa-slider-dots';
+      dots = images.map(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'fa-slider-dot' + (i === 0 ? ' on' : '');
+        dot.setAttribute('aria-label', 'Show image ' + (i + 1));
+        dot.addEventListener('click', function () { goTo(i); });
+        dotsWrap.appendChild(dot);
+        return dot;
+      });
+      el.appendChild(dotsWrap);
+    }
+
+    var current = 0;
+    var timer = null;
+
+    function goTo(i) {
+      imgs[current].classList.remove('on');
+      if (dots.length) dots[current].classList.remove('on');
+      current = i;
+      imgs[current].classList.add('on');
+      if (dots.length) dots[current].classList.add('on');
+    }
+
+    function next() {
+      goTo((current + 1) % imgs.length);
+    }
+
+    function start() {
+      if (imgs.length > 1 && !timer) timer = setInterval(next, FA_SLIDER_INTERVAL);
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    el.addEventListener('mouseenter', stop);
+    el.addEventListener('mouseleave', start);
+
+    start();
+  }
+
+  faInitSlider('fa-slider-1', FA_SLIDER_1_IMAGES);
+  faInitSlider('fa-slider-2', FA_SLIDER_2_IMAGES);
 </script>
