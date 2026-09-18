@@ -1,15 +1,23 @@
 <!-- ── SUMMARY BOX ─────────────────────────────────────────── -->
 <div class="fa-summary-box">
-    <p>In brief: China maintains embassies in all 53 African countries with which it has diplomatic relations,
-        against 50 EU Delegations and 49 US embassies. Six countries — Algeria, Egypt, Ethiopia, Kenya, Senegal and
-        Tunisia — host all 15 external actors tracked. High-level visits are concentrated in North Africa, led by
-        the EU (75 visits across 25 countries), followed by Türkiye and China, which has the widest and most
-        geographically balanced coverage of any actor. China stands out for the breadth of its formal
-        partnerships, while the EU, US and UAE formalise more selectively. Summit diplomacy is increasingly
-        crowded, with established EU, Chinese and Japanese frameworks alongside newer, more intermittent
-        initiatives from Russia, Türkiye, Saudi Arabia and South Korea. At the UN, abstention remains the
-        predominant African position, though African states align more closely with the EU than Russia on Ukraine,
-        and with China, India and Türkiye on decolonisation.</p>
+    <ul>
+        <li>China maintains embassies in all 53 African countries with which it has diplomatic relations, against
+            50 EU Delegations and 49 US embassies. Six countries — Algeria, Egypt, Ethiopia, Kenya, Senegal and
+            Tunisia — host all 15 external actors tracked.
+        </li>
+        <li>High-level visits are concentrated in North Africa, led by the EU (75 visits across 25 countries),
+            followed by Türkiye and China, which has the widest and most geographically balanced coverage of any
+            actor.
+        </li>
+        <li>China stands out for the breadth of its formal partnerships, while the EU, US and UAE formalise more
+            selectively. Summit diplomacy is increasingly crowded, with established EU, Chinese and Japanese
+            frameworks alongside newer, more intermittent initiatives from Russia, Türkiye, Saudi Arabia and South
+            Korea.
+        </li>
+        <li>At the UN, abstention remains the predominant African position, though African states align more
+            closely with the EU than Russia on Ukraine, and with China, India and Türkiye on decolonisation.
+        </li>
+    </ul>
 </div>
 
 <p>Diplomatic engagement is one of the clearest signals of how external actors position themselves across Africa.
@@ -170,20 +178,14 @@
     </article>
 </section>
 
+<h2>Conclusion</h2>
+<p>Diplomatic engagement with Africa is dense but uneven: China leads on sheer embassy coverage and visit
+    breadth, the EU remains the most active single source of high-level visits, and formal partnerships and
+    summits are proliferating fastest among China, the EU and a widening circle of Gulf and Asian actors. At the
+    UN, abstention still defines the African position more than alignment with any one power, though voting
+    patterns tilt toward the EU on Ukraine and toward China, India and Türkiye on decolonisation and tax
+    governance.</p>
 
-
-
-
-<p data-slide="3">
-</p>
-<div class="space">
-    &nbsp;
-</div>
-<p data-slide="4">
-</p>
-<div class="space">
-    &nbsp;
-</div>
 
 <!-- SCROLLY LOGIC -->
 <script>
@@ -305,6 +307,38 @@
 
     .fa-summary-box p {
         margin: 0;
+    }
+
+    /* Bullet list styling lifted from the live site's ".summary ul li"
+       rule (a flex row per item, chevron + text) — CSS-drawn ">" chevron
+       (two rotated borders) matching the reference screenshot, standing
+       in for the live site's custom "euiss-icons" glyph. */
+    .fa-summary-box ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.125rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .fa-summary-box li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        position: relative;
+    }
+
+    .fa-summary-box li::before {
+        content: '';
+        flex: 0 0 auto;
+        width: 0.4em;
+        height: 0.4em;
+        margin-top: 0.55em;
+        border-style: solid;
+        border-color: rgb(17, 54, 85);
+        border-width: 0 0.15em 0.15em 0;
+        transform: rotate(-45deg);
     }
 
     /* scrolly specific */

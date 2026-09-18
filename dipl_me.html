@@ -1,12 +1,19 @@
 <!-- ── SUMMARY BOX ─────────────────────────────────────────── -->
 <div class="fa-summary-box">
-    <p>In brief: Türkiye has the broadest diplomatic footprint across the Middle East and the Gulf, while Israel's
-        is by far the narrowest; the EU maintains Delegations in 10 countries. The US, Türkiye, Iran and the EU
-        account for most high-level visits to the region since 2019. China, Türkiye and the US hold the widest
-        range of formal partnerships, while the EU is negotiating individual strategic partnerships with GCC
-        states. At the UN, Israel stands out as the only country in the region that mostly votes against Russia's
-        position, while most regional states vote consistently against Israel's on Gaza and occupied-territories
-        resolutions.</p>
+    <ul>
+        <li>Türkiye has the broadest diplomatic footprint across the Middle East and the Gulf, while Israel's
+            is by far the narrowest; the EU maintains Delegations in 10 countries.
+        </li>
+        <li>The US, Türkiye, Iran and the EU
+            account for most high-level visits to the region since 2019. China, Türkiye and the US hold the widest
+            range of formal partnerships, while the EU is negotiating individual strategic partnerships with GCC
+            states.
+        </li>
+        <li>At the UN, Israel stands out as the only country in the region that mostly votes against Russia's
+            position, while most regional states vote consistently against Israel's on Gaza and occupied-territories
+            resolutions.
+        </li>
+    </ul>
 </div>
 
 <p>Diplomatic engagement is one of the clearest signals of how external actors position themselves in the Middle
@@ -183,20 +190,13 @@
     </article>
 </section>
 
-
-
-
-
-<p data-slide="3">
-</p>
-<div class="space">
-    &nbsp;
-</div>
-<p data-slide="4">
-</p>
-<div class="space">
-    &nbsp;
-</div>
+<h2>Conclusion</h2>
+<p>Diplomatic engagement with the Middle East and the Gulf is dense and increasingly competitive: Türkiye leads on
+    embassy presence, the US, Türkiye, Iran and the EU dominate high-level visits, and China, Türkiye and the US
+    maintain the broadest range of formal partnerships, with the EU now deepening its own bilateral ties to the
+    GCC. At the UN, Israel's isolation on Russia-related votes and the region's near-uniform opposition to
+    Israel's own positions stand out as the clearest fault lines in an otherwise crowded field of external
+    engagement.</p>
 
 <!-- SCROLLY LOGIC -->
 <script>
@@ -318,6 +318,38 @@
 
     .fa-summary-box p {
         margin: 0;
+    }
+
+    /* Bullet list styling lifted from the live site's ".summary ul li"
+       rule (a flex row per item, chevron + text) — CSS-drawn ">" chevron
+       (two rotated borders) matching the reference screenshot, standing
+       in for the live site's custom "euiss-icons" glyph. */
+    .fa-summary-box ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.125rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .fa-summary-box li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        position: relative;
+    }
+
+    .fa-summary-box li::before {
+        content: '';
+        flex: 0 0 auto;
+        width: 0.4em;
+        height: 0.4em;
+        margin-top: 0.55em;
+        border-style: solid;
+        border-color: rgb(17, 54, 85);
+        border-width: 0 0.15em 0.15em 0;
+        transform: rotate(-45deg);
     }
 
     /* scrolly specific */
