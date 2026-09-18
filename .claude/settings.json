@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(perl -0pi -e 's/<p data-slide=\"\\(1[6-9]\\)\">.*?<\\\\/p>/<p data-slide=\"$1\"><\\\\/p>/gs' dipl_af.html)"
+      "Bash(perl -0pi -e 's/<p data-slide=\"\\(1[6-9]\\)\">.*?<\\\\/p>/<p data-slide=\"$1\"><\\\\/p>/gs' dipl_af.html)",
+      "Bash(git add *)",
+      "Bash(git restore *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
