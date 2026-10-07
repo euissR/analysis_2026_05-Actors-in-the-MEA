@@ -1,0 +1,35 @@
+subregion,actor,n,share
+Gulf,ARE,36,80
+Middle East,ARE,9,20
+Gulf,BHR,50,87.7
+Middle East,BHR,7,12.3
+Gulf,CHN,8,80
+Middle East,CHN,2,20
+Gulf,EU,29,49.2
+Middle East,EU,30,50.8
+Gulf,IND,39,88.6
+Middle East,IND,5,11.4
+Gulf,IRN,44,54.3
+Middle East,IRN,37,45.7
+Gulf,ISR,10,83.3
+Middle East,ISR,2,16.7
+Gulf,JPN,14,63.6
+Middle East,JPN,8,36.4
+Gulf,KOR,15,93.8
+Middle East,KOR,1,6.2
+Gulf,KWT,58,85.3
+Middle East,KWT,10,14.7
+Gulf,OMN,30,81.1
+Middle East,OMN,7,18.9
+Gulf,QAT,52,74.3
+Middle East,QAT,18,25.7
+Gulf,RUS,20,71.4
+Middle East,RUS,8,28.6
+Gulf,SAU,39,78
+Middle East,SAU,11,22
+Gulf,TUR,70,74.5
+Middle East,TUR,24,25.5
+Gulf,USA,59,53.6
+Middle East,USA,51,46.4
+Gulf,all,573,71.4
+Middle East,all,230,28.6

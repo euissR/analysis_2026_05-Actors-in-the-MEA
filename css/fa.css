@@ -1,0 +1,325 @@
+/* fa.css: Foreign Actors scrollytelling (EUISS)
+   Every selector starts with .fa- so nothing leaks into the Drupal theme. */
+
+/* Hide sideways overflow without breaking position: sticky.
+   clip (unlike hidden) doesn't create a scroll container. */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* ── layout: text left, chart right ─────────────────────────────────────── */
+
+.fa-scrolly {
+  --fa-teal: #309ebe;
+  --fa-navy: #113655;
+  --fa-ink: #1d1d1b;
+  --fa-muted: #646363;
+  --fa-light: #c6c6c6;
+  --fa-font: "PT Sans Narrow", "Arial Narrow", sans-serif;
+
+  position: relative;
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.fa-steps {
+  flex: 0 0 34%;
+  max-width: 28rem;
+  padding: 35vh 0 55vh;
+  position: relative;
+  z-index: 2;
+}
+
+.fa-stage {
+  flex: 1 1 auto;
+  min-width: 0;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+}
+
+/* Drupal adds empty paragraphs around embedded markup */
+.fa-scrolly p:empty {
+  display: none;
+}
+
+/* ── steps ──────────────────────────────────────────────────────────────── */
+
+.fa-step {
+  margin: 0 0 60vh;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+
+.fa-step.is-active {
+  opacity: 1;
+}
+
+.fa-steps > h3 {
+  margin: 0 0 1.25rem;
+}
+
+.fa-step + h3 {
+  margin-top: -30vh; /* a section heading sits closer to its own first step */
+}
+
+/* ── chart frame ────────────────────────────────────────────────────────── */
+
+.fa-chart {
+  position: absolute;
+  inset: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fa-font);
+  color: var(--fa-ink);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.fa-chart.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fa-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.fa-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  color: var(--fa-muted);
+  margin-top: 0.15rem;
+}
+
+.fa-map {
+  flex: 1 1 0;
+  min-height: 0;
+  position: relative;
+}
+
+.fa-map svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.fa-labels text {
+  font: 700 12px var(--fa-font);
+  fill: var(--fa-ink);
+  stroke: #fff;
+  stroke-width: 3px;
+  paint-order: stroke;
+  pointer-events: none;
+}
+
+.fa-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--fa-muted);
+}
+
+/* ── legend: actor tiles ────────────────────────────────────────────────── */
+
+.fa-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.fa-tile {
+  font: 700 0.875rem/1 var(--fa-font);
+  color: var(--fa-ink);
+  background: #fff;
+  border: 1px solid var(--fa-light);
+  border-radius: 2px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.fa-tile:hover {
+  border-color: var(--fa-teal);
+}
+
+.fa-tile[aria-pressed="true"] {
+  background: var(--fa-teal);
+  border-color: var(--fa-teal);
+  color: #fff;
+}
+
+.fa-tile:focus-visible {
+  outline: 2px solid var(--fa-navy);
+  outline-offset: 2px;
+}
+
+/* ── legend: symbol key ─────────────────────────────────────────────────── */
+
+.fa-key {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.9rem;
+  color: var(--fa-ink);
+}
+
+.fa-key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fa-key svg {
+  flex-shrink: 0;
+}
+
+.fa-key-item,
+.fa-key-label {
+  white-space: nowrap;
+}
+
+.fa-key svg text {
+  font: 12px var(--fa-font);
+  fill: var(--fa-muted);
+}
+
+.fa-key-label {
+  padding-bottom: 0.15rem;
+}
+
+/* ── range chart (summits) ──────────────────────────────────────────────── */
+
+.fa-range-grid line {
+  stroke: var(--fa-light);
+  stroke-opacity: 0.6;
+  shape-rendering: crispEdges;
+}
+
+.fa-axis text {
+  font: 12px var(--fa-font);
+  fill: var(--fa-muted);
+}
+
+/* range chart: centre title + chart + key as one block in the stage */
+.fa-chart--range {
+  justify-content: center;
+}
+
+.fa-chart--range .fa-map {
+  flex: none;
+  aspect-ratio: var(--fa-aspect, 1);
+}
+
+.fa-row-actor {
+  font: 700 13px var(--fa-font);
+  fill: var(--fa-ink);
+}
+
+.fa-row-name {
+  font: 11.5px var(--fa-font);
+  fill: var(--fa-muted);
+}
+
+/* ── tooltip ────────────────────────────────────────────────────────────── */
+
+.fa-tooltip {
+  position: absolute;
+  z-index: 5;
+  max-width: 180px;
+  padding: 0.4rem 0.55rem;
+  background: #fff;
+  border: 1px solid var(--fa-light);
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+/* ── mobile: chart fills the screen, steps scroll over it ──────────────── */
+
+@media (max-width: 768px) {
+  .fa-scrolly {
+    flex-direction: column;
+    gap: 0;
+    margin: 1rem 0;
+  }
+
+  .fa-stage {
+    order: -1; /* chart first, so the steps can be pulled up over it */
+    align-self: stretch;
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .fa-chart {
+    inset: 0.75rem 0;
+  }
+
+  .fa-steps {
+    flex: none;
+    max-width: none;
+    margin-top: -100vh;
+    padding: 70vh 0.75rem 30vh;
+    pointer-events: none; /* the map stays usable between cards */
+  }
+
+  .fa-step,
+  .fa-steps > h3 {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 0.9rem 1rem;
+  }
+
+  .fa-step {
+    margin-bottom: 65vh;
+  }
+
+  .fa-step + h3 {
+    margin-top: 0;
+  }
+
+  .fa-tiles {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* one scrollable row instead of four */
+    padding-bottom: 2px;
+  }
+
+  .fa-title {
+    font-size: 1.25rem;
+  }
+
+  /* the map is width-bound on a phone: size it to its own aspect ratio
+     and keep the key right under it */
+  .fa-map {
+    flex: none;
+    aspect-ratio: var(--fa-aspect, 1);
+  }
+
+  .fa-foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-step,
+  .fa-chart {
+    transition: none;
+  }
+}

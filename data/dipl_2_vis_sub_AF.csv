@@ -1,0 +1,86 @@
+subregion,actor,n,share
+Central Africa,ARE,0,0
+East Africa and HoA,ARE,1,5.3
+North Africa,ARE,13,68.4
+Southern Africa and Indian Ocean,ARE,5,26.3
+West Africa,ARE,0,0
+Central Africa,BHR,0,0
+East Africa and HoA,BHR,3,11.5
+North Africa,BHR,23,88.5
+Southern Africa and Indian Ocean,BHR,0,0
+West Africa,BHR,0,0
+Central Africa,CHN,5,11.6
+East Africa and HoA,CHN,10,23.3
+North Africa,CHN,7,16.3
+Southern Africa and Indian Ocean,CHN,11,25.6
+West Africa,CHN,10,23.3
+Central Africa,EU,6,8
+East Africa and HoA,EU,17,22.7
+North Africa,EU,27,36
+Southern Africa and Indian Ocean,EU,11,14.7
+West Africa,EU,14,18.7
+Central Africa,IND,1,3.7
+East Africa and HoA,IND,6,22.2
+North Africa,IND,3,11.1
+Southern Africa and Indian Ocean,IND,13,48.1
+West Africa,IND,4,14.8
+Central Africa,IRN,0,0
+East Africa and HoA,IRN,4,23.5
+North Africa,IRN,7,41.2
+Southern Africa and Indian Ocean,IRN,3,17.6
+West Africa,IRN,3,17.6
+Central Africa,ISR,1,7.7
+East Africa and HoA,ISR,4,30.8
+North Africa,ISR,5,38.5
+Southern Africa and Indian Ocean,ISR,1,7.7
+West Africa,ISR,2,15.4
+Central Africa,JPN,0,0
+East Africa and HoA,JPN,7,23.3
+North Africa,JPN,6,20
+Southern Africa and Indian Ocean,JPN,12,40
+West Africa,JPN,5,16.7
+Central Africa,KOR,1,10
+East Africa and HoA,KOR,2,20
+North Africa,KOR,2,20
+Southern Africa and Indian Ocean,KOR,4,40
+West Africa,KOR,1,10
+Central Africa,KWT,0,0
+East Africa and HoA,KWT,0,0
+North Africa,KWT,26,92.9
+Southern Africa and Indian Ocean,KWT,0,0
+West Africa,KWT,2,7.1
+Central Africa,OMN,0,0
+East Africa and HoA,OMN,0,0
+North Africa,OMN,8,88.9
+Southern Africa and Indian Ocean,OMN,0,0
+West Africa,OMN,1,11.1
+Central Africa,QAT,5,19.2
+East Africa and HoA,QAT,4,15.4
+North Africa,QAT,15,57.7
+Southern Africa and Indian Ocean,QAT,1,3.8
+West Africa,QAT,1,3.8
+Central Africa,RUS,4,12.9
+East Africa and HoA,RUS,6,19.4
+North Africa,RUS,10,32.3
+Southern Africa and Indian Ocean,RUS,6,19.4
+West Africa,RUS,5,16.1
+Central Africa,SAU,0,0
+East Africa and HoA,SAU,2,9.1
+North Africa,SAU,18,81.8
+Southern Africa and Indian Ocean,SAU,0,0
+West Africa,SAU,2,9.1
+Central Africa,TUR,3,5.6
+East Africa and HoA,TUR,4,7.4
+North Africa,TUR,27,50
+Southern Africa and Indian Ocean,TUR,5,9.3
+West Africa,TUR,15,27.8
+Central Africa,USA,2,6.2
+East Africa and HoA,USA,4,12.5
+North Africa,USA,14,43.8
+Southern Africa and Indian Ocean,USA,4,12.5
+West Africa,USA,8,25
+Central Africa,all,28,6.1
+East Africa and HoA,all,74,16
+North Africa,all,211,45.7
+Southern Africa and Indian Ocean,all,76,16.5
+West Africa,all,73,15.8

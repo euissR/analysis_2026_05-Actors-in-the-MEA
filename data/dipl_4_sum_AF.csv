@@ -1,0 +1,37 @@
+id,actor,name,n,when,value,shape
+12,CHN,Forum on China–Africa Cooperation (FOCAC),9,start_year,2000,past
+12,CHN,Forum on China–Africa Cooperation (FOCAC),1,last_summit,2024,past
+12,CHN,Forum on China–Africa Cooperation (FOCAC),1,next_summit,2027,future
+1,EU,African Union – European Union Summit (AU–EU Summit),7,start_year,2000,past
+1,EU,African Union – European Union Summit (AU–EU Summit),1,last_summit,2025,past
+1,EU,African Union – European Union Summit (AU–EU Summit),1,next_summit,2028,future
+16,FRA,Sommet France-Afrique / New Africa-France Summit / Africa Forward,29,start_year,1973,past
+16,FRA,Sommet France-Afrique / New Africa-France Summit / Africa Forward,1,last_summit,2026,past
+16,FRA,Sommet France-Afrique / New Africa-France Summit / Africa Forward,1,next_summit,,future
+18,IND,India-Africa Forum Summit (IAFS),3,start_year,2008,past
+18,IND,India-Africa Forum Summit (IAFS),1,last_summit,2015,past
+18,IND,India-Africa Forum Summit (IAFS),1,next_summit,2026,future
+19,IRN,Iran-Africa Economic Cooperation Summit,3,start_year,2023,past
+19,IRN,Iran-Africa Economic Cooperation Summit,1,last_summit,2025,past
+19,IRN,Iran-Africa Economic Cooperation Summit,1,next_summit,,future
+17,ITA,Italy-Africa Summit,2,start_year,2024,past
+17,ITA,Italy-Africa Summit,1,last_summit,2026,past
+17,ITA,Italy-Africa Summit,1,next_summit,,future
+15,JPN,Tokyo International Conference on African Development (TICAD),9,start_year,1993,past
+15,JPN,Tokyo International Conference on African Development (TICAD),1,last_summit,2025,past
+15,JPN,Tokyo International Conference on African Development (TICAD),1,next_summit,2028,future
+11,SAU,Saudi-African Summit,1,start_year,2023,past
+11,SAU,Saudi-African Summit,1,last_summit,2023,past
+11,SAU,Saudi-African Summit,1,next_summit,2026,future
+8,RUS,Russia–Africa Summit and Economic Forum,2,start_year,2019,past
+8,RUS,Russia–Africa Summit and Economic Forum,1,last_summit,2023,past
+8,RUS,Russia–Africa Summit and Economic Forum,1,next_summit,2026,future
+14,KOR,Korea–Africa Summit,1,start_year,2024,past
+14,KOR,Korea–Africa Summit,1,last_summit,2024,past
+14,KOR,Korea–Africa Summit,1,next_summit,,future
+10,TUR,Türkiye–Africa Partnership Summit,3,start_year,2008,past
+10,TUR,Türkiye–Africa Partnership Summit,1,last_summit,2021,past
+10,TUR,Türkiye–Africa Partnership Summit,1,next_summit,2026,future
+4,USA,US-Africa Leaders Summit,2,start_year,2014,past
+4,USA,US-Africa Leaders Summit,1,last_summit,2022,past
+4,USA,US-Africa Leaders Summit,1,next_summit,,future

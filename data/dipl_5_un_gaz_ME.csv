@@ -1,0 +1,22 @@
+iso3,name,kind,subregion,x,y,abs_all,nv_all,isr_all,eu_all
+BHR,Bahrain,country,Gulf,3,2,0,0,0,0.8266
+IRQ,Iraq,country,Middle East,2,0,0.04,0.04,0,0.8333
+ISR,Israel,country,Middle East,0,1,0,0,1,0.0504
+JOR,Jordan,country,Middle East,1,1,0,0,0,0.8266
+KWT,Kuwait,country,Gulf,2,1,0,0,0,0.8266
+LBN,Lebanon,country,Middle East,0,0,0,0,0,0.8266
+OMN,Oman,country,Gulf,2,3,0,0,0,0.8266
+QAT,Qatar,country,Gulf,2,2,0,0,0,0.8266
+SAU,Saudi Arabia,country,Gulf,1,2,0,0.04,0,0.8194
+SYR,Syria,country,Middle East,1,0,0,0.04,0,0.8194
+ARE,United Arab Emirates,country,Gulf,3,3,0,0,0,0.8266
+YEM,Yemen,country,Middle East,1,3,0,0,0,0.8266
+EU,EU,actor,,-0.5,5,0.123,0.0015,0.0504,0.785
+USA,US,actor,,0.5,5,0.08,0,0.92,0.0504
+CHN,China,actor,,1.5,5,0,0,0,0.8266
+RUS,Russia,actor,,2.5,5,0.04,0,0,0.8385
+TUR,Türkiye,actor,,3.5,5,0,0,0,0.8266
+IND,India,actor,,0,6,0.12,0,0,0.8192
+JPN,Japan,actor,,1,6,0.08,0,0,0.8488
+KOR,South Korea,actor,,2,6,0.08,0,0,0.8488
+IRN,Iran,actor,,3,6,0,0.04,0,0.8225

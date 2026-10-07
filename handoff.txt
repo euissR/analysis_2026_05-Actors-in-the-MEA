@@ -1,0 +1,104 @@
+# Handoff brief: Flourish → vanilla JS / D3 scrollytelling
+
+## Context
+
+I'm cd_trich at EUISS (Brussels). I'm building a multi-chapter scrollytelling piece on foreign actors in Africa and the Middle East/Gulf. The chapters are diplomatic, economic, soft power and military. Africa and MENA/Gulf are two separate pieces with identical chart types and different data. Output is static files (GitHub Pages, embedded in Drupal).
+
+I prototyped everything in Flourish and hit its limits:
+
+- No object permanence between story slides, so no smooth transitions.
+- Map and header positions jump between slides.
+- No per-row opacity, no legend relabelling, no real "all" filter.
+- Facets share one y-domain.
+- Many workarounds (RGBA colour keys, duplicated vis per step).
+
+So we're rebuilding in D3/vanilla JS. R (euissR/euissGeo) stays upstream for wrangling and exports tidy files.
+
+## Workflow I want
+
+I give you the chapter text (so you see the scrolly structure) and the data. You build the graphics and the scroll steps.
+
+## Agreed architecture
+
+- One function per chart type, same contract: `chart = makeX(el, data, opts)`, then `chart.update(state, {duration})`.
+- Scroll steps are data, not code: `{id, chart, state: {highlight: [...]}, text}`.
+- D3 joins on stable keys (ISO3, actor) so elements persist and transition between steps.
+- Modules:
+  - `geoMap`: fixed-viewport projected basemap with pluggable layers (proportional dots, spikes, categorical fills, labels).
+  - `smallMultiples`: facet wrapper with shared scales.
+  - Marks: stacked column, arrow/dumbbell, area/line, tile/heatmap, strip plot.
+  - Shared: `theme.js`, highlight helper, tooltip, legend, scroll engine.
+- Scroll engine: sticky stage with a fixed aspect ratio, so nothing jumps between steps. Use IntersectionObserver or scrollama.
+- Region config: one codebase, per-region data and viewport.
+  - MENA/Gulf reference centre: lon 44, lat 24, tightly zoomed on the Gulf.
+  - Africa reference centre: lon 20, lat 0.
+- Build order: skeleton + theme + scroll engine, then geoMap with diplomatic presence, then small-multiple stacked columns (UN votes), then arrows, then the rest section by section.
+
+## Design system
+
+- Font: PT Sans Narrow.
+- Palette (EUISS):
+  - teal #309ebe, fuchsia #df3144, navy #113655, orange #f28d22
+  - base grey #595959, light grey/grid #c6c6c6, near-white #f9f9f9
+  - ink #1d1d1b, muted text #646363
+- Maps: white land on light-grey ocean, thin light-grey borders, no graticule or datum.
+- Axes: no axis titles, no axis lines, gridlines kept. Small multiples show only first and last year on x. Y tick labels are hidden when the 0–100 range is implicit.
+- Tooltip: bold name on line 1, metric on line 2 (e.g. "**Kenya**<br>12% align with Israel").
+- Highlight/dim: the highlighted item keeps its colour, everything else drops to 20% opacity of its own colour. Never swap the colour to grey.
+- Legend: clean labels only, no title, no entries for dimmed states.
+- Titles are short with no year ranges. Subtitle states the metric and period.
+
+## Chart inventory (per region)
+
+**Diplomatic**
+
+- Embassy presence: dots, switchable by actor.
+- High-level visits: dots sized by count, switchable by actor.
+- Partnership hierarchy: ranking 1–3 per actor-country.
+- Summit timeline: start/last/next-summit dots on a line, size = number of summits at start, highlighted by actor.
+- UN votes: country-level small multiples, stacked columns (align / abstain / absent). Align = teal, abstain #595959, absent #c6c6c6. Fixed 0–100 y-axis. The gap above the stack IS non-alignment, so never normalise to 100%.
+- Actor-level UN view: TBD.
+
+**Economic**
+
+- Trade shares and balances: period averages 2019–21 vs 2022–24, shown as arrows or dumbbells. Period colours: 2019–21 #595959, 2022–24 #df3144.
+- Import dependency (tech, food, energy): arrows per partner.
+- FDI shares: arrows, faceted by income group, with highlight steps (EU, US, Gulf, China/Japan/India/South Korea).
+- ODA/OOF: stacked bars by actor and window.
+- Debt: stacked areas by creditor.
+
+**Soft power:** six maps (languages/cultural organisations, sectors).
+
+**Military**
+
+- Arms transfers: stacked by supplier over time.
+- Bases: dot map.
+- Deployments: spike maps for bilateral, multilateral (EU highlight) and PMC.
+- Exercises: strip plot by lead country and type, bilateral vs multilateral as shape.
+
+**Overview:** countries vs actors map. Categories are Country, Actor and Both (a blended tone for overlap), at 50% opacity.
+
+## Data contract (R → JS)
+
+- Tidy long CSV/JSON per chart, named like `dipl_5_un_isr_AF.csv`.
+- ISO3_CODE is the join key. Percentages are 0–100.
+- Missing values are truly blank, never the string "NA". Call `st_drop_geometry()` before exporting any sf table.
+- Sort in R as needed (e.g. alphabetical by name). No dummy placeholder rows, and stray out-of-region rows (e.g. IRN in Africa files) are dropped at source.
+- Collapse multi-row cases in R (e.g. Palestine with several presence types, or several partnership tiers per country: max per actor-country).
+- Basemap: unprojected WGS84 TopoJSON. D3 projects (Robinson via d3-geo-projection) and fits to a fixed per-region extent.
+
+## Geo gotchas learned the hard way
+
+- GeoJSON must be lon/lat (RFC 7946). Never export a projected CRS.
+- Run `st_wrap_dateline()` on unprojected data only. Russia is the classic breaker.
+- Always chain `st_make_valid()` after `st_simplify()`. Without it, s2 throws "Loop X edge Y crosses loop Z edge W".
+- Wrong ring winding makes oceans fill in (same symptom as the Russia bug). TopoJSON avoids this.
+- Disputed-territory codes in the country list (XF, XG, XU, XV, XXS) won't match polygons. Keep or drop deliberately.
+
+## Naming
+
+R objects use a topic prefix (`mena_eco_tra_*`). Keep chart IDs parallel to data names (`dipl_5_un_isr`).
+
+## First message in the new chat
+
+I'll attach: (1) chapter text, (2) the first dataset, (3) the repo or scaffold state.

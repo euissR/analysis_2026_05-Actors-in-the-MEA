@@ -1,0 +1,64 @@
+iso3,name,kind,subregion,x,y,abs_all,nv_all,isr_all,eu_all
+DZA,Algeria,country,North Africa,13,11,0,0,0,0.8266
+AGO,Angola,country,Southern Africa and Indian Ocean,13,17,0,0,0,0.8266
+BEN,Benin,country,West Africa,15,14,0,0.52,0,0.8457
+BWA,Botswana,country,Southern Africa and Indian Ocean,15,18,0,0.24,0,0.8031
+BFA,Burkina Faso,country,West Africa,13,13,0,0.32,0,0.8518
+BDI,Burundi,country,Central Africa,15,16,0,0.12,0,0.8401
+CPV,Cape Verde,country,West Africa,10,15,0.08,0.04,0,0.824
+CMR,Cameroon,country,Central Africa,14,15,0.8,0.2,0,0.1241
+CAF,Central African Republic,country,Central Africa,16,14,0.16,0.4,0,0.6617
+TCD,Chad,country,Central Africa,14,13,0,0,0,0.8266
+COM,Comoros,country,Southern Africa and Indian Ocean,18,18,0,0.16,0,0.8183
+COG,Congo,country,Central Africa,14,16,0,0.4,0,0.8074
+CIV,Côte D’Ivoire,country,West Africa,12,15,0.04,0,0,0.8385
+COD,Democratic Republic of The Congo,country,Central Africa,15,15,0.2,0.48,0,0.5812
+DJI,Djibouti,country,East Africa and the Horn of Africa,17,13,0,0,0,0.8266
+EGY,Egypt,country,North Africa,16,11,0,0,0,0.8266
+GNQ,Equatorial Guinea,country,Central Africa,13,16,0.04,0.56,0,0.798
+ERI,Eritrea,country,East Africa and the Horn of Africa,16,13,0,0.04,0,0.8225
+SWZ,Eswatini,country,Southern Africa and Indian Ocean,16,19,0,0.88,0,1
+ETH,Ethiopia,country,East Africa and the Horn of Africa,17,14,0.32,0,0,0.6577
+GAB,Gabon,country,Central Africa,14,17,0,0.08,0,0.8293
+GMB,Gambia,country,West Africa,12,12,0,0.04,0,0.821
+GHA,Ghana,country,West Africa,13,14,0,0.08,0,0.8148
+GIN,Guinea,country,West Africa,11,14,0,0.04,0,0.8194
+GNB,Guinea-Bissau,country,West Africa,11,13,0,0.28,0,0.8189
+KEN,Kenya,country,East Africa and the Horn of Africa,17,15,0,0,0,0.8266
+LSO,Lesotho,country,Southern Africa and Indian Ocean,17,19,0,0.04,0,0.8271
+LBR,Liberia,country,West Africa,12,14,0.12,0.48,0.04,0.5897
+LBY,Libya,country,North Africa,15,11,0,0,0,0.8266
+MDG,Madagascar,country,Southern Africa and Indian Ocean,19,19,0,0.64,0,0.7776
+MWI,Malawi,country,Southern Africa and Indian Ocean,15,17,0.16,0.44,0,0.7143
+MLI,Mali,country,West Africa,14,12,0,0,0,0.8266
+MRT,Mauritania,country,West Africa,11,12,0,0,0,0.8266
+MUS,Mauritius,country,Southern Africa and Indian Ocean,19,20,0,0,0,0.8266
+MAR,Morocco,country,North Africa,12,11,0,0,0,0.8266
+MOZ,Mozambique,country,Southern Africa and Indian Ocean,16,17,0,0.08,0,0.8276
+NAM,Namibia,country,Southern Africa and Indian Ocean,15,19,0,0,0,0.8266
+NER,Niger,country,West Africa,15,12,0,0,0,0.8266
+NGA,Nigeria,country,West Africa,13,15,0,0.24,0,0.8011
+RWA,Rwanda,country,Central Africa,16,16,0.08,0.2,0,0.8425
+STP,São Tomé and Príncipe,country,Central Africa,11,16,0,0.96,0,1
+SEN,Senegal,country,West Africa,13,12,0,0,0,0.8266
+SYC,Seychelles,country,Southern Africa and Indian Ocean,18,17,0,0.04,0,0.8487
+SLE,Sierra Leone,country,West Africa,12,13,0,0,0,0.8266
+SOM,Somalia,country,East Africa and the Horn of Africa,18,14,0,0.08,0,0.8164
+ZAF,South Africa,country,Southern Africa and Indian Ocean,16,20,0,0,0,0.8266
+SSD,South Sudan,country,East Africa and the Horn of Africa,15,13,0.56,0.36,0,0.2639
+SDN,Sudan,country,East Africa and the Horn of Africa,16,12,0,0.12,0,0.803
+TGO,Togo,country,West Africa,14,14,0.52,0.08,0,0.4637
+TUN,Tunisia,country,North Africa,14,11,0.04,0.04,0,0.8333
+UGA,Uganda,country,East Africa and the Horn of Africa,16,15,0,0,0,0.8266
+TZA,United Republic of Tanzania,country,East Africa and the Horn of Africa,17,16,0,0.16,0,0.8519
+ZMB,Zambia,country,Southern Africa and Indian Ocean,14,18,0.04,0.72,0,0.8148
+ZWE,Zimbabwe,country,Southern Africa and Indian Ocean,16,18,0,0,0,0.8266
+EU,EU,actor,,10.5,23,0.123,0.0015,0.0504,0.785
+USA,US,actor,,11.5,23,0.08,0,0.92,0.0504
+CHN,China,actor,,12.5,23,0,0,0,0.8266
+RUS,Russia,actor,,13.5,23,0.04,0,0,0.8385
+TUR,Türkiye,actor,,14.5,23,0,0,0,0.8266
+IND,India,actor,,15.5,23,0.12,0,0,0.8192
+JPN,Japan,actor,,16.5,23,0.08,0,0,0.8488
+KOR,South Korea,actor,,17.5,23,0.08,0,0,0.8488
+IRN,Iran,actor,,18.5,23,0,0.04,0,0.8225

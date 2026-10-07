@@ -1,0 +1,22 @@
+id,actor,name,n,when,value,shape
+13,CHN,China–Arab States Summit,1,start_year,2022,past
+13,CHN,China–Arab States Summit,1,last_summit,2022,past
+13,CHN,China–Arab States Summit,1,next_summit,2026,future
+3,EU,EU–League of Arab States Summit,1,start_year,2019,past
+3,EU,EU–League of Arab States Summit,1,last_summit,2019,past
+3,EU,EU–League of Arab States Summit,1,next_summit,,future
+2,EU,European Union – Gulf Cooperation Council Summit,1,start_year,2024,past
+2,EU,European Union – Gulf Cooperation Council Summit,1,last_summit,2024,past
+2,EU,European Union – Gulf Cooperation Council Summit,1,next_summit,2026,future
+9,RUS,Russia-Arab world summit,0,start_year,2025,past
+9,RUS,Russia-Arab world summit,1,last_summit,,past
+9,RUS,Russia-Arab world summit,1,next_summit,,future
+6,USA,Arab Islamic American Summit,1,start_year,2017,past
+6,USA,Arab Islamic American Summit,1,last_summit,2017,past
+6,USA,Arab Islamic American Summit,1,next_summit,,future
+7,USA,Jeddah Security and Development Summit,1,start_year,2022,past
+7,USA,Jeddah Security and Development Summit,1,last_summit,2022,past
+7,USA,Jeddah Security and Development Summit,1,next_summit,,future
+5,USA,United States–Gulf Cooperation Council Summit,4,start_year,2015,past
+5,USA,United States–Gulf Cooperation Council Summit,1,last_summit,2025,past
+5,USA,United States–Gulf Cooperation Council Summit,1,next_summit,,future

@@ -1,0 +1,22 @@
+iso3,name,kind,subregion,x,y,abs_all,abs_1621,abs_2226,rus_all,rus_1621,rus_2226
+BHR,Bahrain,country,Gulf,3,2,0.84,1,0.7333,0,0,0
+KWT,Kuwait,country,Gulf,2,1,0.76,1,0.6,0,0,0
+OMN,Oman,country,Gulf,2,3,0.84,1,0.7333,0,0,0
+QAT,Qatar,country,Gulf,2,2,0.6,0.7,0.5333,0,0,0
+SAU,Saudi Arabia,country,Gulf,1,2,0.76,0.8,0.7333,0.04,0.1,0
+ARE,United Arab Emirates,country,Gulf,3,3,0.8,0.9,0.7333,0,0,0
+IRQ,Iraq,country,Middle East,2,0,0.84,0.9,0.8,0,0,0
+ISR,Israel,country,Middle East,0,1,0.08,0,0.1333,0.04,0,0.0667
+JOR,Jordan,country,Middle East,1,1,0.72,0.9,0.6,0,0,0
+LBN,Lebanon,country,Middle East,0,0,0.4,0.2,0.5333,0,0,0
+SYR,Syria,country,Middle East,1,0,0.08,0,0.1333,0.76,1,0.6
+YEM,Yemen,country,Middle East,1,3,0.72,0.7,0.7333,0,0,0
+EU,EU,actor,,-0.5,5,0.003,0,0.0049,0.0015,0,0.0025
+USA,US,actor,,0.5,5,0.08,0,0.1333,0.04,0,0.0667
+CHN,China,actor,,1.5,5,0.4,0.1,0.6,0.6,0.9,0.4
+RUS,Russia,actor,,2.5,5,0,0,0,1,1,1
+TUR,Türkiye,actor,,3.5,5,0,0,0,0,0,0
+IND,India,actor,,0,6,0.76,0.4,1,0.24,0.6,0
+JPN,Japan,actor,,1,6,0,0,0,0,0,0
+KOR,South Korea,actor,,2,6,0.36,0.9,0,0,0,0
+IRN,Iran,actor,,3,6,0.24,0,0.4,0.72,1,0.5333

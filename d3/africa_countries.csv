@@ -1,0 +1,55 @@
+iso3,name,subregion,lon,lat
+DZA,Algeria,North Africa,2.677,28.153
+AGO,Angola,Southern Africa and Indian Ocean,17.577,-12.336
+BEN,Benin,West Africa,2.339,9.656
+BWA,Botswana,Southern Africa and Indian Ocean,23.815,-22.187
+BFA,Burkina Faso,West Africa,-1.744,12.274
+BDI,Burundi,Central Africa,29.893,-3.363
+CMR,Cameroon,Central Africa,12.744,5.694
+CPV,Cape Verde,West Africa,-23.625,15.084
+CAF,Central African Republic,Central Africa,20.941,7.015
+TCD,Chad,Central Africa,18.67,15.375
+COM,Comoros,Southern Africa and Indian Ocean,43.354,-11.663
+COG,Congo,Central Africa,15.221,-0.842
+CIV,Côte D’Ivoire,West Africa,-5.553,7.623
+COD,Democratic Republic of The Congo,Central Africa,23.656,-2.878
+DJI,Djibouti,East Africa and HoA,42.183,11.56
+EGY,Egypt,North Africa,29.507,26.36
+GNQ,Equatorial Guinea,Central Africa,10.471,1.569
+ERI,Eritrea,East Africa and HoA,38.107,16.094
+SWZ,Eswatini,Southern Africa and Indian Ocean,31.498,-26.566
+ETH,Ethiopia,East Africa and HoA,39.62,8.637
+GAB,Gabon,Central Africa,11.783,-0.604
+GMB,Gambia,West Africa,-16.06,13.379
+GHA,Ghana,West Africa,-1.206,7.965
+GIN,Guinea,West Africa,-11.279,11.005
+GNB,Guinea-Bissau,West Africa,-14.406,12.119
+KEN,Kenya,East Africa and HoA,37.858,0.532
+LSO,Lesotho,Southern Africa and Indian Ocean,28.247,-29.583
+LBR,Liberia,West Africa,-9.311,6.449
+LBY,Libya,North Africa,18.028,27.047
+MDG,Madagascar,Southern Africa and Indian Ocean,46.696,-19.383
+MWI,Malawi,Southern Africa and Indian Ocean,33.482,-13.412
+MLI,Mali,West Africa,-3.518,17.349
+MRT,Mauritania,West Africa,-10.335,20.261
+MUS,Mauritius,Southern Africa and Indian Ocean,57.572,-20.284
+MAR,Morocco,North Africa,-6.282,31.841
+MOZ,Mozambique,Southern Africa and Indian Ocean,38.181,-14.279
+NAM,Namibia,Southern Africa and Indian Ocean,17.222,-22.138
+NER,Niger,West Africa,9.402,17.419
+NGA,Nigeria,West Africa,8.098,9.586
+RWA,Rwanda,Central Africa,29.925,-2
+SEN,Senegal,West Africa,-14.468,14.359
+SYC,Seychelles,Southern Africa and Indian Ocean,55.467,-4.679
+SLE,Sierra Leone,West Africa,-11.783,8.569
+SOM,Somalia,East Africa and HoA,46.202,4.449
+ZAF,South Africa,Southern Africa and Indian Ocean,24.672,-29.999
+SSD,South Sudan,East Africa and HoA,30.327,7.293
+SDN,Sudan,East Africa and HoA,29.957,16.021
+STP,São Tomé and Príncipe,Central Africa,6.602,0.239
+TGO,Togo,West Africa,0.979,8.531
+TUN,Tunisia,North Africa,9.561,33.768
+UGA,Uganda,East Africa and HoA,32.392,1.281
+TZA,United Republic of Tanzania,East Africa and HoA,34.805,-6.265
+ZMB,Zambia,Southern Africa and Indian Ocean,27.854,-14.598
+ZWE,Zimbabwe,Southern Africa and Indian Ocean,29.872,-19
