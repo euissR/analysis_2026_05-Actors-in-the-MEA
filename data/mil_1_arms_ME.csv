@@ -1,0 +1,294 @@
+actor_code,supplier,iso3,country,subregion,ssa,year,drone,tiv
+ARE,United Arab Emirates,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,12.95
+ARE,United Arab Emirates,SAU,Saudi Arabia,Gulf,TRUE,2025,FALSE,12.95
+ARE,United Arab Emirates,JOR,Jordan,Middle East,TRUE,2017,FALSE,1.26
+ARE,United Arab Emirates,JOR,Jordan,Middle East,TRUE,2019,FALSE,10
+ARE,United Arab Emirates,JOR,Jordan,Middle East,TRUE,2020,FALSE,126
+ARE,United Arab Emirates,LBN,Lebanon,Middle East,TRUE,2018,FALSE,2.4
+ARE,United Arab Emirates,SYR,Syria,Middle East,TRUE,2017,FALSE,0.9
+ARE,United Arab Emirates,YEM,Yemen,Middle East,TRUE,2016,FALSE,5.3
+ARE,United Arab Emirates,YEM,Yemen,Middle East,TRUE,2017,FALSE,5.5
+ARE,United Arab Emirates,YEM,Yemen,Middle East,TRUE,2018,FALSE,8.7
+CHN,China,QAT,Qatar,Gulf,TRUE,2017,FALSE,62.8
+CHN,China,QAT,Qatar,Gulf,TRUE,2018,FALSE,62.8
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2017,TRUE,33.333
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2018,TRUE,48.333
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2018,FALSE,0.5
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2019,TRUE,33.333
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2020,TRUE,33.333
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2021,FALSE,25
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2021,TRUE,33.333
+CHN,China,SAU,Saudi Arabia,Gulf,TRUE,2022,TRUE,33.333
+CHN,China,ARE,United Arab Emirates,Gulf,TRUE,2017,FALSE,5
+CHN,China,ARE,United Arab Emirates,Gulf,TRUE,2017,TRUE,30
+CHN,China,ARE,United Arab Emirates,Gulf,TRUE,2018,FALSE,5
+CHN,China,ARE,United Arab Emirates,Gulf,TRUE,2018,TRUE,30
+CHN,China,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,11
+CHN,China,ARE,United Arab Emirates,Gulf,TRUE,2020,FALSE,18.2
+CHN,China,IRQ,Iraq,Middle East,TRUE,2024,TRUE,7.5
+CHN,China,IRQ,Iraq,Middle East,TRUE,2024,FALSE,0.35
+CHN,China,JOR,Jordan,Middle East,TRUE,2023,FALSE,11
+CHN,China,JOR,Jordan,Middle East,TRUE,2024,FALSE,11
+EU,Bulgaria,SAU,Saudi Arabia,Gulf,TRUE,2016,FALSE,0.96
+EU,Bulgaria,SAU,Saudi Arabia,Gulf,TRUE,2017,FALSE,0.96
+EU,Bulgaria,IRQ,Iraq,Middle East,TRUE,2022,FALSE,17.6
+EU,Finland,QAT,Qatar,Gulf,TRUE,2024,FALSE,5
+EU,Finland,ARE,United Arab Emirates,Gulf,TRUE,2016,FALSE,16
+EU,France,KWT,Kuwait,Gulf,TRUE,2019,FALSE,25
+EU,France,KWT,Kuwait,Gulf,TRUE,2020,FALSE,97
+EU,France,KWT,Kuwait,Gulf,TRUE,2021,FALSE,97
+EU,France,KWT,Kuwait,Gulf,TRUE,2022,FALSE,72
+EU,France,KWT,Kuwait,Gulf,TRUE,2023,FALSE,20.75
+EU,France,KWT,Kuwait,Gulf,TRUE,2024,FALSE,20.75
+EU,France,QAT,Qatar,Gulf,TRUE,2018,FALSE,6.933
+EU,France,QAT,Qatar,Gulf,TRUE,2019,FALSE,6.933
+EU,France,QAT,Qatar,Gulf,TRUE,2020,FALSE,6.933
+EU,France,QAT,Qatar,Gulf,TRUE,2021,FALSE,383.567
+EU,France,QAT,Qatar,Gulf,TRUE,2022,FALSE,436.067
+EU,France,QAT,Qatar,Gulf,TRUE,2023,FALSE,88.567
+EU,France,QAT,Qatar,Gulf,TRUE,2024,FALSE,26.9
+EU,France,QAT,Qatar,Gulf,TRUE,2025,FALSE,26.9
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2016,FALSE,12.5
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2017,FALSE,12.5
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2018,FALSE,36.6
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2019,FALSE,70.92
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2020,FALSE,161.295
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2021,FALSE,101.575
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,182.587
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,106.667
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,51
+EU,France,SAU,Saudi Arabia,Gulf,TRUE,2025,FALSE,31.667
+EU,France,ARE,United Arab Emirates,Gulf,TRUE,2020,FALSE,7.5
+EU,France,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,7.5
+EU,France,ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,242.25
+EU,France,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,340.25
+EU,France,ARE,United Arab Emirates,Gulf,TRUE,2025,FALSE,177
+EU,France,IRQ,Iraq,Middle East,TRUE,2022,FALSE,26
+EU,France,IRQ,Iraq,Middle East,TRUE,2024,FALSE,56
+EU,France,IRQ,Iraq,Middle East,TRUE,2025,FALSE,48
+EU,France,JOR,Jordan,Middle East,TRUE,2024,FALSE,10
+EU,France,LBN,Lebanon,Middle East,TRUE,2017,FALSE,4.6
+EU,France,LBN,Lebanon,Middle East,TRUE,2018,FALSE,4.6
+EU,France,LBN,Lebanon,Middle East,TRUE,2019,FALSE,4.6
+EU,France,LBN,Lebanon,Middle East,TRUE,2024,FALSE,2.4
+EU,Germany,QAT,Qatar,Gulf,TRUE,2020,FALSE,20
+EU,Germany,QAT,Qatar,Gulf,TRUE,2021,FALSE,27
+EU,Germany,QAT,Qatar,Gulf,TRUE,2022,FALSE,27
+EU,Germany,QAT,Qatar,Gulf,TRUE,2025,FALSE,10.2
+EU,Germany,SAU,Saudi Arabia,Gulf,TRUE,2017,FALSE,37.375
+EU,Germany,SAU,Saudi Arabia,Gulf,TRUE,2018,FALSE,38.095
+EU,Germany,SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,35
+EU,Germany,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,35
+EU,Germany,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,35
+EU,Germany,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,10
+EU,Germany,ARE,United Arab Emirates,Gulf,TRUE,2020,FALSE,10
+EU,Germany,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,15
+EU,Germany,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,10
+EU,Germany,ISR,Israel,Middle East,TRUE,2023,FALSE,2.017
+EU,Germany,ISR,Israel,Middle East,TRUE,2024,FALSE,2.017
+EU,Germany,ISR,Israel,Middle East,TRUE,2025,FALSE,2.017
+EU,Germany,JOR,Jordan,Middle East,TRUE,2016,FALSE,16.825
+EU,Germany,JOR,Jordan,Middle East,TRUE,2017,FALSE,16.825
+EU,Germany,JOR,Jordan,Middle East,TRUE,2018,FALSE,28.85
+EU,Germany,JOR,Jordan,Middle East,TRUE,2019,FALSE,14.025
+EU,Germany,JOR,Jordan,Middle East,TRUE,2020,FALSE,14.025
+EU,Italy,KWT,Kuwait,Gulf,TRUE,2021,FALSE,269.5
+EU,Italy,KWT,Kuwait,Gulf,TRUE,2022,FALSE,269.5
+EU,Italy,KWT,Kuwait,Gulf,TRUE,2023,FALSE,269.5
+EU,Italy,KWT,Kuwait,Gulf,TRUE,2024,FALSE,269.5
+EU,Italy,KWT,Kuwait,Gulf,TRUE,2025,FALSE,264.5
+EU,Italy,QAT,Qatar,Gulf,TRUE,2021,FALSE,430
+EU,Italy,QAT,Qatar,Gulf,TRUE,2022,FALSE,714.5
+EU,Italy,QAT,Qatar,Gulf,TRUE,2023,FALSE,501.833
+EU,Italy,QAT,Qatar,Gulf,TRUE,2024,FALSE,282.833
+EU,Italy,QAT,Qatar,Gulf,TRUE,2025,FALSE,123.333
+EU,Italy,SAU,Saudi Arabia,Gulf,TRUE,2016,FALSE,36
+EU,Italy,SAU,Saudi Arabia,Gulf,TRUE,2017,FALSE,36
+EU,Italy,SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,4.583
+EU,Italy,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,4.583
+EU,Italy,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,4.583
+EU,Italy,ARE,United Arab Emirates,Gulf,TRUE,2018,FALSE,9.6
+EU,Italy,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,9.6
+EU,Italy,ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,2.75
+EU,Italy,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,2.75
+EU,Italy,ARE,United Arab Emirates,Gulf,TRUE,2025,FALSE,21.5
+EU,Italy,ISR,Israel,Middle East,TRUE,2024,FALSE,13.5
+EU,Italy,ISR,Israel,Middle East,TRUE,2025,FALSE,13.5
+EU,Netherlands,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,15
+EU,Netherlands,ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,19.5
+EU,Netherlands,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,4.5
+EU,Netherlands,JOR,Jordan,Middle East,TRUE,2016,FALSE,3.6
+EU,Netherlands,JOR,Jordan,Middle East,TRUE,2019,FALSE,1.2
+EU,Netherlands,JOR,Jordan,Middle East,TRUE,2023,FALSE,6.36
+EU,Poland,IRQ,Iraq,Middle East,TRUE,2018,FALSE,2.4
+EU,Slovenia,IRQ,Iraq,Middle East,TRUE,2016,FALSE,0.8
+EU,Spain,SAU,Saudi Arabia,Gulf,TRUE,2020,FALSE,30
+EU,Spain,SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,328.75
+EU,Spain,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,328.75
+EU,Spain,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,328.75
+EU,Spain,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,62.5
+EU,Sweden,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,40
+EU,Sweden,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,80
+IRN,Iran,IRQ,Iraq,Middle East,TRUE,2020,TRUE,0.45
+IRN,Iran,LBN,Lebanon,Middle East,TRUE,2023,FALSE,0.75
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2017,TRUE,1
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2018,TRUE,1.333
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2019,TRUE,2
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2020,TRUE,2
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2020,FALSE,0.2
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2021,TRUE,1.667
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2021,FALSE,0.2
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2022,TRUE,0.667
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2022,FALSE,15.3
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2023,TRUE,1.067
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2023,FALSE,17.3
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2024,TRUE,0.367
+IRN,Iran,YEM,Yemen,Middle East,TRUE,2024,FALSE,0.2
+ISR,Israel,ARE,United Arab Emirates,Gulf,TRUE,2022,FALSE,187.5
+ISR,Israel,IRQ,Iraq,Middle East,TRUE,2023,FALSE,15.12
+KOR,South Korea,SAU,Saudi Arabia,Gulf,TRUE,2018,FALSE,10.5
+KOR,South Korea,SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,2.5
+KOR,South Korea,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,26.9
+KOR,South Korea,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,24.4
+KOR,South Korea,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,17.6
+KOR,South Korea,ARE,United Arab Emirates,Gulf,TRUE,2022,FALSE,17.6
+KOR,South Korea,ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,18.1
+KOR,South Korea,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,198.1
+KOR,South Korea,ARE,United Arab Emirates,Gulf,TRUE,2025,FALSE,180
+KOR,South Korea,IRQ,Iraq,Middle East,TRUE,2020,FALSE,1.4
+RUS,Russia,BHR,Bahrain,Gulf,TRUE,2018,FALSE,21.12
+RUS,Russia,QAT,Qatar,Gulf,TRUE,2018,FALSE,20
+RUS,Russia,QAT,Qatar,Gulf,TRUE,2019,FALSE,20
+RUS,Russia,SAU,Saudi Arabia,Gulf,TRUE,2019,FALSE,12
+RUS,Russia,ARE,United Arab Emirates,Gulf,TRUE,2018,FALSE,66.667
+RUS,Russia,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,66.667
+RUS,Russia,ARE,United Arab Emirates,Gulf,TRUE,2020,FALSE,66.667
+RUS,Russia,IRQ,Iraq,Middle East,TRUE,2016,FALSE,13.8
+RUS,Russia,IRQ,Iraq,Middle East,TRUE,2018,FALSE,146
+RUS,Russia,IRQ,Iraq,Middle East,TRUE,2019,FALSE,146
+RUS,Russia,JOR,Jordan,Middle East,TRUE,2018,FALSE,56
+RUS,Russia,JOR,Jordan,Middle East,TRUE,2019,FALSE,56
+RUS,Russia,SYR,Syria,Middle East,TRUE,2016,FALSE,3.24
+RUS,Russia,SYR,Syria,Middle East,TRUE,2017,FALSE,41.04
+RUS,Russia,SYR,Syria,Middle East,TRUE,2018,FALSE,205.06
+RUS,Russia,SYR,Syria,Middle East,TRUE,2019,FALSE,92
+RUS,Russia,SYR,Syria,Middle East,TRUE,2020,FALSE,80.95
+RUS,Russia,SYR,Syria,Middle East,TRUE,2021,FALSE,8.55
+TUR,Turkiye,BHR,Bahrain,Gulf,TRUE,2020,FALSE,2.16
+TUR,Turkiye,BHR,Bahrain,Gulf,TRUE,2022,FALSE,10.5
+TUR,Turkiye,KWT,Kuwait,Gulf,TRUE,2025,TRUE,43.2
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2017,FALSE,18.083
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2018,FALSE,27.083
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2019,TRUE,14.4
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2019,FALSE,55.083
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2020,FALSE,27.713
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2021,FALSE,122.263
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2022,FALSE,103.763
+TUR,Turkiye,QAT,Qatar,Gulf,TRUE,2023,FALSE,9.63
+TUR,Turkiye,SAU,Saudi Arabia,Gulf,TRUE,2020,TRUE,4.5
+TUR,Turkiye,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,21.9
+TUR,Turkiye,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,21.9
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,65.6
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2020,FALSE,65.6
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,65.6
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2022,FALSE,133.15
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,65.6
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2023,TRUE,48
+TUR,Turkiye,ARE,United Arab Emirates,Gulf,TRUE,2024,TRUE,9
+TUR,Turkiye,IRQ,Iraq,Middle East,TRUE,2023,FALSE,3
+TUR,Turkiye,IRQ,Iraq,Middle East,TRUE,2024,FALSE,3
+TUR,Turkiye,SYR,Syria,Middle East,TRUE,2017,FALSE,0.96
+TUR,Turkiye,SYR,Syria,Middle East,TRUE,2019,FALSE,0.82
+TUR,Turkiye,SYR,Syria,Middle East,TRUE,2025,FALSE,2.24
+USA,United States,BHR,Bahrain,Gulf,TRUE,2017,FALSE,2.58
+USA,United States,BHR,Bahrain,Gulf,TRUE,2018,FALSE,5.74
+USA,United States,BHR,Bahrain,Gulf,TRUE,2019,FALSE,2.04
+USA,United States,BHR,Bahrain,Gulf,TRUE,2021,FALSE,179.6
+USA,United States,BHR,Bahrain,Gulf,TRUE,2022,FALSE,243.13
+USA,United States,BHR,Bahrain,Gulf,TRUE,2023,FALSE,504.71
+USA,United States,BHR,Bahrain,Gulf,TRUE,2024,FALSE,641.58
+USA,United States,BHR,Bahrain,Gulf,TRUE,2025,FALSE,27.7
+USA,United States,KWT,Kuwait,Gulf,TRUE,2017,FALSE,1.02
+USA,United States,KWT,Kuwait,Gulf,TRUE,2018,FALSE,7
+USA,United States,KWT,Kuwait,Gulf,TRUE,2019,FALSE,7
+USA,United States,KWT,Kuwait,Gulf,TRUE,2021,FALSE,1264
+USA,United States,KWT,Kuwait,Gulf,TRUE,2022,FALSE,1311
+USA,United States,KWT,Kuwait,Gulf,TRUE,2023,FALSE,73
+USA,United States,KWT,Kuwait,Gulf,TRUE,2024,FALSE,11
+USA,United States,KWT,Kuwait,Gulf,TRUE,2025,FALSE,37.5
+USA,United States,OMN,Oman,Gulf,TRUE,2017,FALSE,2.16
+USA,United States,OMN,Oman,Gulf,TRUE,2020,FALSE,4
+USA,United States,OMN,Oman,Gulf,TRUE,2021,FALSE,4
+USA,United States,QAT,Qatar,Gulf,TRUE,2018,FALSE,1.5
+USA,United States,QAT,Qatar,Gulf,TRUE,2019,FALSE,37
+USA,United States,QAT,Qatar,Gulf,TRUE,2020,FALSE,83.6
+USA,United States,QAT,Qatar,Gulf,TRUE,2021,FALSE,1074.59
+USA,United States,QAT,Qatar,Gulf,TRUE,2022,FALSE,1277.59
+USA,United States,QAT,Qatar,Gulf,TRUE,2023,FALSE,1061.59
+USA,United States,QAT,Qatar,Gulf,TRUE,2024,FALSE,616.98
+USA,United States,QAT,Qatar,Gulf,TRUE,2025,FALSE,668.1
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2017,FALSE,65.25
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2018,FALSE,52.9
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2019,FALSE,313.65
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2020,FALSE,657.583
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2021,FALSE,566.083
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,778.083
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2023,FALSE,339.817
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2024,FALSE,191.967
+USA,United States,SAU,Saudi Arabia,Gulf,TRUE,2025,FALSE,2181.967
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2017,FALSE,35.04
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2018,FALSE,202.133
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2019,FALSE,161.493
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2020,FALSE,238.223
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2021,FALSE,337.893
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2022,FALSE,349.06
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,462
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,330.962
+USA,United States,ARE,United Arab Emirates,Gulf,TRUE,2025,FALSE,306.795
+USA,United States,IRQ,Iraq,Middle East,TRUE,2016,FALSE,27.2
+USA,United States,IRQ,Iraq,Middle East,TRUE,2017,FALSE,23.54
+USA,United States,IRQ,Iraq,Middle East,TRUE,2018,FALSE,6.12
+USA,United States,IRQ,Iraq,Middle East,TRUE,2019,FALSE,9.6
+USA,United States,IRQ,Iraq,Middle East,TRUE,2020,FALSE,9.6
+USA,United States,IRQ,Iraq,Middle East,TRUE,2022,FALSE,11
+USA,United States,IRQ,Iraq,Middle East,TRUE,2023,FALSE,8.2
+USA,United States,IRQ,Iraq,Middle East,TRUE,2024,FALSE,12.51
+USA,United States,IRQ,Iraq,Middle East,TRUE,2025,FALSE,6.75
+USA,United States,ISR,Israel,Middle East,TRUE,2016,FALSE,171
+USA,United States,ISR,Israel,Middle East,TRUE,2017,FALSE,40
+USA,United States,ISR,Israel,Middle East,TRUE,2018,FALSE,59.15
+USA,United States,ISR,Israel,Middle East,TRUE,2019,FALSE,50.91
+USA,United States,ISR,Israel,Middle East,TRUE,2020,FALSE,16.4
+USA,United States,ISR,Israel,Middle East,TRUE,2021,FALSE,16.4
+USA,United States,ISR,Israel,Middle East,TRUE,2022,FALSE,241.322
+USA,United States,ISR,Israel,Middle East,TRUE,2023,FALSE,425.272
+USA,United States,ISR,Israel,Middle East,TRUE,2024,FALSE,107.972
+USA,United States,ISR,Israel,Middle East,TRUE,2025,FALSE,323.402
+USA,United States,JOR,Jordan,Middle East,TRUE,2016,FALSE,1
+USA,United States,JOR,Jordan,Middle East,TRUE,2017,FALSE,119.76
+USA,United States,JOR,Jordan,Middle East,TRUE,2018,FALSE,104.26
+USA,United States,JOR,Jordan,Middle East,TRUE,2019,FALSE,87.85
+USA,United States,JOR,Jordan,Middle East,TRUE,2020,FALSE,5.55
+USA,United States,JOR,Jordan,Middle East,TRUE,2021,FALSE,16.8
+USA,United States,JOR,Jordan,Middle East,TRUE,2022,FALSE,28.8
+USA,United States,JOR,Jordan,Middle East,TRUE,2023,FALSE,4.5
+USA,United States,JOR,Jordan,Middle East,TRUE,2024,FALSE,12.5
+USA,United States,LBN,Lebanon,Middle East,TRUE,2017,FALSE,13.44
+USA,United States,LBN,Lebanon,Middle East,TRUE,2018,FALSE,20.74
+USA,United States,LBN,Lebanon,Middle East,TRUE,2019,FALSE,60.207
+USA,United States,LBN,Lebanon,Middle East,TRUE,2020,FALSE,39.329
+USA,United States,LBN,Lebanon,Middle East,TRUE,2021,FALSE,38.629
+USA,United States,LBN,Lebanon,Middle East,TRUE,2022,FALSE,31.863
+USA,United States,LBN,Lebanon,Middle East,TRUE,2023,FALSE,10.602
+USA,United States,SYR,Syria,Middle East,TRUE,2017,FALSE,0.3
+other,Ukraine,QAT,Qatar,Gulf,TRUE,2021,FALSE,28
+other,Ukraine,SAU,Saudi Arabia,Gulf,TRUE,2018,FALSE,40.1
+other,Ukraine,SAU,Saudi Arabia,Gulf,TRUE,2019,FALSE,40.1
+other,Ukraine,SAU,Saudi Arabia,Gulf,TRUE,2021,FALSE,10.8
+other,unknown supplier(s),SAU,Saudi Arabia,Gulf,TRUE,2022,FALSE,20
+other,unknown supplier(s),ARE,United Arab Emirates,Gulf,TRUE,2023,FALSE,5
+other,unknown supplier(s),ARE,United Arab Emirates,Gulf,TRUE,2024,FALSE,5
+other,unknown supplier(s),IRQ,Iraq,Middle East,TRUE,2016,FALSE,1
+other,unknown supplier(s),IRQ,Iraq,Middle East,TRUE,2023,FALSE,3.2
+other,unknown supplier(s),YEM,Yemen,Middle East,TRUE,2016,FALSE,1.6
+other,unknown supplier(s),YEM,Yemen,Middle East,TRUE,2022,FALSE,1.4

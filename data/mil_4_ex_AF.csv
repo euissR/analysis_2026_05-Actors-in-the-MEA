@@ -1,0 +1,56 @@
+key,exercise,year,n_countries,lead_iso3,lead_actor,us_led,eu_led,eu_op,area,type,category,source,format
+row4,African Lion,2024,1,USA,USA,TRUE,FALSE,,"Morocco, Ghana, Senegal and Tunisia",Interforces,,https://www.africom.mil/what-we-do/exercises/african-lion,Multilateral
+row5,Africa-India Key Maritime Engagement (Aikeyme),2025,10,IND;TZA,IND,FALSE,FALSE,,Indian Ocean,Naval,,https://adf-magazine.com/2025/06/india-co-hosts-first-joint-african-maritime-exercise/,Multilateral
+row6,African Lion,2026,5,USA;MAR;GHA;TUN;SEN,USA,TRUE,FALSE,,West Africa/Morocco,Interforces,,,Multilateral
+African Lion 2025,African Lion (1/2),2025,26,USA,USA,TRUE,FALSE,,West Africa/Morocco,Interforces,,,Multilateral
+row13,Anatolian Eagle,2026,3,TUR;EGY,TUR,FALSE,FALSE,,Turkiye,Air forces,,https://www.egyptindependent.com/egypt-turkey-conclude-anatolian-eagle-2026-air-exercise/,Multilateral
+row21,ALDABRA III,2024,2,SYC,EU,FALSE,TRUE,ATALANTA,Seychelles,Naval,eunavfor atalanta – named exercise,https://eunavfor.eu/news/operation-atalanta-conducts-aldabra-iii-exercise-seychelles,Multilateral
+row22,ALDABRA IV,2025,1,SYC,EU,FALSE,TRUE,ATALANTA,Seychelles,Naval,eunavfor atalanta – named exercise,https://www.facebook.com/eunavalforce/posts/aldabra-iv-exercise-seychelles-the-bilateral-exercise-between-operation-atalanta/1118227470346543/,Multilateral
+row23,ALDABRA V – phase 1,2026,1,SYC,EU,FALSE,TRUE,ATALANTA,Seychelles,Naval,eunavfor atalanta – named exercise,https://eunavfor.eu/news/operation-atalanta-conducts-first-phase-aldabra-v-exercise-seychelles,Multilateral
+row24,ASPIDES–Djibouti Coast Guard common exercise,2026,2,DJI,EU,FALSE,TRUE,ASPIDES,Djibouti / Gulf of Aden,Naval,eunavfor aspides – common exercise,https://www.eeas.europa.eu/eunavfor-aspides/eunavfor-aspides-and-djibouti-coast-guard-common-exercise_en?s=410381,Multilateral
+row26,ATALANTA–Japan joint exercise,2024,1,JPN,EU;JPN,FALSE,TRUE,ATALANTA,Western Indian Ocean,Naval,eunavfor atalanta – joint activity,https://eunavfor.eu/newsletter/newsletter-september-2024,Multilateral
+row27,Bridge of friendship,2025,2,RUS;EGY,RUS,FALSE,FALSE,,Egypt/Mediterranean sea,Naval,bilateral,"https://sis.gov.eg/en/egypt/military-institution/joint-egyptian-russian-naval-drill-bridge-of-friendship/#:~:text=The%20exercise%20included%20executing%20multiple,maritime%20search%20and%20rescue%20missions.",Bilateral
+row30,Bright Star,2025,13,USA;EGY,USA,TRUE,FALSE,,Egypt,Interforces,,,Multilateral
+row35,Bull Shark 25-1,2024,4,USA;DJI,USA,TRUE,FALSE,,Djibouti,Interforces,,,Multilateral
+row36,Bull Shark 25-2,2025,4,USA;DJI,USA,TRUE,FALSE,,Djibouti,Interforces,,,Multilateral
+row42,Chergui 25,2025,2,MAR;FRA,EU,FALSE,TRUE,,Morocco,Interforces,,https://www.defense.gouv.fr/terre/actualites/exercice-chergui-2025-linteroperabilite-franco-marocaine-testee-desert,Bilateral
+row44,Cleopatra 24,2024,2,EGY;FRA,EU,FALSE,TRUE,,Egypt,Naval,bilateral,https://www.defense.gouv.fr/marine/actualites/exercice-cleopatra-24-forces-armees-egyptiennes,Bilateral
+row47,Corymbe,2026,2,FRA;SEN,EU,FALSE,TRUE,,Senegal,Naval,bilateral,https://www.defense.gouv.fr/marine/actualites/corymbe-exercice-entre-marines-francaises-senegalaises-au-large-dakar,Bilateral
+row48,Cutlass Express,2026,19,USA,USA,TRUE,FALSE,,Mauritius/Seychelles,Naval,,https://mu.usembassy.gov/news/exercise-cutlass-express-2026-to-enhance-maritime-security-in-east-africa/,Multilateral
+row49,Cyclone 4,2026,2,IND;EGY,IND,FALSE,FALSE,,Egypt,Land / special forces,bilateral,https://sis.gov.eg/en/egypt/military-institution/egyptian-indian-joint-exercise-cyclone-4/,Bilateral
+row50,Friendship Sea,2025,2,TUR;EGY,TUR,FALSE,FALSE,,Turkish waters,Naval,bilateral,https://sis.gov.eg/en/media-center/news/egyptian-turkish-naval-exercise-friendship-sea-2025-wraps-up/,Bilateral
+row52,DORALEH II,2025,2,DJI,EU,FALSE,TRUE,ATALANTA,Djibouti,Naval,eunavfor atalanta – named exercise,https://eunavfor.eu/news/operation-atalanta-co-organises-doraleh-ii-regional-exercise-djibouti,Multilateral
+row53,Eagles of civilisation,2026,2,CHN;EGY,CHN,FALSE,FALSE,,Egypt,Air forces,,https://www.ilsole24ore.com/art/caccia-pechino-volano-cieli-dell-egitto-prova-forza-cinese-contro-parigi-e-l-ue-AJg5orz,Bilateral
+row54,Eagles of Civilisation,2025,2,CHN;EGY,CHN,FALSE,FALSE,,Egypt,Air forces,bilateral,"https://sis.gov.eg/en/egypt/military-institution/joint-egyptian-chinese-air-exercise-eagles-of-civilization-2025/#:~:text=Eagles%20of%20Civilization%202025%20is,Egyptian%20and%20Chinese%20air%20forces.",Bilateral
+row63,International Maritime Exercise (IMX),2025,20,USA,USA,TRUE,FALSE,,"Arabian Gulf, Gulf of Oman, Gulf of Aden and the Red Sea",Naval,,,Multilateral
+row64,Equato Medichos 2025,2025,8,GAB;FRA,EU,FALSE,TRUE,,Gabon,Interforces,,https://www.defense.gouv.fr/operations/actualites/gabon-exercice-regional-militaire-equato-medichos,Multilateral
+row69,EU–India naval exercise,2025,3,IND,EU;IND,FALSE,TRUE,ATALANTA,Western Indian Ocean,Naval,eunavfor atalanta – co-organised exercise,https://eunavfor.eu/news/eunavfor-atalanta-and-indian-navy-conduct-naval-exercise-indian-ocean,Multilateral
+row72,Flintlock,2026,4,USA;CIV,USA,TRUE,FALSE,,Cote d'Ivoire/Libya,Land / special forces,,https://www.war.gov/News/News-Stories/Article/Article/4460643/africom-commences-exercise-flintlock-2026-in-africa/,Multilateral
+row74,Flintlock,2026,3,USA;LBY,USA,TRUE,FALSE,,Libya,Land / special forces,,,Multilateral
+row75,Flintlock,2025,22,USA;CIV,USA,TRUE,FALSE,,Cote d'Ivoire,Land / special forces,,,Multilateral
+row79,MEDUSA 13,2024,5,GRC;EGY,EU,FALSE,TRUE,,Greece / Egypt,Interforces,,https://sis.gov.eg/en/egypt/military-institution/joint-naval-air-exercise-medusa-13/,Multilateral
+row80,Furor–Niani counter-piracy exercise,2024,2,ESP;SEN,EU,FALSE,TRUE,,"Off Dakar, Senegal / Atlantic",Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/240624-ni-ultima-escala-furor.html,Bilateral
+row81,Furor–Nigerian Navy bilateral exercise,2024,2,ESP;NGA,EU,FALSE,TRUE,,Lagos and Nigerian territorial waters / Gulf of Guinea,Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/240408-ni-furor-lagos.html,Bilateral
+row89,Furor–Nigerian Navy joint exercises,2026,2,ESP;NGA,EU,FALSE,TRUE,,Lagos and Gulf of Guinea,Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/260413-ni-escala-furor-lagos.html,Bilateral
+row90,FY2025 Joint Exercise Overseas,2025,1,JPN,JPN,FALSE,FALSE,,"Jordan, Djibouti, Gabon, Ghana and connecting routes",Interforces,,https://www.mod.go.jp/js/pdf/2025/p20251121_01e.pdf,Multilateral
+row91,Grand African NEMO,2026,1,FRA,EU,FALSE,TRUE,,Gulf of Guinea,Naval,,,Multilateral
+row92,IBSAMAR VIII,2024,3,IND;ZAF,IND,FALSE,FALSE,,Simon’s Town and waters off South Africa,Naval,trilateral,https://www.facebook.com/SANationalDefenceForce/posts/exercise-ibsamar-viii-2024-successfully-concludesthe-8th-instalment-of-exercise-/866034822368696/,Multilateral
+row95,Jeanne d'Arc 25 - CIV,2025,2,CIV;FRA,EU,FALSE,TRUE,,Cote d'ivoire,Interforces,,https://www.defense.gouv.fr/operations/actualites/dlia-i-jeanne-darc-25-exercice-conjoint-forces-armees-cote-divoire,Bilateral
+row96,Justified Accord,2026,4,USA,USA,TRUE,FALSE,,East Africa,Interforces,,,Multilateral
+row97,Lamitiye,2026,2,IND;SYC,IND,FALSE,FALSE,,Seychelles,Land / special forces,bilateral,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2236791&reg=3&lang=1,Bilateral
+row101,Marathon 25,2025,2,MAR;FRA,EU,FALSE,TRUE,,Morocco,Air forces,,https://www.defense.gouv.fr/air/actualites/exercice-marathon25-succes-franco-marocain,Bilateral
+row104,MEDUSA 14,2025,5,EGY;GRC,EU,FALSE,TRUE,,Egypt,Interforces,,https://www.defense.gouv.fr/marine/actualites/mediterranee-orientale-exercice-multinational-medusa-14,Multilateral
+row107,Meteoro–DB Abuja PASSEX,2024,2,ESP;NGA,EU,FALSE,TRUE,,Lagos and Nigerian waters / Gulf of Guinea,Naval,bilateral,https://emad.defensa.gob.es/en/operaciones/operaciones-en-el-exterior/60-Seguridad-Cooperativa-Actividades-de-Diplomacia/noticias/listado/240930_meteoro_escala_lagos.html?__locale=en,Bilateral
+row109,Obangame Express,2026,2,USA;SEN,USA,TRUE,FALSE,,Gulf of Guinea,Naval,,,Bilateral
+row111,Obangame Express,2025,24,USA,USA,TRUE,FALSE,,Gulf of Guinea,Naval,,,Multilateral
+row113,Peace and Unity,2024,3,CHN,CHN,FALSE,FALSE,,Tanzania,Land / special forces,,,Multilateral
+row114,Phoenix Express,2026,8,USA,USA,TRUE,FALSE,,Tunisia,Naval,,https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/4387233/exercise-phoenix-express-2026-concludes-in-tunisia/,Multilateral
+row116,Rayo–Senegalese Navy joint training exercises,2025,2,ESP;SEN,EU,FALSE,TRUE,,"Dakar, Senegal / Atlantic",Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/251125-ni-BAMRayo-Dakar.html,Bilateral
+row117,Reina Sofía–Tarik Ben Ziyad joint exercise,2025,2,ESP;MAR,EU,FALSE,TRUE,,"Tangier, Strait of Gibraltar and Alboran Sea",Naval,bilateral / nato partner activity,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/34-OTAN-SEA-GUARDIAN-Mediterraneo/noticias/listado/251117-fragata-ReinaSofia-Tanger.html,Bilateral
+row118,Relámpago–Niani PASSEX,2025,2,ESP;SEN,EU,FALSE,TRUE,,Dakar and Senegalese waters / Atlantic,Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/250609-ni-relampago-dakar.html,Bilateral
+row119,Sinople,2025,2,FRA;GAB,EU,FALSE,TRUE,,Gabon,Interforces,,https://www.defense.gouv.fr/operations/actualites/dlia-g-exercice-sinople-combat-jungle-lequateur,Bilateral
+row123,Tropical Storm 2025,2025,2,BEL;GAB,EU,FALSE,TRUE,,Gabon,Interforces,,https://www.mil.be/fr/news/tropical-storm-2025-s-entrainer-en-milieu-tropical/,Bilateral
+row124,USALAMA BAHARINI I,2024,1,KEN,EU,FALSE,TRUE,ATALANTA,"Mombasa, Kenya",Naval,eunavfor atalanta – named exercise,https://eunavfor.eu/news/atalanta-strengthens-partnership-kenya,Multilateral
+row125,USALAMA BAHARINI II,2025,1,KEN,EU,FALSE,TRUE,ATALANTA,Kenya,Naval,eunavfor atalanta – named exercise,https://eunavfor.eu/news/operation-atalanta-co-organises-usalama-baharini-ii-exercise-kenya,Multilateral
+row126,Will for Peace,2026,5,CHN;ZAF,CHN,FALSE,FALSE,,South Africa,Naval,,https://www.rfi.fr/en/international/20260110-south-africa-defends-naval-drills-with-iran-russia-as-essential,Multilateral
+row127,Zangbeto,2024,2,FRA;BEN,EU,FALSE,TRUE,,Benin / Gulf of Guinea,Interforces,,https://www.defense.gouv.fr/marine/actualites/corymbe-exercice-amphibie-zangbeto-forces-armees-beninoises,Bilateral

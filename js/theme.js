@@ -6,11 +6,41 @@ export const theme = {
   fuchsia: "#df3144",
   navy: "#113655",
   orange: "#f28d22",
+  teal3: "#1d3956",
+  fuchsia2: "#df3144",
+  fuchsia3: "#a41e26",
+  lightorange: "#f9b466",
+  teal2: "#376882",
+  mauve: "#33163a",
+  mint: "#99cb92",
+  egg: "#ffde75",
   grey: "#595959",
   light: "#c6c6c6",
   nearWhite: "#f9f9f9",
   ink: "#1d1d1b",
   muted: "#646363",
+
+  // one colour per actor, the same in every chart (keys = actor codes in actors.csv).
+  // Actors without an entry (and "other") use `light`.
+  actorColors: {
+    EU: "#309ebe", // teal
+    USA: "#1d3956", // teal3
+    CHN: "#df3144", // fuchsia2
+    RUS: "#a41e26", // fuchsia3
+    TUR: "#f9b466", // lightorange
+    ISR: "#376882", // teal2
+    IRN: "#99cb92", // mint
+    IND: "#ffde75", // egg
+    JPN: "#595959", // grey
+  },
+
+  // deployment types (spikes), kept apart from the actor colours
+  typeColors: {
+    Bilateral: "#33163a", // mauve
+    PMC: "#a41e26", // fuchsia3
+    UN: "#595959", // frog
+    Other: "#8e8e8e",
+  },
 
   // maps: white land with light-grey outlines on the page background
   land: "#ffffff",

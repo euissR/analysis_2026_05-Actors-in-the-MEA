@@ -8,12 +8,18 @@ import { scrollEngine } from "./scroll.js";
 import { makeDotMap } from "./charts/dotMap.js";
 import { makeRangeChart } from "./charts/rangeChart.js";
 import { makeTileGrid } from "./charts/tileGrid.js";
+import { makeSankey } from "./charts/sankey.js";
+import { makeMilMap } from "./charts/milMap.js";
+import { makeStackedCols } from "./charts/stackedCols.js";
 
 // chart types available to the chapter configs
 const CHART_TYPES = {
   dotMap: makeDotMap,
   rangeChart: makeRangeChart,
   tileGrid: makeTileGrid,
+  sankey: makeSankey,
+  milMap: makeMilMap,
+  stackedCols: makeStackedCols,
 };
 
 const url = (file) => `${CONFIG.BASE_URL}/data/${file}`;
@@ -34,6 +40,17 @@ function loadBase(region) {
   return baseCache[region.geo];
 }
 
+// extra data files of a chart: { bases: "mil_2_bases_{suffix}" } -> { bases: [rows] }
+async function loadExtra(files = {}, region) {
+  const entries = await Promise.all(
+    Object.entries(files).map(async ([name, file]) => [
+      name,
+      await d3.csv(url(`${file.replace("{suffix}", region.suffix)}.csv`)),
+    ]),
+  );
+  return Object.fromEntries(entries);
+}
+
 async function init(root) {
   const region = REGIONS[root.dataset.region];
   const chapterId = `${root.dataset.region}_${root.dataset.chapter}`;
@@ -47,10 +64,12 @@ async function init(root) {
   const charts = {};
   await Promise.all(
     Object.entries(chapter.charts).map(async ([id, spec]) => {
-      const [rows, sub] = await Promise.all([
+      const [rows, sub, extra] = await Promise.all([
         d3.csv(url(`${spec.data}_${region.suffix}.csv`)),
         // optional subregion aggregates (e.g. dipl_2_vis_sub_AF.csv)
         spec.sub ? d3.csv(url(`${spec.sub}_${region.suffix}.csv`)) : [],
+        // optional further files, { name: "file_{suffix}" } -> extra.name (rows)
+        loadExtra(spec.extra, region),
       ]);
       const el = document.createElement("div");
       el.className = "fa-chart";
@@ -59,6 +78,7 @@ async function init(root) {
         ...base,
         rows,
         sub,
+        extra,
         spec,
         region,
       });

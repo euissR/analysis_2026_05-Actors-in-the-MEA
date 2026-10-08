@@ -1,0 +1,268 @@
+key,iso3,role
+row4,USA,Lead
+row5,IND,Lead
+row5,TZA,Lead
+row5,COM,Participant
+row5,DJI,Participant
+row5,KEN,Participant
+row5,MDG,Participant
+row5,MUS,Participant
+row5,MOZ,Participant
+row5,SYC,Participant
+row5,ZAF,Participant
+row6,USA,Lead
+row6,MAR,Lead
+row6,GHA,Lead
+row6,TUN,Lead
+row6,SEN,Lead
+African Lion 2025,USA,Lead
+African Lion 2025,BEN,Participant
+African Lion 2025,CPV,Participant
+African Lion 2025,CMR,Participant
+African Lion 2025,CIV,Participant
+African Lion 2025,DJI,Participant
+African Lion 2025,EGY,Participant
+African Lion 2025,GMB,Participant
+African Lion 2025,GHA,Participant
+African Lion 2025,GNB,Participant
+African Lion 2025,KEN,Participant
+African Lion 2025,LBR,Participant
+African Lion 2025,LBY,Participant
+African Lion 2025,MRT,Participant
+African Lion 2025,MAR,Participant
+African Lion 2025,NGA,Participant
+African Lion 2025,SEN,Participant
+African Lion 2025,TGO,Participant
+African Lion 2025,TUN,Participant
+African Lion 2025,FRA,Participant
+African Lion 2025,HUN,Participant
+African Lion 2025,ISR,Participant
+African Lion 2025,PRT,Participant
+African Lion 2025,GBR,Participant
+African Lion 2025,ESP,Participant
+African Lion 2025,NLD,Participant
+row13,TUR,Lead
+row13,EGY,Lead
+row13,AZE,Participant
+row21,SYC,Lead
+row21,DJI,Participant
+row22,SYC,Lead
+row23,SYC,Lead
+row24,DJI,Lead
+row24,ITA,Participant
+row26,JPN,Lead
+row27,RUS,Lead
+row27,EGY,Lead
+row30,USA,Lead
+row30,EGY,Lead
+row30,ZAF,Participant
+row30,SAU,Participant
+row30,JOR,Participant
+row30,IND,Participant
+row30,QAT,Participant
+row30,GRC,Participant
+row30,CYP,Participant
+row30,ITA,Participant
+row30,KGZ,Participant
+row30,GBR,Participant
+row30,YEM,Participant
+row35,USA,Lead
+row35,DJI,Lead
+row35,FRA,Participant
+row35,JPN,Participant
+row36,USA,Lead
+row36,DJI,Lead
+row36,FRA,Participant
+row36,JPN,Participant
+row42,MAR,Lead
+row42,FRA,Lead
+row44,EGY,Lead
+row44,FRA,Lead
+row47,FRA,Lead
+row47,SEN,Lead
+row48,USA,Lead
+row48,COM,Participant
+row48,DJI,Participant
+row48,EGY,Participant
+row48,FRA,Participant
+row48,GEO,Participant
+row48,IND,Participant
+row48,KEN,Participant
+row48,MDG,Participant
+row48,MWI,Participant
+row48,MUS,Participant
+row48,MAR,Participant
+row48,MOZ,Participant
+row48,SEN,Participant
+row48,SYC,Participant
+row48,SOM,Participant
+row48,TZA,Participant
+row48,TUN,Participant
+row48,GBR,Participant
+row49,IND,Lead
+row49,EGY,Lead
+row50,TUR,Lead
+row50,EGY,Lead
+row52,DJI,Lead
+row52,JPN,Participant
+row53,CHN,Lead
+row53,EGY,Lead
+row54,CHN,Lead
+row54,EGY,Lead
+row63,USA,Lead
+row63,AUS,Participant
+row63,BHR,Participant
+row63,CAN,Participant
+row63,DJI,Participant
+row63,EGY,Participant
+row63,FRA,Participant
+row63,DEU,Participant
+row63,GRC,Participant
+row63,ITA,Participant
+row63,JPN,Participant
+row63,JOR,Participant
+row63,OMN,Participant
+row63,PAK,Participant
+row63,PHL,Participant
+row63,KOR,Participant
+row63,LKA,Participant
+row63,THA,Participant
+row63,YEM,Participant
+row63,GBR,Participant
+row64,GAB,Lead
+row64,FRA,Lead
+row64,TGO,Participant
+row64,CMR,Participant
+row64,CIV,Participant
+row64,BEN,Participant
+row64,GIN,Participant
+row64,COG,Participant
+row69,IND,Lead
+row69,ITA,Participant
+row69,ESP,Participant
+row72,USA,Lead
+row72,CIV,Lead
+row72,LBY,Participant
+row72,ITA,Participant
+row74,USA,Lead
+row74,LBY,Lead
+row74,CIV,Participant
+row75,USA,Lead
+row75,CIV,Lead
+row75,AGO,Participant
+row75,BEN,Participant
+row75,CPV,Participant
+row75,CMR,Participant
+row75,TCD,Participant
+row75,CIV,Participant
+row75,GAB,Participant
+row75,GHA,Participant
+row75,MRT,Participant
+row75,NGA,Participant
+row75,SEN,Participant
+row75,TGO,Participant
+row75,DZA,Participant
+row75,LBY,Participant
+row75,MAR,Participant
+row75,SOM,Participant
+row75,TZA,Participant
+row75,TUN,Participant
+row75,ZMB,Participant
+row75,ESP,Participant
+row75,HUN,Participant
+row79,GRC,Lead
+row79,EGY,Lead
+row79,CYP,Participant
+row79,FRA,Participant
+row79,SAU,Participant
+row80,ESP,Lead
+row80,SEN,Lead
+row81,ESP,Lead
+row81,NGA,Lead
+row89,ESP,Lead
+row89,NGA,Lead
+row90,JPN,Lead
+row91,FRA,Lead
+row92,IND,Lead
+row92,ZAF,Lead
+row92,BRA,Participant
+row95,CIV,Lead
+row95,FRA,Lead
+row96,USA,Lead
+row96,KEN,Participant
+row96,TZA,Participant
+row96,DJI,Participant
+row97,IND,Lead
+row97,SYC,Lead
+row101,MAR,Lead
+row101,FRA,Lead
+row104,EGY,Lead
+row104,GRC,Lead
+row104,CYP,Participant
+row104,FRA,Participant
+row104,SAU,Participant
+row104,ITA,Observer
+row104,BHR,Observer
+row104,RWA,Observer
+row107,ESP,Lead
+row107,NGA,Lead
+row109,USA,Lead
+row109,SEN,Lead
+row111,USA,Lead
+row111,AGO,Participant
+row111,BEN,Participant
+row111,BEL,Participant
+row111,BRA,Participant
+row111,CPV,Participant
+row111,CMR,Participant
+row111,CIV,Participant
+row111,COD,Participant
+row111,DNK,Participant
+row111,FRA,Participant
+row111,GAB,Participant
+row111,GMB,Participant
+row111,GHA,Participant
+row111,GNB,Participant
+row111,ITA,Participant
+row111,LBR,Participant
+row111,MAR,Participant
+row111,NAM,Participant
+row111,NLD,Participant
+row111,NGA,Participant
+row111,PRT,Participant
+row111,COG,Participant
+row111,STP,Participant
+row113,CHN,Lead
+row113,TZA,Participant
+row113,MOZ,Participant
+row114,USA,Lead
+row114,DZA,Participant
+row114,BEL,Participant
+row114,EGY,Participant
+row114,GEO,Participant
+row114,ITA,Participant
+row114,MAR,Participant
+row114,TUN,Participant
+row116,ESP,Lead
+row116,SEN,Lead
+row117,ESP,Lead
+row117,MAR,Lead
+row118,ESP,Lead
+row118,SEN,Lead
+row119,FRA,Lead
+row119,GAB,Lead
+row123,BEL,Lead
+row123,GAB,Lead
+row124,KEN,Lead
+row125,KEN,Lead
+row126,CHN,Lead
+row126,ZAF,Lead
+row126,ZAF,Participant
+row126,IRN,Participant
+row126,RUS,Participant
+row126,ARE,Participant
+row126,IDN,Observer
+row126,ETH,Observer
+row126,BRA,Observer
+row127,FRA,Lead
+row127,BEN,Lead

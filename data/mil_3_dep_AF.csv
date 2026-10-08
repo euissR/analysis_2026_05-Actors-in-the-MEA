@@ -1,0 +1,91 @@
+actor_code,actor,iso3,country,type,mission,n,estimate
+RUS,Russia,BFA,Burkina Faso,PMC,,200,TRUE
+EU,Lithuania,CAF,Central African Republic,EU,EUTM RCA,1,FALSE
+EU,Poland,CAF,Central African Republic,EU,EUTM RCA,2,FALSE
+EU,Portugal,CAF,Central African Republic,EU,EUTM RCA,20,FALSE
+EU,Romania,CAF,Central African Republic,EU,EUTM RCA,60,FALSE
+EU,Spain,CAF,Central African Republic,EU,EUTM RCA,8,FALSE
+EU,Czechia,CAF,Central African Republic,UN,MINUSCA,3,FALSE
+EU,France,CAF,Central African Republic,UN,MINUSCA,3,FALSE
+EU,Portugal,CAF,Central African Republic,UN,MINUSCA,215,FALSE
+IND,India,CAF,Central African Republic,UN,MINUSCA,6,FALSE
+RUS,Russia,CAF,Central African Republic,PMC,,1500,TRUE
+RUS,Russia,CAF,Central African Republic,UN,MINUSCA,10,FALSE
+USA,US,CAF,Central African Republic,UN,MINUSCA,9,FALSE
+EU,France,CIV,Côte D’Ivoire,Bilateral,,80,FALSE
+CHN,China,COD,Democratic Republic of The Congo,UN,MONUSCO,13,FALSE
+EU,Czechia,COD,Democratic Republic of The Congo,UN,MONUSCO,2,FALSE
+EU,France,COD,Democratic Republic of The Congo,UN,MONUSCO,2,FALSE
+IND,India,COD,Democratic Republic of The Congo,UN,MONUSCO,1076,FALSE
+RUS,Russia,COD,Democratic Republic of The Congo,UN,MONUSCO,5,FALSE
+CHN,China,DJI,Djibouti,Bilateral,,400,FALSE
+EU,France,DJI,Djibouti,Bilateral,,1500,FALSE
+EU,Italy,DJI,Djibouti,Bilateral,,92,FALSE
+EU,Spain,DJI,Djibouti,EU,Atalanta,60,FALSE
+JPN,Japan,DJI,Djibouti,Bilateral,,190,FALSE
+USA,US,DJI,Djibouti,Bilateral,,4000,FALSE
+EU,Czechia,EGY,Egypt,Other multilateral,MFO,17,FALSE
+EU,Italy,EGY,Egypt,Other multilateral,MFO,75,FALSE
+JPN,Japan,EGY,Egypt,Other multilateral,MFO,4,FALSE
+USA,US,EGY,Egypt,Other multilateral,MFO,450,FALSE
+EU,France,GAB,Gabon,Bilateral,,100,FALSE
+EU,Spain,GAD,Gulf of Aden and Indian Ocean,EU,Atalanta,220,FALSE
+EU,France,GGU,Gulf of Guinea,Bilateral,Corymbe,,FALSE
+EU,Spain,GGU,Gulf of Guinea,Bilateral,,50,FALSE
+RUS,Russia,GNQ,Equatorial Guinea,PMC,,200,TRUE
+EU,Italy,LBY,Libya,Bilateral,,160,FALSE
+RUS,Russia,LBY,Libya,PMC,,3500,TRUE
+TUR,Turkiye,LBY,Libya,Bilateral,,500,TRUE
+USA,US,LBY,Libya,UN,UNSMIL,1,FALSE
+CHN,China,MAR,Morocco,UN,MINURSO,9,FALSE
+EU,Austria,MAR,Morocco,UN,MINURSO,3,FALSE
+EU,Croatia,MAR,Morocco,UN,MINURSO,4,FALSE
+EU,France,MAR,Morocco,UN,MINURSO,2,FALSE
+EU,Germany,MAR,Morocco,UN,MINURSO,4,FALSE
+EU,Hungary,MAR,Morocco,UN,MINURSO,7,FALSE
+EU,Italy,MAR,Morocco,UN,MINURSO,2,FALSE
+EU,Poland,MAR,Morocco,UN,MINURSO,1,FALSE
+IND,India,MAR,Morocco,UN,MINURSO,2,FALSE
+KOR,South Korea,MAR,Morocco,UN,MINURSO,2,FALSE
+RUS,Russia,MAR,Morocco,UN,MINURSO,6,FALSE
+USA,US,MAR,Morocco,UN,MINURSO,1,FALSE
+RUS,Russia,MLI,Mali,PMC,,1500,TRUE
+EU,Austria,MOZ,Mozambique,EU,EUMAM Mozambique,1,FALSE
+EU,Belgium,MOZ,Mozambique,EU,EUMAM Mozambique,2,FALSE
+EU,Estonia,MOZ,Mozambique,EU,EUMAM Mozambique,1,FALSE
+EU,Finland,MOZ,Mozambique,EU,EUMAM Mozambique,2,FALSE
+EU,France,MOZ,Mozambique,EU,EUMAM Mozambique,2,FALSE
+EU,Greece,MOZ,Mozambique,EU,EUMAM Mozambique,3,FALSE
+EU,Italy,MOZ,Mozambique,EU,EUMAM Mozambique,4,FALSE
+EU,Lithuania,MOZ,Mozambique,EU,EUMAM Mozambique,2,FALSE
+EU,Portugal,MOZ,Mozambique,EU,EUMAM Mozambique,50,FALSE
+EU,Romania,MOZ,Mozambique,EU,EUMAM Mozambique,6,FALSE
+EU,Spain,MOZ,Mozambique,EU,EUMAM Mozambique,2,FALSE
+EU,Italy,NER,Niger,Bilateral,,250,FALSE
+RUS,Russia,NER,Niger,PMC,,200,TRUE
+EU,Greece,RSE,Red Sea,EU,Aspides,180,FALSE
+EU,Italy,RSE,Red Sea,EU,Aspides,350,FALSE
+USA,US,RSE,Red Sea,Bilateral,,750,FALSE
+CHN,China,SDN,Sudan,UN,UNISFA,285,FALSE
+IND,India,SDN,Sudan,UN,UNISFA,595,FALSE
+EU,France,SEN,Senegal,Bilateral,,350,FALSE
+EU,Spain,SEN,Senegal,Bilateral,,65,FALSE
+ARE,UAE,SOM,Somalia,Bilateral,,180,FALSE
+EU,Finland,SOM,Somalia,EU,EUTM Somalia,11,FALSE
+EU,Italy,SOM,Somalia,EU,EUTM Somalia,150,FALSE
+EU,Portugal,SOM,Somalia,EU,EUTM Somalia,4,FALSE
+EU,Romania,SOM,Somalia,EU,EUTM Somalia,5,FALSE
+EU,Spain,SOM,Somalia,EU,EUTM Somalia,20,FALSE
+IND,India,SOM,Somalia,UN,UNTMIS,1,FALSE
+TUR,Turkiye,SOM,Somalia,Bilateral,,800,FALSE
+TUR,Turkiye,SOM,Somalia,UN,UNTMIS,1,FALSE
+USA,US,SOM,Somalia,Bilateral,,100,FALSE
+CHN,China,SSD,South Sudan,UN,UNMISS,1053,FALSE
+EU,Germany,SSD,South Sudan,UN,UNMISS,14,FALSE
+EU,Romania,SSD,South Sudan,UN,UNMISS,5,FALSE
+IND,India,SSD,South Sudan,UN,UNMISS,2401,FALSE
+JPN,Japan,SSD,South Sudan,UN,UNMISS,4,FALSE
+KOR,South Korea,SSD,South Sudan,UN,UNMISS,262,FALSE
+RUS,Russia,SSD,South Sudan,UN,UNMISS,3,FALSE
+USA,US,SSD,South Sudan,UN,UNMISS,7,FALSE
+EU,France,TUN,Tunisia,Bilateral,,750,FALSE

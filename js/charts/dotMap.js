@@ -12,6 +12,11 @@
 //   "count" (visits): rows iso3, actor, n   (n blank = own country)
 //      actor "all": n = all actors combined
 // sub (optional): subregion, actor, n, share
+// spec.extraTiles (optional): [{ actor, label }] tiles beyond actors.csv, with rows of their own
+// spec.ownDots (optional): false = places without a row get no dot (default: a small
+//   ring, the actor's own country, as in the visits chart)
+// spec.tilesWithData (optional): true = legend tiles only for actors that have data
+// spec.extra { pts: "mil_{suffix}_countries" } (optional): sea areas drawn as extra places
 // spec.keyByActor (optional, presence mode): true = the key lists only the categories
 //   the selected actor has; default lists every category in the data
 //
@@ -32,13 +37,16 @@ let clipCount = 0;
 
 export function makeDotMap(
   el,
-  { geo, lookup, actors, rows, sub = [], spec, region },
+  { geo, lookup, actors, rows, sub = [], extra = {}, spec, region },
 ) {
   const { width: W, height: H } = region;
   const counting = spec.mode === "count";
   const cats = spec.categories ?? {};
   const nActors = actors.length;
-  const actorLabel = new Map(actors.map((a) => [a.actor, a.label]));
+  // spec.extraTiles: [{ actor, label }], further legend tiles with their own rows in the data
+  // (e.g. "naval", "bilateral": a cut of the exercises rather than an actor)
+  const extraTiles = spec.extraTiles ?? [];
+  const actorLabel = new Map([...actors, ...extraTiles].map((a) => [a.actor, a.label]));
   actorLabel.set("all", spec.allLabel);
 
   // ── data ────────────────────────────────────────────────────────────────
@@ -65,8 +73,15 @@ export function makeDotMap(
     );
   const path = d3.geoPath(projection);
 
-  const countries = lookup.map((d) => {
-    const [x, y] = projection([d.lon, d.lat]);
+  // places: the countries, plus (optional) sea areas from extra.pts, which is a file of
+  // iso3, name, subregion, lon, lat (e.g. mil_AF_countries.csv); countries in it are skipped
+  const known = new Set(lookup.map((d) => d.iso3));
+  const places = [
+    ...lookup,
+    ...(extra.pts ?? []).filter((d) => !known.has(d.iso3)),
+  ];
+  const countries = places.map((d) => {
+    const [x, y] = projection([+d.lon, +d.lat]);
     return { ...d, x, y };
   });
 
@@ -111,7 +126,14 @@ export function makeDotMap(
   const tiles = d3
     .select($(".fa-tiles"))
     .selectAll("button")
-    .data([{ actor: "all", label: spec.allLabel }, ...actors])
+    .data([
+      { actor: "all", label: spec.allLabel },
+      // spec.tilesWithData: only the actors that have rows in this chart's data
+      ...actors.filter(
+        (a) => !spec.tilesWithData || rows.some((r) => r.actor === a.actor),
+      ),
+      ...extraTiles.filter((a) => rows.some((r) => r.actor === a.actor)),
+    ])
     .join("button")
     .attr("type", "button")
     .attr("class", "fa-tile")
@@ -181,10 +203,14 @@ export function makeDotMap(
   // ── encodings ───────────────────────────────────────────────────────────
   const OWN = { r: 3.5, fill: theme.land, stroke: theme.grey }; // actor's own country
   const ZERO = { r: 2, fill: theme.light, stroke: theme.land };
+  const NONE = { r: 0, fill: "none", stroke: "none" }; // nothing drawn, nothing to hover
 
   function look(d, state) {
     const row = value(d.iso3, state.actor);
     if (counting || state.actor === "all") {
+      // no row = no dot, if the chart says so (exercises); in the visits chart a place
+      // without a row is the actor's own country
+      if (!row && spec.ownDots === false) return NONE;
       if (row?.n === "" || row?.n == null) return OWN;
       const n = +row.n;
       return n
@@ -254,7 +280,9 @@ export function makeDotMap(
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
-      .attr("x", (d) => d.x + d.look.r + 3)
+      // labels go to the right of the dot, to the left near the map's east edge
+      .attr("text-anchor", (d) => (d.x > W * 0.78 ? "end" : "start"))
+      .attr("x", (d) => d.x + (d.x > W * 0.78 ? -(d.look.r + 3) : d.look.r + 3))
       .attr("y", (d) => d.y + 4)
       .text((d) => d.name)
       .transition(t)

@@ -1,0 +1,58 @@
+iso3,name,lon,lat,subregion
+AGO,Angola,17.567,-12.323,Southern Africa and Indian Ocean
+COG,Congo,15.222,-0.856,Central Africa
+CIV,Côte D’Ivoire,-5.54,7.607,West Africa
+CMR,Cameroon,12.745,5.675,Central Africa
+BFA,Burkina Faso,-1.756,12.278,West Africa
+BDI,Burundi,29.905,-3.349,Central Africa
+BEN,Benin,2.339,9.655,West Africa
+BWA,Botswana,23.824,-22.16,Southern Africa and Indian Ocean
+COD,Democratic Republic of The Congo,23.663,-2.862,Central Africa
+CAF,Central African Republic,20.464,6.567,Central Africa
+GMB,Gambia,-15.431,13.45,West Africa
+GIN,Guinea,-10.906,10.428,West Africa
+GNQ,Equatorial Guinea,10.468,1.578,Central Africa
+GNB,Guinea-Bissau,-14.923,12.053,West Africa
+CPV,Cape Verde,-23.179,15.212,West Africa
+DJI,Djibouti,42.573,11.728,East Africa and HoA
+DZA,Algeria,2.696,28.042,North Africa
+EGY,Egypt,29.796,26.545,North Africa
+ERI,Eritrea,38.893,15.348,East Africa and HoA
+ETH,Ethiopia,39.635,8.619,East Africa and HoA
+GAB,Gabon,11.804,-0.617,Central Africa
+GHA,Ghana,-1.19,7.962,West Africa
+NER,Niger,9.347,17.407,West Africa
+NGA,Nigeria,8.075,9.586,West Africa
+KEN,Kenya,37.867,0.517,East Africa and HoA
+COM,Comoros,43.305,-11.738,Southern Africa and Indian Ocean
+LBR,Liberia,-9.319,6.442,West Africa
+LSO,Lesotho,28.241,-29.581,Southern Africa and Indian Ocean
+LBY,Libya,18.084,27.027,North Africa
+MAR,Morocco,-6.354,31.817,North Africa
+MDG,Madagascar,46.738,-19.33,Southern Africa and Indian Ocean
+MLI,Mali,-3.574,17.313,West Africa
+MRT,Mauritania,-10.359,20.239,West Africa
+MUS,Mauritius,57.568,-20.315,Southern Africa and Indian Ocean
+MWI,Malawi,34.288,-13.179,Southern Africa and Indian Ocean
+MOZ,Mozambique,35.628,-17.177,Southern Africa and Indian Ocean
+NAM,Namibia,17.2,-22.083,Southern Africa and Indian Ocean
+SYC,Seychelles,55.401,-4.684,Southern Africa and Indian Ocean
+SDN,Sudan,29.926,16.001,East Africa and HoA
+SLE,Sierra Leone,-11.79,8.542,West Africa
+SEN,Senegal,-14.457,14.359,West Africa
+SOM,Somalia,45.822,6.032,East Africa and HoA
+SSD,South Sudan,30.341,7.288,East Africa and HoA
+STP,São Tomé and Príncipe,7.429,1.513,Central Africa
+SWZ,Eswatini,31.525,-26.595,Southern Africa and Indian Ocean
+TCD,Chad,18.662,15.308,Central Africa
+RWA,Rwanda,29.916,-1.98,Central Africa
+TGO,Togo,0.969,8.583,West Africa
+TUN,Tunisia,9.577,34.089,North Africa
+TZA,United Republic of Tanzania,34.782,-6.244,East Africa and HoA
+UGA,Uganda,32.4,1.278,East Africa and HoA
+ZAF,South Africa,25.202,-28.969,Southern Africa and Indian Ocean
+ZMB,Zambia,27.82,-13.453,Southern Africa and Indian Ocean
+ZWE,Zimbabwe,29.875,-19,Southern Africa and Indian Ocean
+GGU,Gulf of Guinea,2,2,Sea
+GAD,Gulf of Aden and Indian Ocean,50,12,Sea
+RSE,Red Sea,38.5,20,Sea

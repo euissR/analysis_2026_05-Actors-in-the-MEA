@@ -1,0 +1,9 @@
+iso3,country,actor_code,actor,n_bases,kind,lon,lat
+DJI,Djibouti,CHN,China,1,base,,
+DJI,Djibouti,EU,France,1,base,,
+DJI,Djibouti,EU,Italy,1,base,,
+DJI,Djibouti,JPN,Japan,1,base,,
+DJI,Djibouti,USA,US,1,base,,
+MUS,Mauritius,USA,US,1,base,72.41,-7.31
+NER,Niger,EU,Italy,1,base,,
+SOM,Somalia,TUR,Turkiye,1,base,,

@@ -1,0 +1,99 @@
+actor_code,actor,iso3,country,type,mission,n,estimate
+KOR,South Korea,ARE,United Arab Emirates,Bilateral,,170,FALSE
+USA,US,ARE,United Arab Emirates,Bilateral,,4000,FALSE
+USA,US,BHR,Bahrain,Bilateral,,3750,FALSE
+EU,Spain,GAD,Gulf of Aden and Indian Ocean,EU,Atalanta,220,FALSE
+EU,Czechia,GOL,Golan (UNDOF),UN,UNDOF,4,FALSE
+EU,Ireland,GOL,Golan (UNDOF),UN,UNDOF,4,FALSE
+IND,India,GOL,Golan (UNDOF),UN,UNDOF,197,FALSE
+IND,India,GOL,Golan (UNDOF),UN,UNDOF,197,FALSE
+KOR,South Korea,GOL,Golan (UNDOF),UN,UNDOF,1,FALSE
+EU,Austria,IRQ,Iraq,NATO,NATO Mission in Iraq,4,FALSE
+EU,Bulgaria,IRQ,Iraq,NATO,NATO Mission in Iraq,2,FALSE
+EU,Croatia,IRQ,Iraq,NATO,NATO Mission in Iraq,7,FALSE
+EU,Czechia,IRQ,Iraq,NATO,NATO Mission in Iraq,7,FALSE
+EU,Denmark,IRQ,Iraq,NATO,NATO Mission in Iraq,13,FALSE
+EU,Estonia,IRQ,Iraq,NATO,NATO Mission in Iraq,1,FALSE
+EU,Finland,IRQ,Iraq,NATO,NATO Mission in Iraq,4,FALSE
+EU,France,IRQ,Iraq,NATO,NATO Mission in Iraq,30,FALSE
+EU,Germany,IRQ,Iraq,NATO,NATO Mission in Iraq,32,FALSE
+EU,Greece,IRQ,Iraq,NATO,NATO Mission in Iraq,4,FALSE
+EU,Hungary,IRQ,Iraq,NATO,NATO Mission in Iraq,2,FALSE
+EU,Italy,IRQ,Iraq,NATO,NATO Mission in Iraq,75,FALSE
+EU,Latvia,IRQ,Iraq,NATO,NATO Mission in Iraq,75,FALSE
+EU,Lithuania,IRQ,Iraq,NATO,NATO Mission in Iraq,2,FALSE
+EU,Netherlands,IRQ,Iraq,NATO,NATO Mission in Iraq,15,FALSE
+EU,Poland,IRQ,Iraq,NATO,NATO Mission in Iraq,40,FALSE
+EU,Portugal,IRQ,Iraq,NATO,NATO Mission in Iraq,11,FALSE
+EU,Romania,IRQ,Iraq,NATO,NATO Mission in Iraq,120,FALSE
+EU,Slovakia,IRQ,Iraq,NATO,NATO Mission in Iraq,4,FALSE
+EU,Spain,IRQ,Iraq,NATO,NATO Mission in Iraq,120,FALSE
+EU,Sweden,IRQ,Iraq,NATO,NATO Mission in Iraq,1,FALSE
+EU,Croatia,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,3,FALSE
+EU,Czechia,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,3,FALSE
+EU,France,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,150,FALSE
+EU,Germany,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,90,FALSE
+EU,Hungary,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,8,FALSE
+EU,Italy,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,300,FALSE
+EU,Latvia,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,1,FALSE
+EU,Netherlands,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,5,FALSE
+EU,Poland,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,135,FALSE
+EU,Romania,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,3,FALSE
+EU,Slovakia,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,1,FALSE
+EU,Spain,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,170,FALSE
+EU,Sweden,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,1,FALSE
+TUR,Turkiye,IRQ,Iraq,Bilateral,,4000,FALSE
+TUR,Turkiye,IRQ,Iraq,NATO,NATO Mission in Iraq,34,FALSE
+USA,US,IRQ,Iraq,NATO,NATO Mission in Iraq,15,FALSE
+USA,US,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,2000,FALSE
+USA,US,ISR,Israel,Bilateral,,250,FALSE
+EU,France,JOR,Jordan,Other multilateral,Operation Inherent Resolve,300,FALSE
+EU,Germany,JOR,Jordan,Other multilateral,Operation Inherent Resolve,150,FALSE
+USA,US,JOR,Jordan,Other multilateral,Operation Inherent Resolve,3000,FALSE
+EU,Italy,KWT,Kuwait,Other multilateral,Operation Inherent Resolve,400,FALSE
+USA,US,KWT,Kuwait,Bilateral,,10000,FALSE
+CHN,China,LBN,Lebanon,UN,UNIFIL,484,FALSE
+EU,Italy,LBN,Lebanon,Bilateral,,22,FALSE
+EU,Austria,LBN,Lebanon,UN,UNIFIL,168,FALSE
+EU,Croatia,LBN,Lebanon,UN,UNIFIL,1,FALSE
+EU,Cyprus,LBN,Lebanon,UN,UNIFIL,1,FALSE
+EU,Estonia,LBN,Lebanon,UN,UNIFIL,1,FALSE
+EU,Finland,LBN,Lebanon,UN,UNIFIL,163,FALSE
+EU,France,LBN,Lebanon,UN,UNIFIL,646,FALSE
+EU,Germany,LBN,Lebanon,UN,UNIFIL,208,FALSE
+EU,Greece,LBN,Lebanon,UN,UNIFIL,183,FALSE
+EU,Hungary,LBN,Lebanon,UN,UNIFIL,16,FALSE
+EU,Italy,LBN,Lebanon,UN,UNIFIL,916,FALSE
+EU,Latvia,LBN,Lebanon,UN,UNIFIL,3,FALSE
+EU,Malta,LBN,Lebanon,UN,UNIFIL,8,FALSE
+EU,Netherlands,LBN,Lebanon,UN,UNIFIL,1,FALSE
+EU,Poland,LBN,Lebanon,UN,UNIFIL,194,FALSE
+EU,Spain,LBN,Lebanon,UN,UNIFIL,662,FALSE
+IND,India,LBN,Lebanon,UN,UNIFIL,897,FALSE
+ISR,Israel,LBN,Lebanon,Bilateral,,500,TRUE
+KOR,South Korea,LBN,Lebanon,UN,UNIFIL,256,FALSE
+TUR,Turkiye,LBN,Lebanon,UN,UNIFIL,91,FALSE
+EU,Austria,MEA,Middle East (UNTSO),UN,UNTSO,6,FALSE
+EU,Belgium,MEA,Middle East (UNTSO),UN,UNTSO,1,FALSE
+EU,Denmark,MEA,Middle East (UNTSO),UN,UNTSO,11,FALSE
+EU,Estonia,MEA,Middle East (UNTSO),UN,UNTSO,1,FALSE
+EU,Finland,MEA,Middle East (UNTSO),UN,UNTSO,14,FALSE
+EU,Ireland,MEA,Middle East (UNTSO),UN,UNTSO,12,FALSE
+EU,Latvia,MEA,Middle East (UNTSO),UN,UNTSO,2,FALSE
+EU,Netherlands,MEA,Middle East (UNTSO),UN,UNTSO,11,FALSE
+EU,Poland,MEA,Middle East (UNTSO),UN,UNTSO,3,FALSE
+EU,Slovakia,MEA,Middle East (UNTSO),UN,UNTSO,2,FALSE
+EU,Slovenia,MEA,Middle East (UNTSO),UN,UNTSO,3,FALSE
+ISR,Israel,PSE,Palestine,Bilateral,,10000,TRUE
+TUR,Turkiye,QAT,Qatar,Bilateral,,300,FALSE
+USA,US,QAT,Qatar,Bilateral,,9000,FALSE
+EU,Greece,RSE,Red Sea,EU,Aspides,180,FALSE
+EU,Italy,RSE,Red Sea,EU,Aspides,350,FALSE
+USA,US,RSE,Red Sea,Bilateral,,750,FALSE
+EU,Greece,SAU,Saudi Arabia,Bilateral,,100,FALSE
+USA,US,SAU,Saudi Arabia,Bilateral,,2000,FALSE
+ISR,Israel,SYR,Syria,Bilateral,,3000,TRUE
+TUR,Turkiye,SYR,Syria,Bilateral,,3000,TRUE
+USA,US,SYR,Syria,Other multilateral,Operation Inherent Resolve,900,FALSE
+ARE,UAE,YEM,Yemen,Bilateral,,200,FALSE
+SAU,KSA,YEM,Yemen,Bilateral,,500,FALSE

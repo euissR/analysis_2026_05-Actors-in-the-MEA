@@ -1,0 +1,551 @@
+actor_code,supplier,iso3,country,subregion,ssa,year,drone,tiv
+ARE,United Arab Emirates,CMR,Cameroon,Central Africa,TRUE,2018,FALSE,0.28
+ARE,United Arab Emirates,CMR,Cameroon,Central Africa,TRUE,2020,FALSE,0.28
+ARE,United Arab Emirates,CAF,Central African Republic,Central Africa,TRUE,2021,FALSE,1.6
+ARE,United Arab Emirates,TCD,Chad,Central Africa,TRUE,2021,FALSE,8.4
+ARE,United Arab Emirates,TCD,Chad,Central Africa,TRUE,2023,FALSE,3.955
+ARE,United Arab Emirates,TCD,Chad,Central Africa,TRUE,2024,FALSE,0.715
+ARE,United Arab Emirates,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,5.4
+ARE,United Arab Emirates,ETH,Ethiopia,East Africa and HoA,TRUE,2024,FALSE,5.4
+ARE,United Arab Emirates,KEN,Kenya,East Africa and HoA,TRUE,2018,FALSE,4.16
+ARE,United Arab Emirates,KEN,Kenya,East Africa and HoA,TRUE,2022,FALSE,1.08
+ARE,United Arab Emirates,SSD,South Sudan,East Africa and HoA,TRUE,2021,FALSE,8.25
+ARE,United Arab Emirates,SSD,South Sudan,East Africa and HoA,TRUE,2022,FALSE,8.25
+ARE,United Arab Emirates,SDN,Sudan,East Africa and HoA,TRUE,2017,FALSE,1.667
+ARE,United Arab Emirates,SDN,Sudan,East Africa and HoA,TRUE,2018,FALSE,1.667
+ARE,United Arab Emirates,SDN,Sudan,East Africa and HoA,TRUE,2019,FALSE,1.667
+ARE,United Arab Emirates,SDN,Sudan,East Africa and HoA,TRUE,2022,FALSE,1.8
+ARE,United Arab Emirates,UGA,Uganda,East Africa and HoA,TRUE,2025,FALSE,0.9
+ARE,United Arab Emirates,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2025,FALSE,4
+ARE,United Arab Emirates,DZA,Algeria,North Africa,FALSE,2022,FALSE,2.5
+ARE,United Arab Emirates,LBY,Libya,North Africa,FALSE,2017,FALSE,4.5
+ARE,United Arab Emirates,LBY,Libya,North Africa,FALSE,2019,FALSE,21.3
+ARE,United Arab Emirates,LBY,Libya,North Africa,FALSE,2020,FALSE,4.8
+ARE,United Arab Emirates,LBY,Libya,North Africa,FALSE,2024,FALSE,3.2
+ARE,United Arab Emirates,MAR,Morocco,North Africa,FALSE,2020,TRUE,3.6
+ARE,United Arab Emirates,TUN,Tunisia,North Africa,FALSE,2016,FALSE,3
+ARE,United Arab Emirates,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2020,FALSE,0.84
+ARE,United Arab Emirates,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2024,FALSE,1.08
+ARE,United Arab Emirates,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,3.97
+ARE,United Arab Emirates,CIV,Côte D’Ivoire,West Africa,TRUE,2022,FALSE,0.6
+ARE,United Arab Emirates,GIN,Guinea,West Africa,TRUE,2024,FALSE,6.4
+ARE,United Arab Emirates,GIN,Guinea,West Africa,TRUE,2025,FALSE,6.4
+ARE,United Arab Emirates,LBR,Liberia,West Africa,TRUE,2019,FALSE,1.12
+ARE,United Arab Emirates,MLI,Mali,West Africa,TRUE,2018,FALSE,1.4
+ARE,United Arab Emirates,MLI,Mali,West Africa,TRUE,2020,FALSE,34.2
+ARE,United Arab Emirates,MRT,Mauritania,West Africa,TRUE,2019,FALSE,8
+ARE,United Arab Emirates,MRT,Mauritania,West Africa,TRUE,2024,FALSE,2.7
+ARE,United Arab Emirates,NER,Niger,West Africa,TRUE,2021,FALSE,1.98
+ARE,United Arab Emirates,NGA,Nigeria,West Africa,TRUE,2017,FALSE,9.1
+ARE,United Arab Emirates,NGA,Nigeria,West Africa,TRUE,2020,FALSE,1.28
+ARE,United Arab Emirates,TGO,Togo,West Africa,TRUE,2025,FALSE,0.4
+CHN,China,AUC,African Union,African Union,FALSE,2018,FALSE,4.48
+CHN,China,AUC,African Union,African Union,FALSE,2021,FALSE,3.3
+CHN,China,AUC,African Union,African Union,FALSE,2023,FALSE,6.45
+CHN,China,CAF,Central African Republic,Central Africa,TRUE,2018,FALSE,1.68
+CHN,China,CAF,Central African Republic,Central Africa,TRUE,2021,FALSE,0.56
+CHN,China,TCD,Chad,Central Africa,TRUE,2021,FALSE,25
+CHN,China,TCD,Chad,Central Africa,TRUE,2025,FALSE,4
+CHN,China,COG,Congo,Central Africa,TRUE,2024,FALSE,8.5
+CHN,China,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,TRUE,18
+CHN,China,COD,Democratic Republic of The Congo,Central Africa,TRUE,2024,TRUE,18
+CHN,China,GNQ,Equatorial Guinea,Central Africa,TRUE,2018,FALSE,12.7
+CHN,China,GNQ,Equatorial Guinea,Central Africa,TRUE,2021,FALSE,0.25
+CHN,China,GNQ,Equatorial Guinea,Central Africa,TRUE,2024,FALSE,12
+CHN,China,GAB,Gabon,Central Africa,TRUE,2019,FALSE,24.7
+CHN,China,GAB,Gabon,Central Africa,TRUE,2021,FALSE,2.4
+CHN,China,GAB,Gabon,Central Africa,TRUE,2024,FALSE,5.2
+CHN,China,RWA,Rwanda,Central Africa,TRUE,2017,FALSE,1
+CHN,China,RWA,Rwanda,Central Africa,TRUE,2018,FALSE,3.1
+CHN,China,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,37
+CHN,China,DJI,Djibouti,East Africa and HoA,TRUE,2019,FALSE,3.73
+CHN,China,DJI,Djibouti,East Africa and HoA,TRUE,2021,FALSE,24
+CHN,China,ETH,Ethiopia,East Africa and HoA,TRUE,2018,FALSE,4.4
+CHN,China,ETH,Ethiopia,East Africa and HoA,TRUE,2019,FALSE,4.4
+CHN,China,ETH,Ethiopia,East Africa and HoA,TRUE,2020,FALSE,24.5
+CHN,China,ETH,Ethiopia,East Africa and HoA,TRUE,2021,TRUE,6
+CHN,China,ETH,Ethiopia,East Africa and HoA,TRUE,2022,FALSE,43.2
+CHN,China,KEN,Kenya,East Africa and HoA,TRUE,2016,FALSE,7.5
+CHN,China,KEN,Kenya,East Africa and HoA,TRUE,2018,FALSE,0.8
+CHN,China,SOM,Somalia,East Africa and HoA,TRUE,2017,FALSE,1.8
+CHN,China,UGA,Uganda,East Africa and HoA,TRUE,2021,FALSE,0.7
+CHN,China,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2017,FALSE,1.56
+CHN,China,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2021,FALSE,28.5
+CHN,China,DZA,Algeria,North Africa,FALSE,2017,FALSE,39.6
+CHN,China,DZA,Algeria,North Africa,FALSE,2018,TRUE,24
+CHN,China,DZA,Algeria,North Africa,FALSE,2018,FALSE,30.1
+CHN,China,DZA,Algeria,North Africa,FALSE,2019,FALSE,24
+CHN,China,DZA,Algeria,North Africa,FALSE,2020,FALSE,3
+CHN,China,DZA,Algeria,North Africa,FALSE,2022,FALSE,137.5
+CHN,China,DZA,Algeria,North Africa,FALSE,2023,TRUE,8
+CHN,China,DZA,Algeria,North Africa,FALSE,2023,FALSE,178.1
+CHN,China,DZA,Algeria,North Africa,FALSE,2024,TRUE,30
+CHN,China,EGY,Egypt,North Africa,FALSE,2016,FALSE,3.333
+CHN,China,EGY,Egypt,North Africa,FALSE,2016,TRUE,10
+CHN,China,EGY,Egypt,North Africa,FALSE,2017,FALSE,3.333
+CHN,China,EGY,Egypt,North Africa,FALSE,2017,TRUE,10
+CHN,China,EGY,Egypt,North Africa,FALSE,2018,FALSE,3.333
+CHN,China,EGY,Egypt,North Africa,FALSE,2018,TRUE,10
+CHN,China,MAR,Morocco,North Africa,FALSE,2017,FALSE,97.5
+CHN,China,MAR,Morocco,North Africa,FALSE,2018,FALSE,97.5
+CHN,China,MAR,Morocco,North Africa,FALSE,2021,FALSE,2
+CHN,China,MAR,Morocco,North Africa,FALSE,2022,FALSE,2
+CHN,China,MAR,Morocco,North Africa,FALSE,2022,TRUE,4
+CHN,China,MAR,Morocco,North Africa,FALSE,2023,TRUE,4
+CHN,China,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2019,FALSE,16
+CHN,China,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2020,FALSE,42
+CHN,China,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2022,FALSE,16
+CHN,China,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2018,FALSE,3.45
+CHN,China,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2016,FALSE,2
+CHN,China,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2017,FALSE,2
+CHN,China,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,54
+CHN,China,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2025,TRUE,0.2
+CHN,China,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2020,FALSE,1.8
+CHN,China,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,20.4
+CHN,China,BFA,Burkina Faso,West Africa,TRUE,2024,FALSE,29.5
+CHN,China,BFA,Burkina Faso,West Africa,TRUE,2025,FALSE,35.7
+CHN,China,CIV,Côte D’Ivoire,West Africa,TRUE,2017,FALSE,4
+CHN,China,CIV,Côte D’Ivoire,West Africa,TRUE,2022,FALSE,5.6
+CHN,China,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,16.95
+CHN,China,GHA,Ghana,West Africa,TRUE,2023,FALSE,2.4
+CHN,China,GIN,Guinea,West Africa,TRUE,2021,FALSE,0.7
+CHN,China,MLI,Mali,West Africa,TRUE,2017,FALSE,5.39
+CHN,China,MLI,Mali,West Africa,TRUE,2021,FALSE,3.85
+CHN,China,MLI,Mali,West Africa,TRUE,2023,FALSE,15.85
+CHN,China,MLI,Mali,West Africa,TRUE,2025,FALSE,31.56
+CHN,China,MRT,Mauritania,West Africa,TRUE,2019,FALSE,25
+CHN,China,MRT,Mauritania,West Africa,TRUE,2023,FALSE,2.4
+CHN,China,MRT,Mauritania,West Africa,TRUE,2024,FALSE,116.5
+CHN,China,MRT,Mauritania,West Africa,TRUE,2024,TRUE,7
+CHN,China,NER,Niger,West Africa,TRUE,2017,FALSE,3
+CHN,China,NGA,Nigeria,West Africa,TRUE,2020,FALSE,40.4
+CHN,China,NGA,Nigeria,West Africa,TRUE,2020,TRUE,10
+CHN,China,NGA,Nigeria,West Africa,TRUE,2021,TRUE,20.8
+CHN,China,NGA,Nigeria,West Africa,TRUE,2021,FALSE,63.9
+CHN,China,NGA,Nigeria,West Africa,TRUE,2022,FALSE,33.3
+CHN,China,NGA,Nigeria,West Africa,TRUE,2022,TRUE,2
+CHN,China,NGA,Nigeria,West Africa,TRUE,2023,FALSE,12.5
+CHN,China,NGA,Nigeria,West Africa,TRUE,2023,TRUE,10
+CHN,China,NGA,Nigeria,West Africa,TRUE,2024,FALSE,8.4
+CHN,China,SEN,Senegal,West Africa,TRUE,2023,FALSE,7.11
+CHN,China,SEN,Senegal,West Africa,TRUE,2024,FALSE,1.61
+EU,Austria,UGA,Uganda,East Africa and HoA,TRUE,2018,FALSE,0.35
+EU,Austria,UGA,Uganda,East Africa and HoA,TRUE,2022,FALSE,1
+EU,Austria,MAR,Morocco,North Africa,FALSE,2023,FALSE,0.6
+EU,Austria,MAR,Morocco,North Africa,FALSE,2024,FALSE,0.6
+EU,Austria,TUN,Tunisia,North Africa,FALSE,2018,TRUE,0.4
+EU,Austria,NGA,Nigeria,West Africa,TRUE,2017,FALSE,0.75
+EU,Austria,NGA,Nigeria,West Africa,TRUE,2023,FALSE,2.4
+EU,Bulgaria,UGA,Uganda,East Africa and HoA,TRUE,2018,FALSE,4
+EU,Bulgaria,UGA,Uganda,East Africa and HoA,TRUE,2022,FALSE,15.5
+EU,Bulgaria,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2017,FALSE,3.4
+EU,Bulgaria,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2019,FALSE,7
+EU,Bulgaria,BFA,Burkina Faso,West Africa,TRUE,2018,FALSE,3.3
+EU,Bulgaria,BFA,Burkina Faso,West Africa,TRUE,2019,FALSE,3.3
+EU,Bulgaria,BFA,Burkina Faso,West Africa,TRUE,2021,FALSE,3.3
+EU,Bulgaria,CIV,Côte D’Ivoire,West Africa,TRUE,2017,FALSE,9.9
+EU,Bulgaria,CIV,Côte D’Ivoire,West Africa,TRUE,2018,FALSE,6.8
+EU,Bulgaria,CIV,Côte D’Ivoire,West Africa,TRUE,2020,FALSE,3.4
+EU,Bulgaria,CIV,Côte D’Ivoire,West Africa,TRUE,2021,FALSE,3.4
+EU,Bulgaria,NGA,Nigeria,West Africa,TRUE,2023,FALSE,18.75
+EU,Bulgaria,SEN,Senegal,West Africa,TRUE,2022,FALSE,1.2
+EU,Czechia,UGA,Uganda,East Africa and HoA,TRUE,2018,FALSE,1.12
+EU,Czechia,UGA,Uganda,East Africa and HoA,TRUE,2020,FALSE,7.38
+EU,Czechia,UGA,Uganda,East Africa and HoA,TRUE,2021,FALSE,7.38
+EU,Czechia,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2025,FALSE,2.6
+EU,Denmark,SEN,Senegal,West Africa,TRUE,2023,FALSE,9
+EU,Denmark,SEN,Senegal,West Africa,TRUE,2024,FALSE,9
+EU,European Union,MLI,Mali,West Africa,TRUE,2019,FALSE,0.4
+EU,France,CMR,Cameroon,Central Africa,TRUE,2021,FALSE,2.64
+EU,France,CMR,Cameroon,Central Africa,TRUE,2022,FALSE,2.64
+EU,France,TCD,Chad,Central Africa,TRUE,2019,FALSE,0.56
+EU,France,TCD,Chad,Central Africa,TRUE,2020,FALSE,0.56
+EU,France,TCD,Chad,Central Africa,TRUE,2021,FALSE,3.85
+EU,France,GAB,Gabon,Central Africa,TRUE,2019,FALSE,1.4
+EU,France,GAB,Gabon,Central Africa,TRUE,2023,FALSE,1.85
+EU,France,DJI,Djibouti,East Africa and HoA,TRUE,2021,FALSE,1.8
+EU,France,KEN,Kenya,East Africa and HoA,TRUE,2018,FALSE,1.92
+EU,France,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2018,FALSE,17.733
+EU,France,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2020,FALSE,16.233
+EU,France,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2021,FALSE,16.233
+EU,France,DZA,Algeria,North Africa,FALSE,2019,FALSE,43.333
+EU,France,DZA,Algeria,North Africa,FALSE,2020,FALSE,43.333
+EU,France,DZA,Algeria,North Africa,FALSE,2021,FALSE,43.333
+EU,France,DZA,Algeria,North Africa,FALSE,2023,FALSE,5
+EU,France,EGY,Egypt,North Africa,FALSE,2020,FALSE,10
+EU,France,EGY,Egypt,North Africa,FALSE,2021,FALSE,10
+EU,France,EGY,Egypt,North Africa,FALSE,2022,FALSE,70.25
+EU,France,EGY,Egypt,North Africa,FALSE,2023,FALSE,70.25
+EU,France,EGY,Egypt,North Africa,FALSE,2024,FALSE,330
+EU,France,EGY,Egypt,North Africa,FALSE,2025,FALSE,368
+EU,France,MAR,Morocco,North Africa,FALSE,2021,FALSE,13
+EU,France,MAR,Morocco,North Africa,FALSE,2022,FALSE,150.52
+EU,France,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2019,FALSE,15
+EU,France,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2022,FALSE,16.5
+EU,France,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,15
+EU,France,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2025,FALSE,31.5
+EU,France,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2018,FALSE,4.2
+EU,France,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2019,FALSE,4.2
+EU,France,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2020,FALSE,49.2
+EU,France,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2017,FALSE,1.3
+EU,France,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2018,FALSE,1.3
+EU,France,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2019,FALSE,1.3
+EU,France,BFA,Burkina Faso,West Africa,TRUE,2019,FALSE,0.48
+EU,France,BFA,Burkina Faso,West Africa,TRUE,2020,FALSE,0.48
+EU,France,CIV,Côte D’Ivoire,West Africa,TRUE,2018,FALSE,1.44
+EU,France,CIV,Côte D’Ivoire,West Africa,TRUE,2022,FALSE,7.6
+EU,France,GIN,Guinea,West Africa,TRUE,2017,FALSE,2.4
+EU,France,MLI,Mali,West Africa,TRUE,2016,FALSE,2.9
+EU,France,MLI,Mali,West Africa,TRUE,2017,FALSE,2.9
+EU,France,MLI,Mali,West Africa,TRUE,2020,FALSE,2.08
+EU,France,MRT,Mauritania,West Africa,TRUE,2019,FALSE,1.12
+EU,France,MRT,Mauritania,West Africa,TRUE,2021,FALSE,5.76
+EU,France,NER,Niger,West Africa,TRUE,2019,FALSE,2.08
+EU,France,NER,Niger,West Africa,TRUE,2022,FALSE,0.92
+EU,France,NGA,Nigeria,West Africa,TRUE,2017,FALSE,7.2
+EU,France,NGA,Nigeria,West Africa,TRUE,2018,FALSE,20.8
+EU,France,NGA,Nigeria,West Africa,TRUE,2020,FALSE,10.4
+EU,France,NGA,Nigeria,West Africa,TRUE,2021,FALSE,6.8
+EU,France,NGA,Nigeria,West Africa,TRUE,2023,FALSE,13
+EU,France,NGA,Nigeria,West Africa,TRUE,2025,FALSE,17.76
+EU,France,SEN,Senegal,West Africa,TRUE,2017,FALSE,3
+EU,France,SEN,Senegal,West Africa,TRUE,2018,FALSE,5.76
+EU,France,SEN,Senegal,West Africa,TRUE,2019,FALSE,26.24
+EU,France,SEN,Senegal,West Africa,TRUE,2021,FALSE,2.74
+EU,France,SEN,Senegal,West Africa,TRUE,2023,FALSE,92.025
+EU,France,SEN,Senegal,West Africa,TRUE,2024,FALSE,92.025
+EU,France,TGO,Togo,West Africa,TRUE,2019,FALSE,1.12
+EU,France,TGO,Togo,West Africa,TRUE,2020,FALSE,1.12
+EU,Germany,ETH,Ethiopia,East Africa and HoA,TRUE,2019,FALSE,2.4
+EU,Germany,KEN,Kenya,East Africa and HoA,TRUE,2021,FALSE,3.6
+EU,Germany,EGY,Egypt,North Africa,FALSE,2018,FALSE,9.9
+EU,Germany,EGY,Egypt,North Africa,FALSE,2019,FALSE,9.9
+EU,Germany,EGY,Egypt,North Africa,FALSE,2020,FALSE,63.9
+EU,Germany,EGY,Egypt,North Africa,FALSE,2021,FALSE,126.4
+EU,Germany,EGY,Egypt,North Africa,FALSE,2022,FALSE,405.375
+EU,Germany,EGY,Egypt,North Africa,FALSE,2023,FALSE,405.375
+EU,Germany,EGY,Egypt,North Africa,FALSE,2024,FALSE,45
+EU,Germany,MAR,Morocco,North Africa,FALSE,2022,FALSE,1.08
+EU,Germany,MAR,Morocco,North Africa,FALSE,2023,FALSE,18
+EU,Germany,TUN,Tunisia,North Africa,FALSE,2017,FALSE,3.4
+EU,Germany,LBR,Liberia,West Africa,TRUE,2023,FALSE,1.5
+EU,Germany,SEN,Senegal,West Africa,TRUE,2023,FALSE,3.6
+EU,Germany,SEN,Senegal,West Africa,TRUE,2024,FALSE,3.6
+EU,Italy,COG,Congo,Central Africa,TRUE,2021,FALSE,2.1
+EU,Italy,KEN,Kenya,East Africa and HoA,TRUE,2019,FALSE,9
+EU,Italy,KEN,Kenya,East Africa and HoA,TRUE,2020,FALSE,57
+EU,Italy,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,4
+EU,Italy,SOM,Somalia,East Africa and HoA,TRUE,2024,FALSE,3.52
+EU,Italy,SOM,Somalia,East Africa and HoA,TRUE,2025,FALSE,1.8
+EU,Italy,DZA,Algeria,North Africa,FALSE,2022,FALSE,57.5
+EU,Italy,EGY,Egypt,North Africa,FALSE,2020,FALSE,542.5
+EU,Italy,EGY,Egypt,North Africa,FALSE,2021,FALSE,567.5
+EU,Italy,EGY,Egypt,North Africa,FALSE,2022,FALSE,62.5
+EU,Italy,EGY,Egypt,North Africa,FALSE,2023,FALSE,62.5
+EU,Italy,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2021,FALSE,10
+EU,Italy,NER,Niger,West Africa,TRUE,2022,FALSE,4
+EU,Italy,NER,Niger,West Africa,TRUE,2023,FALSE,4
+EU,Italy,NGA,Nigeria,West Africa,TRUE,2019,FALSE,5.5
+EU,Italy,NGA,Nigeria,West Africa,TRUE,2020,FALSE,5.5
+EU,Italy,NGA,Nigeria,West Africa,TRUE,2021,FALSE,6
+EU,Italy,NGA,Nigeria,West Africa,TRUE,2023,FALSE,6.875
+EU,Italy,NGA,Nigeria,West Africa,TRUE,2024,FALSE,11.825
+EU,Italy,SEN,Senegal,West Africa,TRUE,2023,FALSE,9.125
+EU,Italy,SEN,Senegal,West Africa,TRUE,2024,FALSE,9.125
+EU,Netherlands,DJI,Djibouti,East Africa and HoA,TRUE,2021,FALSE,20
+EU,Netherlands,DJI,Djibouti,East Africa and HoA,TRUE,2022,FALSE,14
+EU,Netherlands,EGY,Egypt,North Africa,FALSE,2018,FALSE,12.5
+EU,Netherlands,EGY,Egypt,North Africa,FALSE,2022,FALSE,22.875
+EU,Netherlands,EGY,Egypt,North Africa,FALSE,2023,FALSE,22.875
+EU,Netherlands,LBY,Libya,North Africa,FALSE,2018,FALSE,10
+EU,Netherlands,TUN,Tunisia,North Africa,FALSE,2018,FALSE,138
+EU,Netherlands,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2022,FALSE,30
+EU,Netherlands,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,30
+EU,Netherlands,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2025,FALSE,30
+EU,Netherlands,NGA,Nigeria,West Africa,TRUE,2021,FALSE,24
+EU,Netherlands,NGA,Nigeria,West Africa,TRUE,2022,FALSE,17.5
+EU,Portugal,CPV,Cape Verde,West Africa,TRUE,2019,FALSE,3.04
+EU,Slovakia,RWA,Rwanda,Central Africa,TRUE,2019,FALSE,0.72
+EU,Slovakia,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2020,FALSE,1.44
+EU,Slovakia,SEN,Senegal,West Africa,TRUE,2017,FALSE,10.2
+EU,Spain,GAB,Gabon,Central Africa,TRUE,2023,FALSE,12.5
+EU,Spain,TUN,Tunisia,North Africa,FALSE,2024,FALSE,52
+EU,Spain,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2024,FALSE,14
+EU,Spain,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2025,FALSE,44
+EU,Spain,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2016,FALSE,3.2
+EU,Spain,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2025,FALSE,12.5
+EU,Spain,BFA,Burkina Faso,West Africa,TRUE,2020,FALSE,2.6
+EU,Spain,BFA,Burkina Faso,West Africa,TRUE,2021,FALSE,12.5
+EU,Spain,CIV,Côte D’Ivoire,West Africa,TRUE,2019,FALSE,12.5
+EU,Spain,MLI,Mali,West Africa,TRUE,2016,FALSE,12.5
+EU,Spain,MLI,Mali,West Africa,TRUE,2022,FALSE,13.62
+EU,Spain,SEN,Senegal,West Africa,TRUE,2022,FALSE,12.5
+EU,Spain,SEN,Senegal,West Africa,TRUE,2023,FALSE,12.5
+IND,India,MAR,Morocco,North Africa,FALSE,2025,FALSE,1.75
+IND,India,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2021,FALSE,0.88
+IND,India,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2022,FALSE,4
+IND,India,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2019,FALSE,15
+IND,India,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2016,FALSE,7.5
+IND,India,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2021,FALSE,19
+IRN,Iran,ETH,Ethiopia,East Africa and HoA,TRUE,2021,TRUE,0.15
+IRN,Iran,SDN,Sudan,East Africa and HoA,TRUE,2023,TRUE,0.7
+ISR,Israel,AUC,African Union,African Union,FALSE,2018,TRUE,0.3
+ISR,Israel,KEN,Kenya,East Africa and HoA,TRUE,2025,FALSE,93.75
+ISR,Israel,UGA,Uganda,East Africa and HoA,TRUE,2017,FALSE,0.3
+ISR,Israel,UGA,Uganda,East Africa and HoA,TRUE,2021,FALSE,2.5
+ISR,Israel,MAR,Morocco,North Africa,FALSE,2023,FALSE,146.74
+ISR,Israel,MAR,Morocco,North Africa,FALSE,2024,FALSE,114.5
+ISR,Israel,MAR,Morocco,North Africa,FALSE,2025,FALSE,114.5
+ISR,Israel,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2019,FALSE,5.4
+ISR,Israel,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2020,FALSE,5.4
+ISR,Israel,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2021,FALSE,5.4
+ISR,Israel,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2022,FALSE,5.4
+ISR,Israel,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,5.4
+ISR,Israel,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2017,TRUE,6
+ISR,Israel,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2021,FALSE,9.8
+ISR,Israel,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,26.4
+ISR,Israel,LBR,Liberia,West Africa,TRUE,2025,FALSE,0.24
+ISR,Israel,SEN,Senegal,West Africa,TRUE,2019,FALSE,7.875
+ISR,Israel,SEN,Senegal,West Africa,TRUE,2020,FALSE,14.975
+JPN,Japan,GHA,Ghana,West Africa,TRUE,2024,FALSE,8
+KOR,South Korea,KEN,Kenya,East Africa and HoA,TRUE,2024,FALSE,2.27
+KOR,South Korea,EGY,Egypt,North Africa,FALSE,2017,FALSE,60
+KOR,South Korea,EGY,Egypt,North Africa,FALSE,2023,FALSE,15.74
+KOR,South Korea,EGY,Egypt,North Africa,FALSE,2025,FALSE,15.99
+KOR,South Korea,NGA,Nigeria,West Africa,TRUE,2020,FALSE,0.7
+KOR,South Korea,NGA,Nigeria,West Africa,TRUE,2024,FALSE,4.8
+KOR,South Korea,SEN,Senegal,West Africa,TRUE,2020,FALSE,7.6
+QAT,Qatar,RWA,Rwanda,Central Africa,TRUE,2022,FALSE,0.68
+QAT,Qatar,SOM,Somalia,East Africa and HoA,TRUE,2019,FALSE,8.16
+QAT,Qatar,MAR,Morocco,North Africa,FALSE,2021,FALSE,0.84
+QAT,Qatar,BFA,Burkina Faso,West Africa,TRUE,2019,FALSE,2.88
+QAT,Qatar,MLI,Mali,West Africa,TRUE,2018,FALSE,2.88
+RUS,Russia,CAF,Central African Republic,Central Africa,TRUE,2020,FALSE,1.2
+RUS,Russia,CAF,Central African Republic,Central Africa,TRUE,2022,FALSE,5.4
+RUS,Russia,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,5.4
+RUS,Russia,COG,Congo,Central Africa,TRUE,2021,FALSE,1.2
+RUS,Russia,GNQ,Equatorial Guinea,Central Africa,TRUE,2018,FALSE,7.25
+RUS,Russia,GAB,Gabon,Central Africa,TRUE,2024,FALSE,1.05
+RUS,Russia,RWA,Rwanda,Central Africa,TRUE,2021,FALSE,46
+RUS,Russia,ETH,Ethiopia,East Africa and HoA,TRUE,2019,FALSE,69
+RUS,Russia,ETH,Ethiopia,East Africa and HoA,TRUE,2024,FALSE,38
+RUS,Russia,ETH,Ethiopia,East Africa and HoA,TRUE,2025,FALSE,63
+RUS,Russia,SDN,Sudan,East Africa and HoA,TRUE,2018,FALSE,0.18
+RUS,Russia,UGA,Uganda,East Africa and HoA,TRUE,2022,FALSE,33
+RUS,Russia,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,31
+RUS,Russia,UGA,Uganda,East Africa and HoA,TRUE,2025,FALSE,1
+RUS,Russia,DZA,Algeria,North Africa,FALSE,2020,FALSE,456.95
+RUS,Russia,DZA,Algeria,North Africa,FALSE,2021,FALSE,84.95
+RUS,Russia,DZA,Algeria,North Africa,FALSE,2022,FALSE,104.95
+RUS,Russia,DZA,Algeria,North Africa,FALSE,2023,FALSE,159.95
+RUS,Russia,DZA,Algeria,North Africa,FALSE,2024,FALSE,94.95
+RUS,Russia,DZA,Algeria,North Africa,FALSE,2025,FALSE,60
+RUS,Russia,EGY,Egypt,North Africa,FALSE,2017,FALSE,27.2
+RUS,Russia,EGY,Egypt,North Africa,FALSE,2018,FALSE,27.2
+RUS,Russia,LBY,Libya,North Africa,FALSE,2020,FALSE,187.6
+RUS,Russia,LBY,Libya,North Africa,FALSE,2021,FALSE,4.9
+RUS,Russia,LBY,Libya,North Africa,FALSE,2022,FALSE,4.9
+RUS,Russia,LBY,Libya,North Africa,FALSE,2024,FALSE,21
+RUS,Russia,LBY,Libya,North Africa,FALSE,2025,FALSE,40.5
+RUS,Russia,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2019,FALSE,7.25
+RUS,Russia,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2019,FALSE,5.3
+RUS,Russia,BFA,Burkina Faso,West Africa,TRUE,2018,FALSE,14.5
+RUS,Russia,CIV,Côte D’Ivoire,West Africa,TRUE,2018,FALSE,0.12
+RUS,Russia,MLI,Mali,West Africa,TRUE,2017,FALSE,15.333
+RUS,Russia,MLI,Mali,West Africa,TRUE,2019,FALSE,15.333
+RUS,Russia,MLI,Mali,West Africa,TRUE,2020,FALSE,15.333
+RUS,Russia,MLI,Mali,West Africa,TRUE,2021,FALSE,29
+RUS,Russia,MLI,Mali,West Africa,TRUE,2022,FALSE,41.4
+RUS,Russia,MLI,Mali,West Africa,TRUE,2023,FALSE,18.4
+RUS,Russia,MLI,Mali,West Africa,TRUE,2024,FALSE,0.8
+RUS,Russia,MLI,Mali,West Africa,TRUE,2025,FALSE,28
+RUS,Russia,NER,Niger,West Africa,TRUE,2020,FALSE,14.5
+RUS,Russia,NGA,Nigeria,West Africa,TRUE,2020,FALSE,14.5
+RUS,Russia,NGA,Nigeria,West Africa,TRUE,2021,FALSE,6.6
+RUS,Russia,TGO,Togo,West Africa,TRUE,2022,FALSE,49
+SAU,Saudi Arabia,NGA,Nigeria,West Africa,TRUE,2023,FALSE,2.7
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2018,FALSE,7
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2021,FALSE,7
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2022,FALSE,4.2
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2023,TRUE,6
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2023,FALSE,19.2
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2024,TRUE,4
+TUR,Turkiye,TCD,Chad,Central Africa,TRUE,2024,FALSE,4.2
+TUR,Turkiye,COD,Democratic Republic of The Congo,Central Africa,TRUE,2024,FALSE,14
+TUR,Turkiye,RWA,Rwanda,Central Africa,TRUE,2017,FALSE,6.9
+TUR,Turkiye,RWA,Rwanda,Central Africa,TRUE,2021,FALSE,17.15
+TUR,Turkiye,RWA,Rwanda,Central Africa,TRUE,2022,FALSE,15.9
+TUR,Turkiye,DJI,Djibouti,East Africa and HoA,TRUE,2022,TRUE,4.8
+TUR,Turkiye,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,0.28
+TUR,Turkiye,ETH,Ethiopia,East Africa and HoA,TRUE,2021,TRUE,9.6
+TUR,Turkiye,ETH,Ethiopia,East Africa and HoA,TRUE,2024,TRUE,4.5
+TUR,Turkiye,KEN,Kenya,East Africa and HoA,TRUE,2024,TRUE,14.4
+TUR,Turkiye,SOM,Somalia,East Africa and HoA,TRUE,2020,FALSE,1.68
+TUR,Turkiye,SOM,Somalia,East Africa and HoA,TRUE,2021,FALSE,1.12
+TUR,Turkiye,SDN,Sudan,East Africa and HoA,TRUE,2023,TRUE,9.6
+TUR,Turkiye,SDN,Sudan,East Africa and HoA,TRUE,2024,TRUE,9.6
+TUR,Turkiye,SDN,Sudan,East Africa and HoA,TRUE,2025,TRUE,22.5
+TUR,Turkiye,UGA,Uganda,East Africa and HoA,TRUE,2020,FALSE,10.5
+TUR,Turkiye,LBY,Libya,North Africa,FALSE,2019,TRUE,28.8
+TUR,Turkiye,LBY,Libya,North Africa,FALSE,2019,FALSE,5.25
+TUR,Turkiye,LBY,Libya,North Africa,FALSE,2020,FALSE,0.44
+TUR,Turkiye,LBY,Libya,North Africa,FALSE,2024,TRUE,4.5
+TUR,Turkiye,MAR,Morocco,North Africa,FALSE,2021,TRUE,31.2
+TUR,Turkiye,MAR,Morocco,North Africa,FALSE,2023,FALSE,7
+TUR,Turkiye,MAR,Morocco,North Africa,FALSE,2024,TRUE,14.4
+TUR,Turkiye,MAR,Morocco,North Africa,FALSE,2025,TRUE,9
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2017,FALSE,24.5
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2020,FALSE,1.35
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2021,FALSE,14.475
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2021,TRUE,5
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2022,TRUE,5
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2022,FALSE,16.1
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2023,TRUE,5
+TUR,Turkiye,TUN,Tunisia,North Africa,FALSE,2023,FALSE,13.125
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2018,FALSE,6
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2021,FALSE,8.4
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2022,FALSE,4.05
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2022,TRUE,9.6
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2023,TRUE,9.6
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2024,FALSE,0.4
+TUR,Turkiye,BFA,Burkina Faso,West Africa,TRUE,2024,TRUE,3.6
+TUR,Turkiye,CIV,Côte D’Ivoire,West Africa,TRUE,2021,FALSE,5.25
+TUR,Turkiye,CIV,Côte D’Ivoire,West Africa,TRUE,2022,FALSE,5.25
+TUR,Turkiye,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,5.25
+TUR,Turkiye,CIV,Côte D’Ivoire,West Africa,TRUE,2024,FALSE,5.25
+TUR,Turkiye,GMB,Gambia,West Africa,TRUE,2022,FALSE,1.4
+TUR,Turkiye,GMB,Gambia,West Africa,TRUE,2023,FALSE,0.57
+TUR,Turkiye,GMB,Gambia,West Africa,TRUE,2025,FALSE,0.57
+TUR,Turkiye,GHA,Ghana,West Africa,TRUE,2018,FALSE,1.275
+TUR,Turkiye,GHA,Ghana,West Africa,TRUE,2019,FALSE,1.275
+TUR,Turkiye,GHA,Ghana,West Africa,TRUE,2020,FALSE,12
+TUR,Turkiye,MLI,Mali,West Africa,TRUE,2022,TRUE,7.8
+TUR,Turkiye,MLI,Mali,West Africa,TRUE,2023,TRUE,7.8
+TUR,Turkiye,MLI,Mali,West Africa,TRUE,2024,FALSE,0.4
+TUR,Turkiye,MLI,Mali,West Africa,TRUE,2024,TRUE,16.8
+TUR,Turkiye,MLI,Mali,West Africa,TRUE,2025,TRUE,7.8
+TUR,Turkiye,NER,Niger,West Africa,TRUE,2022,TRUE,14.4
+TUR,Turkiye,NER,Niger,West Africa,TRUE,2023,FALSE,10
+TUR,Turkiye,NER,Niger,West Africa,TRUE,2024,FALSE,3.5
+TUR,Turkiye,NER,Niger,West Africa,TRUE,2025,TRUE,4
+TUR,Turkiye,NER,Niger,West Africa,TRUE,2025,FALSE,0.2
+TUR,Turkiye,NGA,Nigeria,West Africa,TRUE,2021,FALSE,3
+TUR,Turkiye,NGA,Nigeria,West Africa,TRUE,2023,FALSE,31.5
+TUR,Turkiye,NGA,Nigeria,West Africa,TRUE,2024,FALSE,33.2
+TUR,Turkiye,SEN,Senegal,West Africa,TRUE,2018,FALSE,8.75
+TUR,Turkiye,SEN,Senegal,West Africa,TRUE,2022,FALSE,6
+TUR,Turkiye,TGO,Togo,West Africa,TRUE,2022,TRUE,4.8
+USA,United States,BDI,Burundi,Central Africa,TRUE,2016,FALSE,2.94
+USA,United States,CMR,Cameroon,Central Africa,TRUE,2018,FALSE,2
+USA,United States,CMR,Cameroon,Central Africa,TRUE,2019,FALSE,4
+USA,United States,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,0.5
+USA,United States,TCD,Chad,Central Africa,TRUE,2016,FALSE,3.3
+USA,United States,TCD,Chad,Central Africa,TRUE,2017,FALSE,5.3
+USA,United States,TCD,Chad,Central Africa,TRUE,2020,FALSE,3.08
+USA,United States,COD,Democratic Republic of The Congo,Central Africa,TRUE,2018,FALSE,0.56
+USA,United States,RWA,Rwanda,Central Africa,TRUE,2021,FALSE,2
+USA,United States,DJI,Djibouti,East Africa and HoA,TRUE,2019,FALSE,7.02
+USA,United States,ETH,Ethiopia,East Africa and HoA,TRUE,2018,FALSE,9.6
+USA,United States,KEN,Kenya,East Africa and HoA,TRUE,2016,FALSE,12.4
+USA,United States,KEN,Kenya,East Africa and HoA,TRUE,2017,FALSE,12.4
+USA,United States,KEN,Kenya,East Africa and HoA,TRUE,2019,FALSE,5.64
+USA,United States,KEN,Kenya,East Africa and HoA,TRUE,2020,FALSE,16.7
+USA,United States,KEN,Kenya,East Africa and HoA,TRUE,2024,FALSE,2.48
+USA,United States,KEN,Kenya,East Africa and HoA,TRUE,2025,FALSE,23.04
+USA,United States,UGA,Uganda,East Africa and HoA,TRUE,2017,FALSE,15.5
+USA,United States,UGA,Uganda,East Africa and HoA,TRUE,2020,FALSE,4.6
+USA,United States,DZA,Algeria,North Africa,FALSE,2018,FALSE,3.2
+USA,United States,DZA,Algeria,North Africa,FALSE,2019,FALSE,3.2
+USA,United States,DZA,Algeria,North Africa,FALSE,2020,FALSE,3.2
+USA,United States,DZA,Algeria,North Africa,FALSE,2022,FALSE,32
+USA,United States,DZA,Algeria,North Africa,FALSE,2023,FALSE,40
+USA,United States,DZA,Algeria,North Africa,FALSE,2024,FALSE,40
+USA,United States,EGY,Egypt,North Africa,FALSE,2017,FALSE,9
+USA,United States,EGY,Egypt,North Africa,FALSE,2018,FALSE,47.4
+USA,United States,EGY,Egypt,North Africa,FALSE,2019,FALSE,48.173
+USA,United States,EGY,Egypt,North Africa,FALSE,2020,FALSE,42.74
+USA,United States,EGY,Egypt,North Africa,FALSE,2021,FALSE,52.74
+USA,United States,EGY,Egypt,North Africa,FALSE,2022,FALSE,42.907
+USA,United States,EGY,Egypt,North Africa,FALSE,2023,FALSE,74.84
+USA,United States,EGY,Egypt,North Africa,FALSE,2024,FALSE,27.5
+USA,United States,EGY,Egypt,North Africa,FALSE,2025,FALSE,27.5
+USA,United States,MAR,Morocco,North Africa,FALSE,2016,FALSE,33
+USA,United States,MAR,Morocco,North Africa,FALSE,2017,FALSE,38.34
+USA,United States,MAR,Morocco,North Africa,FALSE,2018,FALSE,12.7
+USA,United States,MAR,Morocco,North Africa,FALSE,2019,FALSE,74.66
+USA,United States,MAR,Morocco,North Africa,FALSE,2020,FALSE,7.24
+USA,United States,MAR,Morocco,North Africa,FALSE,2021,FALSE,5.64
+USA,United States,MAR,Morocco,North Africa,FALSE,2022,FALSE,349
+USA,United States,MAR,Morocco,North Africa,FALSE,2023,FALSE,324
+USA,United States,MAR,Morocco,North Africa,FALSE,2025,FALSE,266.3
+USA,United States,TUN,Tunisia,North Africa,FALSE,2016,FALSE,15.6
+USA,United States,TUN,Tunisia,North Africa,FALSE,2017,FALSE,22.8
+USA,United States,TUN,Tunisia,North Africa,FALSE,2018,FALSE,13.26
+USA,United States,TUN,Tunisia,North Africa,FALSE,2019,FALSE,14.5
+USA,United States,TUN,Tunisia,North Africa,FALSE,2020,FALSE,14.5
+USA,United States,TUN,Tunisia,North Africa,FALSE,2022,FALSE,24.4
+USA,United States,TUN,Tunisia,North Africa,FALSE,2023,FALSE,7.6
+USA,United States,TUN,Tunisia,North Africa,FALSE,2024,FALSE,20.8
+USA,United States,TUN,Tunisia,North Africa,FALSE,2025,FALSE,7.36
+USA,United States,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2018,FALSE,1.52
+USA,United States,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2019,FALSE,1.52
+USA,United States,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2024,FALSE,11.2
+USA,United States,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2020,FALSE,1
+USA,United States,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,5
+USA,United States,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,0.8
+USA,United States,BFA,Burkina Faso,West Africa,TRUE,2022,FALSE,1.2
+USA,United States,CIV,Côte D’Ivoire,West Africa,TRUE,2022,FALSE,1.72
+USA,United States,CIV,Côte D’Ivoire,West Africa,TRUE,2025,FALSE,0.36
+USA,United States,GHA,Ghana,West Africa,TRUE,2023,FALSE,3.36
+USA,United States,GHA,Ghana,West Africa,TRUE,2025,FALSE,0.42
+USA,United States,LBR,Liberia,West Africa,TRUE,2023,FALSE,12.5
+USA,United States,NER,Niger,West Africa,TRUE,2016,FALSE,0.4
+USA,United States,NER,Niger,West Africa,TRUE,2019,FALSE,3.4
+USA,United States,NER,Niger,West Africa,TRUE,2020,FALSE,3.4
+USA,United States,NER,Niger,West Africa,TRUE,2021,FALSE,3.4
+USA,United States,NGA,Nigeria,West Africa,TRUE,2021,FALSE,4
+USA,United States,NGA,Nigeria,West Africa,TRUE,2023,FALSE,5.85
+USA,United States,NGA,Nigeria,West Africa,TRUE,2024,FALSE,5.85
+USA,United States,NGA,Nigeria,West Africa,TRUE,2025,FALSE,2.85
+USA,United States,SEN,Senegal,West Africa,TRUE,2021,FALSE,1
+USA,United States,TGO,Togo,West Africa,TRUE,2020,FALSE,5
+USA,United States,TGO,Togo,West Africa,TRUE,2021,FALSE,5
+USA,United States,TGO,Togo,West Africa,TRUE,2022,FALSE,5
+USA,United States,TGO,Togo,West Africa,TRUE,2023,FALSE,5
+other,Ukraine,UGA,Uganda,East Africa and HoA,TRUE,2020,FALSE,0.4
+other,Ukraine,MAR,Morocco,North Africa,FALSE,2020,FALSE,4.96
+other,Ukraine,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2020,FALSE,7.2
+other,Ukraine,SEN,Senegal,West Africa,TRUE,2017,FALSE,2.68
+other,Ukraine,TGO,Togo,West Africa,TRUE,2019,FALSE,4.8
+other,unknown supplier(s),CAF,Central African Republic,Central Africa,TRUE,2021,FALSE,7.6
+other,unknown supplier(s),CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,34
+other,unknown supplier(s),COG,Congo,Central Africa,TRUE,2019,FALSE,2.9
+other,unknown supplier(s),COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,1.6
+other,unknown supplier(s),COD,Democratic Republic of The Congo,Central Africa,TRUE,2024,FALSE,1.6
+other,unknown supplier(s),SSD,South Sudan,East Africa and HoA,TRUE,2022,FALSE,1.3
+other,unknown supplier(s),SDN,Sudan,East Africa and HoA,TRUE,2024,FALSE,3.4
+other,unknown supplier(s),SDN,Sudan,East Africa and HoA,TRUE,2025,FALSE,17.25
+other,unknown supplier(s),LBY,Libya,North Africa,FALSE,2017,FALSE,1
+other,unknown supplier(s),LBY,Libya,North Africa,FALSE,2019,FALSE,2.35
+other,unknown supplier(s),LBY,Libya,North Africa,FALSE,2023,FALSE,34
+other,unknown supplier(s),LBY,Libya,North Africa,FALSE,2025,FALSE,13.76
+other,unknown supplier(s),MAR,Morocco,North Africa,FALSE,2023,FALSE,0.525
+other,unknown supplier(s),MAR,Morocco,North Africa,FALSE,2024,FALSE,0.525
+other,unknown supplier(s),AGO,Angola,Southern Africa and Indian Ocean,TRUE,2019,FALSE,3.13
+other,unknown supplier(s),BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2019,FALSE,0.45
+other,unknown supplier(s),BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2020,FALSE,0.45
+other,unknown supplier(s),BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2021,FALSE,0.45
+other,unknown supplier(s),BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2022,FALSE,0.45
+other,unknown supplier(s),BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0.45
+other,unknown supplier(s),MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2019,FALSE,0.5
+other,unknown supplier(s),MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2021,FALSE,15.5
+other,unknown supplier(s),BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,0.21
+other,unknown supplier(s),BFA,Burkina Faso,West Africa,TRUE,2024,FALSE,0.06
+other,unknown supplier(s),CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,3.25
+other,unknown supplier(s),CIV,Côte D’Ivoire,West Africa,TRUE,2024,FALSE,3.25
+other,unknown supplier(s),CIV,Côte D’Ivoire,West Africa,TRUE,2025,FALSE,10.2
+other,unknown supplier(s),MLI,Mali,West Africa,TRUE,2021,FALSE,0.79
+other,unknown supplier(s),MLI,Mali,West Africa,TRUE,2023,FALSE,38.39
+other,unknown supplier(s),NGA,Nigeria,West Africa,TRUE,2016,FALSE,1.05
+other,unknown supplier(s),TGO,Togo,West Africa,TRUE,2022,FALSE,0.24
+other,unknown supplier(s),TGO,Togo,West Africa,TRUE,2023,FALSE,0.24
