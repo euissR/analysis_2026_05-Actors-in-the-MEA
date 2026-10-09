@@ -4,7 +4,7 @@ export const theme = {
   // palette
   teal: "#309ebe",
   fuchsia: "#df3144",
-  navy: "#113655",
+  navy: "#1d3956",
   orange: "#f28d22",
   teal3: "#1d3956",
   fuchsia2: "#df3144",
@@ -32,6 +32,8 @@ export const theme = {
     IRN: "#99cb92", // mint
     IND: "#ffde75", // egg
     JPN: "#595959", // grey
+    GCC: "#7e24a8", // purple
+    KOR: "#4fd6d0", // aqua
   },
 
   // deployment types (spikes), kept apart from the actor colours

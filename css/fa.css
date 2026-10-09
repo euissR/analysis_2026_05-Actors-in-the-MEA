@@ -12,7 +12,7 @@ body {
 
 .fa-scrolly {
   --fa-teal: #309ebe;
-  --fa-navy: #113655;
+  --fa-navy: #1d3956;
   --fa-ink: #1d1d1b;
   --fa-muted: #646363;
   --fa-light: #c6c6c6;
@@ -222,6 +222,7 @@ body {
 .fa-chart--range .fa-map {
   flex: none;
   aspect-ratio: var(--fa-aspect, 1);
+  max-height: calc(100vh - 15rem); /* never taller than the stage minus title and footnotes */
 }
 
 .fa-row-actor {

@@ -1,0 +1,397 @@
+geo,actor,period,component,balance_usd_bn
+Africa,CHN,2019–21,hydrocarbon,-30.726776609333335
+Africa,CHN,2019–21,non_hydrocarbon,77.59965201433332
+Africa,CHN,2019–21,total,46.872875405000045
+Africa,CHN,2022–24,hydrocarbon,-28.05838807166667
+Africa,CHN,2022–24,non_hydrocarbon,101.05763590866664
+Africa,CHN,2022–24,total,72.99924783699996
+Africa,EU,2019–21,hydrocarbon,-33.04133018033333
+Africa,EU,2019–21,non_hydrocarbon,55.69489382900004
+Africa,EU,2019–21,total,22.653563648666704
+Africa,EU,2022–24,hydrocarbon,-62.309886838000004
+Africa,EU,2022–24,non_hydrocarbon,47.12590255766659
+Africa,EU,2022–24,total,-15.18398428033339
+Africa,GCC,2019–21,hydrocarbon,7.439008992
+Africa,GCC,2019–21,non_hydrocarbon,-3.37722926133333
+Africa,GCC,2019–21,total,4.061779730666657
+Africa,GCC,2022–24,hydrocarbon,16.357459900000002
+Africa,GCC,2022–24,non_hydrocarbon,-5.733302146
+Africa,GCC,2022–24,total,10.62415775400001
+Africa,IND,2019–21,hydrocarbon,-7.330681328666663
+Africa,IND,2019–21,non_hydrocarbon,8.06243919833334
+Africa,IND,2019–21,total,0.7317578696666729
+Africa,IND,2022–24,hydrocarbon,3.1406818639999994
+Africa,IND,2022–24,non_hydrocarbon,5.651855341333331
+Africa,IND,2022–24,total,8.792537205333339
+Africa,IRN,2019–21,hydrocarbon,0.002967965
+Africa,IRN,2019–21,non_hydrocarbon,0.42112732100000005
+Africa,IRN,2019–21,total,0.424095286
+Africa,IRN,2022–24,hydrocarbon,0.005212180666666667
+Africa,IRN,2022–24,non_hydrocarbon,0.17545756733333334
+Africa,IRN,2022–24,total,0.18066974800000002
+Africa,ISR,2019–21,hydrocarbon,0.005849057333333338
+Africa,ISR,2019–21,non_hydrocarbon,0.04973981566666674
+Africa,ISR,2019–21,total,0.05558887300000004
+Africa,ISR,2022–24,hydrocarbon,1.7581119633333335
+Africa,ISR,2022–24,non_hydrocarbon,0.08705971033333337
+Africa,ISR,2022–24,total,1.8451716736666666
+Africa,JPN,2019–21,hydrocarbon,-0.768242609
+Africa,JPN,2019–21,non_hydrocarbon,1.2180697596666672
+Africa,JPN,2019–21,total,0.44982715066666756
+Africa,JPN,2022–24,hydrocarbon,-0.900695938
+Africa,JPN,2022–24,non_hydrocarbon,0.8083231373333319
+Africa,JPN,2022–24,total,-0.0923728006666682
+Africa,KOR,2019–21,hydrocarbon,-1.2342543296666673
+Africa,KOR,2019–21,non_hydrocarbon,4.957111836333334
+Africa,KOR,2019–21,total,3.722857506666667
+Africa,KOR,2022–24,hydrocarbon,-2.8925617460000006
+Africa,KOR,2022–24,non_hydrocarbon,5.2883323296666696
+Africa,KOR,2022–24,total,2.395770583666671
+Africa,RUS,2019–21,hydrocarbon,1.760877082
+Africa,RUS,2019–21,non_hydrocarbon,9.129675090999996
+Africa,RUS,2019–21,total,10.890552172999996
+Africa,RUS,2022–24,hydrocarbon,3.008075687666667
+Africa,RUS,2022–24,non_hydrocarbon,6.190255544
+Africa,RUS,2022–24,total,9.198331231666668
+Africa,TUR,2019–21,hydrocarbon,-0.26225569100000024
+Africa,TUR,2019–21,non_hydrocarbon,11.670095315333336
+Africa,TUR,2019–21,total,11.40783962433333
+Africa,TUR,2022–24,hydrocarbon,-0.442692225666667
+Africa,TUR,2022–24,non_hydrocarbon,13.076146283000002
+Africa,TUR,2022–24,total,12.633454057333335
+Africa,USA,2019–21,hydrocarbon,-3.3968115796666667
+Africa,USA,2019–21,non_hydrocarbon,3.479706871000001
+Africa,USA,2019–21,total,0.08289529133334028
+Africa,USA,2022–24,hydrocarbon,-4.483776987666666
+Africa,USA,2022–24,non_hydrocarbon,1.9330185759999985
+Africa,USA,2022–24,total,-2.5507584116666706
+North Africa,CHN,2019–21,hydrocarbon,-4.654377314
+North Africa,CHN,2019–21,non_hydrocarbon,26.91435432433333
+North Africa,CHN,2019–21,total,22.25997701033333
+North Africa,CHN,2022–24,hydrocarbon,-2.8891755546666666
+North Africa,CHN,2022–24,non_hydrocarbon,34.827469248999996
+North Africa,CHN,2022–24,total,31.938293694333332
+North Africa,EU,2019–21,hydrocarbon,-22.400054764666663
+North Africa,EU,2019–21,non_hydrocarbon,35.73572726566667
+North Africa,EU,2019–21,total,13.33567250099999
+North Africa,EU,2022–24,hydrocarbon,-42.821605069
+North Africa,EU,2022–24,non_hydrocarbon,30.112362504999993
+North Africa,EU,2022–24,total,-12.709242563999965
+North Africa,GCC,2019–21,hydrocarbon,2.3863633093333343
+North Africa,GCC,2019–21,non_hydrocarbon,4.608035875333333
+North Africa,GCC,2019–21,total,6.994399184666663
+North Africa,GCC,2022–24,hydrocarbon,4.931351745333334
+North Africa,GCC,2022–24,non_hydrocarbon,4.967146710666663
+North Africa,GCC,2022–24,total,9.898498455999999
+North Africa,IND,2019–21,hydrocarbon,-1.607518054333333
+North Africa,IND,2019–21,non_hydrocarbon,2.037785388666667
+North Africa,IND,2019–21,total,0.4302673343333332
+North Africa,IND,2022–24,hydrocarbon,-0.6441082253333337
+North Africa,IND,2022–24,non_hydrocarbon,2.4212132593333333
+North Africa,IND,2022–24,total,1.7771050339999999
+North Africa,IRN,2019–21,hydrocarbon,0
+North Africa,IRN,2019–21,non_hydrocarbon,0.08945335866666666
+North Africa,IRN,2019–21,total,0.08945335866666666
+North Africa,IRN,2022–24,hydrocarbon,-9.99e-7
+North Africa,IRN,2022–24,non_hydrocarbon,0.014447229666666669
+North Africa,IRN,2022–24,total,0.014446230666666669
+North Africa,ISR,2019–21,hydrocarbon,1.4171e-5
+North Africa,ISR,2019–21,non_hydrocarbon,-0.038444989666666624
+North Africa,ISR,2019–21,total,-0.03843081866666667
+North Africa,ISR,2022–24,hydrocarbon,1.9261828226666662
+North Africa,ISR,2022–24,non_hydrocarbon,0.0746752513333333
+North Africa,ISR,2022–24,total,2.0008580739999995
+North Africa,JPN,2019–21,hydrocarbon,-0.5243798813333334
+North Africa,JPN,2019–21,non_hydrocarbon,1.121515190666667
+North Africa,JPN,2019–21,total,0.5971353093333329
+North Africa,JPN,2022–24,hydrocarbon,-0.4207296736666667
+North Africa,JPN,2022–24,non_hydrocarbon,0.818906314666667
+North Africa,JPN,2022–24,total,0.3981766410000003
+North Africa,KOR,2019–21,hydrocarbon,-1.4248673410000003
+North Africa,KOR,2019–21,non_hydrocarbon,2.4630978683333327
+North Africa,KOR,2019–21,total,1.038230527333333
+North Africa,KOR,2022–24,hydrocarbon,-3.497263855
+North Africa,KOR,2022–24,non_hydrocarbon,2.3032749209999994
+North Africa,KOR,2022–24,total,-1.193988934
+North Africa,RUS,2019–21,hydrocarbon,0.6635673746666666
+North Africa,RUS,2019–21,non_hydrocarbon,7.027186715666668
+North Africa,RUS,2019–21,total,7.690754090333334
+North Africa,RUS,2022–24,hydrocarbon,0.9281509053333333
+North Africa,RUS,2022–24,non_hydrocarbon,4.328567938999999
+North Africa,RUS,2022–24,total,5.256718844333333
+North Africa,TUR,2019–21,hydrocarbon,-0.485985036
+North Africa,TUR,2019–21,non_hydrocarbon,7.34889922533333
+North Africa,TUR,2019–21,total,6.862914189333337
+North Africa,TUR,2022–24,hydrocarbon,-0.9494853690000004
+North Africa,TUR,2022–24,non_hydrocarbon,8.188317769666664
+North Africa,TUR,2022–24,total,7.238832400666667
+North Africa,USA,2019–21,hydrocarbon,-1.217222613
+North Africa,USA,2019–21,non_hydrocarbon,4.757104919666668
+North Africa,USA,2019–21,total,3.5398823066666667
+North Africa,USA,2022–24,hydrocarbon,-1.5821629126666672
+North Africa,USA,2022–24,non_hydrocarbon,5.185227971
+North Africa,USA,2022–24,total,3.6030650583333337
+West Africa,CHN,2019–21,hydrocarbon,-1.7204338160000001
+West Africa,CHN,2019–21,non_hydrocarbon,35.22012122133333
+West Africa,CHN,2019–21,total,33.49968740533334
+West Africa,CHN,2022–24,hydrocarbon,-0.11488696300000001
+West Africa,CHN,2022–24,non_hydrocarbon,44.221187101333335
+West Africa,CHN,2022–24,total,44.10630013833334
+West Africa,EU,2019–21,hydrocarbon,-7.063710811000002
+West Africa,EU,2019–21,non_hydrocarbon,11.964520613666668
+West Africa,EU,2019–21,total,4.9008098026666715
+West Africa,EU,2022–24,hydrocarbon,-7.62070880966667
+West Africa,EU,2022–24,non_hydrocarbon,11.340050679
+West Africa,EU,2022–24,total,3.719341869333334
+West Africa,GCC,2019–21,hydrocarbon,0.14136143533333342
+West Africa,GCC,2019–21,non_hydrocarbon,-4.687347227
+West Africa,GCC,2019–21,total,-4.545985791666667
+West Africa,GCC,2022–24,hydrocarbon,0.8315965876666663
+West Africa,GCC,2022–24,non_hydrocarbon,-5.507778619333334
+West Africa,GCC,2022–24,total,-4.676182031666669
+West Africa,IND,2019–21,hydrocarbon,-5.390695569333334
+West Africa,IND,2019–21,non_hydrocarbon,3.125677792666667
+West Africa,IND,2019–21,total,-2.265017776666669
+West Africa,IND,2022–24,hydrocarbon,-0.17494191599999986
+West Africa,IND,2022–24,non_hydrocarbon,3.552175536666666
+West Africa,IND,2022–24,total,3.3772336206666687
+West Africa,IRN,2019–21,hydrocarbon,5.380603333333333e-4
+West Africa,IRN,2019–21,non_hydrocarbon,0.175107073
+West Africa,IRN,2019–21,total,0.17564513333333331
+West Africa,IRN,2022–24,hydrocarbon,9.464646666666667e-4
+West Africa,IRN,2022–24,non_hydrocarbon,0.07187560900000001
+West Africa,IRN,2022–24,total,0.07282207366666667
+West Africa,ISR,2019–21,hydrocarbon,0.02783306766666667
+West Africa,ISR,2019–21,non_hydrocarbon,0.09707226466666663
+West Africa,ISR,2019–21,total,0.1249053323333333
+West Africa,ISR,2022–24,hydrocarbon,-0.10254534966666663
+West Africa,ISR,2022–24,non_hydrocarbon,0.06542895133333332
+West Africa,ISR,2022–24,total,-0.03711639833333333
+West Africa,JPN,2019–21,hydrocarbon,-0.19053010999999995
+West Africa,JPN,2019–21,non_hydrocarbon,2.0935256326666662
+West Africa,JPN,2019–21,total,1.9029955226666668
+West Africa,JPN,2022–24,hydrocarbon,-0.288498026
+West Africa,JPN,2022–24,non_hydrocarbon,2.075234981666666
+West Africa,JPN,2022–24,total,1.786736955666667
+West Africa,KOR,2019–21,hydrocarbon,0.6009787806666667
+West Africa,KOR,2019–21,non_hydrocarbon,2.618550399
+West Africa,KOR,2019–21,total,3.2195291796666665
+West Africa,KOR,2022–24,hydrocarbon,0.349182506
+West Africa,KOR,2022–24,non_hydrocarbon,5.215960366666667
+West Africa,KOR,2022–24,total,5.565142872666667
+West Africa,RUS,2019–21,hydrocarbon,1.0101630806666666
+West Africa,RUS,2019–21,non_hydrocarbon,0.8733182933333337
+West Africa,RUS,2019–21,total,1.8834813739999994
+West Africa,RUS,2022–24,hydrocarbon,2.0559209359999997
+West Africa,RUS,2022–24,non_hydrocarbon,0.607624197
+West Africa,RUS,2022–24,total,2.6635451329999995
+West Africa,TUR,2019–21,hydrocarbon,0.10657404433333328
+West Africa,TUR,2019–21,non_hydrocarbon,2.1765188639999997
+West Africa,TUR,2019–21,total,2.2830929083333333
+West Africa,TUR,2022–24,hydrocarbon,0.0870975473333333
+West Africa,TUR,2022–24,non_hydrocarbon,2.5532500206666664
+West Africa,TUR,2022–24,total,2.640347568
+West Africa,USA,2019–21,hydrocarbon,-1.7348939153333331
+West Africa,USA,2019–21,non_hydrocarbon,3.0687460660000014
+West Africa,USA,2019–21,total,1.333852150666666
+West Africa,USA,2022–24,hydrocarbon,-2.668383625333334
+West Africa,USA,2022–24,non_hydrocarbon,2.1430643893333343
+West Africa,USA,2022–24,total,-0.5253192359999996
+Central Africa,CHN,2019–21,hydrocarbon,-6.430502009666667
+Central Africa,CHN,2019–21,non_hydrocarbon,-2.601235641333334
+Central Africa,CHN,2019–21,total,-9.031737651000004
+Central Africa,CHN,2022–24,hydrocarbon,-7.918003992
+Central Africa,CHN,2022–24,non_hydrocarbon,-5.358810297
+Central Africa,CHN,2022–24,total,-13.276814289
+Central Africa,EU,2019–21,hydrocarbon,-2.4501944300000003
+Central Africa,EU,2019–21,non_hydrocarbon,2.0612998126666655
+Central Africa,EU,2019–21,total,-0.3888946173333343
+Central Africa,EU,2022–24,hydrocarbon,-5.746390753666667
+Central Africa,EU,2022–24,non_hydrocarbon,1.7808265913333337
+Central Africa,EU,2022–24,total,-3.9655641623333366
+Central Africa,GCC,2019–21,hydrocarbon,0.04021812733333337
+Central Africa,GCC,2019–21,non_hydrocarbon,-2.194487721
+Central Africa,GCC,2019–21,total,-2.154269593666666
+Central Africa,GCC,2022–24,hydrocarbon,0.18978569666666661
+Central Africa,GCC,2022–24,non_hydrocarbon,-2.177807747666667
+Central Africa,GCC,2022–24,total,-1.988022051
+Central Africa,IND,2019–21,hydrocarbon,-1.4203194130000003
+Central Africa,IND,2019–21,non_hydrocarbon,0.6592026346666664
+Central Africa,IND,2019–21,total,-0.761116778333333
+Central Africa,IND,2022–24,hydrocarbon,-1.5798426929999996
+Central Africa,IND,2022–24,non_hydrocarbon,0.3378439543333329
+Central Africa,IND,2022–24,total,-1.2419987386666669
+Central Africa,IRN,2019–21,hydrocarbon,2.70637e-4
+Central Africa,IRN,2019–21,non_hydrocarbon,0.00978972
+Central Africa,IRN,2019–21,total,0.010060357
+Central Africa,IRN,2022–24,hydrocarbon,-0.001347475666666667
+Central Africa,IRN,2022–24,non_hydrocarbon,7.459783333333333e-4
+Central Africa,IRN,2022–24,total,-6.014973333333337e-4
+Central Africa,ISR,2019–21,hydrocarbon,-0.0030912796666666665
+Central Africa,ISR,2019–21,non_hydrocarbon,0.02806497466666667
+Central Africa,ISR,2019–21,total,0.024973695
+Central Africa,ISR,2022–24,hydrocarbon,-0.058397033
+Central Africa,ISR,2022–24,non_hydrocarbon,0.03050654133333333
+Central Africa,ISR,2022–24,total,-0.02789049166666667
+Central Africa,JPN,2019–21,hydrocarbon,-0.06760272099999999
+Central Africa,JPN,2019–21,non_hydrocarbon,0.12705260533333337
+Central Africa,JPN,2019–21,total,0.0594498843333333
+Central Africa,JPN,2022–24,hydrocarbon,-0.1358646793333333
+Central Africa,JPN,2022–24,non_hydrocarbon,0.17762919800000004
+Central Africa,JPN,2022–24,total,0.04176451866666672
+Central Africa,KOR,2019–21,hydrocarbon,-0.49456828399999997
+Central Africa,KOR,2019–21,non_hydrocarbon,-0.4175492826666667
+Central Africa,KOR,2019–21,total,-0.9121175666666669
+Central Africa,KOR,2022–24,hydrocarbon,-0.3702452426666666
+Central Africa,KOR,2022–24,non_hydrocarbon,-0.5723741816666665
+Central Africa,KOR,2022–24,total,-0.9426194243333337
+Central Africa,RUS,2019–21,hydrocarbon,0.05300535233333333
+Central Africa,RUS,2019–21,non_hydrocarbon,0.31739638533333325
+Central Africa,RUS,2019–21,total,0.37040173766666673
+Central Africa,RUS,2022–24,hydrocarbon,-0.0055381133333333304
+Central Africa,RUS,2022–24,non_hydrocarbon,0.14549403266666672
+Central Africa,RUS,2022–24,total,0.13995591933333335
+Central Africa,TUR,2019–21,hydrocarbon,-0.009104929333333334
+Central Africa,TUR,2019–21,non_hydrocarbon,0.3471097523333333
+Central Africa,TUR,2019–21,total,0.338004823
+Central Africa,TUR,2022–24,hydrocarbon,-0.00598952866666666
+Central Africa,TUR,2022–24,non_hydrocarbon,0.5539114903333333
+Central Africa,TUR,2022–24,total,0.5479219616666666
+Central Africa,USA,2019–21,hydrocarbon,-0.3894567016666667
+Central Africa,USA,2019–21,non_hydrocarbon,0.25375227433333336
+Central Africa,USA,2019–21,total,-0.13570442733333343
+Central Africa,USA,2022–24,hydrocarbon,-0.442831411
+Central Africa,USA,2022–24,non_hydrocarbon,0.5062681026666667
+Central Africa,USA,2022–24,total,0.06343669166666666
+East Africa and HoA,CHN,2019–21,hydrocarbon,-0.6538325003333333
+East Africa and HoA,CHN,2019–21,non_hydrocarbon,16.889890439333335
+East Africa and HoA,CHN,2019–21,total,16.236057939
+East Africa and HoA,CHN,2022–24,hydrocarbon,-0.12722248100000003
+East Africa and HoA,CHN,2022–24,non_hydrocarbon,22.184085128666663
+East Africa and HoA,CHN,2022–24,total,22.05686264766667
+East Africa and HoA,EU,2019–21,hydrocarbon,0.15415049400000003
+East Africa and HoA,EU,2019–21,non_hydrocarbon,3.8035342770000002
+East Africa and HoA,EU,2019–21,total,3.9576847710000007
+East Africa and HoA,EU,2022–24,hydrocarbon,0.06314479466666667
+East Africa and HoA,EU,2022–24,non_hydrocarbon,2.3990292113333327
+East Africa and HoA,EU,2022–24,total,2.462174006
+East Africa and HoA,GCC,2019–21,hydrocarbon,1.9914065873333338
+East Africa and HoA,GCC,2019–21,non_hydrocarbon,2.394799591999999
+East Africa and HoA,GCC,2019–21,total,4.386206179333329
+East Africa and HoA,GCC,2022–24,hydrocarbon,3.4453084999999994
+East Africa and HoA,GCC,2022–24,non_hydrocarbon,1.5962254736666663
+East Africa and HoA,GCC,2022–24,total,5.041533973666663
+East Africa and HoA,IND,2019–21,hydrocarbon,0.9461329650000002
+East Africa and HoA,IND,2019–21,non_hydrocarbon,4.770140561333333
+East Africa and HoA,IND,2019–21,total,5.7162735263333335
+East Africa and HoA,IND,2022–24,hydrocarbon,3.6027241786666666
+East Africa and HoA,IND,2022–24,non_hydrocarbon,5.052106552
+East Africa and HoA,IND,2022–24,total,8.654830730666667
+East Africa and HoA,IRN,2019–21,hydrocarbon,0.001601320333333333
+East Africa and HoA,IRN,2019–21,non_hydrocarbon,0.10870134333333334
+East Africa and HoA,IRN,2019–21,total,0.11030266366666663
+East Africa and HoA,IRN,2022–24,hydrocarbon,0.005138827
+East Africa and HoA,IRN,2022–24,non_hydrocarbon,0.04493871366666667
+East Africa and HoA,IRN,2022–24,total,0.0500775406666667
+East Africa and HoA,ISR,2019–21,hydrocarbon,3.3969366666666676e-4
+East Africa and HoA,ISR,2019–21,non_hydrocarbon,-0.02065233033333333
+East Africa and HoA,ISR,2019–21,total,-0.020312636666666703
+East Africa and HoA,ISR,2022–24,hydrocarbon,7.859766666666666e-5
+East Africa and HoA,ISR,2022–24,non_hydrocarbon,-0.006378543333333306
+East Africa and HoA,ISR,2022–24,total,-0.0062999456666666676
+East Africa and HoA,JPN,2019–21,hydrocarbon,-0.01942891133333333
+East Africa and HoA,JPN,2019–21,non_hydrocarbon,1.3740557946666667
+East Africa and HoA,JPN,2019–21,total,1.3546268833333333
+East Africa and HoA,JPN,2022–24,hydrocarbon,-0.020430612666666664
+East Africa and HoA,JPN,2022–24,non_hydrocarbon,1.591372969666667
+East Africa and HoA,JPN,2022–24,total,1.5709423569999998
+East Africa and HoA,KOR,2019–21,hydrocarbon,0.016727290666666672
+East Africa and HoA,KOR,2019–21,non_hydrocarbon,0.5004949866666666
+East Africa and HoA,KOR,2019–21,total,0.5172222773333334
+East Africa and HoA,KOR,2022–24,hydrocarbon,0.13890200266666664
+East Africa and HoA,KOR,2022–24,non_hydrocarbon,0.484252301
+East Africa and HoA,KOR,2022–24,total,0.6231543036666667
+East Africa and HoA,RUS,2019–21,hydrocarbon,0.009408654333333334
+East Africa and HoA,RUS,2019–21,non_hydrocarbon,0.881878689333333
+East Africa and HoA,RUS,2019–21,total,0.8912873436666667
+East Africa and HoA,RUS,2022–24,hydrocarbon,1.5114466666666664e-4
+East Africa and HoA,RUS,2022–24,non_hydrocarbon,0.6750204223333334
+East Africa and HoA,RUS,2022–24,total,0.675171567
+East Africa and HoA,TUR,2019–21,hydrocarbon,0.028946339999999997
+East Africa and HoA,TUR,2019–21,non_hydrocarbon,1.5888218606666664
+East Africa and HoA,TUR,2019–21,total,1.6177682006666663
+East Africa and HoA,TUR,2022–24,hydrocarbon,0.04805564133333333
+East Africa and HoA,TUR,2022–24,non_hydrocarbon,1.870020245
+East Africa and HoA,TUR,2022–24,total,1.9180758863333334
+East Africa and HoA,USA,2019–21,hydrocarbon,0.09772926133333337
+East Africa and HoA,USA,2019–21,non_hydrocarbon,0.75082158
+East Africa and HoA,USA,2019–21,total,0.8485508413333329
+East Africa and HoA,USA,2022–24,hydrocarbon,0.15889476366666672
+East Africa and HoA,USA,2022–24,non_hydrocarbon,1.0317820889999998
+East Africa and HoA,USA,2022–24,total,1.190676852666666
+Southern Africa and Indian Ocean,CHN,2019–21,hydrocarbon,-17.267630969333336
+Southern Africa and Indian Ocean,CHN,2019–21,non_hydrocarbon,1.17652167066667
+Southern Africa and Indian Ocean,CHN,2019–21,total,-16.091109298666673
+Southern Africa and Indian Ocean,CHN,2022–24,hydrocarbon,-17.009099081
+Southern Africa and Indian Ocean,CHN,2022–24,non_hydrocarbon,5.183704726666669
+Southern Africa and Indian Ocean,CHN,2022–24,total,-11.825394354333334
+Southern Africa and Indian Ocean,EU,2019–21,hydrocarbon,-1.281520668666667
+Southern Africa and Indian Ocean,EU,2019–21,non_hydrocarbon,2.1298118600000002
+Southern Africa and Indian Ocean,EU,2019–21,total,0.8482911913333275
+Southern Africa and Indian Ocean,EU,2022–24,hydrocarbon,-6.184327000333333
+Southern Africa and Indian Ocean,EU,2022–24,non_hydrocarbon,1.4936335710000108
+Southern Africa and Indian Ocean,EU,2022–24,total,-4.690693429333329
+Southern Africa and Indian Ocean,GCC,2019–21,hydrocarbon,2.879659532666667
+Southern Africa and Indian Ocean,GCC,2019–21,non_hydrocarbon,-3.4982297806666667
+Southern Africa and Indian Ocean,GCC,2019–21,total,-0.6185702480000002
+Southern Africa and Indian Ocean,GCC,2022–24,hydrocarbon,6.959417370333333
+Southern Africa and Indian Ocean,GCC,2022–24,non_hydrocarbon,-4.611087963333336
+Southern Africa and Indian Ocean,GCC,2022–24,total,2.3483294069999996
+Southern Africa and Indian Ocean,IND,2019–21,hydrocarbon,0.14171874299999976
+Southern Africa and Indian Ocean,IND,2019–21,non_hydrocarbon,-2.5303671790000006
+Southern Africa and Indian Ocean,IND,2019–21,total,-2.3886484359999987
+Southern Africa and Indian Ocean,IND,2022–24,hydrocarbon,1.9368505196666663
+Southern Africa and Indian Ocean,IND,2022–24,non_hydrocarbon,-5.711483961000001
+Southern Africa and Indian Ocean,IND,2022–24,total,-3.7746334413333287
+Southern Africa and Indian Ocean,IRN,2019–21,hydrocarbon,5.579473333333334e-4
+Southern Africa and Indian Ocean,IRN,2019–21,non_hydrocarbon,0.038075826
+Southern Africa and Indian Ocean,IRN,2019–21,total,0.03863377333333333
+Southern Africa and Indian Ocean,IRN,2022–24,hydrocarbon,4.7536366666666666e-4
+Southern Africa and Indian Ocean,IRN,2022–24,non_hydrocarbon,0.04345003666666666
+Southern Africa and Indian Ocean,IRN,2022–24,total,0.04392540033333332
+Southern Africa and Indian Ocean,ISR,2019–21,hydrocarbon,-0.01924659533333334
+Southern Africa and Indian Ocean,ISR,2019–21,non_hydrocarbon,-0.016300103666666593
+Southern Africa and Indian Ocean,ISR,2019–21,total,-0.035546699000000015
+Southern Africa and Indian Ocean,ISR,2022–24,hydrocarbon,-0.007207074333333334
+Southern Africa and Indian Ocean,ISR,2022–24,non_hydrocarbon,-0.07717249033333332
+Southern Africa and Indian Ocean,ISR,2022–24,total,-0.08437956466666668
+Southern Africa and Indian Ocean,JPN,2019–21,hydrocarbon,0.03369901466666665
+Southern Africa and Indian Ocean,JPN,2019–21,non_hydrocarbon,-3.4980794636666657
+Southern Africa and Indian Ocean,JPN,2019–21,total,-3.464380448999999
+Southern Africa and Indian Ocean,JPN,2022–24,hydrocarbon,-0.03517294633333334
+Southern Africa and Indian Ocean,JPN,2022–24,non_hydrocarbon,-3.8548203266666663
+Southern Africa and Indian Ocean,JPN,2022–24,total,-3.8899932729999995
+Southern Africa and Indian Ocean,KOR,2019–21,hydrocarbon,0.06747522399999997
+Southern Africa and Indian Ocean,KOR,2019–21,non_hydrocarbon,-0.2074821349999989
+Southern Africa and Indian Ocean,KOR,2019–21,total,-0.14000691100000018
+Southern Africa and Indian Ocean,KOR,2022–24,hydrocarbon,0.48686284300000005
+Southern Africa and Indian Ocean,KOR,2022–24,non_hydrocarbon,-2.142781077333333
+Southern Africa and Indian Ocean,KOR,2022–24,total,-1.6559182343333338
+Southern Africa and Indian Ocean,RUS,2019–21,hydrocarbon,0.024732620000000004
+Southern Africa and Indian Ocean,RUS,2019–21,non_hydrocarbon,0.02989500733333328
+Southern Africa and Indian Ocean,RUS,2019–21,total,0.05462762733333337
+Southern Africa and Indian Ocean,RUS,2022–24,hydrocarbon,0.029390815
+Southern Africa and Indian Ocean,RUS,2022–24,non_hydrocarbon,0.43354895299999996
+Southern Africa and Indian Ocean,RUS,2022–24,total,0.462939768
+Southern Africa and Indian Ocean,TUR,2019–21,hydrocarbon,0.09731389000000003
+Southern Africa and Indian Ocean,TUR,2019–21,non_hydrocarbon,0.20874561299999994
+Southern Africa and Indian Ocean,TUR,2019–21,total,0.3060595030000003
+Southern Africa and Indian Ocean,TUR,2022–24,hydrocarbon,0.37762948333333335
+Southern Africa and Indian Ocean,TUR,2022–24,non_hydrocarbon,-0.089353242666667
+Southern Africa and Indian Ocean,TUR,2022–24,total,0.28827624066666613
+Southern Africa and Indian Ocean,USA,2019–21,hydrocarbon,-0.15296761099999995
+Southern Africa and Indian Ocean,USA,2019–21,non_hydrocarbon,-5.350717969
+Southern Africa and Indian Ocean,USA,2019–21,total,-5.503685579999997
+Southern Africa and Indian Ocean,USA,2022–24,hydrocarbon,0.05070619766666662
+Southern Africa and Indian Ocean,USA,2022–24,non_hydrocarbon,-6.933323976
+Southern Africa and Indian Ocean,USA,2022–24,total,-6.882617778333335
