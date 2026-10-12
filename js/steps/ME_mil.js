@@ -22,6 +22,8 @@
 //                142.4 (Iraq 130), Turkiye 0.8 -> 8.2, Iran 30.4 -> 35.7 (Houthis 34.9)
 //   typos in the text kept: "Transfers from Germany increased from 199 to 877 TIV was mainly driven", "Norther Iraq",
 //                "equips African forces" (intro), "pinpoint to trade links"
+//   dep_us       footnote "Israeli forces are estimates ..." is the comment in the document (Israel is not
+//                highlighted in this step: the estimates are the "~" figures on the all-actors view)
 //   dep_us       text 20,000 US personnel: US bilateral in the data adds up to about 29,000
 //                (Kuwait 10,000, Qatar 9,000, UAE 4,000, Bahrain 3,750, Saudi Arabia 2,000, Israel 250;
 //                plus 750 on the Red Sea)
@@ -173,7 +175,7 @@ export default {
       subtitleAll:
         "Joint exercises involving external partners and countries of the region, by country or sea area, January 2024–July 2026",
       source:
-        "NB: An exercise counts once for each place it involves. Joint exercises are those described as such by the mission themselves; training activities are excluded. Data: official ministry websites and news outlets.",
+        "NB: An exercise counts once for each place it involves. Data: official ministry websites and news outlets.",
       allLabel: "All actors",
       rMaxActor: 12,
       rMaxAll: 22,
@@ -276,6 +278,7 @@ export default {
         types: ["Bilateral"],
         actors: ["USA"],
         values: ["KWT", "QAT", "ARE", "BHR", "SAU"],
+        footnote: "Israeli forces are estimates and refer to 2025.",
       },
     },
     dep_un_eu: {

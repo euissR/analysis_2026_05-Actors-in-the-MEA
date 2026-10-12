@@ -241,6 +241,7 @@ export default {
     emb_tur: { chart: "emb", state: { actor: "TUR" } },
     emb_isr: { chart: "emb", state: { actor: "ISR" } },
     emb_eu: { chart: "emb", state: { actor: "EU", labels: ["OMN"] } },
+    emb_rci: { chart: "emb", state: { actor: "CHN", labels: ["PSE"] } },
     emb_explore: { chart: "emb", state: { actor: "all" } },
 
     vis_intro: { chart: "vis", state: { actor: "all" } },
@@ -262,16 +263,26 @@ export default {
       chart: "vis",
       state: { actor: "EU", labels: ["JOR", "ARE"] },
     },
-    vis_gcc: { chart: "vis", state: { actor: "all" } },
+    vis_gcc_intro: { chart: "vis", state: { actor: "all" } },
+    vis_gcc: { chart: "vis", state: { actor: "all", labels: ["SAU"] } },
+    vis_gcc_time: {
+      chart: "vis",
+      state: { actor: "IRN", labels: ["OMN", "QAT", "SAU"] },
+    },
 
     lab_intro: { chart: "lab", state: { actor: "all" } },
     lab_chn: {
       chart: "lab",
       state: { actor: "CHN", labels: ["BHR", "SAU", "ARE", "ISR"] },
     },
+    lab_chn2: {
+      chart: "lab",
+      state: { actor: "CHN", labels: ["IRQ", "JOR", "KWT", "OMN", "PSE", "QAT"] },
+    },
     lab_usa: {
       chart: "lab",
-      state: { actor: "USA", labels: ["ISR"] },
+      // the text also names Egypt and Morocco, which are not on this map
+      state: { actor: "USA", labels: ["BHR", "ISR", "JOR", "KWT", "QAT", "SAU"] },
     },
     lab_tur: {
       chart: "lab",

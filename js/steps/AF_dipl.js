@@ -291,7 +291,7 @@ export default {
     lab_chn: { chart: "lab", state: { actor: "CHN" } },
     lab_eu: {
       chart: "lab",
-      state: { actor: "EU", labels: ["EGY", "ZAF", "NGA"] },
+      state: { actor: "EU", labels: ["EGY", "ZAF", "NGA", "TUN"] },
     },
     lab_us: {
       chart: "lab",
