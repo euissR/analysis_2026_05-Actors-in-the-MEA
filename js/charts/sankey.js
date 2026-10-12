@@ -14,6 +14,7 @@
 //   Suppliers and their flows are coloured by actor (theme.actorColors, via the
 //   actor_code column); "other" suppliers are light grey.
 //   countryLabels:   iso3 -> label (optional)
+//   regionLabels:    subregion in the data -> label (optional)
 //   changeSuppliers: suppliers shown with growth labels when state.change is on
 //   nSuppliers (8), nCountries (10): how many nodes before the rest is lumped together
 //                    (nodes are ordered largest first, "other" last)
@@ -33,10 +34,12 @@
 //               or a subregion name (region depth). Leave out `from` or `to` to match any.
 //   show:       iso3 codes always shown as their own node (country depth)
 //   changeSuppliers: suppliers that get change labels in this step, instead of spec.changeSuppliers
+//   changeValues: true = the change labels show the figures ("199 → 877") instead of the percentage
 //   change:     true = change labels, and dashed outlines at the 2016-21 level for
 //               suppliers that grew.
 //               Meant for period "p2".
-//   recipients: true = show the number of recipient countries instead of the share
+//   recipients: true = show the number of recipient countries (non-state recipients not counted;
+//               "+ AU" if the African Union is among them) instead of the share
 //   nCountries: override spec.nCountries for this step
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
@@ -116,7 +119,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
       ? (spec.otherRecipients ?? "Other countries")
       : depth === "country"
         ? (countryName.get(id) ?? id)
-        : id;
+        : (spec.regionLabels?.[id] ?? id);
 
   const inPeriod = (d, p) =>
     (p.from == null || d.year >= p.from) && (p.to == null || d.year <= p.to);
@@ -239,9 +242,15 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
     }
     const reach = new Map();
     if (state.recipients) {
+      // countries only: non-state recipients are left out of the count (spec.nonCountries);
+      // the African Union is added as "+ AU" when the supplier reached it
+      const non = new Set(spec.nonCountries ?? ["HOR", "RSF", "HZB", "HTH", "SYX", "AUC"]);
       d3.rollup(
         keep,
-        (v) => new Set(v.map((d) => d.iso3)).size,
+        (v) => ({
+          n: new Set(v.filter((d) => !non.has(d.iso3)).map((d) => d.iso3)).size,
+          au: v.some((d) => d.iso3 === "AUC"),
+        }),
         (d) => `s:${supId(nodeOf(d))}`,
       ).forEach((v, k) => k !== `s:${OTHER_S}` && reach.set(k, v));
     }
@@ -399,14 +408,32 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
 
     // labels: name in bold, then a muted figure (share, growth or number of recipients)
     const extra = (n) => {
-      if (n.side === "s" && state.recipients && reach.has(n.id))
-        return `${reach.get(n.id)} countries`;
+      if (n.side === "s" && state.recipients && reach.has(n.id)) {
+        const r = reach.get(n.id);
+        return `${r.n} countries${r.au ? " + AU" : ""}`;
+      }
       if (n.side === "s" && state.change && before.get(n.id) > 0)
-        return signed(n.value / before.get(n.id) - 1);
+        return state.changeValues
+          ? `${fmt(before.get(n.id))} → ${fmt(n.value)}`
+          : signed(n.value / before.get(n.id) - 1);
       return pct(n.value / total);
     };
     const showLabel = (n) =>
       hasHl ? lit.has(n.id) || n.y1 - n.y0 > 9 : n.y1 - n.y0 > 7;
+
+    // label spacing: labels that would overlap are pushed apart, top to bottom, per side
+    ["s", "t"].forEach((side) => {
+      let bottom = -Infinity;
+      nodes
+        .filter((n) => n.side === side && showLabel(n))
+        .sort((a, b) => a.y0 + a.y1 - (b.y0 + b.y1))
+        .forEach((n) => {
+          const h = wrap(n.label).length * 13.8;
+          const c = Math.max((n.y0 + n.y1) / 2, bottom + 1 + h / 2);
+          n.yl = c;
+          bottom = c + h / 2;
+        });
+    });
 
     gLabels
       .selectAll("text")
@@ -438,7 +465,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
           .text(extra(d));
       })
       .transition(t)
-      .attr("y", (d) => (d.y0 + d.y1) / 2 + 4 - (wrap(d.label).length - 1) * 6.5)
+      .attr("y", (d) => (d.yl ?? (d.y0 + d.y1) / 2) + 4 - (wrap(d.label).length - 1) * 6.5)
       .attr("opacity", (d) => (showLabel(d) && nodeLit(d) ? 1 : showLabel(d) ? theme.dim + 0.2 : 0));
 
     drawKey(state);

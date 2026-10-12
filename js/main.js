@@ -12,6 +12,7 @@ import { makeSankey } from "./charts/sankey.js";
 import { makeMilMap } from "./charts/milMap.js";
 import { makeStackedCols } from "./charts/stackedCols.js";
 import { makePeriodRange } from "./charts/periodRange.js";
+import { makeFlowBars } from "./charts/flowBars.js";
 
 // chart types available to the chapter configs
 const CHART_TYPES = {
@@ -22,6 +23,7 @@ const CHART_TYPES = {
   milMap: makeMilMap,
   stackedCols: makeStackedCols,
   periodRange: makePeriodRange,
+  flowBars: makeFlowBars,
 };
 
 const url = (file) => `${CONFIG.BASE_URL}/data/${file}`;

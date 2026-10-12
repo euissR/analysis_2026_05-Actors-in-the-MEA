@@ -3,14 +3,25 @@
 // Same chart modules as AF_mil.js, plus a time series (stackedCols) for the first arms steps.
 //
 // PINNED: where the text and the data differ. The text is as written; the charts show the data.
-//   arm_intro    text: US arms "particularly to Saudi Arabia and Israel": data US -> Saudi Arabia 5,147,
-//                Qatar 4,821, Kuwait 2,712, UAE 2,424; Israel is further down
-//   arm_russia   text: "by 2024 ... air systems for Iran": the arms file has no Iran as a recipient,
-//                and Russia's transfers to the region stop after 2021 in the data
-//   arm_israel   text: UAE "the only country in the region" Israel supplied: data also has
-//                Israel -> Iraq in 2023 (15)
-//   arm_gulf     text "four countries increased ... to the Gulf": the data also has Spain (+966%),
-//                which the pivot does not list; shown (dimmed) in the chart
+//   Source of the arms data: Arms_Deliveries_Repaired_08.10.2026.xlsx (sheet "Annual deliveries").
+//   Comparison baseline is 2018-2021 vs 2022-2025 (four years each), as in the text.
+//   arm_intro    text and data agree (US: Saudi Arabia 19,220, Qatar 6,861, UAE 4,888; France and
+//                Italy next, Qatar first for both)
+//   arm_peak     text: US, Italy, Germany peak in 2022, France in 2021. Holds for 2018-2025 (the series is
+//                cut there); with 2016-2017 the US is higher in 2016 (6,255 vs 5,334 in 2022).
+//                "all transfers declined" afterwards: France rose slightly in 2024 (458 -> 507)
+//   arm_russia   footnote 3 (Russia -> Iran, about 31.5 TIV in 2023 and 2024): Iran is not a recipient
+//                in the workbook, so the chart cannot show it; the footnote belongs in the page body
+//   arm_israel   text and data agree (UAE 2022: SPYDER-MR air defence and air-to-air missiles; Iraq 2023:
+//                SandCat armoured vehicles)
+//   arm_gulf     text: "rose from three suppliers": Italy, Spain and South Korea are the three largest
+//                increases; Israel (0 -> 187.5 in 2022), Belgium (+33%) and the UAE (+73%) also rose.
+//                Gulf total only +5%
+//   arm_me_fall  text and data agree: -19% (3,531 -> 2,862); Russia -1,009, US -428
+//   arm_me_up    text and data agree: Germany 198.9 -> 877.0 (four frigates to Israel 729), France 9.2 ->
+//                142.4 (Iraq 130), Turkiye 0.8 -> 8.2, Iran 30.4 -> 35.7 (Houthis 34.9)
+//   typos in the text kept: "Transfers from Germany increased from 199 to 877 TIV was mainly driven", "Norther Iraq",
+//                "equips African forces" (intro), "pinpoint to trade links"
 //   dep_us       text 20,000 US personnel: US bilateral in the data adds up to about 29,000
 //                (Kuwait 10,000, Qatar 9,000, UAE 4,000, Bahrain 3,750, Saudi Arabia 2,000, Israel 250;
 //                plus 750 on the Red Sea)
@@ -18,7 +29,8 @@
 //                Spain 662, France 646 in UNIFIL
 //   dep_nato     text EU 567: data 569 (Latvia is 75, same as Italy: check)
 //   dep_oir_us   text 2,000 US in Jordan: data 3,000
-//   dep_oir_us   footnote about the US withdrawal from Iraq is a draft, from the comments in the text
+//   dep_oir_us   footnote on the end of Operation Inherent Resolve in Iraq and dep_tur footnote on the
+//                Bashiqa handover are drafts, from footnote 1 of the new text; the deployment data are 2025
 //   deployments  India UNDOF 197 appears twice in the sheet (rows 43 and 49): doubled in the spikes
 //   UNTSO        drawn at sea off the Israeli-Lebanese coast ("Middle East (UNTSO)"), UNDOF at the Golan
 //   ex_us_fr     text "The US has the largest footprint ..., while France and India ...": split in two
@@ -40,11 +52,11 @@ export default {
       subtitle: (s, period) =>
         `SIPRI trend-indicator value (TIV) of delivered ${s.drones ? "drones" : "weapons"}, ${period}`,
       source:
-        "Data: SIPRI Arms Transfers Database, August 2026. Not available for all countries; for countries in conflict some transfers to non-state armed groups are included.",
+        "Data: SIPRI Arms Transfers Database, August 2026. Deliveries 2016–2025; multi-year deliveries are split equally across the years indicated. Not available for all countries; some transfers to non-state armed groups are included.",
       unit: "SIPRI TIV of delivered weapons",
       periods: {
         all: { label: "2016–2025" },
-        p1: { label: "2016–2021", from: 2016, to: 2021 },
+        p1: { label: "2018–2021", from: 2018, to: 2021 },
         p2: { label: "2022–2025", from: 2022, to: 2025 },
       },
       nSuppliers: 9,
@@ -56,7 +68,7 @@ export default {
         "United Arab Emirates": "UAE",
         "European Union": "EU institutions",
       },
-      countryLabels: { ARE: "UAE" },
+      countryLabels: { PSE: "Palestine" },
     },
 
     armsT: {
@@ -66,9 +78,18 @@ export default {
       subtitle: (s) =>
         `SIPRI trend-indicator value (TIV) of delivered weapons${s.only?.length ? "" : ", by supplier"}`,
       source:
-        "Data: SIPRI Arms Transfers Database, August 2026. Not available for all countries; for countries in conflict some transfers to non-state armed groups are included.",
+        "Data: SIPRI Arms Transfers Database, August 2026. Deliveries 2016–2025; multi-year deliveries are split equally across the years indicated. Not available for all countries; some transfers to non-state armed groups are included.",
       unit: "SIPRI TIV",
       stackOrder: ["USA", "EU", "RUS", "TUR", "KOR", "ISR", "IRN", "CHN", "ARE", "other"],
+      // per supplier (the peaks are by country: US, Italy, Germany, France)
+      supplierOrder: ["United States", "France", "Italy", "Germany"],
+      supplierColors: {
+        "United States": theme.actorColors.USA,
+        France: "#309ebe",
+        Italy: "#64c2c7",
+        Germany: "#3E4E6F",
+      },
+      labels: { "United States": "US" },
     },
 
     forces: {
@@ -170,26 +191,42 @@ export default {
     arm_intro: {
       chart: "arms",
       state: {
-        group: "actor",
         depth: "country",
         highlight: [
-          { from: "USA", to: "SAU" },
-          { from: "USA", to: "ISR" },
-          { from: "EU", to: "QAT" },
+          { from: "United States", to: "SAU" },
+          { from: "United States", to: "QAT" },
+          { from: "United States", to: "ARE" },
+          { from: "France", to: "QAT" },
+          { from: "Italy", to: "QAT" },
         ],
       },
     },
     arm_peak: {
       chart: "armsT",
-      state: { highlight: ["USA", "EU"], marks: [{ year: 2022, lines: ["Peak"] }] },
+      state: {
+        stackBy: "supplier",
+        only: ["United States", "France", "Italy", "Germany"],
+        years: [2018, 2025],
+        marks: [
+          { year: 2021, lines: ["France"] },
+          { year: 2022, lines: ["US, Italy,", "Germany"] },
+        ],
+      },
     },
     arm_russia: {
       chart: "armsT",
-      state: { only: ["RUS"], marks: [{ year: 2019, lines: ["Iraq,", "Syria"] }] },
+      state: { only: ["RUS"], years: [2018, 2025], marks: [{ year: 2019, lines: ["Iraq,", "Syria"] }] },
     },
     arm_israel: {
       chart: "armsT",
-      state: { only: ["ISR"], marks: [{ year: 2022, lines: ["UAE"] }] },
+      state: {
+        only: ["ISR"],
+        years: [2018, 2025],
+        marks: [
+          { year: 2022, lines: ["UAE"] },
+          { year: 2023, lines: ["Iraq"] },
+        ],
+      },
     },
     arm_gulf: {
       chart: "arms",
@@ -198,19 +235,24 @@ export default {
         subregion: "Gulf",
         depth: "country",
         change: true,
-        changeSuppliers: ["France", "Italy", "South Korea", "United States"],
-        highlight: ["France", "Italy", "South Korea", "United States"],
+        changeSuppliers: ["Italy", "Spain", "South Korea"],
+        highlight: ["Italy", "Spain", "South Korea"],
       },
     },
-    arm_me: {
+    arm_me_fall: {
+      chart: "armsT",
+      state: { subregion: "Middle East", years: [2018, 2025], highlight: ["RUS", "USA"] },
+    },
+    arm_me_up: {
       chart: "arms",
       state: {
         period: "p2",
         subregion: "Middle East",
         depth: "country",
         change: true,
-        changeSuppliers: ["France", "Iran", "Turkiye", "United States"],
-        highlight: ["France", "Iran", "Turkiye", "United States"],
+        changeValues: true,
+        changeSuppliers: ["Germany", "France", "Turkiye", "Iran"],
+        highlight: ["Germany", "France", "Turkiye", "Iran"],
       },
     },
 
@@ -271,6 +313,8 @@ export default {
         types: ["Bilateral"],
         actors: ["TUR"],
         values: ["IRQ"],
+        footnote:
+          "On 23 September 2026, Türkiye and Iraq agreed that Turkish forces will gradually hand over the Bashiqa-Zilkan base to Iraq. Data refer to 2025.",
       },
     },
     dep_oir_us: {
@@ -279,7 +323,8 @@ export default {
         types: ["OIR"],
         actors: ["USA"],
         values: ["IRQ", "JOR"],
-        footnote: "The US deployment to Iraq is due to withdraw in October 2026.",
+        footnote:
+          "US forces ended Operation Inherent Resolve in Iraq on 30 September 2026; the Combined Joint Task Force (CJTF-OIR) remains operational, headquartered in Jordan. Data refer to 2025.",
       },
     },
     dep_oir_eu: {

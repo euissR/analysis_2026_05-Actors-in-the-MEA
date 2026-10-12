@@ -1,0 +1,105 @@
+geo,actor,period,component,balance_usd_bn
+Middle East and the Gulf,CHN,2019–21,total,-8.897903024666666
+Middle East and the Gulf,CHN,2022–24,total,-12.032354841
+Middle East and the Gulf,EU,2019–21,total,58.148910442
+Middle East and the Gulf,EU,2022–24,total,39.656214001
+Middle East and the Gulf,GCC,2019–21,total,19.717904726333334
+Middle East and the Gulf,GCC,2022–24,total,21.171755635333334
+Middle East and the Gulf,IND,2019–21,total,-40.71667590533334
+Middle East and the Gulf,IND,2022–24,total,-57.780753705
+Middle East and the Gulf,IRN,2019–21,total,1.4366833603333333
+Middle East and the Gulf,IRN,2022–24,total,-0.761472685
+Middle East and the Gulf,ISR,2019–21,total,1.8129288843333333
+Middle East and the Gulf,ISR,2022–24,total,0.3200667723333333
+Middle East and the Gulf,JPN,2019–21,total,-30.91589388066667
+Middle East and the Gulf,JPN,2022–24,total,-45.85795571
+Middle East and the Gulf,KOR,2019–21,total,-31.81520104866667
+Middle East and the Gulf,KOR,2022–24,total,-55.99647948566666
+Middle East and the Gulf,RUS,2019–21,total,6.658796977333333
+Middle East and the Gulf,RUS,2022–24,total,5.070819412333333
+Middle East and the Gulf,TUR,2019–21,total,14.926903857666666
+Middle East and the Gulf,TUR,2022–24,total,20.224369690666666
+Middle East and the Gulf,USA,2019–21,total,15.562523218333334
+Middle East and the Gulf,USA,2022–24,total,10.702129556666666
+High-income,CHN,2019–21,total,-8.200612264
+High-income,CHN,2022–24,total,-6.465068341333333
+High-income,EU,2019–21,total,55.416390842
+High-income,EU,2022–24,total,41.774375432333336
+High-income,GCC,2019–21,total,0.22429850233333334
+High-income,GCC,2022–24,total,1.2126737043333333
+High-income,IND,2019–21,total,-26.144365870666668
+High-income,IND,2022–24,total,-35.25576136233334
+High-income,IRN,2019–21,total,-4.706597241
+High-income,IRN,2022–24,total,-3.2157079816666667
+High-income,ISR,2019–21,total,-0.22429850233333334
+High-income,ISR,2022–24,total,-1.2126737043333333
+High-income,JPN,2019–21,total,-31.987791611333332
+High-income,JPN,2022–24,total,-47.545694459
+High-income,KOR,2019–21,total,-29.070828174333332
+High-income,KOR,2022–24,total,-50.906346017333334
+High-income,RUS,2019–21,total,5.069820858
+High-income,RUS,2022–24,total,4.609480499333333
+High-income,TUR,2019–21,total,4.505666902333333
+High-income,TUR,2022–24,total,3.0122020383333337
+High-income,USA,2019–21,total,18.05430292233333
+High-income,USA,2022–24,total,16.699160142333334
+Low- and middle-income,CHN,2019–21,total,-0.6972907606666666
+Low- and middle-income,CHN,2022–24,total,-5.567286499666667
+Low- and middle-income,EU,2019–21,total,2.7325196
+Low- and middle-income,EU,2022–24,total,-2.1181614313333332
+Low- and middle-income,GCC,2019–21,total,19.493606224
+Low- and middle-income,GCC,2022–24,total,19.959081931
+Low- and middle-income,IND,2019–21,total,-14.572310034666666
+Low- and middle-income,IND,2022–24,total,-22.524992342666668
+Low- and middle-income,IRN,2019–21,total,6.143280601333333
+Low- and middle-income,IRN,2022–24,total,2.4542352966666665
+Low- and middle-income,ISR,2019–21,total,2.037227386666667
+Low- and middle-income,ISR,2022–24,total,1.5327404766666668
+Low- and middle-income,JPN,2019–21,total,1.0718977306666666
+Low- and middle-income,JPN,2022–24,total,1.687738749
+Low- and middle-income,KOR,2019–21,total,-2.7443728743333335
+Low- and middle-income,KOR,2022–24,total,-5.090133468333333
+Low- and middle-income,RUS,2019–21,total,1.5889761193333332
+Low- and middle-income,RUS,2022–24,total,0.461338913
+Low- and middle-income,TUR,2019–21,total,10.421236955333335
+Low- and middle-income,TUR,2022–24,total,17.21216765233333
+Low- and middle-income,USA,2019–21,total,-2.491779704
+Low- and middle-income,USA,2022–24,total,-5.997030585666667
+GCC,CHN,2019–21,total,-14.174190783333334
+GCC,CHN,2022–24,total,-14.208077715666667
+GCC,EU,2019–21,total,43.328243650333334
+GCC,EU,2022–24,total,30.921716056
+GCC,IND,2019–21,total,-27.291718347666666
+GCC,IND,2022–24,total,-37.69061317133333
+GCC,IRN,2019–21,total,-4.706597241
+GCC,IRN,2022–24,total,-3.2157079816666667
+GCC,ISR,2019–21,total,-0.22429850233333334
+GCC,ISR,2022–24,total,-1.2126737043333333
+GCC,JPN,2019–21,total,-32.547755776
+GCC,JPN,2022–24,total,-47.918175154
+GCC,KOR,2019–21,total,-29.65337661466667
+GCC,KOR,2022–24,total,-51.71341043333334
+GCC,RUS,2019–21,total,4.611937340333333
+GCC,RUS,2022–24,total,4.386575955
+GCC,TUR,2019–21,total,1.218374344
+GCC,TUR,2022–24,total,-0.07686685666666668
+GCC,USA,2019–21,total,20.26543717866667
+GCC,USA,2022–24,total,20.004865214333332
+Israel,CHN,2019–21,total,5.973578519333333
+Israel,CHN,2022–24,total,7.743009374333333
+Israel,EU,2019–21,total,12.088147191666666
+Israel,EU,2022–24,total,10.852659376333333
+Israel,GCC,2019–21,total,0.22429850233333334
+Israel,GCC,2022–24,total,1.2126737043333333
+Israel,IND,2019–21,total,1.147352477
+Israel,IND,2022–24,total,2.434851809
+Israel,JPN,2019–21,total,0.5599641646666667
+Israel,JPN,2022–24,total,0.372480695
+Israel,KOR,2019–21,total,0.5825484403333334
+Israel,KOR,2022–24,total,0.807064416
+Israel,RUS,2019–21,total,0.4578835176666667
+Israel,RUS,2022–24,total,0.22290454433333334
+Israel,TUR,2019–21,total,3.2872925583333337
+Israel,TUR,2022–24,total,3.089068895
+Israel,USA,2019–21,total,-2.2111342563333336
+Israel,USA,2022–24,total,-3.305705072

@@ -27,6 +27,7 @@
 //   highlight:   actor codes at full strength, the rest dimmed
 //   product, basket, flow, component:  which rows (see spec.filter)
 //   measure:     overrides spec.measure for this step
+//   scale:       "free" gives every panel its own axis (default: one shared axis, so panels compare)
 //   title, subtitle, footnote:  override the spec text for this step
 //   annual:      { actor } adds that actor's year-by-year share (extra.annual rows:
 //                actor, year, share_pct) under the subtitle
@@ -38,17 +39,7 @@ import { theme } from "../theme.js";
 
 const NUMERIC = ["share_pct", "value_usd_bn", "balance_usd_bn"];
 const FILTERS = ["product", "basket", "flow", "component"];
-const DEFAULT_ACTORS = [
-  "EU",
-  "CHN",
-  "USA",
-  "IND",
-  "JPN",
-  "KOR",
-  "TUR",
-  "RUS",
-  "GCC",
-];
+const DEFAULT_ACTORS = ["EU", "CHN", "USA", "IND", "JPN", "KOR", "TUR", "RUS", "GCC"];
 
 export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
   const W = 600;
@@ -66,16 +57,10 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     });
     return o;
   });
-  const annual = (extra.annual ?? []).map((r) => ({
-    actor: r.actor,
-    year: +r.year,
-    share: +r.share_pct,
-  }));
+  const annual = (extra.annual ?? []).map((r) => ({ actor: r.actor, year: +r.year, share: +r.share_pct }));
 
   const label = (a) =>
-    spec.labels?.[a] ??
-    actors.find((x) => x.actor === a)?.label ??
-    (a === "other" ? "Other" : a);
+    spec.labels?.[a] ?? actors.find((x) => x.actor === a)?.label ?? (a === "other" ? "Other" : a);
   const color = (a) => theme.actorColors?.[a] ?? theme.light;
   const geoLabel = (g, many = false) =>
     (many ? spec.geoLabelsShort?.[g] : null) ?? spec.geoLabels?.[g] ?? g;
@@ -83,15 +68,10 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
   const fmtShare = (v) => `${v.toFixed(1)}%`;
   const fmtBn = (v) => `USD ${d3.format(",.1f")(v)} bn`;
   const fmtBal = (v) => `USD ${d3.format("+,.1f")(v)} bn`;
-  const formatters = {
-    share_pct: fmtShare,
-    value_usd_bn: fmtBn,
-    balance_usd_bn: fmtBal,
-  };
+  const formatters = { share_pct: fmtShare, value_usd_bn: fmtBn, balance_usd_bn: fmtBal };
   const labelFmt = {
     share_pct: fmtShare,
-    value_usd_bn: (v) =>
-      Math.abs(v) < 1 ? v.toFixed(2) : d3.format(",.1f")(v),
+    value_usd_bn: (v) => (Math.abs(v) < 1 ? v.toFixed(2) : d3.format(",.1f")(v)),
     balance_usd_bn: (v) => d3.format("+,.1f")(v),
   };
 
@@ -120,12 +100,7 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     .attr("viewBox", `0 0 ${W} ${H}`)
     .attr("preserveAspectRatio", "xMidYMin meet")
     .attr("role", "img")
-    .attr(
-      "aria-label",
-      typeof spec.title === "string"
-        ? spec.title
-        : "Change between two periods",
-    );
+    .attr("aria-label", typeof spec.title === "string" ? spec.title : "Change between two periods");
   const gCols = svg.append("g");
   const gLabels = svg.append("g");
   const gRows = svg.append("g");
@@ -149,25 +124,17 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     const measure = state.measure ?? spec.measure ?? "share_pct";
     const filter = { ...(spec.filter ?? {}) };
     FILTERS.forEach((k) => state[k] != null && (filter[k] = state[k]));
-    const use = data.filter((r) =>
-      Object.entries(filter).every(([k, v]) => !(k in r) || r[k] === v),
-    );
+    const use = data.filter((r) => Object.entries(filter).every(([k, v]) => !(k in r) || r[k] === v));
 
     // look-ups: measure -> "geo|actor|period" -> value
     const maps = {};
     NUMERIC.forEach((k) => {
-      if (use.length && k in use[0])
-        maps[k] = new Map(
-          use.map((r) => [`${r.geo}|${r.actor}|${r.period}`, r[k]]),
-        );
+      if (use.length && k in use[0]) maps[k] = new Map(use.map((r) => [`${r.geo}|${r.actor}|${r.period}`, r[k]]));
     });
     const get = (k, g, a, p) => maps[k]?.get(`${g}|${a}|${p}`);
 
     const order = d3.sort(list, (a, b) =>
-      d3.descending(
-        get(measure, geos[0], a, P2) ?? -Infinity,
-        get(measure, geos[0], b, P2) ?? -Infinity,
-      ),
+      d3.descending(get(measure, geos[0], a, P2) ?? -Infinity, get(measure, geos[0], b, P2) ?? -Infinity),
     );
     const entries = [];
     geos.forEach((g, c) =>
@@ -176,28 +143,19 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
         const v2 = get(measure, g, a, P2);
         if (!Number.isFinite(v1) || !Number.isFinite(v2)) return;
         const all = {};
-        Object.keys(maps).forEach(
-          (k) => (all[k] = [get(k, g, a, P1), get(k, g, a, P2)]),
-        );
+        Object.keys(maps).forEach((k) => (all[k] = [get(k, g, a, P1), get(k, g, a, P2)]));
         entries.push({ key: `${g}|${a}`, geo: g, actor: a, c, i, v1, v2, all });
       }),
     );
 
     // totals of the first panel (all actors incl. "other"), for subtitles
+    // only where the rows include "other" (otherwise the sum would leave partners out)
+    const hasOther = use.some((r) => r.geo === geos[0] && r.actor === "other");
     const total = (p) =>
-      maps.value_usd_bn
-        ? d3.sum(
-            use.filter((r) => r.geo === geos[0] && r.period === p),
-            (r) => r.value_usd_bn,
-          )
+      maps.value_usd_bn && hasOther
+        ? d3.sum(use.filter((r) => r.geo === geos[0] && r.period === p), (r) => r.value_usd_bn)
         : NaN;
-    return {
-      geos,
-      order,
-      entries,
-      measure,
-      info: { geos, measure, total: [total(P1), total(P2)] },
-    };
+    return { geos, order, entries, measure, info: { geos, measure, total: [total(P1), total(P2)] } };
   }
 
   // ── render ──────────────────────────────────────────────────────────────
@@ -215,18 +173,21 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     const x0 = (c) => M.left + c * (colW + GAP);
     const yMid = (i) => M.top + i * rowH + rowH / 2;
 
-    const vals = entries.flatMap((e) => [e.v1, e.v2]);
-    const x = d3
-      .scaleLinear()
-      .domain([Math.min(0, d3.min(vals) ?? 0), Math.max(0, d3.max(vals) ?? 1)])
-      .nice(5)
-      .range([0, colW]);
+    const mkScale = (v) =>
+      d3
+        .scaleLinear()
+        .domain([Math.min(0, d3.min(v) ?? 0), Math.max(0, d3.max(v) ?? 1)])
+        .nice(5)
+        .range([0, colW]);
+    const shared = mkScale(entries.flatMap((e) => [e.v1, e.v2]));
+    const xs = geos.map((g) =>
+      state.scale === "free" ? mkScale(entries.filter((e) => e.geo === g).flatMap((e) => [e.v1, e.v2])) : shared,
+    );
 
     // text
     const text = (v) => (typeof v === "function" ? v(state, info) : v);
     $(".fa-title").textContent = text(state.title ?? spec.title) ?? "";
-    $(".fa-subtitle:not(.fa-annual)").textContent =
-      text(state.subtitle ?? spec.subtitle) ?? "";
+    $(".fa-subtitle:not(.fa-annual)").textContent = text(state.subtitle ?? spec.subtitle) ?? "";
     $(".fa-footnote").textContent = state.footnote ?? "";
     const an = state.annual?.actor;
     $(".fa-annual").textContent = an
@@ -242,13 +203,13 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     gCols.selectAll("*").remove();
     // narrow panels: only the two ends (the zero line is drawn anyway) so labels do not run into the next panel
     const narrow = colW < 150;
-    const [d0, d1] = x.domain();
-    const ticks = narrow ? [d0, d1] : x.ticks(colW > 250 ? 5 : 3);
-    const anchor = (d) =>
-      !narrow ? "middle" : d === d0 ? "start" : d === d1 ? "end" : "middle";
-    const tickText = (d) =>
-      measure === "share_pct" ? `${d}%` : d3.format(",")(+d.toFixed(2));
+
+    const tickText = (d) => (measure === "share_pct" ? `${d}%` : d3.format(",")(+d.toFixed(2)));
     geos.forEach((g, c) => {
+      const x = xs[c];
+      const [d0, d1] = x.domain();
+      const ticks = narrow ? [d0, d1] : x.ticks(colW > 250 ? 5 : 3);
+      const anchor = (d) => (!narrow ? "middle" : d === d0 ? "start" : d === d1 ? "end" : "middle");
       const col = gCols.append("g").attr("transform", `translate(${x0(c)},0)`);
       col
         .append("text")
@@ -312,38 +273,21 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     const pos = (d) => `translate(${x0(d.c)},${yMid(d.i)})`;
     const place = (g) => {
       g.select("line")
-        .attr("x1", (d) => x(d.v1))
-        .attr("x2", (d) => x(d.v2))
+        .attr("x1", (d) => xs[d.c](d.v1))
+        .attr("x2", (d) => xs[d.c](d.v2))
         .attr("stroke", (d) => color(d.actor));
-      g.select(".c1")
-        .attr("cx", (d) => x(d.v1))
-        .attr("stroke", (d) => color(d.actor));
-      g.select(".c2")
-        .attr("cx", (d) => x(d.v2))
-        .attr("fill", (d) => color(d.actor));
+      g.select(".c1").attr("cx", (d) => xs[d.c](d.v1)).attr("stroke", (d) => color(d.actor));
+      g.select(".c2").attr("cx", (d) => xs[d.c](d.v2)).attr("fill", (d) => color(d.actor));
       g.select(".val")
-        .attr("x", (d) => Math.max(x(d.v1), x(d.v2)) + 10)
+        .attr("x", (d) => Math.max(xs[d.c](d.v1), xs[d.c](d.v2)) + 10)
         .text((d) => (geos.length === 1 ? labelFmt[measure](d.v2) : ""));
     };
 
     const sel = gRows.selectAll("g.arrow").data(entries, (d) => d.key);
     sel.exit().transition(t).attr("opacity", 0).remove();
-    const enter = sel
-      .enter()
-      .append("g")
-      .attr("class", "arrow")
-      .attr("opacity", 0)
-      .attr("transform", pos);
-    enter
-      .append("line")
-      .attr("stroke-width", 3)
-      .attr("stroke-linecap", "round");
-    enter
-      .append("circle")
-      .attr("class", "c1")
-      .attr("r", 5)
-      .attr("fill", "#fff")
-      .attr("stroke-width", 2);
+    const enter = sel.enter().append("g").attr("class", "arrow").attr("opacity", 0).attr("transform", pos);
+    enter.append("line").attr("stroke-width", 3).attr("stroke-linecap", "round");
+    enter.append("circle").attr("class", "c1").attr("r", 5).attr("fill", "#fff").attr("stroke-width", 2);
     enter.append("circle").attr("class", "c2").attr("r", 5.5);
     enter
       .append("text")
@@ -365,32 +309,19 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
       .attr("y", -rowH / 2)
       .attr("height", rowH)
       .attr("width", colW);
-    all
-      .on("pointerenter pointermove", showTip)
-      .on("pointerleave", () => tooltip.style("opacity", 0));
-    all
-      .transition(t)
-      .attr("transform", pos)
-      .attr("opacity", (d) => op(d.actor));
+    all.on("pointerenter pointermove", showTip).on("pointerleave", () => tooltip.style("opacity", 0));
+    all.transition(t).attr("transform", pos).attr("opacity", (d) => op(d.actor));
     all
       .select("line")
       .transition(t)
-      .attr("x1", (d) => x(d.v1))
-      .attr("x2", (d) => x(d.v2))
+      .attr("x1", (d) => xs[d.c](d.v1))
+      .attr("x2", (d) => xs[d.c](d.v2))
       .attr("stroke", (d) => color(d.actor));
-    all
-      .select(".c1")
-      .transition(t)
-      .attr("cx", (d) => x(d.v1))
-      .attr("stroke", (d) => color(d.actor));
-    all
-      .select(".c2")
-      .transition(t)
-      .attr("cx", (d) => x(d.v2))
-      .attr("fill", (d) => color(d.actor));
+    all.select(".c1").transition(t).attr("cx", (d) => xs[d.c](d.v1)).attr("stroke", (d) => color(d.actor));
+    all.select(".c2").transition(t).attr("cx", (d) => xs[d.c](d.v2)).attr("fill", (d) => color(d.actor));
     all
       .select(".val")
-      .attr("x", (d) => Math.max(x(d.v1), x(d.v2)) + 10)
+      .attr("x", (d) => Math.max(xs[d.c](d.v1), xs[d.c](d.v2)) + 10)
       .text((d) => (geos.length === 1 ? labelFmt[measure](d.v2) : ""));
   }
 
@@ -401,14 +332,9 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
       .map(([k, [a, b]]) => `${formatters[k](a)} → ${formatters[k](b)}`)
       .join("<br>");
     tooltip
-      .html(
-        `<strong>${label(d.actor)}</strong>, ${geoLabel(d.geo)}<br>${P1} → ${P2}<br>${lines}`,
-      )
+      .html(`<strong>${label(d.actor)}</strong>, ${geoLabel(d.geo)}<br>${P1} → ${P2}<br>${lines}`)
       .style("opacity", 1)
-      .style(
-        "left",
-        `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`,
-      )
+      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`)
       .style("top", `${event.clientY - box.top + 12}px`);
   }
 
