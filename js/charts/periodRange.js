@@ -6,13 +6,13 @@
 //   chart.update(state, { animate });
 //
 // rows (long, one row per geo x actor x period; e.g. trade_2_products_AF.csv):
-//   geo, actor, period, and one or more of share_pct, value_usd_bn, balance_usd_bn;
+//   geo, actor, period, and one or more of share_pct, value_usd_bn, balance_usd_bn, net_flow_usd_bn;
 //   optional filter columns: product, basket, flow, component
 //
 // spec:
 //   title, subtitle (text or (state, info) => text), source
 //   periods:     ["2019–21", "2022–24"]
-//   measure:     "share_pct" | "value_usd_bn" | "balance_usd_bn" (the x axis)
+//   measure:     "share_pct" | "value_usd_bn" | "balance_usd_bn" | "net_flow_usd_bn" (the x axis)
 //   filter:      { product, basket, flow, component } rows to use unless a step says otherwise
 //   geos:        geographies drawn unless a step says otherwise (default ["Africa"])
 //   actors:      actor codes in the rows (default: the nine of the trade chapter)
@@ -37,7 +37,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
 
-const NUMERIC = ["share_pct", "value_usd_bn", "balance_usd_bn"];
+const NUMERIC = ["share_pct", "value_usd_bn", "balance_usd_bn", "net_flow_usd_bn"];
 const FILTERS = ["product", "basket", "flow", "component"];
 const DEFAULT_ACTORS = ["EU", "CHN", "USA", "IND", "JPN", "KOR", "TUR", "RUS", "GCC"];
 
@@ -68,11 +68,13 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
   const fmtShare = (v) => `${v.toFixed(1)}%`;
   const fmtBn = (v) => `USD ${d3.format(",.1f")(v)} bn`;
   const fmtBal = (v) => `USD ${d3.format("+,.1f")(v)} bn`;
-  const formatters = { share_pct: fmtShare, value_usd_bn: fmtBn, balance_usd_bn: fmtBal };
+  const fmtFlow = (v) => `USD ${d3.format("+,.2f")(v)} bn a year`;
+  const formatters = { share_pct: fmtShare, value_usd_bn: fmtBn, balance_usd_bn: fmtBal, net_flow_usd_bn: fmtFlow };
   const labelFmt = {
     share_pct: fmtShare,
     value_usd_bn: (v) => (Math.abs(v) < 1 ? v.toFixed(2) : d3.format(",.1f")(v)),
     balance_usd_bn: (v) => d3.format("+,.1f")(v),
+    net_flow_usd_bn: (v) => (Math.abs(v) < 0.1 ? d3.format("+.2f")(v) : d3.format("+,.1f")(v)),
   };
 
   // ── markup ──────────────────────────────────────────────────────────────
@@ -168,6 +170,10 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     const n = order.length;
     const rowH = Math.min(ROW_MAX, (H - M.top - M.bottom) / Math.max(n, 1));
     const bottom = M.top + n * rowH;
+    // fit the frame to the rows: a chart with few rows gets a shorter frame, so the key moves up with the bars
+    const Hc = Math.round(bottom + M.bottom);
+    svg.attr("viewBox", `0 0 ${W} ${Hc}`);
+    el.style.setProperty("--fa-aspect", `${W} / ${Hc}`);
     const right = geos.length === 1 ? 52 : M.right; // room for the value label
     const colW = (W - M.left - right - GAP * (geos.length - 1)) / geos.length;
     const x0 = (c) => M.left + c * (colW + GAP);

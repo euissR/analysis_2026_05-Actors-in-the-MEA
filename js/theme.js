@@ -33,6 +33,11 @@ export const theme = {
     IND: "#ffde75", // egg
     JPN: "#595959", // grey
     GCC: "#7e24a8", // purple
+    // individual Gulf states (official finance) share the Gulf colour: the rows are named
+    SAU: "#7e24a8",
+    ARE: "#7e24a8",
+    QAT: "#7e24a8",
+    KWT: "#7e24a8",
     KOR: "#4fd6d0", // aqua
   },
 

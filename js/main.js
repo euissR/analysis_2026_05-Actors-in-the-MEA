@@ -13,6 +13,9 @@ import { makeMilMap } from "./charts/milMap.js";
 import { makeStackedCols } from "./charts/stackedCols.js";
 import { makePeriodRange } from "./charts/periodRange.js";
 import { makeFlowBars } from "./charts/flowBars.js";
+import { makePanelBars } from "./charts/panelBars.js";
+import { makeBubble } from "./charts/bubble.js";
+import { makeGeoBubbles } from "./charts/geoBubbles.js";
 
 // chart types available to the chapter configs
 const CHART_TYPES = {
@@ -24,6 +27,9 @@ const CHART_TYPES = {
   stackedCols: makeStackedCols,
   periodRange: makePeriodRange,
   flowBars: makeFlowBars,
+  panelBars: makePanelBars,
+  bubble: makeBubble,
+  geoBubbles: makeGeoBubbles,
 };
 
 const url = (file) => `${CONFIG.BASE_URL}/data/${file}`;

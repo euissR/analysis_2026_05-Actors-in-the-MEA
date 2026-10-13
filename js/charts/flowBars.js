@@ -114,6 +114,10 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
     const barH = Math.min(24, rowH * 0.5);
     const yMid = (i) => M.top + i * rowH + rowH / 2;
     const bottom = M.top + n * rowH;
+    // fit the frame to the rows: a chart with few rows gets a shorter frame, so the key moves up with the bars
+    const Hc = Math.round(bottom + M.bottom);
+    svg.attr("viewBox", `0 0 ${W} ${Hc}`);
+    el.style.setProperty("--fa-aspect", `${W} / ${Hc}`);
 
     // grid, axis, centre line, headers (redrawn)
     gGrid.selectAll("*").remove();
