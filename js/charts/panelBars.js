@@ -15,6 +15,7 @@
 //   rowKey:     column that identifies a row (default "actor"; "geo" for a view by geography)
 //   rows:       row ids in display order (default: the first panel's rows, largest first)
 //   rowLabels:  { id: label } where actors.csv has none (or a different wording is wanted)
+//   labelWidth: room for the row names on the left, in chart units (default 92; longer names such as subregions need more)
 //   panels:     [{ id, title, subtitle,
 //                  where:    { column: value } rows used by this panel (e.g. { period: "2022–24" })
 //                  segments: [{ column, label, color, opacity }]  stacked in this order;
@@ -22,7 +23,7 @@
 //                            a theme colour name ("light", "teal3") or a hex value
 //                  domain:   [min, max] fixed axis (e.g. [0, 100]); otherwise
 //                  scale:    "own" (default) or "shared" (one axis for all panels that say so)
-//                  format:   "pct" (1 decimal) | "pct0" | "bn"
+//                  format:   "pct" (1 decimal) | "pct0" | "bn" | "num" (whole numbers, thousands separator: counts)
 //                  endLabel: "total" (default) | { column } | false  the value written after the bar }]
 //   key:        [{ label, color, shape }] legend (same colour words as segments); shape: "dot" draws the marker
 //   dot:        (per panel, optional) { column, label }: a marker at that value on the same axis, e.g. the
@@ -37,6 +38,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
   const W = 600;
@@ -70,6 +72,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     pct: (v) => `${v.toFixed(1)}%`,
     pct0: (v) => `${Math.round(v)}%`,
     bn: (v) => d3.format(",.1f")(v),
+    num: (v) => d3.format(",.0f")(v),
   };
   const fmtOf = (p) => formats[p.format ?? "pct"];
   const matches = (p, r) => Object.entries(p.where ?? {}).every(([k, v]) => r[k] === v);
@@ -111,6 +114,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
   const $ = (sel) => el.querySelector(sel);
   $(".fa-credit").textContent = spec.source ?? "";
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   if (spec.key?.length) {
     d3.select($(".fa-key"))
@@ -161,7 +165,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     const panels = state.panels ? spec.panels.filter((p) => state.panels.includes(p.id)) : spec.panels;
     const np = panels.length;
     const hasSub = panels.some((p) => p.subtitle);
-    const M = { top: hasSub ? 90 : 62, right: 16, bottom: 30, left: 92 };
+    const M = { top: hasSub ? 90 : 62, right: 16, bottom: 30, left: spec.labelWidth ?? 92 };
     const colW = (W - M.left - M.right - GAP * (np - 1)) / np;
     const x0 = (c) => M.left + c * (colW + GAP);
 
@@ -313,7 +317,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
             .attr("height", barH)
             .attr("opacity", 0)
             .on("pointerenter pointermove", showTip)
-            .on("pointerleave", () => tooltip.style("opacity", 0)),
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
@@ -350,7 +354,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
             .attr("cy", (d) => yMid(d.i))
             .attr("opacity", 0)
             .on("pointerenter pointermove", showTip)
-            .on("pointerleave", () => tooltip.style("opacity", 0)),
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
@@ -402,7 +406,6 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
   }
 
   function showTip(event, d) {
-    const box = el.getBoundingClientRect();
     const fmt = fmtOf(d.p);
     const lines = d.p.segments
       .map((s, k) => (Number.isFinite(d.cl.vals[k]) ? `${s.label ?? d.p.title}: ${fmt(d.cl.vals[k])}` : null))
@@ -411,9 +414,8 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     const dotLine = d.cl.dot != null && Number.isFinite(d.cl.dot) && d.p.dot ? `<br>${d.p.dot.label ?? "Marker"}: ${fmt(d.cl.dot)}` : "";
     tooltip
       .html(`<strong>${label(d.row)}</strong><br>${d.p.title ?? ""}<br>${lines}${dotLine}`)
-      .style("opacity", 1)
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`)
-      .style("top", `${event.clientY - box.top + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event, { raise: true });
   }
 
   return {

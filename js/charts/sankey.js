@@ -19,6 +19,10 @@
 //   nSuppliers (8), nCountries (10): how many nodes before the rest is lumped together
 //                    (nodes are ordered largest first, "other" last)
 //   unit:            wording of the key ("SIPRI TIV of delivered weapons")
+//   tipLabel:        word before the figure in the tooltips (default "TIV"; "Students", "Migrants")
+//   defaultPeriod:   period used when a step names none (default "all")
+//   otherSuppliers, otherRecipients: wording of the lumped "other" nodes
+//   reverse:         true = recipients on the left, suppliers on the right (see state.reverse)
 //
 // state (all optional):
 //   period:     "all" (default) | "p1" | "p2"   (keys of spec.periods)
@@ -41,6 +45,10 @@
 //   recipients: true = show the number of recipient countries (non-state recipients not counted;
 //               "+ AU" if the African Union is among them) instead of the share
 //   nCountries: override spec.nCountries for this step
+//   footnote:   text under the chart for this step (optional)
+//   reverse:    true = the recipient nodes (regions or countries) on the left and the suppliers
+//               on the right, for flows that run from Africa to an actor (students, migrants);
+//               the ribbons keep the supplier's colour. Default: spec.reverse, else false.
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import {
@@ -48,6 +56,7 @@ import {
   sankeyLinkHorizontal,
 } from "https://cdn.jsdelivr.net/npm/d3-sankey@0.12/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 const OTHER_S = "_other_suppliers";
 const OTHER_T = "_other_recipients";
@@ -127,7 +136,8 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
   // ── one state -> nodes and links ──────────────────────────────────────────
   function build(state) {
     const depth = state.depth ?? "region";
-    const period = spec.periods[state.period ?? "all"];
+    const reverse = state.reverse ?? spec.reverse ?? false;
+    const period = spec.periods[state.period ?? spec.defaultPeriod ?? "all"];
     const base = data.filter(
       (d) =>
         (state.scope !== "ssa" || d.ssa) &&
@@ -187,7 +197,9 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
     ]
       .flatMap(([s, m]) => [...m].map(([t, v]) => ({ s, t, value: v })))
       .filter((l) => l.value > 0)
-      .map((l) => ({ source: `s:${l.s}`, target: `t:${l.t}`, value: l.value }));
+      .map((l) => ({ source: `s:${l.s}`, target: `t:${l.t}`, value: l.value }))
+      // reverse: drawn from the recipient (left) to the supplier (right)
+      .map((l) => (reverse ? { ...l, source: l.target, target: l.source } : l));
 
     // nodes ordered by what the step shows: largest first, "other" last
     const totals = new Map();
@@ -202,6 +214,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
       ids.set(id, {
         id,
         side,
+        left: (side === "s") !== reverse, // drawn in the left column
         raw,
         order: raw === OTHER_S || raw === OTHER_T ? 1e9 : -totals.get(id),
         label: side === "s" ? supplierLabel(raw) : targetLabel(raw, depth),
@@ -209,8 +222,8 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
       });
     };
     links.forEach((l) => {
-      node(l.source, "s");
-      node(l.target, "t");
+      node(l.source, l.source[0]);
+      node(l.target, l.target[0]);
     });
 
     const layout = d3Sankey()
@@ -267,7 +280,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
     <div class="fa-map"></div>
     <div class="fa-foot">
       <div class="fa-key"></div>
-      <div class="fa-source"></div>
+      <div class="fa-source"><span class="fa-footnote" style="display:block;font-size:0.8125rem;line-height:1.25;margin-bottom:0.25rem"></span><span class="fa-credit"></span></div>
     </div>
     <div class="fa-tooltip" aria-hidden="true"></div>`;
 
@@ -277,8 +290,9 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
   };
   const $ = (sel) => el.querySelector(sel);
   $(".fa-title").textContent = spec.title;
-  $(".fa-source").textContent = spec.source;
+  $(".fa-credit").textContent = spec.source ?? "";
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   const svg = d3
     .select($(".fa-map"))
@@ -307,11 +321,13 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
     const { nodes, links, hl, total, ky, before, reach, period } = g;
 
     const hasHl = hl.length > 0;
+    const supNode = (l) => (l.source.side === "s" ? l.source : l.target);
+    const tgtNode = (l) => (l.source.side === "s" ? l.target : l.source);
     const linkHi = (l) =>
       hl.some(
         (h) =>
-          (!h.from || h.from === l.source.raw) &&
-          (!h.to || h.to === l.target.raw),
+          (!h.from || h.from === supNode(l).raw) &&
+          (!h.to || h.to === tgtNode(l).raw),
       );
     const lit = new Set();
     links.forEach((l) => {
@@ -344,7 +360,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
         (update) => update,
         (exit) => exit.transition(t).attr("stroke-opacity", 0).remove(),
       )
-      .attr("stroke", (d) => d.source.color)
+      .attr("stroke", (d) => supNode(d).color)
       .transition(t)
       .attr("d", linkPath)
       .attr("stroke-width", (d) => Math.max(1, d.width))
@@ -418,14 +434,19 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
           : signed(n.value / before.get(n.id) - 1);
       return pct(n.value / total);
     };
+    // room for the dashed outline of the change labels on the supplier nodes
+    const labelX = (n) => {
+      const pad = state.change && n.side === "s" ? 7 : 5;
+      return n.left ? n.x0 - pad : n.x1 + pad;
+    };
     const showLabel = (n) =>
       hasHl ? lit.has(n.id) || n.y1 - n.y0 > 9 : n.y1 - n.y0 > 7;
 
     // label spacing: labels that would overlap are pushed apart, top to bottom, per side
-    ["s", "t"].forEach((side) => {
+    [true, false].forEach((left) => {
       let bottom = -Infinity;
       nodes
-        .filter((n) => n.side === side && showLabel(n))
+        .filter((n) => n.left === left && showLabel(n))
         .sort((a, b) => a.y0 + a.y1 - (b.y0 + b.y1))
         .forEach((n) => {
           const h = wrap(n.label).length * 13.8;
@@ -443,11 +464,11 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
-      .attr("text-anchor", (d) => (d.side === "s" ? "end" : "start"))
-      .attr("x", (d) => (d.side === "s" ? d.x0 - (state.change ? 7 : 5) : d.x1 + 5))
+      .attr("text-anchor", (d) => (d.left ? "end" : "start"))
+      .attr("x", labelX)
       .each(function (d) {
         const text = d3.select(this);
-        const x = d.side === "s" ? d.x0 - (state.change ? 7 : 5) : d.x1 + 5;
+        const x = labelX(d);
         text.selectAll("tspan").remove();
         const lines = wrap(d.label);
         lines.forEach((line, i) => {
@@ -468,6 +489,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
       .attr("y", (d) => (d.yl ?? (d.y0 + d.y1) / 2) + 4 - (wrap(d.label).length - 1) * 6.5)
       .attr("opacity", (d) => (showLabel(d) && nodeLit(d) ? 1 : showLabel(d) ? theme.dim + 0.2 : 0));
 
+    $(".fa-footnote").textContent = state.footnote ?? "";
     drawKey(state);
   }
 
@@ -490,28 +512,26 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
   }
 
   // ── tooltip ─────────────────────────────────────────────────────────────
-  function show(event, html) {
-    const box = el.getBoundingClientRect();
-    const x = event.clientX - box.left;
-    const y = event.clientY - box.top;
+  function show(event, html, opts = {}) {
     tooltip
       .html(html)
-      .style("opacity", 1)
-      .style("left", `${Math.min(x + 12, box.width - 190)}px`)
-      .style("top", `${y + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event, opts);
   }
-  const hideTip = () => tooltip.style("opacity", 0);
+  const hideTip = hover.leave;
 
   function showLink(event, d) {
     show(
       event,
-      `<strong>${d.source.label} → ${d.target.label}</strong><br>TIV ${fmt(d.value)} (${pct(d.value / current.total)} of the total)`,
+      `<strong>${d.source.label} → ${d.target.label}</strong><br>${spec.tipLabel ?? "TIV"} ${fmt(d.value)} (${pct(d.value / current.total)} of the total)`,
+      { follow: true, soft: true }, // ribbons: follow the mouse, darken
     );
   }
   function showNode(event, d) {
     show(
       event,
-      `<strong>${d.label}</strong><br>TIV ${fmt(d.value)} (${pct(d.value / current.total)} of the total)`,
+      `<strong>${d.label}</strong><br>${spec.tipLabel ?? "TIV"} ${fmt(d.value)} (${pct(d.value / current.total)} of the total)`,
+      { raise: true },
     );
   }
 

@@ -16,6 +16,7 @@ import { makeFlowBars } from "./charts/flowBars.js";
 import { makePanelBars } from "./charts/panelBars.js";
 import { makeBubble } from "./charts/bubble.js";
 import { makeGeoBubbles } from "./charts/geoBubbles.js";
+import { colourActorNames } from "./actorNames.js";
 
 // chart types available to the chapter configs
 const CHART_TYPES = {
@@ -69,6 +70,8 @@ async function init(root) {
   const stage = root.querySelector(".fa-stage");
   const steps = [...root.querySelectorAll("[data-step]")];
   const base = await loadBase(region);
+
+  colourActorNames(steps, chapter, base.actors);
 
   // build every chart of the chapter (hidden until one of its steps is active)
   const charts = {};

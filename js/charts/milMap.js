@@ -48,6 +48,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
 import { geoRobinson } from "../robinson.js";
+import { makeHover } from "./hover.js";
 
 let clipCount = 0;
 
@@ -186,6 +187,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
   $(".fa-title").textContent = spec.title;
   $(".fa-source").textContent = spec.source;
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   // legend tiles: the actors on screen; the reader can pick one. The choice holds
   // until the next step.
@@ -369,7 +371,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
             .attr("stroke-width", 1.2)
             .attr("stroke-linejoin", "round")
             .on("pointerenter pointermove", showSpike)
-            .on("pointerleave", () => tooltip.style("opacity", 0)),
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) =>
           exit
@@ -398,7 +400,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
             .attr("cy", (d) => d.y)
             .attr("r", 0)
             .on("pointerenter pointermove", showDot)
-            .on("pointerleave", () => tooltip.style("opacity", 0)),
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) => exit.transition(t).attr("r", 0).remove(),
       )
@@ -593,12 +595,10 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
 
   // ── tooltips ────────────────────────────────────────────────────────────
   function tip(event, html) {
-    const box = el.getBoundingClientRect();
     tooltip
       .html(html)
-      .style("opacity", 1)
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 200)}px`)
-      .style("top", `${event.clientY - box.top + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event);
   }
 
   function showSpike(event, d) {

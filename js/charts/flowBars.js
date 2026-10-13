@@ -27,6 +27,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 export function makeFlowBars(el, { rows, spec, actors = [] }) {
   const W = 600;
@@ -80,6 +81,7 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
   $(".fa-credit").textContent = spec.source ?? "";
   $(".fa-footnote").textContent = spec.note ?? "";
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   const partColor = theme.actorColors?.ISR ?? theme.teal;
   const restColor = theme.light;
@@ -202,7 +204,7 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
           .attr("width", 0)
           .attr("rx", 0)
           .on("pointerenter pointermove", showTip)
-          .on("pointerleave", () => tooltip.style("opacity", 0)),
+          .on("pointerleave", hover.leave),
       )
       .attr("fill", (s) => s.color)
       .transition(t)
@@ -258,16 +260,14 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
   }
 
   function showTip(event, s) {
-    const box = el.getBoundingClientRect();
     const f = s.d[s.flow];
     tooltip
       .html(
         `<strong>${s.d.label}</strong><br>${s.flow === "imports" ? "Region’s imports from" : "Region’s exports to"} (${period})<br>` +
           `Total: USD ${fmt(f.total)} bn<br>${spec.partLabel ?? spec.part}: USD ${fmt(f.part)} bn (${Math.round(f.share * 100)}%)`,
       )
-      .style("opacity", 1)
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`)
-      .style("top", `${event.clientY - box.top + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event, { raise: true });
   }
 
   return {

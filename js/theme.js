@@ -39,6 +39,9 @@ export const theme = {
     QAT: "#7e24a8",
     KWT: "#7e24a8",
     KOR: "#4fd6d0", // aqua
+    // the EU's bank and France (soft power chapter) use the EU colour: no new colour
+    EIB: "#309ebe",
+    FRA: "#309ebe",
   },
 
   // deployment types (spikes), kept apart from the actor colours

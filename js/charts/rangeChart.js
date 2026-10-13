@@ -23,6 +23,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 export function makeRangeChart(el, { actors, rows, spec }) {
   const actorLabel = new Map(actors.map((a) => [a.actor, a.label]));
@@ -77,6 +78,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
   $(".fa-subtitle").textContent = spec.subtitle;
   $(".fa-source").textContent = spec.source;
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
   el.classList.add("fa-chart--range");
 
   // ── key (drawn once) ────────────────────────────────────────────────────
@@ -247,7 +249,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("height", ROW_H)
       .attr("fill", "transparent")
       .on("pointerenter pointermove", showTooltip)
-      .on("pointerleave", () => tooltip.style("opacity", 0));
+      .on("pointerleave", hover.leave);
   }
 
   // ── render: which rows are at full strength ────────────────────────────
@@ -263,9 +265,6 @@ export function makeRangeChart(el, { actors, rows, spec }) {
   }
 
   function showTooltip(event, s) {
-    const box = el.getBoundingClientRect();
-    const x = event.clientX - box.left;
-    const y = event.clientY - box.top;
     const held = s.count > 0
       ? `${s.count} summit${s.count === 1 ? "" : "s"} held since ${s.start}`
       : "no summit held yet";
@@ -274,9 +273,8 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       : s.next != null ? `next scheduled: ${s.next}` : "no next summit announced";
     tooltip
       .html(`<strong>${s.name}</strong><br>${labelOf(s.actor)}<br>${held}<br>${s.count > 0 ? `latest: ${s.last ?? "–"}; ` : ""}${next}`)
-      .style("opacity", 1)
-      .style("left", `${Math.min(x + 12, box.width - 180)}px`)
-      .style("top", `${y + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event, { mark: event.currentTarget.parentNode.querySelectorAll("circle") });
   }
 
   // first draw, then redraw whenever the width changes

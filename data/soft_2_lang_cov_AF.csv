@@ -1,0 +1,66 @@
+actor,subregion,n_countries,region_size,coverage_pct
+BHR,North Africa,1,5,20
+BHR,West Africa,0,16,0
+BHR,Central Africa,0,10,0
+BHR,East Africa and HoA,0,9,0
+BHR,Southern Africa and Indian Ocean,0,14,0
+CHN,North Africa,4,5,80
+CHN,West Africa,15,16,93.8
+CHN,Central Africa,10,10,100
+CHN,East Africa and HoA,7,9,77.8
+CHN,Southern Africa and Indian Ocean,13,14,92.9
+EU,North Africa,4,5,80
+EU,West Africa,14,16,87.5
+EU,Central Africa,10,10,100
+EU,East Africa and HoA,8,9,88.9
+EU,Southern Africa and Indian Ocean,14,14,100
+FRA,North Africa,4,5,80
+FRA,West Africa,13,16,81.2
+FRA,Central Africa,10,10,100
+FRA,East Africa and HoA,8,9,88.9
+FRA,Southern Africa and Indian Ocean,12,14,85.7
+IND,North Africa,1,5,20
+IND,West Africa,0,16,0
+IND,Central Africa,0,10,0
+IND,East Africa and HoA,1,9,11.1
+IND,Southern Africa and Indian Ocean,2,14,14.3
+IRN,North Africa,0,5,0
+IRN,West Africa,2,16,12.5
+IRN,Central Africa,0,10,0
+IRN,East Africa and HoA,2,9,22.2
+IRN,Southern Africa and Indian Ocean,1,14,7.1
+JPN,North Africa,1,5,20
+JPN,West Africa,0,16,0
+JPN,Central Africa,0,10,0
+JPN,East Africa and HoA,0,9,0
+JPN,Southern Africa and Indian Ocean,0,14,0
+KOR,North Africa,2,5,40
+KOR,West Africa,2,16,12.5
+KOR,Central Africa,0,10,0
+KOR,East Africa and HoA,3,9,33.3
+KOR,Southern Africa and Indian Ocean,5,14,35.7
+KWT,North Africa,1,5,20
+KWT,West Africa,0,16,0
+KWT,Central Africa,0,10,0
+KWT,East Africa and HoA,0,9,0
+KWT,Southern Africa and Indian Ocean,0,14,0
+OMN,North Africa,1,5,20
+OMN,West Africa,0,16,0
+OMN,Central Africa,0,10,0
+OMN,East Africa and HoA,0,9,0
+OMN,Southern Africa and Indian Ocean,0,14,0
+RUS,North Africa,4,5,80
+RUS,West Africa,2,16,12.5
+RUS,Central Africa,4,10,40
+RUS,East Africa and HoA,4,9,44.4
+RUS,Southern Africa and Indian Ocean,3,14,21.4
+SAU,North Africa,4,5,80
+SAU,West Africa,0,16,0
+SAU,Central Africa,0,10,0
+SAU,East Africa and HoA,1,9,11.1
+SAU,Southern Africa and Indian Ocean,0,14,0
+TUR,North Africa,5,5,100
+TUR,West Africa,3,16,18.8
+TUR,Central Africa,2,10,20
+TUR,East Africa and HoA,2,9,22.2
+TUR,Southern Africa and Indian Ocean,1,14,7.1

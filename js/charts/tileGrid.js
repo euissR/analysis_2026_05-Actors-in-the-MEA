@@ -34,6 +34,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 let patternCount = 0;
 
@@ -115,6 +116,7 @@ export function makeTileGrid(el, { rows, spec }) {
   $(".fa-source").textContent = spec.source;
   const subtitle = $(".fa-subtitle");
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   // ── period buttons ──────────────────────────────────────────────────────
   const buttons = d3
@@ -220,7 +222,7 @@ export function makeTileGrid(el, { rows, spec }) {
     .join("g")
     .attr("transform", (d) => `translate(${d.px},${d.py})`)
     .on("pointerenter pointermove", showTooltip)
-    .on("pointerleave", () => tooltip.style("opacity", 0));
+    .on("pointerleave", hover.leave);
 
   const size = cell - gap;
   cells
@@ -357,14 +359,10 @@ export function makeTileGrid(el, { rows, spec }) {
   }
 
   function showTooltip(event, d) {
-    const box = el.getBoundingClientRect();
-    const x = event.clientX - box.left;
-    const y = event.clientY - box.top;
     tooltip
       .html(tooltipHtml(d, shown))
-      .style("opacity", 1)
-      .style("left", `${Math.min(x + 12, box.width - 180)}px`)
-      .style("top", `${y + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event, { mark: event.currentTarget.querySelector("rect") });
   }
 
   return {

@@ -32,6 +32,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
 import { geoRobinson } from "../robinson.js";
+import { makeHover } from "./hover.js";
 
 let clipCount = 0;
 
@@ -121,6 +122,7 @@ export function makeDotMap(
   $(".fa-title").textContent = spec.title;
   $(".fa-source").textContent = spec.source;
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   // ── legend tiles (actor selector) ───────────────────────────────────────
   const tiles = d3
@@ -195,7 +197,7 @@ export function makeDotMap(
     .attr("r", 0)
     .attr("stroke-width", 0.75)
     .on("pointerenter pointermove", showTooltip)
-    .on("pointerleave", () => tooltip.style("opacity", 0));
+    .on("pointerleave", hover.leave);
 
   const labelLayer = svg.append("g").attr("class", "fa-labels");
   const noteLayer = svg.append("g").attr("class", "fa-labels");
@@ -204,6 +206,27 @@ export function makeDotMap(
   const OWN = { r: 3.5, fill: theme.land, stroke: theme.grey }; // actor's own country
   const ZERO = { r: 2, fill: theme.light, stroke: theme.land };
   const NONE = { r: 0, fill: "none", stroke: "none" }; // nothing drawn, nothing to hover
+
+  // A single actor is drawn in its own colour (theme.actorColors), the same as in the
+  // text and the other charts; "all actors" and actors without a colour stay teal.
+  // In presence charts the category (rank) is then shown by a lighter tint of that colour
+  // (and the size), since the colour itself now says who.
+  const actorHue = (actor) => (actor === "all" ? null : theme.actorColors?.[actor] ?? null);
+  const countFill = (state) => actorHue(state.actor) ?? theme.teal;
+  const TINTS = [0, 0.45, 0.7]; // strongest category first, in the order of spec.categories
+  function catLook(presence, actor) {
+    const cat = cats[presence] ?? cats.None;
+    const hue = actorHue(actor);
+    const rank = Object.keys(cats).filter((k) => k !== "None").indexOf(presence);
+    if (!hue || rank < 0) return { ...cat, fill: cat.color, stroke: theme.land };
+    const tint = TINTS[Math.min(rank, TINTS.length - 1)];
+    return {
+      ...cat,
+      fill: d3.interpolateRgb(hue, "#fff")(tint),
+      // pale dots get an outline in the actor colour so they stay visible on white land
+      stroke: tint ? hue : theme.land,
+    };
+  }
 
   function look(d, state) {
     const row = value(d.iso3, state.actor);
@@ -214,13 +237,13 @@ export function makeDotMap(
       if (row?.n === "" || row?.n == null) return OWN;
       const n = +row.n;
       return n
-        ? { r: scaleFor(state)(n), fill: theme.teal, stroke: theme.land }
+        ? { r: scaleFor(state)(n), fill: countFill(state), stroke: theme.land }
         : ZERO;
     }
     const presence = row?.presence ?? "";
     if (!presence) return OWN;
-    const cat = cats[presence] ?? cats.None;
-    return { r: cat.r, fill: cat.color, stroke: theme.land };
+    const cat = catLook(presence, state.actor);
+    return { r: cat.r, fill: cat.fill, stroke: cat.stroke };
   }
 
   function tooltipLine(d, state) {
@@ -373,7 +396,7 @@ export function makeDotMap(
       g.append("circle")
         .attr("cy", (v) => maxR * 2 - rSize(v) * k + 1)
         .attr("r", (v) => rSize(v) * k)
-        .attr("fill", theme.teal);
+        .attr("fill", countFill(state));
       g.append("text")
         .attr("y", maxR * 2 + 14)
         .attr("text-anchor", "middle")
@@ -395,21 +418,19 @@ export function makeDotMap(
       .data(Object.entries(cats).filter(([k]) => present.has(k)))
       .join("span")
       .attr("class", "fa-key-item")
-      .html(([, c]) => {
+      .html(([name, c]) => {
         const r = c.r * k;
-        return `<svg width="${r * 2 + 2}" height="${r * 2 + 2}" aria-hidden="true"><circle cx="${r + 1}" cy="${r + 1}" r="${r}" fill="${c.color}"/></svg>${c.label}`;
+        const look = catLook(name, state.actor);
+        const edge = look.stroke === theme.land ? "none" : look.stroke;
+        return `<svg width="${r * 2 + 2}" height="${r * 2 + 2}" aria-hidden="true"><circle cx="${r + 1}" cy="${r + 1}" r="${r}" fill="${look.fill}" stroke="${edge}"/></svg>${c.label}`;
       });
   }
 
   function showTooltip(event, d) {
-    const box = el.getBoundingClientRect();
-    const x = event.clientX - box.left;
-    const y = event.clientY - box.top;
     tooltip
       .html(`<strong>${d.name}</strong><br>${tooltipLine(d, shown)}`)
-      .style("opacity", 1)
-      .style("left", `${Math.min(x + 12, box.width - 180)}px`)
-      .style("top", `${y + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event);
   }
 
   // the key is drawn in pixels, the dots in map units: redraw the key when the map is resized

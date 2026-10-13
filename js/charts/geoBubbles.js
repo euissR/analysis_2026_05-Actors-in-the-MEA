@@ -32,6 +32,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
 import { geoRobinson } from "../robinson.js";
+import { makeHover } from "./hover.js";
 
 let clipCount = 0;
 const GULF = new Set(["ARE", "SAU", "QAT", "KWT", "OMN", "BHR"]);
@@ -89,6 +90,7 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
   const $ = (sel) => el.querySelector(sel);
   $(".fa-credit").textContent = spec.source ?? "";
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   const svg = d3
     .select($(".fa-map"))
@@ -178,7 +180,7 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
             .attr("stroke", "#fff")
             .attr("stroke-width", 1)
             .on("pointerenter pointermove", showTip)
-            .on("pointerleave", () => tooltip.style("opacity", 0)),
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).attr("r", 0).remove(),
       )
@@ -289,12 +291,10 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
     } else {
       lines.push(`Largest: ${actorLabel(row.lead_actor)} (${d3.format(".0f")(row.lead_share_pct)}%)`);
     }
-    const box = el.getBoundingClientRect();
     tooltip
       .html(`<strong>${d.name}</strong><br>${lines.join("<br>")}`)
-      .style("opacity", 1)
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`)
-      .style("top", `${event.clientY - box.top + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event);
   }
 
   return {

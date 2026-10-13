@@ -324,3 +324,230 @@ body {
     transition: none;
   }
 }
+
+/* ══ landing page ═══════════════════════════════════════════════════════════
+   Overview map, key-insights slider and chapter cards (js/landing.js).
+   Everything sits inside .fa-landing, so nothing leaks into the Drupal theme. */
+
+.fa-landing {
+  --fa-teal: #309ebe;
+  --fa-navy: #1d3956;
+  --fa-ink: #1d1d1b;
+  --fa-muted: #646363;
+  --fa-light: #c6c6c6;
+  --fa-font: "PT Sans Narrow", "Arial Narrow", sans-serif;
+}
+
+/* Drupal adds empty paragraphs around embedded markup */
+.fa-landing p:empty {
+  display: none;
+}
+
+/* ── overview map: a static chart (the .fa-chart frame belongs to the scrolly stage) ── */
+
+.fa-overview {
+  position: relative; /* anchor for the tooltip */
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fa-font);
+  color: var(--fa-ink);
+  margin: 1.5rem 0;
+}
+
+/* the map is drawn by js: whatever Drupal injects in here goes */
+.fa-overview > p {
+  display: none;
+}
+
+.fa-overview .fa-key {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.fa-overview .fa-map {
+  flex: none;
+  aspect-ratio: var(--fa-aspect, 2);
+}
+
+.fa-landing-note {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  color: var(--fa-muted);
+}
+
+/* ── chapter cards ──────────────────────────────────────────────────────── */
+
+.fa-cards-wrap {
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.fa-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.fa-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 1em;
+  box-shadow: 0 2px 4px rgba(9, 49, 142, 0.08), 0 0 10px rgba(9, 49, 142, 0.04),
+    0 4px 5px rgba(9, 49, 142, 0.04), 0 -4px 4px rgba(9, 49, 142, 0.04);
+}
+
+/* wraps number + title + image + subtitle in one click target,
+   without disturbing the flex layout of .fa-card */
+.fa-card-link {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* numbered heading above the image; baseline alignment keeps the number on the
+   title's first line even when the title wraps */
+.fa-card-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  color: var(--fa-navy);
+  padding-top: 1em;
+}
+
+.fa-card-number {
+  display: inline-block;
+  position: relative;
+  top: -0.2em;
+  flex-shrink: 0;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8em;
+  text-align: center;
+  background: var(--fa-navy);
+  color: #fff;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+}
+
+.fa-card-title {
+  margin: 0;
+  padding: 0 !important;
+  font-family: "PT Sans", sans-serif;
+}
+
+.fa-card-img-wrap {
+  display: grid;
+  margin-top: 0.8em;
+}
+
+.fa-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: box-shadow 0.15s;
+}
+
+.fa-card:hover .fa-card-img {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fa-card-subtitle {
+  padding: 0.4em 0 0.1em !important;
+  margin: 0 0 0.8em !important;
+  text-wrap: balance;
+  font-weight: 700 !important;
+}
+
+.fa-card-desc {
+  font-family: "PT Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fa-muted);
+  margin: 0 0 1em !important;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .fa-cards-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── key-insights slider ────────────────────────────────────────────────── */
+
+.fa-slider {
+  position: relative;
+  max-width: 700px;
+  margin: 2rem auto;
+  aspect-ratio: 4 / 3;
+  background: #f2f2f2;
+  border-radius: 6px;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+
+.fa-slider-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.fa-slider-img.on {
+  opacity: 1;
+}
+
+.fa-slider-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.fa-slider-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  padding: 0;
+}
+
+.fa-slider-dot.on {
+  background: var(--fa-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-slider-img,
+  .fa-card-img {
+    transition: none;
+  }
+}
+
+/* ── hover marker (hover.js) ─────────────────────────────────────────────── */
+
+.fa-hover {
+  stroke: var(--fa-ink, #1d1d1b);
+  stroke-width: 1.6px;
+}
+
+/* ribbons (sankey): darken instead of outlining */
+.fa-hover-soft {
+  filter: brightness(0.75);
+}

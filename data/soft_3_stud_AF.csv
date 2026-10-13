@@ -1,0 +1,808 @@
+supplier,actor_code,iso3,country,subregion,ssa,year,drone,tiv,ref_year
+UAE,ARE,BDI,Burundi,Central Africa,TRUE,2023,FALSE,1,2012
+UAE,ARE,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,34,2012
+UAE,ARE,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,0,2012
+UAE,ARE,TCD,Chad,Central Africa,TRUE,2023,FALSE,10,2012
+UAE,ARE,COG,Congo,Central Africa,TRUE,2023,FALSE,4,2012
+UAE,ARE,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,0,2012
+UAE,ARE,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,0,2012
+UAE,ARE,GAB,Gabon,Central Africa,TRUE,2023,FALSE,1,2012
+UAE,ARE,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,1,2012
+UAE,ARE,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2012
+UAE,ARE,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,36,2012
+UAE,ARE,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,32,2012
+UAE,ARE,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,6,2012
+UAE,ARE,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,130,2012
+UAE,ARE,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,603,2012
+UAE,ARE,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,0,2012
+UAE,ARE,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,1539,2012
+UAE,ARE,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,21,2012
+UAE,ARE,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,31,2012
+UAE,ARE,DZA,Algeria,North Africa,FALSE,2023,FALSE,299,2012
+UAE,ARE,EGY,Egypt,North Africa,FALSE,2023,FALSE,2948,2012
+UAE,ARE,LBY,Libya,North Africa,FALSE,2023,FALSE,120,2012
+UAE,ARE,MAR,Morocco,North Africa,FALSE,2023,FALSE,256,2012
+UAE,ARE,TUN,Tunisia,North Africa,FALSE,2023,FALSE,114,2012
+UAE,ARE,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,6,2012
+UAE,ARE,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2012
+UAE,ARE,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,176,2012
+UAE,ARE,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2012
+UAE,ARE,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2012
+UAE,ARE,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2012
+UAE,ARE,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2012
+UAE,ARE,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,197,2012
+UAE,ARE,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,8,2012
+UAE,ARE,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2012
+UAE,ARE,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2012
+UAE,ARE,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,88,2012
+UAE,ARE,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2012
+UAE,ARE,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,29,2012
+UAE,ARE,BEN,Benin,West Africa,TRUE,2023,FALSE,7,2012
+UAE,ARE,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,1,2012
+UAE,ARE,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2012
+UAE,ARE,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,9,2012
+UAE,ARE,GMB,Gambia,West Africa,TRUE,2023,FALSE,6,2012
+UAE,ARE,GHA,Ghana,West Africa,TRUE,2023,FALSE,19,2012
+UAE,ARE,GIN,Guinea,West Africa,TRUE,2023,FALSE,4,2012
+UAE,ARE,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2012
+UAE,ARE,LBR,Liberia,West Africa,TRUE,2023,FALSE,4,2012
+UAE,ARE,MLI,Mali,West Africa,TRUE,2023,FALSE,9,2012
+UAE,ARE,MRT,Mauritania,West Africa,TRUE,2023,FALSE,32,2012
+UAE,ARE,NER,Niger,West Africa,TRUE,2023,FALSE,5,2012
+UAE,ARE,NGA,Nigeria,West Africa,TRUE,2023,FALSE,850,2012
+UAE,ARE,SEN,Senegal,West Africa,TRUE,2023,FALSE,35,2012
+UAE,ARE,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,4,2012
+UAE,ARE,TGO,Togo,West Africa,TRUE,2023,FALSE,1,2012
+Bahrain,BHR,BDI,Burundi,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,2,2023
+Bahrain,BHR,TCD,Chad,Central Africa,TRUE,2023,FALSE,2,2023
+Bahrain,BHR,COG,Congo,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,GAB,Gabon,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,6,2023
+Bahrain,BHR,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,4,2023
+Bahrain,BHR,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,14,2023
+Bahrain,BHR,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,5,2023
+Bahrain,BHR,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,90,2023
+Bahrain,BHR,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,DZA,Algeria,North Africa,FALSE,2023,FALSE,23,2023
+Bahrain,BHR,EGY,Egypt,North Africa,FALSE,2023,FALSE,408,2023
+Bahrain,BHR,LBY,Libya,North Africa,FALSE,2023,FALSE,21,2023
+Bahrain,BHR,MAR,Morocco,North Africa,FALSE,2023,FALSE,27,2023
+Bahrain,BHR,TUN,Tunisia,North Africa,FALSE,2023,FALSE,18,2023
+Bahrain,BHR,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Bahrain,BHR,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2023
+Bahrain,BHR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,4,2023
+Bahrain,BHR,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Bahrain,BHR,BEN,Benin,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,GMB,Gambia,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,GHA,Ghana,West Africa,TRUE,2023,FALSE,1,2023
+Bahrain,BHR,GIN,Guinea,West Africa,TRUE,2023,FALSE,1,2023
+Bahrain,BHR,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,LBR,Liberia,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,MLI,Mali,West Africa,TRUE,2023,FALSE,1,2023
+Bahrain,BHR,MRT,Mauritania,West Africa,TRUE,2023,FALSE,3,2023
+Bahrain,BHR,NER,Niger,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,NGA,Nigeria,West Africa,TRUE,2023,FALSE,2,2023
+Bahrain,BHR,SEN,Senegal,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,0,2023
+Bahrain,BHR,TGO,Togo,West Africa,TRUE,2023,FALSE,0,2023
+EU,EU,BDI,Burundi,Central Africa,TRUE,2023,FALSE,1437,2023
+EU,EU,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,21530,2023
+EU,EU,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,546,2023
+EU,EU,TCD,Chad,Central Africa,TRUE,2023,FALSE,2607,2023
+EU,EU,COG,Congo,Central Africa,TRUE,2023,FALSE,5462,2023
+EU,EU,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,3317,2023
+EU,EU,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,431,2023
+EU,EU,GAB,Gabon,Central Africa,TRUE,2023,FALSE,4498,2023
+EU,EU,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,2104,2023
+EU,EU,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,1146,2023
+EU,EU,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,650,2023
+EU,EU,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,301,2023
+EU,EU,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,3363,2023
+EU,EU,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,3019,2023
+EU,EU,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,285,2023
+EU,EU,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,121,2023
+EU,EU,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,1204,2023
+EU,EU,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,1197,2023
+EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,799,2023
+EU,EU,DZA,Algeria,North Africa,FALSE,2023,FALSE,28833,2023
+EU,EU,EGY,Egypt,North Africa,FALSE,2023,FALSE,15350,2023
+EU,EU,LBY,Libya,North Africa,FALSE,2023,FALSE,1132,2023
+EU,EU,MAR,Morocco,North Africa,FALSE,2023,FALSE,52140,2023
+EU,EU,TUN,Tunisia,North Africa,FALSE,2023,FALSE,22525,2023
+EU,EU,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,6289,2023
+EU,EU,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,127,2023
+EU,EU,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1734,2023
+EU,EU,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,157,2023
+EU,EU,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,41,2023
+EU,EU,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,4034,2023
+EU,EU,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,143,2023
+EU,EU,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1902,2023
+EU,EU,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2883,2023
+EU,EU,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,491,2023
+EU,EU,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,135,2023
+EU,EU,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2779,2023
+EU,EU,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,356,2023
+EU,EU,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,4257,2023
+EU,EU,BEN,Benin,West Africa,TRUE,2023,FALSE,5152,2023
+EU,EU,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,2270,2023
+EU,EU,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,6627,2023
+EU,EU,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,8770,2023
+EU,EU,GMB,Gambia,West Africa,TRUE,2023,FALSE,471,2023
+EU,EU,GHA,Ghana,West Africa,TRUE,2023,FALSE,4517,2023
+EU,EU,GIN,Guinea,West Africa,TRUE,2023,FALSE,3624,2023
+EU,EU,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,7019,2023
+EU,EU,LBR,Liberia,West Africa,TRUE,2023,FALSE,165,2023
+EU,EU,MLI,Mali,West Africa,TRUE,2023,FALSE,2352,2023
+EU,EU,MRT,Mauritania,West Africa,TRUE,2023,FALSE,1033,2023
+EU,EU,NER,Niger,West Africa,TRUE,2023,FALSE,1754,2023
+EU,EU,NGA,Nigeria,West Africa,TRUE,2023,FALSE,11818,2023
+EU,EU,SEN,Senegal,West Africa,TRUE,2023,FALSE,13188,2023
+EU,EU,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,188,2023
+EU,EU,TGO,Togo,West Africa,TRUE,2023,FALSE,4531,2023
+India,IND,BDI,Burundi,Central Africa,TRUE,2023,FALSE,32,2023
+India,IND,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,143,2023
+India,IND,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,30,2023
+India,IND,TCD,Chad,Central Africa,TRUE,2023,FALSE,67,2023
+India,IND,COG,Congo,Central Africa,TRUE,2023,FALSE,142,2023
+India,IND,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,46,2023
+India,IND,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,2,2023
+India,IND,GAB,Gabon,Central Africa,TRUE,2023,FALSE,6,2023
+India,IND,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,195,2023
+India,IND,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2023
+India,IND,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,66,2023
+India,IND,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,16,2023
+India,IND,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,901,2023
+India,IND,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,368,2023
+India,IND,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,298,2023
+India,IND,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,403,2023
+India,IND,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,982,2023
+India,IND,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,292,2023
+India,IND,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,1264,2023
+India,IND,DZA,Algeria,North Africa,FALSE,2023,FALSE,5,2023
+India,IND,EGY,Egypt,North Africa,FALSE,2023,FALSE,66,2023
+India,IND,LBY,Libya,North Africa,FALSE,2023,FALSE,52,2023
+India,IND,MAR,Morocco,North Africa,FALSE,2023,FALSE,8,2023
+India,IND,TUN,Tunisia,North Africa,FALSE,2023,FALSE,2,2023
+India,IND,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,149,2023
+India,IND,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,87,2023
+India,IND,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,50,2023
+India,IND,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,20,2023
+India,IND,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,247,2023
+India,IND,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,59,2023
+India,IND,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,428,2023
+India,IND,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,145,2023
+India,IND,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,219,2023
+India,IND,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,90,2023
+India,IND,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,15,2023
+India,IND,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,121,2023
+India,IND,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,471,2023
+India,IND,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1058,2023
+India,IND,BEN,Benin,West Africa,TRUE,2023,FALSE,5,2023
+India,IND,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,49,2023
+India,IND,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,3,2023
+India,IND,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,0,2023
+India,IND,GMB,Gambia,West Africa,TRUE,2023,FALSE,185,2023
+India,IND,GHA,Ghana,West Africa,TRUE,2023,FALSE,282,2023
+India,IND,GIN,Guinea,West Africa,TRUE,2023,FALSE,52,2023
+India,IND,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,7,2023
+India,IND,LBR,Liberia,West Africa,TRUE,2023,FALSE,286,2023
+India,IND,MLI,Mali,West Africa,TRUE,2023,FALSE,89,2023
+India,IND,MRT,Mauritania,West Africa,TRUE,2023,FALSE,3,2023
+India,IND,NER,Niger,West Africa,TRUE,2023,FALSE,17,2023
+India,IND,NGA,Nigeria,West Africa,TRUE,2023,FALSE,1387,2023
+India,IND,SEN,Senegal,West Africa,TRUE,2023,FALSE,6,2023
+India,IND,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,54,2023
+India,IND,TGO,Togo,West Africa,TRUE,2023,FALSE,72,2023
+Iran,IRN,BDI,Burundi,Central Africa,TRUE,2023,FALSE,5,2022
+Iran,IRN,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,229,2022
+Iran,IRN,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,5,2022
+Iran,IRN,TCD,Chad,Central Africa,TRUE,2023,FALSE,22,2022
+Iran,IRN,COG,Congo,Central Africa,TRUE,2023,FALSE,1,2022
+Iran,IRN,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,33,2022
+Iran,IRN,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,0,2022
+Iran,IRN,GAB,Gabon,Central Africa,TRUE,2023,FALSE,0,2022
+Iran,IRN,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,41,2022
+Iran,IRN,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2022
+Iran,IRN,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,0,2022
+Iran,IRN,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,0,2022
+Iran,IRN,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,186,2022
+Iran,IRN,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,193,2022
+Iran,IRN,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,6,2022
+Iran,IRN,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,0,2022
+Iran,IRN,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,46,2022
+Iran,IRN,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,264,2022
+Iran,IRN,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,371,2022
+Iran,IRN,DZA,Algeria,North Africa,FALSE,2023,FALSE,83,2022
+Iran,IRN,EGY,Egypt,North Africa,FALSE,2023,FALSE,45,2022
+Iran,IRN,LBY,Libya,North Africa,FALSE,2023,FALSE,0,2022
+Iran,IRN,MAR,Morocco,North Africa,FALSE,2023,FALSE,39,2022
+Iran,IRN,TUN,Tunisia,North Africa,FALSE,2023,FALSE,69,2022
+Iran,IRN,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,224,2022
+Iran,IRN,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,512,2022
+Iran,IRN,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,83,2022
+Iran,IRN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2022
+Iran,IRN,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2022
+Iran,IRN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,47,2022
+Iran,IRN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,26,2022
+Iran,IRN,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,26,2022
+Iran,IRN,BEN,Benin,West Africa,TRUE,2023,FALSE,62,2022
+Iran,IRN,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,416,2022
+Iran,IRN,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2022
+Iran,IRN,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,215,2022
+Iran,IRN,GMB,Gambia,West Africa,TRUE,2023,FALSE,21,2022
+Iran,IRN,GHA,Ghana,West Africa,TRUE,2023,FALSE,284,2022
+Iran,IRN,GIN,Guinea,West Africa,TRUE,2023,FALSE,416,2022
+Iran,IRN,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2022
+Iran,IRN,LBR,Liberia,West Africa,TRUE,2023,FALSE,0,2022
+Iran,IRN,MLI,Mali,West Africa,TRUE,2023,FALSE,254,2022
+Iran,IRN,MRT,Mauritania,West Africa,TRUE,2023,FALSE,14,2022
+Iran,IRN,NER,Niger,West Africa,TRUE,2023,FALSE,672,2022
+Iran,IRN,NGA,Nigeria,West Africa,TRUE,2023,FALSE,1292,2022
+Iran,IRN,SEN,Senegal,West Africa,TRUE,2023,FALSE,209,2022
+Iran,IRN,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,114,2022
+Iran,IRN,TGO,Togo,West Africa,TRUE,2023,FALSE,15,2022
+Israel,ISR,BDI,Burundi,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,TCD,Chad,Central Africa,TRUE,2023,FALSE,1,2014
+Israel,ISR,COG,Congo,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,GAB,Gabon,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,0,2014
+Israel,ISR,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,3,2014
+Israel,ISR,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,72,2014
+Israel,ISR,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,4,2014
+Israel,ISR,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,1,2014
+Israel,ISR,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,0,2014
+Israel,ISR,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,2,2014
+Israel,ISR,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,0,2014
+Israel,ISR,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,1,2014
+Israel,ISR,DZA,Algeria,North Africa,FALSE,2023,FALSE,3,2014
+Israel,ISR,EGY,Egypt,North Africa,FALSE,2023,FALSE,6,2014
+Israel,ISR,LBY,Libya,North Africa,FALSE,2023,FALSE,0,2014
+Israel,ISR,MAR,Morocco,North Africa,FALSE,2023,FALSE,53,2014
+Israel,ISR,TUN,Tunisia,North Africa,FALSE,2023,FALSE,10,2014
+Israel,ISR,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2014
+Israel,ISR,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2014
+Israel,ISR,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2014
+Israel,ISR,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,78,2014
+Israel,ISR,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2014
+Israel,ISR,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2014
+Israel,ISR,BEN,Benin,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,1,2014
+Israel,ISR,GMB,Gambia,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,GHA,Ghana,West Africa,TRUE,2023,FALSE,1,2014
+Israel,ISR,GIN,Guinea,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,LBR,Liberia,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,MLI,Mali,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,MRT,Mauritania,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,NER,Niger,West Africa,TRUE,2023,FALSE,1,2014
+Israel,ISR,NGA,Nigeria,West Africa,TRUE,2023,FALSE,9,2014
+Israel,ISR,SEN,Senegal,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,0,2014
+Israel,ISR,TGO,Togo,West Africa,TRUE,2023,FALSE,0,2014
+Japan,JPN,BDI,Burundi,Central Africa,TRUE,2023,FALSE,10,2023
+Japan,JPN,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,61,2023
+Japan,JPN,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,1,2023
+Japan,JPN,TCD,Chad,Central Africa,TRUE,2023,FALSE,1,2023
+Japan,JPN,COG,Congo,Central Africa,TRUE,2023,FALSE,17,2023
+Japan,JPN,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,48,2023
+Japan,JPN,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,1,2023
+Japan,JPN,GAB,Gabon,Central Africa,TRUE,2023,FALSE,9,2023
+Japan,JPN,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,46,2023
+Japan,JPN,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,2,2023
+Japan,JPN,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,6,2023
+Japan,JPN,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,5,2023
+Japan,JPN,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,106,2023
+Japan,JPN,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,193,2023
+Japan,JPN,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,16,2023
+Japan,JPN,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,14,2023
+Japan,JPN,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,55,2023
+Japan,JPN,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,68,2023
+Japan,JPN,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,55,2023
+Japan,JPN,DZA,Algeria,North Africa,FALSE,2023,FALSE,29,2023
+Japan,JPN,EGY,Egypt,North Africa,FALSE,2023,FALSE,316,2023
+Japan,JPN,LBY,Libya,North Africa,FALSE,2023,FALSE,4,2023
+Japan,JPN,MAR,Morocco,North Africa,FALSE,2023,FALSE,55,2023
+Japan,JPN,TUN,Tunisia,North Africa,FALSE,2023,FALSE,52,2023
+Japan,JPN,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,9,2023
+Japan,JPN,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,36,2023
+Japan,JPN,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Japan,JPN,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2023
+Japan,JPN,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,7,2023
+Japan,JPN,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,34,2023
+Japan,JPN,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,46,2023
+Japan,JPN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,12,2023
+Japan,JPN,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,56,2023
+Japan,JPN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,20,2023
+Japan,JPN,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2023
+Japan,JPN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,72,2023
+Japan,JPN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,58,2023
+Japan,JPN,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,50,2023
+Japan,JPN,BEN,Benin,West Africa,TRUE,2023,FALSE,38,2023
+Japan,JPN,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,28,2023
+Japan,JPN,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,9,2023
+Japan,JPN,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,32,2023
+Japan,JPN,GMB,Gambia,West Africa,TRUE,2023,FALSE,19,2023
+Japan,JPN,GHA,Ghana,West Africa,TRUE,2023,FALSE,177,2023
+Japan,JPN,GIN,Guinea,West Africa,TRUE,2023,FALSE,10,2023
+Japan,JPN,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,5,2023
+Japan,JPN,LBR,Liberia,West Africa,TRUE,2023,FALSE,22,2023
+Japan,JPN,MLI,Mali,West Africa,TRUE,2023,FALSE,30,2023
+Japan,JPN,MRT,Mauritania,West Africa,TRUE,2023,FALSE,11,2023
+Japan,JPN,NER,Niger,West Africa,TRUE,2023,FALSE,5,2023
+Japan,JPN,NGA,Nigeria,West Africa,TRUE,2023,FALSE,198,2023
+Japan,JPN,SEN,Senegal,West Africa,TRUE,2023,FALSE,55,2023
+Japan,JPN,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,14,2023
+Japan,JPN,TGO,Togo,West Africa,TRUE,2023,FALSE,8,2023
+South Korea,KOR,BDI,Burundi,Central Africa,TRUE,2023,FALSE,144,2023
+South Korea,KOR,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,157,2023
+South Korea,KOR,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,8,2023
+South Korea,KOR,TCD,Chad,Central Africa,TRUE,2023,FALSE,4,2023
+South Korea,KOR,COG,Congo,Central Africa,TRUE,2023,FALSE,10,2023
+South Korea,KOR,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,35,2023
+South Korea,KOR,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,4,2023
+South Korea,KOR,GAB,Gabon,Central Africa,TRUE,2023,FALSE,21,2023
+South Korea,KOR,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,123,2023
+South Korea,KOR,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2023
+South Korea,KOR,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,0,2023
+South Korea,KOR,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,2,2023
+South Korea,KOR,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,246,2023
+South Korea,KOR,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,150,2023
+South Korea,KOR,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,18,2023
+South Korea,KOR,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,18,2023
+South Korea,KOR,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,35,2023
+South Korea,KOR,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,124,2023
+South Korea,KOR,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,152,2023
+South Korea,KOR,DZA,Algeria,North Africa,FALSE,2023,FALSE,19,2023
+South Korea,KOR,EGY,Egypt,North Africa,FALSE,2023,FALSE,114,2023
+South Korea,KOR,LBY,Libya,North Africa,FALSE,2023,FALSE,13,2023
+South Korea,KOR,MAR,Morocco,North Africa,FALSE,2023,FALSE,99,2023
+South Korea,KOR,TUN,Tunisia,North Africa,FALSE,2023,FALSE,35,2023
+South Korea,KOR,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,12,2023
+South Korea,KOR,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,9,2023
+South Korea,KOR,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+South Korea,KOR,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2023
+South Korea,KOR,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2023
+South Korea,KOR,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,8,2023
+South Korea,KOR,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,34,2023
+South Korea,KOR,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2023
+South Korea,KOR,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,18,2023
+South Korea,KOR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+South Korea,KOR,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+South Korea,KOR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,39,2023
+South Korea,KOR,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,27,2023
+South Korea,KOR,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,27,2023
+South Korea,KOR,BEN,Benin,West Africa,TRUE,2023,FALSE,4,2023
+South Korea,KOR,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,8,2023
+South Korea,KOR,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2023
+South Korea,KOR,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,25,2023
+South Korea,KOR,GMB,Gambia,West Africa,TRUE,2023,FALSE,12,2023
+South Korea,KOR,GHA,Ghana,West Africa,TRUE,2023,FALSE,229,2023
+South Korea,KOR,GIN,Guinea,West Africa,TRUE,2023,FALSE,9,2023
+South Korea,KOR,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2023
+South Korea,KOR,LBR,Liberia,West Africa,TRUE,2023,FALSE,32,2023
+South Korea,KOR,MLI,Mali,West Africa,TRUE,2023,FALSE,11,2023
+South Korea,KOR,MRT,Mauritania,West Africa,TRUE,2023,FALSE,1,2023
+South Korea,KOR,NER,Niger,West Africa,TRUE,2023,FALSE,1,2023
+South Korea,KOR,NGA,Nigeria,West Africa,TRUE,2023,FALSE,303,2023
+South Korea,KOR,SEN,Senegal,West Africa,TRUE,2023,FALSE,21,2023
+South Korea,KOR,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,6,2023
+South Korea,KOR,TGO,Togo,West Africa,TRUE,2023,FALSE,4,2023
+Kuwait,KWT,BDI,Burundi,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,TCD,Chad,Central Africa,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,COG,Congo,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,GAB,Gabon,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,2,2009
+Kuwait,KWT,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,23,2009
+Kuwait,KWT,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,41,2009
+Kuwait,KWT,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,DZA,Algeria,North Africa,FALSE,2023,FALSE,10,2009
+Kuwait,KWT,EGY,Egypt,North Africa,FALSE,2023,FALSE,238,2009
+Kuwait,KWT,LBY,Libya,North Africa,FALSE,2023,FALSE,3,2009
+Kuwait,KWT,MAR,Morocco,North Africa,FALSE,2023,FALSE,4,2009
+Kuwait,KWT,TUN,Tunisia,North Africa,FALSE,2023,FALSE,1,2009
+Kuwait,KWT,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2009
+Kuwait,KWT,BEN,Benin,West Africa,TRUE,2023,FALSE,6,2009
+Kuwait,KWT,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,5,2009
+Kuwait,KWT,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,5,2009
+Kuwait,KWT,GMB,Gambia,West Africa,TRUE,2023,FALSE,3,2009
+Kuwait,KWT,GHA,Ghana,West Africa,TRUE,2023,FALSE,4,2009
+Kuwait,KWT,GIN,Guinea,West Africa,TRUE,2023,FALSE,2,2009
+Kuwait,KWT,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,LBR,Liberia,West Africa,TRUE,2023,FALSE,7,2009
+Kuwait,KWT,MLI,Mali,West Africa,TRUE,2023,FALSE,4,2009
+Kuwait,KWT,MRT,Mauritania,West Africa,TRUE,2023,FALSE,3,2009
+Kuwait,KWT,NER,Niger,West Africa,TRUE,2023,FALSE,12,2009
+Kuwait,KWT,NGA,Nigeria,West Africa,TRUE,2023,FALSE,13,2009
+Kuwait,KWT,SEN,Senegal,West Africa,TRUE,2023,FALSE,20,2009
+Kuwait,KWT,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,0,2009
+Kuwait,KWT,TGO,Togo,West Africa,TRUE,2023,FALSE,1,2009
+Oman,OMN,BDI,Burundi,Central Africa,TRUE,2023,FALSE,1,2023
+Oman,OMN,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,TCD,Chad,Central Africa,TRUE,2023,FALSE,1,2023
+Oman,OMN,COG,Congo,Central Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,1,2023
+Oman,OMN,GAB,Gabon,Central Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,1,2023
+Oman,OMN,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,3,2023
+Oman,OMN,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,4,2023
+Oman,OMN,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,0,2023
+Oman,OMN,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,11,2023
+Oman,OMN,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,36,2023
+Oman,OMN,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,4,2023
+Oman,OMN,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,121,2023
+Oman,OMN,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,0,2023
+Oman,OMN,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,119,2023
+Oman,OMN,DZA,Algeria,North Africa,FALSE,2023,FALSE,44,2023
+Oman,OMN,EGY,Egypt,North Africa,FALSE,2023,FALSE,454,2023
+Oman,OMN,LBY,Libya,North Africa,FALSE,2023,FALSE,38,2023
+Oman,OMN,MAR,Morocco,North Africa,FALSE,2023,FALSE,23,2023
+Oman,OMN,TUN,Tunisia,North Africa,FALSE,2023,FALSE,48,2023
+Oman,OMN,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Oman,OMN,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2023
+Oman,OMN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Oman,OMN,BEN,Benin,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,GMB,Gambia,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,GHA,Ghana,West Africa,TRUE,2023,FALSE,2,2023
+Oman,OMN,GIN,Guinea,West Africa,TRUE,2023,FALSE,2,2023
+Oman,OMN,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,LBR,Liberia,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,MLI,Mali,West Africa,TRUE,2023,FALSE,1,2023
+Oman,OMN,MRT,Mauritania,West Africa,TRUE,2023,FALSE,7,2023
+Oman,OMN,NER,Niger,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,NGA,Nigeria,West Africa,TRUE,2023,FALSE,12,2023
+Oman,OMN,SEN,Senegal,West Africa,TRUE,2023,FALSE,3,2023
+Oman,OMN,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,0,2023
+Oman,OMN,TGO,Togo,West Africa,TRUE,2023,FALSE,5,2023
+Qatar,QAT,BDI,Burundi,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,3,2023
+Qatar,QAT,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,TCD,Chad,Central Africa,TRUE,2023,FALSE,9,2023
+Qatar,QAT,COG,Congo,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,GAB,Gabon,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,14,2023
+Qatar,QAT,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,4,2023
+Qatar,QAT,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,24,2023
+Qatar,QAT,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,35,2023
+Qatar,QAT,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,28,2023
+Qatar,QAT,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,297,2023
+Qatar,QAT,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,1,2023
+Qatar,QAT,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,1406,2023
+Qatar,QAT,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,9,2023
+Qatar,QAT,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,14,2023
+Qatar,QAT,DZA,Algeria,North Africa,FALSE,2023,FALSE,199,2023
+Qatar,QAT,EGY,Egypt,North Africa,FALSE,2023,FALSE,1834,2023
+Qatar,QAT,LBY,Libya,North Africa,FALSE,2023,FALSE,102,2023
+Qatar,QAT,MAR,Morocco,North Africa,FALSE,2023,FALSE,161,2023
+Qatar,QAT,TUN,Tunisia,North Africa,FALSE,2023,FALSE,217,2023
+Qatar,QAT,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Qatar,QAT,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Qatar,QAT,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2023
+Qatar,QAT,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,4,2023
+Qatar,QAT,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Qatar,QAT,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Qatar,QAT,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Qatar,QAT,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,6,2023
+Qatar,QAT,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,6,2023
+Qatar,QAT,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2023
+Qatar,QAT,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Qatar,QAT,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,30,2023
+Qatar,QAT,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2023
+Qatar,QAT,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2023
+Qatar,QAT,BEN,Benin,West Africa,TRUE,2023,FALSE,2,2023
+Qatar,QAT,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,2,2023
+Qatar,QAT,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,2,2023
+Qatar,QAT,GMB,Gambia,West Africa,TRUE,2023,FALSE,18,2023
+Qatar,QAT,GHA,Ghana,West Africa,TRUE,2023,FALSE,9,2023
+Qatar,QAT,GIN,Guinea,West Africa,TRUE,2023,FALSE,6,2023
+Qatar,QAT,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,LBR,Liberia,West Africa,TRUE,2023,FALSE,2,2023
+Qatar,QAT,MLI,Mali,West Africa,TRUE,2023,FALSE,12,2023
+Qatar,QAT,MRT,Mauritania,West Africa,TRUE,2023,FALSE,85,2023
+Qatar,QAT,NER,Niger,West Africa,TRUE,2023,FALSE,3,2023
+Qatar,QAT,NGA,Nigeria,West Africa,TRUE,2023,FALSE,45,2023
+Qatar,QAT,SEN,Senegal,West Africa,TRUE,2023,FALSE,17,2023
+Qatar,QAT,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,0,2023
+Qatar,QAT,TGO,Togo,West Africa,TRUE,2023,FALSE,2,2023
+Russia,RUS,BDI,Burundi,Central Africa,TRUE,2023,FALSE,132,2023
+Russia,RUS,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,778,2023
+Russia,RUS,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,54,2023
+Russia,RUS,TCD,Chad,Central Africa,TRUE,2023,FALSE,411,2023
+Russia,RUS,COG,Congo,Central Africa,TRUE,2023,FALSE,665,2023
+Russia,RUS,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,445,2023
+Russia,RUS,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,173,2023
+Russia,RUS,GAB,Gabon,Central Africa,TRUE,2023,FALSE,290,2023
+Russia,RUS,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,175,2023
+Russia,RUS,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,34,2023
+Russia,RUS,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,25,2023
+Russia,RUS,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,53,2023
+Russia,RUS,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,167,2023
+Russia,RUS,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,169,2023
+Russia,RUS,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,149,2023
+Russia,RUS,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,30,2023
+Russia,RUS,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,645,2023
+Russia,RUS,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,99,2023
+Russia,RUS,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,175,2023
+Russia,RUS,DZA,Algeria,North Africa,FALSE,2023,FALSE,1558,2023
+Russia,RUS,EGY,Egypt,North Africa,FALSE,2023,FALSE,15408,2023
+Russia,RUS,LBY,Libya,North Africa,FALSE,2023,FALSE,65,2023
+Russia,RUS,MAR,Morocco,North Africa,FALSE,2023,FALSE,3712,2023
+Russia,RUS,TUN,Tunisia,North Africa,FALSE,2023,FALSE,1084,2023
+Russia,RUS,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,686,2023
+Russia,RUS,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,136,2023
+Russia,RUS,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,27,2023
+Russia,RUS,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,52,2023
+Russia,RUS,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,4,2023
+Russia,RUS,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,118,2023
+Russia,RUS,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,23,2023
+Russia,RUS,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,13,2023
+Russia,RUS,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,152,2023
+Russia,RUS,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,272,2023
+Russia,RUS,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2023
+Russia,RUS,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,244,2023
+Russia,RUS,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,629,2023
+Russia,RUS,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,427,2023
+Russia,RUS,BEN,Benin,West Africa,TRUE,2023,FALSE,355,2023
+Russia,RUS,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,32,2023
+Russia,RUS,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,28,2023
+Russia,RUS,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,767,2023
+Russia,RUS,GMB,Gambia,West Africa,TRUE,2023,FALSE,47,2023
+Russia,RUS,GHA,Ghana,West Africa,TRUE,2023,FALSE,614,2023
+Russia,RUS,GIN,Guinea,West Africa,TRUE,2023,FALSE,432,2023
+Russia,RUS,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,315,2023
+Russia,RUS,LBR,Liberia,West Africa,TRUE,2023,FALSE,17,2023
+Russia,RUS,MLI,Mali,West Africa,TRUE,2023,FALSE,196,2023
+Russia,RUS,MRT,Mauritania,West Africa,TRUE,2023,FALSE,115,2023
+Russia,RUS,NER,Niger,West Africa,TRUE,2023,FALSE,27,2023
+Russia,RUS,NGA,Nigeria,West Africa,TRUE,2023,FALSE,1950,2023
+Russia,RUS,SEN,Senegal,West Africa,TRUE,2023,FALSE,158,2023
+Russia,RUS,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,112,2023
+Russia,RUS,TGO,Togo,West Africa,TRUE,2023,FALSE,66,2023
+Saudi Arabia,SAU,BDI,Burundi,Central Africa,TRUE,2023,FALSE,149,2024
+Saudi Arabia,SAU,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,212,2024
+Saudi Arabia,SAU,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,67,2024
+Saudi Arabia,SAU,TCD,Chad,Central Africa,TRUE,2023,FALSE,506,2024
+Saudi Arabia,SAU,COG,Congo,Central Africa,TRUE,2023,FALSE,99,2024
+Saudi Arabia,SAU,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,50,2024
+Saudi Arabia,SAU,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,1,2024
+Saudi Arabia,SAU,GAB,Gabon,Central Africa,TRUE,2023,FALSE,32,2024
+Saudi Arabia,SAU,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,120,2024
+Saudi Arabia,SAU,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,0,2024
+Saudi Arabia,SAU,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,144,2024
+Saudi Arabia,SAU,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,435,2024
+Saudi Arabia,SAU,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,453,2024
+Saudi Arabia,SAU,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,248,2024
+Saudi Arabia,SAU,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,689,2024
+Saudi Arabia,SAU,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,16,2024
+Saudi Arabia,SAU,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,2405,2024
+Saudi Arabia,SAU,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,159,2024
+Saudi Arabia,SAU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,275,2024
+Saudi Arabia,SAU,DZA,Algeria,North Africa,FALSE,2023,FALSE,536,2024
+Saudi Arabia,SAU,EGY,Egypt,North Africa,FALSE,2023,FALSE,3509,2024
+Saudi Arabia,SAU,LBY,Libya,North Africa,FALSE,2023,FALSE,248,2024
+Saudi Arabia,SAU,MAR,Morocco,North Africa,FALSE,2023,FALSE,368,2024
+Saudi Arabia,SAU,TUN,Tunisia,North Africa,FALSE,2023,FALSE,195,2024
+Saudi Arabia,SAU,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,22,2024
+Saudi Arabia,SAU,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2024
+Saudi Arabia,SAU,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,257,2024
+Saudi Arabia,SAU,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,3,2024
+Saudi Arabia,SAU,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,4,2024
+Saudi Arabia,SAU,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,41,2024
+Saudi Arabia,SAU,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,40,2024
+Saudi Arabia,SAU,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,16,2024
+Saudi Arabia,SAU,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,61,2024
+Saudi Arabia,SAU,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2,2024
+Saudi Arabia,SAU,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1,2024
+Saudi Arabia,SAU,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,45,2024
+Saudi Arabia,SAU,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,20,2024
+Saudi Arabia,SAU,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,23,2024
+Saudi Arabia,SAU,BEN,Benin,West Africa,TRUE,2023,FALSE,450,2024
+Saudi Arabia,SAU,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,482,2024
+Saudi Arabia,SAU,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,6,2024
+Saudi Arabia,SAU,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,563,2024
+Saudi Arabia,SAU,GMB,Gambia,West Africa,TRUE,2023,FALSE,561,2024
+Saudi Arabia,SAU,GHA,Ghana,West Africa,TRUE,2023,FALSE,438,2024
+Saudi Arabia,SAU,GIN,Guinea,West Africa,TRUE,2023,FALSE,504,2024
+Saudi Arabia,SAU,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,153,2024
+Saudi Arabia,SAU,LBR,Liberia,West Africa,TRUE,2023,FALSE,129,2024
+Saudi Arabia,SAU,MLI,Mali,West Africa,TRUE,2023,FALSE,626,2024
+Saudi Arabia,SAU,MRT,Mauritania,West Africa,TRUE,2023,FALSE,408,2024
+Saudi Arabia,SAU,NER,Niger,West Africa,TRUE,2023,FALSE,179,2024
+Saudi Arabia,SAU,NGA,Nigeria,West Africa,TRUE,2023,FALSE,1338,2024
+Saudi Arabia,SAU,SEN,Senegal,West Africa,TRUE,2023,FALSE,308,2024
+Saudi Arabia,SAU,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,285,2024
+Saudi Arabia,SAU,TGO,Togo,West Africa,TRUE,2023,FALSE,211,2024
+Türkiye,TUR,BDI,Burundi,Central Africa,TRUE,2023,FALSE,182,2023
+Türkiye,TUR,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,1299,2023
+Türkiye,TUR,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,79,2023
+Türkiye,TUR,TCD,Chad,Central Africa,TRUE,2023,FALSE,3041,2023
+Türkiye,TUR,COG,Congo,Central Africa,TRUE,2023,FALSE,432,2023
+Türkiye,TUR,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,364,2023
+Türkiye,TUR,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,191,2023
+Türkiye,TUR,GAB,Gabon,Central Africa,TRUE,2023,FALSE,1036,2023
+Türkiye,TUR,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,308,2023
+Türkiye,TUR,STP,São Tomé and Príncipe,Central Africa,TRUE,2023,FALSE,6,2023
+Türkiye,TUR,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,1500,2023
+Türkiye,TUR,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,208,2023
+Türkiye,TUR,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,1123,2023
+Türkiye,TUR,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,662,2023
+Türkiye,TUR,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,10041,2023
+Türkiye,TUR,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,214,2023
+Türkiye,TUR,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,5171,2023
+Türkiye,TUR,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,319,2023
+Türkiye,TUR,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,685,2023
+Türkiye,TUR,DZA,Algeria,North Africa,FALSE,2023,FALSE,2196,2023
+Türkiye,TUR,EGY,Egypt,North Africa,FALSE,2023,FALSE,9595,2023
+Türkiye,TUR,LBY,Libya,North Africa,FALSE,2023,FALSE,3344,2023
+Türkiye,TUR,MAR,Morocco,North Africa,FALSE,2023,FALSE,4958,2023
+Türkiye,TUR,TUN,Tunisia,North Africa,FALSE,2023,FALSE,1263,2023
+Türkiye,TUR,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,55,2023
+Türkiye,TUR,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,11,2023
+Türkiye,TUR,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,195,2023
+Türkiye,TUR,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,10,2023
+Türkiye,TUR,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,8,2023
+Türkiye,TUR,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,80,2023
+Türkiye,TUR,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,67,2023
+Türkiye,TUR,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,17,2023
+Türkiye,TUR,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,56,2023
+Türkiye,TUR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,6,2023
+Türkiye,TUR,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,0,2023
+Türkiye,TUR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,217,2023
+Türkiye,TUR,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,172,2023
+Türkiye,TUR,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,187,2023
+Türkiye,TUR,BEN,Benin,West Africa,TRUE,2023,FALSE,183,2023
+Türkiye,TUR,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,392,2023
+Türkiye,TUR,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,0,2023
+Türkiye,TUR,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,674,2023
+Türkiye,TUR,GMB,Gambia,West Africa,TRUE,2023,FALSE,325,2023
+Türkiye,TUR,GHA,Ghana,West Africa,TRUE,2023,FALSE,462,2023
+Türkiye,TUR,GIN,Guinea,West Africa,TRUE,2023,FALSE,712,2023
+Türkiye,TUR,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,326,2023
+Türkiye,TUR,LBR,Liberia,West Africa,TRUE,2023,FALSE,117,2023
+Türkiye,TUR,MLI,Mali,West Africa,TRUE,2023,FALSE,1106,2023
+Türkiye,TUR,MRT,Mauritania,West Africa,TRUE,2023,FALSE,803,2023
+Türkiye,TUR,NER,Niger,West Africa,TRUE,2023,FALSE,416,2023
+Türkiye,TUR,NGA,Nigeria,West Africa,TRUE,2023,FALSE,3669,2023
+Türkiye,TUR,SEN,Senegal,West Africa,TRUE,2023,FALSE,851,2023
+Türkiye,TUR,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,214,2023
+Türkiye,TUR,TGO,Togo,West Africa,TRUE,2023,FALSE,120,2023
+US,USA,BDI,Burundi,Central Africa,TRUE,2023,FALSE,217,2023
+US,USA,CMR,Cameroon,Central Africa,TRUE,2023,FALSE,1083,2023
+US,USA,CAF,Central African Republic,Central Africa,TRUE,2023,FALSE,10,2023
+US,USA,TCD,Chad,Central Africa,TRUE,2023,FALSE,67,2023
+US,USA,COG,Congo,Central Africa,TRUE,2023,FALSE,204,2023
+US,USA,COD,Democratic Republic of The Congo,Central Africa,TRUE,2023,FALSE,1435,2023
+US,USA,GNQ,Equatorial Guinea,Central Africa,TRUE,2023,FALSE,202,2023
+US,USA,GAB,Gabon,Central Africa,TRUE,2023,FALSE,235,2023
+US,USA,RWA,Rwanda,Central Africa,TRUE,2023,FALSE,1331,2023
+US,USA,DJI,Djibouti,East Africa and HoA,TRUE,2023,FALSE,12,2023
+US,USA,ERI,Eritrea,East Africa and HoA,TRUE,2023,FALSE,78,2023
+US,USA,ETH,Ethiopia,East Africa and HoA,TRUE,2023,FALSE,3145,2023
+US,USA,KEN,Kenya,East Africa and HoA,TRUE,2023,FALSE,4041,2023
+US,USA,SOM,Somalia,East Africa and HoA,TRUE,2023,FALSE,127,2023
+US,USA,SSD,South Sudan,East Africa and HoA,TRUE,2023,FALSE,84,2023
+US,USA,SDN,Sudan,East Africa and HoA,TRUE,2023,FALSE,354,2023
+US,USA,UGA,Uganda,East Africa and HoA,TRUE,2023,FALSE,1072,2023
+US,USA,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2023,FALSE,902,2023
+US,USA,DZA,Algeria,North Africa,FALSE,2023,FALSE,296,2023
+US,USA,EGY,Egypt,North Africa,FALSE,2023,FALSE,4069,2023
+US,USA,LBY,Libya,North Africa,FALSE,2023,FALSE,376,2023
+US,USA,MAR,Morocco,North Africa,FALSE,2023,FALSE,1458,2023
+US,USA,TUN,Tunisia,North Africa,FALSE,2023,FALSE,608,2023
+US,USA,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2023,FALSE,460,2023
+US,USA,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2023,FALSE,251,2023
+US,USA,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2023,FALSE,26,2023
+US,USA,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2023,FALSE,170,2023
+US,USA,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2023,FALSE,62,2023
+US,USA,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2023,FALSE,235,2023
+US,USA,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2023,FALSE,378,2023
+US,USA,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2023,FALSE,244,2023
+US,USA,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2023,FALSE,158,2023
+US,USA,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,86,2023
+US,USA,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2023,FALSE,20,2023
+US,USA,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2023,FALSE,2787,2023
+US,USA,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2023,FALSE,573,2023
+US,USA,ZWE,Zimbabwe,Southern Africa and Indian Ocean,TRUE,2023,FALSE,1751,2023
+US,USA,BEN,Benin,West Africa,TRUE,2023,FALSE,253,2023
+US,USA,BFA,Burkina Faso,West Africa,TRUE,2023,FALSE,337,2023
+US,USA,CPV,Cape Verde,West Africa,TRUE,2023,FALSE,48,2023
+US,USA,CIV,Côte D’Ivoire,West Africa,TRUE,2023,FALSE,1024,2023
+US,USA,GMB,Gambia,West Africa,TRUE,2023,FALSE,295,2023
+US,USA,GHA,Ghana,West Africa,TRUE,2023,FALSE,6212,2023
+US,USA,GIN,Guinea,West Africa,TRUE,2023,FALSE,93,2023
+US,USA,GNB,Guinea-Bissau,West Africa,TRUE,2023,FALSE,12,2023
+US,USA,LBR,Liberia,West Africa,TRUE,2023,FALSE,304,2023
+US,USA,MLI,Mali,West Africa,TRUE,2023,FALSE,247,2023
+US,USA,MRT,Mauritania,West Africa,TRUE,2023,FALSE,43,2023
+US,USA,NER,Niger,West Africa,TRUE,2023,FALSE,329,2023
+US,USA,NGA,Nigeria,West Africa,TRUE,2023,FALSE,16632,2023
+US,USA,SEN,Senegal,West Africa,TRUE,2023,FALSE,480,2023
+US,USA,SLE,Sierra Leone,West Africa,TRUE,2023,FALSE,289,2023
+US,USA,TGO,Togo,West Africa,TRUE,2023,FALSE,186,2023

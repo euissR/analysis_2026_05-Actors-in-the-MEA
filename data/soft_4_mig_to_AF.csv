@@ -1,0 +1,303 @@
+supplier,actor_code,iso3,country,subregion,ssa,year,drone,tiv
+China,CHN,COG,Congo,Central Africa,TRUE,2015,FALSE,924
+China,CHN,COG,Congo,Central Africa,TRUE,2024,FALSE,912
+China,CHN,GAB,Gabon,Central Africa,TRUE,2015,FALSE,316
+China,CHN,GAB,Gabon,Central Africa,TRUE,2024,FALSE,371
+China,CHN,ERI,Eritrea,East Africa and HoA,TRUE,2015,FALSE,135
+China,CHN,ERI,Eritrea,East Africa and HoA,TRUE,2024,FALSE,105
+China,CHN,ETH,Ethiopia,East Africa and HoA,TRUE,2015,FALSE,54628
+China,CHN,ETH,Ethiopia,East Africa and HoA,TRUE,2024,FALSE,26824
+China,CHN,SDN,Sudan,East Africa and HoA,TRUE,2015,FALSE,1111
+China,CHN,SDN,Sudan,East Africa and HoA,TRUE,2024,FALSE,2670
+China,CHN,EGY,Egypt,North Africa,FALSE,2015,FALSE,14
+China,CHN,EGY,Egypt,North Africa,FALSE,2024,FALSE,34659
+China,CHN,LBY,Libya,North Africa,FALSE,2015,FALSE,3064
+China,CHN,LBY,Libya,North Africa,FALSE,2024,FALSE,3467
+China,CHN,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2015,FALSE,4466
+China,CHN,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2024,FALSE,5043
+China,CHN,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2015,FALSE,168
+China,CHN,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2024,FALSE,276
+China,CHN,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2015,FALSE,1979
+China,CHN,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2024,FALSE,2382
+China,CHN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2015,FALSE,2951
+China,CHN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2024,FALSE,3007
+China,CHN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,3039
+China,CHN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,3450
+China,CHN,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2015,FALSE,510
+China,CHN,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2024,FALSE,527
+China,CHN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,12008
+China,CHN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,6189
+China,CHN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,887
+China,CHN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,1645
+China,CHN,CPV,Cape Verde,West Africa,TRUE,2015,FALSE,23
+China,CHN,CPV,Cape Verde,West Africa,TRUE,2024,FALSE,24
+China,CHN,GHA,Ghana,West Africa,TRUE,2015,FALSE,232
+China,CHN,GHA,Ghana,West Africa,TRUE,2024,FALSE,297
+China,CHN,GIN,Guinea,West Africa,TRUE,2015,FALSE,169
+China,CHN,GIN,Guinea,West Africa,TRUE,2024,FALSE,156
+China,CHN,MLI,Mali,West Africa,TRUE,2015,FALSE,3439
+China,CHN,MLI,Mali,West Africa,TRUE,2024,FALSE,4529
+China,CHN,MRT,Mauritania,West Africa,TRUE,2015,FALSE,158
+China,CHN,MRT,Mauritania,West Africa,TRUE,2024,FALSE,185
+China,CHN,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,195
+China,CHN,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,174
+China,CHN,TGO,Togo,West Africa,TRUE,2015,FALSE,517
+China,CHN,TGO,Togo,West Africa,TRUE,2024,FALSE,525
+EU,EU,BDI,Burundi,Central Africa,TRUE,2015,FALSE,907
+EU,EU,BDI,Burundi,Central Africa,TRUE,2024,FALSE,1208
+EU,EU,CMR,Cameroon,Central Africa,TRUE,2015,FALSE,5767
+EU,EU,CMR,Cameroon,Central Africa,TRUE,2024,FALSE,7448
+EU,EU,CAF,Central African Republic,Central Africa,TRUE,2015,FALSE,9774
+EU,EU,CAF,Central African Republic,Central Africa,TRUE,2024,FALSE,11035
+EU,EU,TCD,Chad,Central Africa,TRUE,2015,FALSE,1048
+EU,EU,TCD,Chad,Central Africa,TRUE,2024,FALSE,1381
+EU,EU,COG,Congo,Central Africa,TRUE,2015,FALSE,12340
+EU,EU,COG,Congo,Central Africa,TRUE,2024,FALSE,12193
+EU,EU,GNQ,Equatorial Guinea,Central Africa,TRUE,2015,FALSE,5840
+EU,EU,GNQ,Equatorial Guinea,Central Africa,TRUE,2024,FALSE,7575
+EU,EU,GAB,Gabon,Central Africa,TRUE,2015,FALSE,15215
+EU,EU,GAB,Gabon,Central Africa,TRUE,2024,FALSE,18062
+EU,EU,STP,São Tomé and Príncipe,Central Africa,TRUE,2015,FALSE,118
+EU,EU,STP,São Tomé and Príncipe,Central Africa,TRUE,2024,FALSE,95
+EU,EU,ERI,Eritrea,East Africa and HoA,TRUE,2015,FALSE,436
+EU,EU,ERI,Eritrea,East Africa and HoA,TRUE,2024,FALSE,341
+EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,1542
+EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,1489
+EU,EU,DZA,Algeria,North Africa,FALSE,2015,FALSE,1954
+EU,EU,DZA,Algeria,North Africa,FALSE,2024,FALSE,2103
+EU,EU,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
+EU,EU,EGY,Egypt,North Africa,FALSE,2024,FALSE,27927
+EU,EU,LBY,Libya,North Africa,FALSE,2015,FALSE,29150
+EU,EU,LBY,Libya,North Africa,FALSE,2024,FALSE,32987
+EU,EU,MAR,Morocco,North Africa,FALSE,2015,FALSE,43294
+EU,EU,MAR,Morocco,North Africa,FALSE,2024,FALSE,51643
+EU,EU,TUN,Tunisia,North Africa,FALSE,2015,FALSE,12268
+EU,EU,TUN,Tunisia,North Africa,FALSE,2024,FALSE,13695
+EU,EU,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2015,FALSE,5867
+EU,EU,AGO,Angola,Southern Africa and Indian Ocean,TRUE,2024,FALSE,5454
+EU,EU,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2015,FALSE,3181
+EU,EU,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2024,FALSE,3577
+EU,EU,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2015,FALSE,482
+EU,EU,COM,Comoros,Southern Africa and Indian Ocean,TRUE,2024,FALSE,477
+EU,EU,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2015,FALSE,8950
+EU,EU,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2024,FALSE,10776
+EU,EU,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2015,FALSE,1982
+EU,EU,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2024,FALSE,2010
+EU,EU,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2015,FALSE,4331
+EU,EU,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2024,FALSE,4741
+EU,EU,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,12921
+EU,EU,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,14653
+EU,EU,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2015,FALSE,508
+EU,EU,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2024,FALSE,518
+EU,EU,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,67335
+EU,EU,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,43384
+EU,EU,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,306
+EU,EU,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,563
+EU,EU,BEN,Benin,West Africa,TRUE,2015,FALSE,1304
+EU,EU,BEN,Benin,West Africa,TRUE,2024,FALSE,1487
+EU,EU,CPV,Cape Verde,West Africa,TRUE,2015,FALSE,2028
+EU,EU,CPV,Cape Verde,West Africa,TRUE,2024,FALSE,2232
+EU,EU,GHA,Ghana,West Africa,TRUE,2015,FALSE,693
+EU,EU,GHA,Ghana,West Africa,TRUE,2024,FALSE,882
+EU,EU,GIN,Guinea,West Africa,TRUE,2015,FALSE,1791
+EU,EU,GIN,Guinea,West Africa,TRUE,2024,FALSE,1639
+EU,EU,GNB,Guinea-Bissau,West Africa,TRUE,2015,FALSE,933
+EU,EU,GNB,Guinea-Bissau,West Africa,TRUE,2024,FALSE,571
+EU,EU,LBR,Liberia,West Africa,TRUE,2015,FALSE,728
+EU,EU,LBR,Liberia,West Africa,TRUE,2024,FALSE,457
+EU,EU,MLI,Mali,West Africa,TRUE,2015,FALSE,6337
+EU,EU,MLI,Mali,West Africa,TRUE,2024,FALSE,8343
+EU,EU,MRT,Mauritania,West Africa,TRUE,2015,FALSE,198
+EU,EU,MRT,Mauritania,West Africa,TRUE,2024,FALSE,228
+EU,EU,SEN,Senegal,West Africa,TRUE,2015,FALSE,14785
+EU,EU,SEN,Senegal,West Africa,TRUE,2024,FALSE,15646
+EU,EU,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,36
+EU,EU,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,30
+EU,EU,TGO,Togo,West Africa,TRUE,2015,FALSE,1057
+EU,EU,TGO,Togo,West Africa,TRUE,2024,FALSE,1070
+India,IND,ERI,Eritrea,East Africa and HoA,TRUE,2015,FALSE,119
+India,IND,ERI,Eritrea,East Africa and HoA,TRUE,2024,FALSE,92
+India,IND,SSD,South Sudan,East Africa and HoA,TRUE,2015,FALSE,1414
+India,IND,SSD,South Sudan,East Africa and HoA,TRUE,2024,FALSE,1501
+India,IND,SDN,Sudan,East Africa and HoA,TRUE,2015,FALSE,1277
+India,IND,SDN,Sudan,East Africa and HoA,TRUE,2024,FALSE,3066
+India,IND,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,8010
+India,IND,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,7744
+India,IND,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
+India,IND,EGY,Egypt,North Africa,FALSE,2024,FALSE,1141
+India,IND,LBY,Libya,North Africa,FALSE,2015,FALSE,4826
+India,IND,LBY,Libya,North Africa,FALSE,2024,FALSE,5462
+India,IND,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2015,FALSE,5282
+India,IND,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2024,FALSE,5964
+India,IND,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2015,FALSE,318
+India,IND,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2024,FALSE,522
+India,IND,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2015,FALSE,1581
+India,IND,MDG,Madagascar,Southern Africa and Indian Ocean,TRUE,2024,FALSE,1902
+India,IND,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2015,FALSE,2083
+India,IND,MWI,Malawi,Southern Africa and Indian Ocean,TRUE,2024,FALSE,1727
+India,IND,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2015,FALSE,8651
+India,IND,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2024,FALSE,8855
+India,IND,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2015,FALSE,2338
+India,IND,MOZ,Mozambique,Southern Africa and Indian Ocean,TRUE,2024,FALSE,2559
+India,IND,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,659
+India,IND,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,747
+India,IND,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2015,FALSE,6482
+India,IND,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2024,FALSE,6735
+India,IND,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,34185
+India,IND,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,27674
+India,IND,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,4078
+India,IND,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,7569
+India,IND,GHA,Ghana,West Africa,TRUE,2015,FALSE,871
+India,IND,GHA,Ghana,West Africa,TRUE,2024,FALSE,1116
+India,IND,GIN,Guinea,West Africa,TRUE,2015,FALSE,49
+India,IND,GIN,Guinea,West Africa,TRUE,2024,FALSE,44
+India,IND,LBR,Liberia,West Africa,TRUE,2015,FALSE,817
+India,IND,LBR,Liberia,West Africa,TRUE,2024,FALSE,520
+India,IND,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,855
+India,IND,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,892
+Iran,IRN,LBY,Libya,North Africa,FALSE,2015,FALSE,410
+Iran,IRN,LBY,Libya,North Africa,FALSE,2024,FALSE,464
+Iran,IRN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,29
+Iran,IRN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,32
+Iran,IRN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,600
+Iran,IRN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,499
+Japan,JPN,GAB,Gabon,Central Africa,TRUE,2015,FALSE,29
+Japan,JPN,GAB,Gabon,Central Africa,TRUE,2024,FALSE,31
+Japan,JPN,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
+Japan,JPN,EGY,Egypt,North Africa,FALSE,2024,FALSE,805
+Japan,JPN,LBY,Libya,North Africa,FALSE,2015,FALSE,1002
+Japan,JPN,LBY,Libya,North Africa,FALSE,2024,FALSE,1133
+Japan,JPN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2015,FALSE,9
+Japan,JPN,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2024,FALSE,8
+Japan,JPN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,110
+Japan,JPN,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,124
+Japan,JPN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,656
+Japan,JPN,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,450
+Japan,JPN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,88
+Japan,JPN,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,163
+Japan,JPN,CPV,Cape Verde,West Africa,TRUE,2015,FALSE,1
+Japan,JPN,CPV,Cape Verde,West Africa,TRUE,2024,FALSE,0
+Japan,JPN,GHA,Ghana,West Africa,TRUE,2015,FALSE,56
+Japan,JPN,GHA,Ghana,West Africa,TRUE,2024,FALSE,70
+Japan,JPN,GIN,Guinea,West Africa,TRUE,2015,FALSE,54
+Japan,JPN,GIN,Guinea,West Africa,TRUE,2024,FALSE,48
+Japan,JPN,MLI,Mali,West Africa,TRUE,2015,FALSE,631
+Japan,JPN,MLI,Mali,West Africa,TRUE,2024,FALSE,828
+Japan,JPN,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,1
+Japan,JPN,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,0
+South Korea,KOR,GAB,Gabon,Central Africa,TRUE,2015,FALSE,177
+South Korea,KOR,GAB,Gabon,Central Africa,TRUE,2024,FALSE,208
+South Korea,KOR,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
+South Korea,KOR,EGY,Egypt,North Africa,FALSE,2024,FALSE,352
+South Korea,KOR,LBY,Libya,North Africa,FALSE,2015,FALSE,713
+South Korea,KOR,LBY,Libya,North Africa,FALSE,2024,FALSE,804
+South Korea,KOR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,34
+South Korea,KOR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,37
+South Korea,KOR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,963
+South Korea,KOR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,686
+South Korea,KOR,GIN,Guinea,West Africa,TRUE,2015,FALSE,426
+South Korea,KOR,GIN,Guinea,West Africa,TRUE,2024,FALSE,394
+South Korea,KOR,MRT,Mauritania,West Africa,TRUE,2015,FALSE,69
+South Korea,KOR,MRT,Mauritania,West Africa,TRUE,2024,FALSE,80
+South Korea,KOR,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,4
+South Korea,KOR,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,1
+Russia,RUS,CAF,Central African Republic,Central Africa,TRUE,2015,FALSE,136
+Russia,RUS,CAF,Central African Republic,Central Africa,TRUE,2024,FALSE,153
+Russia,RUS,COG,Congo,Central Africa,TRUE,2015,FALSE,2576
+Russia,RUS,COG,Congo,Central Africa,TRUE,2024,FALSE,2545
+Russia,RUS,DZA,Algeria,North Africa,FALSE,2015,FALSE,757
+Russia,RUS,DZA,Algeria,North Africa,FALSE,2024,FALSE,813
+Russia,RUS,EGY,Egypt,North Africa,FALSE,2015,FALSE,100
+Russia,RUS,EGY,Egypt,North Africa,FALSE,2024,FALSE,26357
+Russia,RUS,LBY,Libya,North Africa,FALSE,2015,FALSE,7221
+Russia,RUS,LBY,Libya,North Africa,FALSE,2024,FALSE,8175
+Russia,RUS,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2015,FALSE,49
+Russia,RUS,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2024,FALSE,48
+Russia,RUS,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,444
+Russia,RUS,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,503
+Russia,RUS,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2015,FALSE,96
+Russia,RUS,SYC,Seychelles,Southern Africa and Indian Ocean,TRUE,2024,FALSE,99
+Russia,RUS,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,857
+Russia,RUS,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,805
+Russia,RUS,CPV,Cape Verde,West Africa,TRUE,2015,FALSE,698
+Russia,RUS,CPV,Cape Verde,West Africa,TRUE,2024,FALSE,771
+Russia,RUS,GHA,Ghana,West Africa,TRUE,2015,FALSE,67
+Russia,RUS,GHA,Ghana,West Africa,TRUE,2024,FALSE,85
+Russia,RUS,GIN,Guinea,West Africa,TRUE,2015,FALSE,39
+Russia,RUS,GIN,Guinea,West Africa,TRUE,2024,FALSE,35
+Russia,RUS,MLI,Mali,West Africa,TRUE,2015,FALSE,381
+Russia,RUS,MLI,Mali,West Africa,TRUE,2024,FALSE,499
+Russia,RUS,MRT,Mauritania,West Africa,TRUE,2015,FALSE,60
+Russia,RUS,MRT,Mauritania,West Africa,TRUE,2024,FALSE,69
+Russia,RUS,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,67
+Russia,RUS,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,63
+Türkiye,TUR,CAF,Central African Republic,Central Africa,TRUE,2015,FALSE,7
+Türkiye,TUR,CAF,Central African Republic,Central Africa,TRUE,2024,FALSE,6
+Türkiye,TUR,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
+Türkiye,TUR,EGY,Egypt,North Africa,FALSE,2024,FALSE,595
+Türkiye,TUR,LBY,Libya,North Africa,FALSE,2015,FALSE,2527
+Türkiye,TUR,LBY,Libya,North Africa,FALSE,2024,FALSE,2858
+Türkiye,TUR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,34
+Türkiye,TUR,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,37
+Türkiye,TUR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,874
+Türkiye,TUR,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,675
+Türkiye,TUR,GIN,Guinea,West Africa,TRUE,2015,FALSE,35
+Türkiye,TUR,GIN,Guinea,West Africa,TRUE,2024,FALSE,31
+Türkiye,TUR,SEN,Senegal,West Africa,TRUE,2015,FALSE,0
+Türkiye,TUR,SEN,Senegal,West Africa,TRUE,2024,FALSE,89
+US,USA,CMR,Cameroon,Central Africa,TRUE,2015,FALSE,819
+US,USA,CMR,Cameroon,Central Africa,TRUE,2024,FALSE,1057
+US,USA,CAF,Central African Republic,Central Africa,TRUE,2015,FALSE,548
+US,USA,CAF,Central African Republic,Central Africa,TRUE,2024,FALSE,618
+US,USA,COG,Congo,Central Africa,TRUE,2015,FALSE,166
+US,USA,COG,Congo,Central Africa,TRUE,2024,FALSE,163
+US,USA,GAB,Gabon,Central Africa,TRUE,2015,FALSE,502
+US,USA,GAB,Gabon,Central Africa,TRUE,2024,FALSE,594
+US,USA,UGA,Uganda,East Africa and HoA,TRUE,2015,FALSE,1174
+US,USA,UGA,Uganda,East Africa and HoA,TRUE,2024,FALSE,1422
+US,USA,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,1291
+US,USA,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,1247
+US,USA,DZA,Algeria,North Africa,FALSE,2015,FALSE,1032
+US,USA,DZA,Algeria,North Africa,FALSE,2024,FALSE,1111
+US,USA,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
+US,USA,EGY,Egypt,North Africa,FALSE,2024,FALSE,2512
+US,USA,LBY,Libya,North Africa,FALSE,2015,FALSE,9851
+US,USA,LBY,Libya,North Africa,FALSE,2024,FALSE,11152
+US,USA,MAR,Morocco,North Africa,FALSE,2015,FALSE,1795
+US,USA,MAR,Morocco,North Africa,FALSE,2024,FALSE,2139
+US,USA,TUN,Tunisia,North Africa,FALSE,2015,FALSE,607
+US,USA,TUN,Tunisia,North Africa,FALSE,2024,FALSE,677
+US,USA,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2015,FALSE,861
+US,USA,BWA,Botswana,Southern Africa and Indian Ocean,TRUE,2024,FALSE,971
+US,USA,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2015,FALSE,256
+US,USA,SWZ,Eswatini,Southern Africa and Indian Ocean,TRUE,2024,FALSE,262
+US,USA,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2015,FALSE,124
+US,USA,LSO,Lesotho,Southern Africa and Indian Ocean,TRUE,2024,FALSE,203
+US,USA,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2015,FALSE,49
+US,USA,MUS,Mauritius,Southern Africa and Indian Ocean,TRUE,2024,FALSE,48
+US,USA,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,1027
+US,USA,NAM,Namibia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,1165
+US,USA,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2015,FALSE,5226
+US,USA,ZAF,South Africa,Southern Africa and Indian Ocean,TRUE,2024,FALSE,6729
+US,USA,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2015,FALSE,836
+US,USA,ZMB,Zambia,Southern Africa and Indian Ocean,TRUE,2024,FALSE,1550
+US,USA,CPV,Cape Verde,West Africa,TRUE,2015,FALSE,351
+US,USA,CPV,Cape Verde,West Africa,TRUE,2024,FALSE,387
+US,USA,GHA,Ghana,West Africa,TRUE,2015,FALSE,625
+US,USA,GHA,Ghana,West Africa,TRUE,2024,FALSE,800
+US,USA,GIN,Guinea,West Africa,TRUE,2015,FALSE,301
+US,USA,GIN,Guinea,West Africa,TRUE,2024,FALSE,278
+US,USA,GNB,Guinea-Bissau,West Africa,TRUE,2015,FALSE,311
+US,USA,GNB,Guinea-Bissau,West Africa,TRUE,2024,FALSE,190
+US,USA,LBR,Liberia,West Africa,TRUE,2015,FALSE,517
+US,USA,LBR,Liberia,West Africa,TRUE,2024,FALSE,329
+US,USA,MLI,Mali,West Africa,TRUE,2015,FALSE,1421
+US,USA,MLI,Mali,West Africa,TRUE,2024,FALSE,1870
+US,USA,MRT,Mauritania,West Africa,TRUE,2015,FALSE,108
+US,USA,MRT,Mauritania,West Africa,TRUE,2024,FALSE,125
+US,USA,SEN,Senegal,West Africa,TRUE,2015,FALSE,802
+US,USA,SEN,Senegal,West Africa,TRUE,2024,FALSE,847
+US,USA,SLE,Sierra Leone,West Africa,TRUE,2015,FALSE,179
+US,USA,SLE,Sierra Leone,West Africa,TRUE,2024,FALSE,141
+US,USA,TGO,Togo,West Africa,TRUE,2015,FALSE,182
+US,USA,TGO,Togo,West Africa,TRUE,2024,FALSE,183

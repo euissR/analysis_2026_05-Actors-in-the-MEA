@@ -36,6 +36,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 const NUMERIC = ["share_pct", "value_usd_bn", "balance_usd_bn", "net_flow_usd_bn"];
 const FILTERS = ["product", "basket", "flow", "component"];
@@ -95,6 +96,7 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
   const $ = (sel) => el.querySelector(sel);
   $(".fa-credit").textContent = spec.source ?? "";
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   const svg = d3
     .select($(".fa-map"))
@@ -215,7 +217,9 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
       const x = xs[c];
       const [d0, d1] = x.domain();
       const ticks = narrow ? [d0, d1] : x.ticks(colW > 250 ? 5 : 3);
-      const anchor = (d) => (!narrow ? "middle" : d === d0 ? "start" : d === d1 ? "end" : "middle");
+      // several panels: the last label ends at the panel edge, so it does not run into the next panel's first label
+      const anchor = (d) =>
+        !narrow ? (geos.length > 1 && d === d1 ? "end" : "middle") : d === d0 ? "start" : d === d1 ? "end" : "middle";
       const col = gCols.append("g").attr("transform", `translate(${x0(c)},0)`);
       col
         .append("text")
@@ -315,7 +319,7 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
       .attr("y", -rowH / 2)
       .attr("height", rowH)
       .attr("width", colW);
-    all.on("pointerenter pointermove", showTip).on("pointerleave", () => tooltip.style("opacity", 0));
+    all.on("pointerenter pointermove", showTip).on("pointerleave", hover.leave);
     all.transition(t).attr("transform", pos).attr("opacity", (d) => op(d.actor));
     all
       .select("line")
@@ -332,16 +336,14 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
   }
 
   function showTip(event, d) {
-    const box = el.getBoundingClientRect();
     const lines = Object.entries(d.all)
       .filter(([, [a, b]]) => Number.isFinite(a) && Number.isFinite(b))
       .map(([k, [a, b]]) => `${formatters[k](a)} → ${formatters[k](b)}`)
       .join("<br>");
     tooltip
       .html(`<strong>${label(d.actor)}</strong>, ${geoLabel(d.geo)}<br>${P1} → ${P2}<br>${lines}`)
-      .style("opacity", 1)
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`)
-      .style("top", `${event.clientY - box.top + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event, { mark: event.currentTarget.querySelectorAll("circle") });
   }
 
   return {

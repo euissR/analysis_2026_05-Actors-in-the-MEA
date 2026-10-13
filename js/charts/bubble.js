@@ -25,6 +25,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
+import { makeHover } from "./hover.js";
 
 export function makeBubble(el, { rows, spec, actors = [] }) {
   const W = 600;
@@ -57,6 +58,7 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
   const $ = (sel) => el.querySelector(sel);
   $(".fa-credit").textContent = spec.source ?? "";
   const tooltip = d3.select($(".fa-tooltip"));
+  const hover = makeHover(el, tooltip);
 
   const svg = d3
     .select($(".fa-map"))
@@ -207,7 +209,7 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
             .attr("stroke", "#fff")
             .attr("stroke-width", 1.25)
             .on("pointerenter pointermove", showTip)
-            .on("pointerleave", () => tooltip.style("opacity", 0)),
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).attr("r", 0).remove(),
       )
@@ -249,16 +251,14 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
   }
 
   function showTip(event, d) {
-    const box = el.getBoundingClientRect();
     const f = (v, p) => (Number.isFinite(v) ? v : null) && `${d3.format(p)(v)}`;
     tooltip
       .html(
         `<strong>${label(d.actor)}</strong>, ${geoLabel(d.geo)}<br>` +
           `${spec.sizeTitle ?? "Size"}: ${f(d._s, ",.1f")}<br>${spec.yShort ?? "y"}: ${f(d._y, ".1f")}%<br>${spec.xShort ?? "x"}: ${f(d._x, "+,.2f")}`,
       )
-      .style("opacity", 1)
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 190)}px`)
-      .style("top", `${event.clientY - box.top + 12}px`);
+      .style("opacity", 1);
+    hover.enter(event);
   }
 
   return {
