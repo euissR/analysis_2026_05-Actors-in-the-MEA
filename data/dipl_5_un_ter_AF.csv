@@ -4,7 +4,7 @@ CMR,Cameroon,country,Central Africa,14,15,0.4307,0.5,0.3561,1,1,1,0,0,0
 CAF,Central African Republic,country,Central Africa,16,14,0.4053,0.4286,0.3906,0.5185,0.4286,0.6154,0.3333,0.5,0.1538
 TCD,Chad,country,Central Africa,14,13,0.5636,0.5,0.6125,0,0,0,0.1481,0.2857,0
 COG,Congo,country,Central Africa,14,16,0.7354,0.75,0.716,0.037,0,0.0769,0.4815,0.4286,0.5385
-COD,Democratic Republic of The Congo,country,Central Africa,15,15,0.537,,0.537,0.1852,0,0.3846,0.7778,1,0.5385
+COD,DR Congo,country,Central Africa,15,15,0.537,,0.537,0.1852,0,0.3846,0.7778,1,0.5385
 GNQ,Equatorial Guinea,country,Central Africa,13,16,1,1,,0.037,0.0714,0,0.9259,0.8571,1
 GAB,Gabon,country,Central Africa,14,17,0.7349,0.75,0.7239,0.037,0,0.0769,0.2963,0.4286,0.1538
 RWA,Rwanda,country,Central Africa,16,16,0.428,0.5,0.338,0.6667,0.7143,0.6154,0.3333,0.2857,0.3846
@@ -17,7 +17,7 @@ SOM,Somalia,country,East Africa and the Horn of Africa,18,14,0.5207,0.3333,0.622
 SSD,South Sudan,country,East Africa and the Horn of Africa,15,13,0.4296,0.4545,0.3992,0.7037,0.7143,0.6923,0.2593,0.2143,0.3077
 SDN,Sudan,country,East Africa and the Horn of Africa,16,12,0.5233,0.4615,0.6037,0,0,0,0.1481,0.0714,0.2308
 UGA,Uganda,country,East Africa and the Horn of Africa,16,15,0.5438,0.4444,0.6125,0,0,0,0.1852,0.3571,0
-TZA,United Republic of Tanzania,country,East Africa and the Horn of Africa,17,16,0.7426,0.6667,0.8047,0.037,0,0.0769,0.2593,0.3571,0.1538
+TZA,Tanzania,country,East Africa and the Horn of Africa,17,16,0.7426,0.6667,0.8047,0.037,0,0.0769,0.2593,0.3571,0.1538
 DZA,Algeria,country,North Africa,13,11,0.5542,0.5,0.6125,0,0,0,0,0,0
 EGY,Egypt,country,North Africa,16,11,0.5542,0.5,0.6125,0,0,0,0,0,0
 LBY,Libya,country,North Africa,15,11,0.537,0.5,0.5802,0,0,0,0.037,0,0.0769

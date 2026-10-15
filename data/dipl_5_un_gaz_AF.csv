@@ -12,7 +12,7 @@ TCD,Chad,country,Central Africa,14,13,0,0,0,0.8266
 COM,Comoros,country,Southern Africa and Indian Ocean,18,18,0,0.16,0,0.8183
 COG,Congo,country,Central Africa,14,16,0,0.4,0,0.8074
 CIV,Côte D’Ivoire,country,West Africa,12,15,0.04,0,0,0.8385
-COD,Democratic Republic of The Congo,country,Central Africa,15,15,0.2,0.48,0,0.5812
+COD,DR Congo,country,Central Africa,15,15,0.2,0.48,0,0.5812
 DJI,Djibouti,country,East Africa and the Horn of Africa,17,13,0,0,0,0.8266
 EGY,Egypt,country,North Africa,16,11,0,0,0,0.8266
 GNQ,Equatorial Guinea,country,Central Africa,13,16,0.04,0.56,0,0.798
@@ -50,7 +50,7 @@ SDN,Sudan,country,East Africa and the Horn of Africa,16,12,0,0.12,0,0.803
 TGO,Togo,country,West Africa,14,14,0.52,0.08,0,0.4637
 TUN,Tunisia,country,North Africa,14,11,0.04,0.04,0,0.8333
 UGA,Uganda,country,East Africa and the Horn of Africa,16,15,0,0,0,0.8266
-TZA,United Republic of Tanzania,country,East Africa and the Horn of Africa,17,16,0,0.16,0,0.8519
+TZA,Tanzania,country,East Africa and the Horn of Africa,17,16,0,0.16,0,0.8519
 ZMB,Zambia,country,Southern Africa and Indian Ocean,14,18,0.04,0.72,0,0.8148
 ZWE,Zimbabwe,country,Southern Africa and Indian Ocean,16,18,0,0,0,0.8266
 EU,EU,actor,,10.5,23,0.123,0.0015,0.0504,0.785

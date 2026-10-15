@@ -68,7 +68,7 @@ export default {
       allLabel: "All actors",
       // smaller than Africa: Bahrain and Qatar sit ~20px apart on this map (tune)
       // one dot-size scale in every view (all actors and single actors): the largest value in the data (165) = radius rMax
-      rMax: 11,
+      rMax: 33,
       keySize: "Visits",
       keyValuesActor: [1, 5, 15, 50, 150],
       keyValuesAll: [1, 5, 15, 50, 150],
@@ -90,7 +90,7 @@ export default {
       source: "Data: EEAS; foreign ministry websites",
       allLabel: "All actors",
       keyByActor: true,
-      rMaxAll: 10,
+      rMaxAll: 30,
       keySize: "Actors with a partnership",
       tooltipCount: (n) =>
         `${n} actor${n === 1 ? "" : "s"} with a formal partnership`,

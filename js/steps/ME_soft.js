@@ -66,11 +66,13 @@ const FN6 = "⁶ Turkish Cooperation and Coordination Agency (TİKA), ‘Offices
 const FN7 = "⁷ Rossotrudnichestvo, ‘Map’, projects.";
 const FN8 =
   "⁸ US International Development Finance Corporation (DFC), 2025 Annual Report, 2025.";
+const FN85 = "\n\n\n\n\n";
 const FN9 =
   "⁹ Czech Centres; Finnish Institute in the Middle East; Alliances Françaises; Institut français; Goethe-Institut; Hungarian Academy in Jerusalem; Italian MFA, ‘Mappa’; Polish MFA, ‘Polish Institutes’; Instituto Cervantes.";
-const FN10 = "¹⁰ Yunus Emre Enstitüsü, ‘Merkezlerimiz’.";
+const FN10 = "¹⁰ Yunus Emre Enstitüsü, ‘Merkezlerimiz’.\n\n\n\n";
 const FN11 =
-  "¹¹ Russkiy Mir Foundation, catalogue of Russian centres and ‘cabinets’; Rossotrudnichestvo, ‘Russian houses abroad’.";
+  "¹¹ Russkiy Mir Foundation, catalogue of Russian centres and ‘cabinets’; Rossotrudnichestvo, ‘Russian houses abroad’.\n\n\n\n";
+const FN115 = "\n";
 const FN12 =
   "¹² Indian Council for Cultural Relations (ICCR); Korean Cultural Centers; King Sejong Institute Foundation; Confucius Institute, ‘Global Network’.";
 const FN13 =
@@ -381,6 +383,7 @@ export default {
         actor: "EU",
         highlight: ["ISR", "LBN", "ARE", "JOR"],
         labels: ["ISR", "LBN", "ARE", "JOR"],
+        footnote: FN85,
       },
     },
     l_cz: {
@@ -412,7 +415,10 @@ export default {
       },
     },
     l_chn: { chart: "lang", state: { highlight: ["CHN", "KOR", "IND"] } },
-    l_kor: { chart: "langmap", state: { measure: "centres", actor: "KOR" } },
+    l_kor: {
+      chart: "langmap",
+      state: { measure: "centres", actor: "KOR", footnote: FN115 },
+    },
     l_ind: {
       chart: "langmap",
       state: {

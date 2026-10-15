@@ -1,0 +1,37 @@
+geo,actor,positive,neither,dontknow,negative,n_countries
+Africa,CHN,61.66,5.36,15.45,17.5,37
+Africa,USA,51.89,7.32,21.23,19.56,37
+Africa,EU,49.98,6.62,25.82,17.59,37
+Africa,FCP,40.6,6.09,21.81,31.48,36
+Africa,IND,38.91,10.3,31.03,19.74,37
+Africa,RUS,35.05,9.76,31.68,23.49,37
+North Africa,CHN,51.35,14.55,16.3,17.85,2
+North Africa,USA,35.15,13.6,17.95,33.25,2
+North Africa,EU,45.6,11.1,19,24.35,2
+North Africa,FCP,22.05,11.15,12.7,54.1,2
+North Africa,IND,20.95,25.4,41.2,12.4,2
+North Africa,RUS,31.85,18.3,30.25,19.65,2
+West Africa,CHN,67.17,4.58,10.06,18.15,13
+West Africa,USA,62.22,5.95,13.12,18.72,13
+West Africa,EU,57.32,5.81,16.19,20.68,13
+West Africa,FCP,47.83,4.79,11.68,35.68,12
+West Africa,IND,41.16,10.5,24.98,23.35,13
+West Africa,RUS,42.73,9.97,23.27,23.99,13
+Central Africa,CHN,67.36,4.78,6.02,21.8,5
+Central Africa,USA,50.8,8.96,13.04,27.16,5
+Central Africa,EU,48.8,7.18,12.34,31.68,5
+Central Africa,FCP,38.06,3.34,5.24,53.34,5
+Central Africa,IND,35.44,13.28,21.7,29.6,5
+Central Africa,RUS,46.54,9.7,16.22,27.58,5
+East Africa and HoA,CHN,60.37,2.53,24.1,12.93,3
+East Africa and HoA,USA,51.03,3.43,30.43,15.1,3
+East Africa and HoA,EU,45.13,3.53,41.07,10.27,3
+East Africa and HoA,FCP,40.73,3.97,38.63,16.67,3
+East Africa and HoA,IND,44.63,4.1,38,13.23,3
+East Africa and HoA,RUS,25.5,4.93,46.07,23.4,3
+Southern Africa and Indian Ocean,CHN,56.27,5.59,21.84,16.29,14
+Southern Africa and Indian Ocean,USA,45.25,7.95,30.17,16.64,14
+Southern Africa and Indian Ocean,EU,45.26,7.19,37.28,10.29,14
+Southern Africa and Indian Ocean,FCP,37.93,7.93,34.12,20.01,14
+Southern Africa and Indian Ocean,IND,39.39,8.23,37.03,15.31,14
+Southern Africa and Indian Ocean,RUS,26.31,9.39,42.14,22.14,14

@@ -16,6 +16,7 @@
 //   stud     sankey (reverse): African students by region of origin (left) and host actor (right)
 //   migFrom  sankey (reverse): migrants from African regions (left) living in each actor (right), 2015 and 2024
 //   migTo    sankey: migrants from each actor (left) living in African regions or countries (right), 2015 and 2024
+//   perc     panelBars: perceptions of each actor's influence (positive, neither, don't know, negative), Afrobarometer round 10
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
 //   split sentences (one chart state shows one actor or one measure at a time): w_jpn / w_tur,
@@ -58,6 +59,18 @@
 //                 citizens (China, India, Iran, Japan). No migrants from Africa recorded in South Korea.
 //   mf_tur        the dashed outlines show every actor's 2015 level; the label gives the change for Türkiye only
 //   mt_chn_eth15  the step shows 2015 (54,628) before the 2024 figure of mt_chn_eth (26,824); the chart animates between them
+//   perc          one 100% bar per actor, answers stacked: positive | neither | don't know (incl. refused) | negative. Values are
+//                 plain means of country values (as in the workbook), 2024/2025; the AU rows and the 2021/2023 rows are not
+//                 drawn. Survey covers 37 countries: North Africa 2, East Africa and HoA 3, Central Africa 5, West Africa 13,
+//                 Southern Africa and Indian Ocean 14 (n in each panel header); the former colonial power is rated in 36.
+//                 Panels: all, all_neg (negative first, for the negative paragraph), one per subregion. The negative steps list
+//                 the rows in the text's order. Bars are coloured by answer, not by actor; the row ids are "perc_*" on purpose,
+//                 so that actorNames.js does not colour the actor names in the text (red would read as "negative").
+//   pc_chn / pc_chn_reg   split at "and": the average (all countries) and "every region" (five panels side by side)
+//   pc_e / pc_e_rus       split at "while": EU and India, then Russia
+//   pc_us_eu, pc_oth, pc_neg_top, pc_neg_rest: several actors in one clause, all highlighted in the same panel
+//   text vs data  Russia average positive: text 36 %, data 35.05 %. EU average negative: text 17 %, data 17.59 % (18 %).
+//                 Eastern Africa, Russia: text 25 %, data 25.5 % (the chart shows 26 %).
 //   typos         kept as in the source: "Western Africa", "field office overall", "than in West Africa", "out the nine",
 //                 "Qatar charity", "has largest network", "an average that reaches 89% on average", "other affiliated
 //                 institutions", "The second destinations ... was", "the EU is the only external actors"
@@ -73,23 +86,83 @@ const N = "North Africa";
 
 // footnotes (drafts from the source document)
 const FN3 = "³ European Investment Bank (EIB), ‘Sub-Saharan Africa’, eib.org.";
-const FN_ANY = "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
+const FN_ANY =
+  "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
 const FN4 = "⁴ Abu Dhabi Fund for Development (ADFD), Annual Report 2025.";
-const FN5 = "⁵ Where French cooperation is complemented by other EU member states: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
+const FN5 =
+  "⁵ Where French cooperation is complemented by other EU member states: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
 const FN6 = "⁶ Confucius Institute, ‘Confucius Institutes in Africa’, ci.cn.";
-const FN789 = "⁷ Russkiy Mir Foundation; Rossotrudnichestvo. ⁸ Marangio, R., Chaillot Paper 186, EUISS, 2025, p. 48. ⁹ In the DRC, Kenya, Madagascar, Mali, São Tomé and Príncipe, Senegal, Sierra Leone and Togo (BBC News, 10 September 2026).";
+const FN789 =
+  "⁷ Russkiy Mir Foundation; Rossotrudnichestvo. ⁸ Marangio, R., Chaillot Paper 186, EUISS, 2025, p. 48. ⁹ In the DRC, Kenya, Madagascar, Mali, São Tomé and Príncipe, Senegal, Sierra Leone and Togo (BBC News, 10 September 2026).";
 const FN10 = "¹⁰ Yunus Emre Institute, ‘Merkezlerimiz’, yee.org.tr.";
-const FN11 = "¹¹ Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands.";
-const FN12 = "¹² UNDESA, International Migrant Stock 2024 (both sexes, mid-year). No records of migrants from Africa in South Korea. Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan).";
-const FN13 = "¹³ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
-const FN14 = "¹⁴ These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
+const FN11 =
+  "¹¹ Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands.";
+const FN12 =
+  "¹² UNDESA, International Migrant Stock 2024 (both sexes, mid-year). No records of migrants from Africa in South Korea. Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan).";
+const FN13 =
+  "¹³ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
+const FN14 =
+  "¹⁴ These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
+const FN15 =
+  "¹⁵ No available data for Algeria, Burkina Faso, Burundi, Central African Republic, Djibouti, DR Congo, Egypt, Equatorial Guinea, Eritrea, Ethiopia, Guinea-Bissau, Libya, Niger, Rwanda, Somalia, South Sudan, Sudan. Source: Afrobarometer, R10 2024/2025 (https://www.afrobarometer.org/surveys-and-methods/survey-resources/). ";
 const FN_ETH = "2015 level shown (54,628); 2024: 26,824. " + FN13;
 
 // dot sizes compare across the two maps: the same value gets the same radius (21 = member states with any presence, the largest count)
 const DOT_MAX = 21;
 const DOT_R = 12;
 
-const SRC_DEV = "Data: official websites of agencies, ministries and entities, most recent report available (2023–2025).";
+const SRC_DEV =
+  "Data: official websites of agencies, ministries and entities, most recent report available (2023–2025).";
+
+// perceptions chart: rows and panels (bars are coloured by answer, not by actor; see PINNED)
+const PERC_ROWS = [
+  "perc_CHN",
+  "perc_USA",
+  "perc_EU",
+  "perc_FCP",
+  "perc_IND",
+  "perc_RUS",
+]; // order of the positive ranking
+const PERC_NEG_ROWS = [
+  "perc_FCP",
+  "perc_RUS",
+  "perc_USA",
+  "perc_IND",
+  "perc_EU",
+  "perc_CHN",
+]; // order of the negative paragraph
+const PERC_LABELS = {
+  perc_CHN: "China",
+  perc_USA: "US",
+  perc_EU: "EU",
+  perc_FCP: "Former colonial power",
+  perc_IND: "India",
+  perc_RUS: "Russia",
+};
+const PERC_P = { column: "positive", label: "Positive", color: "teal2" };
+const PERC_NE = { column: "neither", label: "Neither", color: "light" };
+const PERC_DK = {
+  column: "dontknow",
+  label: "Don’t know",
+  color: "light",
+  opacity: 0.5,
+};
+const PERC_NG = { column: "negative", label: "Negative", color: "fuchsia2" };
+const percPanel = (id, title, subtitle, geo, negFirst = false) => ({
+  id,
+  title,
+  subtitle,
+  where: { geo },
+  segments: negFirst
+    ? [PERC_NG, PERC_NE, PERC_DK, PERC_P]
+    : [PERC_P, PERC_NE, PERC_DK, PERC_NG],
+  domain: [0, 100],
+  format: "pct0",
+  endLabel: { column: negFirst ? "negative" : "positive" },
+});
+const PERC_REGIONS = ["N", "W", "C", "E", "S"];
+const percSub = (name, n) =>
+  `${name}: share of respondents by how they rate each actor’s influence (${n})`;
 
 export default {
   charts: {
@@ -99,8 +172,10 @@ export default {
       data: "soft_1_dev",
       sub: "soft_1_dev_sub",
       title: "Development and humanitarian agencies in Africa",
-      subtitleActor: "Countries where the selected actor’s agencies are present, by strongest type of presence",
-      subtitleAll: "Number of actors with an office in each country (EU institutions and member states not included)",
+      subtitleActor:
+        "Countries where the selected actor’s agencies are present, by strongest type of presence",
+      subtitleAll:
+        "Number of actors with an office in each country (EU institutions and member states not included)",
       source: SRC_DEV,
       allLabel: "All actors (offices)",
       tilesWithData: true,
@@ -116,10 +191,30 @@ export default {
           : `${label}: present in ${share}% of countries`,
       categories: {
         Office: { label: "Office", tooltip: "office", color: theme.navy, r: 5 },
-        "Sector in embassy": { label: "Sector in embassy", tooltip: "sector in embassy", color: theme.teal2, r: 4.5 },
-        Projects: { label: "Projects", tooltip: "projects", color: theme.teal, r: 4.5 },
-        Grants: { label: "Grants", tooltip: "grants", color: theme.muted, r: 3.5 },
-        None: { label: "No presence", tooltip: "no presence", color: theme.light, r: 2.5 },
+        "Sector in embassy": {
+          label: "Sector in embassy",
+          tooltip: "sector in embassy",
+          color: theme.teal2,
+          r: 4.5,
+        },
+        Projects: {
+          label: "Projects",
+          tooltip: "projects",
+          color: theme.teal,
+          r: 4.5,
+        },
+        Grants: {
+          label: "Grants",
+          tooltip: "grants",
+          color: theme.muted,
+          r: 3.5,
+        },
+        None: {
+          label: "No presence",
+          tooltip: "no presence",
+          color: theme.light,
+          r: 2.5,
+        },
       },
     },
 
@@ -128,9 +223,12 @@ export default {
       mode: "count",
       data: "soft_1_dev_ms",
       title: "EU member states’ development agencies in Africa",
-      subtitleActor: "Number of EU member states present in each country, by the type of presence selected (separate counts)",
-      subtitleAll: "Number of EU member states with any presence in each country (office, partner country or project, ODA recipient, not specified)",
-      source: "Data: websites of EU member states’ development agencies and ministries.",
+      subtitleActor:
+        "Number of EU member states present in each country, by the type of presence selected (separate counts)",
+      subtitleAll:
+        "Number of EU member states with any presence in each country (office, partner country or project, ODA recipient, not specified)",
+      source:
+        "Data: websites of EU member states’ development agencies and ministries.",
       allLabel: "Any presence",
       tilesWithData: true,
       extraTiles: [
@@ -156,11 +254,26 @@ export default {
       rowLabels: { EU: "EU member states", FRA: "of which France" },
       labelWidth: 125,
       title: "Cultural and language institutes in Africa",
-      subtitle: "Countries with at least one centre, and number of centres (all types of institute), 2026",
+      subtitle:
+        "Countries with at least one centre, and number of centres (all types of institute), 2026",
       source: "Data: websites of the institutes and cultural centres.",
       panels: [
-        { id: "countries", title: "Countries", subtitle: "With at least one centre", segments: [{ column: "countries", label: "Countries", color: "actor" }], format: "num" },
-        { id: "centres", title: "Centres", subtitle: "All types of institute", segments: [{ column: "centres", label: "Centres", color: "actor" }], format: "num" },
+        {
+          id: "countries",
+          title: "Countries",
+          subtitle: "With at least one centre",
+          segments: [
+            { column: "countries", label: "Countries", color: "actor" },
+          ],
+          format: "num",
+        },
+        {
+          id: "centres",
+          title: "Centres",
+          subtitle: "All types of institute",
+          segments: [{ column: "centres", label: "Centres", color: "actor" }],
+          format: "num",
+        },
       ],
     },
 
@@ -171,13 +284,50 @@ export default {
       rows: [N, W, C, E, S],
       labelWidth: 200,
       title: "Regional coverage of cultural and language institutes",
-      subtitle: "Share of the subregion’s countries with at least one centre, 2026",
+      subtitle:
+        "Share of the subregion’s countries with at least one centre, 2026",
       source: "Data: websites of the institutes and cultural centres.",
       panels: [
-        { id: "FRA", title: "France", where: { actor: "FRA" }, segments: [{ column: "coverage_pct", label: "Coverage", color: "EU" }], domain: [0, 100], format: "pct0" },
-        { id: "EU", title: "All EU member states", where: { actor: "EU" }, segments: [{ column: "coverage_pct", label: "Coverage", color: "EU" }], domain: [0, 100], format: "pct0" },
-        { id: "CHN", title: "China", where: { actor: "CHN" }, segments: [{ column: "coverage_pct", label: "Coverage", color: "CHN" }], domain: [0, 100], format: "pct0" },
-        { id: "TUR", title: "Türkiye", where: { actor: "TUR" }, segments: [{ column: "coverage_pct", label: "Coverage", color: "TUR" }], domain: [0, 100], format: "pct0" },
+        {
+          id: "FRA",
+          title: "France",
+          where: { actor: "FRA" },
+          segments: [
+            { column: "coverage_pct", label: "Coverage", color: "EU" },
+          ],
+          domain: [0, 100],
+          format: "pct0",
+        },
+        {
+          id: "EU",
+          title: "All EU member states",
+          where: { actor: "EU" },
+          segments: [
+            { column: "coverage_pct", label: "Coverage", color: "EU" },
+          ],
+          domain: [0, 100],
+          format: "pct0",
+        },
+        {
+          id: "CHN",
+          title: "China",
+          where: { actor: "CHN" },
+          segments: [
+            { column: "coverage_pct", label: "Coverage", color: "CHN" },
+          ],
+          domain: [0, 100],
+          format: "pct0",
+        },
+        {
+          id: "TUR",
+          title: "Türkiye",
+          where: { actor: "TUR" },
+          segments: [
+            { column: "coverage_pct", label: "Coverage", color: "TUR" },
+          ],
+          domain: [0, 100],
+          format: "pct0",
+        },
       ],
     },
 
@@ -185,8 +335,10 @@ export default {
       type: "sankey",
       data: "soft_3_stud",
       title: "African students in external actors",
-      subtitle: () => "Students by region of origin (left) and host actor (right), 2023 (latest available year for some actors)",
-      source: "Data: UNESCO Institute for Statistics (UIS), OPRI inbound international students, February 2026.",
+      subtitle: () =>
+        "Students by region of origin (left) and host actor (right), 2023 (latest available year for some actors)",
+      source:
+        "Data: UNESCO Institute for Statistics (UIS), OPRI inbound international students, February 2026.",
       unit: "Number of students",
       tipLabel: "Students",
       reverse: true,
@@ -203,13 +355,17 @@ export default {
       type: "sankey",
       data: "soft_4_mig_from",
       title: "Migrants from Africa in the external actors",
-      subtitle: (s, period) => `Stock of migrants by region of origin (left) and host actor (right), ${period}`,
+      subtitle: (s, period) =>
+        `Stock of migrants by region of origin (left) and host actor (right), ${period}`,
       source: "Data: UNDESA, International Migrant Stock 2024.",
       unit: "Migrants (stock, mid-year)",
       tipLabel: "Migrants",
       reverse: true,
       defaultPeriod: "p2",
-      periods: { p1: { label: "2015", from: 2015, to: 2015 }, p2: { label: "2024", from: 2024, to: 2024 } },
+      periods: {
+        p1: { label: "2015", from: 2015, to: 2015 },
+        p2: { label: "2024", from: 2024, to: 2024 },
+      },
       nSuppliers: 7,
       otherSuppliers: "Other destinations",
       changeSuppliers: ["Türkiye"],
@@ -221,12 +377,16 @@ export default {
       type: "sankey",
       data: "soft_4_mig_to",
       title: "Migrants from the external actors in Africa",
-      subtitle: (s, period) => `Stock of migrants by actor of origin (left) and African ${s.depth === "country" ? "country" : "region"} of residence (right), ${period}`,
+      subtitle: (s, period) =>
+        `Stock of migrants by actor of origin (left) and African ${s.depth === "country" ? "country" : "region"} of residence (right), ${period}`,
       source: "Data: UNDESA, International Migrant Stock 2024.",
       unit: "Migrants (stock, mid-year)",
       tipLabel: "Migrants",
       defaultPeriod: "p2",
-      periods: { p1: { label: "2015", from: 2015, to: 2015 }, p2: { label: "2024", from: 2024, to: 2024 } },
+      periods: {
+        p1: { label: "2015", from: 2015, to: 2015 },
+        p2: { label: "2024", from: 2024, to: 2024 },
+      },
       nSuppliers: 9,
       nCountries: 8,
       otherSuppliers: "Other origins",
@@ -234,81 +394,540 @@ export default {
       marginLeft: 110,
       marginRight: 150,
     },
+
+    perc: {
+      type: "panelBars",
+      data: "soft_5_perc",
+      rowKey: "row",
+      prepare: ({ rows }) =>
+        rows.map((r) => ({ ...r, row: `perc_${r.actor}` })),
+      rows: PERC_ROWS,
+      rowLabels: PERC_LABELS,
+      labelWidth: 140,
+      title: "Perceived influence of external actors in Africa",
+      subtitle:
+        "Share of respondents by how they rate each actor’s influence, 2024/2025",
+      source:
+        "Data: Afrobarometer, round 10 (2024/2025); means of country values.",
+      key: [
+        { label: "Positive", color: "teal2" },
+        { label: "Neither", color: "light" },
+        { label: "Don’t know", color: "light", opacity: 0.5 },
+        { label: "Negative", color: "fuchsia2" },
+      ],
+      panels: [
+        percPanel(
+          "all",
+          "All countries",
+          "Mean of 37 countries (36 for former colonial power)",
+          "Africa",
+        ),
+        percPanel(
+          "all_neg",
+          "All countries",
+          "Mean of 37 countries (36 for former colonial power)",
+          "Africa",
+          true,
+        ),
+        percPanel("N", "North", "2 countries", N),
+        percPanel("W", "West", "13 countries", W),
+        percPanel("C", "Central", "5 countries", C),
+        percPanel("E", "East", "3 countries", E),
+        percPanel("S", "Southern", "14 countries", S),
+      ],
+    },
   },
 
   steps: {
     // ── Geographical distribution of development agencies, grants and projects in Africa ──────────
     w_all: { chart: "dev", state: { actor: "all", subregion: W } },
-    w_ms: { chart: "devms", state: { actor: "MS_office", subregion: W, footnote: FN3 } },
+    w_ms: {
+      chart: "devms",
+      state: { actor: "MS_office", subregion: W, footnote: FN3 },
+    },
     w_ext: { chart: "dev", state: { actor: "all", subregion: W } },
     w_jpn: { chart: "dev", state: { actor: "JPN", subregion: W } },
     w_tur: { chart: "dev", state: { actor: "TUR", subregion: W } },
     e_all: { chart: "dev", state: { actor: "all", subregion: E } },
     e_tur: { chart: "dev", state: { actor: "TUR", subregion: E } },
     e_jpn: { chart: "dev", state: { actor: "JPN", subregion: E } },
-    e_ms: { chart: "devms", state: { actor: "all", subregion: E, footnote: FN_ANY } },
+    e_ms: {
+      chart: "devms",
+      state: { actor: "all", subregion: E, footnote: FN_ANY },
+    },
     e_msoff: { chart: "devms", state: { actor: "MS_office", subregion: E } },
-    s_ms: { chart: "devms", state: { actor: "all", subregion: S, footnote: FN_ANY } },
+    s_ms: {
+      chart: "devms",
+      state: { actor: "all", subregion: S, footnote: FN_ANY },
+    },
     s_ext: { chart: "dev", state: { actor: "all", subregion: S } },
     s_jpn: { chart: "dev", state: { actor: "JPN", subregion: S } },
-    s_ind: { chart: "dev", state: { actor: "IND", subregion: S, labels: ["ZAF"] } },
-    c_ms: { chart: "devms", state: { actor: "all", subregion: C, footnote: FN_ANY } },
+    s_ind: {
+      chart: "dev",
+      state: { actor: "IND", subregion: S, labels: ["ZAF"] },
+    },
+    c_ms: {
+      chart: "devms",
+      state: { actor: "all", subregion: C, footnote: FN_ANY },
+    },
     c_msoff: { chart: "devms", state: { actor: "MS_office", subregion: C } },
     c_jpn: { chart: "dev", state: { actor: "JPN", subregion: C } },
     c_ind: { chart: "dev", state: { actor: "IND", subregion: C } },
     c_gulf: { chart: "dev", state: { actor: "ARE", subregion: C } },
-    c_rus: { chart: "dev", state: { actor: "RUS", subregion: C, labels: ["BDI", "CAF", "COG", "COD"] } },
-    n_ms: { chart: "devms", state: { actor: "all", subregion: N, footnote: FN_ANY } },
-    n_are: { chart: "dev", state: { actor: "ARE", subregion: N, footnote: FN4 } },
+    c_rus: {
+      chart: "dev",
+      state: {
+        actor: "RUS",
+        subregion: C,
+        labels: ["BDI", "CAF", "COG", "COD"],
+      },
+    },
+    n_ms: {
+      chart: "devms",
+      state: { actor: "all", subregion: N, footnote: FN_ANY },
+    },
+    n_are: {
+      chart: "dev",
+      state: { actor: "ARE", subregion: N, footnote: FN4 },
+    },
     // ── Cultural cooperation and language institutes ──────────
-    l_intro: { chart: "lang", state: {  } },
+    l_intro: { chart: "lang", state: {} },
     l_eu: { chart: "lang", state: { highlight: ["EU", "FRA"] } },
     l_cov: { chart: "cov", state: { panels: ["FRA", "EU"], footnote: FN5 } },
     l_chn: { chart: "lang", state: { highlight: ["CHN"], footnote: FN6 } },
     l_chn_cov: { chart: "cov", state: { panels: ["CHN"] } },
     l_rus: { chart: "lang", state: { highlight: ["RUS"], footnote: FN789 } },
     l_tur: { chart: "lang", state: { highlight: ["TUR"], footnote: FN10 } },
-    l_tur_cov: { chart: "cov", state: { panels: ["TUR"], highlight: ["North Africa"] } },
+    l_tur_cov: {
+      chart: "cov",
+      state: { panels: ["TUR"], highlight: ["North Africa"] },
+    },
     // ── African students in external actors11 ──────────
     st_intro: { chart: "stud", state: { footnote: FN11 } },
-    st_main: { chart: "stud", state: { highlight: ["EU", "Türkiye", "US", "Russia"], footnote: FN11 } },
+    st_main: {
+      chart: "stud",
+      state: { highlight: ["EU", "Türkiye", "US", "Russia"], footnote: FN11 },
+    },
     st_eu: { chart: "stud", state: { highlight: ["EU"], footnote: FN11 } },
-    st_tur: { chart: "stud", state: { highlight: ["Türkiye", "US"], footnote: FN11 } },
-    st_eu_reg: { chart: "stud", state: { highlight: [{ from: "EU", to: "North Africa" }, { from: "EU", to: "West Africa" }, { from: "EU", to: "Central Africa" }], footnote: FN11 } },
-    st_tur_reg: { chart: "stud", state: { highlight: [{ from: "Türkiye", to: "North Africa" }, { from: "Türkiye", to: "East Africa and HoA" }], footnote: FN11 } },
-    st_us_reg: { chart: "stud", state: { highlight: [{ from: "US", to: "West Africa" }, { from: "EU", to: "West Africa" }], footnote: FN11 } },
-    st_rus_ind: { chart: "stud", state: { highlight: [{ from: "Russia", to: "West Africa" }, { from: "India", to: "West Africa" }], footnote: FN11 } },
-    st_sau_w: { chart: "stud", state: { highlight: [{ from: "Saudi Arabia", to: "West Africa" }], footnote: FN11 } },
-    st_irn_w: { chart: "stud", state: { highlight: [{ from: "Iran", to: "West Africa" }], footnote: FN11 } },
-    st_rus_n: { chart: "stud", state: { subregion: "North Africa", depth: "country", highlight: [{ from: "Russia", to: "EGY" }], show: ["EGY"], footnote: FN11 } },
-    st_tur_n: { chart: "stud", state: { subregion: "North Africa", depth: "country", highlight: [{ from: "Türkiye", to: "EGY" }, { from: "Türkiye", to: "MAR" }], show: ["EGY", "MAR"], footnote: FN11 } },
-    st_sau_ind: { chart: "stud", state: { highlight: ["Saudi Arabia", "India"], footnote: FN11 } },
-    st_sau: { chart: "stud", state: { highlight: [{ from: "Saudi Arabia", to: "West Africa" }, { from: "Saudi Arabia", to: "North Africa" }, { from: "Saudi Arabia", to: "East Africa and HoA" }], footnote: FN11 } },
-    st_sau_c: { chart: "stud", state: { depth: "country", highlight: [{ from: "Saudi Arabia", to: "NGA" }, { from: "Saudi Arabia", to: "EGY" }, { from: "Saudi Arabia", to: "SDN" }], show: ["NGA", "EGY", "SDN"], footnote: FN11 } },
-    st_ind: { chart: "stud", state: { highlight: [{ from: "India", to: "East Africa and HoA" }, { from: "India", to: "Southern Africa and Indian Ocean" }], footnote: FN11 } },
-    st_ind_c: { chart: "stud", state: { depth: "country", highlight: [{ from: "India", to: "TZA" }, { from: "India", to: "ZWE" }], show: ["TZA", "ZWE"], footnote: FN11 } },
+    st_tur: {
+      chart: "stud",
+      state: { highlight: ["Türkiye", "US"], footnote: FN11 },
+    },
+    st_eu_reg: {
+      chart: "stud",
+      state: {
+        highlight: [
+          { from: "EU", to: "North Africa" },
+          { from: "EU", to: "West Africa" },
+          { from: "EU", to: "Central Africa" },
+        ],
+        footnote: FN11,
+      },
+    },
+    st_tur_reg: {
+      chart: "stud",
+      state: {
+        highlight: [
+          { from: "Türkiye", to: "North Africa" },
+          { from: "Türkiye", to: "East Africa and HoA" },
+        ],
+        footnote: FN11,
+      },
+    },
+    st_us_reg: {
+      chart: "stud",
+      state: {
+        highlight: [
+          { from: "US", to: "West Africa" },
+          { from: "EU", to: "West Africa" },
+        ],
+        footnote: FN11,
+      },
+    },
+    st_rus_ind: {
+      chart: "stud",
+      state: {
+        highlight: [
+          { from: "Russia", to: "West Africa" },
+          { from: "India", to: "West Africa" },
+        ],
+        footnote: FN11,
+      },
+    },
+    st_sau_w: {
+      chart: "stud",
+      state: {
+        highlight: [{ from: "Saudi Arabia", to: "West Africa" }],
+        footnote: FN11,
+      },
+    },
+    st_irn_w: {
+      chart: "stud",
+      state: {
+        highlight: [{ from: "Iran", to: "West Africa" }],
+        footnote: FN11,
+      },
+    },
+    st_rus_n: {
+      chart: "stud",
+      state: {
+        subregion: "North Africa",
+        depth: "country",
+        highlight: [{ from: "Russia", to: "EGY" }],
+        show: ["EGY"],
+        footnote: FN11,
+      },
+    },
+    st_tur_n: {
+      chart: "stud",
+      state: {
+        subregion: "North Africa",
+        depth: "country",
+        highlight: [
+          { from: "Türkiye", to: "EGY" },
+          { from: "Türkiye", to: "MAR" },
+        ],
+        show: ["EGY", "MAR"],
+        footnote: FN11,
+      },
+    },
+    st_sau_ind: {
+      chart: "stud",
+      state: { highlight: ["Saudi Arabia", "India"], footnote: FN11 },
+    },
+    st_sau: {
+      chart: "stud",
+      state: {
+        highlight: [
+          { from: "Saudi Arabia", to: "West Africa" },
+          { from: "Saudi Arabia", to: "North Africa" },
+          { from: "Saudi Arabia", to: "East Africa and HoA" },
+        ],
+        footnote: FN11,
+      },
+    },
+    st_sau_c: {
+      chart: "stud",
+      state: {
+        depth: "country",
+        highlight: [
+          { from: "Saudi Arabia", to: "NGA" },
+          { from: "Saudi Arabia", to: "EGY" },
+          { from: "Saudi Arabia", to: "SDN" },
+        ],
+        show: ["NGA", "EGY", "SDN"],
+        footnote: FN11,
+      },
+    },
+    st_ind: {
+      chart: "stud",
+      state: {
+        highlight: [
+          { from: "India", to: "East Africa and HoA" },
+          { from: "India", to: "Southern Africa and Indian Ocean" },
+        ],
+        footnote: FN11,
+      },
+    },
+    st_ind_c: {
+      chart: "stud",
+      state: {
+        depth: "country",
+        highlight: [
+          { from: "India", to: "TZA" },
+          { from: "India", to: "ZWE" },
+        ],
+        show: ["TZA", "ZWE"],
+        footnote: FN11,
+      },
+    },
     // ── Recorded migrant stocks from Africa in the external actors considered12 ──────────
     mf_intro: { chart: "migFrom", state: { period: "p2", footnote: FN12 } },
-    mf_eu: { chart: "migFrom", state: { period: "p2", highlight: ["EU"], footnote: FN12 } },
-    mf_us: { chart: "migFrom", state: { period: "p2", highlight: ["US"], footnote: FN12 } },
-    mf_tur: { chart: "migFrom", state: { period: "p2", change: true, changeSuppliers: ["Türkiye"], highlight: ["Türkiye"], footnote: FN12 } },
-    mf_eu_reg: { chart: "migFrom", state: { period: "p2", highlight: [{ from: "EU", to: "North Africa" }, { from: "EU", to: "West Africa" }], footnote: FN12 } },
-    mf_us_reg: { chart: "migFrom", state: { period: "p2", highlight: [{ from: "US", to: "West Africa" }, { from: "US", to: "East Africa and HoA" }], footnote: FN12 } },
-    mf_tur_reg: { chart: "migFrom", state: { period: "p2", highlight: [{ from: "Türkiye", to: "North Africa" }, { from: "Türkiye", to: "East Africa and HoA" }], footnote: FN12 } },
-    mf_chn_reg: { chart: "migFrom", state: { period: "p2", highlight: [{ from: "China", to: "West Africa" }, { from: "China", to: "Southern Africa and Indian Ocean" }], footnote: FN12 } },
+    mf_eu: {
+      chart: "migFrom",
+      state: { period: "p2", highlight: ["EU"], footnote: FN12 },
+    },
+    mf_us: {
+      chart: "migFrom",
+      state: { period: "p2", highlight: ["US"], footnote: FN12 },
+    },
+    mf_tur: {
+      chart: "migFrom",
+      state: {
+        period: "p2",
+        change: true,
+        changeSuppliers: ["Türkiye"],
+        highlight: ["Türkiye"],
+        footnote: FN12,
+      },
+    },
+    mf_eu_reg: {
+      chart: "migFrom",
+      state: {
+        period: "p2",
+        highlight: [
+          { from: "EU", to: "North Africa" },
+          { from: "EU", to: "West Africa" },
+        ],
+        footnote: FN12,
+      },
+    },
+    mf_us_reg: {
+      chart: "migFrom",
+      state: {
+        period: "p2",
+        highlight: [
+          { from: "US", to: "West Africa" },
+          { from: "US", to: "East Africa and HoA" },
+        ],
+        footnote: FN12,
+      },
+    },
+    mf_tur_reg: {
+      chart: "migFrom",
+      state: {
+        period: "p2",
+        highlight: [
+          { from: "Türkiye", to: "North Africa" },
+          { from: "Türkiye", to: "East Africa and HoA" },
+        ],
+        footnote: FN12,
+      },
+    },
+    mf_chn_reg: {
+      chart: "migFrom",
+      state: {
+        period: "p2",
+        highlight: [
+          { from: "China", to: "West Africa" },
+          { from: "China", to: "Southern Africa and Indian Ocean" },
+        ],
+        footnote: FN12,
+      },
+    },
     // ── Recorded migrant stocks from the external actors considered to Africa13 ──────────
     mt_intro: { chart: "migTo", state: { period: "p2", footnote: FN13 } },
-    mt_eu: { chart: "migTo", state: { period: "p2", highlight: ["EU"], footnote: FN13 } },
-    mt_chn_ind: { chart: "migTo", state: { period: "p2", highlight: ["China", "India"], footnote: FN13 } },
-    mt_rus_us: { chart: "migTo", state: { period: "p2", highlight: ["Russia", "US"], footnote: FN13 } },
-    mt_north: { chart: "migTo", state: { period: "p2", highlight: [{ from: "EU", to: "North Africa" }, { from: "China", to: "North Africa" }, { from: "Russia", to: "North Africa" }, { from: "US", to: "North Africa" }], footnote: FN13 } },
-    mt_eu_mar: { chart: "migTo", state: { period: "p2", depth: "country", highlight: [{ from: "EU", to: "MAR" }], show: ["MAR"], footnote: FN13 } },
-    mt_egy: { chart: "migTo", state: { period: "p2", depth: "country", highlight: [{ from: "China", to: "EGY" }, { from: "Russia", to: "EGY" }], show: ["EGY"], footnote: FN13 } },
-    mt_lby: { chart: "migTo", state: { period: "p2", depth: "country", highlight: [{ from: "US", to: "LBY" }], show: ["LBY"], footnote: FN13 } },
-    mt_ind: { chart: "migTo", state: { period: "p2", highlight: [{ from: "India", to: "Southern Africa and Indian Ocean" }], footnote: FN13 } },
-    mt_ind_zaf: { chart: "migTo", state: { period: "p2", depth: "country", highlight: [{ from: "India", to: "ZAF" }], show: ["ZAF"], footnote: FN14 } },
-    mt_chn_e: { chart: "migTo", state: { period: "p2", highlight: [{ from: "China", to: "East Africa and HoA" }], footnote: FN13 } },
-    mt_chn_eth: { chart: "migTo", state: { period: "p2", subregion: "East Africa and HoA", depth: "country", highlight: [{ from: "China", to: "ETH" }], show: ["ETH"], footnote: FN13 } },
-    mt_chn_eth15: { chart: "migTo", state: { period: "p1", subregion: "East Africa and HoA", depth: "country", highlight: [{ from: "China", to: "ETH" }], show: ["ETH"], footnote: FN_ETH } },
+    mt_eu: {
+      chart: "migTo",
+      state: { period: "p2", highlight: ["EU"], footnote: FN13 },
+    },
+    mt_chn_ind: {
+      chart: "migTo",
+      state: { period: "p2", highlight: ["China", "India"], footnote: FN13 },
+    },
+    mt_rus_us: {
+      chart: "migTo",
+      state: { period: "p2", highlight: ["Russia", "US"], footnote: FN13 },
+    },
+    mt_north: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        highlight: [
+          { from: "EU", to: "North Africa" },
+          { from: "China", to: "North Africa" },
+          { from: "Russia", to: "North Africa" },
+          { from: "US", to: "North Africa" },
+        ],
+        footnote: FN13,
+      },
+    },
+    mt_eu_mar: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        depth: "country",
+        highlight: [{ from: "EU", to: "MAR" }],
+        show: ["MAR"],
+        footnote: FN13,
+      },
+    },
+    mt_egy: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        depth: "country",
+        highlight: [
+          { from: "China", to: "EGY" },
+          { from: "Russia", to: "EGY" },
+        ],
+        show: ["EGY"],
+        footnote: FN13,
+      },
+    },
+    mt_lby: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        depth: "country",
+        highlight: [{ from: "US", to: "LBY" }],
+        show: ["LBY"],
+        footnote: FN13,
+      },
+    },
+    mt_ind: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        highlight: [{ from: "India", to: "Southern Africa and Indian Ocean" }],
+        footnote: FN13,
+      },
+    },
+    mt_ind_zaf: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        depth: "country",
+        highlight: [{ from: "India", to: "ZAF" }],
+        show: ["ZAF"],
+        footnote: FN14,
+      },
+    },
+    mt_chn_e: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        highlight: [{ from: "China", to: "East Africa and HoA" }],
+        footnote: FN13,
+      },
+    },
+    mt_chn_eth: {
+      chart: "migTo",
+      state: {
+        period: "p2",
+        subregion: "East Africa and HoA",
+        depth: "country",
+        highlight: [{ from: "China", to: "ETH" }],
+        show: ["ETH"],
+        footnote: FN13,
+      },
+    },
+    mt_chn_eth15: {
+      chart: "migTo",
+      state: {
+        period: "p1",
+        subregion: "East Africa and HoA",
+        depth: "country",
+        highlight: [{ from: "China", to: "ETH" }],
+        show: ["ETH"],
+        footnote: FN_ETH,
+      },
+    },
+    // ── Comparison of perceptions of external actors’ influence15 ──────────
+    pc_intro: { chart: "perc", state: { panels: ["all"], footnote: FN15 } },
+    pc_chn: {
+      chart: "perc",
+      state: { panels: ["all"], highlight: ["perc_CHN"], footnote: FN15 },
+    },
+    pc_chn_reg: {
+      chart: "perc",
+      state: {
+        panels: PERC_REGIONS,
+        highlight: ["perc_CHN"],
+        subtitle:
+          "Share of respondents by how they rate each actor’s influence, by subregion, 2024/2025",
+        footnote: FN15,
+      },
+    },
+    pc_us_eu: {
+      chart: "perc",
+      state: {
+        panels: ["all"],
+        highlight: ["perc_USA", "perc_EU"],
+        footnote: FN15,
+      },
+    },
+    pc_oth: {
+      chart: "perc",
+      state: {
+        panels: ["all"],
+        highlight: ["perc_FCP", "perc_IND", "perc_RUS"],
+        footnote: FN15,
+      },
+    },
+    pc_neg_top: {
+      chart: "perc",
+      state: {
+        panels: ["all_neg"],
+        rows: PERC_NEG_ROWS,
+        highlight: ["perc_FCP", "perc_RUS"],
+        footnote: FN15,
+      },
+    },
+    pc_neg_rest: {
+      chart: "perc",
+      state: {
+        panels: ["all_neg"],
+        rows: PERC_NEG_ROWS,
+        highlight: ["perc_USA", "perc_IND", "perc_EU", "perc_CHN"],
+        footnote: FN15,
+      },
+    },
+    pc_n: {
+      chart: "perc",
+      state: {
+        panels: ["N"],
+        highlight: ["perc_USA", "perc_EU", "perc_RUS"],
+        subtitle: percSub("North Africa", "Morocco and Tunisia"),
+        footnote: FN15,
+      },
+    },
+    pc_c: {
+      chart: "perc",
+      state: {
+        panels: ["C"],
+        highlight: ["perc_EU", "perc_RUS"],
+        subtitle: percSub(
+          "Central Africa",
+          "Cameroon, Chad, Gabon, Republic of Congo, São Tomé and Príncipe",
+        ),
+        footnote: FN15,
+      },
+    },
+    pc_e: {
+      chart: "perc",
+      state: {
+        panels: ["E"],
+        highlight: ["perc_EU", "perc_IND"],
+        subtitle: percSub(
+          "East Africa and the Horn",
+          "Kenya, Tanzania and Uganda",
+        ),
+        footnote: FN15,
+      },
+    },
+    pc_e_rus: {
+      chart: "perc",
+      state: {
+        panels: ["E"],
+        highlight: ["perc_RUS"],
+        subtitle: percSub(
+          "East Africa and the Horn",
+          "Kenya, Tanzania and Uganda",
+        ),
+        footnote: FN15,
+      },
+    },
+    pc_s: {
+      chart: "perc",
+      state: {
+        panels: ["S"],
+        highlight: ["perc_RUS"],
+        subtitle: percSub(
+          "Southern Africa and the Indian Ocean",
+          "14 countries",
+        ),
+        footnote: FN15,
+      },
+    },
+    pc_w: {
+      chart: "perc",
+      state: {
+        panels: ["W"],
+        highlight: ["perc_RUS", "perc_IND"],
+        subtitle: percSub("West Africa", "13 countries"),
+        footnote: FN15,
+      },
+    },
   },
 };

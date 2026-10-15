@@ -4,7 +4,7 @@ CMR,Cameroon,country,Central Africa,14,15,0.52,0.8,0.3333,0,0,0
 CAF,Central African Republic,country,Central Africa,16,14,0.56,0.3,0.7333,0.16,0,0.2667
 TCD,Chad,country,Central Africa,14,13,0.28,0.5,0.1333,0.04,0.1,0
 COG,Congo,country,Central Africa,14,16,0.56,0.2,0.8,0.04,0,0.0667
-COD,Democratic Republic of The Congo,country,Central Africa,15,15,0.08,0.1,0.0667,0,0,0
+COD,DR Congo,country,Central Africa,15,15,0.08,0.1,0.0667,0,0,0
 GNQ,Equatorial Guinea,country,Central Africa,13,16,0.4,0.4,0.4,0.08,0,0.1333
 GAB,Gabon,country,Central Africa,14,17,0.56,0.6,0.5333,0.04,0,0.0667
 RWA,Rwanda,country,Central Africa,16,16,0.52,0.6,0.4667,0,0,0
@@ -17,7 +17,7 @@ SOM,Somalia,country,East Africa and the Horn of Africa,18,14,0.16,0.4,0,0,0,0
 SSD,South Sudan,country,East Africa and the Horn of Africa,15,13,0.28,0.2,0.3333,0.08,0.2,0
 SDN,Sudan,country,East Africa and the Horn of Africa,16,12,0.28,0,0.4667,0.68,0.9,0.5333
 UGA,Uganda,country,East Africa and the Horn of Africa,16,15,0.76,0.4,1,0.16,0.4,0
-TZA,United Republic of Tanzania,country,East Africa and the Horn of Africa,17,16,0.8,0.7,0.8667,0,0,0
+TZA,Tanzania,country,East Africa and the Horn of Africa,17,16,0.8,0.7,0.8667,0,0,0
 DZA,Algeria,country,North Africa,13,11,0.96,1,0.9333,0.04,0,0.0667
 EGY,Egypt,country,North Africa,16,11,0.76,1,0.6,0,0,0
 LBY,Libya,country,North Africa,15,11,0.76,0.9,0.6667,0,0,0
@@ -53,12 +53,10 @@ NGA,Nigeria,country,West Africa,13,15,0.72,1,0.5333,0,0,0
 SEN,Senegal,country,West Africa,13,12,0.64,0.6,0.6667,0,0,0
 SLE,Sierra Leone,country,West Africa,12,13,0.32,0.3,0.3333,0,0,0
 TGO,Togo,country,West Africa,14,14,0.88,0.9,0.8667,0,0,0
-EU,EU,actor,,10.5,23,0.003,0,0.0049,0.0015,0,0.0025
-USA,US,actor,,11.5,23,0.08,0,0.1333,0.04,0,0.0667
+EU,EU,actor,,11.5,23,0.003,0,0.0049,0.0015,0,0.0025
 CHN,China,actor,,12.5,23,0.4,0.1,0.6,0.6,0.9,0.4
 RUS,Russia,actor,,13.5,23,0,0,0,1,1,1
-TUR,Türkiye,actor,,14.5,23,0,0,0,0,0,0
-IND,India,actor,,15.5,23,0.76,0.4,1,0.24,0.6,0
-JPN,Japan,actor,,16.5,23,0,0,0,0,0,0
-KOR,South Korea,actor,,17.5,23,0.36,0.9,0,0,0,0
-IRN,Iran,actor,,18.5,23,0.24,0,0.4,0.72,1,0.5333
+IND,India,actor,,14.5,23,0.76,0.4,1,0.24,0.6,0
+JPN,Japan,actor,,15.5,23,0,0,0,0,0,0
+KOR,South Korea,actor,,16.5,23,0.36,0.9,0,0,0,0
+IRN,Iran,actor,,17.5,23,0.24,0,0.4,0.72,1,0.5333

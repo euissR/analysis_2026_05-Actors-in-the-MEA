@@ -68,7 +68,7 @@ export default {
         "NB: A joint visit counts once. Data: official government sources and media. ",
       allLabel: "All actors",
       // one dot-size scale in every view (all actors and single actors): the largest value in the data (127) = radius rMax
-      rMax: 20,
+      rMax: 30,
       keySize: "Visits",
       keyValuesActor: [1, 5, 15, 50, 100],
       keyValuesAll: [1, 5, 15, 50, 100],
@@ -113,7 +113,7 @@ export default {
       source: "Data: EEAS; foreign ministry websites",
       allLabel: "All actors",
       keyByActor: true,
-      rMaxAll: 14,
+      rMaxAll: 21,
       keySize: "Actors with a partnership",
       keyValuesAll: [1, 5, 9],
       tooltipCount: (n) =>
@@ -291,7 +291,22 @@ export default {
     lab_chn: { chart: "lab", state: { actor: "CHN" } },
     lab_eu: {
       chart: "lab",
-      state: { actor: "EU", labels: ["EGY", "ZAF", "NGA", "TUN"] },
+      state: {
+        actor: "EU",
+        labels: [
+          "EGY",
+          "ZAF",
+          "NGA",
+          "TUN",
+          "COD",
+          "RWA",
+          "ZAF",
+          "ZMB",
+          "NAM",
+          "MAR",
+          "GHA",
+        ],
+      },
     },
     lab_us: {
       chart: "lab",
