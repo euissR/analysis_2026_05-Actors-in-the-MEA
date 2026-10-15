@@ -9,6 +9,8 @@ row16,Arabian Gulf Security 4,2026,7,QAT,QAT,FALSE,FALSE,,GCC,Interforces,,https
 row17,Arabian Tiger,2024,2,BHR;OMN,BHR;OMN,FALSE,FALSE,,Oman,Land / special forces,bilateral,https://thegulfobserver.com/oman-and-bahrain-conduct-joint-military-exercise-arabian-tiger-4/,Bilateral
 row18,Blue Defender 26,2026,2,SAU;USA,SAU;USA,TRUE,FALSE,,Jeddah,Naval,bilateral,https://www.trtworld.com/article/29639691c7b0,Bilateral
 row20,Blue Sword,2025,2,CHN;SAU,CHN;SAU,FALSE,FALSE,,Persian Gulf,Naval,bilateral,,Bilateral
+row24,ASPIDES–Djibouti Coast Guard common exercise,2026,2,DJI,EU,FALSE,TRUE,ASPIDES,Djibouti / Gulf of Aden,Naval,eunavfor aspides – common exercise,https://www.eeas.europa.eu/eunavfor-aspides/eunavfor-aspides-and-djibouti-coast-guard-common-exercise_en?s=410381,Multilateral
+row27,Bridge of friendship,2025,2,RUS;EGY,RUS,FALSE,FALSE,,Egypt/Mediterranean sea,Naval,bilateral,"https://sis.gov.eg/en/egypt/military-institution/joint-egyptian-russian-naval-drill-bridge-of-friendship/#:~:text=The%20exercise%20included%20executing%20multiple,maritime%20search%20and%20rescue%20missions.",Bilateral
 row28,Desert Cyclone,2025,2,IND;ARE,IND;ARE,FALSE,FALSE,,UAE,Other,bilateral,,Bilateral
 row31,Desert Flag-10,2025,5,IND;ARE,IND;ARE,FALSE,FALSE,,UAE,Air forces,,https://www.spa.gov.sa/en/N2304295,Multilateral
 row33,Eager Lion,2024,23,USA;JOR,USA,TRUE,FALSE,,Jordan,Other,,,Multilateral
@@ -29,18 +31,25 @@ row68,Ittihad,2025,6,KWT,KWT,FALSE,FALSE,,GCC,Naval,,https://www.defaiya.com/new
 row70,Joint naval exercise,2024,2,IRN;SAU,IRN;SAU,FALSE,FALSE,,Sea of Oman,Naval,bilateral,https://www.middleeastmonitor.com/20241024-saudi-and-iran-hold-joint-naval-drills-in-sea-of-oman-and-plan-red-sea-exercises/,Bilateral
 row76,Maritime Security Belt,2026,3,CHN;IRN,CHN;IRN,FALSE,FALSE,,"Strait of Hormuz, the Gulf of Oman, and the northern Indian Ocean",Naval,,https://www.rferl.org/a/iran-russia-naval-drills-us-military-buildup/33682459.html,Multilateral
 row78,Maritime Security Belt,2024,3,CHN;IRN,CHN;IRN,FALSE,FALSE,,Strait of Hormuz,Naval,,,Multilateral
+row81,Furor–Nigerian Navy bilateral exercise,2024,2,ESP;NGA,EU,FALSE,TRUE,,Lagos and Nigerian territorial waters / Gulf of Guinea,Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/240408-ni-furor-lagos.html,Bilateral
 row85,Naseem Al Bahr,2024,2,IND;OMN,IND;OMN,FALSE,FALSE,,Goa (India),Naval,bilateral,,Bilateral
 row86,Native Fury 24,2024,3,USA;SAU,USA;SAU,TRUE,FALSE,,Saudi Arabia,Interforces,trilateral,https://www.centcom.mil/MEDIA/NEWS-ARTICLES/News-Article-View/Article/4241464/forging-strength-through-partnership-us-and-jordan-launch-native-fury-25/,Multilateral
 row87,Native Fury 25,2025,2,USA;JOR,USA,TRUE,FALSE,,Jordan,Interforces,bilateral / nato partner activity,https://sa.usembassy.gov/exercise-native-fury-24-begins-in-saudi-arabia/,Bilateral
+row89,Furor–Nigerian Navy joint exercises,2026,2,ESP;NGA,EU,FALSE,TRUE,,Lagos and Gulf of Guinea,Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/260413-ni-escala-furor-lagos.html,Bilateral
 row90,FY2025 Joint Exercise Overseas,2025,1,JPN,JPN,FALSE,FALSE,,"Jordan, Djibouti, Gabon, Ghana and connecting routes",Interforces,,https://www.mod.go.jp/js/pdf/2025/p20251121_01e.pdf,Multilateral
+row91,Grand African NEMO,2026,1,FRA,EU,FALSE,TRUE,,Gulf of Guinea,Naval,,,Multilateral
 row93,Intrinsic Defender,2025,2,USA,USA,TRUE,FALSE,,Gulf of Aqaba and the Red Sea.,Naval,bilateral,https://www.centcom.mil/MEDIA/NEWS-ARTICLES/News-Article-View/Article/4357500/us-and-israeli-navies-conclude-exercise-intrinsic-defender/,Bilateral
 row94,Rabdan Shoiman,2025,2,BHR;ARE,BHR;ARE,FALSE,FALSE,,Bahrain,Interforces,bilateral,,Bilateral
 row102,Sky Shield,2025,4,KWT,KWT,FALSE,FALSE,,Kuwait,Other,,https://www.war.gov/Multimedia/Photos/igphoto/2003842102/,Multilateral
 row103,Spears of Victory,2026,15,SAU,SAU,FALSE,FALSE,,Saudi Arabia,Air forces,,https://www.spa.gov.sa/en/N2494391,Multilateral
 row106,Taweela 25,2025,2,ARE;FRA,ARE;EU,FALSE,TRUE,,UAE,Land / special forces,,https://www.defense.gouv.fr/operations/actualites/ffeau-exercice-taweela-cooperation-franco-emirienne,Bilateral
+row107,Meteoro–DB Abuja PASSEX,2024,2,ESP;NGA,EU,FALSE,TRUE,,Lagos and Nigerian waters / Gulf of Guinea,Naval,bilateral,https://emad.defensa.gob.es/en/operaciones/operaciones-en-el-exterior/60-Seguridad-Cooperativa-Actividades-de-Diplomacia/noticias/listado/240930_meteoro_escala_lagos.html?__locale=en,Bilateral
 row108,Warm up Gulf 25,2025,2,ARE;FRA,ARE;EU,FALSE,TRUE,,UAE,Interforces,,https://www.defense.gouv.fr/operations/actualites/ffeau-warm-up-gulf-combat-interarmes-conjoint-emirats-arabes-unis-au-coeur-du-desert,Bilateral
+row109,Obangame Express,2026,2,USA;SEN,USA,TRUE,FALSE,,Gulf of Guinea,Naval,,,Bilateral
 row110,Winds of Peace,2026,2,OMN;SAU,OMN;SAU,FALSE,FALSE,,Oman,Naval,bilateral,,Bilateral
+row111,Obangame Express,2025,24,USA,USA,TRUE,FALSE,,Gulf of Guinea,Naval,,,Multilateral
 row115,Protection Shield 4,2024,2,SAU;USA,SAU;USA,TRUE,FALSE,,,Other,bilateral,https://www.arabnews.com/node/2504061/saudi-arabia,Bilateral
 row120,ATALANTA–Oman CPX and tactical exercise,2024,1,OMN,EU;OMN,FALSE,TRUE,ATALANTA,Waters off Oman,Naval,eunavfor atalanta – joint activity,https://eunavfor.eu/news/royal-navy-sultanate-oman-and-atalanta-joint-actities-sea,Multilateral
 row121,Spears of Victory,2026,13,SAU,SAU,FALSE,FALSE,,Saudi Arabia,Air forces,,,Multilateral
 row122,Spears of Victory,2025,9,SAU,SAU,FALSE,FALSE,,Saudi Arabia,Air forces,,,Multilateral
+row127,Zangbeto,2024,2,FRA;BEN,EU,FALSE,TRUE,,Benin / Gulf of Guinea,Interforces,,https://www.defense.gouv.fr/marine/actualites/corymbe-exercice-amphibie-zangbeto-forces-armees-beninoises,Bilateral

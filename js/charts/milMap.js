@@ -6,9 +6,11 @@
 // rows (deployments, e.g. mil_3_dep_AF.csv):
 //   actor_code, actor, iso3, country, type, mission, n, estimate
 // extra.bases (mil_2_bases_AF.csv):
-//   iso3, country, actor_code, actor, n_bases, kind, lon, lat
+//   iso3, country, actor_code, actor, n_bases, kind, site, lon, lat
 //   lon/lat are optional: where a row has them the dots are drawn there instead of
-//   at the country (Diego Garcia)
+//   at the country (Diego Garcia, Camp Simba)
+//   kind "light footprint" = a camp, not a base: drawn as a white dot with an outline in the
+//   actor colour; `site` is its name (tooltip); spec.keyLight is its entry in the key
 // extra.pts (mil_AF_countries.csv): iso3, name, subregion, lon, lat
 //   where each country and sea area is anchored
 //
@@ -159,6 +161,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
         actor: r.actor_code,
         member: r.actor,
         light: r.kind === "light footprint",
+        site: r.site,
         custom: r.lon !== "" && r.lon != null && r.lat !== "" && r.lat != null,
         lon: r.lon,
         lat: r.lat,
@@ -175,6 +178,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
       <div class="fa-subtitle"></div>
     </div>
     <div class="fa-tiles" role="group" aria-label="Highlight an actor"></div>
+    <div class="fa-tiles-hint"></div>
     <div class="fa-map"></div>
     <div class="fa-foot">
       <div class="fa-key"></div>
@@ -188,6 +192,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
   $(".fa-source").textContent = spec.source;
   const tooltip = d3.select($(".fa-tooltip"));
   const hover = makeHover(el, tooltip);
+  $(".fa-tiles-hint").textContent = spec.tilesHint ?? "Select any actor";
 
   // legend tiles: the actors on screen; the reader can pick one. The choice holds
   // until the next step.
@@ -317,6 +322,7 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
 
   // ── render ──────────────────────────────────────────────────────────────
   let shown = null;
+  let lightShown = null; // a camp on the map in this state (for the key)
 
   function render(state, animate) {
     shown = state;
@@ -404,14 +410,16 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
         (update) => update,
         (exit) => exit.transition(t).attr("r", 0).remove(),
       )
-      .attr("fill", (d) => (d.light ? theme.land : colorOf(d.actor)))
-      .attr("stroke", theme.ink)
-      .attr("stroke-width", 0.8)
+      // a base: actor colour with a thin black outline; a camp: white with an outline in the actor colour
+      .attr("fill", (d) => (d.light ? "#fff" : colorOf(d.actor)))
+      .attr("stroke", (d) => (d.light ? colorOf(d.actor) : theme.ink))
+      .attr("stroke-width", (d) => (d.light ? 2 : 0.8))
       .transition(t)
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
-      .attr("r", DOT_R)
+      .attr("r", (d) => (d.light ? DOT_R - 0.6 : DOT_R))
       .attr("opacity", opacity);
+    lightShown = dots.find((d) => d.light) ?? null;
 
     // label blocks: country name, then who deployed how many
     const named = new Map(
@@ -621,6 +629,10 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
 
   function showDot(event, d) {
     const who = actorLabel.get(d.actor) ?? d.actor;
+    if (d.light) {
+      tip(event, `<strong>${d.site || nameOf(d.iso3)}</strong><br>${who}: cooperative security location`);
+      return;
+    }
     tip(
       event,
       `<strong>${nameOf(d.iso3)}</strong><br>${d.member === who ? who : `${d.member} (${who})`}: base`,
@@ -648,6 +660,14 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
         .attr("class", "fa-key-item")
         .html(
           `<svg width="${DOT_R * 2 * k + 2}" height="${DOT_R * 2 * k + 2}" aria-hidden="true"><circle cx="${DOT_R * k + 1}" cy="${DOT_R * k + 1}" r="${DOT_R * k}" fill="${theme.light}" stroke="${theme.ink}" stroke-width="0.8"/></svg>${spec.keyBases ?? "Military base (colour: actor)"}`,
+        );
+
+    if (state.bases && lightShown)
+      key
+        .append("span")
+        .attr("class", "fa-key-item")
+        .html(
+          `<svg width="${DOT_R * 2 * k + 4}" height="${DOT_R * 2 * k + 4}" aria-hidden="true"><circle cx="${DOT_R * k + 2}" cy="${DOT_R * k + 2}" r="${(DOT_R - 0.6) * k}" fill="#fff" stroke="${colorOf(lightShown.actor)}" stroke-width="2"/></svg>${spec.keyLight ?? "Camp (lighter footprint, not a base)"}`,
         );
 
     spec.types

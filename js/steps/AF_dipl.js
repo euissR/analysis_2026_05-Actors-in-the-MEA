@@ -36,13 +36,13 @@ export default {
         Embassy: {
           label: "Embassy",
           tooltip: "embassy",
-          color: theme.teal,
+          color: theme.neutral,
           r: 4.5,
         },
         Office: {
           label: "Office or consulate",
           tooltip: "office or consulate",
-          color: theme.navy,
+          color: theme.neutral2,
           r: 4.5,
         },
         None: {
@@ -67,11 +67,11 @@ export default {
       source:
         "NB: A joint visit counts once. Data: official government sources and media. ",
       allLabel: "All actors",
-      rMaxActor: 12,
-      rMaxAll: 20,
+      // one dot-size scale in every view (all actors and single actors): the largest value in the data (127) = radius rMax
+      rMax: 20,
       keySize: "Visits",
-      keyValuesActor: [1, 5, 15],
-      keyValuesAll: [1, 10, 50, 100],
+      keyValuesActor: [1, 5, 15, 50, 100],
+      keyValuesAll: [1, 5, 15, 50, 100],
       tooltipCount: (n, label) => `${label}: ${n} visit${n === 1 ? "" : "s"}`,
       shareText: (share, label) =>
         `${share}% of ${label === "All actors" ? "all" : label + "'s"} visits`,
@@ -124,19 +124,19 @@ export default {
         High: {
           label: "High rank",
           tooltip: "high-ranking partnership",
-          color: theme.navy,
+          color: theme.neutral,
           r: 7,
         },
         Medium: {
           label: "Medium rank",
           tooltip: "medium-ranking partnership",
-          color: theme.teal,
+          color: theme.neutral2,
           r: 5.5,
         },
         Low: {
           label: "Low rank",
           tooltip: "low-ranking partnership",
-          color: "#a9d4e4",
+          color: theme.neutral3,
           r: 4,
         },
         None: {
@@ -158,7 +158,7 @@ export default {
         abs: {
           label: "Abstention rate",
           subtitle: "Share of votes in which the country abstained",
-          color: theme.teal,
+          color: theme.neutral,
         },
         rus: {
           label: "Alignment with Russia",
@@ -191,12 +191,12 @@ export default {
         abs: {
           label: "Abstention rate",
           subtitle: "Share of votes in which the country abstained",
-          color: theme.teal,
+          color: theme.neutral,
         },
         nv: {
           label: "Non-voting rate",
           subtitle: "Share of votes in which the country did not vote",
-          color: theme.teal,
+          color: theme.neutral,
         },
       },
     },
@@ -219,7 +219,7 @@ export default {
         nv: {
           label: "Non-voting rate",
           subtitle: "Share of votes in which the country did not vote",
-          color: theme.teal,
+          color: theme.neutral,
         },
         isr: {
           label: "Alignment with Israel",

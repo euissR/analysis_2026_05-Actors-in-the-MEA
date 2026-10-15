@@ -11,7 +11,8 @@ body {
 /* ── layout: text left, chart right ─────────────────────────────────────── */
 
 .fa-scrolly {
-  --fa-teal: #309ebe;
+  --fa-teal: #309ebe; /* the EU's colour: not for UI */
+  --fa-neutral: #3a3a3a; /* same as theme.neutral in theme.js */
   --fa-navy: #1d3956;
   --fa-ink: #1d1d1b;
   --fa-muted: #646363;
@@ -133,6 +134,10 @@ body {
   color: var(--fa-muted);
 }
 
+.fa-footnote {
+  white-space: pre-line;
+}
+
 /* ── legend: actor tiles ────────────────────────────────────────────────── */
 
 .fa-tiles {
@@ -154,18 +159,26 @@ body {
 }
 
 .fa-tile:hover {
-  border-color: var(--fa-teal);
+  border-color: var(--fa-neutral);
 }
 
 .fa-tile[aria-pressed="true"] {
-  background: var(--fa-teal);
-  border-color: var(--fa-teal);
+  background: var(--fa-neutral);
+  border-color: var(--fa-neutral);
   color: #fff;
 }
 
 .fa-tile:focus-visible {
   outline: 2px solid var(--fa-navy);
   outline-offset: 2px;
+}
+
+/* one-line hint under the clickable tiles, footnote style */
+.fa-tiles-hint {
+  margin: -0.25rem 0 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  color: var(--fa-muted);
 }
 
 /* ── legend: symbol key ─────────────────────────────────────────────────── */
@@ -316,6 +329,10 @@ body {
     align-items: flex-start;
     gap: 0.25rem;
   }
+
+  .fa-footnote {
+  white-space: pre-line;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -330,7 +347,8 @@ body {
    Everything sits inside .fa-landing, so nothing leaks into the Drupal theme. */
 
 .fa-landing {
-  --fa-teal: #309ebe;
+  --fa-teal: #309ebe; /* the EU's colour: not for UI */
+  --fa-neutral: #3a3a3a; /* same as theme.neutral in theme.js */
   --fa-navy: #1d3956;
   --fa-ink: #1d1d1b;
   --fa-muted: #646363;
@@ -542,6 +560,8 @@ body {
 
 /* ── hover marker (hover.js) ─────────────────────────────────────────────── */
 
+/* the ring is drawn by hover.js (look: RING at the top of that file);
+   this plain outline is only the fallback for shapes it cannot ring */
 .fa-hover {
   stroke: var(--fa-ink, #1d1d1b);
   stroke-width: 1.6px;

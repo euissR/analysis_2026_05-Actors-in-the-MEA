@@ -35,13 +35,13 @@ export default {
         Embassy: {
           label: "Embassy",
           tooltip: "embassy",
-          color: theme.teal,
+          color: theme.neutral,
           r: 4.5,
         },
         Office: {
           label: "Office or consulate",
           tooltip: "office or consulate",
-          color: theme.navy,
+          color: theme.neutral2,
           r: 4.5,
         },
         None: {
@@ -67,9 +67,11 @@ export default {
         "NB: A joint visit counts once. Data: official government sources and media. ",
       allLabel: "All actors",
       // smaller than Africa: Bahrain and Qatar sit ~20px apart on this map (tune)
-      rMaxActor: 10,
-      rMaxAll: 11,
+      // one dot-size scale in every view (all actors and single actors): the largest value in the data (165) = radius rMax
+      rMax: 11,
       keySize: "Visits",
+      keyValuesActor: [1, 5, 15, 50, 150],
+      keyValuesAll: [1, 5, 15, 50, 150],
       tooltipCount: (n, label) => `${label}: ${n} visit${n === 1 ? "" : "s"}`,
       shareText: (share, label) =>
         `${share}% of ${label === "All actors" ? "all" : label + "'s"} visits`,
@@ -79,7 +81,8 @@ export default {
       type: "dotMap",
       mode: "presence",
       data: "dipl_3_emblab",
-      title: "Formal partnerships with countries in the Middle East and the Gulf",
+      title:
+        "Formal partnerships with countries in the Middle East and the Gulf",
       subtitleActor:
         "Countries with which the selected actor has a formalised partnership, by rank of the label",
       subtitleAll:
@@ -95,19 +98,19 @@ export default {
         High: {
           label: "High rank",
           tooltip: "high-ranking partnership",
-          color: theme.navy,
+          color: theme.neutral,
           r: 7,
         },
         Medium: {
           label: "Medium rank",
           tooltip: "medium-ranking partnership",
-          color: theme.teal,
+          color: theme.neutral2,
           r: 5.5,
         },
         Low: {
           label: "Low rank",
           tooltip: "low-ranking partnership",
-          color: "#a9d4e4",
+          color: theme.neutral3,
           r: 4,
         },
         None: {
@@ -138,7 +141,8 @@ export default {
       shortNames: {
         "European Union – Gulf Cooperation Council Summit": "EU–GCC Summit",
         "United States–Gulf Cooperation Council Summit": "US–GCC Summit",
-        "Jeddah Security and Development Summit": "Jeddah Security and Development",
+        "Jeddah Security and Development Summit":
+          "Jeddah Security and Development",
       },
     },
 
@@ -154,7 +158,7 @@ export default {
         abs: {
           label: "Abstention rate",
           subtitle: "Share of votes in which the country abstained",
-          color: theme.teal,
+          color: theme.neutral,
         },
         rus: {
           label: "Alignment with Russia",
@@ -194,7 +198,7 @@ export default {
         abs: {
           label: "Abstention rate",
           subtitle: "Share of votes in which the country abstained",
-          color: theme.teal,
+          color: theme.neutral,
         },
       },
     },
@@ -219,7 +223,7 @@ export default {
         nv: {
           label: "Non-voting rate",
           subtitle: "Share of votes in which the country did not vote",
-          color: theme.teal,
+          color: theme.neutral,
         },
         isr: {
           label: "Alignment with Israel",
@@ -277,12 +281,18 @@ export default {
     },
     lab_chn2: {
       chart: "lab",
-      state: { actor: "CHN", labels: ["IRQ", "JOR", "KWT", "OMN", "PSE", "QAT"] },
+      state: {
+        actor: "CHN",
+        labels: ["IRQ", "JOR", "KWT", "OMN", "PSE", "QAT"],
+      },
     },
     lab_usa: {
       chart: "lab",
       // the text also names Egypt and Morocco, which are not on this map
-      state: { actor: "USA", labels: ["BHR", "ISR", "JOR", "KWT", "QAT", "SAU"] },
+      state: {
+        actor: "USA",
+        labels: ["BHR", "ISR", "JOR", "KWT", "QAT", "SAU"],
+      },
     },
     lab_tur: {
       chart: "lab",

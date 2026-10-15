@@ -17,6 +17,7 @@ export const theme = {
   grey: "#595959",
   light: "#c6c6c6",
   nearWhite: "#f9f9f9",
+  neutral: "#3a3a3a",
   ink: "#1d1d1b",
   muted: "#646363",
 
@@ -33,15 +34,18 @@ export const theme = {
     IND: "#ffde75", // egg
     JPN: "#595959", // grey
     GCC: "#7e24a8", // purple
+    gcc: "#7e24a8", // purple
     // individual Gulf states (official finance) share the Gulf colour: the rows are named
     SAU: "#7e24a8",
+    OMN: "#7e24a8",
+    BHR: "#7e24a8",
     ARE: "#7e24a8",
     QAT: "#7e24a8",
     KWT: "#7e24a8",
     KOR: "#4fd6d0", // aqua
-    // the EU's bank and France (soft power chapter) use the EU colour: no new colour
-    EIB: "#309ebe",
+    // France and Germany (soft power chapter, rows "of which") use the EU colour: no new colour
     FRA: "#309ebe",
+    DEU: "#309ebe",
   },
 
   // deployment types (spikes), kept apart from the actor colours

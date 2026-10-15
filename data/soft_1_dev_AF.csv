@@ -1,6 +1,5 @@
 iso3,actor,presence,n,detail
 AGO,ARE,Projects,,ADFD
-AGO,EIB,none,,
 AGO,IND,none,,
 AGO,ISR,Sector in embassy,,MASHAV
 AGO,JPN,Office,,JICA
@@ -12,7 +11,6 @@ AGO,TUR,none,,
 AGO,USA,none,,
 AGO,all,,1,
 BDI,ARE,Projects,,ADFD
-BDI,EIB,none,,
 BDI,IND,Grants,,Indian MEA
 BDI,ISR,none,,
 BDI,JPN,none,,
@@ -24,7 +22,6 @@ BDI,TUR,none,,
 BDI,USA,none,,
 BDI,all,,0,
 BEN,ARE,Projects,,ADFD
-BEN,EIB,none,,
 BEN,IND,Grants,,Indian MEA
 BEN,ISR,none,,
 BEN,JPN,Office,,JICA
@@ -36,7 +33,6 @@ BEN,TUR,none,,
 BEN,USA,Projects,,DFC
 BEN,all,,1,
 BFA,ARE,Projects,,ADFD
-BFA,EIB,none,,
 BFA,IND,Grants,,Indian MEA
 BFA,ISR,none,,
 BFA,JPN,Office,,JICA
@@ -48,7 +44,6 @@ BFA,TUR,none,,
 BFA,USA,Projects,,DFC
 BFA,all,,2,
 BWA,ARE,none,,
-BWA,EIB,none,,
 BWA,IND,Grants,,Indian MEA
 BWA,ISR,none,,
 BWA,JPN,Office,,JICA
@@ -60,7 +55,6 @@ BWA,TUR,none,,
 BWA,USA,none,,
 BWA,all,,1,
 CAF,ARE,none,,
-CAF,EIB,none,,
 CAF,IND,Grants,,Indian MEA
 CAF,ISR,none,,
 CAF,JPN,none,,
@@ -72,7 +66,6 @@ CAF,TUR,none,,
 CAF,USA,none,,
 CAF,all,,0,
 CIV,ARE,Projects,,ADFD
-CIV,EIB,Office,,EIB
 CIV,IND,Office,,EximBank; Indian MEA
 CIV,ISR,none,,
 CIV,JPN,Office,,JICA
@@ -84,7 +77,6 @@ CIV,TUR,none,,
 CIV,USA,Projects,,DFC
 CIV,all,,3,
 CMR,ARE,Projects,,ADFD
-CMR,EIB,Office,,EIB
 CMR,IND,Grants,,Indian MEA
 CMR,ISR,Sector in embassy,,MASHAV
 CMR,JPN,Office,,JICA
@@ -96,7 +88,6 @@ CMR,TUR,Office,,TIKA
 CMR,USA,Projects,,DFC
 CMR,all,,3,
 COD,ARE,Projects,,ADFD
-COD,EIB,none,,
 COD,IND,Grants,,Indian MEA
 COD,ISR,none,,
 COD,JPN,Office,,JICA
@@ -108,7 +99,6 @@ COD,TUR,none,,
 COD,USA,Projects,,DFC
 COD,all,,2,
 COG,ARE,Projects,,ADFD
-COG,EIB,none,,
 COG,IND,Grants,,Indian MEA
 COG,ISR,none,,
 COG,JPN,none,,
@@ -120,7 +110,6 @@ COG,TUR,none,,
 COG,USA,none,,
 COG,all,,0,
 COM,ARE,Projects,,ADFD
-COM,EIB,none,,
 COM,IND,Grants,,Indian MEA
 COM,ISR,none,,
 COM,JPN,none,,
@@ -132,7 +121,6 @@ COM,TUR,Office,,TIKA
 COM,USA,none,,
 COM,all,,1,
 CPV,ARE,Projects,,ADFD
-CPV,EIB,none,,
 CPV,IND,Grants,,Indian MEA
 CPV,ISR,none,,
 CPV,JPN,none,,
@@ -144,7 +132,6 @@ CPV,TUR,none,,
 CPV,USA,none,,
 CPV,all,,0,
 DJI,ARE,Projects,,ADFD
-DJI,EIB,none,,
 DJI,IND,Grants,,Indian MEA
 DJI,ISR,none,,
 DJI,JPN,Office,,JICA
@@ -156,7 +143,6 @@ DJI,TUR,Office,,TIKA
 DJI,USA,none,,
 DJI,all,,3,
 DZA,ARE,Projects,,ADFD
-DZA,EIB,none,,
 DZA,IND,none,,
 DZA,ISR,none,,
 DZA,JPN,none,,
@@ -168,7 +154,6 @@ DZA,TUR,Office,,TIKA
 DZA,USA,none,,
 DZA,all,,2,
 EGY,ARE,Projects,,ADFD
-EGY,EIB,Office,,EIB
 EGY,IND,Grants,,Indian MEA
 EGY,ISR,none,,
 EGY,JPN,Office,,JICA
@@ -180,7 +165,6 @@ EGY,TUR,none,,
 EGY,USA,Projects,,DFC
 EGY,all,,2,
 ERI,ARE,Projects,,ADFD
-ERI,EIB,none,,
 ERI,IND,Grants,,Indian MEA
 ERI,ISR,none,,
 ERI,JPN,none,,
@@ -192,7 +176,6 @@ ERI,TUR,none,,
 ERI,USA,none,,
 ERI,all,,0,
 ETH,ARE,Projects,,ADFD
-ETH,EIB,Office,,EIB
 ETH,IND,Grants,,Indian MEA
 ETH,ISR,Sector in embassy,,MASHAV
 ETH,JPN,Office,,JICA
@@ -204,7 +187,6 @@ ETH,TUR,Office,,TIKA
 ETH,USA,Projects,,DFC
 ETH,all,,4,
 GAB,ARE,none,,
-GAB,EIB,none,,
 GAB,IND,Grants,,Indian MEA
 GAB,ISR,none,,
 GAB,JPN,Office,,JICA
@@ -216,7 +198,6 @@ GAB,TUR,none,,
 GAB,USA,none,,
 GAB,all,,1,
 GHA,ARE,none,,
-GHA,EIB,none,,
 GHA,IND,Grants,,Indian MEA
 GHA,ISR,Sector in embassy,,MASHAV
 GHA,JPN,Office,,JICA
@@ -228,7 +209,6 @@ GHA,TUR,none,,
 GHA,USA,Projects,,DFC
 GHA,all,,3,
 GIN,ARE,Projects,,ADFD
-GIN,EIB,none,,
 GIN,IND,Grants,,Indian MEA
 GIN,ISR,none,,
 GIN,JPN,none,,
@@ -240,7 +220,6 @@ GIN,TUR,Office,,TIKA
 GIN,USA,none,,
 GIN,all,,1,
 GMB,ARE,Projects,,ADFD
-GMB,EIB,none,,
 GMB,IND,Grants,,Indian MEA
 GMB,ISR,none,,
 GMB,JPN,none,,
@@ -252,7 +231,6 @@ GMB,TUR,Office,,TIKA
 GMB,USA,none,,
 GMB,all,,2,
 GNB,ARE,Projects,,ADFD
-GNB,EIB,none,,
 GNB,IND,Grants,,Indian MEA
 GNB,ISR,none,,
 GNB,JPN,none,,
@@ -264,7 +242,6 @@ GNB,TUR,none,,
 GNB,USA,none,,
 GNB,all,,0,
 GNQ,ARE,none,,
-GNQ,EIB,none,,
 GNQ,IND,Grants,,Indian MEA
 GNQ,ISR,none,,
 GNQ,JPN,none,,
@@ -276,7 +253,6 @@ GNQ,TUR,none,,
 GNQ,USA,none,,
 GNQ,all,,0,
 KEN,ARE,Projects,,ADFD
-KEN,EIB,Office,,EIB
 KEN,IND,Office,,EximBank; Indian MEA
 KEN,ISR,Sector in embassy,,MASHAV
 KEN,JPN,Office,,JICA
@@ -288,7 +264,6 @@ KEN,TUR,Office,,TIKA
 KEN,USA,Projects,,DFC
 KEN,all,,5,
 LBR,ARE,Projects,,ADFD
-LBR,EIB,none,,
 LBR,IND,Grants,,Indian MEA
 LBR,ISR,none,,
 LBR,JPN,none,,
@@ -300,7 +275,6 @@ LBR,TUR,none,,
 LBR,USA,Projects,,DFC
 LBR,all,,0,
 LBY,ARE,Projects,,ADFD
-LBY,EIB,none,,
 LBY,IND,Grants,,Indian MEA
 LBY,ISR,none,,
 LBY,JPN,none,,
@@ -312,7 +286,6 @@ LBY,TUR,Office,,TIKA
 LBY,USA,none,,
 LBY,all,,1,
 LSO,ARE,Projects,,ADFD
-LSO,EIB,none,,
 LSO,IND,Grants,,Indian MEA
 LSO,ISR,none,,
 LSO,JPN,none,,
@@ -324,7 +297,6 @@ LSO,TUR,none,,
 LSO,USA,none,,
 LSO,all,,0,
 MAR,ARE,Projects,,ADFD
-MAR,EIB,Office,,EIB
 MAR,IND,Grants,,Indian MEA
 MAR,ISR,none,,
 MAR,JPN,Office,,JICA
@@ -336,7 +308,6 @@ MAR,TUR,none,,
 MAR,USA,Projects,,DFC
 MAR,all,,3,
 MDG,ARE,Projects,,ADFD
-MDG,EIB,none,,
 MDG,IND,Grants,,Indian MEA
 MDG,ISR,none,,
 MDG,JPN,Office,,JICA
@@ -348,7 +319,6 @@ MDG,TUR,none,,
 MDG,USA,none,,
 MDG,all,,1,
 MLI,ARE,Projects,,ADFD
-MLI,EIB,none,,
 MLI,IND,Grants,,Indian MEA
 MLI,ISR,none,,
 MLI,JPN,none,,
@@ -360,7 +330,6 @@ MLI,TUR,none,,
 MLI,USA,Projects,,DFC
 MLI,all,,1,
 MOZ,ARE,none,,
-MOZ,EIB,none,,
 MOZ,IND,Grants,,Indian MEA
 MOZ,ISR,none,,
 MOZ,JPN,Office,,JICA
@@ -372,7 +341,6 @@ MOZ,TUR,Office,,TIKA
 MOZ,USA,Projects,,DFC
 MOZ,all,,3,
 MRT,ARE,Projects,,ADFD
-MRT,EIB,none,,
 MRT,IND,Grants,,Indian MEA
 MRT,ISR,none,,
 MRT,JPN,none,,
@@ -384,7 +352,6 @@ MRT,TUR,none,,
 MRT,USA,none,,
 MRT,all,,1,
 MUS,ARE,Projects,,ADFD
-MUS,EIB,none,,
 MUS,IND,Grants,,Indian MEA
 MUS,ISR,none,,
 MUS,JPN,none,,
@@ -396,7 +363,6 @@ MUS,TUR,none,,
 MUS,USA,none,,
 MUS,all,,0,
 MWI,ARE,Projects,,Dubai Cares; ADFD
-MWI,EIB,none,,
 MWI,IND,Grants,,Indian MEA
 MWI,ISR,none,,
 MWI,JPN,Office,,JICA
@@ -408,7 +374,6 @@ MWI,TUR,none,,
 MWI,USA,Projects,,DFC
 MWI,all,,1,
 NAM,ARE,none,,
-NAM,EIB,none,,
 NAM,IND,Grants,,Indian MEA
 NAM,ISR,none,,
 NAM,JPN,Office,,JICA
@@ -420,7 +385,6 @@ NAM,TUR,Office,,TIKA
 NAM,USA,none,,
 NAM,all,,2,
 NER,ARE,Projects,,ADFD
-NER,EIB,none,,
 NER,IND,Grants,,Indian MEA
 NER,ISR,none,,
 NER,JPN,Office,,JICA
@@ -432,7 +396,6 @@ NER,TUR,Office,,TIKA
 NER,USA,none,,
 NER,all,,3,
 NGA,ARE,Projects,,ADFD
-NGA,EIB,none,,
 NGA,IND,Grants,,Indian MEA
 NGA,ISR,Sector in embassy,,MASHAV
 NGA,JPN,Office,,JICA
@@ -444,7 +407,6 @@ NGA,TUR,none,,
 NGA,USA,Projects,,DFC
 NGA,all,,3,
 RWA,ARE,Projects,,ADFD
-RWA,EIB,none,,
 RWA,IND,Grants,,Indian MEA
 RWA,ISR,Sector in embassy,,MASHAV
 RWA,JPN,Office,,JICA
@@ -456,7 +418,6 @@ RWA,TUR,none,,
 RWA,USA,Projects,,DFC
 RWA,all,,2,
 SDN,ARE,Projects,,ADFD
-SDN,EIB,none,,
 SDN,IND,Grants,,Indian MEA
 SDN,ISR,none,,
 SDN,JPN,Office,,JICA
@@ -468,7 +429,6 @@ SDN,TUR,Office,,TIKA
 SDN,USA,none,,
 SDN,all,,3,
 SEN,ARE,Projects,,Dubai Cares; ADFD
-SEN,EIB,Office,,EIB
 SEN,IND,Grants,,Indian MEA
 SEN,ISR,Sector in embassy,,MASHAV
 SEN,JPN,Office,,JICA
@@ -480,7 +440,6 @@ SEN,TUR,Office,,TIKA
 SEN,USA,Projects,,DFC
 SEN,all,,4,
 SLE,ARE,Projects,,ADFD
-SLE,EIB,none,,
 SLE,IND,Grants,,Indian MEA
 SLE,ISR,none,,
 SLE,JPN,Office,,JICA
@@ -492,7 +451,6 @@ SLE,TUR,Office,,TIKA
 SLE,USA,Projects,,DFC
 SLE,all,,2,
 SOM,ARE,Projects,,ADFD
-SOM,EIB,none,,
 SOM,IND,Grants,,Indian MEA
 SOM,ISR,none,,
 SOM,JPN,none,,
@@ -504,7 +462,6 @@ SOM,TUR,Office,,TIKA
 SOM,USA,none,,
 SOM,all,,2,
 SSD,ARE,Projects,,ADFD
-SSD,EIB,none,,
 SSD,IND,Grants,,Indian MEA
 SSD,ISR,none,,
 SSD,JPN,Office,,JICA
@@ -516,7 +473,6 @@ SSD,TUR,Office,,TIKA
 SSD,USA,none,,
 SSD,all,,2,
 STP,ARE,none,,
-STP,EIB,none,,
 STP,IND,Grants,,Indian MEA
 STP,ISR,none,,
 STP,JPN,none,,
@@ -528,7 +484,6 @@ STP,TUR,none,,
 STP,USA,none,,
 STP,all,,0,
 SWZ,ARE,Projects,,ADFD
-SWZ,EIB,none,,
 SWZ,IND,Grants,,Indian MEA
 SWZ,ISR,none,,
 SWZ,JPN,none,,
@@ -540,7 +495,6 @@ SWZ,TUR,none,,
 SWZ,USA,none,,
 SWZ,all,,0,
 SYC,ARE,Projects,,ADFD
-SYC,EIB,none,,
 SYC,IND,Grants,,Indian MEA
 SYC,ISR,none,,
 SYC,JPN,none,,
@@ -552,7 +506,6 @@ SYC,TUR,none,,
 SYC,USA,none,,
 SYC,all,,0,
 TCD,ARE,Projects,,ADFD
-TCD,EIB,none,,
 TCD,IND,Grants,,Indian MEA
 TCD,ISR,none,,
 TCD,JPN,none,,
@@ -564,7 +517,6 @@ TCD,TUR,Office,,TIKA
 TCD,USA,none,,
 TCD,all,,2,
 TGO,ARE,Projects,,ADFD
-TGO,EIB,none,,
 TGO,IND,Grants,,Indian MEA
 TGO,ISR,none,,
 TGO,JPN,none,,
@@ -576,7 +528,6 @@ TGO,TUR,none,,
 TGO,USA,Projects,,DFC
 TGO,all,,0,
 TUN,ARE,Projects,,ADFD
-TUN,EIB,Office,,EIB
 TUN,IND,none,,
 TUN,ISR,none,,
 TUN,JPN,Office,,JICA
@@ -588,7 +539,6 @@ TUN,TUR,Office,,TIKA
 TUN,USA,Projects,,DFC
 TUN,all,,4,
 TZA,ARE,Projects,,ADFD
-TZA,EIB,none,,
 TZA,IND,Grants,,Indian MEA
 TZA,ISR,none,,
 TZA,JPN,Office,,JICA
@@ -600,7 +550,6 @@ TZA,TUR,Office,,TIKA
 TZA,USA,Projects,,DFC
 TZA,all,,4,
 UGA,ARE,Projects,,ADFD
-UGA,EIB,none,,
 UGA,IND,Grants,,Indian MEA
 UGA,ISR,none,,
 UGA,JPN,Office,,JICA
@@ -612,7 +561,6 @@ UGA,TUR,Office,,TIKA
 UGA,USA,Projects,,DFC
 UGA,all,,3,
 ZAF,ARE,none,,
-ZAF,EIB,Office,,EIB
 ZAF,IND,Office,,EximBank; Indian MEA
 ZAF,ISR,Sector in embassy,,MASHAV
 ZAF,JPN,Office,,JICA
@@ -624,7 +572,6 @@ ZAF,TUR,Office,,TIKA
 ZAF,USA,Projects,,DFC
 ZAF,all,,3,
 ZMB,ARE,none,,
-ZMB,EIB,none,,
 ZMB,IND,Grants,,Indian MEA
 ZMB,ISR,Sector in embassy,,MASHAV
 ZMB,JPN,Office,,JICA
@@ -636,7 +583,6 @@ ZMB,TUR,none,,
 ZMB,USA,Projects,,DFC
 ZMB,all,,1,
 ZWE,ARE,none,,
-ZWE,EIB,none,,
 ZWE,IND,Grants,,Indian MEA
 ZWE,ISR,none,,
 ZWE,JPN,Office,,JICA

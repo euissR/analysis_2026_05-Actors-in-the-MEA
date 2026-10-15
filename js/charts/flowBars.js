@@ -83,7 +83,7 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
   const tooltip = d3.select($(".fa-tooltip"));
   const hover = makeHover(el, tooltip);
 
-  const partColor = theme.actorColors?.ISR ?? theme.teal;
+  const partColor = theme.actorColors?.ISR ?? theme.neutral;
   const restColor = theme.light;
   d3.select($(".fa-key"))
     .style("flex-wrap", "wrap")
@@ -267,7 +267,7 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
           `Total: USD ${fmt(f.total)} bn<br>${spec.partLabel ?? spec.part}: USD ${fmt(f.part)} bn (${Math.round(f.share * 100)}%)`,
       )
       .style("opacity", 1);
-    hover.enter(event, { raise: true });
+    hover.enter(event);
   }
 
   return {

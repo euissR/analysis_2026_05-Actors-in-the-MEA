@@ -3,10 +3,6 @@ KOR,South Korea,ARE,United Arab Emirates,Bilateral,,170,FALSE
 USA,US,ARE,United Arab Emirates,Bilateral,,4000,FALSE
 USA,US,BHR,Bahrain,Bilateral,,3750,FALSE
 EU,Spain,GAD,Gulf of Aden and Indian Ocean,EU,Atalanta,220,FALSE
-EU,Czechia,GOL,Golan (UNDOF),UN,UNDOF,4,FALSE
-EU,Ireland,GOL,Golan (UNDOF),UN,UNDOF,4,FALSE
-IND,India,GOL,Golan (UNDOF),UN,UNDOF,197,FALSE
-KOR,South Korea,GOL,Golan (UNDOF),UN,UNDOF,1,FALSE
 EU,Austria,IRQ,Iraq,NATO,NATO Mission in Iraq,4,FALSE
 EU,Bulgaria,IRQ,Iraq,NATO,NATO Mission in Iraq,2,FALSE
 EU,Croatia,IRQ,Iraq,NATO,NATO Mission in Iraq,7,FALSE
@@ -41,10 +37,25 @@ EU,Romania,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,3,FALSE
 EU,Slovakia,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,1,FALSE
 EU,Spain,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,170,FALSE
 EU,Sweden,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,1,FALSE
+EU,Austria,IRQ,Iraq,UN,UNTSO,6,FALSE
+EU,Belgium,IRQ,Iraq,UN,UNTSO,1,FALSE
+EU,Denmark,IRQ,Iraq,UN,UNTSO,11,FALSE
+EU,Estonia,IRQ,Iraq,UN,UNTSO,1,FALSE
+EU,Finland,IRQ,Iraq,UN,UNTSO,14,FALSE
+EU,Ireland,IRQ,Iraq,UN,UNTSO,12,FALSE
+EU,Latvia,IRQ,Iraq,UN,UNTSO,2,FALSE
+EU,Netherlands,IRQ,Iraq,UN,UNTSO,11,FALSE
+EU,Poland,IRQ,Iraq,UN,UNTSO,3,FALSE
+EU,Slovakia,IRQ,Iraq,UN,UNTSO,2,FALSE
+EU,Slovenia,IRQ,Iraq,UN,UNTSO,3,FALSE
 TUR,Turkiye,IRQ,Iraq,Bilateral,,4000,FALSE
 TUR,Turkiye,IRQ,Iraq,NATO,NATO Mission in Iraq,34,FALSE
 USA,US,IRQ,Iraq,NATO,NATO Mission in Iraq,15,FALSE
 USA,US,IRQ,Iraq,Other multilateral,Operation Inherent Resolve,2000,FALSE
+EU,Czechia,ISR,Israel,UN,UNDOF,4,FALSE
+EU,Ireland,ISR,Israel,UN,UNDOF,4,FALSE
+IND,India,ISR,Israel,UN,UNDOF,197,FALSE
+KOR,South Korea,ISR,Israel,UN,UNDOF,1,FALSE
 USA,US,ISR,Israel,Bilateral,,250,FALSE
 EU,France,JOR,Jordan,Other multilateral,Operation Inherent Resolve,300,FALSE
 EU,Germany,JOR,Jordan,Other multilateral,Operation Inherent Resolve,150,FALSE
@@ -73,17 +84,6 @@ IND,India,LBN,Lebanon,UN,UNIFIL,897,FALSE
 ISR,Israel,LBN,Lebanon,Bilateral,,500,TRUE
 KOR,South Korea,LBN,Lebanon,UN,UNIFIL,256,FALSE
 TUR,Turkiye,LBN,Lebanon,UN,UNIFIL,91,FALSE
-EU,Austria,MEA,Middle East (UNTSO),UN,UNTSO,6,FALSE
-EU,Belgium,MEA,Middle East (UNTSO),UN,UNTSO,1,FALSE
-EU,Denmark,MEA,Middle East (UNTSO),UN,UNTSO,11,FALSE
-EU,Estonia,MEA,Middle East (UNTSO),UN,UNTSO,1,FALSE
-EU,Finland,MEA,Middle East (UNTSO),UN,UNTSO,14,FALSE
-EU,Ireland,MEA,Middle East (UNTSO),UN,UNTSO,12,FALSE
-EU,Latvia,MEA,Middle East (UNTSO),UN,UNTSO,2,FALSE
-EU,Netherlands,MEA,Middle East (UNTSO),UN,UNTSO,11,FALSE
-EU,Poland,MEA,Middle East (UNTSO),UN,UNTSO,3,FALSE
-EU,Slovakia,MEA,Middle East (UNTSO),UN,UNTSO,2,FALSE
-EU,Slovenia,MEA,Middle East (UNTSO),UN,UNTSO,3,FALSE
 ISR,Israel,PSE,Palestine,Bilateral,,10000,TRUE
 TUR,Turkiye,QAT,Qatar,Bilateral,,300,FALSE
 USA,US,QAT,Qatar,Bilateral,,9000,FALSE

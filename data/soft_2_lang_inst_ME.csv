@@ -1,0 +1,25 @@
+actor,inst,centres,countries
+BHR,Cultural attaches,5,5
+CHN,Confucius Institute,10,7
+DEU,Goethe-institut,10,8
+EU,Institut français,21,8
+EU,Alliance française,11,4
+EU,Goethe-institut,10,8
+EU,Istituto Italiano di Cultura,4,3
+EU,Instituto Cervantes,3,3
+EU,Czech centres,2,1
+EU,The Finnish Cultural and Academic Institutes,1,1
+EU,Hungarian Cultural Institute,1,1
+EU,Polish institutes,1,1
+FRA,Institut français,21,8
+FRA,Alliance française,11,4
+IND,Indian Cultural Center,1,1
+KOR,Sejong institute,6,6
+KOR,Korean Cultural Center,1,1
+KWT,Cultural offices,4,4
+OMN,Cultural offices,6,6
+RUS,Russian house (Rossotrudnichestvo),5,5
+RUS,Russkiy mir (cabinet/section),2,1
+RUS,Russkiy mir,1,1
+SAU,Cultural mission,6,6
+TUR,Yunus Emre Institute,13,8

@@ -46,6 +46,7 @@
 //               "+ AU" if the African Union is among them) instead of the share
 //   nCountries: override spec.nCountries for this step
 //   footnote:   text under the chart for this step (optional)
+//   depth:      "region" (default) | "country"; also a spec option for charts that always show countries
 //   reverse:    true = the recipient nodes (regions or countries) on the left and the suppliers
 //               on the right, for flows that run from Africa to an actor (students, migrants);
 //               the ribbons keep the supplier's colour. Default: spec.reverse, else false.
@@ -135,7 +136,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
 
   // ── one state -> nodes and links ──────────────────────────────────────────
   function build(state) {
-    const depth = state.depth ?? "region";
+    const depth = state.depth ?? spec.depth ?? "region";
     const reverse = state.reverse ?? spec.reverse ?? false;
     const period = spec.periods[state.period ?? spec.defaultPeriod ?? "all"];
     const base = data.filter(

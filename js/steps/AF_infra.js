@@ -41,19 +41,19 @@ const SRC =
   "Data: World Bank, PPI Database; World Bank, Contract Awards (Investment Project Financing).";
 
 // footnotes (drafts from the source document)
-const FN_PRO_1 = "* Data available for July 2019 – December 2024.";
+const FN_PRO_1 = "* Data available for July 2019 – December 2024.\n\n\n";
 const FN_PRO_2 =
   "** These figures are likely to understate the Chinese-controlled footprint. Supplier nationality in the World Bank database reflects the country of registration rather than ultimate ownership, meaning that locally incorporated subsidiaries of foreign firms are recorded as domestic suppliers. The findings should not be generalised to the continent’s infrastructure market as a whole.";
 const FN_PPI_1 =
   "* Actor shares use reported sponsor stakes where available; where all stakes are missing, shares are split equally across named sponsors, while in mixed cases any unallocated residual is divided equally among sponsors without reported stakes. Domestic sponsor stakes and sponsor-country slots that cannot be attributed are excluded from the foreign denominator. The measure captures sponsor participation, not equity ownership, investment value or financing.";
 const FN_PPI_2 =
-  "** These arrangements include projects reaching financial close before 2019; the figures measure the active sponsor footprint through 2024, not only new activity during 2019–2024.";
+  "** These arrangements include projects reaching financial close before 2019; the figures measure the active sponsor footprint through 2024, not only new activity during 2019–2024.\n \n";
 const FN_PPI_3 =
-  "*** PPI sponsor shares and procurement shares use different sources, periods and denominators. The data do not support a direct comparison of investment amounts, capital deployed or asset ownership.";
+  "*** PPI sponsor shares and procurement shares use different sources, periods and denominators. The data do not support a direct comparison of investment amounts, capital deployed or asset ownership.\n\n";
 const FN_MAP_PPI =
-  "All-active PPI stock through 2024, including arrangements reaching financial close before 2019. Sponsor-stake PPI measure indicates attributed sponsor participation, not investment value, financing or current asset ownership. PPI uses host country.";
+  "All-active PPI stock through 2024, including arrangements reaching financial close before 2019. Sponsor-stake PPI measure indicates attributed sponsor participation, not investment value, financing or current asset ownership. PPI uses host country.\n\n";
 const FN_MAP_WORKS =
-  "Supplier nationality in contracts database is country of registration; subcontractors are not observed. Shares cover foreign works awards in this World Bank sample, not the construction market as a whole. Construction uses borrower country.";
+  "Supplier nationality in contracts database is country of registration; subcontractors are not observed. Shares cover foreign works awards in this World Bank sample, not the construction market as a whole. Construction uses borrower country.\n\n";
 const FN_MAP_RESIDUAL =
   " Context/residual categories are retained where they are part of the denominator so country shares remain complete.";
 
@@ -76,10 +76,20 @@ export default {
         {
           id: "ppi",
           title: "PPI sponsors",
-          subtitle: "Share of attributed foreign sponsor stakes, active arrangements through 2024",
+          subtitle:
+            "Share of attributed foreign sponsor stakes, active arrangements through 2024",
           segments: [
-            { column: "ppi_a_pct", label: "Share (Gulf row: UAE)", color: "actor" },
-            { column: "ppi_b_pct", label: "Other Gulf states", color: "actor", opacity: 0.45 },
+            {
+              column: "ppi_a_pct",
+              label: "Share (Gulf row: UAE)",
+              color: "actor",
+            },
+            {
+              column: "ppi_b_pct",
+              label: "Other Gulf states",
+              color: "actor",
+              opacity: 0.45,
+            },
           ],
           domain: [0, 80],
           format: "pct",
@@ -87,10 +97,20 @@ export default {
         {
           id: "proc",
           title: "Procurement",
-          subtitle: "Share of foreign infrastructure-related award value, Jul 2019–Dec 2024",
+          subtitle:
+            "Share of foreign infrastructure-related award value, Jul 2019–Dec 2024",
           segments: [
-            { column: "broad_a_pct", label: "All infrastructure-related awards (Gulf row: UAE)", color: "actor" },
-            { column: "broad_b_pct", label: "Other Gulf states", color: "actor", opacity: 0.45 },
+            {
+              column: "broad_a_pct",
+              label: "All infrastructure-related awards (Gulf row: UAE)",
+              color: "actor",
+            },
+            {
+              column: "broad_b_pct",
+              label: "Other Gulf states",
+              color: "actor",
+              opacity: 0.45,
+            },
           ],
           dot: { column: "works_pct", label: "Works awards only" },
           domain: [0, 80],
@@ -109,7 +129,13 @@ export default {
       data: "infra_2_map",
       title: "Foreign actors in African infrastructure",
       source: `${SRC} Bubbles sit on the country dots, not on project sites.`,
-      labels: { EU: "EU27", REG: "Regional (African / MENA)", GBR: "UK", other: "Other", GCC: "Gulf" },
+      labels: {
+        EU: "EU27",
+        REG: "Regional (African / MENA)",
+        GBR: "UK",
+        other: "Other",
+        GCC: "Gulf",
+      },
       measures: {
         ppi: {
           title: "PPI sponsor stakes, by host country",
@@ -141,11 +167,21 @@ export default {
     // ── ECON 4.1: World Bank-financed procurement ───────────────────────────
     pro_china: {
       chart: "shares",
-      state: { panels: ["proc"], dots: false, highlight: ["CHN", "EU"], footnote: FN_PRO_1 },
+      state: {
+        panels: ["proc"],
+        dots: false,
+        highlight: ["CHN", "EU"],
+        footnote: FN_PRO_1,
+      },
     },
     pro_works: {
       chart: "shares",
-      state: { panels: ["proc"], dots: true, highlight: ["CHN", "EU"], footnote: FN_PRO_2 },
+      state: {
+        panels: ["proc"],
+        dots: true,
+        highlight: ["CHN", "EU"],
+        footnote: FN_PRO_2,
+      },
     },
     pro_divide: {
       chart: "map",
@@ -159,11 +195,20 @@ export default {
     },
     ppi_uae: {
       chart: "shares",
-      state: { panels: ["ppi"], highlight: ["GCC", "USA", "CHN"], footnote: FN_PPI_1 },
+      state: {
+        panels: ["ppi"],
+        highlight: ["GCC", "USA", "CHN"],
+        footnote: FN_PPI_1,
+      },
     },
     ppi_contrast: {
       chart: "shares",
-      state: { panels: ["ppi", "proc"], dots: true, highlight: ["EU", "CHN"], footnote: FN_PPI_3 },
+      state: {
+        panels: ["ppi", "proc"],
+        dots: true,
+        highlight: ["EU", "CHN"],
+        footnote: FN_PPI_3,
+      },
     },
 
     // ── geography and actor patterns ────────────────────────────────────────
@@ -173,15 +218,30 @@ export default {
     },
     geo_works: {
       chart: "map",
-      state: { measure: "works", subregion: "East Africa and HoA", footnote: FN_MAP_WORKS + FN_MAP_RESIDUAL },
+      state: {
+        measure: "works",
+        subregion: "East Africa and HoA",
+        footnote: FN_MAP_WORKS + FN_MAP_RESIDUAL,
+      },
     },
     eu_ppi: {
       chart: "map",
-      state: { measure: "ppi", actor: "EU", labels: ["ZAF", "EGY", "MAR"], footnote: FN_MAP_PPI },
+      state: {
+        measure: "ppi",
+        actor: "EU",
+        labels: ["ZAF", "EGY", "MAR"],
+        footnote: FN_MAP_PPI,
+      },
     },
     eu_works: {
       chart: "map",
-      state: { measure: "works", actor: "EU", subregion: "North Africa", labels: ["EGY"], footnote: FN_MAP_WORKS },
+      state: {
+        measure: "works",
+        actor: "EU",
+        subregion: "North Africa",
+        labels: ["EGY"],
+        footnote: FN_MAP_WORKS,
+      },
     },
     chn_ppi: {
       chart: "map",
@@ -189,11 +249,23 @@ export default {
     },
     chn_works: {
       chart: "map",
-      state: { measure: "works", actor: "CHN", highlight: ["TZA", "ETH", "KEN"], labels: ["TZA", "ETH", "KEN"], footnote: FN_MAP_WORKS },
+      state: {
+        measure: "works",
+        actor: "CHN",
+        highlight: ["TZA", "ETH", "KEN"],
+        labels: ["TZA", "ETH", "KEN"],
+        footnote: FN_MAP_WORKS,
+      },
     },
     chn_dominant: {
       chart: "map",
-      state: { measure: "works", actor: "CHN", highlight: CN90, labels: CN90 },
+      state: {
+        measure: "works",
+        actor: "CHN",
+        highlight: CN90,
+        labels: CN90,
+        footnote: FN_MAP_WORKS,
+      },
     },
     small_are: {
       chart: "map",

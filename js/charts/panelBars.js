@@ -415,7 +415,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     tooltip
       .html(`<strong>${label(d.row)}</strong><br>${d.p.title ?? ""}<br>${lines}${dotLine}`)
       .style("opacity", 1);
-    hover.enter(event, { raise: true });
+    hover.enter(event);
   }
 
   return {

@@ -24,6 +24,9 @@ const ALIASES = {
   ARE: ["United Arab Emirates"],
   EU: ["European Union", "EU27"],
   GCC: ["GCC"],
+  // additional ones (CD)
+  GCC: ["GCC countries"],
+  SAU: ["Saudi Arabia"],
 };
 
 // which part of a step's state names the actors it highlights, per chart type

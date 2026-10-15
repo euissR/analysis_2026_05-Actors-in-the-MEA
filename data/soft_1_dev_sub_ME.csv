@@ -1,0 +1,19 @@
+subregion,actor,n,share
+Gulf,ARE,2,33.3
+Middle East,ARE,6,85.7
+Gulf,JPN,1,16.7
+Middle East,JPN,5,71.4
+Gulf,KOR,0,0
+Middle East,KOR,3,42.9
+Gulf,QAT,0,0
+Middle East,QAT,6,85.7
+Gulf,RUS,0,0
+Middle East,RUS,4,57.1
+Gulf,SAU,1,16.7
+Middle East,SAU,5,71.4
+Gulf,TUR,0,0
+Middle East,TUR,6,85.7
+Gulf,USA,0,0
+Middle East,USA,1,14.3
+Gulf,all,1,16.7
+Middle East,all,6,85.7

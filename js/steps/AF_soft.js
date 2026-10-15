@@ -9,8 +9,8 @@
 //   state: what the chart shows (see the top of js/charts/dotMap.js, panelBars.js and sankey.js)
 //
 // Text as in 2_5_Africa_-_soft_power.docx. Data: the four workbooks of the chapter (see R/soft_*_af.R). Charts:
-//   dev      dotMap (presence): one tile per development agency group + the EIB; "all" = number of non-EU actors with an office
-//   devms    dotMap (count): EU member states, offices -> + partner countries -> + ODA recipients and the rest ("all")
+//   dev      dotMap (presence): one tile per development agency group; "all" = number of non-EU actors with an office
+//   devms    dotMap (count): EU member states: offices; partner countries and projects; any presence ("all")
 //   lang     panelBars: countries and centres of the cultural / language institutes (ECON 7-9)
 //   cov      panelBars: regional coverage of one actor (share of a subregion's countries with at least one centre)
 //   stud     sankey (reverse): African students by region of origin (left) and host actor (right)
@@ -18,8 +18,8 @@
 //   migTo    sankey: migrants from each actor (left) living in African regions or countries (right), 2015 and 2024
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
-//   split sentences (one chart state shows one actor or one measure at a time): w_jpn / w_tur, c_msoff / c_eib,
-//     c_ind / c_gulf, n_eib / n_eu, st_tur_reg / st_us_reg, st_sau_w / st_irn_w, st_sau / st_sau_c, st_ind / st_ind_c,
+//   split sentences (one chart state shows one actor or one measure at a time): w_jpn / w_tur,
+//     c_ind / c_gulf, st_tur_reg / st_us_reg, st_sau_w / st_irn_w, st_sau / st_sau_c, st_ind / st_ind_c,
 //     mt_eu_mar / mt_egy / mt_lby, mt_ind / mt_ind_zaf, mf_* (one actor per step). Splits at a comma or "and" keep the
 //     lower-case start of the second part.
 //   several actors in one clause, one actor drawn (the others are one tile away on the map): w_jpn (JICA shown; Qatar
@@ -32,12 +32,15 @@
 //                 shows the office where it has one, the projects elsewhere; India the Exim Bank office, else MEA grants. The
 //                 tooltip lists every agency. Reference years run from 2020 (India grants) to 2026 and are not drawn. CIDCA
 //                 (China) has no data. Actors: Türkiye, Japan, South Korea, Qatar, UAE, Saudi Arabia, India, Russia, Israel, US.
-//   s_eib         "Eswatini, Mauritius and Seychelles partnerships through the EU Delegations": no data; only the EIB office
-//                 in South Africa is drawn
-//   devms         member states in three cumulative stages (office; + partner / priority / project countries; + ODA recipients and
-//                 the rest). The text's "second partner countries, ODA recipients, and the rest" may mean two stages: confirm.
-//                 n = number of member states, not offices. The text's office counts (45, 19; Germany, France, Italy) are
-//                 office counts: GIZ / AFD / AICS are named in the text, not drawn.
+//   EIB           no map of its own: the EIB sentences stand at the end of the EU / member states paragraph of each region
+//                 (w_ms, e_ms, s_ms, c_msoff, n_ms) and are carried by the text; the map shows member states only. The text's
+//                 order is changed for this (West Africa: the EIB sentence comes after the member states sentence). The
+//                 sentence "Germany and France ... seven countries, the EIB has ..." is back in one piece (c_msoff).
+//                 "Eswatini, Mauritius and Seychelles partnerships through the EU Delegations": no data.
+//   devms         member states in three separate counts (not cumulative): offices (Offices); partner / priority / project
+//                 countries only (Partner countries and projects); any presence, including ODA recipients and "not
+//                 specified" (Any presence, footnote). n = number of member states, not offices: the text's office counts
+//                 (45, 19; Germany, France, Italy) are office counts, GIZ / AFD / AICS are named in the text, not drawn.
 //   w_ms, e_msoff office counts per country are member-state counts; "GIZ widest network" has no separate series
 //   lang          rows: the actors the text names (EU member states, of which France, China, Russia, Türkiye). Other actors in the
 //                 data (India, South Korea, Iran, Japan, Saudi Arabia, Kuwait, Oman, Bahrain) are not drawn. China: Confucius
@@ -70,6 +73,7 @@ const N = "North Africa";
 
 // footnotes (drafts from the source document)
 const FN3 = "³ European Investment Bank (EIB), ‘Sub-Saharan Africa’, eib.org.";
+const FN_ANY = "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
 const FN4 = "⁴ Abu Dhabi Fund for Development (ADFD), Annual Report 2025.";
 const FN5 = "⁵ Where French cooperation is complemented by other EU member states: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
 const FN6 = "⁶ Confucius Institute, ‘Confucius Institutes in Africa’, ci.cn.";
@@ -80,6 +84,10 @@ const FN12 = "¹² UNDESA, International Migrant Stock 2024 (both sexes, mid-yea
 const FN13 = "¹³ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
 const FN14 = "¹⁴ These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
 const FN_ETH = "2015 level shown (54,628); 2024: 26,824. " + FN13;
+
+// dot sizes compare across the two maps: the same value gets the same radius (21 = member states with any presence, the largest count)
+const DOT_MAX = 21;
+const DOT_R = 12;
 
 const SRC_DEV = "Data: official websites of agencies, ministries and entities, most recent report available (2023–2025).";
 
@@ -96,8 +104,9 @@ export default {
       source: SRC_DEV,
       allLabel: "All actors (offices)",
       tilesWithData: true,
-      extraTiles: [{ actor: "EIB", label: "EIB" }],
-      rMaxAll: 13,
+      sharedScale: true,
+      scaleMax: DOT_MAX,
+      rMax: DOT_R,
       keySize: "Actors with an office",
       keyValuesAll: [1, 3, 6],
       tooltipCount: (n) => `${n} actor${n === 1 ? "" : "s"} with an office`,
@@ -119,21 +128,22 @@ export default {
       mode: "count",
       data: "soft_1_dev_ms",
       title: "EU member states’ development agencies in Africa",
-      subtitleActor: "Number of EU member states present in each country, by the type of presence selected",
-      subtitleAll: "Number of EU member states with an office, a partner country or an ODA-recipient relationship in each country",
+      subtitleActor: "Number of EU member states present in each country, by the type of presence selected (separate counts)",
+      subtitleAll: "Number of EU member states with any presence in each country (office, partner country or project, ODA recipient, not specified)",
       source: "Data: websites of EU member states’ development agencies and ministries.",
       allLabel: "Any presence",
       tilesWithData: true,
       extraTiles: [
         { actor: "MS_office", label: "Offices" },
-        { actor: "MS_partner", label: "+ partner countries" },
+        { actor: "MS_partner", label: "Partner countries and projects" },
       ],
       ownDots: false,
-      rMaxActor: 12,
-      rMaxAll: 12,
+      sharedScale: true,
+      scaleMax: DOT_MAX,
+      rMax: DOT_R,
       keySize: "Member states",
-      keyValuesActor: [1, 5, 10],
-      keyValuesAll: [1, 5, 10],
+      keyValuesActor: [1, 5, 10, 20],
+      keyValuesAll: [1, 5, 10, 20],
       tooltipCount: (n) => `${n} EU member state${n === 1 ? "" : "s"}`,
       shareText: (share) => `${share}%`,
     },
@@ -229,37 +239,30 @@ export default {
   steps: {
     // ── Geographical distribution of development agencies, grants and projects in Africa ──────────
     w_all: { chart: "dev", state: { actor: "all", subregion: W } },
-    w_eib: { chart: "dev", state: { actor: "EIB", subregion: W, labels: ["CIV", "SEN"], footnote: FN3 } },
-    w_ms: { chart: "devms", state: { actor: "MS_office", subregion: W } },
+    w_ms: { chart: "devms", state: { actor: "MS_office", subregion: W, footnote: FN3 } },
     w_ext: { chart: "dev", state: { actor: "all", subregion: W } },
     w_jpn: { chart: "dev", state: { actor: "JPN", subregion: W } },
     w_tur: { chart: "dev", state: { actor: "TUR", subregion: W } },
     e_all: { chart: "dev", state: { actor: "all", subregion: E } },
     e_tur: { chart: "dev", state: { actor: "TUR", subregion: E } },
     e_jpn: { chart: "dev", state: { actor: "JPN", subregion: E } },
-    e_ms: { chart: "devms", state: { actor: "all", subregion: E } },
-    e_eib: { chart: "dev", state: { actor: "EIB", subregion: E, labels: ["ETH", "KEN"] } },
+    e_ms: { chart: "devms", state: { actor: "all", subregion: E, footnote: FN_ANY } },
     e_msoff: { chart: "devms", state: { actor: "MS_office", subregion: E } },
-    s_ms: { chart: "devms", state: { actor: "all", subregion: S } },
-    s_eib: { chart: "dev", state: { actor: "EIB", subregion: S, labels: ["ZAF"] } },
+    s_ms: { chart: "devms", state: { actor: "all", subregion: S, footnote: FN_ANY } },
     s_ext: { chart: "dev", state: { actor: "all", subregion: S } },
     s_jpn: { chart: "dev", state: { actor: "JPN", subregion: S } },
     s_ind: { chart: "dev", state: { actor: "IND", subregion: S, labels: ["ZAF"] } },
-    c_ms: { chart: "devms", state: { actor: "all", subregion: C } },
+    c_ms: { chart: "devms", state: { actor: "all", subregion: C, footnote: FN_ANY } },
     c_msoff: { chart: "devms", state: { actor: "MS_office", subregion: C } },
-    c_eib: { chart: "dev", state: { actor: "EIB", subregion: C, labels: ["CMR"] } },
     c_jpn: { chart: "dev", state: { actor: "JPN", subregion: C } },
     c_ind: { chart: "dev", state: { actor: "IND", subregion: C } },
     c_gulf: { chart: "dev", state: { actor: "ARE", subregion: C } },
     c_rus: { chart: "dev", state: { actor: "RUS", subregion: C, labels: ["BDI", "CAF", "COG", "COD"] } },
-    n_ms: { chart: "devms", state: { actor: "all", subregion: N } },
-    n_eib: { chart: "dev", state: { actor: "EIB", subregion: N, labels: ["EGY", "MAR", "TUN"] } },
-    n_eu: { chart: "devms", state: { actor: "all", subregion: N } },
+    n_ms: { chart: "devms", state: { actor: "all", subregion: N, footnote: FN_ANY } },
     n_are: { chart: "dev", state: { actor: "ARE", subregion: N, footnote: FN4 } },
     // ── Cultural cooperation and language institutes ──────────
     l_intro: { chart: "lang", state: {  } },
-    l_eu: { chart: "lang", state: { highlight: ["EU"] } },
-    l_fra: { chart: "lang", state: { highlight: ["FRA"] } },
+    l_eu: { chart: "lang", state: { highlight: ["EU", "FRA"] } },
     l_cov: { chart: "cov", state: { panels: ["FRA", "EU"], footnote: FN5 } },
     l_chn: { chart: "lang", state: { highlight: ["CHN"], footnote: FN6 } },
     l_chn_cov: { chart: "cov", state: { panels: ["CHN"] } },

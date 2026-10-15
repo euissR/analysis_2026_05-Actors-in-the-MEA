@@ -15,8 +15,10 @@
 //   title, source
 //   measures:   { ppi: { title, subtitle: (actor, label) => text, unit, format, sizeTitle, keyAll }, works: {...} }
 //                 unit: wording after the value in the tooltip; format: d3 format; keyAll: reference sizes
-//                 for "all actors" (a single actor gets 10%, 1/3 and 100% of its own largest bubble)
-//   Bubble area: one scale per measure for "all actors"; each single actor has its own scale (its largest country).
+//                 for "all actors" (a single actor gets 10%, 1/3 and 100% of its own largest bubble);
+//                 wholeNumbers: true = the single-actor key shows whole numbers (counts: 1, a third of the largest, the largest)
+//   Bubble area: one scale per measure for "all actors"; each single actor has its own scale (its largest country),
+//     unless the measure sets sharedScale: true (one scale for all actors and "all"; optional scaleMax; the key then uses keyAll).
 //   labels:     { code: label } where actors.csv has none (REG, GBR, other, GCC ...)
 //   greyLabel:  key wording for the actors without a colour (default "Regional, UK or other")
 //   rMax:       radius of the largest bubble in map units (default 30)
@@ -50,11 +52,20 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
   // one scale per measure for "all actors"; one per measure and actor for a single actor
   // (the small actors would otherwise vanish next to China's Tanzania)
   const scaleCache = {};
+  // measures with sharedScale: true use ONE scale for every actor and for "all" (largest value in the measure, or ms.scaleMax),
+  // so a bubble of a given size means the same number in every step
+  const isShared = (m) => spec.measures[m]?.sharedScale === true;
   const scaleFor = (state) => {
-    const k = `${state.measure}|${state.actor}`;
+    const shared = isShared(state.measure);
+    const k = shared ? `${state.measure}|*` : `${state.measure}|${state.actor}`;
     scaleCache[k] ??= d3
       .scaleSqrt()
-      .domain([0, d3.max(rows.filter((r) => r.measure === state.measure && r.actor === state.actor), (r) => +r.value) ?? 1])
+      .domain([
+        0,
+        shared
+          ? (spec.measures[state.measure].scaleMax ?? d3.max(rows.filter((r) => r.measure === state.measure), (r) => +r.value) ?? 1)
+          : (d3.max(rows.filter((r) => r.measure === state.measure && r.actor === state.actor), (r) => +r.value) ?? 1),
+      ])
       .range([0, rMax]);
     return scaleCache[k];
   };
@@ -217,10 +228,14 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
   function drawSizeKey(m, rs, single) {
     const ms = spec.measures[m];
     const top = rs.domain()[1];
-    const values = single
-      ? [top / 10, top / 3, top].map((v) => +d3.format(".2r")(v))
+    const values = isShared(m)
+      ? (ms.keyAll ?? []).filter((v) => v <= top)
+      : single
+      ? ms.wholeNumbers
+        ? [...new Set([1, Math.max(1, Math.round(top / 3)), Math.round(top)])].filter((v) => v <= top).sort((a, b) => a - b)
+        : [top / 10, top / 3, top].map((v) => +d3.format(".2r")(v))
       : (ms.keyAll ?? []).filter((v) => v <= top);
-    const fmt = (v) => d3.format(v >= 10 || !single ? (ms.format ?? ",.0f") : ".1f")(v);
+    const fmt = (v) => d3.format(v >= 10 || !single || ms.wholeNumbers || isShared(m) ? (ms.format ?? ",.0f") : ".1f")(v);
     const yb = H - 30;
     const maxR = rs(d3.max(values) ?? 0);
     gKey.selectAll("*").remove();

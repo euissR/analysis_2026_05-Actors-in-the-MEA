@@ -17,6 +17,10 @@
 //   ring, the actor's own country, as in the visits chart)
 // spec.tilesWithData (optional): true = legend tiles only for actors that have data
 // spec.extra { pts: "mil_{suffix}_countries" } (optional): sea areas drawn as extra places
+// spec.sharedScale (default: true in count mode, false in presence mode): one dot-size scale for all steps ("all" and single actors),
+//   the largest value in the data (or spec.scaleMax) = radius spec.rMax (default: spec.rMaxAll, else 12); false = the old separate scales
+//   spec.scaleMax (optional, with sharedScale): the value that gets radius spec.rMax, instead of the largest in this chart's data;
+//   give the same scaleMax and rMax to several charts and a dot of a given size means the same number in all of them
 // spec.keyByActor (optional, presence mode): true = the key lists only the categories
 //   the selected actor has; default lists every category in the data
 //
@@ -90,15 +94,19 @@ export function makeDotMap(
   // Two scales: one shared by all single actors (so they compare across
   // steps), one for "all actors" combined, whose totals are much larger.
   const maxOf = (f) => d3.max(rows.filter(f), (r) => +r.n || 0);
+  // spec.sharedScale: true = one scale for every step ("all" and single actors alike): the largest value
+  // in the data always gets the radius spec.rMax, so a dot size means the same thing throughout
+  const shared = spec.sharedScale ?? counting; // count maps: one scale for every view by default; sharedScale: false = the old two scales
+  const maxAny = spec.scaleMax ?? maxOf(() => true); // spec.scaleMax: the same value for several charts = sizes compare across them
   const scales = {
     actor: d3
       .scaleSqrt()
-      .domain([0, maxOf((r) => r.actor !== "all")])
-      .range([0, spec.rMaxActor ?? 14]),
+      .domain([0, shared ? maxAny : maxOf((r) => r.actor !== "all")])
+      .range([0, shared ? (spec.rMax ?? spec.rMaxAll ?? 12) : (spec.rMaxActor ?? 14)]),
     all: d3
       .scaleSqrt()
-      .domain([0, counting ? maxOf((r) => r.actor === "all") : nActors])
-      .range([0, spec.rMaxAll ?? 11]),
+      .domain([0, shared ? maxAny : counting ? maxOf((r) => r.actor === "all") : nActors])
+      .range([0, shared ? (spec.rMax ?? spec.rMaxAll ?? 12) : (spec.rMaxAll ?? 11)]),
   };
   const scaleFor = (state) =>
     state.actor === "all" ? scales.all : scales.actor;

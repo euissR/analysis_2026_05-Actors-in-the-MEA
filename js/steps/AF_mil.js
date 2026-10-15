@@ -10,53 +10,30 @@
 //
 // Arms transfers (sankey), bases + deployments (milMap), exercises (dotMap, count mode).
 //
-// PINNED: where the text and the data differ. The text is as written; the
-// charts show the data.
-//   Source of the arms data: Arms_Deliveries_Repaired_08.10.2026.xlsx (sheet "Annual deliveries").
-//   Comparison baseline is 2018-2021 vs 2022-2025, as in the text. The earlier arms export
-//   (pre-workbook selection) gave a different picture; every figure below was re-checked.
-//   arm_intro    text and data agree (top five: Russia 9,273, France 4,810, US 3,605, Germany 2,968,
-//                China 2,447); "more than half" is understated: they are 83% of the total
-//   arm_china    text: China 34 countries + the African Union, UAE 28, France 27, US 25, Russia 21: data
-//                agrees. The Libyan House of Representatives is not counted (footnote 2) but its 321 TIV
-//                is in the flows and totals (North Africa)
-//   arm_egy      text 42%; data 42.7% (the chart label rounds to 43%)
-//   arm_mar_alg  text and data agree (US 56.7%, Israel 63.0%, China 34.7%, Russia 47.3%)
-//   arm_isr      text and data agree (376 of 507 TIV, 74%)
-//   arm_change   text and data agree (China +51, France +37, Germany +23, Türkiye +114, US +29, Israel +882,
-//                Iran +367; Russia -83, Italy -82). The chart labels read Israel +881 and Italy -81: the text
-//                rounds 51.6 -> 506.9 (+882) and -81.5 (-82). Iran's rise is 0.15 -> 0.70 TIV: a hairline on the chart
-//   arm_regions  text: China West Africa +108%, North Africa +88%: data +108%, +87% (87.5)
-//   arm_ssa      text and data agree (China first, then Russia, France, Türkiye; China + Russia 49%)
-//   arm_ssa_conc text and data agree (31 and 19 recipients; Russia: Angola 39%, Ethiopia 14%, Mali 13.5%)
-//   arm_nga      text and data agree (Angola 811 mostly Russia, Nigeria 618 mostly China)
-//   arm_drones   text and data agree (armed drones only: Türkiye 9 clients, China DRC / Ethiopia / Nigeria,
-//                Iran Ethiopia and Sudan). The flag is the description "armed drone"
-//   bas_intro    footnote marker on "Military bases" reads 1 in the text (the IISS note is 4): treated as 4
-//   dep_eu       text "France ... Senegal (250)"; data France 350 (the source cell is marked "?"),
-//                plus Spain 65, so the EU spike in Senegal reads 415. The data also has
-//                France in Tunisia (750), which the text does not mention
-//   dep_pmc      text "approximately" 3,500 / 1,500 / 1,500: the data matches. The data adds
-//                Russian PMCs in Burkina Faso, Equatorial Guinea and Niger (200 each)
-//   dep_un_chn   Abyei sits under Sudan in the data. The text still says "Abyei*", but the note that
-//                explained the asterisk (disputed region, borders not supportive of any claim) was
-//                removed from the document; the chart footnote is my earlier draft of it. Needs a footnote
-//                in the page body, or the asterisk goes
-//   bas_intro, dep_pmc, ex_all   the author comments behind my earlier chart notes (bases = bilateral
-//                established presence; PMC figures are estimates; joint exercises are those described as
-//                such by the mission, training excluded) are gone from the document, so the notes are gone
-//                from the charts too. Say if they should come back
-//   ex_intro     text "Gulf of Guinea and Gulf of Aden/Western Indian Ocean stand out as
-//                particularly crowded maritime areas": on the map Egypt (14 exercises) and
-//                Djibouti (10) are the biggest places; the sea areas are smaller dots
+// PINNED: where the text and the data still differ. The text is as written; the charts show the data.
+//   Arms data: Arms_Deliveries_Repaired_08.10.2026.xlsx (sheet "Annual deliveries"); comparison baseline
+//   2018-2021 vs 2022-2025, as in the text.
+//   arm_intro    text "about 80%" for the top five suppliers; data 83% (Russia 9,273, France 4,810, US 3,605,
+//                Germany 2,968, China 2,447)
+//   arm_china    text and data agree. The Libyan House of Representatives is left out of the count of
+//                countries (footnote 2) but its 321 TIV is in the flows and totals (North Africa)
+//   arm_egy      text 43%; data 42.7% (the chart label reads 43%)
+//   arm_change   text and data agree (the chart labels read Israel +881%, Italy -81%). Iran's rise is
+//                0.15 -> 0.70 TIV: a hairline on the chart
+//   arm_regions  text China North Africa +88%; data +87.5%
+//   dep_eu       data: Spain adds 65 in Senegal, so the EU spike there reads 415 (the label block lists
+//                France 350 and Spain 65); France in Tunisia (750) is not in the text (author's choice)
+//   dep_pmc      data adds Russian PMCs in Burkina Faso, Equatorial Guinea and Niger (200 each)
+//                (author's choice)
+//   dep_un_chn   Abyei sits under Sudan in the data; the chart footnote is footnote 8 of the document
+//   ex_intro     text: Gulf of Guinea and Gulf of Aden/Western Indian Ocean "stand out": on the map Egypt (14
+//                exercises) and Djibouti (10) are the biggest places; the sea areas are smaller dots. The
+//                Red Sea is in the third key takeaway, not in this sentence
 //   ex_all       text 55 exercises, 52% / 26% / 7% / 11%: check against mil_4_ex_AF.csv
-//   ex_us        text 15 US-led: the older export had 17 (two Red Sea exercises), 15 after
-//                the area patch
-//   ex_eu        text "about 29"; data 28 EU-led
 //   ex_atalanta, ex_fr_es: no separate France / Spain data in the map; the steps highlight
 //                the places named in the text (the EU actor covers all member states)
-//   typos kept as in the source: "Egypt is the main recipients", "top five supplier", "Israeli's transfers",
-//                "indicatr", "sub-saharan", "to only to Ethiopia", "Mmember Sstates", "interforce"
+//   typos kept as in the source: "Egypt is the main recipients", "Israeli's transfers", "considers on
+//                deliveries" (footnote 1), "Russia run", "interforce"
 
 import { theme } from "../theme.js";
 
@@ -123,6 +100,7 @@ export default {
       source: "Data: IISS, The Military Balance 2026; US Africa Command",
       allLabel: "All actors",
       keyBases: "Military base (colour: actor)",
+      keyLight: "Camp Simba",
       spikeK: 0.02,
       spikeFill: 0.35,
       keyRef: 1000,
@@ -178,11 +156,10 @@ export default {
       source:
         "NB: An exercise counts once for each place it involves. Data: official ministry websites and news outlets.",
       allLabel: "All actors",
-      rMaxActor: 12,
-      rMaxAll: 22,
+      // one dot-size scale for every step and tile: the same number is the same size everywhere
+      sharedScale: true,
+      rMax: 22,
       keySize: "Exercises",
-      keyValuesActor: [1, 3, 6],
-      keyValuesAll: [1, 5, 14],
       tooltipCount: (n, label) =>
         `${label === "All actors" ? "" : `${label}: `}${n} exercise${n === 1 ? "" : "s"}`,
       shareText: () => "",
@@ -305,15 +282,6 @@ export default {
       state: {
         bases: true,
         labels: ["DJI"],
-        outline: ["KEN"],
-        notes: [
-          {
-            iso3: "KEN",
-            lines: ["Camp Simba:", "US cooperative", "security location"],
-            dx: -150,
-            dy: 12,
-          },
-        ],
       },
     },
     dep_intro: { chart: "forces", state: { bases: true } },
@@ -371,7 +339,7 @@ export default {
         labels: ["SSD", "SDN"],
         values: ["SSD", "SDN"],
         footnote:
-          "* Abyei is a disputed region between Sudan and South Sudan. The borders shown do not imply support for any claim.",
+          "Depiction of borders and region on the map is indicative and not supporting any territorial claims.",
       },
     },
     // exercises

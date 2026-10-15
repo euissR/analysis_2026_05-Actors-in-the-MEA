@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='510.24pt' height='314.50pt' viewBox='0 0 510.24 314.50'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MTAuMjR8MC4wMHwzMTQuNTA='>
+    <rect x='0.00' y='0.00' width='510.24' height='314.50' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MTAuMjR8MC4wMHwzMTQuNTA=)'>
+<rect x='0.000000000000064' y='0.00' width='510.24' height='314.50' style='stroke-width: 1.07; stroke: none;' />
+<polyline points='13.84,284.19 259.30,284.19 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='13.84,194.23 259.30,194.23 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='13.84,104.27 259.30,104.27 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='26.43,292.49 26.43,51.79 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='152.30,292.49 152.30,51.79 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polygon points='26.43,135.96 26.55,135.95 152.18,120.82 152.30,120.81 152.43,284.19 152.30,284.19 152.18,284.19 26.55,284.19 26.43,284.19 26.30,284.19 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #309EBE; fill-opacity: 0.20;' />
+<polyline points='26.43,135.96 26.55,135.95 152.18,120.82 152.30,120.81 ' style='stroke-width: 1.07; stroke: #309EBE; stroke-linecap: butt;' />
+<polygon points='26.43,151.18 26.55,151.11 152.18,76.76 152.30,76.69 152.43,284.19 152.30,284.19 152.18,284.19 26.55,284.19 26.43,284.19 26.30,284.19 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #DF3144; fill-opacity: 0.20;' />
+<polyline points='26.43,151.18 26.55,151.11 152.18,76.76 152.30,76.69 ' style='stroke-width: 1.07; stroke: #DF3144; stroke-linecap: butt;' />
+<polyline points='26.43,135.96 152.30,120.81 ' style='stroke-width: 1.92; stroke: #309EBE; stroke-linecap: butt;' />
+<polyline points='26.43,151.18 152.30,76.69 ' style='stroke-width: 1.92; stroke: #DF3144; stroke-linecap: butt;' />
+<circle cx='26.43' cy='135.96' r='3.24' style='stroke-width: 0.71; stroke: #309EBE; fill: #309EBE;' />
+<circle cx='152.30' cy='120.81' r='3.24' style='stroke-width: 0.71; stroke: #309EBE; fill: #309EBE;' />
+<circle cx='26.43' cy='151.18' r='3.24' style='stroke-width: 0.71; stroke: #DF3144; fill: #DF3144;' />
+<circle cx='152.30' cy='76.69' r='3.24' style='stroke-width: 0.71; stroke: #DF3144; fill: #DF3144;' />
+<text x='159.85' y='123.79' style='font-size: 8.54px; font-weight: bold;fill: #309EBE; font-family: "PT Sans Narrow";' textLength='27.36px' lengthAdjust='spacingAndGlyphs'>EU   90.8</text>
+<text x='159.85' y='79.68' style='font-size: 8.54px; font-weight: bold;fill: #DF3144; font-family: "PT Sans Narrow";' textLength='38.64px' lengthAdjust='spacingAndGlyphs'>China  115.3</text>
+<polyline points='264.78,284.19 510.24,284.19 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='264.78,194.23 510.24,194.23 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='264.78,104.27 510.24,104.27 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='277.36,292.49 277.36,51.79 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polyline points='403.24,292.49 403.24,51.79 ' style='stroke-width: 0.50; stroke: #FFFFFF;' />
+<polygon points='277.36,183.98 277.49,184.00 403.12,199.38 403.24,199.40 403.37,284.19 403.24,284.19 403.12,284.19 277.49,284.19 277.36,284.19 277.24,284.19 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #309EBE; fill-opacity: 0.20;' />
+<polyline points='277.36,183.98 277.49,184.00 403.12,199.38 403.24,199.40 ' style='stroke-width: 1.07; stroke: #309EBE; stroke-linecap: butt;' />
+<polygon points='277.36,144.57 277.49,144.53 403.12,102.41 403.24,102.37 403.37,284.19 403.24,284.19 403.12,284.19 277.49,284.19 277.36,284.19 277.24,284.19 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt; fill: #DF3144; fill-opacity: 0.20;' />
+<polyline points='277.36,144.57 277.49,144.53 403.12,102.41 403.24,102.37 ' style='stroke-width: 1.07; stroke: #DF3144; stroke-linecap: butt;' />
+<polyline points='277.36,183.98 403.24,199.40 ' style='stroke-width: 1.92; stroke: #309EBE; stroke-linecap: butt;' />
+<polyline points='277.36,144.57 403.24,102.37 ' style='stroke-width: 1.92; stroke: #DF3144; stroke-linecap: butt;' />
+<circle cx='277.36' cy='183.98' r='3.24' style='stroke-width: 0.71; stroke: #309EBE; fill: #309EBE;' />
+<circle cx='403.24' cy='199.40' r='3.24' style='stroke-width: 0.71; stroke: #309EBE; fill: #309EBE;' />
+<circle cx='277.36' cy='144.57' r='3.24' style='stroke-width: 0.71; stroke: #DF3144; fill: #DF3144;' />
+<circle cx='403.24' cy='102.37' r='3.24' style='stroke-width: 0.71; stroke: #DF3144; fill: #DF3144;' />
+<text x='410.79' y='202.39' style='font-size: 8.54px; font-weight: bold;fill: #309EBE; font-family: "PT Sans Narrow";' textLength='26.50px' lengthAdjust='spacingAndGlyphs'>EU   47.1</text>
+<text x='410.79' y='105.35' style='font-size: 8.54px; font-weight: bold;fill: #DF3144; font-family: "PT Sans Narrow";' textLength='38.64px' lengthAdjust='spacingAndGlyphs'>China  101.1</text>
+<text x='18.22' y='46.43' style='font-size: 8.80px; font-weight: bold;fill: #1A1A1A; font-family: "PT Sans Narrow";' textLength='58.66px' lengthAdjust='spacingAndGlyphs'>Middle East &amp; Gulf</text>
+<text x='269.16' y='46.43' style='font-size: 8.80px; font-weight: bold;fill: #1A1A1A; font-family: "PT Sans Narrow";' textLength='18.03px' lengthAdjust='spacingAndGlyphs'>Africa</text>
+<text x='26.43' y='302.03' text-anchor='middle' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='21.31px' lengthAdjust='spacingAndGlyphs'>2019–21</text>
+<text x='152.30' y='302.03' text-anchor='middle' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='21.31px' lengthAdjust='spacingAndGlyphs'>2022–24</text>
+<text x='277.36' y='302.03' text-anchor='middle' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='21.31px' lengthAdjust='spacingAndGlyphs'>2019–21</text>
+<text x='403.24' y='302.03' text-anchor='middle' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='21.31px' lengthAdjust='spacingAndGlyphs'>2022–24</text>
+<text x='8.91' y='286.49' text-anchor='end' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='2.97px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='8.91' y='196.54' text-anchor='end' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='5.94px' lengthAdjust='spacingAndGlyphs'>50</text>
+<text x='8.91' y='106.58' text-anchor='end' style='font-size: 6.60px;fill: #646363; font-family: "PT Sans Narrow";' textLength='8.91px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='13.84' y='27.22' style='font-size: 10.00px;fill: #646363; font-family: "PT Sans Narrow";' textLength='130.86px' lengthAdjust='spacingAndGlyphs'>Average annual trade balance, USD bn</text>
+<text x='13.84' y='11.20' style='font-size: 16.00px; font-weight: bold; font-family: "PT Sans Narrow";' textLength='396.56px' lengthAdjust='spacingAndGlyphs'>China's non-hydrocarbon surplus now exceeds the EU's in both regions</text>
+<text x='510.24' y='313.17' text-anchor='end' style='font-size: 6.00px;fill: #646363; font-family: "PT Sans Narrow";' textLength='98.89px' lengthAdjust='spacingAndGlyphs'>Source: EUISS calculations from BACI trade data</text>
+</g>
+</g>
+</svg>

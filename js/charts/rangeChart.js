@@ -97,17 +97,17 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .data(values)
       .join("g")
       .attr("transform", (v, i) => `translate(${i * step + step / 2},0)`);
-    g.append("circle").attr("cy", (v) => maxR * 2 - rSize(v) + 1).attr("r", (v) => rSize(v)).attr("fill", theme.teal);
+    g.append("circle").attr("cy", (v) => maxR * 2 - rSize(v) + 1).attr("r", (v) => rSize(v)).attr("fill", theme.neutral);
     g.append("text").attr("y", maxR * 2 + 14).attr("text-anchor", "middle").text((v) => v);
     key.append("span").attr("class", "fa-key-label").text(spec.keySize);
 
     const dot = (fill, stroke) =>
       `<svg width="${R_END * 2 + 4}" height="${R_END * 2 + 4}" aria-hidden="true"><circle cx="${R_END + 2}" cy="${R_END + 2}" r="${R_END}" fill="${fill}" stroke="${stroke}" stroke-width="1.75"/></svg>`;
-    key.append("span").attr("class", "fa-key-item").html(`${dot(theme.teal, theme.land)}${spec.keyLast}`);
-    key.append("span").attr("class", "fa-key-item").html(`${dot(theme.land, theme.teal)}${spec.keyNext}`);
+    key.append("span").attr("class", "fa-key-item").html(`${dot(theme.neutral, theme.land)}${spec.keyLast}`);
+    key.append("span").attr("class", "fa-key-item").html(`${dot(theme.land, theme.neutral)}${spec.keyNext}`);
     if (series.some((s) => s.postponed != null)) {
       key.append("span").attr("class", "fa-key-item").html(
-        `<svg width="${R_END * 2 + 4}" height="${R_END * 2 + 4}" aria-hidden="true"><circle cx="${R_END + 2}" cy="${R_END + 2}" r="${R_END}" fill="${theme.land}" stroke="${theme.teal}" stroke-width="1.5" stroke-dasharray="2 1.5"/></svg>${spec.keyPostponed ?? "Postponed"}`,
+        `<svg width="${R_END * 2 + 4}" height="${R_END * 2 + 4}" aria-hidden="true"><circle cx="${R_END + 2}" cy="${R_END + 2}" r="${R_END}" fill="${theme.land}" stroke="${theme.neutral}" stroke-width="1.5" stroke-dasharray="2 1.5"/></svg>${spec.keyPostponed ?? "Postponed"}`,
       );
     }
   })();
@@ -187,7 +187,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("x2", (s) => x(s.last))
       .attr("y1", cy)
       .attr("y2", cy)
-      .attr("stroke", theme.teal)
+      .attr("stroke", theme.neutral)
       .attr("stroke-width", 2.5);
     // dotted lead-in to a scheduled or a postponed summit
     rowSel
@@ -199,7 +199,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("x2", (s) => x(s.postponed ?? s.next))
       .attr("y1", cy)
       .attr("y2", cy)
-      .attr("stroke", theme.teal)
+      .attr("stroke", theme.neutral)
       .attr("stroke-width", 1.5)
       .attr("stroke-dasharray", "2 3");
 
@@ -210,7 +210,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cy", cy)
       .attr("r", R_END)
       .attr("fill", theme.land)
-      .attr("stroke", theme.teal)
+      .attr("stroke", theme.neutral)
       .attr("stroke-width", 1.75);
     rowSel
       .filter((s) => s.last != null && s.last > s.start)
@@ -218,7 +218,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cx", (s) => x(s.last))
       .attr("cy", cy)
       .attr("r", R_END)
-      .attr("fill", theme.teal)
+      .attr("fill", theme.neutral)
       .attr("stroke", theme.land)
       .attr("stroke-width", 1.25);
     // postponed: dashed hollow marker at the planned year
@@ -229,7 +229,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cy", cy)
       .attr("r", R_END)
       .attr("fill", theme.land)
-      .attr("stroke", theme.teal)
+      .attr("stroke", theme.neutral)
       .attr("stroke-width", 1.5)
       .attr("stroke-dasharray", "2 1.5");
     rowSel
@@ -238,7 +238,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cx", (s) => x(s.start))
       .attr("cy", cy)
       .attr("r", (s) => rSize(s.count))
-      .attr("fill", theme.teal)
+      .attr("fill", theme.neutral)
       .attr("stroke", theme.land)
       .attr("stroke-width", 1.25);
 

@@ -1,0 +1,25 @@
+actor,subregion,n_countries,region_size,coverage_pct
+BHR,Middle East,1,7,14.3
+BHR,Gulf,4,6,66.7
+CHN,Middle East,4,7,57.1
+CHN,Gulf,3,6,50
+DEU,Middle East,5,7,71.4
+DEU,Gulf,3,6,50
+EU,Middle East,5,7,71.4
+EU,Gulf,6,6,100
+FRA,Middle East,5,7,71.4
+FRA,Gulf,6,6,100
+IND,Middle East,1,7,14.3
+IND,Gulf,0,6,0
+KOR,Middle East,2,7,28.6
+KOR,Gulf,4,6,66.7
+KWT,Middle East,1,7,14.3
+KWT,Gulf,3,6,50
+OMN,Middle East,1,7,14.3
+OMN,Gulf,5,6,83.3
+RUS,Middle East,5,7,71.4
+RUS,Gulf,1,6,16.7
+SAU,Middle East,2,7,28.6
+SAU,Gulf,4,6,66.7
+TUR,Middle East,5,7,71.4
+TUR,Gulf,3,6,50

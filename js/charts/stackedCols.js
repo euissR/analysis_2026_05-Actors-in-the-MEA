@@ -292,7 +292,7 @@ export function makeStackedCols(el, { rows, spec, region, actors = [] }) {
         `<strong>${label(d.k)}, ${d.year}</strong><br>${spec.unit ?? "TIV"}: ${fmt(d.tiv)}<br>${top}`,
       )
       .style("opacity", 1);
-    hover.enter(event, { raise: true });
+    hover.enter(event);
   }
 
   return {
