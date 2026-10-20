@@ -4,6 +4,9 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { CONFIG } from "./config.js";
 import { makeOverviewMap } from "./charts/overviewMap.js";
 
+// landing-page cards (links, numbers, titles from chapters.js) and back to top; a failure here must not stop the map
+import("./nav.js").catch((err) => console.error("Navigation failed to load:", err));
+
 // slider: PNGs in img/slider/
 const SLIDER_IMAGES = [
   "landing_1b emb pack.png",
@@ -17,6 +20,16 @@ const SLIDER_IMAGES = [
   "landing_1a emb map.png",
 ];
 const SLIDER_INTERVAL = 5500; // ms between images
+
+// slider button icons (inline SVG, take the button's text colour)
+const ICON_PREV =
+  '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_NEXT =
+  '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICON_PAUSE =
+  '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
+const ICON_PLAY =
+  '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
 
 const url = (file) => `${CONFIG.BASE_URL}/data/${file}`;
 
@@ -65,6 +78,7 @@ function initSlider(el) {
 
   let current = 0;
   let timer = null;
+  let paused = false; // true once the visitor has pressed pause
 
   function goTo(i) {
     imgs[current].classList.remove("on");
@@ -77,11 +91,55 @@ function initSlider(el) {
   const prev = () => goTo((current - 1 + imgs.length) % imgs.length);
 
   function start() {
-    if (imgs.length > 1 && !timer) timer = setInterval(next, SLIDER_INTERVAL);
+    if (imgs.length > 1 && !paused && !timer)
+      timer = setInterval(next, SLIDER_INTERVAL);
   }
   function stop() {
     clearInterval(timer);
     timer = null;
+  }
+
+  // buttons: previous, play/pause, next
+  if (imgs.length > 1) {
+    const makeBtn = (cls, label, icon) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = `fa-slider-btn ${cls}`;
+      b.setAttribute("aria-label", label);
+      b.innerHTML = icon;
+      el.appendChild(b);
+      return b;
+    };
+
+    const prevBtn = makeBtn("fa-slider-prev", "Previous image", ICON_PREV);
+    const nextBtn = makeBtn("fa-slider-next", "Next image", ICON_NEXT);
+    const toggleBtn = makeBtn(
+      "fa-slider-toggle",
+      "Pause slideshow",
+      ICON_PAUSE,
+    );
+
+    // after a manual click the timer restarts, so the new image gets a full interval
+    prevBtn.addEventListener("click", () => {
+      stop();
+      prev();
+      start();
+    });
+    nextBtn.addEventListener("click", () => {
+      stop();
+      next();
+      start();
+    });
+    toggleBtn.addEventListener("click", () => {
+      paused = !paused;
+      toggleBtn.innerHTML = paused ? ICON_PLAY : ICON_PAUSE;
+      toggleBtn.setAttribute(
+        "aria-label",
+        paused ? "Play slideshow" : "Pause slideshow",
+      );
+      if (paused) stop();
+      else start();
+    });
   }
 
   el.addEventListener("mouseenter", stop);
@@ -94,6 +152,7 @@ function initSlider(el) {
     let dragging = false;
 
     el.addEventListener("pointerdown", (e) => {
+      if (e.target.closest("button")) return; // buttons are not swipes
       dragStartX = e.clientX;
       dragging = true;
       stop();

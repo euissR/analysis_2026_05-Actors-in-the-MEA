@@ -19,6 +19,11 @@ import { makeLineChart } from "./charts/lineChart.js";
 import { makeGeoBubbles } from "./charts/geoBubbles.js";
 import { colourActorNames } from "./actorNames.js";
 
+// chapter navigation (top link, previous/next bar, back to top); a failure here must not stop the charts
+import("./nav.js").catch((err) =>
+  console.error("Navigation failed to load:", err),
+);
+
 // chart types available to the chapter configs
 const CHART_TYPES = {
   dotMap: makeDotMap,

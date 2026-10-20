@@ -67,9 +67,12 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     return o;
   });
 
-  const label = (k) => spec.rowLabels?.[k] ?? actors.find((x) => x.actor === k)?.label ?? k;
+  const label = (k) =>
+    spec.rowLabels?.[k] ?? actors.find((x) => x.actor === k)?.label ?? k;
   const colorOf = (tok, row) =>
-    tok === "actor" ? (spec.rowColors?.[row] ?? theme.actorColors?.[row] ?? theme.light) : (theme.actorColors?.[tok] ?? theme[tok] ?? tok);
+    tok === "actor"
+      ? (spec.rowColors?.[row] ?? theme.actorColors?.[row] ?? theme.light)
+      : (theme.actorColors?.[tok] ?? theme[tok] ?? tok);
   const formats = {
     pct: (v) => `${v.toFixed(1)}%`,
     pct0: (v) => `${Math.round(v)}%`,
@@ -77,7 +80,8 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     num: (v) => d3.format(",.0f")(v),
   };
   const fmtOf = (p) => formats[p.format ?? "pct"];
-  const matches = (p, r) => Object.entries(p.where ?? {}).every(([k, v]) => r[k] === v);
+  const matches = (p, r) =>
+    Object.entries(p.where ?? {}).every(([k, v]) => r[k] === v);
 
   // one cell = one row in one panel: its segment values, their total and the optional end value
   const cell = (p, row) => {
@@ -95,7 +99,11 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     d3
       .sort(
         [...new Set(table.filter((r) => matches(p, r)).map((r) => r[rowKey]))],
-        (a, b) => d3.descending(cell(p, a)?.total ?? -Infinity, cell(p, b)?.total ?? -Infinity),
+        (a, b) =>
+          d3.descending(
+            cell(p, a)?.total ?? -Infinity,
+            cell(p, b)?.total ?? -Infinity,
+          ),
       )
       .filter((r) => cell(p, r));
 
@@ -141,7 +149,10 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     .attr("viewBox", `0 0 ${W} ${H}`)
     .attr("preserveAspectRatio", "xMidYMin meet")
     .attr("role", "img")
-    .attr("aria-label", typeof spec.title === "string" ? spec.title : "Bar chart");
+    .attr(
+      "aria-label",
+      typeof spec.title === "string" ? spec.title : "Bar chart",
+    );
   const gCols = svg.append("g");
   const gLabels = svg.append("g");
   const gBars = svg.append("g");
@@ -164,10 +175,17 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
   // ── render ──────────────────────────────────────────────────────────────
   function render(state, animate) {
     const t = d3.transition().duration(animate ? theme.duration : 0);
-    const panels = state.panels ? spec.panels.filter((p) => state.panels.includes(p.id)) : spec.panels;
+    const panels = state.panels
+      ? spec.panels.filter((p) => state.panels.includes(p.id))
+      : spec.panels;
     const np = panels.length;
     const hasSub = panels.some((p) => p.subtitle);
-    const M = { top: hasSub ? 90 : 62, right: 16, bottom: 30, left: spec.labelWidth ?? 92 };
+    const M = {
+      top: hasSub ? 90 : 62,
+      right: 16,
+      bottom: 30,
+      left: spec.labelWidth ?? 92,
+    };
     const colW = (W - M.left - M.right - GAP * (np - 1)) / np;
     const x0 = (c) => M.left + c * (colW + GAP);
 
@@ -186,12 +204,22 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
     const dotsOn = (p) => !!p.dot && state.dots !== false;
 
     // scales: each panel on its own axis unless it says "shared" (or has a fixed domain)
-    const totals = panels.map((p) => list.map((r) => cell(p, r)?.total).filter(Number.isFinite));
-    const sharedMax = d3.max(panels.flatMap((p, c) => (p.scale === "shared" ? totals[c] : []))) ?? 1;
+    const totals = panels.map((p) =>
+      list.map((r) => cell(p, r)?.total).filter(Number.isFinite),
+    );
+    const sharedMax =
+      d3.max(
+        panels.flatMap((p, c) => (p.scale === "shared" ? totals[c] : [])),
+      ) ?? 1;
     const xs = panels.map((p, c) => {
       const s = d3
         .scaleLinear()
-        .domain(p.domain ?? [0, p.scale === "shared" ? sharedMax : (d3.max(totals[c]) ?? 1)])
+        .domain(
+          p.domain ?? [
+            0,
+            p.scale === "shared" ? sharedMax : (d3.max(totals[c]) ?? 1),
+          ],
+        )
         .range([0, colW - (dotsOn(p) ? DOT_RESERVE : RESERVE)]);
       return p.domain ? s : s.nice(3);
     });
@@ -229,8 +257,10 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
       const narrow = colW < 150;
       const [d0, d1] = x.domain();
       const ticks = narrow ? [d0, d1] : x.ticks(3);
-      const anchor = (d) => (!narrow ? "middle" : d === d0 ? "start" : d === d1 ? "end" : "middle");
-      const fmtTick = (d) => ((p.format ?? "pct").startsWith("pct") ? `${d}%` : d3.format(",")(d));
+      const anchor = (d) =>
+        !narrow ? "middle" : d === d0 ? "start" : d === d1 ? "end" : "middle";
+      const fmtTick = (d) =>
+        (p.format ?? "pct").startsWith("pct") ? `${d}%` : d3.format(",")(d);
       col
         .append("g")
         .attr("class", "fa-range-grid")
@@ -271,11 +301,23 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
             .append("text")
             .attr("class", "fa-row-actor")
             .attr("text-anchor", "end")
-            .attr("dy", "0.35em")
             .attr("x", M.left - 10)
             .attr("y", (r, i) => yMid(i))
             .attr("opacity", 0)
-            .text(label),
+            .each(function (r) {
+              const lines = String(label(r)).split("\n");
+              const el = d3.select(this);
+              lines.forEach((ln, k) => {
+                el.append("tspan")
+                  .attr("x", M.left - 10)
+                  // first line is shifted up so the whole block stays centred on the row
+                  .attr(
+                    "dy",
+                    k === 0 ? `${0.35 - (lines.length - 1) * 0.55}em` : "1.1em",
+                  )
+                  .text(ln);
+              });
+            }),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
@@ -293,7 +335,12 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
           const v = Number.isFinite(cl.vals[k]) ? cl.vals[k] : 0;
           const o = {
             key: `${p.id}|${row}|${k}`,
-            row, c, i, p, s, cl,
+            row,
+            c,
+            i,
+            p,
+            s,
+            cl,
             start: acc,
             len: v,
             color: colorOf(s.color ?? "actor", row),
@@ -338,7 +385,9 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
         ? []
         : list.flatMap((row, i) => {
             const cl = cell(p, row);
-            return cl && Number.isFinite(cl.dot) ? [{ key: `${p.id}|${row}|dot`, row, c, i, p, cl, v: cl.dot }] : [];
+            return cl && Number.isFinite(cl.dot)
+              ? [{ key: `${p.id}|${row}|dot`, row, c, i, p, cl, v: cl.dot }]
+              : [];
           }),
     );
     gDots
@@ -378,7 +427,9 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
             return [
               {
                 key: `${p.id}|${row}`,
-                row, c, i,
+                row,
+                c,
+                i,
                 text: withDot ? `${f(cl.end)} (${f(cl.dot)})` : f(cl.end),
                 x: x0(c) + xs[c](reach) + (withDot ? 10 : 5),
               },
@@ -410,12 +461,21 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
   function showTip(event, d) {
     const fmt = fmtOf(d.p);
     const lines = d.p.segments
-      .map((s, k) => (Number.isFinite(d.cl.vals[k]) ? `${s.label ?? d.p.title}: ${fmt(d.cl.vals[k])}` : null))
+      .map((s, k) =>
+        Number.isFinite(d.cl.vals[k])
+          ? `${s.label ?? d.p.title}: ${fmt(d.cl.vals[k])}`
+          : null,
+      )
       .filter(Boolean)
       .join("<br>");
-    const dotLine = d.cl.dot != null && Number.isFinite(d.cl.dot) && d.p.dot ? `<br>${d.p.dot.label ?? "Marker"}: ${fmt(d.cl.dot)}` : "";
+    const dotLine =
+      d.cl.dot != null && Number.isFinite(d.cl.dot) && d.p.dot
+        ? `<br>${d.p.dot.label ?? "Marker"}: ${fmt(d.cl.dot)}`
+        : "";
     tooltip
-      .html(`<strong>${label(d.row)}</strong><br>${d.p.title ?? ""}<br>${lines}${dotLine}`)
+      .html(
+        `<strong>${label(d.row)}</strong><br>${d.p.title ?? ""}<br>${lines}${dotLine}`,
+      )
       .style("opacity", 1);
     hover.enter(event);
   }

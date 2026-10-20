@@ -518,7 +518,7 @@ body {
   height: 100%;
   object-fit: contain;
   box-sizing: border-box;
-  padding: clamp(8px, 2vw, 20px);
+  padding: clamp(3vw, 2vw, 20px);
   opacity: 0;
   transition: opacity 0.6s ease;
   pointer-events: none;
@@ -553,6 +553,44 @@ body {
   background: var(--fa-ink);
 }
 
+.fa-slider-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--fa-ink);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.fa-slider-btn:hover,
+.fa-slider-btn:focus-visible {
+  background: #fff;
+}
+
+.fa-slider-prev,
+.fa-slider-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fa-slider-prev { left: 10px; }
+.fa-slider-next { right: 10px; }
+
+.fa-slider-toggle {
+  right: 10px;
+  bottom: 10px;
+  width: 28px;
+  height: 28px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fa-slider-img,
   .fa-card-img {
@@ -572,4 +610,114 @@ body {
 /* ribbons (sankey): darken instead of outlining */
 .fa-hover-soft {
   filter: brightness(0.75);
+}
+
+/* ── chapter navigation (append to fa.css) ─────────────────────────────── */
+
+.fa-nav {
+  --fa-navy: #1d3956;
+  --fa-neutral: #1a1a1a;
+  --fa-ink: #1d1d1b;
+  --fa-muted: #646363;
+  --fa-light: #c6c6c6;
+  --fa-font: "PT Sans Narrow", "Arial Narrow", sans-serif;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.5rem;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 3rem auto 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--fa-light);
+  font-family: var(--fa-font);
+}
+
+.fa-nav a.fa-nav-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.7rem 1rem;
+  background: #fff;
+  border: 1px solid var(--fa-light);
+  border-radius: 2px;
+  color: var(--fa-ink);
+  text-decoration: none;
+  line-height: 1.15;
+}
+
+.fa-nav a.fa-nav-btn:hover {
+  border-color: var(--fa-neutral);
+}
+
+.fa-nav a.fa-nav-btn:focus-visible {
+  outline: 2px solid var(--fa-navy);
+  outline-offset: 2px;
+}
+
+.fa-nav-label {
+  font-size: 0.8125rem;
+  color: var(--fa-muted);
+}
+
+.fa-nav-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.fa-nav a.fa-nav-prev { grid-column: 1; justify-self: start; text-align: left; }
+.fa-nav a.fa-nav-home { grid-column: 2; align-items: center; text-align: center; }
+.fa-nav a.fa-nav-next { grid-column: 3; justify-self: end; text-align: right; }
+
+@media (max-width: 768px) {
+  .fa-nav { grid-template-columns: 1fr 1fr; }
+  .fa-nav a.fa-nav-prev { grid-column: 1; grid-row: 1; }
+  .fa-nav a.fa-nav-next { grid-column: 2; grid-row: 1; }
+  .fa-nav a.fa-nav-home { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* ── back to top ───────────────────────────────────────────────────────── */
+
+.fa-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 50;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: #1d3956;
+  color: #fff;
+  font: 700 1.25rem/1 "PT Sans Narrow", "Arial Narrow", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.fa-top[hidden] {
+  display: none;
+}
+
+.fa-top:hover {
+  background: #1a1a1a;
+}
+
+.fa-top:focus-visible {
+  outline: 2px solid #1d3956;
+  outline-offset: 3px;
+}
+
+/* ── link back to the landing page, top of page ────────────────────────── */
+
+.fa-crumb {
+  margin: 0 0 1rem;
+  font: 1rem/1.3 "PT Sans Narrow", "Arial Narrow", sans-serif;
+  color: #646363;
+}
+
+.fa-crumb a {
+  color: #1d3956;
+  text-decoration: underline;
 }
