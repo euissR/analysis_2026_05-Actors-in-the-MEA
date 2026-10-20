@@ -216,11 +216,11 @@ export function makeDotMap(
   const NONE = { r: 0, fill: "none", stroke: "none" }; // nothing drawn, nothing to hover
 
   // A single actor is drawn in its own colour (theme.actorColors), the same as in the
-  // text and the other charts; "all actors" and actors without a colour stay teal.
+  // text and the other charts; "all actors" and actors without a colour stay neutral.
   // In presence charts the category (rank) is then shown by a lighter tint of that colour
   // (and the size), since the colour itself now says who.
   const actorHue = (actor) => (actor === "all" ? null : theme.actorColors?.[actor] ?? null);
-  const countFill = (state) => actorHue(state.actor) ?? theme.teal;
+  const countFill = (state) => actorHue(state.actor) ?? theme.neutral;
   const TINTS = [0, 0.45, 0.7]; // strongest category first, in the order of spec.categories
   function catLook(presence, actor) {
     const cat = cats[presence] ?? cats.None;

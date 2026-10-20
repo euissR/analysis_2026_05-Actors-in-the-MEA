@@ -1,22 +1,8 @@
-actor,type,in_chart,stock_usd_bn_2019_21,stock_usd_bn_2022_24,change_pct,scale_pct,scale_exmus_pct,conc_pct,conc_mauritius_pct,conc_other_pct,mauritius_pct_of_position,gdp_weighted_pct,gdp_coverage_pct,hosts_observed,hosts_with_position,hosts_led,top3_hosts,note
-EU,Listed actor,TRUE,287.27,268.04,-6.69,28.28,40.39,45.24,0,45.24,8.72,42.04,99.95,48,52,35,"South Africa, Egypt, Morocco",
-USA,Listed actor,TRUE,104.96,107.05,1.99,11.3,6.12,85.2,65.38,19.83,65.38,8.28,98.06,41,40,1,"Mauritius, Egypt, South Africa",
-GCC,Aggregate of listed,TRUE,38.12,52.91,38.81,5.58,6.05,85.07,30.79,54.29,30.79,3.19,75.77,24,26,1,"Mozambique, Mauritius, Morocco",
-IND,Listed actor,TRUE,31.76,49.38,55.48,5.21,1.49,93.3,81.72,11.59,81.72,0.8,91.88,38,39,1,"Mauritius, Mozambique, Zambia",
-CHN,Listed actor,TRUE,37.39,40.71,8.86,4.3,6.41,39.49,0,39.49,4.69,8.53,99.15,47,51,13,"Niger, South Africa, Congo, Democratic Republic of the",
-JPN,Listed actor,TRUE,8.08,8.63,6.81,0.91,0.62,96.08,56.15,39.94,56.15,0.45,56.25,16,14,0,"Mauritius, South Africa, Algeria",
-TUR,Listed actor,TRUE,1.28,2,56.46,0.21,0.33,54.61,0,54.61,1.43,0.34,82.43,28,28,1,"Guinea, Algeria, Morocco",
-unlisted,Derived bucket,FALSE,315.69,299.2,-5.22,31.57,24.13,77.1,51.15,25.95,51.15,22.5,99.98,48,51,0,"Mauritius, South Africa, Nigeria",
-intra_africa,Derived bucket,FALSE,103.38,109.47,5.89,11.55,13.12,48.5,27.43,21.06,27.43,12.62,100,49,51,0,"Mauritius, Mozambique, Kenya",
-ARE,Listed actor,FALSE,31.75,44.68,40.72,4.72,4.92,90.85,33.34,57.51,33.34,1.93,58.9,19,20,0,"Mozambique, Mauritius, Morocco",
-unspecified,Derived bucket,FALSE,10.04,9.49,-5.5,1,1.35,76.55,13.76,62.79,13.76,0.68,53.39,16,16,0,"Namibia, South Africa, Mauritius",
-KWT,Listed actor,FALSE,2.75,3.82,38.79,0.4,0.53,79.65,15.56,64.09,15.56,0.6,64.84,11,12,0,"Morocco, Tunisia, Mauritius",
-KOR,Listed actor,FALSE,2.92,2.48,-14.99,0.26,0.4,48.96,0,48.96,1.65,0.44,99.06,46,44,0,"Madagascar, Morocco, Nigeria",
-SAU,Listed actor,FALSE,0.94,1.94,105.83,0.2,0.31,92.11,0,92.11,2.39,0.25,48.38,12,12,0,"Morocco, Algeria, South Africa",
-QAT,Listed actor,FALSE,1.46,1.38,-5.43,0.15,0.22,78.25,0,78.25,3.47,0.25,49.21,12,11,0,"Algeria, Morocco, Guinea",Position below USD 1.5bn - ratios unstable
-other_me,Derived bucket,FALSE,1.76,1.31,-25.59,0.14,0.22,84.03,0,84.03,0,0.34,57.45,17,19,0,"Algeria, Morocco, Cote d’Ivoire",Position below USD 1.5bn - ratios unstable
-ISR,Listed actor,FALSE,1.6,1.2,-25.43,0.13,0.02,102.58,88.11,14.48,88.11,0.01,50.59,14,12,0,"Mauritius, South Africa, Ghana",Concentration not meaningful: negative host positions
-OMN,Listed actor,FALSE,0.82,0.85,4.01,0.09,0.05,97.49,66.09,31.41,66.09,0.09,33.94,8,8,0,"Mauritius, Algeria, Tanzania",Position below USD 1.5bn - ratios unstable
-RUS,Listed actor,FALSE,0.86,0.32,-62.56,0.03,0.1,173.95,0,173.95,-91.17,0.12,48.48,11,9,0,"Burkina Faso, Tanzania, Algeria",Concentration not meaningful: negative host positions
-BHR,Listed actor,FALSE,0.39,0.24,-39.42,0.02,0.02,184.74,59.17,125.57,59.17,0.07,44.28,8,6,0,"Algeria, Mauritius, South Africa",Concentration not meaningful: negative host positions
-IRN,Listed actor,FALSE,0.02,0.01,-49.84,0,0,99.45,0,99.45,0.37,0,6.96,5,5,0,"Senegal, Rwanda, Morocco",Position below USD 1.5bn - ratios unstable
+actor,scale_pct,conc_pct,conc_mauritius_pct,conc_other_pct,gdp_weighted_pct,gdp_coverage_pct,stock_usd_bn_2019_21,stock_usd_bn_2022_24,hosts_led,top3_hosts
+EU,28.49190419903937,44.96439941338822,0,44.96439941338822,42.31510856777985,99.9513915082619,289.2458298603186,270.0111527872383,35,"South Africa, Egypt, Morocco"
+USA,11.512179616647131,83.60555868974747,64.15137618032836,19.454182509419113,8.00608238179137,90.20047186055923,105.07701091304345,109.09825007376804,1,"Mauritius, Egypt, South Africa"
+GCC,5.664175488006672,83.85687354486396,30.347644687719104,53.509228857144855,3.141764226499622,70.6977033683931,38.344370634734865,53.678074389898605,1,"Mozambique, Mauritius, Morocco"
+IND,5.210889829888892,93.30328327042217,81.71604559432245,11.587237676099718,0.7926173075836924,91.54302197640895,31.760787124354486,49.38239157995744,1,"Mauritius, Mozambique, Zambia"
+CHN,4.295401857865442,39.492027070055435,0,39.492027070055435,8.490478315873286,98.78110857988706,37.393675665582585,40.706524885963816,13,"Niger, South Africa, DR Congo"
+JPN,0.9216040168266366,94.95547457390593,55.486921149158064,39.46855342474787,0.43285200369751403,48.06190203732009,8.137272950253267,8.733827028840688,0,"Mauritius, South Africa, Algeria"
+TUR,0.21103326484040685,54.60641303475043,0,54.60641303475043,0.5693346352718343,82.5049349984383,1.2781856694082945,1.9999131935145984,1,"Guinea, Algeria, Morocco"

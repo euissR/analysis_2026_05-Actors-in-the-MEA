@@ -104,12 +104,12 @@ const FN13 =
 const FN14 =
   "¹⁴ These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
 const FN15 =
-  "¹⁵ No available data for Algeria, Burkina Faso, Burundi, Central African Republic, Djibouti, DR Congo, Egypt, Equatorial Guinea, Eritrea, Ethiopia, Guinea-Bissau, Libya, Niger, Rwanda, Somalia, South Sudan, Sudan. Source: Afrobarometer, R10 2024/2025 (https://www.afrobarometer.org/surveys-and-methods/survey-resources/). ";
+  "¹⁵ Afrobarometer, round 10 (2024/2025), 37 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused. Means of country values; the former colonial power is rated in 36 countries.";
 const FN_ETH = "2015 level shown (54,628); 2024: 26,824. " + FN13;
 
 // dot sizes compare across the two maps: the same value gets the same radius (21 = member states with any presence, the largest count)
-const DOT_MAX = 21;
-const DOT_R = 12;
+const DOT_MAX = 42;
+const DOT_R = 24;
 
 const SRC_DEV =
   "Data: official websites of agencies, ministries and entities, most recent report available (2023–2025).";
@@ -135,7 +135,7 @@ const PERC_LABELS = {
   perc_CHN: "China",
   perc_USA: "US",
   perc_EU: "EU",
-  perc_FCP: "Former colonial power",
+  perc_FCP: "Former colonial\npower",
   perc_IND: "India",
   perc_RUS: "Russia",
 };
@@ -403,7 +403,7 @@ export default {
         rows.map((r) => ({ ...r, row: `perc_${r.actor}` })),
       rows: PERC_ROWS,
       rowLabels: PERC_LABELS,
-      labelWidth: 140,
+      labelWidth: 108,
       title: "Perceived influence of external actors in Africa",
       subtitle:
         "Share of respondents by how they rate each actor’s influence, 2024/2025",

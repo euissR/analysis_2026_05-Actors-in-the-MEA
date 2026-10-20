@@ -13,6 +13,7 @@ import { theme } from "../theme.js";
 const crowded = ["DZA", "EGY", "ETH", "KEN", "SEN", "TUN"];
 const south = "Southern Africa and Indian Ocean";
 const dense = ["COD", "EGY", "MAR", "NGA", "ZAF"]; // highest density of partnerships
+const uae = ["AGO", "CAF", "COD", "COG", "GAB", "KEN", "MUS"]; // UAE economic partnership agreements
 
 export default {
   charts: {
@@ -238,9 +239,13 @@ export default {
   },
 
   steps: {
-    emb_chn: { chart: "emb", state: { actor: "CHN" } },
-    emb_eu: { chart: "emb", state: { actor: "EU" } },
+    emb_chn: { chart: "emb", state: { actor: "CHN", labels: ["SWZ"] } },
+    emb_eu: {
+      chart: "emb",
+      state: { actor: "EU", labels: ["COM", "GNQ", "SYC"] },
+    },
     emb_us: { chart: "emb", state: { actor: "USA" } },
+    emb_rus: { chart: "emb", state: { actor: "RUS" } },
     emb_all: {
       chart: "emb",
       state: { actor: "all", highlight: crowded, labels: crowded },
@@ -251,6 +256,14 @@ export default {
     vis_north: {
       chart: "vis",
       state: { actor: "all", subregion: "North Africa" },
+    },
+    vis_nor_eu: {
+      chart: "vis",
+      state: { actor: "EU", subregion: "North Africa", labels: ["EGY", "TUN"] },
+    },
+    vis_nor_tur: {
+      chart: "vis",
+      state: { actor: "TUR", subregion: "North Africa", labels: ["EGY", "DZA"] },
     },
     vis_eu: {
       chart: "vis",
@@ -264,7 +277,43 @@ export default {
         labels: ["EGY", "DZA", "LBY"],
       },
     },
+    vis_tur_w: {
+      chart: "vis",
+      state: {
+        actor: "TUR",
+        subregion: "West Africa",
+        labels: ["BFA", "CPV", "CIV", "MRT"],
+      },
+    },
     vis_chn: { chart: "vis", state: { actor: "CHN" } },
+    vis_chn_s: {
+      chart: "vis",
+      state: { actor: "CHN", subregion: south, labels: ["ZAF"] },
+    },
+    vis_chn_w: {
+      chart: "vis",
+      state: { actor: "CHN", subregion: "West Africa", labels: ["SEN", "NGA"] },
+    },
+    vis_chn_e: {
+      chart: "vis",
+      state: {
+        actor: "CHN",
+        subregion: "East Africa and the Horn of Africa",
+        labels: ["ETH"],
+      },
+    },
+    vis_chn_c: {
+      chart: "vis",
+      state: {
+        actor: "CHN",
+        subregion: "Central Africa",
+        labels: ["BDI", "TCD", "COD", "GAB", "COG"],
+      },
+    },
+    vis_chn_n: {
+      chart: "vis",
+      state: { actor: "CHN", subregion: "North Africa", labels: ["EGY"] },
+    },
     vis_ind: {
       chart: "vis",
       state: { actor: "IND", subregion: south, labels: ["ZAF", "MUS"] },
@@ -277,18 +326,33 @@ export default {
       chart: "vis",
       state: { actor: "KOR", subregion: south, labels: ["ZAF", "MUS"] },
     },
+    vis_jpn_most: {
+      chart: "vis",
+      state: { actor: "JPN", subregion: south },
+    },
 
     sum_intro: { chart: "sum", state: {} },
     sum_au: { chart: "sum", state: { highlight: ["EU"] } },
+    sum_ms: { chart: "sum", state: { highlight: ["FRA", "ITA"] } },
     sum_crowded: { chart: "sum", state: {} },
     sum_reliable: {
       chart: "sum",
-      state: { highlight: ["EU", "CHN", "JPN", "RUS", "TUR", "SAU", "KOR"] },
+      state: { highlight: ["EU", "CHN", "JPN"] },
     },
+    sum_chn: { chart: "sum", state: { highlight: ["CHN"] } },
+    sum_jpn: { chart: "sum", state: { highlight: ["JPN"] } },
+    sum_new: {
+      chart: "sum",
+      state: { highlight: ["RUS", "TUR", "SAU", "KOR"] },
+    },
+    sum_rus: { chart: "sum", state: { highlight: ["RUS"] } },
+    sum_sau_kor: { chart: "sum", state: { highlight: ["SAU", "KOR"] } },
     sum_iran: { chart: "sum", state: { highlight: ["IRN"] } },
+    sum_isr: { chart: "sum", state: {} },
 
     lab_intro: { chart: "lab", state: { actor: "all" } },
     lab_chn: { chart: "lab", state: { actor: "CHN" } },
+    lab_sel: { chart: "lab", state: { actor: "all" } },
     lab_eu: {
       chart: "lab",
       state: {
@@ -300,7 +364,6 @@ export default {
           "TUN",
           "COD",
           "RWA",
-          "ZAF",
           "ZMB",
           "NAM",
           "MAR",
@@ -312,7 +375,7 @@ export default {
       chart: "lab",
       state: { actor: "USA", labels: ["MAR", "TUN", "EGY", "KEN"] },
     },
-    lab_uae: { chart: "lab", state: { actor: "ARE" } },
+    lab_uae: { chart: "lab", state: { actor: "ARE", labels: uae } },
     lab_ind: { chart: "lab", state: { actor: "IND", labels: ["MUS"] } },
     lab_rus: {
       chart: "lab",
@@ -328,6 +391,10 @@ export default {
       state: { measure: "abs", period: "all" },
     },
     unga_ukr_abst: {
+      chart: "unga_ukr",
+      state: { measure: "abs", period: "all" },
+    },
+    unga_ukr_abst2: {
       chart: "unga_ukr",
       state: { measure: "abs", period: ["1621", "2226"] },
     },

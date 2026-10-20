@@ -61,8 +61,8 @@ EU,EU,STP,São Tomé and Príncipe,Central Africa,TRUE,2015,FALSE,118
 EU,EU,STP,São Tomé and Príncipe,Central Africa,TRUE,2024,FALSE,95
 EU,EU,ERI,Eritrea,East Africa and HoA,TRUE,2015,FALSE,436
 EU,EU,ERI,Eritrea,East Africa and HoA,TRUE,2024,FALSE,341
-EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,1542
-EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,1489
+EU,EU,TZA,Tanzania,East Africa and HoA,TRUE,2015,FALSE,1542
+EU,EU,TZA,Tanzania,East Africa and HoA,TRUE,2024,FALSE,1489
 EU,EU,DZA,Algeria,North Africa,FALSE,2015,FALSE,1954
 EU,EU,DZA,Algeria,North Africa,FALSE,2024,FALSE,2103
 EU,EU,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
@@ -121,8 +121,8 @@ India,IND,SSD,South Sudan,East Africa and HoA,TRUE,2015,FALSE,1414
 India,IND,SSD,South Sudan,East Africa and HoA,TRUE,2024,FALSE,1501
 India,IND,SDN,Sudan,East Africa and HoA,TRUE,2015,FALSE,1277
 India,IND,SDN,Sudan,East Africa and HoA,TRUE,2024,FALSE,3066
-India,IND,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,8010
-India,IND,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,7744
+India,IND,TZA,Tanzania,East Africa and HoA,TRUE,2015,FALSE,8010
+India,IND,TZA,Tanzania,East Africa and HoA,TRUE,2024,FALSE,7744
 India,IND,EGY,Egypt,North Africa,FALSE,2015,FALSE,0
 India,IND,EGY,Egypt,North Africa,FALSE,2024,FALSE,1141
 India,IND,LBY,Libya,North Africa,FALSE,2015,FALSE,4826
@@ -253,10 +253,10 @@ US,USA,COG,Congo,Central Africa,TRUE,2015,FALSE,166
 US,USA,COG,Congo,Central Africa,TRUE,2024,FALSE,163
 US,USA,GAB,Gabon,Central Africa,TRUE,2015,FALSE,502
 US,USA,GAB,Gabon,Central Africa,TRUE,2024,FALSE,594
+US,USA,TZA,Tanzania,East Africa and HoA,TRUE,2015,FALSE,1291
+US,USA,TZA,Tanzania,East Africa and HoA,TRUE,2024,FALSE,1247
 US,USA,UGA,Uganda,East Africa and HoA,TRUE,2015,FALSE,1174
 US,USA,UGA,Uganda,East Africa and HoA,TRUE,2024,FALSE,1422
-US,USA,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,1291
-US,USA,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,1247
 US,USA,DZA,Algeria,North Africa,FALSE,2015,FALSE,1032
 US,USA,DZA,Algeria,North Africa,FALSE,2024,FALSE,1111
 US,USA,EGY,Egypt,North Africa,FALSE,2015,FALSE,0

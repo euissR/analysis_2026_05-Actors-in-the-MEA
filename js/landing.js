@@ -6,14 +6,17 @@ import { makeOverviewMap } from "./charts/overviewMap.js";
 
 // slider: PNGs in img/slider/
 const SLIDER_IMAGES = [
-  "key visual mil_ex.png",
-  "key visual sop_dia_ext.png",
-  "key visual eco_hydro.png",
-  "key visual mil_dep.png",
-  "key visual eco_green.png",
-  "key visual eco_aid.png",
+  "landing_1b emb pack.png",
+  "landing_13 debt.png",
+  "12_invest fdi.png",
+  "landing_11 trade china green.png",
+  "landing_10 trade china hydro.png",
+  "landing_4b exe isotype.png",
+  "landing_3 dia map.png",
+  "landing_2b vis pack.png",
+  "landing_1a emb map.png",
 ];
-const SLIDER_INTERVAL = 4500; // ms between images
+const SLIDER_INTERVAL = 5500; // ms between images
 
 const url = (file) => `${CONFIG.BASE_URL}/data/${file}`;
 
@@ -38,7 +41,7 @@ function initSlider(el) {
   const imgs = SLIDER_IMAGES.map((file, i) => {
     const img = document.createElement("img");
     img.className = "fa-slider-img" + (i === 0 ? " on" : "");
-    img.src = `${CONFIG.BASE_URL}/img/slider/${encodeURI(file)}`;
+    img.src = `${CONFIG.BASE_URL}/src/${encodeURI(file)}`;
     img.alt = "";
     el.appendChild(img);
     return img;
@@ -119,7 +122,11 @@ function initSlider(el) {
 
 // ── go ────────────────────────────────────────────────────────────────────
 
-document.querySelectorAll(".fa-overview").forEach((el) =>
-  initMap(el).catch((err) => console.error("Overview map failed to load:", err)),
-);
+document
+  .querySelectorAll(".fa-overview")
+  .forEach((el) =>
+    initMap(el).catch((err) =>
+      console.error("Overview map failed to load:", err),
+    ),
+  );
 document.querySelectorAll(".fa-slider").forEach(initSlider);

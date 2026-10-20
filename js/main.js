@@ -15,6 +15,7 @@ import { makePeriodRange } from "./charts/periodRange.js";
 import { makeFlowBars } from "./charts/flowBars.js";
 import { makePanelBars } from "./charts/panelBars.js";
 import { makeBubble } from "./charts/bubble.js";
+import { makeLineChart } from "./charts/lineChart.js";
 import { makeGeoBubbles } from "./charts/geoBubbles.js";
 import { colourActorNames } from "./actorNames.js";
 
@@ -30,6 +31,7 @@ const CHART_TYPES = {
   flowBars: makeFlowBars,
   panelBars: makePanelBars,
   bubble: makeBubble,
+  lineChart: makeLineChart,
   geoBubbles: makeGeoBubbles,
 };
 

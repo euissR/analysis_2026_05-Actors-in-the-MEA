@@ -11,31 +11,70 @@
 //
 // All charts compare annual averages 2019–21 and 2022–24, current USD (Growth Lab, HS12).
 //   partners  total trade, share of each actor (ECON 1.1, 1.2)
+//   exports   the region's goods exports to each actor, share of its exports (agri_cen_goods)
 //   balances  trade balance of each actor, total / hydrocarbon / non-hydrocarbon (ECON 1.3, 1.4)
-//   products  green energy, high-tech (incl. pharma), agri-food, cereals (ECON 2.1 to 2.5)
+//   products  green energy, high-tech (incl. pharma), agri-food, cereals, fertilizers (ECON 2.1 to 2.6)
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts
 // show the data.
 //   split sentences (the chart shows one actor or one basket at a time, so a sentence with
 //   two is cut at the clause boundary): bal_eu_total / bal_eu_hydro / bal_eu_nonhydro,
 //   bal_chn_total / bal_chn_nonhydro, bal_na_regions / bal_na_values, pha_total / pha_india,
-//   hit_eu / hit_chn, agri_eu_exp / agri_eu_imp
+//   hit_eu / hit_chn, agri_eu_exp / agri_eu_imp, cer_intro / cer_eu, fer_intro / fer_na_exp,
+//   fer_ssa_imp / fer_ssa_sup / fer_na_eu
+//   Sub-Saharan Africa is not in the workbook (Africa + five regions). The R scripts add it as
+//   "Sub-Saharan Africa": the four regions summed (shares: summed values over summed totals).
 //   tra_eu         the Asian four (28.7%) are four separate rows; the sum is not drawn
 //   tra_na         "over half of the EU's trade with Africa" is the EU's own trade by region,
 //                  not a share of a region's trade: not drawn (the chart shows the EU's
 //                  share of North African trade)
-//   tra_ssa        Sub-Saharan Africa is not in the data (Africa + five regions): the four
-//                  regions are shown instead of one aggregate
 //   bal_na_regions the 70% share of the EU's continent-wide swing is not drawn
 //   gre_intro      the USD 2.2bn total is in the subtitle; the rows are the actors' own values
 //   hit_eu         "pharmaceuticals and aircrafts": the pharma basket is shown (aerospace is
 //                  in the data, basket "aerospace")
 //   pha_total      India's 6.2% of total trade is shown on the partners chart
-//   agri_na        the EU's North African import share (28%) and the sub-Saharan Africa
-//                  figures (28%, 20%) are not drawn; the step shows the five regions' exports.
-//                  Also agri_chn: the sub-Saharan aggregate is the four regions
+//   agri_cen       "39% in West and North Africa" is 38.8% and 39.0%: the three regions are shown
+//   agri_cen_goods the 19% is the EU's share of Central Africa's goods exports (all goods, not
+//                  agriculture), from trade_1_flows
+//   agri_cen_share "less than 5% of EU–Africa goods trade" (4.8%) is not drawn: the chart shows
+//                  the EU's trade with each region in USD bn
+//   agri_chn       the chart shows North Africa next to Sub-Saharan Africa (imports); the
+//                  sentence is as in the source, but "former’s" no longer has a clear referent
+//                  after the new Central Africa sentences
 //   cer_rus        the year-by-year shares sit in the line under the subtitle
-//   footnotes 2 to 4 and the cereals asterisk are drafts, from the source document
+//   cer_ind        "However, two partners ..." opens the step; India and Russia are both
+//                  highlighted
+//   fer_intro      the divide between regions is shown as values by region (USD bn)
+//   fer_na_exp     the continent and North Africa side by side, values (USD bn); the 83%, 96%
+//                  and 93% are North Africa's part of Africa's exports (all, to the EU, to
+//                  India): not drawn
+//   fer_ssa_imp / fer_ssa_sup / fer_na_eu
+//   Sub-Saharan Africa is not in the workbook (Africa + five regions). The R scripts add it as
+//   "Sub-Saharan Africa": the four regions summed (shares: summed values over summed totals).
+//   tra_eu         the Asian four (28.7%) are four separate rows; the sum is not drawn
+//   tra_na         "over half of the EU's trade with Africa" is the EU's own trade by region,
+//                  not a share of a region's trade: not drawn (the chart shows the EU's
+//                  share of North African trade)
+//   bal_na_regions the 70% share of the EU's continent-wide swing is not drawn
+//   gre_intro      the USD 2.2bn total is in the subtitle; the rows are the actors' own values
+//   hit_eu         "pharmaceuticals and aircrafts": the pharma basket is shown (aerospace is
+//                  in the data, basket "aerospace")
+//   pha_total      India's 6.2% of total trade is shown on the partners chart
+//   agri_chn       the chart shows North Africa next to Sub-Saharan Africa (imports); the
+//                  text no longer gives the 39% / 28% / 28% / 20% figures (agri_na was cut from
+//                  the source) and "the opposite geography" / "former's" have lost their
+//                  referent: left as in the source
+//   cer_rus        the year-by-year shares sit in the line under the subtitle
+//   cer_ind        "However, two partners ..." opens the step; India and Russia are both
+//                  highlighted
+//   fer_intro      "83% of exports", "96% to the EU" and "93% to India" are shares of
+//                  Africa's flow to a partner, not of a partner's share: the step shows the
+//                  values by region (USD bn), the shares are in the tooltips of fer_na_exp
+//   fer_na_exp     the continent and North Africa side by side, values (USD bn); the 83%,
+//                  96% and 93% are not drawn
+//   fer_ssa_imp    the 87% is not drawn; North Africa and Sub-Saharan Africa are shown in USD bn
+//   footnotes 2 to 4 and the cereals asterisk are drafts, from the source document;
+//   the fertilizers asterisk is the source's wording
 //   typos kept as in the source: "former’s agricultural trade", "in SSA."
 //   not in the data: the Gulf as separate states (GCC only), South Korea / Japan / Iran /
 //   Israel have rows but no text of their own
@@ -50,13 +89,13 @@ const FIVE = [
   "East Africa and HoA",
   "Southern Africa and Indian Ocean",
 ];
-const SSA = FIVE.filter((g) => g !== "North Africa");
 
 const PRODUCT = {
   green: "Green-energy products",
   hitech: "High-tech products",
   agri: "Agri-food products",
   cereals: "Cereals",
+  fertilizers: "Fertilizers",
 };
 const BASKET = {
   pharma: "Pharmaceuticals",
@@ -93,6 +132,26 @@ export default {
       },
     },
 
+    exports: {
+      type: "periodRange",
+      data: "trade_1_flows",
+      measure: "share_pct",
+      filter: { flow: "exports" },
+      title: "Africa’s trading partners: exports",
+      subtitle: (s) =>
+        s.measure === "value_usd_bn"
+          ? `Average annual goods exports to each actor, USD bn ${where(s)}`
+          : `Share of goods exports going to each actor, % ${where(s)}`,
+      source: SOURCE,
+      geoLabelsShort: {
+        "North Africa": "North",
+        "West Africa": "West",
+        "Central Africa": "Central",
+        "East Africa and HoA": "East & Horn",
+        "Southern Africa and Indian Ocean": "Southern",
+      },
+    },
+
     balances: {
       type: "periodRange",
       data: "trade_1_balances",
@@ -117,11 +176,11 @@ export default {
       extra: { annual: "trade_2_cereals_annual_{suffix}" },
       measure: "share_pct",
       filter: { product: "green", basket: "all", flow: "imports" },
-      title: (s) =>
-        BASKET[s.basket] ?? PRODUCT[s.product ?? "green"],
+      title: (s) => BASKET[s.basket] ?? PRODUCT[s.product ?? "green"],
       subtitle: (s, info) => {
         const flow = s.flow ?? "imports";
-        const dir = flow === "exports" ? "exports going to" : "imports coming from";
+        const dir =
+          flow === "exports" ? "exports going to" : "imports coming from";
         const base =
           s.measure === "value_usd_bn"
             ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, USD bn`
@@ -156,7 +215,7 @@ export default {
     },
     tra_ssa: {
       chart: "partners",
-      state: { geos: SSA, highlight: ["CHN", "EU"] },
+      state: { geos: ["Sub-Saharan Africa"], highlight: ["CHN", "EU"] },
     },
     tra_central: {
       chart: "partners",
@@ -212,7 +271,11 @@ export default {
     },
     gre_na: {
       chart: "products",
-      state: { product: "green", geos: ["North Africa"], highlight: ["CHN", "EU"] },
+      state: {
+        product: "green",
+        geos: ["North Africa"],
+        highlight: ["CHN", "EU"],
+      },
     },
 
     // ── ECON 2.2: high-tech ─────────────────────────────────────────────────
@@ -231,7 +294,11 @@ export default {
     },
     hit_chn: {
       chart: "products",
-      state: { product: "hitech", basket: "electronics", highlight: ["CHN", "EU"] },
+      state: {
+        product: "hitech",
+        basket: "electronics",
+        highlight: ["CHN", "EU"],
+      },
     },
 
     // ── ECON 2.3: pharma (India) ────────────────────────────────────────────
@@ -269,32 +336,113 @@ export default {
       chart: "products",
       state: { product: "agri", flow: "imports", highlight: ["EU"] },
     },
-    agri_na: {
+    agri_cen: {
       chart: "products",
-      state: { product: "agri", flow: "exports", geos: FIVE, highlight: ["EU"] },
+      state: {
+        product: "agri",
+        flow: "exports",
+        geos: ["North Africa", "West Africa", "Central Africa"],
+        highlight: ["EU"],
+      },
+    },
+    agri_cen_goods: {
+      chart: "exports",
+      state: { geos: ["Central Africa"], highlight: ["EU"] },
+    },
+    agri_cen_share: {
+      chart: "partners",
+      state: { geos: FIVE, measure: "value_usd_bn", highlight: ["EU"] },
     },
     agri_chn: {
       chart: "products",
-      state: { product: "agri", flow: "imports", geos: FIVE, highlight: ["CHN"] },
+      state: {
+        product: "agri",
+        flow: "imports",
+        geos: ["North Africa", "Sub-Saharan Africa"],
+        highlight: ["CHN"],
+      },
     },
 
     // ── ECON 2.5: cereals ───────────────────────────────────────────────────
     cer_intro: {
       chart: "products",
-      state: { product: "cereals", highlight: ["EU", "IND", "RUS"] },
+      state: { product: "cereals" },
+    },
+    cer_eu: {
+      chart: "products",
+      state: { product: "cereals", highlight: ["EU"] },
     },
     cer_ind: {
       chart: "products",
       state: {
         product: "cereals",
-        highlight: ["IND"],
+        highlight: ["IND", "RUS"],
         footnote:
           "* Despite restrictions on wheat exports from 2022 and on some rice categories from 2023 (both lifted as of 2026 and 2024/25 respectively).",
       },
     },
     cer_rus: {
       chart: "products",
-      state: { product: "cereals", highlight: ["RUS"], annual: { actor: "RUS" } },
+      state: { product: "cereals", highlight: ["RUS"] },
+    },
+
+    // ── ECON 2.6: fertilizers (HS31) ────────────────────────────────────────
+    fer_intro: {
+      chart: "products",
+      state: {
+        product: "fertilizers",
+        flow: "exports",
+        measure: "value_usd_bn",
+        geos: FIVE,
+        highlight: ["EU", "IND"],
+        footnote:
+          "* Fertilizers (HS31) are separate from the agri-food HS Sections I–IV basket.",
+      },
+    },
+    fer_na_exp: {
+      chart: "products",
+      state: {
+        product: "fertilizers",
+        flow: "exports",
+        measure: "value_usd_bn",
+        geos: ["Africa", "North Africa"],
+        highlight: ["EU", "IND"],
+      },
+    },
+    fer_eu_exp: {
+      chart: "products",
+      state: {
+        product: "fertilizers",
+        flow: "exports",
+        highlight: ["EU", "IND", "USA"],
+      },
+    },
+    fer_ssa_imp: {
+      chart: "products",
+      state: {
+        product: "fertilizers",
+        flow: "imports",
+        measure: "value_usd_bn",
+        geos: ["North Africa", "Sub-Saharan Africa"],
+      },
+    },
+    fer_ssa_sup: {
+      chart: "products",
+      state: {
+        product: "fertilizers",
+        flow: "imports",
+        geos: ["Sub-Saharan Africa"],
+        highlight: ["GCC", "RUS", "EU"],
+      },
+    },
+    fer_na_eu: {
+      chart: "products",
+      state: {
+        product: "fertilizers",
+        flow: "imports",
+        geos: ["North Africa", "Sub-Saharan Africa"],
+        highlight: ["EU"],
+      },
     },
   },
 };

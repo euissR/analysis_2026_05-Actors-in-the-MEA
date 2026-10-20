@@ -21,6 +21,10 @@
 // state (all optional):
 //   geos:         one geography = one large panel; several = a grid of small panels on one scale
 //   highlight:    actor codes at full strength, the rest dimmed (labelled in small panels)
+//   layout:       "column" = one measure only (single panel): all bubbles share one horizontal
+//                 position at their vertical value (y), overplotted; no horizontal axis. Any other
+//                 value (default) = x and y. Moving from "column" to the default animates the
+//                 bubbles sideways to their x value.
 //   title, subtitle, footnote: override the spec text for this step
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
@@ -84,6 +88,7 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
     const cw = (W - M.left - M.right - GX * (cols - 1)) / cols;
     const ch = (H - top - M.bottom - GY * (nrows - 1)) / nrows;
     const hi = state.highlight?.length ? new Set(state.highlight) : null;
+    const oneD = state.layout === "column" && n === 1;
     const op = (a) => (!hi || hi.has(a) ? 0.9 : theme.dim);
 
     const rMax = n === 1 ? 38 : n <= 4 ? 22 : 15;
@@ -144,14 +149,15 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
         .attr("x2", cw)
         .attr("y1", (d) => py(d))
         .attr("y2", (d) => py(d));
-      // zero line of the horizontal measure
-      a.append("line")
-        .attr("x1", px(0))
-        .attr("x2", px(0))
-        .attr("y1", 0)
-        .attr("y2", ch)
-        .attr("stroke", theme.grey)
-        .attr("stroke-width", 1);
+      // zero line of the horizontal measure (not in the one-measure layout)
+      if (!oneD)
+        a.append("line")
+          .attr("x1", px(0))
+          .attr("x2", px(0))
+          .attr("y1", 0)
+          .attr("y2", ch)
+          .attr("stroke", theme.grey)
+          .attr("stroke-width", 1);
       if (c % cols === 0) {
         a.append("g")
           .attr("class", "fa-axis")
@@ -164,7 +170,7 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
           .attr("text-anchor", "end")
           .text((d) => `${d}%`);
       }
-      if (c + cols >= n) {
+      if (c + cols >= n && !oneD) {
         a.append("g")
           .attr("class", "fa-axis")
           .selectAll("text")
@@ -184,7 +190,7 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
       .attr("x", plotMid)
       .attr("y", H - 14)
       .attr("text-anchor", "middle")
-      .text(`← ${spec.xTitleLeft ?? "net repayment"}  ·  ${spec.xTitle ?? ""}  ·  ${spec.xTitleRight ?? "net lending"} →`);
+      .text(oneD ? "" : `← ${spec.xTitleLeft ?? "net repayment"}  ·  ${spec.xTitle ?? ""}  ·  ${spec.xTitleRight ?? "net lending"} →`);
     titles
       .append("text")
       .attr("transform", `translate(14,${top + (nrows * ch + GY * (nrows - 1)) / 2}) rotate(-90)`)
@@ -193,7 +199,8 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
 
     // bubbles, largest first so the small ones stay visible
     const sorted = d3.sort(pts, (a, b) => d3.descending(a._s, b._s));
-    const cx = (d) => ox(d.c) + px(d._x);
+    const relx = (d) => (oneD ? cw / 2 : px(d._x));
+    const cx = (d) => ox(d.c) + relx(d);
     const cy = (d) => oy(d.c) + py(d._y);
     gBubbles
       .selectAll("circle")
@@ -225,7 +232,7 @@ export function makeBubble(el, { rows, spec, actors = [] }) {
     const labelled = pts.filter((d) => n === 1 || (hi && hi.has(d.actor)));
     const lab = labelled.map((d) => {
       const r = rs(d._s);
-      const right = px(d._x) + r + 4 + 60 < cw;
+      const right = relx(d) + r + 4 + 60 < cw;
       return { d, x: right ? cx(d) + r + 4 : cx(d) - r - 4, y: cy(d), anchor: right ? "start" : "end", c: d.c };
     });
     d3.group(lab, (l) => l.c).forEach((g) => {

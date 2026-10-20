@@ -181,12 +181,16 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     const x0 = (c) => M.left + c * (colW + GAP);
     const yMid = (i) => M.top + i * rowH + rowH / 2;
 
-    const mkScale = (v) =>
-      d3
+    // a negligible negative value (below 2% of the axis) does not open up a negative side of the axis
+    const mkScale = (v) => {
+      const hi = Math.max(0, d3.max(v) ?? 1);
+      const lo = d3.min(v) ?? 0;
+      return d3
         .scaleLinear()
-        .domain([Math.min(0, d3.min(v) ?? 0), Math.max(0, d3.max(v) ?? 1)])
+        .domain([lo < -0.02 * hi ? lo : 0, hi])
         .nice(5)
         .range([0, colW]);
+    };
     const shared = mkScale(entries.flatMap((e) => [e.v1, e.v2]));
     const xs = geos.map((g) =>
       state.scale === "free" ? mkScale(entries.filter((e) => e.geo === g).flatMap((e) => [e.v1, e.v2])) : shared,

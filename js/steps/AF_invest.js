@@ -10,6 +10,8 @@
 //   state: what the chart shows (see the top of js/charts/periodRange.js, panelBars.js, bubble.js)
 //
 // Text as in 2_3_Africa_-_external_finance.pdf. Charts:
+//   fdiscale  share of recorded African inward FDI stock by investor, 2019–21 vs 2022–24*, with and without Mauritius (ECON 3.2)
+//   fdimap    map of host economies: bubble = recorded stock (all investors, coloured by the leading one) or one investor's position (ECON 3.2)
 //   fdi       three panels per counterpart: scale, concentration (Mauritius split), GDP-weighted share (ECON 3.2)
 //   netoda    net ODA by actor, 2019–21 vs 2022–24 (ECON 3.1)
 //   gross     gross official finance, grants vs loans, both periods (ECON 3.1)
@@ -24,10 +26,16 @@
 //   split sentences (the chart shows one actor at a time, or the sentence needs two charts): fdi_gulf / fdi_us,
 //   oda_europe / oda_us / oda_saudi, oda_geo / oda_geo_uae / oda_geo_chn, debt_china / debt_china_flows,
 //   debt_europe / debt_gulf, debt_terms / debt_terms_cn
-//   fdi_conc       "18 of 52 economies", EU 12 / China 5 / Türkiye 1: host-level counts are not in the workbook
-//                  (the three actors are highlighted instead)
-//   fdi_eu, fdi_chn, fdi_us  86% of GDP, China's 5.5% / ~12%, US 22% of Egypt and 29% of Algeria, Mauritius at 36%:
-//                  host-level, not drawn. The counts of economies led (EU 35, China 13) are in the data, not drawn
+//   fdi_*          all figures of the FDI text are in the workbook and are checked in invest_2 fdi_af.R. Not drawn as such:
+//                  the counts (18 of 52 over half, EU 12 / China 5 / Türkiye 1; EU leads 35, China 13) and the GDP and stock
+//                  shares of the economies led (86%, 5.5%, ~12%): the map highlights those economies instead. The highlight
+//                  lists (OVER_HALF, EU_LED, CHN_LED) are typed in below: the R script prints them, compare after a data update
+//   fdi_scale*     the first paragraph is split at sentence level (EU / Gulf / India / US and China); chart shows the seven named
+//                  investors, "other" (43.7% of the stock) is in the data but not drawn
+//   fdi_chn_gdp    split from fdi_chn (the map shows where China leads, the three-panel chart its scale vs GDP-weighted share)
+//   fdi_gulf       text says "eld" in the source (pasted); read as "held"
+//   fdimap         "all" = total recorded stock per host, tooltip reads "All foreign actors" (it includes unlisted counterparts);
+//                  Sudan and South Sudan are not drawn (no shares); one bubble scale throughout (Mauritius, USD 342 bn, sets it)
 //   oda_europe     "most of the decline coming from EU Institutions": no EU institutions / member states split
 //   oda_china      "two-thirds infrastructure-related": no sector data. China is commitments (2019–23, constant 2023 USD),
 //                  its own chart, never on the OECD axis
@@ -40,8 +48,10 @@
 //   debt_gulf      "Sudan³ Russia’s": full stop missing in the source, kept
 //   intro          remittances / FDI / ODA by region and the net-transfer figures (USD 97.0 bn → −7.5 bn): no chart
 //   footnotes      all footnotes and captions on the charts are drafts, from the source document
-//   ODA actors     Kuwait (net ODA −0.03 bn, loans only) and Israel (0.02 bn) have rows in the data but no text and are not
-//                  drawn (Kuwait's negative value would stretch the axis); the other eight actors are
+//   ODA actors     Israel (0.02 bn) has rows in the data but no text and is not drawn. Kuwait and "Other bilateral"
+//                  (13 further donors) are drawn for context only (ODA_CONTEXT): they are already inside the donor
+//                  aggregate and are never added to Europe, the US or any total. Kuwait's tiny negative net ODA no
+//                  longer stretches the axis (periodRange.js)
 //   Gulf states    the individual Gulf states (Saudi Arabia, UAE, Qatar, Kuwait) share the Gulf colour
 
 const P1 = "2019\u201321";
@@ -64,7 +74,15 @@ const GEO_SHORT = {
 };
 
 const SRC_FDI =
-  "Data: IMF, Direct Investment Positions by Counterpart Economy (extract 10 December 2025); World Bank, WDI. Averages of year-end net inward positions in current USD, 2022–24; positions by immediate counterpart economy, not ultimate owner.";
+  "Data: IMF, Direct Investment Positions by Counterpart Economy (extract 10 December 2025); World Bank, WDI. Averages of year-end net inward FDI stocks (not flows) in current USD, by immediate counterpart (not ultimate owner); official data where available, otherwise counterpart-derived, each position averaged over the years observed. * 2022–24: eight economies switch from official to counterpart-derived data in 2023 or 2024; read changes as indicative.";
+const SRC_FDI_NOTES =
+  "Mauritius, a financial hub, holds 36% of recorded stock, including most US, Indian and Japanese positions; about a third of stock is attributed to other non-African economies, notably the UK and financial centres. Gulf (six GCC states): lower bound, as only Kuwait reports outward positions. EU: 27 member states.";
+const FDI_GEO_LABELS = { Africa: "Africa (54 economies)", "Africa excl. Mauritius": "Africa excl. Mauritius (53)" };
+const FDI_GEO_SHORT = { Africa: "All of Africa", "Africa excl. Mauritius": "Excluding Mauritius" };
+// economies highlighted on the map (from the workbook, tab visual_detail; printed by invest_2 fdi_af.R)
+const OVER_HALF = ["EGY", "MAR", "ETH", "AGO", "COD", "UGA", "CMR", "TUN", "LBY", "GAB", "TCD", "NER", "COG", "SOM", "MRT", "CPV", "STP", "ERI"]; // 18
+const EU_LED = ["NGA", "EGY", "ZAF", "DZA", "MAR", "KEN", "AGO", "CIV", "GHA", "TZA", "UGA", "CMR", "TUN", "LBY", "SEN", "ZMB", "BFA", "GAB", "BWA", "BEN", "MDG", "COG", "RWA", "GNQ", "MWI", "MRT", "TGO", "SLE", "LBR", "CAF", "CPV", "GMB", "SYC", "GNB", "STP"]; // 35
+const CHN_LED = ["ETH", "COD", "ZWE", "MLI", "GIN", "TCD", "NER", "NAM", "DJI", "BDI", "LSO", "COM", "ERI"]; // 13
 const SRC_OECD =
   "Data: OECD DAC (DAC2A, DAC2B, DAC3A), USD at constant 2024 prices. Europe = EU27 + EU institutions. Three-year totals.";
 const SRC_AIDDATA =
@@ -73,6 +91,11 @@ const SRC_OECD_PLAIN = "Data: OECD DAC (DAC2A, DAC2B, DAC3A), USD at constant 20
 const SRC_DEBT = "Data: World Bank, International Debt Statistics. Current USD.";
 
 const ODA_ACTORS = ["EU", "USA", "SAU", "JPN", "KOR", "ARE", "QAT", "TUR"];
+// drawn for context, already included in the donor aggregate (invest_1_context): never added to any total
+const ODA_CONTEXT = ["KWT", "other"];
+const ODA_LABELS = { EU: "Europe", KWT: "Kuwait", other: "Other bilateral" };
+const CONTEXT_NOTE =
+  "Other bilateral: 13 further donors (among them the UK, Canada, Norway and Switzerland). Kuwait and other bilateral donors are shown for context; they are already counted in the donor aggregate.";
 const DEBT_ACTORS = ["CHN", "EU", "GCC", "JPN", "IND", "RUS", "KOR", "USA", "TUR"];
 
 const sum = (a, f) => a.reduce((s, r) => s + +f(r), 0);
@@ -80,26 +103,69 @@ const sum = (a, f) => a.reduce((s, r) => s + +f(r), 0);
 export default {
   charts: {
     // ── ECON 3.2: FDI ───────────────────────────────────────────────────────
+    fdiscale: {
+      type: "periodRange",
+      data: "invest_2_scale",
+      periods: [P1, `${P2}*`],
+      measure: "share_pct",
+      geos: ["Africa", "Africa excl. Mauritius"],
+      geoLabels: FDI_GEO_LABELS,
+      geoLabelsShort: FDI_GEO_SHORT,
+      actors: ["EU", "USA", "GCC", "IND", "CHN", "JPN", "TUR"],
+      labels: { GCC: "Gulf" },
+      title: "Who holds Africa’s recorded foreign investment",
+      subtitle: (s, info) =>
+        `Share of recorded inward FDI stock by investor${
+          Number.isFinite(info.total[0])
+            ? `. Total stock: USD ${info.total[0].toFixed(0)} bn in ${P1}, USD ${info.total[1].toFixed(0)} bn in ${P2}*`
+            : ""
+        }`,
+      source: `${SRC_FDI} ${SRC_FDI_NOTES}`,
+    },
+
+    fdimap: {
+      type: "geoBubbles",
+      data: "invest_2_map",
+      measures: {
+        fdi: {
+          title: "Where foreign investment is held",
+          subtitle: (actor, label) =>
+            actor === "all"
+              ? `Recorded inward FDI stock by host economy, USD bn, ${P2}*. Colour: the leading listed investor.`
+              : `${label}’s recorded FDI position by host economy, USD bn, ${P2}*`,
+          unit: "USD bn",
+          format: ",.2~f", // 342, 62.6, 0.01: no trailing zeros, also for the size key
+          sizeTitle: "Bubble area, USD bn",
+          sharedScale: true, // one scale in every step: the same number is the same size
+          keyAll: [10, 100, 300],
+        },
+      },
+      labels: { GCC: "Gulf" },
+      title: "Where foreign investment is held",
+      source: `${SRC_FDI} Sudan and South Sudan are not shown (no shares). ${SRC_FDI_NOTES}`,
+    },
+
     fdi: {
       type: "panelBars",
       data: "invest_2_fdi",
       rowKey: "actor",
       rows: ["EU", "USA", "GCC", "IND", "CHN", "JPN", "TUR"],
+      rowLabels: { GCC: "Gulf" },
       title: "Foreign investment positions in Africa",
       subtitle:
-        "Three dimensions of each counterpart’s position, 2022–24 averages. Each panel has its own scale; bars are not comparable across panels.",
-      source: SRC_FDI,
+        "Three dimensions of each investor’s position, 2022–24*. Each panel has its own scale; bars are not comparable across panels.",
+      source: `${SRC_FDI} Scale: share of recorded African stock. Concentration: share of the investor’s African position in its top three hosts (Mauritius shown separately). GDP-weighted investor share: the investor’s average share of host economies’ stock, weighted by their GDP; a lower bound, not a share of African GDP (Sudan, South Sudan and Eritrea excluded). ${SRC_FDI_NOTES}`,
       panels: [
         {
           id: "scale",
-          title: "Scale",
+          title: "Scale*",
           subtitle: "% of recorded African inward stock",
           segments: [{ column: "scale_pct", label: "Share of African inward stock", color: "actor" }],
           format: "pct",
         },
         {
           id: "conc",
-          title: "Concentration",
+          title: "Concentration*",
           subtitle: "three largest hosts, % of own position",
           segments: [
             { column: "conc_mauritius_pct", label: "of which Mauritius", color: "light" },
@@ -110,7 +176,7 @@ export default {
         },
         {
           id: "gdp",
-          title: "GDP-weighted share",
+          title: "GDP-weighted share*",
           subtitle: "average share of host stock, weighted by host GDP",
           segments: [{ column: "gdp_weighted_pct", label: "GDP-weighted investor share", color: "actor" }],
           format: "pct",
@@ -127,23 +193,24 @@ export default {
       type: "periodRange",
       data: "invest_1_netoda",
       measure: "value_usd_bn",
-      actors: ODA_ACTORS,
-      labels: { EU: "Europe" },
+      actors: [...ODA_ACTORS, ...ODA_CONTEXT],
+      labels: ODA_LABELS,
       title: "Net official development assistance to Africa",
       subtitle: "Net ODA, total over three years, USD bn at constant 2024 prices",
-      source: SRC_OECD,
+      source: `${SRC_OECD} ${CONTEXT_NOTE}`,
     },
 
     gross: {
       type: "panelBars",
       data: "invest_1_gross",
       rowKey: "actor",
-      rows: ODA_ACTORS,
-      rowLabels: { EU: "Europe" },
+      rows: [...ODA_ACTORS, ...ODA_CONTEXT],
+      rowLabels: ODA_LABELS,
+      rowColors: { other: "#8e8e8e" }, // darker grey than the loans segment, so grants and loans differ
       title: "Grants and loans in official finance to Africa",
       subtitle:
         "Gross official finance (ODA and OOF) split into grants and loans, % of the total. The figure after each bar is the loans’ share.",
-      source: SRC_OECD,
+      source: `${SRC_OECD} ${CONTEXT_NOTE}`,
       panels: [P1, P2].map((p) => ({
         id: p,
         title: p,
@@ -305,32 +372,48 @@ export default {
 
   steps: {
     // ── ECON 3.2: FDI ───────────────────────────────────────────────────────
-    fdi_conc: {
-      chart: "fdi",
+    fdi_scale: { chart: "fdiscale", state: { highlight: ["EU"] } },
+    fdi_scale_gulf: {
+      chart: "fdiscale",
       state: {
-        highlight: ["EU", "CHN", "TUR"],
+        highlight: ["GCC"],
+        footnote:
+          "Gulf positions should be treated as lower bounds: only Kuwait, of the six Gulf states, reports outward positions to the IMF, leaving other bilateral relationships observable only where the African host reports them.",
+      },
+    },
+    fdi_scale_ind: { chart: "fdiscale", state: { highlight: ["IND"] } },
+    fdi_scale_stable: { chart: "fdiscale", state: { highlight: ["USA", "CHN"] } },
+    fdi_conc: {
+      chart: "fdimap",
+      state: {
+        measure: "fdi",
+        actor: "all",
+        highlight: OVER_HALF,
         footnote:
           "* Headline continental totals require caution. Mauritius accounted for 36% of recorded African inward FDI stock in 2022–24, and its role as a financial-intermediation hub strongly shaped several actors’ apparent scale, particularly the US, India and Japan. These positions should not be equated with investment in Mauritius’s domestic productive economy.",
       },
     },
-    fdi_eu: {
+    fdi_eu: { chart: "fdimap", state: { measure: "fdi", actor: "all", highlight: EU_LED } },
+    fdi_chn: { chart: "fdimap", state: { measure: "fdi", actor: "all", highlight: CHN_LED } },
+    fdi_chn_gdp: {
       chart: "fdi",
       state: {
-        highlight: ["EU"],
+        highlight: ["CHN"],
         footnote:
-          "GDP-weighted investor share is the average of the actor’s shares of individual hosts’ inward FDI stock, weighted by host GDP. This last measure is distinct from the share of African GDP represented by countries where the actor ranks first; neither measures ownership of African GDP.",
+          "GDP-weighted investor share is the average of the investor’s shares of individual hosts’ inward FDI stock, weighted by host GDP. This last measure is distinct from the share of African GDP represented by countries where the investor ranks first; neither measures ownership of African GDP.",
       },
     },
-    fdi_chn: { chart: "fdi", state: { highlight: ["CHN"] } },
     fdi_gulf: {
-      chart: "fdi",
+      chart: "fdimap",
       state: {
-        highlight: ["GCC"],
+        measure: "fdi",
+        actor: "GCC",
+        labels: ["MOZ", "MUS", "MAR"],
         footnote:
           "Gulf positions should be treated as lower bounds because most Gulf states do not report outward positions to the IMF, leaving some bilateral relationships observable only where the African host reports them.",
       },
     },
-    fdi_us: { chart: "fdi", state: { highlight: ["USA"] } },
+    fdi_us: { chart: "fdimap", state: { measure: "fdi", actor: "USA", labels: ["EGY", "DZA", "MUS"] } },
 
     // ── ECON 3.1: official development finance ──────────────────────────────
     oda_europe: { chart: "netoda", state: { highlight: ["EU"] } },

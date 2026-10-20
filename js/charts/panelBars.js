@@ -14,6 +14,8 @@
 //   title, subtitle (text or (state) => text), source
 //   rowKey:     column that identifies a row (default "actor"; "geo" for a view by geography)
 //   rows:       row ids in display order (default: the first panel's rows, largest first)
+//   rowColors:  { id: colour } overrides the actor colour of a row (e.g. a darker grey for "other", so its
+//               grant and loan segments differ)
 //   rowLabels:  { id: label } where actors.csv has none (or a different wording is wanted)
 //   labelWidth: room for the row names on the left, in chart units (default 92; longer names such as subregions need more)
 //   panels:     [{ id, title, subtitle,
@@ -67,7 +69,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
 
   const label = (k) => spec.rowLabels?.[k] ?? actors.find((x) => x.actor === k)?.label ?? k;
   const colorOf = (tok, row) =>
-    tok === "actor" ? (theme.actorColors?.[row] ?? theme.light) : (theme.actorColors?.[tok] ?? theme[tok] ?? tok);
+    tok === "actor" ? (spec.rowColors?.[row] ?? theme.actorColors?.[row] ?? theme.light) : (theme.actorColors?.[tok] ?? theme[tok] ?? tok);
   const formats = {
     pct: (v) => `${v.toFixed(1)}%`,
     pct0: (v) => `${Math.round(v)}%`,

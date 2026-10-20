@@ -17,6 +17,8 @@
 //   stud     sankey (reverse): students by country of origin (left) and host actor (right)
 //   migFrom  sankey (reverse): migrants from the region by country of origin (left) living in each actor (right), 2015 and 2024
 //   migTo    sankey: migrants from each actor (left) living in the countries of the region (right), 2015 and 2024
+//   perc     panelBars: opinion of each actor (favourable, don't know, unfavourable), one panel per country, Arab Barometer wave VIII
+//   econ     panelBars: wish for stronger / same / weaker economic ties with each actor, one panel per country (not Kuwait)
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
 //   split sentences (one chart state shows one actor or one measure at a time): d_adfd / d_ksr, d_rus / d_qffd / d_dfc, l_kor / l_ind,
@@ -50,9 +52,17 @@
 //   f_chg, f_jpn  the dashed outlines show every actor's 2015 level; the labels give the percentage change of every actor (Japan: +201%, "tripling";
 //                 482 and 1 451 are in the text). Türkiye shows +81% (80.6) where the text says 80 %.
 //   Palestine*    the asterisk footnote ("standard EU formula") is not in the source; wording to be confirmed
-//   footnotes     numbered 3 to 16: the intro notes 1 and 2 are typed in the body (as in the Africa chapters); the source numbers its own notes
+//   perc, econ    Arab Barometer wave VIII (2023-2024), weighted shares of one country's answers. Panels = countries (Iraq, Jordan, Kuwait,
+//                 Lebanon, Palestine*), no average across countries: Saudi Arabia and Qatar were not rated in Kuwait, and the economic-ties
+//                 question was not asked there. Rows = the seven actors the text names; France (Lebanon only) and Israel are not drawn, the
+//                 EU is not in the survey. Bars are coloured by answer, not by actor (row ids \"perc_*\" / \"econ_*\" on purpose, as in AF_soft.js).
+//                 pc_us: the text says the US is viewed most negatively \"particularly in Iraq and Kuwait\"; Palestine* (74.0 %) is above Iraq
+//                 (72.0 %). pc_ec_irn: the association between views of Iran and the wish to weaken ties is not in the aggregate data (see
+//                 soft_5_perc_me.R). Steps about unfavourable views use the panels with the unfavourable share first (ids ending in \"_neg\").
+//   footnotes     numbered 3 to 17: the intro notes 1 and 2 are typed in the body (as in the Africa chapters); the source numbers its own notes
 //                 1 to 14. All footnotes and captions on the charts are drafts, shortened from the source document (no URLs).
-//   typos         kept as in the source: "Middle Easte", "(99.8%)" and "370082" without a separator, "98 820" with a space
+//   typos         corrected: "Middle Easte" (l_intro), thousands separators in t_eu, t_us, t_rus ("370 082", "131 572", "126 966"); the source
+//                 itself now reads "Middle East". Percent signs are as in the source ("92%" in t_*, "59 %" in s_* and f_*).
 
 import { theme } from "../theme.js";
 
@@ -83,12 +93,90 @@ const FN15 =
   "¹⁵ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan); overseas territories excluded.";
 const FN16 =
   "¹⁶ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ by reporting country: foreign-born, foreign citizens, refugees, imputed stock.";
+const FN17 =
+  "¹⁷ Arab Barometer, wave VIII (2023–2024), weighted shares of each country’s answers. Countries surveyed: Iraq, Jordan, Kuwait, Lebanon, Palestine*. Saudi Arabia and Qatar were not rated in Kuwait, and the question on economic ties was not asked there. France, the only EU actor in the survey, was rated in Lebanon only and is not shown.";
 const FN_ANY =
   "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
 
+// perceptions (Arab Barometer): rows, panels and segments; bars are coloured by answer (see PINNED)
+const SRC_PERC =
+  "Data: Arab Barometer, wave VIII (2023–2024); weighted shares of each country’s answers.";
+const PERC_ROWS = [
+  "perc_CHN",
+  "perc_TUR",
+  "perc_QAT",
+  "perc_SAU",
+  "perc_USA",
+  "perc_IRN",
+  "perc_RUS",
+]; // order of the text
+const PERC_ROWS_KWT = PERC_ROWS.filter(
+  (r) => r !== "perc_QAT" && r !== "perc_SAU",
+); // not rated in Kuwait
+const PERC_LABELS = {
+  perc_CHN: "China",
+  perc_TUR: "Türkiye",
+  perc_QAT: "Qatar",
+  perc_SAU: "Saudi Arabia",
+  perc_USA: "US",
+  perc_IRN: "Iran",
+  perc_RUS: "Russia",
+};
+const ECON_ROWS = PERC_ROWS.map((r) => r.replace("perc_", "econ_"));
+const ECON_LABELS = Object.fromEntries(
+  Object.entries(PERC_LABELS).map(([k, v]) => [k.replace("perc_", "econ_"), v]),
+);
+// [iso3, panel title, respondents]
+const PERC_COUNTRIES = [
+  ["IRQ", "Iraq", "1 190"],
+  ["JOR", "Jordan", "1 192"],
+  ["KWT", "Kuwait", "1 210"],
+  ["LBN", "Lebanon", "1 227"],
+  ["PSE", "Palestine*", "616"],
+];
+const ECON_COUNTRIES = [
+  ["IRQ", "Iraq", "1 221"],
+  ["JOR", "Jordan", "1 208"],
+  ["LBN", "Lebanon", "1 176"],
+  ["PSE", "Palestine*", "573"],
+];
+const PERC_ALL = PERC_COUNTRIES.map(([g]) => g);
+const PERC_ALL_NEG = PERC_ALL.map((g) => `${g}_neg`);
+const ECON_ALL = ECON_COUNTRIES.map(([g]) => g);
+const PERC_P = { column: "favourable", label: "Favourable", color: "teal2" };
+const PERC_DK = {
+  column: "dontknow",
+  label: "Don’t know",
+  color: "light",
+  opacity: 0.5,
+};
+const PERC_NG = {
+  column: "unfavourable",
+  label: "Unfavourable",
+  color: "fuchsia2",
+};
+const percPanel = (id, title, n, geo, negFirst = false) => ({
+  id,
+  title,
+  subtitle: `n = ${n}`,
+  where: { geo },
+  segments: negFirst ? [PERC_NG, PERC_DK, PERC_P] : [PERC_P, PERC_DK, PERC_NG],
+  domain: [0, 100],
+  format: "pct0",
+  endLabel: { column: negFirst ? "unfavourable" : "favourable" },
+});
+const pc = (panels, highlight, extra = {}) => ({
+  chart: "perc",
+  state: { panels, highlight, footnote: FN17, ...extra },
+});
+const ec = (panels, highlight, extra = {}) => ({
+  chart: "econ",
+  state: { panels, highlight, footnote: FN17, ...extra },
+});
+
 // dot sizes compare across the maps and across regions (same as AF_soft.js): the same value gets the same radius
-const DOT_MAX = 21;
-const DOT_R = 12;
+const DOT_MAX = 42;
+const DOT_R = 24;
 
 const SRC_DEV =
   "Data: official websites of agencies, ministries and entities, most recent report available (2023–2025).";
@@ -319,6 +407,71 @@ export default {
       otherRecipients: "Other countries",
       marginLeft: 110,
       marginRight: 120,
+    },
+
+    // ── perceptions (Arab Barometer): bars are coloured by answer, not by actor ──
+    perc: {
+      type: "panelBars",
+      data: "soft_5_perc",
+      rowKey: "row",
+      prepare: ({ rows }) =>
+        rows.map((r) => ({ ...r, row: `perc_${r.actor}` })),
+      rows: PERC_ROWS,
+      rowLabels: PERC_LABELS,
+      labelWidth: 92,
+      title: "Opinion of external actors in the Middle East and the Gulf",
+      subtitle:
+        "Share of respondents by how favourably they view each actor, 2023–2024",
+      source: SRC_PERC,
+      key: [
+        { label: "Favourable", color: "teal2" },
+        { label: "Don’t know", color: "light", opacity: 0.5 },
+        { label: "Unfavourable", color: "fuchsia2" },
+      ],
+      panels: [
+        ...PERC_COUNTRIES.map(([geo, title, n]) =>
+          percPanel(geo, title, n, geo),
+        ),
+        ...PERC_COUNTRIES.map(([geo, title, n]) =>
+          percPanel(`${geo}_neg`, title, n, geo, true),
+        ),
+      ],
+    },
+
+    econ: {
+      type: "panelBars",
+      data: "soft_5_econ",
+      rowKey: "row",
+      prepare: ({ rows }) =>
+        rows.map((r) => ({ ...r, row: `econ_${r.actor}` })),
+      rows: ECON_ROWS,
+      rowLabels: ECON_LABELS,
+      labelWidth: 92,
+      title: "Preferred future economic relations with external actors",
+      subtitle:
+        "Share of respondents by whether their country’s economic ties with each actor should become stronger, stay the same or become weaker, 2023–2024",
+      source: SRC_PERC,
+      key: [
+        { label: "Stronger", color: "teal2" },
+        { label: "Same", color: "light" },
+        { label: "Don’t know", color: "light", opacity: 0.5 },
+        { label: "Weaker", color: "fuchsia2" },
+      ],
+      panels: ECON_COUNTRIES.map(([geo, title, n]) => ({
+        id: geo,
+        title,
+        subtitle: `n = ${n}`,
+        where: { geo },
+        segments: [
+          { column: "stronger", label: "Stronger", color: "teal2" },
+          { column: "same", label: "Same", color: "light" },
+          { column: "dontknow", label: "Don’t know", color: "light", opacity: 0.5 },
+          { column: "weaker", label: "Weaker", color: "fuchsia2" },
+        ],
+        domain: [0, 100],
+        format: "pct0",
+        endLabel: { column: "stronger" },
+      })),
     },
   },
 
@@ -599,5 +752,23 @@ export default {
         footnote: FN16,
       },
     },
+
+    // ── Comparison of perceptions of external actors’ influence¹⁷ ──────────
+    pc_intro: pc(PERC_ALL, []),
+    pc_top: pc(PERC_ALL, ["perc_CHN", "perc_TUR", "perc_QAT"]),
+    pc_chn: pc(PERC_ALL, ["perc_CHN"]),
+    pc_chn_pse: pc(["PSE"], ["perc_CHN"]),
+    pc_jor: pc(["JOR"], ["perc_QAT", "perc_TUR"]),
+    pc_pse: pc(["PSE"], ["perc_TUR", "perc_QAT"]),
+    pc_irq: pc(["IRQ"], ["perc_TUR", "perc_QAT"]),
+    pc_us: pc(PERC_ALL_NEG, ["perc_USA"]),
+    pc_us_rng: pc(["KWT", "JOR"], ["perc_USA"]),
+    pc_irn: pc(PERC_ALL_NEG, ["perc_IRN"]),
+    pc_irn_fav: pc(["LBN", "IRQ"], ["perc_IRN"]),
+    pc_sau: pc(["JOR"], ["perc_SAU"]),
+    pc_rus: pc(["KWT"], ["perc_RUS"], { rows: PERC_ROWS_KWT }),
+    pc_rus_lim: pc(PERC_ALL, ["perc_RUS"]),
+    pc_ec_us: ec(["IRQ", "LBN"], ["econ_USA"]),
+    pc_ec_irn: ec(ECON_ALL, ["econ_IRN"]),
   },
 };

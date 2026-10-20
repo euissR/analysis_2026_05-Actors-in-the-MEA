@@ -17,7 +17,8 @@ export const theme = {
   grey: "#595959",
   light: "#c6c6c6",
   nearWhite: "#f9f9f9",
-  neutral: "#3a3a3a",
+  // neutral: "#1a1a1a", // 90% black; deliberately not the EU teal
+  neutral: "#333333",
   ink: "#1d1d1b",
   muted: "#646363",
 

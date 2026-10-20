@@ -18,9 +18,21 @@ import { geoRobinson } from "../robinson.js";
 // the three categories: colours as in the first Flourish version
 // (country = grey, actor = fuchsia, both = mauve)
 const CATEGORIES = {
-  country: { label: "Country", color: theme.grey, tooltip: "Country in the analysis" },
-  actor: { label: "Actor", color: theme.fuchsia, tooltip: "External actor in the analysis" },
-  both: { label: "Both", color: theme.mauve, tooltip: "Country and external actor" },
+  country: {
+    label: "Country",
+    color: theme.grey,
+    tooltip: "Country in the analysis",
+  },
+  actor: {
+    label: "Actor",
+    color: theme.fuchsia,
+    tooltip: "External actor in the analysis",
+  },
+  both: {
+    label: "Both",
+    color: theme.mauve,
+    tooltip: "Country and external actor",
+  },
 };
 
 export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
@@ -31,7 +43,12 @@ export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
   // fitted to the width; the height follows from it
   const extent = {
     type: "MultiPoint",
-    coordinates: [[-180, 0], [180, 0], [0, 84], [0, -56]],
+    coordinates: [
+      [-180, 0],
+      [180, 0],
+      [0, 84],
+      [0, -56],
+    ],
   };
   const projection = geoRobinson().fitWidth(W - 2 * M, extent);
   const [tx, ty] = projection.translate();
@@ -91,7 +108,8 @@ export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
     .attr("d", path)
     .attr("fill", (d) => category(d)?.color ?? theme.land)
     .attr("stroke", (d) => (category(d) ? theme.land : theme.border))
-    .attr("stroke-width", 0.5)
+    .attr("stroke-opacity", 0.5)
+    .attr("stroke-width", 0.25)
     .attr("pointer-events", (d) => (category(d) ? null : "none"));
 
   // disputed borders on top, as GISCO has them
@@ -103,15 +121,18 @@ export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
     .join("path")
     .attr("d", path)
     .attr("fill", "none")
-    .attr("stroke", theme.land)
-    .attr("stroke-width", 0.9)
-    .attr("stroke-dasharray", "2 2");
+    .attr("stroke", theme.border)
+    .attr("stroke-width", 0.6)
+    .attr("stroke-dasharray", "1 1");
 
   // ── hover: thick black outline + name ───────────────────────────────────
   function place(event) {
     const box = el.getBoundingClientRect();
     tooltip
-      .style("left", `${Math.min(event.clientX - box.left + 12, box.width - 180)}px`)
+      .style(
+        "left",
+        `${Math.min(event.clientX - box.left + 12, box.width - 180)}px`,
+      )
       .style("top", `${event.clientY - box.top + 12}px`);
   }
 

@@ -5,8 +5,8 @@ China,CHN,CMR,Cameroon,Central Africa,TRUE,2015,FALSE,988
 China,CHN,CMR,Cameroon,Central Africa,TRUE,2024,FALSE,2133
 China,CHN,COG,Congo,Central Africa,TRUE,2015,FALSE,1002
 China,CHN,COG,Congo,Central Africa,TRUE,2024,FALSE,1263
-China,CHN,COD,Democratic Republic of The Congo,Central Africa,TRUE,2015,FALSE,373
-China,CHN,COD,Democratic Republic of The Congo,Central Africa,TRUE,2024,FALSE,1091
+China,CHN,COD,DR Congo,Central Africa,TRUE,2015,FALSE,373
+China,CHN,COD,DR Congo,Central Africa,TRUE,2024,FALSE,1091
 China,CHN,GNQ,Equatorial Guinea,Central Africa,TRUE,2015,FALSE,293
 China,CHN,GNQ,Equatorial Guinea,Central Africa,TRUE,2024,FALSE,602
 China,CHN,RWA,Rwanda,Central Africa,TRUE,2015,FALSE,431
@@ -19,10 +19,10 @@ China,CHN,SOM,Somalia,East Africa and HoA,TRUE,2015,FALSE,619
 China,CHN,SOM,Somalia,East Africa and HoA,TRUE,2024,FALSE,638
 China,CHN,SDN,Sudan,East Africa and HoA,TRUE,2015,FALSE,956
 China,CHN,SDN,Sudan,East Africa and HoA,TRUE,2024,FALSE,796
+China,CHN,TZA,Tanzania,East Africa and HoA,TRUE,2015,FALSE,902
+China,CHN,TZA,Tanzania,East Africa and HoA,TRUE,2024,FALSE,1967
 China,CHN,UGA,Uganda,East Africa and HoA,TRUE,2015,FALSE,520
 China,CHN,UGA,Uganda,East Africa and HoA,TRUE,2024,FALSE,917
-China,CHN,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,902
-China,CHN,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,1967
 China,CHN,DZA,Algeria,North Africa,FALSE,2015,FALSE,443
 China,CHN,DZA,Algeria,North Africa,FALSE,2024,FALSE,379
 China,CHN,EGY,Egypt,North Africa,FALSE,2015,FALSE,1300
@@ -61,8 +61,8 @@ EU,EU,TCD,Chad,Central Africa,TRUE,2015,FALSE,681
 EU,EU,TCD,Chad,Central Africa,TRUE,2024,FALSE,757
 EU,EU,COG,Congo,Central Africa,TRUE,2015,FALSE,88092
 EU,EU,COG,Congo,Central Africa,TRUE,2024,FALSE,104676
-EU,EU,COD,Democratic Republic of The Congo,Central Africa,TRUE,2015,FALSE,184461
-EU,EU,COD,Democratic Republic of The Congo,Central Africa,TRUE,2024,FALSE,237572
+EU,EU,COD,DR Congo,Central Africa,TRUE,2015,FALSE,184461
+EU,EU,COD,DR Congo,Central Africa,TRUE,2024,FALSE,237572
 EU,EU,GNQ,Equatorial Guinea,Central Africa,TRUE,2015,FALSE,19615
 EU,EU,GNQ,Equatorial Guinea,Central Africa,TRUE,2024,FALSE,24701
 EU,EU,GAB,Gabon,Central Africa,TRUE,2015,FALSE,24476
@@ -85,10 +85,10 @@ EU,EU,SSD,South Sudan,East Africa and HoA,TRUE,2015,FALSE,5
 EU,EU,SSD,South Sudan,East Africa and HoA,TRUE,2024,FALSE,61
 EU,EU,SDN,Sudan,East Africa and HoA,TRUE,2015,FALSE,18657
 EU,EU,SDN,Sudan,East Africa and HoA,TRUE,2024,FALSE,51020
+EU,EU,TZA,Tanzania,East Africa and HoA,TRUE,2015,FALSE,3723
+EU,EU,TZA,Tanzania,East Africa and HoA,TRUE,2024,FALSE,4779
 EU,EU,UGA,Uganda,East Africa and HoA,TRUE,2015,FALSE,3048
 EU,EU,UGA,Uganda,East Africa and HoA,TRUE,2024,FALSE,4146
-EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2015,FALSE,3723
-EU,EU,TZA,United Republic of Tanzania,East Africa and HoA,TRUE,2024,FALSE,4779
 EU,EU,DZA,Algeria,North Africa,FALSE,2015,FALSE,1491459
 EU,EU,DZA,Algeria,North Africa,FALSE,2024,FALSE,1547842
 EU,EU,EGY,Egypt,North Africa,FALSE,2015,FALSE,215321
@@ -161,8 +161,8 @@ EU,EU,TGO,Togo,West Africa,TRUE,2015,FALSE,10692
 EU,EU,TGO,Togo,West Africa,TRUE,2024,FALSE,15095
 India,IND,CMR,Cameroon,Central Africa,TRUE,2015,FALSE,25
 India,IND,CMR,Cameroon,Central Africa,TRUE,2024,FALSE,236
-India,IND,COD,Democratic Republic of The Congo,Central Africa,TRUE,2015,FALSE,66
-India,IND,COD,Democratic Republic of The Congo,Central Africa,TRUE,2024,FALSE,234
+India,IND,COD,DR Congo,Central Africa,TRUE,2015,FALSE,66
+India,IND,COD,DR Congo,Central Africa,TRUE,2024,FALSE,234
 India,IND,KEN,Kenya,East Africa and HoA,TRUE,2015,FALSE,2328
 India,IND,KEN,Kenya,East Africa and HoA,TRUE,2024,FALSE,2078
 India,IND,SOM,Somalia,East Africa and HoA,TRUE,2015,FALSE,692
