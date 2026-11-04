@@ -12,7 +12,7 @@ body {
 
 .fa-scrolly {
   --fa-teal: #309ebe; /* the EU's colour: not for UI */
-  --fa-neutral: #1a1a1a; /* same as theme.neutral in theme.js */
+  --fa-neutral: #333333; /* same as theme.neutral in theme.js */
   --fa-navy: #1d3956;
   --fa-ink: #1d1d1b;
   --fa-muted: #646363;
@@ -348,7 +348,7 @@ body {
 
 .fa-landing {
   --fa-teal: #309ebe; /* the EU's colour: not for UI */
-  --fa-neutral: #1a1a1a; /* same as theme.neutral in theme.js */
+  --fa-neutral: #333333; /* same as theme.neutral in theme.js */
   --fa-navy: #1d3956;
   --fa-ink: #1d1d1b;
   --fa-muted: #646363;
@@ -616,7 +616,7 @@ body {
 
 .fa-nav {
   --fa-navy: #1d3956;
-  --fa-neutral: #1a1a1a;
+  --fa-neutral: #333333;
   --fa-ink: #1d1d1b;
   --fa-muted: #646363;
   --fa-light: #c6c6c6;

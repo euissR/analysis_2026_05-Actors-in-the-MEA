@@ -108,8 +108,8 @@ export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
     .attr("d", path)
     .attr("fill", (d) => category(d)?.color ?? theme.land)
     .attr("stroke", (d) => (category(d) ? theme.land : theme.border))
-    .attr("stroke-opacity", 0.5)
-    .attr("stroke-width", 0.25)
+    .attr("stroke-opacity", 1)
+    .attr("stroke-width", 0.5)
     .attr("pointer-events", (d) => (category(d) ? null : "none"));
 
   // disputed borders on top, as GISCO has them
