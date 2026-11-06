@@ -179,6 +179,73 @@ function initSlider(el) {
   start();
 }
 
+// ── executive summary ─────────────────────────────────────────────────────
+// Each paragraph shows its first sentence plus an inline "Read more"; the rest
+// (.fa-more-rest) opens in the same paragraph and the button goes away. Only
+// one is open at a time: opening another closes the previous one and brings
+// its button back. Without this script the full text stays visible.
+
+const SUMMARY_MS = 320; // open / close animation
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function initSummary(box) {
+  const rests = [...box.querySelectorAll(".fa-more-rest")];
+  if (!rests.length) return;
+  box.classList.add("fa-js");
+
+  let open = null; // { rest, btn }
+
+  // switch one item open or closed, gliding its paragraph between the two heights
+  function setOpen(item, isOpen) {
+    const p = item.rest.parentElement;
+    const before = p.offsetHeight;
+
+    item.rest.classList.toggle("on", isOpen);
+    item.btn.hidden = isOpen;
+    item.btn.setAttribute("aria-expanded", String(isOpen));
+
+    const after = p.offsetHeight;
+    if (reduceMotion.matches || before === after || !p.animate) return;
+
+    p.style.overflow = "hidden";
+    const glide = p.animate(
+      [{ height: `${before}px` }, { height: `${after}px` }],
+      { duration: SUMMARY_MS, easing: "ease-in-out" },
+    );
+    if (isOpen) {
+      item.rest.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: SUMMARY_MS,
+        easing: "ease-in",
+      });
+    }
+    const done = () => {
+      p.style.overflow = "";
+    };
+    glide.addEventListener("finish", done);
+    glide.addEventListener("cancel", done);
+  }
+
+  rests.forEach((rest, i) => {
+    rest.id = rest.id || `fa-more-${i + 1}`;
+    rest.tabIndex = -1; // lets focus move into the text once the button is gone
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "fa-more-btn";
+    btn.textContent = "Read more";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", rest.id);
+    rest.before(btn);
+
+    const item = { rest, btn };
+    btn.addEventListener("click", () => {
+      if (open) setOpen(open, false);
+      setOpen(item, true);
+      open = item;
+      rest.focus({ preventScroll: true });
+    });
+  });
+}
+
 // ── go ────────────────────────────────────────────────────────────────────
 
 document
@@ -189,3 +256,4 @@ document
     ),
   );
 document.querySelectorAll(".fa-slider").forEach(initSlider);
+document.querySelectorAll(".fa-box--summary").forEach(initSummary);

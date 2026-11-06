@@ -32,7 +32,7 @@ export const CHAPTERS = {
     slug: "soft-power",
   },
   trade: {
-    title: "Shaping markets",
+    title: "Competing for markets",
     subtitle: "Trade and commercial ties",
     slug: "trade",
   },

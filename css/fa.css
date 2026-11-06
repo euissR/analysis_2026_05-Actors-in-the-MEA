@@ -394,6 +394,107 @@ body {
   color: var(--fa-muted);
 }
 
+/* executive summary + priorities: two boxes side by side, stacked on small screens */
+.fa-landing .fa-summary-row {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 900px) {
+  .fa-landing .fa-summary-row {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}
+
+.fa-landing .fa-priorities > p:first-child {
+  margin-top: 0;
+}
+
+.fa-landing .fa-box {
+  background: #f2f5f7;
+  border-top: 4px solid var(--fa-navy);
+  padding: 1.25rem 1.5rem;
+}
+
+.fa-landing .fa-box h2 {
+  margin-top: 0;
+}
+
+.fa-landing .fa-box > p:first-child,
+.fa-landing .fa-box ul {
+  margin-top: 0;
+}
+
+.fa-landing .fa-sum-item {
+  margin: 0 0 1rem;
+}
+
+.fa-landing .fa-sum-item p {
+  margin: 0 0 0.3rem;
+}
+
+/* executive summary: first sentence, then an inline "Read more".
+   landing.js adds .fa-js to the box and collapses .fa-more-rest; without the
+   script the whole text simply stays visible. */
+.fa-landing .fa-more-btn {
+  display: inline;
+  margin: 0 0 0 0.35em;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--fa-font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fa-navy);
+}
+
+.fa-landing .fa-more-btn::after {
+  content: " \25BE"; /* ▾ */
+}
+
+.fa-landing .fa-more-btn:hover,
+.fa-landing .fa-more-btn:focus-visible {
+  text-decoration: underline;
+}
+
+.fa-landing .fa-more-btn[hidden] {
+  display: none;
+}
+
+.fa-landing .fa-js .fa-more-rest {
+  display: none;
+}
+
+.fa-landing .fa-js .fa-more-rest.on {
+  display: inline;
+}
+
+.fa-landing .fa-more-rest:focus {
+  outline: none;
+}
+
+/* "Three patterns" call-out in the introduction */
+.fa-landing .fa-callout {
+  margin: 1.25rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 4px solid var(--fa-navy);
+}
+
+.fa-landing .fa-callout p {
+  margin: 0.75rem 0;
+}
+
+.fa-landing .fa-callout p:first-child {
+  margin-top: 0;
+}
+
+.fa-landing .fa-callout p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── chapter cards ──────────────────────────────────────────────────────── */
 
 .fa-cards-wrap {
