@@ -403,7 +403,7 @@ body {
 
 @media (min-width: 900px) {
   .fa-landing .fa-summary-row {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 2fr;
     align-items: start;
   }
 }
@@ -603,8 +603,8 @@ body {
   position: relative;
   max-width: 700px;
   margin: 2rem auto;
-  aspect-ratio: 4 / 3;
-  background: #fff;
+  aspect-ratio: 10 / 9; /* was 4/3; ~20% taller */
+  background: transparent;
   border-radius: 6px;
   overflow: hidden;
   touch-action: pan-y;
@@ -619,7 +619,8 @@ body {
   height: 100%;
   object-fit: contain;
   box-sizing: border-box;
-  padding: clamp(3vw, 2vw, 20px);
+  padding: clamp(6px, 1.5vw, 14px);
+  padding-bottom: 40px; /* keep image clear of dots + play/pause toggle */
   opacity: 0;
   transition: opacity 0.6s ease;
   pointer-events: none;

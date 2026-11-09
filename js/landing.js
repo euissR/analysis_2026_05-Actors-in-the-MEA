@@ -5,19 +5,18 @@ import { CONFIG } from "./config.js";
 import { makeOverviewMap } from "./charts/overviewMap.js";
 
 // landing-page cards (links, numbers, titles from chapters.js) and back to top; a failure here must not stop the map
-import("./nav.js").catch((err) => console.error("Navigation failed to load:", err));
+import("./nav.js").catch((err) =>
+  console.error("Navigation failed to load:", err),
+);
 
 // slider: PNGs in img/slider/
 const SLIDER_IMAGES = [
   "landing_1b emb pack.png",
-  "landing_13 debt.png",
-  "12_invest fdi.png",
-  "landing_11 trade china green.png",
-  "landing_10 trade china hydro.png",
-  "landing_4b exe isotype.png",
+  "landing_2 vis.png",
   "landing_3 dia map.png",
-  "landing_2b vis pack.png",
-  "landing_1a emb map.png",
+  "landing_4b exe isotype.png",
+  "landing_12_invest fdi.png",
+  "landing_13 debt.png",
 ];
 const SLIDER_INTERVAL = 5500; // ms between images
 
