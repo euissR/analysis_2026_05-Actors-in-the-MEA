@@ -822,3 +822,32 @@ body {
   color: #1d3956;
   text-decoration: underline;
 }
+/* methodology page tables — append to css/fa.css */
+.fa-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;          /* wide tables scroll inside their own box on phones */
+  margin: 1.5rem 0;
+}
+.fa-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 640px;
+  font-family: "PT Sans Narrow", "PT Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+.fa-table th,
+.fa-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid #d9d9d9;
+}
+.fa-table th {
+  font-weight: 700;
+  border-bottom: 2px solid #063756;
+  background: #fff;
+  position: sticky;
+  top: 0;
+}
+.fa-table tbody tr:nth-child(even) td { background: #f5f7f9; }
