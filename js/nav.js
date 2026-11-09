@@ -6,6 +6,8 @@
 //   <div class="fa-nav" data-region="AF" data-chapter="dipl"></div>   previous | all chapters | next (end of page)
 //   <div class="fa-nav" data-page="methodology"></div>  same bar on a page that is not a chapter
 //   <div class="fa-card" data-region data-chapter>      landing card: link, number, title filled from chapters.js
+//   <div class="fa-theme" data-chapter>                 landing theme card (not a link): number, title, subtitle from chapters.js
+//     <a class="fa-region-link" data-region>            ...and its region links, pointing at that region's chapter
 //   <a data-page="methodology">                         link filled from chapters.js
 // A back-to-top button is added on every page.
 import { CHAPTERS, ORDER, PAGES, REGION_NAV, TITLE, chapterHref, pageHref } from "./chapters.js";
@@ -90,6 +92,35 @@ function cards() {
   });
 }
 
+// ── landing page theme tiles and region buttons ─────────────────────────────
+function themes() {
+  // a theme is shown if it is live in at least one region; numbering follows the table in chapters.js
+  const live = Object.keys(CHAPTERS).filter((id) =>
+    Object.values(ORDER).some((o) => o.includes(id)),
+  );
+  document.querySelectorAll(".fa-theme[data-chapter]").forEach((card) => {
+    const { chapter } = card.dataset;
+    const i = live.indexOf(chapter);
+    if (i < 0) {
+      card.style.display = "none";
+      return;
+    }
+    const c = CHAPTERS[chapter];
+    card.querySelector(".fa-card-number").textContent = i + 1;
+    card.querySelector(".fa-theme-title").textContent = c.title;
+    card.querySelector(".fa-theme-sub").textContent = c.subtitle;
+    // region links: hidden where that region has no live chapter for this theme
+    card.querySelectorAll(".fa-region-link[data-region]").forEach((a) => {
+      const { region } = a.dataset;
+      if (!ORDER[region] || !ORDER[region].includes(chapter)) {
+        a.style.display = "none";
+        return;
+      }
+      a.href = chapterHref(region, chapter);
+    });
+  });
+}
+
 // ── back to top ─────────────────────────────────────────────────────────────
 function top() {
   const b = document.createElement("button");
@@ -118,4 +149,5 @@ function top() {
 document.querySelectorAll(".fa-crumb").forEach(crumb);
 document.querySelectorAll(".fa-nav").forEach(bar);
 cards();
+themes();
 top();
