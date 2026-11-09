@@ -20,17 +20,17 @@ import { geoRobinson } from "../robinson.js";
 const CATEGORIES = {
   country: {
     label: "Country",
-    color: theme.grey,
+    color: theme.muted,
     tooltip: "Country in the analysis",
   },
   actor: {
     label: "Actor",
-    color: theme.fuchsia,
+    color: theme.mauve,
     tooltip: "External actor in the analysis",
   },
   both: {
     label: "Both",
-    color: theme.mauve,
+    color: theme.teal3,
     tooltip: "Country and external actor",
   },
 };
