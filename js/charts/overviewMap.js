@@ -1,10 +1,11 @@
 // overviewMap.js: world map of the countries and actors in the analysis (landing page).
 //
-//   makeOverviewMap(el, { countries, disputed, spec });
+//   makeOverviewMap(el, { countries, disputed, subregions, spec });
 //
 // countries: world_countries.geojson, features with iso3, name, category
 //            (category: "country" | "actor" | "both" | blank = not part of the analysis)
 // disputed:  world_disputed.geojson, drawn as white dashes on top
+// subregions (optional): Map iso3 -> African subregion (africa_countries.csv), shown in the tooltip
 // spec (optional): { width, alt }
 //
 // Same map style as the chapter maps: Robinson projection, white land with light-grey
@@ -35,7 +36,15 @@ const CATEGORIES = {
   },
 };
 
-export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
+// subregion names as written in the text (the data file abbreviates one)
+const SUBREGION_LABELS = {
+  "East Africa and HoA": "East Africa and the Horn of Africa",
+};
+
+export function makeOverviewMap(
+  el,
+  { countries, disputed, subregions = new Map(), spec = {} },
+) {
   const W = spec.width ?? 1000;
   const M = 4; // margin inside the drawing
 
@@ -140,8 +149,12 @@ export function makeOverviewMap(el, { countries, disputed, spec = {} }) {
     .filter((d) => category(d))
     .on("pointerenter", function (event, d) {
       d3.select(this).raise().attr("stroke", "#000").attr("stroke-width", 1.6);
+      const sub = subregions.get(d.properties.iso3);
+      const subLine = sub ? `<br>${SUBREGION_LABELS[sub] ?? sub}` : "";
       tooltip
-        .html(`<strong>${d.properties.name}</strong><br>${category(d).tooltip}`)
+        .html(
+          `<strong>${d.properties.name}</strong><br>${category(d).tooltip}${subLine}`,
+        )
         .style("opacity", 1);
       place(event);
     })

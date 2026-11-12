@@ -272,8 +272,9 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
     .attr("stroke-dasharray", "2 2");
 
   const outlineLayer = svg.append("g");
-  const spikeLayer = svg.append("g");
-  const dotLayer = svg.append("g");
+  const spikeLayer = svg.append("g").attr("class", "fa-snap");
+  const dotLayer = svg.append("g").attr("class", "fa-snap");
+  hover.snap(svg.node(), ".fa-snap circle, .fa-snap path"); // bigger tap targets for dots and small spikes
   const labelLayer = svg.append("g").attr("class", "fa-labels");
   const noteLayer = svg.append("g").attr("class", "fa-labels");
 
@@ -376,8 +377,8 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
             .attr("opacity", 0)
             .attr("stroke-width", 1.2)
             .attr("stroke-linejoin", "round")
-            .on("pointerenter pointermove", showSpike)
-            .on("pointerleave", hover.leave),
+            .attr("pointer-events", "none") // hits come from hover.snap
+            .on("pointermove", showSpike),
         (update) => update,
         (exit) =>
           exit
@@ -405,8 +406,8 @@ export function makeMilMap(el, { geo, actors, rows, extra, spec, region }) {
             .attr("cx", (d) => d.x)
             .attr("cy", (d) => d.y)
             .attr("r", 0)
-            .on("pointerenter pointermove", showDot)
-            .on("pointerleave", hover.leave),
+            .attr("pointer-events", "none") // hits come from hover.snap
+            .on("pointermove", showDot),
         (update) => update,
         (exit) => exit.transition(t).attr("r", 0).remove(),
       )

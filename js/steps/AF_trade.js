@@ -9,7 +9,7 @@
 //   chart: which chart the step shows
 //   state: what the chart shows (see the top of js/charts/periodRange.js)
 //
-// All charts compare annual averages 2019–21 and 2022–24, current USD (Growth Lab, HS12).
+// All charts compare annual averages 2019–21 and 2022–24, current US dollars (Growth Lab, HS12).
 //   partners  total trade, share of each actor (ECON 1.1, 1.2)
 //   exports   the region's goods exports to each actor, share of its exports (agri_cen_goods)
 //   balances  trade balance of each actor, total / hydrocarbon / non-hydrocarbon (ECON 1.3, 1.4)
@@ -29,7 +29,7 @@
 //                  not a share of a region's trade: not drawn (the chart shows the EU's
 //                  share of North African trade)
 //   bal_na_regions the 70% share of the EU's continent-wide swing is not drawn
-//   gre_intro      the USD 2.2bn total is in the subtitle; the rows are the actors' own values
+//   gre_intro      the $2.2bn total is in the subtitle; the rows are the actors' own values
 //   hit_eu         "pharmaceuticals and aircrafts": the pharma basket is shown (aerospace is
 //                  in the data, basket "aerospace")
 //   pha_total      India's 6.2% of total trade is shown on the partners chart
@@ -37,15 +37,15 @@
 //   agri_cen_goods the 19% is the EU's share of Central Africa's goods exports (all goods, not
 //                  agriculture), from trade_1_flows
 //   agri_cen_share "less than 5% of EU–Africa goods trade" (4.8%) is not drawn: the chart shows
-//                  the EU's trade with each region in USD bn
+//                  the EU's trade with each region in $bn
 //   agri_chn       the chart shows North Africa next to Sub-Saharan Africa (imports); the
 //                  sentence is as in the source, but "former’s" no longer has a clear referent
 //                  after the new Central Africa sentences
 //   cer_rus        the year-by-year shares sit in the line under the subtitle
 //   cer_ind        "However, two partners ..." opens the step; India and Russia are both
 //                  highlighted
-//   fer_intro      the divide between regions is shown as values by region (USD bn)
-//   fer_na_exp     the continent and North Africa side by side, values (USD bn); the 83%, 96%
+//   fer_intro      the divide between regions is shown as values by region ($bn)
+//   fer_na_exp     the continent and North Africa side by side, values ($bn); the 83%, 96%
 //                  and 93% are North Africa's part of Africa's exports (all, to the EU, to
 //                  India): not drawn
 //   fer_ssa_imp / fer_ssa_sup / fer_na_eu
@@ -56,7 +56,7 @@
 //                  not a share of a region's trade: not drawn (the chart shows the EU's
 //                  share of North African trade)
 //   bal_na_regions the 70% share of the EU's continent-wide swing is not drawn
-//   gre_intro      the USD 2.2bn total is in the subtitle; the rows are the actors' own values
+//   gre_intro      the $2.2bn total is in the subtitle; the rows are the actors' own values
 //   hit_eu         "pharmaceuticals and aircrafts": the pharma basket is shown (aerospace is
 //                  in the data, basket "aerospace")
 //   pha_total      India's 6.2% of total trade is shown on the partners chart
@@ -69,10 +69,10 @@
 //                  highlighted
 //   fer_intro      "83% of exports", "96% to the EU" and "93% to India" are shares of
 //                  Africa's flow to a partner, not of a partner's share: the step shows the
-//                  values by region (USD bn), the shares are in the tooltips of fer_na_exp
-//   fer_na_exp     the continent and North Africa side by side, values (USD bn); the 83%,
+//                  values by region ($bn), the shares are in the tooltips of fer_na_exp
+//   fer_na_exp     the continent and North Africa side by side, values ($bn); the 83%,
 //                  96% and 93% are not drawn
-//   fer_ssa_imp    the 87% is not drawn; North Africa and Sub-Saharan Africa are shown in USD bn
+//   fer_ssa_imp    the 87% is not drawn; North Africa and Sub-Saharan Africa are shown in $bn
 //   footnotes 2 to 4 and the cereals asterisk are drafts, from the source document;
 //   the fertilizers asterisk is the source's wording
 //   typos kept as in the source: "former’s agricultural trade", "in SSA."
@@ -80,7 +80,7 @@
 //   Israel have rows but no text of their own
 
 const SOURCE =
-  "Data: Growth Lab, Harvard University, 2026, “International Trade Data (HS12)”, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current USD.";
+  "Data: Growth Lab, Harvard University, 2026, “International Trade Data (HS12)”, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current US dollars.";
 
 const FIVE = [
   "North Africa",
@@ -120,7 +120,7 @@ export default {
       title: "Africa’s trading partners",
       subtitle: (s) =>
         s.measure === "value_usd_bn"
-          ? `Average annual trade with each actor, USD bn ${where(s)}`
+          ? `Average annual trade with each actor, $bn ${where(s)}`
           : `Share of total trade (imports and exports) with each actor, % ${where(s)}`,
       source: SOURCE,
       geoLabelsShort: {
@@ -140,7 +140,7 @@ export default {
       title: "Africa’s trading partners: exports",
       subtitle: (s) =>
         s.measure === "value_usd_bn"
-          ? `Average annual goods exports to each actor, USD bn ${where(s)}`
+          ? `Average annual goods exports to each actor, $bn ${where(s)}`
           : `Share of goods exports going to each actor, % ${where(s)}`,
       source: SOURCE,
       geoLabelsShort: {
@@ -159,7 +159,7 @@ export default {
       filter: { component: "total" },
       title: "Trade balances with Africa",
       subtitle: (s) =>
-        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, USD bn ${where(s)}. Positive: the actor sells more than it buys`,
+        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, $bn ${where(s)}. Positive: the actor sells more than it buys`,
       source: SOURCE,
       geoLabelsShort: {
         "North Africa": "North",
@@ -183,7 +183,7 @@ export default {
           flow === "exports" ? "exports going to" : "imports coming from";
         const base =
           s.measure === "value_usd_bn"
-            ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, USD bn`
+            ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, $bn`
             : `Share of Africa’s ${dir} each actor, %`;
         const tot =
           s.measure === "value_usd_bn" && Number.isFinite(info.total[0])

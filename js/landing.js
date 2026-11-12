@@ -35,11 +35,13 @@ const url = (file) => `${CONFIG.BASE_URL}/data/${file}`;
 // ── overview map ──────────────────────────────────────────────────────────
 
 async function initMap(el) {
-  const [countries, disputed] = await Promise.all([
+  const [countries, disputed, africa] = await Promise.all([
     d3.json(url("world_countries.geojson")),
     d3.json(url("world_disputed.geojson")),
+    d3.csv(url("africa_countries.csv")),
   ]);
-  makeOverviewMap(el, { countries, disputed });
+  const subregions = new Map(africa.map((d) => [d.iso3, d.subregion]));
+  makeOverviewMap(el, { countries, disputed, subregions });
 }
 
 // ── slider ────────────────────────────────────────────────────────────────

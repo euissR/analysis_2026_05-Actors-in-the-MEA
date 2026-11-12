@@ -35,18 +35,18 @@
 //   fdi_chn_gdp    split from fdi_chn (the map shows where China leads, the three-panel chart its scale vs GDP-weighted share)
 //   fdi_gulf       text says "eld" in the source (pasted); read as "held"
 //   fdimap         "all" = total recorded stock per host, tooltip reads "All foreign actors" (it includes unlisted counterparts);
-//                  Sudan and South Sudan are not drawn (no shares); one bubble scale throughout (Mauritius, USD 342 bn, sets it)
+//                  Sudan and South Sudan are not drawn (no shares); one bubble scale throughout (Mauritius, $342 bn, sets it)
 //   oda_europe     "most of the decline coming from EU Institutions": no EU institutions / member states split
-//   oda_china      "two-thirds infrastructure-related": no sector data. China is commitments (2019–23, constant 2023 USD),
+//   oda_china      "two-thirds infrastructure-related": no sector data. China is commitments (2019–23, constant 2023 US dollars),
 //                  its own chart, never on the OECD axis
 //   oda_geo_uae    "49.3% in Chad": country level, not in the data; Central Africa's share is shown
 //   oda_geo        China's row in the regional chart is the share of its AidData commitments, flagged in the subtitle
 //   oda_multi      the changes (donors down, multilateral +19.7%, total +2.6%) are in the text only; the chart shows totals
-//   debt_europe    "European institutions held USD 13.8 bn (multilateral)": not in the data
-//   debt_shift     USD 1,175.5 bn total external debt (+21%) and USD 264.5 bn multilateral PPG claims (+49%): not in the
+//   debt_europe    "European institutions held $13.8 bn (multilateral)": not in the data
+//   debt_shift     $1,175.5 bn total external debt (+21%) and $264.5 bn multilateral PPG claims (+49%): not in the
 //                  data; the chart shows bilateral stocks (total in the subtitle)
 //   debt_gulf      "Sudan³ Russia’s": full stop missing in the source, kept
-//   intro          remittances / FDI / ODA by region and the net-transfer figures (USD 97.0 bn → −7.5 bn): no chart
+//   intro          remittances / FDI / ODA by region and the net-transfer figures ($97.0 bn → −7.5 bn): no chart
 //   footnotes      all footnotes and captions on the charts are drafts, from the source document
 //   ODA actors     Israel (0.02 bn) has rows in the data but no text and is not drawn. Kuwait and "Other bilateral"
 //                  (13 further donors) are drawn for context only (ODA_CONTEXT): they are already inside the donor
@@ -74,7 +74,7 @@ const GEO_SHORT = {
 };
 
 const SRC_FDI =
-  "Data: IMF, Direct Investment Positions by Counterpart Economy (extract 10 December 2025); World Bank, WDI. Averages of year-end net inward FDI stocks (not flows) in current USD, by immediate counterpart (not ultimate owner); official data where available, otherwise counterpart-derived, each position averaged over the years observed. * 2022–24: eight economies switch from official to counterpart-derived data in 2023 or 2024; read changes as indicative.";
+  "Data: IMF, Direct Investment Positions by Counterpart Economy (extract 10 December 2025); World Bank, WDI. Averages of year-end net inward FDI stocks (not flows) in current US dollars, by immediate counterpart (not ultimate owner); official data where available, otherwise counterpart-derived, each position averaged over the years observed. * 2022–24: eight economies switch from official to counterpart-derived data in 2023 or 2024; read changes as indicative.";
 const SRC_FDI_NOTES =
   "Mauritius, a financial hub, holds 36% of recorded stock, including most US, Indian and Japanese positions; about a third of stock is attributed to other non-African economies, notably the UK and financial centres. Gulf (six GCC states): lower bound, as only Kuwait reports outward positions. EU: 27 member states.";
 const FDI_GEO_LABELS = { Africa: "Africa (54 economies)", "Africa excl. Mauritius": "Africa excl. Mauritius (53)" };
@@ -84,11 +84,11 @@ const OVER_HALF = ["EGY", "MAR", "ETH", "AGO", "COD", "UGA", "CMR", "TUN", "LBY"
 const EU_LED = ["NGA", "EGY", "ZAF", "DZA", "MAR", "KEN", "AGO", "CIV", "GHA", "TZA", "UGA", "CMR", "TUN", "LBY", "SEN", "ZMB", "BFA", "GAB", "BWA", "BEN", "MDG", "COG", "RWA", "GNQ", "MWI", "MRT", "TGO", "SLE", "LBR", "CAF", "CPV", "GMB", "SYC", "GNB", "STP"]; // 35
 const CHN_LED = ["ETH", "COD", "ZWE", "MLI", "GIN", "TCD", "NER", "NAM", "DJI", "BDI", "LSO", "COM", "ERI"]; // 13
 const SRC_OECD =
-  "Data: OECD DAC (DAC2A, DAC2B, DAC3A), USD at constant 2024 prices. Europe = EU27 + EU institutions. Three-year totals.";
+  "Data: OECD DAC (DAC2A, DAC2B, DAC3A), US dollars at constant 2024 prices. Europe = EU27 + EU institutions. Three-year totals.";
 const SRC_AIDDATA =
   "Data: AidData, 2025, “China’s Loans and Grants to Low- and Middle-Income Countries”, Version 1.0 (released 18 November 2025). Project-level commitments at constant 2023 prices, 2019–23.";
-const SRC_OECD_PLAIN = "Data: OECD DAC (DAC2A, DAC2B, DAC3A), USD at constant 2024 prices. Three-year totals.";
-const SRC_DEBT = "Data: World Bank, International Debt Statistics. Current USD.";
+const SRC_OECD_PLAIN = "Data: OECD DAC (DAC2A, DAC2B, DAC3A), US dollars at constant 2024 prices. Three-year totals.";
+const SRC_DEBT = "Data: World Bank, International Debt Statistics. Current US dollars.";
 
 const ODA_ACTORS = ["EU", "USA", "SAU", "JPN", "KOR", "ARE", "QAT", "TUR"];
 // drawn for context, already included in the donor aggregate (invest_1_context): never added to any total
@@ -117,7 +117,7 @@ export default {
       subtitle: (s, info) =>
         `Share of recorded inward FDI stock by investor${
           Number.isFinite(info.total[0])
-            ? `. Total stock: USD ${info.total[0].toFixed(0)} bn in ${P1}, USD ${info.total[1].toFixed(0)} bn in ${P2}*`
+            ? `. Total stock: $${info.total[0].toFixed(0)} bn in ${P1}, $${info.total[1].toFixed(0)} bn in ${P2}*`
             : ""
         }`,
       source: `${SRC_FDI} ${SRC_FDI_NOTES}`,
@@ -131,11 +131,11 @@ export default {
           title: "Where foreign investment is held",
           subtitle: (actor, label) =>
             actor === "all"
-              ? `Recorded inward FDI stock by host economy, USD bn, ${P2}*. Colour: the leading listed investor.`
-              : `${label}’s recorded FDI position by host economy, USD bn, ${P2}*`,
-          unit: "USD bn",
+              ? `Recorded inward FDI stock by host economy, $bn, ${P2}*. Colour: the leading listed investor.`
+              : `${label}’s recorded FDI position by host economy, $bn, ${P2}*`,
+          unit: "$bn",
           format: ",.2~f", // 342, 62.6, 0.01: no trailing zeros, also for the size key
-          sizeTitle: "Bubble area, USD bn",
+          sizeTitle: "Bubble area, $bn",
           sharedScale: true, // one scale in every step: the same number is the same size
           keyAll: [10, 100, 300],
         },
@@ -196,7 +196,7 @@ export default {
       actors: [...ODA_ACTORS, ...ODA_CONTEXT],
       labels: ODA_LABELS,
       title: "Net official development assistance to Africa",
-      subtitle: "Net ODA, total over three years, USD bn at constant 2024 prices",
+      subtitle: "Net ODA, total over three years, $bn at constant 2024 prices",
       source: `${SRC_OECD} ${CONTEXT_NOTE}`,
     },
 
@@ -236,7 +236,7 @@ export default {
       rows: ["Africa", ...FIVE],
       rowLabels: GEO_SHORT,
       title: "China’s official-finance commitments to Africa",
-      subtitle: "Adjusted commitments 2019–23, USD bn at constant 2023 prices. Commitments, not disbursements: not comparable with the OECD figures.",
+      subtitle: "Adjusted commitments 2019–23, $bn at constant 2023 prices. Commitments, not disbursements: not comparable with the OECD figures.",
       source: SRC_AIDDATA,
       panels: [
         {
@@ -301,7 +301,7 @@ export default {
       rows: ["donors", "multilateral", "all"],
       rowLabels: { donors: "Donors*", multilateral: "Multilateral", all: "All official" },
       title: "Gross official finance to Africa, by type of provider",
-      subtitle: "Three-year totals, USD bn at constant 2024 prices. *Sovereign donors plus EU institutions.",
+      subtitle: "Three-year totals, $bn at constant 2024 prices. *Sovereign donors plus EU institutions.",
       source: SRC_OECD_PLAIN,
       panels: [P1, P2].map((p) => ({
         id: p,
@@ -330,7 +330,7 @@ export default {
       labels: { EU: "EU27", GCC: "Gulf", GBR: "UK", other: "Other" },
       title: "Africa’s bilateral official debt",
       subtitle: (s, info) =>
-        `Public and publicly guaranteed bilateral debt outstanding by creditor, USD bn${
+        `Public and publicly guaranteed bilateral debt outstanding by creditor, $bn${
           Number.isFinite(info.total[0])
             ? `. All creditors: ${info.total[0].toFixed(1)} at end-2019, ${info.total[1].toFixed(1)} at end-2024`
             : ""
@@ -346,7 +346,7 @@ export default {
       labels: { EU: "EU27", GCC: "Gulf" },
       title: "Net bilateral financial flows to Africa",
       subtitle:
-        "Disbursements minus principal repayments, average USD bn a year. Negative: the creditor was repaid more than it lent",
+        "Disbursements minus principal repayments, average $bn a year. Negative: the creditor was repaid more than it lent",
       source: SRC_DEBT,
     },
 
@@ -359,11 +359,11 @@ export default {
       actors: DEBT_ACTORS,
       labels: { EU: "EU27", GCC: "Gulf" },
       geoLabels: GEO_SHORT,
-      xTitle: "net bilateral flows 2022–24, USD bn a year",
+      xTitle: "net bilateral flows 2022–24, $bn a year",
       yTitle: "Concessional share of debt outstanding, end-2024",
-      sizeTitle: "Debt outstanding, end-2024, USD bn",
+      sizeTitle: "Debt outstanding, end-2024, $bn",
       yShort: "Concessional share",
-      xShort: "Net flows 2022–24, USD bn a year",
+      xShort: "Net flows 2022–24, $bn a year",
       title: "Africa’s bilateral creditors: terms and direction of lending",
       subtitle: "Net flows, concessional share and debt outstanding of each creditor",
       source: SRC_DEBT,
@@ -432,7 +432,7 @@ export default {
       state: {
         highlight: ["Africa"],
         footnote:
-          "China’s figures are based on AidData’s adjusted official-finance commitments for 2019–23, expressed in constant 2023 USD. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings.",
+          "China’s figures are based on AidData’s adjusted official-finance commitments for 2019–23, expressed in constant 2023 US dollars. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings.",
       },
     },
     oda_geo: {

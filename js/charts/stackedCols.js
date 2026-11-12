@@ -99,7 +99,7 @@ export function makeStackedCols(el, { rows, spec, region, actors = [] }) {
     .append("text")
     .attr("x", M.left - 44)
     .attr("y", M.top - 18)
-    .attr("font-size", 12)
+    .style("font-size", "calc(12px * var(--fa-fs, 1))")
     .attr("fill", theme.muted);
 
   // ── one state -> stacks ───────────────────────────────────────────────────
@@ -171,7 +171,7 @@ export function makeStackedCols(el, { rows, spec, region, actors = [] }) {
           enter
             .append("text")
             .attr("text-anchor", "middle")
-            .attr("font-size", 12)
+            .style("font-size", "calc(12px * var(--fa-fs, 1))")
             .attr("fill", theme.ink)
             .attr("y", H - M.bottom + 17)
             .attr("x", (d) => x(d) + x.bandwidth() / 2)
@@ -199,7 +199,7 @@ export function makeStackedCols(el, { rows, spec, region, actors = [] }) {
           e.append("text")
             .attr("x", M.left - 6)
             .attr("text-anchor", "end")
-            .attr("font-size", 12)
+            .style("font-size", "calc(12px * var(--fa-fs, 1))")
             .attr("fill", theme.muted)
             .attr("dy", "0.32em")
             .text((d) => fmt(d));

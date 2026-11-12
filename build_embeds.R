@@ -15,6 +15,8 @@ setwd(wd2)
 # Builds the Drupal embed files in embed/ from the dev pages in the repo root:
 #   index_{chapter}_{region}.html  ->  embed/{REGION}_{chapter}.html
 #   index_landing.html             ->  embed/landing.html
+#   index_landing_v2.html          ->  embed/landing_v2.html
+#   index_landing_v3.html          ->  embed/landing_v3.html
 #   index_methodology.html         ->  embed/methodology.html
 # Edit the dev page, run this, paste the result into Drupal (source mode).
 # Run from the repo root; no packages needed.
@@ -144,6 +146,26 @@ if (file.exists(f)) {
     check_relative("landing", blk)
     finish(file.path(EMBED_DIR, "landing.html"), blk, basename(f))
   }
+}
+
+# ── landing page versions: from the header comment to the last script tag ────
+#   v2 ends with landing.js; v3 adds landing_scrolly.js (Main findings scrollytelling)
+landing_versions <- list(
+  v2 = 'src="js/landing.js"',
+  v3 = 'src="js/landing_scrolly.js"'
+)
+for (v in names(landing_versions)) {
+  f <- file.path(DEV_DIR, sprintf("index_landing_%s.html", v))
+  if (!file.exists(f)) next
+  blk <- cut_block(read_lines(f), "<!-- =====", landing_versions[[v]], to_inclusive = TRUE)
+  if (is.null(blk)) {
+    warning(basename(f), ": could not find the header comment or the ", landing_versions[[v]], " script; skipped")
+    next
+  }
+  blk <- absolutize(dedent(blk))
+  if (LANDING_DROP_H1) blk <- blk[!grepl("^\\s*<h1[ >].*</h1>\\s*$", blk, useBytes = TRUE)]
+  check_relative(paste0("landing_", v), blk)
+  finish(file.path(EMBED_DIR, sprintf("landing_%s.html", v)), blk, basename(f))
 }
 
 # ── methodology page: from the breadcrumb to the nav.js script tag ───────────

@@ -24,7 +24,7 @@
 //                  the 58 / 3 split is not drawn
 //   PPI caption    "The detailed attribution and deduplication rules are consolidated in note 6": note 6 is the
 //                  MPE concentration note, no note holds the attribution rules. Sentence left out of the chart footnote
-//   pro_works      12 contracts, USD 209.8 m and the 25.3% of all works value are reproduced, not drawn; the dot
+//   pro_works      12 contracts, $209.8 m and the 25.3% of all works value are reproduced, not drawn; the dot
 //                  shows the works share on the same axis as the broad bar (own denominator)
 //   conc_ppi       "40 of the 61 foreign-linked proxies" reproduced, not drawn
 //   conc_ipf       footnote 6 (the two MPE contracts; Türkiye 16.3% and other African/Middle Eastern 30.2% without
@@ -38,7 +38,7 @@
 //                  Western and Asian, Malaysia, offshore centres and World/UN stay in the denominator
 //   shares         hosts differ by measure: PPI six, broad awards four (no Syria, Yemen), works three (no Jordan)
 //   footnotes 3, 4 33.9% / 24.2% / 13.8%, 64.6% / 1.5%, 171 contracts, 12 works contracts: reproduced, not drawn
-//   intro          GCC awards (USD 105.8 bn -> 212.4 bn, 70.7% -> 84.4%): reproduced; reconstruction needs (USD 216 bn,
+//   intro          GCC awards ($105.8 bn -> 212.4 bn, 70.7% -> 84.4%): reproduced; reconstruction needs ($216 bn,
 //                  82 bn, 71.4 bn, 11 bn, 1 bn, 20-25 bn): intro text, not checked. No chart
 //   Palestine*     the source has no designation note: the standard EU wording is added before the first endnote
 //                  (draft, to be confirmed)

@@ -67,9 +67,11 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
     (many ? spec.geoLabelsShort?.[g] : null) ?? spec.geoLabels?.[g] ?? g;
 
   const fmtShare = (v) => `${v.toFixed(1)}%`;
-  const fmtBn = (v) => `USD ${d3.format(",.1f")(v)} bn`;
-  const fmtBal = (v) => `USD ${d3.format("+,.1f")(v)} bn`;
-  const fmtFlow = (v) => `USD ${d3.format("+,.2f")(v)} bn a year`;
+  // Sign goes before the currency symbol: +$1.2 bn / −$1.2 bn.
+  const signedUsd = (v, spec) => `${v > 0 ? "+" : v < 0 ? "−" : ""}$${d3.format(spec)(Math.abs(v))}`;
+  const fmtBn = (v) => `$${d3.format(",.1f")(v)} bn`;
+  const fmtBal = (v) => `${signedUsd(v, ",.1f")} bn`;
+  const fmtFlow = (v) => `${signedUsd(v, ",.2f")} bn a year`;
   const formatters = { share_pct: fmtShare, value_usd_bn: fmtBn, balance_usd_bn: fmtBal, net_flow_usd_bn: fmtFlow };
   const labelFmt = {
     share_pct: fmtShare,
@@ -307,7 +309,7 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
       .append("text")
       .attr("class", "val")
       .attr("dy", "0.35em")
-      .attr("font-size", 12)
+      .style("font-size", "calc(12px * var(--fa-fs, 1))")
       .attr("fill", theme.ink);
     enter
       .append("rect")

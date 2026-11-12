@@ -69,7 +69,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
   let W, H, M;
   function setSize() {
     W = phone.matches ? 440 : region.width;
-    H = phone.matches ? 430 : region.height;
+    H = phone.matches ? 540 : region.height;
     M = phone.matches
       ? { top: 6, right: 112, bottom: 6, left: 118 }
       : {
@@ -280,7 +280,7 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
     </div>
     <div class="fa-map"></div>
     <div class="fa-foot">
-      <div class="fa-key"></div>
+      <div class="fa-key fa-key--stack"></div>
       <div class="fa-source"><span class="fa-footnote" style="display:block;font-size:0.8125rem;line-height:1.25;margin-bottom:0.25rem"></span><span class="fa-credit"></span></div>
     </div>
     <div class="fa-tooltip" aria-hidden="true"></div>`;
@@ -288,6 +288,8 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
   const applySize = () => {
     el.style.setProperty("--fa-aspect", `${W} / ${H}`);
     svg.attr("viewBox", `0 0 ${W} ${H}`);
+    // the narrower phone drawing already enlarges the labels, so a smaller boost than other charts
+    svg.style("--fa-fs", phone.matches ? "1.2" : "1");
   };
   const $ = (sel) => el.querySelector(sel);
   $(".fa-title").textContent = spec.title;
@@ -450,7 +452,8 @@ export function makeSankey(el, { rows, spec, region, actors = [] }) {
         .filter((n) => n.left === left && showLabel(n))
         .sort((a, b) => a.y0 + a.y1 - (b.y0 + b.y1))
         .forEach((n) => {
-          const h = wrap(n.label).length * 13.8;
+          const fs = parseFloat(getComputedStyle(svg.node()).getPropertyValue("--fa-fs")) || 1;
+          const h = wrap(n.label).length * 13.8 * fs;
           const c = Math.max((n.y0 + n.y1) / 2, bottom + 1 + h / 2);
           n.yl = c;
           bottom = c + h / 2;

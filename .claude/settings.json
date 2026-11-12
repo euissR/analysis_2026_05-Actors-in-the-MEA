@@ -5,7 +5,9 @@
       "Bash(git add *)",
       "Bash(git restore *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(node -e \"try{require.resolve\\('playwright'\\);console.log\\('pw'\\)}catch\\(e\\){console.log\\('no pw'\\)}\")"
     ]
   }
 }

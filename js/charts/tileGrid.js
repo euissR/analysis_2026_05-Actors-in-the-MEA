@@ -239,7 +239,7 @@ export function makeTileGrid(el, { rows, spec }) {
       .attr("text-anchor", "middle")
       .attr("font-family", theme.font)
       .attr("font-weight", weight)
-      .attr("font-size", fontSize)
+      .style("font-size", `calc(${fontSize}px * var(--fa-fs, 1))`)
       .attr("pointer-events", "none");
   const codes = textAttrs(cells.append("text"), 700, 13).text((d) => d.iso3);
   const vals = textAttrs(cells.append("text"), 400, 13);

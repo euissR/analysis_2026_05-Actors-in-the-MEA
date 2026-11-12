@@ -33,7 +33,7 @@
 //                  the country's total, not funding. PPI = sponsor-stake equivalents, not money. Single-actor maps scale the bubbles to that actor's
 //                  largest country, so sizes do not compare across actors.
 //   map            "Other", UK, Other Western/Asia, Malaysia, offshore centres and multilateral/UN are all light grey
-//   intro          USD 155 bn a year, 41% / 48%, seven times debt service, EUR 120 bn of 150 bn, USD 29.2 bn BRI construction:
+//   intro          $155 bn a year, 41% / 48%, seven times debt service, EUR 120 bn of 150 bn, $29.2 bn BRI construction:
 //                  intro text, no chart
 //   footnotes      all footnotes and captions on the charts are drafts, from the source document
 
@@ -152,10 +152,10 @@ export default {
           title: "Foreign works awards, by borrower country",
           subtitle: (a, label) =>
             a === "all"
-              ? "World Bank-financed works awards to foreign firms, July 2019–December 2024. Bubble area: USD m."
+              ? "World Bank-financed works awards to foreign firms, July 2019–December 2024. Bubble area: $m."
               : `${label}: works award value, July 2019–December 2024. Bubble area scaled to the actor’s largest country.`,
-          unit: "USD m",
-          sizeTitle: "Works awards, USD m",
+          unit: "$m",
+          sizeTitle: "Works awards, $m",
           format: ",.0f",
           keyAll: [100, 500, 1500],
         },

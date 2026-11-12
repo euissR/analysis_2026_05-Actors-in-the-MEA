@@ -443,7 +443,7 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
         (enter) =>
           enter
             .append("text")
-            .attr("font-size", 12)
+            .style("font-size", "calc(12px * var(--fa-fs, 1))")
             .attr("fill", theme.ink)
             .attr("dy", "0.35em")
             .attr("x", (d) => d.x)

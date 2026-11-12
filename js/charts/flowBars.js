@@ -244,7 +244,7 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
       .join((enter) =>
         enter
           .append("text")
-          .attr("font-size", (s) => (s.kind === "p" ? 11 : 12))
+          .style("font-size", (s) => `calc(${s.kind === "p" ? 11 : 12}px * var(--fa-fs, 1))`)
           .attr("fill", (s) => (s.kind === "p" ? theme.muted : theme.ink))
           .attr("dy", (s) => (s.kind === "p" ? "0em" : "0.35em"))
           .attr("x", (s) => s.x),
@@ -264,7 +264,7 @@ export function makeFlowBars(el, { rows, spec, actors = [] }) {
     tooltip
       .html(
         `<strong>${s.d.label}</strong><br>${s.flow === "imports" ? "Region’s imports from" : "Region’s exports to"} (${period})<br>` +
-          `Total: USD ${fmt(f.total)} bn<br>${spec.partLabel ?? spec.part}: USD ${fmt(f.part)} bn (${Math.round(f.share * 100)}%)`,
+          `Total: $${fmt(f.total)} bn<br>${spec.partLabel ?? spec.part}: $${fmt(f.part)} bn (${Math.round(f.share * 100)}%)`,
       )
       .style("opacity", 1);
     hover.enter(event);

@@ -8,7 +8,7 @@
 //   chart: which chart the step shows
 //   state: what the chart shows (see the top of js/charts/periodRange.js)
 //
-// All charts compare annual averages 2019–21 and 2022–24, current USD (Growth Lab, HS12).
+// All charts compare annual averages 2019–21 and 2022–24, current US dollars (Growth Lab, HS12).
 // Geographies: the region, the two income groups, and GCC and Israel on their own
 // (they are inside the high-income group).
 //   partners  total trade, share of each actor (ECON 1.1, 1.2)
@@ -23,9 +23,9 @@
 //     bal_groups, bal_tur_iraq   Iraq's part of the EU, US and Türkiye balances is not in the
 //                           workbook: the charts show the two income groups
 //     gre_gulf              no green-energy shares for Israel and the GCC (no denominators):
-//                           values in USD bn instead
+//                           values in $bn instead
 //     hit_us, hit_ind, hit_kor   no world totals per high-tech basket, so the armament and
-//                           pharma charts show values in USD bn, not the shares the text quotes
+//                           pharma charts show values in $bn, not the shares the text quotes
 //                           (US 55.8% of armament, India 10.8% of pharma, South Korea 10.2%)
 //   split sentences (the chart shows one geography, actor or basket at a time, so a sentence with
 //   two is cut at the clause boundary): tra_hi / tra_hi_detail / tra_lmi, bal_intro / bal_tur,
@@ -35,9 +35,9 @@
 //   tra_chn               41.3% is the 2024 value (annual data); the chart shows period averages
 //   tra_hi                86.6% (the income group's weight in regional trade) is not drawn
 //   tra_lmi               Iraq's oil exports are not drawn
-//   gre_total             the three-year total (USD 12.1bn) is not drawn; the chart shows annual
+//   gre_total             the three-year total ($12.1bn) is not drawn; the chart shows annual
 //                         averages, with the total of all partners in the subtitle
-//   agri_def              the deficit (USD 72.6bn, +34%) is not drawn; the step shows the
+//   agri_def              the deficit ($72.6bn, +34%) is not drawn; the step shows the
 //                         region's imports by actor
 //   hit_intro             "largest external partner, counting both imports and exports": the
 //                         chart shows import shares only (hit_israel shows both flows)
@@ -56,7 +56,7 @@
 //   the Gulf as separate states is not in the data (GCC only)
 
 const SOURCE =
-  "Data: Growth Lab, Harvard University, 2026, “International Trade Data (HS12)”, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current USD.";
+  "Data: Growth Lab, Harvard University, 2026, “International Trade Data (HS12)”, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current US dollars.";
 
 const REG = "Middle East and the Gulf";
 const HI = "High-income";
@@ -106,7 +106,7 @@ export default {
       title: "Trading partners of the Middle East and the Gulf",
       subtitle: (s) =>
         s.measure === "value_usd_bn"
-          ? "Average annual trade with each actor, USD bn"
+          ? "Average annual trade with each actor, $bn"
           : "Share of total trade (imports and exports) with each actor, %",
       source: SOURCE,
       ...labels,
@@ -120,7 +120,7 @@ export default {
       geos: [REG],
       title: "Trade balances with the Middle East and the Gulf",
       subtitle: (s) =>
-        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, USD bn. Positive: the actor sells more than it buys`,
+        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, $bn. Positive: the actor sells more than it buys`,
       source: SOURCE,
       ...labels,
     },
@@ -137,7 +137,7 @@ export default {
         const dir = flow === "exports" ? "exports going to" : "imports coming from";
         const base =
           s.measure === "value_usd_bn"
-            ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, USD bn`
+            ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, $bn`
             : `Share of ${dir} each actor, %`;
         const tot =
           s.measure === "value_usd_bn" && !(s.geos?.length > 1) && Number.isFinite(info.total[0])
@@ -159,7 +159,7 @@ export default {
       part: "Israel",
       partLabel: "Israel",
       restLabel: "Rest of the region",
-      title: "Two-way high-tech trade with the region, 2022–2024 average, USD bn",
+      title: "Two-way high-tech trade with the region, 2022–2024 average, $bn",
       subtitle: "",
       note: "Percentages give Israel’s share of each flow.",
       source: SOURCE,

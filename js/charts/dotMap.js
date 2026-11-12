@@ -197,6 +197,7 @@ export function makeDotMap(
 
   const dots = svg
     .append("g")
+    .attr("class", "fa-snap")
     .selectAll("circle")
     .data(countries, (d) => d.iso3)
     .join("circle")
@@ -204,8 +205,9 @@ export function makeDotMap(
     .attr("cy", (d) => d.y)
     .attr("r", 0)
     .attr("stroke-width", 0.75)
-    .on("pointerenter pointermove", showTooltip)
-    .on("pointerleave", hover.leave);
+    .attr("pointer-events", "none") // hits come from hover.snap (bigger targets)
+    .on("pointermove", showTooltip);
+  hover.snap(svg.node(), ".fa-snap circle");
 
   const labelLayer = svg.append("g").attr("class", "fa-labels");
   const noteLayer = svg.append("g").attr("class", "fa-labels");

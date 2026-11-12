@@ -26,20 +26,30 @@ export default {
     // EU: Africa's largest single trading partner, China and the Asian four alongside
     lf_eu: { chapter: "AF_trade", region: "AF", step: "tra_eu" },
 
+    // EU: exceptional reach but uneven strengths; UN peacekeepers, EU vs China and India
+    lf_eu_reach: {
+      chapter: "AF_mil",
+      region: "AF",
+      step: "dep_un_intro",
+      override: { actors: ["EU", "CHN", "IND"] },
+    },
+
     // China: embassies in all 53 African states it recognises
     lf_chn: { chapter: "AF_dipl", region: "AF", step: "emb_chn" },
 
     // US: bases and deployments in the Gulf (no ME military state compares deployments across actors)
     lf_usa: { chapter: "ME_mil", region: "ME", step: "dep_us" },
 
-    // Gulf: recorded FDI stock in Africa, USD bn (38.3 -> 53.7, the "around 40%"), instead of the share
+    // Gulf: recorded FDI stock in Africa, $bn (38.3 -> 53.7, the "around 40%"), instead of the share;
+    // all of Africa only (the chapter also shows the panel excluding Mauritius)
     lf_gulf: {
       chapter: "AF_invest",
       region: "AF",
       step: "fdi_scale_gulf",
       override: {
+        geos: ["Africa"],
         measure: "value_usd_bn",
-        subtitle: "Recorded inward FDI stock held by each investor, USD bn",
+        subtitle: "Recorded inward FDI stock held by each investor, $bn",
       },
     },
 

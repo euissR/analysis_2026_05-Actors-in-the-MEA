@@ -143,5 +143,81 @@ export function makeHover(el, tooltip) {
     tooltip.style("opacity", 0);
   }
 
-  return { enter, leave };
+  // snap(svgNode, selector, { touch, mouse }): bigger tap targets for small marks.
+  // The svg finds the mark nearest the pointer (within `touch` / `mouse` screen px of
+  // its centre, or inside it if larger) and sends that mark a pointermove, so the
+  // chart's own handlers run unchanged. The marks themselves must have
+  // pointer-events: none, or they would also answer on their own.
+  // Nearness is relative to size (distance / max(radius, reach)), so a small dot
+  // beside or on top of a large one wins when the tap lands near it.
+  // Touch: the tooltip opens on a tap (not while scrolling) and stays until the next
+  // tap that hits nothing.
+  function snap(svgNode, selector, { touch = 22, mouse = 8 } = {}) {
+    let current = null;
+
+    function pick(e) {
+      const reach = e.pointerType === "mouse" ? mouse : touch;
+      let best = null;
+      let bestScore = 1;
+      for (const n of svgNode.querySelectorAll(selector)) {
+        if (+getComputedStyle(n).opacity === 0) continue;
+        const b = n.getBoundingClientRect();
+        if (!b.width && !b.height) continue;
+        const r = Math.max(b.width, b.height) / 2;
+        const d = Math.hypot(e.clientX - (b.left + b.right) / 2, e.clientY - (b.top + b.bottom) / 2);
+        const score = d / Math.max(r, reach);
+        if (score <= bestScore) {
+          best = n;
+          bestScore = score;
+        }
+      }
+      return best;
+    }
+
+    function show(e) {
+      const n = pick(e);
+      if (n) {
+        current = n;
+        n.dispatchEvent(
+          new PointerEvent("pointermove", {
+            clientX: e.clientX,
+            clientY: e.clientY,
+            pointerType: e.pointerType,
+          }),
+        );
+      } else if (current) {
+        current = null;
+        leave();
+      }
+    }
+
+    svgNode.addEventListener("pointermove", (e) => {
+      if (e.pointerType === "mouse") show(e);
+    });
+    svgNode.addEventListener("pointerup", (e) => {
+      if (e.pointerType !== "mouse") show(e);
+    });
+    svgNode.addEventListener("pointerleave", (e) => {
+      if (e.pointerType === "mouse" && current) {
+        current = null;
+        leave();
+      }
+    });
+    // a scroll that starts on the map closes a touch tooltip
+    svgNode.addEventListener("pointercancel", () => {
+      if (current) {
+        current = null;
+        leave();
+      }
+    });
+    // a tap anywhere outside the chart closes a touch tooltip
+    document.addEventListener("pointerdown", (e) => {
+      if (current && e.pointerType !== "mouse" && !svgNode.contains(e.target)) {
+        current = null;
+        leave();
+      }
+    });
+  }
+
+  return { enter, leave, snap };
 }

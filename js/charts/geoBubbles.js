@@ -141,7 +141,8 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
     .attr("stroke-width", 0.9)
     .attr("stroke-dasharray", "2 2");
 
-  const gBubbles = svg.append("g");
+  const gBubbles = svg.append("g").attr("class", "fa-snap");
+  hover.snap(svg.node(), ".fa-snap circle"); // bigger tap targets for small bubbles
   const gLabels = svg.append("g").attr("class", "fa-labels");
   const gKey = svg.append("g").attr("class", "fa-axis");
 
@@ -190,8 +191,8 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
             .attr("opacity", 0)
             .attr("stroke", "#fff")
             .attr("stroke-width", 1)
-            .on("pointerenter pointermove", showTip)
-            .on("pointerleave", hover.leave),
+            .attr("pointer-events", "none") // hits come from hover.snap
+            .on("pointermove", showTip),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).attr("r", 0).remove(),
       )
