@@ -17,7 +17,11 @@
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
 //   split sentences (one chart shows one measure at a time): geo_ppi / geo_works, eu_ppi / eu_works,
-//   chn_ppi / chn_works, small_are / small_usa
+//   chn_ppi / chn_works
+//   merged sentences (one step, one chart state; highlights added up, the text keeps both parts): ppi_eu (+ ppi_uae: five rows
+//   highlighted, both footnotes), chn_works (+ chn_dominant: the six countries with more than 90%; Tanzania, Ethiopia and Kenya are
+//   among them), small_are (+ small_usa: UAE and US on one map, each in its own colour, ONE bubble scale for both, unlike the
+//   single-actor maps)
 //   pro_divide     "European suppliers perform much better in North Africa, China's advantage is in sub-Saharan Africa":
 //                  no figure in the text. The works map shows it by the colour of the leading actor; only Egypt
 //                  and Tunisia have works awards in North Africa. No separate chart.
@@ -191,14 +195,10 @@ export default {
     // ── ECON 4.2: private participation in infrastructure ───────────────────
     ppi_eu: {
       chart: "shares",
-      state: { panels: ["ppi"], highlight: ["EU", "REG"], footnote: FN_PPI_2 },
-    },
-    ppi_uae: {
-      chart: "shares",
       state: {
         panels: ["ppi"],
-        highlight: ["GCC", "USA", "CHN"],
-        footnote: FN_PPI_1,
+        highlight: ["EU", "REG", "GCC", "USA", "CHN"],
+        footnote: FN_PPI_1 + "\n" + FN_PPI_2,
       },
     },
     ppi_contrast: {
@@ -247,33 +247,29 @@ export default {
       chart: "map",
       state: { measure: "ppi", actor: "CHN", footnote: FN_MAP_PPI },
     },
+    // Tanzania, Ethiopia and Kenya are among the six countries where China has more than 90%
     chn_works: {
-      chart: "map",
-      state: {
-        measure: "works",
-        actor: "CHN",
-        highlight: ["TZA", "ETH", "KEN"],
-        labels: ["TZA", "ETH", "KEN"],
-        footnote: FN_MAP_WORKS,
-      },
-    },
-    chn_dominant: {
       chart: "map",
       state: {
         measure: "works",
         actor: "CHN",
         highlight: CN90,
         labels: CN90,
+        labelsLeft: ["COD"],
         footnote: FN_MAP_WORKS,
       },
     },
+    // UAE and US on one map, in their own colours, on one bubble scale
     small_are: {
       chart: "map",
-      state: { measure: "works", actor: "ARE", labels: ["NGA", "NER"] },
-    },
-    small_usa: {
-      chart: "map",
-      state: { measure: "works", actor: "USA", labels: ["SOM", "ETH"] },
+      state: {
+        measure: "works",
+        actor: ["ARE", "USA"],
+        actorLabel: "UAE and US",
+        subtitle:
+          "UAE and US: works award value, July 2019–December 2024. Bubble area: $m, the same scale for both actors.",
+        labels: ["NGA", "NER", "SOM", "ETH"],
+      },
     },
   },
 };

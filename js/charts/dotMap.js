@@ -25,10 +25,15 @@
 //   the selected actor has; default lists every category in the data
 //
 // state:
-//   actor:     actor code, or "all"
+//   actor:     actor code, or "all"; in count mode also a list of actor codes, e.g. ["QAT", "SAU"]:
+//              the bubbles then show the sum of their visits in each country
+//   actorLabel: name of that group in the tooltips, e.g. "GCC countries" (optional, for a list)
+//   subtitle:  replaces the chart subtitle for this step (optional)
 //   highlight: iso3 codes at full strength; all other dots dimmed (optional)
-//   subregion: highlight a whole subregion and label its share (optional)
+//   subregion: highlight a whole subregion and label its share (optional);
+//              a list, e.g. ["East Africa and HoA", "West Africa"], highlights several, each with its own share
 //   labels:    iso3 codes to label on the map (optional)
+//   labelsLeft: iso3 codes (also in labels) whose label goes to the left of the dot instead of the right (optional)
 //
 // The legend tiles let the reader pick another actor. That choice holds until
 // the next step, which resets the map to the narrated state.
@@ -58,6 +63,18 @@ export function makeDotMap(
   const byKey = new Map(rows.map((r) => [`${r.iso3}|${r.actor}`, r]));
   const subByKey = new Map(sub.map((r) => [`${r.subregion}|${r.actor}`, r]));
   const value = (iso3, actor) => byKey.get(`${iso3}|${actor}`);
+  // state.actor as a list (count mode): the visits of all of them added up. A country counts as
+  // "own country" only if none of the actors has a number there.
+  const isGroup = (state) => Array.isArray(state.actor) && state.actor.length > 1;
+  const rowOf = (iso3, state) => {
+    if (!isGroup(state)) return value(iso3, [state.actor].flat()[0]);
+    const rs = state.actor.map((a) => value(iso3, a)).filter(Boolean);
+    const withN = rs.filter((r) => r.n !== "" && r.n != null);
+    if (withN.length) return { n: d3.sum(withN, (r) => +r.n || 0) };
+    return rs.length ? { n: "" } : undefined;
+  };
+  const labelOfActor = (state) =>
+    state.actorLabel ?? (isGroup(state) ? state.actor.join(", ") : actorLabel.get([state.actor].flat()[0]));
 
   const projection = geoRobinson()
     .rotate([-region.center[0], 0])
@@ -197,7 +214,6 @@ export function makeDotMap(
 
   const dots = svg
     .append("g")
-    .attr("class", "fa-snap")
     .selectAll("circle")
     .data(countries, (d) => d.iso3)
     .join("circle")
@@ -205,9 +221,8 @@ export function makeDotMap(
     .attr("cy", (d) => d.y)
     .attr("r", 0)
     .attr("stroke-width", 0.75)
-    .attr("pointer-events", "none") // hits come from hover.snap (bigger targets)
-    .on("pointermove", showTooltip);
-  hover.snap(svg.node(), ".fa-snap circle");
+    .on("pointerenter pointermove", showTooltip)
+    .on("pointerleave", hover.leave);
 
   const labelLayer = svg.append("g").attr("class", "fa-labels");
   const noteLayer = svg.append("g").attr("class", "fa-labels");
@@ -221,7 +236,8 @@ export function makeDotMap(
   // text and the other charts; "all actors" and actors without a colour stay neutral.
   // In presence charts the category (rank) is then shown by a lighter tint of that colour
   // (and the size), since the colour itself now says who.
-  const actorHue = (actor) => (actor === "all" ? null : theme.actorColors?.[actor] ?? null);
+  const actorHue = (actor) =>
+    actor === "all" || Array.isArray(actor) ? null : theme.actorColors?.[actor] ?? null;
   const countFill = (state) => actorHue(state.actor) ?? theme.neutral;
   const TINTS = [0, 0.45, 0.7]; // strongest category first, in the order of spec.categories
   function catLook(presence, actor) {
@@ -239,7 +255,7 @@ export function makeDotMap(
   }
 
   function look(d, state) {
-    const row = value(d.iso3, state.actor);
+    const row = rowOf(d.iso3, state);
     if (counting || state.actor === "all") {
       // no row = no dot, if the chart says so (exercises); in the visits chart a place
       // without a row is the actor's own country
@@ -257,8 +273,8 @@ export function makeDotMap(
   }
 
   function tooltipLine(d, state) {
-    const row = value(d.iso3, state.actor);
-    const label = actorLabel.get(state.actor);
+    const row = rowOf(d.iso3, state);
+    const label = labelOfActor(state);
     if (counting || state.actor === "all") {
       if (row?.n === "" || row?.n == null) return `${label}: own country`;
       return spec.tooltipCount(+row.n, label, nActors);
@@ -278,17 +294,16 @@ export function makeDotMap(
     shown = state;
     const t = d3.transition().duration(animate ? theme.duration : 0);
 
+    const subs = [state.subregion].flat().filter(Boolean); // one subregion or a list
     const hi = new Set(
-      state.subregion
-        ? countries
-            .filter((d) => d.subregion === state.subregion)
-            .map((d) => d.iso3)
+      subs.length
+        ? countries.filter((d) => subs.includes(d.subregion)).map((d) => d.iso3)
         : (state.highlight ?? []),
     );
 
     tiles.attr("aria-pressed", (d) => d.actor === state.actor);
     $(".fa-subtitle").textContent =
-      state.actor === "all" ? spec.subtitleAll : spec.subtitleActor;
+      state.subtitle ?? (state.actor === "all" ? spec.subtitleAll : spec.subtitleActor);
 
     dots
       .each(function (d) {
@@ -301,7 +316,8 @@ export function makeDotMap(
       .attr("stroke", (d) => d.look.stroke)
       .attr("opacity", (d) => (hi.size && !hi.has(d.iso3) ? theme.dim : 1));
 
-    // country labels, to the right of their dots
+    // country labels, to the right of their dots (to the left for state.labelsLeft)
+    const onLeft = (d) => d.x > W * 0.78 || (state.labelsLeft ?? []).includes(d.iso3);
     const labelled = countries.filter((d) =>
       (state.labels ?? []).includes(d.iso3),
     );
@@ -314,30 +330,28 @@ export function makeDotMap(
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
       // labels go to the right of the dot, to the left near the map's east edge
-      .attr("text-anchor", (d) => (d.x > W * 0.78 ? "end" : "start"))
-      .attr("x", (d) => d.x + (d.x > W * 0.78 ? -(d.look.r + 3) : d.look.r + 3))
+      .attr("text-anchor", (d) => (onLeft(d) ? "end" : "start"))
+      .attr("x", (d) => d.x + (onLeft(d) ? -(d.look.r + 3) : d.look.r + 3))
       .attr("y", (d) => d.y + 4)
       .text((d) => d.name)
       .transition(t)
       .attr("opacity", 1);
 
     // subregion share, in a fixed corner of the map (region.note)
-    const share =
-      state.subregion && subByKey.get(`${state.subregion}|${state.actor}`);
+    // (several subregions: one note each, stacked downwards from region.note)
     const [nx, ny] = region.note ?? [12, H - 40];
-    const notes = share
-      ? [
-          {
-            key: state.subregion,
-            x: nx,
-            y: ny,
-            lines: [
-              state.subregion,
-              spec.shareText(share.share, actorLabel.get(state.actor)),
-            ],
-          },
-        ]
-      : [];
+    const notes = subs
+      .map((name) => ({ name, share: subByKey.get(`${name}|${state.actor}`) }))
+      .filter((n) => n.share)
+      .map((n, i) => ({
+        key: n.name,
+        x: nx,
+        y: ny + i * 40,
+        lines: [
+          n.name,
+          spec.shareText(n.share.share, actorLabel.get(state.actor)),
+        ],
+      }));
     noteLayer
       .selectAll("text")
       .data(notes, (d) => d.key)

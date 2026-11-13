@@ -18,6 +18,8 @@
 //             debt_terms shows it as one measure (layout "column", overplotted), debt_terms_others animates it into x and y
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
+//   merged sentences (one step, one chart state; highlights and footnotes added up, the text keeps both parts): oda_total (+ oda_rank:
+//   Türkiye, EU and US highlighted), debt_japan (+ debt_eu: Japan and EU member states highlighted)
 //   split sentences (the chart shows one actor or one group at a time): fdi_us / fdi_us_israel,
 //   fdi_gulf / fdi_gulf_lmi / fdi_gulf_conc, fdi_asia / fdi_asia_lmi, oda_country / oda_turkiye,
 //   oda_loans / oda_models, debt_flows_rep / debt_flows_uae
@@ -71,12 +73,34 @@ const SRC_OECD =
   "Data: OECD DAC (DAC2A, DAC2B, DAC3A), US dollars at constant 2024 prices; cumulative three-year totals. Regional aggregate excludes country-coded Iran. Saudi Arabia: regional data only.";
 const SRC_AIDDATA =
   "Data: AidData, 2025, “China’s Loans and Grants to Low- and Middle-Income Countries”, Version 1.0 (released 18 November 2025). Project-level commitments at constant 2023 prices, 2019–23.";
-const SRC_DEBT = "Data: World Bank, International Debt Statistics. Current US dollars.";
+const SRC_DEBT =
+  "Data: World Bank, International Debt Statistics. Current US dollars.";
 
 const FDI_ACTORS = ["EU", "USA", "GCC", "CHN", "IND", "JPN", "KOR"];
 const GULF_STATES = ["KWT", "ARE", "SAU", "QAT", "BHR", "OMN"];
-const ODA_ACTORS = ["TUR", "EU", "USA", "SAU", "JPN", "ARE", "QAT", "ISR", "KOR", "KWT"];
-const DEBT_ACTORS = ["JPN", "EU", "GCC", "RUS", "CHN", "USA", "KOR", "IND", "IRN"];
+const ODA_ACTORS = [
+  "TUR",
+  "EU",
+  "USA",
+  "SAU",
+  "JPN",
+  "ARE",
+  "QAT",
+  "ISR",
+  "KOR",
+  "KWT",
+];
+const DEBT_ACTORS = [
+  "JPN",
+  "EU",
+  "GCC",
+  "RUS",
+  "CHN",
+  "USA",
+  "KOR",
+  "IND",
+  "IRN",
+];
 
 const GEO_LABELS = {
   [HI]: "High-income economies",
@@ -109,7 +133,8 @@ export default {
       geoLabels: GEO_LABELS,
       geoLabelsShort: GEO_SHORT,
       title: "Foreign direct investment in the Middle East and the Gulf",
-      subtitle: "Share of recorded inward FDI stock by counterpart, 2019–21 and 2022–24 averages",
+      subtitle:
+        "Share of recorded inward FDI stock by counterpart, 2019–21 and 2022–24 averages",
       source: SRC_FDI,
     },
     fdigulf: {
@@ -120,9 +145,17 @@ export default {
       geos: [HI, LM],
       geoLabels: GEO_LABELS,
       geoLabelsShort: GEO_SHORT,
-      labels: { KWT: "Kuwait", ARE: "UAE", SAU: "Saudi Arabia", QAT: "Qatar", BHR: "Bahrain", OMN: "Oman" },
+      labels: {
+        KWT: "Kuwait",
+        ARE: "UAE",
+        SAU: "Saudi Arabia",
+        QAT: "Qatar",
+        BHR: "Bahrain",
+        OMN: "Oman",
+      },
       title: "Where the Gulf’s investment sits",
-      subtitle: "Each Gulf state’s share of the Gulf’s recorded FDI stock, 2019–21 and 2022–24 averages",
+      subtitle:
+        "Each Gulf state’s share of the Gulf’s recorded FDI stock, 2019–21 and 2022–24 averages",
       source: SRC_FDI,
     },
 
@@ -135,7 +168,8 @@ export default {
       geos: ["Middle East"],
       labels: { EU: "Europe" },
       title: "Net official development assistance to the Middle East",
-      subtitle: "Selected providers, net ODA, total over three years, $bn at constant 2024 prices",
+      subtitle:
+        "Selected providers, net ODA, total over three years, $bn at constant 2024 prices",
       source: SRC_OECD,
     },
     country: {
@@ -147,7 +181,8 @@ export default {
       geoLabels: GEO_LABELS,
       labels: { EU: "Europe" },
       title: "Net ODA by recipient",
-      subtitle: "Selected providers with recipient-level data, total over three years, $bn at constant 2024 prices",
+      subtitle:
+        "Selected providers with recipient-level data, total over three years, $bn at constant 2024 prices",
       source: SRC_OECD,
     },
     gross: {
@@ -189,7 +224,9 @@ export default {
         {
           id: "china",
           title: "2019–23",
-          segments: [{ column: "total_usd_bn", label: "Commitments", color: "CHN" }],
+          segments: [
+            { column: "total_usd_bn", label: "Commitments", color: "CHN" },
+          ],
           format: "bn",
         },
       ],
@@ -225,7 +262,8 @@ export default {
       geoLabels: GEO_LABELS,
       labels: { EU: "EU27", GCC: "Gulf" },
       title: "Lending terms of bilateral creditors",
-      subtitle: "Share of each creditor’s bilateral debt that is concessional, end-2024. Bubble area: debt outstanding",
+      subtitle:
+        "Share of each creditor’s bilateral debt that is concessional, end-2024. Bubble area: debt outstanding",
       yTitle: "Concessional share of the creditor’s claims, 2024",
       xTitle: "average annual net flow 2022–24, $bn",
       sizeTitle: "Debt outstanding, $bn",
@@ -245,7 +283,8 @@ export default {
       geoLabels: GEO_LABELS,
       labels: { EU: "EU27", GCC: "Gulf" },
       title: "Net bilateral financial flows",
-      subtitle: "Disbursements minus principal repayments, $bn a year. Below zero: the creditor was repaid more than it lent",
+      subtitle:
+        "Disbursements minus principal repayments, $bn a year. Below zero: the creditor was repaid more than it lent",
       yTitle: "$bn",
       source: SRC_DEBT,
     },
@@ -253,13 +292,20 @@ export default {
 
   steps: {
     // ── FDI ─────────────────────────────────────────────────────────────────
-    fdi_eu: { chart: "fdi", state: { highlight: ["EU"], footnote: `${FDI_NOTE} ${FDI_DISCONTINUITY} ${FDI_JORDAN}` } },
+    fdi_eu: {
+      chart: "fdi",
+      state: {
+        highlight: ["EU"],
+        footnote: `${FDI_NOTE} ${FDI_DISCONTINUITY} ${FDI_JORDAN}`,
+      },
+    },
     fdi_us: {
       chart: "fdi",
       state: {
         geos: [HI],
         measure: "value_usd_bn",
-        subtitle: "Recorded inward FDI stock in high-income economies by counterpart, $bn, 2019–21 and 2022–24 averages",
+        subtitle:
+          "Recorded inward FDI stock in high-income economies by counterpart, $bn, 2019–21 and 2022–24 averages",
         highlight: ["USA"],
         footnote: FDI_DISCONTINUITY,
       },
@@ -270,7 +316,8 @@ export default {
         geos: ["Israel"],
         measure: "value_usd_bn",
         title: "Foreign direct investment in Israel",
-        subtitle: "Recorded inward FDI stock by counterpart, $bn, 2019–21 and 2022–24 averages",
+        subtitle:
+          "Recorded inward FDI stock by counterpart, $bn, 2019–21 and 2022–24 averages",
         highlight: ["USA"],
       },
     },
@@ -279,37 +326,62 @@ export default {
       state: {
         geos: [HI],
         measure: "value_usd_bn",
-        subtitle: "Recorded inward FDI stock in high-income economies by counterpart, $bn, 2019–21 and 2022–24 averages",
+        subtitle:
+          "Recorded inward FDI stock in high-income economies by counterpart, $bn, 2019–21 and 2022–24 averages",
         highlight: ["GCC", "CHN", "IND", "JPN", "KOR"],
         footnote: FDI_DISCONTINUITY,
       },
     },
-    fdi_gulf_lmi: { chart: "fdi", state: { geos: [LM], highlight: ["GCC"], footnote: FDI_JORDAN } },
-    fdi_gulf_conc: { chart: "fdigulf", state: { highlight: ["ARE", "KWT"], footnote: `${FDI_DISCONTINUITY} ${FDI_JORDAN}` } },
-    fdi_asia: { chart: "fdi", state: { geos: [HI], highlight: ["CHN", "IND", "JPN", "KOR"], footnote: FDI_DISCONTINUITY } },
-    fdi_asia_lmi: { chart: "fdi", state: { geos: [LM], highlight: ["CHN", "USA", "IND"], footnote: FDI_JORDAN } },
+    fdi_gulf_lmi: {
+      chart: "fdi",
+      state: { geos: [LM], highlight: ["GCC"], footnote: FDI_JORDAN },
+    },
+    fdi_gulf_conc: {
+      chart: "fdigulf",
+      state: {
+        highlight: ["ARE", "KWT"],
+        footnote: `${FDI_DISCONTINUITY} ${FDI_JORDAN}`,
+      },
+    },
+    fdi_asia: {
+      chart: "fdi",
+      state: {
+        geos: [HI],
+        highlight: ["CHN", "IND", "JPN", "KOR"],
+        footnote: FDI_DISCONTINUITY,
+      },
+    },
+    fdi_asia_lmi: {
+      chart: "fdi",
+      state: {
+        geos: [LM],
+        highlight: ["CHN", "USA", "IND"],
+        footnote: FDI_JORDAN,
+      },
+    },
 
     // ── official development finance ────────────────────────────────────────
     oda_total: {
       chart: "netoda",
       state: {
-        highlight: ["TUR"],
-        footnote:
-          "4 The analysis now turns exclusively to the lower- and middle-income economies. Gulf countries and Israel don’t qualify for official development assistance under OECD rules anymore, while the World Bank's external debt statistics cover only reporting low- and middle-income economies.",
-      },
-    },
-    oda_rank: {
-      chart: "netoda",
-      state: {
         highlight: ["TUR", "EU", "USA"],
         footnote:
+          "4 The analysis now turns exclusively to the lower- and middle-income economies. Gulf countries and Israel don’t qualify for official development assistance under OECD rules anymore, while the World Bank's external debt statistics cover only reporting low- and middle-income economies." +
+          "\n" +
           "Donor rankings refer only to selected reporting actors. The regional aggregate excludes country-coded Iran but retains regional and unspecified allocations. Saudi Arabia is included in regional comparisons but excluded from country-level analysis because recipient-level allocations are unavailable.",
       },
     },
-    oda_expand: { chart: "netoda", state: { highlight: ["JPN", "ARE", "SAU"] } },
+    oda_expand: {
+      chart: "netoda",
+      state: { highlight: ["JPN", "ARE", "SAU"] },
+    },
     oda_country: {
       chart: "country",
-      state: { highlight: ["JPN", "EU", "ARE"], footnote: "*** Among selected providers with recipient-level net ODA data." },
+      state: {
+        highlight: ["JPN", "EU", "ARE"],
+        footnote:
+          "*** Among selected providers with recipient-level net ODA data.",
+      },
     },
     oda_turkiye: { chart: "netoda", state: { highlight: ["TUR"] } },
     oda_loans: {
@@ -323,7 +395,7 @@ export default {
     oda_china: {
       chart: "china",
       state: {
-        highlight: ["Iraq"],
+        // highlight: ["Iraq"],
         footnote:
           "** China’s figures are based on AidData’s adjusted official-finance commitments for 2019–23, expressed in constant 2023 US dollars. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings. 4 https://www.aiddata.org/publications/iraq-profile-of-chinese-development-finance-2000-2023",
       },
@@ -341,16 +413,9 @@ export default {
     debt_japan: {
       chart: "debtstock",
       state: {
-        highlight: ["JPN"],
+        highlight: ["JPN", "EU"],
         footnote:
-          "Concessional debt follows the World Bank definition of an original grant element of at least 35%. Japan’s reported terms data cover its entire stock.",
-      },
-    },
-    debt_eu: {
-      chart: "debtstock",
-      state: {
-        highlight: ["EU"],
-        footnote:
+          "Concessional debt follows the World Bank definition of an original grant element of at least 35%. Japan’s reported terms data cover its entire stock.\n" +
           "The chart shows EU member states only. Claims of the European Investment Bank and the European Union are classified as multilateral and not drawn; the EU’s 2019 position is not reported (not an observed zero).",
       },
     },
@@ -375,7 +440,8 @@ export default {
       state: {
         layout: "column",
         highlight: ["JPN"],
-        subtitle: "Share of each creditor’s bilateral debt that is concessional, end-2024. Bubble area: debt outstanding",
+        subtitle:
+          "Share of each creditor’s bilateral debt that is concessional, end-2024. Bubble area: debt outstanding",
         footnote:
           "Concessional debt follows the World Bank definition of an original grant element of at least 35%. The shares of concessional debt in the text (31% in 2019, 45% in 2024; Japan 56% of the total) are calculated against the World totals of bilateral PPG debt.",
       },
@@ -384,7 +450,8 @@ export default {
       chart: "debtterms",
       state: {
         highlight: ["KOR", "EU", "GCC", "CHN"],
-        subtitle: "Concessional share of bilateral debt (end-2024) against average annual net flows (2022–24). Bubble area: debt outstanding",
+        subtitle:
+          "Concessional share of bilateral debt (end-2024) against average annual net flows (2022–24). Bubble area: debt outstanding",
         footnote:
           "Creditor-level concessional shares are calculated against total bilateral PPG stocks. Where concessionality observations are missing, the resulting shares represent minimum recorded estimates rather than directly comparable portfolio averages.",
       },
@@ -393,6 +460,7 @@ export default {
       chart: "debtflows",
       state: {
         highlight: [],
+        endLabels: false,
         footnote:
           "Negative net flows indicate that principal repayments exceeded new disbursements; net transfers additionally account for interest payments. Missing observations are excluded, never counted as zero; Syria’s 2022 flow is missing.",
       },
@@ -401,10 +469,14 @@ export default {
       chart: "debtflows",
       state: {
         highlight: ["JPN"],
-        footnote: "Annual values; Japan’s net flow was $0.63 billion in 2022, 0.85 billion in 2023 and −0.07 billion in 2024.",
+        footnote:
+          "Annual values; Japan’s net flow was $0.63 billion in 2022, 0.85 billion in 2023 and −0.07 billion in 2024.",
       },
     },
-    debt_flows_rep: { chart: "debtflows", state: { highlight: ["EU", "CHN", "USA"] } },
+    debt_flows_rep: {
+      chart: "debtflows",
+      state: { highlight: ["EU", "CHN", "USA"] },
+    },
     debt_flows_uae: {
       chart: "debtflows",
       state: {
@@ -419,6 +491,7 @@ export default {
       chart: "debtflows",
       state: {
         highlight: [],
+        endLabels: false,
         showTotal: true,
         average: { from: 2022, to: 2024 },
         footnote:

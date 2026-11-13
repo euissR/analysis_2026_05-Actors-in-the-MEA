@@ -20,9 +20,13 @@
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
 //   split sentences (one chart state shows one actor or one measure at a time): w_jpn / w_tur,
-//     c_ind / c_gulf, st_tur_reg / st_us_reg, st_sau_w / st_irn_w, st_sau / st_sau_c, st_ind / st_ind_c,
-//     mt_eu_mar / mt_egy / mt_lby, mt_ind / mt_ind_zaf, mf_* (one actor per step). Splits at a comma or "and" keep the
-//     lower-case start of the second part.
+//     c_ind / c_gulf, mf_* (one actor per step). Splits at a comma or "and" keep the lower-case start of the second part.
+//   merged sentences (one step, one chart state; the highlights of the former steps are added up, the text keeps both parts):
+//     e_all (East Africa and the Horn and West Africa both highlighted), st_tur_reg (+ st_us_reg), st_sau_w (+ st_irn_w),
+//     st_rus_n (+ st_tur_n), mt_eu_mar (+ mt_egy, mt_lby), pc_e (+ pc_e_rus).
+//   merged sentences, the chart of the first part only (the later part is carried by the text): st_sau_ind (Saudi Arabia and
+//     India; the three regions and Nigeria, Egypt, Sudan not drawn), st_ind (Tanzania, Zimbabwe not drawn), mt_ind (South
+//     Africa not drawn; the (14) note stays in the text, the chart footnote is FN13).
 //   several actors in one clause, one actor drawn (the others are one tile away on the map): w_jpn (JICA shown; Qatar
 //     Charity, also eight countries, via the Qatar tile), e_jpn (JICA; Qatar Charity six), c_gulf (UAE / ADFD shown;
 //     Qatar QFFD and Saudi KSrelief via their tiles)
@@ -67,7 +71,6 @@
 //                 the rows in the text's order. Bars are coloured by answer, not by actor; the row ids are "perc_*" on purpose,
 //                 so that actorNames.js does not colour the actor names in the text (red would read as "negative").
 //   pc_chn / pc_chn_reg   split at "and": the average (all countries) and "every region" (five panels side by side)
-//   pc_e / pc_e_rus       split at "while": EU and India, then Russia
 //   pc_us_eu, pc_oth, pc_neg_top, pc_neg_rest: several actors in one clause, all highlighted in the same panel
 //   text vs data  Russia average positive: text 36 %, data 35.05 %. EU average negative: text 17 %, data 17.59 % (18 %).
 //                 Eastern Africa, Russia: text 25 %, data 25.5 % (the chart shows 26 %).
@@ -448,7 +451,7 @@ export default {
     w_ext: { chart: "dev", state: { actor: "all", subregion: W } },
     w_jpn: { chart: "dev", state: { actor: "JPN", subregion: W } },
     w_tur: { chart: "dev", state: { actor: "TUR", subregion: W } },
-    e_all: { chart: "dev", state: { actor: "all", subregion: E } },
+    e_all: { chart: "dev", state: { actor: "all", subregion: [E, W] } },
     e_tur: { chart: "dev", state: { actor: "TUR", subregion: E } },
     e_jpn: { chart: "dev", state: { actor: "JPN", subregion: E } },
     e_ms: {
@@ -530,14 +533,6 @@ export default {
         highlight: [
           { from: "Türkiye", to: "North Africa" },
           { from: "Türkiye", to: "East Africa and HoA" },
-        ],
-        footnote: FN11,
-      },
-    },
-    st_us_reg: {
-      chart: "stud",
-      state: {
-        highlight: [
           { from: "US", to: "West Africa" },
           { from: "EU", to: "West Africa" },
         ],
@@ -557,14 +552,10 @@ export default {
     st_sau_w: {
       chart: "stud",
       state: {
-        highlight: [{ from: "Saudi Arabia", to: "West Africa" }],
-        footnote: FN11,
-      },
-    },
-    st_irn_w: {
-      chart: "stud",
-      state: {
-        highlight: [{ from: "Iran", to: "West Africa" }],
+        highlight: [
+          { from: "Saudi Arabia", to: "West Africa" },
+          { from: "Iran", to: "West Africa" },
+        ],
         footnote: FN11,
       },
     },
@@ -573,17 +564,8 @@ export default {
       state: {
         subregion: "North Africa",
         depth: "country",
-        highlight: [{ from: "Russia", to: "EGY" }],
-        show: ["EGY"],
-        footnote: FN11,
-      },
-    },
-    st_tur_n: {
-      chart: "stud",
-      state: {
-        subregion: "North Africa",
-        depth: "country",
         highlight: [
+          { from: "Russia", to: "EGY" },
           { from: "Türkiye", to: "EGY" },
           { from: "Türkiye", to: "MAR" },
         ],
@@ -595,30 +577,6 @@ export default {
       chart: "stud",
       state: { highlight: ["Saudi Arabia", "India"], footnote: FN11 },
     },
-    st_sau: {
-      chart: "stud",
-      state: {
-        highlight: [
-          { from: "Saudi Arabia", to: "West Africa" },
-          { from: "Saudi Arabia", to: "North Africa" },
-          { from: "Saudi Arabia", to: "East Africa and HoA" },
-        ],
-        footnote: FN11,
-      },
-    },
-    st_sau_c: {
-      chart: "stud",
-      state: {
-        depth: "country",
-        highlight: [
-          { from: "Saudi Arabia", to: "NGA" },
-          { from: "Saudi Arabia", to: "EGY" },
-          { from: "Saudi Arabia", to: "SDN" },
-        ],
-        show: ["NGA", "EGY", "SDN"],
-        footnote: FN11,
-      },
-    },
     st_ind: {
       chart: "stud",
       state: {
@@ -626,18 +584,6 @@ export default {
           { from: "India", to: "East Africa and HoA" },
           { from: "India", to: "Southern Africa and Indian Ocean" },
         ],
-        footnote: FN11,
-      },
-    },
-    st_ind_c: {
-      chart: "stud",
-      state: {
-        depth: "country",
-        highlight: [
-          { from: "India", to: "TZA" },
-          { from: "India", to: "ZWE" },
-        ],
-        show: ["TZA", "ZWE"],
         footnote: FN11,
       },
     },
@@ -737,31 +683,13 @@ export default {
       state: {
         period: "p2",
         depth: "country",
-        highlight: [{ from: "EU", to: "MAR" }],
-        show: ["MAR"],
-        footnote: FN13,
-      },
-    },
-    mt_egy: {
-      chart: "migTo",
-      state: {
-        period: "p2",
-        depth: "country",
         highlight: [
+          { from: "EU", to: "MAR" },
           { from: "China", to: "EGY" },
           { from: "Russia", to: "EGY" },
+          { from: "US", to: "LBY" },
         ],
-        show: ["EGY"],
-        footnote: FN13,
-      },
-    },
-    mt_lby: {
-      chart: "migTo",
-      state: {
-        period: "p2",
-        depth: "country",
-        highlight: [{ from: "US", to: "LBY" }],
-        show: ["LBY"],
+        show: ["MAR", "EGY", "LBY"],
         footnote: FN13,
       },
     },
@@ -771,16 +699,6 @@ export default {
         period: "p2",
         highlight: [{ from: "India", to: "Southern Africa and Indian Ocean" }],
         footnote: FN13,
-      },
-    },
-    mt_ind_zaf: {
-      chart: "migTo",
-      state: {
-        period: "p2",
-        depth: "country",
-        highlight: [{ from: "India", to: "ZAF" }],
-        show: ["ZAF"],
-        footnote: FN14,
       },
     },
     mt_chn_e: {
@@ -888,19 +806,7 @@ export default {
       chart: "perc",
       state: {
         panels: ["E"],
-        highlight: ["perc_EU", "perc_IND"],
-        subtitle: percSub(
-          "East Africa and the Horn",
-          "Kenya, Tanzania and Uganda",
-        ),
-        footnote: FN15,
-      },
-    },
-    pc_e_rus: {
-      chart: "perc",
-      state: {
-        panels: ["E"],
-        highlight: ["perc_RUS"],
+        highlight: ["perc_EU", "perc_IND", "perc_RUS"],
         subtitle: percSub(
           "East Africa and the Horn",
           "Kenya, Tanzania and Uganda",

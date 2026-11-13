@@ -25,10 +25,14 @@
 //
 // state:
 //   measure:    "ppi" | "works"
-//   actor:      "all" (default) or an actor code
+//   actor:      "all" (default), an actor code, or a list of codes, e.g. ["ARE", "USA"]: each actor's bubbles in its own colour,
+//               on ONE scale (the largest country of any of them)
+//   actorLabel: name of that group, e.g. "UAE and US" (optional, for a list)
+//   subtitle:   replaces the subtitle for this step (optional)
 //   highlight:  iso3 codes at full strength, the rest dimmed (optional)
 //   subregion:  highlight a whole subregion (optional)
 //   labels:     iso3 codes to name on the map (optional)
+//   labelsLeft: iso3 codes (also in labels) whose name goes to the left of the bubble instead of the right (optional)
 //   title, footnote: override for this step
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
@@ -57,14 +61,15 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
   const isShared = (m) => spec.measures[m]?.sharedScale === true;
   const scaleFor = (state) => {
     const shared = isShared(state.measure);
-    const k = shared ? `${state.measure}|*` : `${state.measure}|${state.actor}`;
+    const list = [state.actor].flat();
+    const k = shared ? `${state.measure}|*` : `${state.measure}|${list.join("+")}`;
     scaleCache[k] ??= d3
       .scaleSqrt()
       .domain([
         0,
         shared
           ? (spec.measures[state.measure].scaleMax ?? d3.max(rows.filter((r) => r.measure === state.measure), (r) => +r.value) ?? 1)
-          : (d3.max(rows.filter((r) => r.measure === state.measure && r.actor === state.actor), (r) => +r.value) ?? 1),
+          : (d3.max(rows.filter((r) => r.measure === state.measure && list.includes(r.actor)), (r) => +r.value) ?? 1),
       ])
       .range([0, rMax]);
     return scaleCache[k];
@@ -141,8 +146,7 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
     .attr("stroke-width", 0.9)
     .attr("stroke-dasharray", "2 2");
 
-  const gBubbles = svg.append("g").attr("class", "fa-snap");
-  hover.snap(svg.node(), ".fa-snap circle"); // bigger tap targets for small bubbles
+  const gBubbles = svg.append("g");
   const gLabels = svg.append("g").attr("class", "fa-labels");
   const gKey = svg.append("g").attr("class", "fa-axis");
 
@@ -157,6 +161,8 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
     const ms = spec.measures[m];
     const rs = scaleFor(state);
     const single = state.actor !== "all";
+    const list = [state.actor].flat();
+    const groupLabel = state.actorLabel ?? actorLabel(list[0]);
 
     const hi = new Set(
       state.subregion
@@ -166,21 +172,22 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
     const dimmed = (iso3) => hi.size && !hi.has(iso3);
 
     $(".fa-title").textContent = state.title ?? ms.title ?? spec.title ?? "";
-    $(".fa-subtitle").textContent = ms.subtitle?.(state.actor, actorLabel(state.actor)) ?? "";
+    $(".fa-subtitle").textContent = state.subtitle ?? ms.subtitle?.(list.length > 1 ? list : state.actor, groupLabel) ?? "";
     $(".fa-footnote").textContent = state.footnote ?? "";
 
     // bubbles: one per country that has a value for this measure and actor
-    const pts = countries
-      .map((d) => ({ ...d, row: get(d.iso3, m, state.actor) }))
+    // (a list of actors: one bubble per country and actor)
+    const pts = list
+      .flatMap((a) => countries.map((d) => ({ ...d, actor: a, key: `${d.iso3}|${a}`, row: get(d.iso3, m, a) })))
       .filter((d) => d.row && d.row.value > 0)
       .map((d) => ({
         ...d,
         r: rs(d.row.value),
-        fill: single ? colorOf(state.actor) : colorOf(d.row.lead_actor),
+        fill: single ? colorOf(d.actor) : colorOf(d.row.lead_actor),
       }));
     gBubbles
       .selectAll("circle")
-      .data(d3.sort(pts, (a, b) => d3.descending(a.r, b.r)), (d) => d.iso3)
+      .data(d3.sort(pts, (a, b) => d3.descending(a.r, b.r)), (d) => d.key)
       .join(
         (enter) =>
           enter
@@ -191,8 +198,8 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
             .attr("opacity", 0)
             .attr("stroke", "#fff")
             .attr("stroke-width", 1)
-            .attr("pointer-events", "none") // hits come from hover.snap
-            .on("pointermove", showTip),
+            .on("pointerenter pointermove", showTip)
+            .on("pointerleave", hover.leave),
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).attr("r", 0).remove(),
       )
@@ -205,7 +212,8 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
       .attr("opacity", (d) => (dimmed(d.iso3) ? theme.dim : 0.85));
 
     // country names: to the right of the bubble, to the left near the map's east edge
-    const labelled = pts.filter((d) => (state.labels ?? []).includes(d.iso3));
+    const labelled = [...new Map(d3.sort(pts, (a, b) => d3.descending(a.r, b.r)).filter((d) => (state.labels ?? []).includes(d.iso3)).map((d) => [d.iso3, d])).values()];
+    const onLeft = (d) => d.x > W * 0.78 || (state.labelsLeft ?? []).includes(d.iso3);
     gLabels
       .selectAll("text")
       .data(labelled, (d) => d.iso3)
@@ -214,8 +222,8 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
         (update) => update,
         (exit) => exit.transition(t).attr("opacity", 0).remove(),
       )
-      .attr("text-anchor", (d) => (d.x > W * 0.78 ? "end" : "start"))
-      .attr("x", (d) => d.x + (d.x > W * 0.78 ? -(d.r + 3) : d.r + 3))
+      .attr("text-anchor", (d) => (onLeft(d) ? "end" : "start"))
+      .attr("x", (d) => d.x + (onLeft(d) ? -(d.r + 3) : d.r + 3))
       .attr("y", (d) => d.y + 4)
       .text((d) => d.name)
       .transition(t)
@@ -271,7 +279,7 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
   function drawColourKey(pts, single, state) {
     const items = [];
     if (single) {
-      items.push({ label: actorLabel(state.actor), color: colorOf(state.actor), n: 1 });
+      [state.actor].flat().forEach((a) => items.push({ label: actorLabel(a), color: colorOf(a), n: 1 }));
     } else {
       const grp = (a) => (GULF.has(a) ? "GCC" : a);
       // actors without a colour (regional, UK, other) are all light grey: one key entry for them
@@ -300,10 +308,10 @@ export function makeGeoBubbles(el, { geo, lookup, actors = [], rows, extra = {},
     const fmt = d3.format(ms.format ?? ",.0f");
     const single = st.actor !== "all";
     const row = d.row;
-    const lines = [`${single ? actorLabel(st.actor) : "All foreign actors"}: ${fmt(row.value)} ${ms.unit ?? ""}`];
+    const lines = [`${single ? actorLabel(d.actor) : "All foreign actors"}: ${fmt(row.value)} ${ms.unit ?? ""}`];
     if (single) {
       lines.push(`${d3.format(".1f")(row.share_country_pct)}% of the country’s total`);
-      lines.push(`${d3.format(".1f")(row.share_actor_pct)}% of ${actorLabel(st.actor)}’s total in Africa`);
+      lines.push(`${d3.format(".1f")(row.share_actor_pct)}% of ${actorLabel(d.actor)}’s total in Africa`);
     } else {
       lines.push(`Largest: ${actorLabel(row.lead_actor)} (${d3.format(".0f")(row.lead_share_pct)}%)`);
     }

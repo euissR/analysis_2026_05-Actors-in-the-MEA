@@ -17,7 +17,9 @@
 //            awards as the dot on the "all" row (steps conc_*)
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
-//   split sentences (one chart shows one panel at a time): pro_tur / pro_other, ppi_other / ppi_uae
+//   split sentences (one chart shows one panel at a time): ppi_gulf / ppi_uae
+//   merged sentences (one step, one chart state; highlights and footnotes added up, the text keeps both parts): pro_tur (+ pro_other:
+//                  Türkiye, Gulf, EU27, US and China highlighted), ppi_gulf (+ ppi_other: Gulf, EU27, regional, US and South Korea)
 //   ppi_vintage    "95.7% foreign-linked proxies closed before 2019": the workbook's 95.7% is the share of attributed
 //                  PPI weight; counted as proxies it is 58 of 61 = 95.1% (checked in infra_2_concentration_me.R).
 //                  Text as written; author to check. No series for closure year: the step keeps the PPI panel,
@@ -159,15 +161,11 @@ export default {
     // ── World Bank-financed procurement ─────────────────────────────────────
     pro_tur: {
       chart: "shares",
-      state: { panels: ["proc"], dots: false, highlight: ["TUR"], footnote: FN_DIFF },
-    },
-    pro_other: {
-      chart: "shares",
       state: {
         panels: ["proc"],
         dots: false,
-        highlight: ["GCC", "EU", "USA", "CHN"],
-        footnote: `${FN_DENOM}\n${FN_BROAD}`,
+        highlight: ["TUR", "GCC", "EU", "USA", "CHN"],
+        footnote: `${FN_DIFF}\n${FN_DENOM}\n${FN_BROAD}`,
       },
     },
     pro_works: {
@@ -178,11 +176,11 @@ export default {
     // ── private participation in infrastructure ─────────────────────────────
     ppi_gulf: {
       chart: "shares",
-      state: { panels: ["ppi"], highlight: ["GCC", "EU"], footnote: FN_PPI },
-    },
-    ppi_other: {
-      chart: "shares",
-      state: { panels: ["ppi"], highlight: ["REG", "USA", "KOR"], footnote: FN_STAKES },
+      state: {
+        panels: ["ppi"],
+        highlight: ["GCC", "EU", "REG", "USA", "KOR"],
+        footnote: `${FN_PPI}\n${FN_STAKES}`,
+      },
     },
     ppi_uae: {
       chart: "shares",

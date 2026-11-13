@@ -17,15 +17,22 @@
 //   stud     sankey (reverse): students by country of origin (left) and host actor (right)
 //   migFrom  sankey (reverse): migrants from the region by country of origin (left) living in each actor (right), 2015 and 2024
 //   migTo    sankey: migrants from each actor (left) living in the countries of the region (right), 2015 and 2024
-//   perc     panelBars: opinion of each actor (favourable, don't know, unfavourable), one panel per country, Arab Barometer wave VIII
-//   econ     panelBars: wish for stronger / same / weaker economic ties with each actor, one panel per country (not Kuwait)
+//   perc     panelBars: opinion of each actor (favourable, don't know, unfavourable), one panel per country, the five-country average and two panels on upholding international law, Arab Barometer wave IX
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
-//   split sentences (one chart state shows one actor or one measure at a time): d_adfd / d_ksr, d_rus / d_qffd / d_dfc, l_kor / l_ind,
-//     f_chg / f_jpn. Splits at a comma keep the lower-case start of the second part.
+//   split sentences (one chart state shows one actor at a time): d_rus / d_qffd, d_tika / d_jica. Splits at a comma keep the lower-case
+//     start of the second part.
+//   merged sentences (one step, one chart state; the highlights of the former steps are added up, the text keeps all parts):
+//     s_tur (+ s_eu), s_irn (+ s_us, s_sau), f_tur (+ f_sau, f_eu), f_chg (+ f_jpn: four suppliers), t_eu (+ t_us, t_rus),
+//     pc_jor (+ pc_pse), pc_eu (+ pc_eu_syr, pc_eu_irq: Iraq and Palestine* panels unfavourable-first), pc_sau (+ pc_rus, pc_rus_lim),
+//     pc_law (+ pc_law_not: both panels), l_it (+ l_cz).
+//   merged sentences, the chart of the first part only (the later part is carried by the text): d_adfd (+ d_ksr: KSrelief's Oman is the
+//     Oman label), d_qffd (+ d_dfc: the US DFC in Jordan only is text), l_kor (+ l_ind: India's centre in Israel not drawn), l_gulf (+ the
+//     "located mainly in other Gulf states" sentence: no map of the locations), pc_chn (+ pc_chn_pse), pc_us (+ pc_us_syr), pc_irn
+//     (+ pc_irn_fav; the favourable segments of Syria, Iraq and Palestine* are drawn but the panels are ordered unfavourable first).
 //   several actors in one clause, one actor drawn: d_proj ("Russia, Qatar, the UAE, and Saudi Arabia": Russia shown, the others on
 //     their tiles), d_qffd (QFFD shown; ADFD, which covers the same countries, on the UAE tile), l_fra (France and Germany both
-//     highlighted), l_gulf_loc (Saudi Arabia drawn; Bahrain, Kuwait and Oman via their own bars), d_ms (see EIB)
+//     highlighted), d_ms (see EIB)
 //   EIB           no map of its own: the EIB sentence stands at the end of the EU / member states paragraph (d_ms); the text's order is
 //                 changed for this (the EIB sentence comes first in the source). The map shows member states only.
 //   dev "all"     = non-EU actors with an OFFICE (the text counts offices); projects and grants show on the actor's own tile
@@ -40,8 +47,7 @@
 //                 bar and no bubbles; check the sheet. India: the data have two centres in Israel, the text says one centre.
 //   l_eu, l_it, l_cz  Italy, Spain, the Czech Republic, Hungary, Poland and Finland are not separate series: the map shows the EU total per country
 //   l_rus         "Iran hosts four offices of the Russkiy Mir Foundation": Iran is not drawn as a country of the region (text only)
-//   l_gulf_loc    "These are located mainly in other Gulf states, ...": only Saudi Arabia is drawn (Jordan, Lebanon labelled); the locations of Oman, Bahrain
-//                 and Kuwait are in the data but not drawn
+//   l_gulf        "These are located mainly in other Gulf states, ...": the locations are not drawn (the bars show the number of offices only)
 //   students      origins: the 13 countries of the region, with Israel (filed "Not classified" in the sheet); Iran is an external actor. One nominal
 //                 year (2023); real years: Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU without Ireland and the Netherlands.
 //                 China: no data. The shares within an actor (59 % from Syria ...) are in the R checks, not labelled on the chart.
@@ -52,13 +58,11 @@
 //   f_chg, f_jpn  the dashed outlines show every actor's 2015 level; the labels give the percentage change of every actor (Japan: +201%, "tripling";
 //                 482 and 1 451 are in the text). Türkiye shows +81% (80.6) where the text says 80 %.
 //   Palestine*    the asterisk footnote ("standard EU formula") is not in the source; wording to be confirmed
-//   perc, econ    Arab Barometer wave VIII (2023-2024), weighted shares of one country's answers. Panels = countries (Iraq, Jordan, Kuwait,
-//                 Lebanon, Palestine*), no average across countries: Saudi Arabia and Qatar were not rated in Kuwait, and the economic-ties
-//                 question was not asked there. Rows = the seven actors the text names; France (Lebanon only) and Israel are not drawn, the
-//                 EU is not in the survey. Bars are coloured by answer, not by actor (row ids \"perc_*\" / \"econ_*\" on purpose, as in AF_soft.js).
-//                 pc_us: the text says the US is viewed most negatively \"particularly in Iraq and Kuwait\"; Palestine* (74.0 %) is above Iraq
-//                 (72.0 %). pc_ec_irn: the association between views of Iran and the wish to weaken ties is not in the aggregate data (see
-//                 soft_5_perc_me.R). Steps about unfavourable views use the panels with the unfavourable share first (ids ending in \"_neg\").
+//   perc          Arab Barometer wave IX (August 2025 - May 2026), weighted shares of one country's answers. Panels = countries (Iraq,
+//                 Jordan, Lebanon, Palestine*, Syria), AVG = plain mean of the five, LAW4 = upholding international law (average of
+//                 4 countries, Syria not asked). Bars are coloured by answer, not by actor (row ids
+//                 "perc_*" on purpose, as in AF_soft.js). Steps about unfavourable views use the panels with the unfavourable share first
+//                 (ids ending in "_neg").
 //   footnotes     numbered 3 to 17: the intro notes 1 and 2 are typed in the body (as in the Africa chapters); the source numbers its own notes
 //                 1 to 14. All footnotes and captions on the charts are drafts, shortened from the source document (no URLs).
 //   typos         corrected: "Middle Easte" (l_intro), thousands separators in t_eu, t_us, t_rus ("370 082", "131 572", "126 966"); the source
@@ -94,55 +98,44 @@ const FN15 =
 const FN16 =
   "¹⁶ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ by reporting country: foreign-born, foreign citizens, refugees, imputed stock.";
 const FN17 =
-  "¹⁷ Arab Barometer, wave VIII (2023–2024), weighted shares of each country’s answers. Countries surveyed: Iraq, Jordan, Kuwait, Lebanon, Palestine*. Saudi Arabia and Qatar were not rated in Kuwait, and the question on economic ties was not asked there. France, the only EU actor in the survey, was rated in Lebanon only and is not shown.";
+  "¹⁷ Arab Barometer Wave IX (August 2025–May 2026), weighted shares of each country’s answers. Countries in the region for which data are available: Iraq, Jordan, Lebanon, Palestine*, Syria.";
 const FN_ANY =
   "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
 
 // perceptions (Arab Barometer): rows, panels and segments; bars are coloured by answer (see PINNED)
 const SRC_PERC =
-  "Data: Arab Barometer, wave VIII (2023–2024); weighted shares of each country’s answers.";
+  "Data: Arab Barometer, wave IX (August 2025–May 2026); weighted shares of each country’s answers.";
 const PERC_ROWS = [
   "perc_CHN",
   "perc_TUR",
   "perc_QAT",
   "perc_SAU",
   "perc_USA",
+  "perc_EU",
   "perc_IRN",
   "perc_RUS",
 ]; // order of the text
-const PERC_ROWS_KWT = PERC_ROWS.filter(
-  (r) => r !== "perc_QAT" && r !== "perc_SAU",
-); // not rated in Kuwait
+const LAW_ROWS = ["perc_CHN", "perc_EU", "perc_RUS", "perc_USA", "perc_IRN"]; // actors of the law question
 const PERC_LABELS = {
   perc_CHN: "China",
   perc_TUR: "Türkiye",
   perc_QAT: "Qatar",
   perc_SAU: "Saudi Arabia",
   perc_USA: "US",
+  perc_EU: "EU",
   perc_IRN: "Iran",
   perc_RUS: "Russia",
 };
-const ECON_ROWS = PERC_ROWS.map((r) => r.replace("perc_", "econ_"));
-const ECON_LABELS = Object.fromEntries(
-  Object.entries(PERC_LABELS).map(([k, v]) => [k.replace("perc_", "econ_"), v]),
-);
-// [iso3, panel title, respondents]
+// [iso3, panel title]
 const PERC_COUNTRIES = [
-  ["IRQ", "Iraq", "1 190"],
-  ["JOR", "Jordan", "1 192"],
-  ["KWT", "Kuwait", "1 210"],
-  ["LBN", "Lebanon", "1 227"],
-  ["PSE", "Palestine*", "616"],
-];
-const ECON_COUNTRIES = [
-  ["IRQ", "Iraq", "1 221"],
-  ["JOR", "Jordan", "1 208"],
-  ["LBN", "Lebanon", "1 176"],
-  ["PSE", "Palestine*", "573"],
+  ["IRQ", "Iraq"],
+  ["JOR", "Jordan"],
+  ["LBN", "Lebanon"],
+  ["PSE", "Palestine*"],
+  ["SYR", "Syria"],
 ];
 const PERC_ALL = PERC_COUNTRIES.map(([g]) => g);
 const PERC_ALL_NEG = PERC_ALL.map((g) => `${g}_neg`);
-const ECON_ALL = ECON_COUNTRIES.map(([g]) => g);
 const PERC_P = { column: "favourable", label: "Favourable", color: "teal2" };
 const PERC_DK = {
   column: "dontknow",
@@ -155,22 +148,17 @@ const PERC_NG = {
   label: "Unfavourable",
   color: "fuchsia2",
 };
-const percPanel = (id, title, n, geo, negFirst = false) => ({
+const percPanel = (id, title, geo, negFirst = false, format = "pct0") => ({
   id,
   title,
-  subtitle: `n = ${n}`,
   where: { geo },
   segments: negFirst ? [PERC_NG, PERC_DK, PERC_P] : [PERC_P, PERC_DK, PERC_NG],
   domain: [0, 100],
-  format: "pct0",
+  format,
   endLabel: { column: negFirst ? "unfavourable" : "favourable" },
 });
 const pc = (panels, highlight, extra = {}) => ({
   chart: "perc",
-  state: { panels, highlight, footnote: FN17, ...extra },
-});
-const ec = (panels, highlight, extra = {}) => ({
-  chart: "econ",
   state: { panels, highlight, footnote: FN17, ...extra },
 });
 
@@ -419,9 +407,9 @@ export default {
       rows: PERC_ROWS,
       rowLabels: PERC_LABELS,
       labelWidth: 92,
-      title: "Opinion of external actors in the Middle East and the Gulf",
+      title: "Opinion of external actors in the Middle East",
       subtitle:
-        "Share of respondents by how favourably they view each actor, 2023–2024",
+        "Share of respondents by how favourably they view each actor, 2025–2026",
       source: SRC_PERC,
       key: [
         { label: "Favourable", color: "teal2" },
@@ -429,49 +417,33 @@ export default {
         { label: "Unfavourable", color: "fuchsia2" },
       ],
       panels: [
-        ...PERC_COUNTRIES.map(([geo, title, n]) =>
-          percPanel(geo, title, n, geo),
+        ...PERC_COUNTRIES.map(([geo, title]) =>
+          percPanel(geo, title, geo),
         ),
-        ...PERC_COUNTRIES.map(([geo, title, n]) =>
-          percPanel(`${geo}_neg`, title, n, geo, true),
+        ...PERC_COUNTRIES.map(([geo, title]) =>
+          percPanel(`${geo}_neg`, title, geo, true),
         ),
+        percPanel("AVG", "Average of the five countries", "AVG", false, "pct"),
+        // international law: average of 4 countries (Syria not asked); one panel per answer
+        {
+          id: "LAW4",
+          title: "Upholds international law to a great or medium extent",
+          subtitle: "Average of 4 countries",
+          where: { geo: "LAW4" },
+          segments: [{ column: "great_medium", label: "Great or medium extent", color: "teal2" }],
+          domain: [0, 100],
+          format: "pct",
+        },
+        {
+          id: "LAW4_not",
+          title: "Does not at all uphold international law",
+          subtitle: "Average of 4 countries",
+          where: { geo: "LAW4" },
+          segments: [{ column: "notatall", label: "Not at all", color: "fuchsia2" }],
+          domain: [0, 100],
+          format: "pct",
+        },
       ],
-    },
-
-    econ: {
-      type: "panelBars",
-      data: "soft_5_econ",
-      rowKey: "row",
-      prepare: ({ rows }) =>
-        rows.map((r) => ({ ...r, row: `econ_${r.actor}` })),
-      rows: ECON_ROWS,
-      rowLabels: ECON_LABELS,
-      labelWidth: 92,
-      title: "Preferred future economic relations with external actors",
-      subtitle:
-        "Share of respondents by whether their country’s economic ties with each actor should become stronger, stay the same or become weaker, 2023–2024",
-      source: SRC_PERC,
-      key: [
-        { label: "Stronger", color: "teal2" },
-        { label: "Same", color: "light" },
-        { label: "Don’t know", color: "light", opacity: 0.5 },
-        { label: "Weaker", color: "fuchsia2" },
-      ],
-      panels: ECON_COUNTRIES.map(([geo, title, n]) => ({
-        id: geo,
-        title,
-        subtitle: `n = ${n}`,
-        where: { geo },
-        segments: [
-          { column: "stronger", label: "Stronger", color: "teal2" },
-          { column: "same", label: "Same", color: "light" },
-          { column: "dontknow", label: "Don’t know", color: "light", opacity: 0.5 },
-          { column: "weaker", label: "Weaker", color: "fuchsia2" },
-        ],
-        domain: [0, 100],
-        format: "pct0",
-        endLabel: { column: "stronger" },
-      })),
     },
   },
 
@@ -492,15 +464,6 @@ export default {
       chart: "dev",
       state: { actor: "ARE", subregion: "Gulf", labels: ["BHR", "OMN"] },
     },
-    d_ksr: {
-      chart: "dev",
-      state: {
-        actor: "SAU",
-        subregion: "Gulf",
-        labels: ["OMN"],
-        footnote: FN5,
-      },
-    },
     d_tika: {
       chart: "dev",
       state: { actor: "TUR", subregion: "Middle East", footnote: FN6 },
@@ -516,15 +479,6 @@ export default {
       },
     },
     d_qffd: { chart: "dev", state: { actor: "QAT", subregion: "Middle East" } },
-    d_dfc: {
-      chart: "dev",
-      state: {
-        actor: "USA",
-        subregion: "Middle East",
-        labels: ["JOR"],
-        footnote: FN8,
-      },
-    },
     // ── Cultural cooperation and language institutes ──────────
     l_intro: { chart: "lang", state: {} },
     l_eu: { chart: "langmap", state: { measure: "centres", actor: "EU" } },
@@ -537,16 +491,6 @@ export default {
         highlight: ["ISR", "LBN", "ARE", "JOR"],
         labels: ["ISR", "LBN", "ARE", "JOR"],
         footnote: FN85,
-      },
-    },
-    l_cz: {
-      chart: "langmap",
-      state: {
-        measure: "centres",
-        actor: "EU",
-        highlight: ["ISR", "LBN"],
-        labels: ["ISR", "LBN"],
-        footnote: FN9,
       },
     },
     l_tur: {
@@ -572,27 +516,9 @@ export default {
       chart: "langmap",
       state: { measure: "centres", actor: "KOR", footnote: FN115 },
     },
-    l_ind: {
-      chart: "langmap",
-      state: {
-        measure: "centres",
-        actor: "IND",
-        labels: ["ISR"],
-        footnote: FN12,
-      },
-    },
     l_gulf: {
       chart: "lang",
       state: { highlight: ["SAU", "OMN", "BHR", "KWT"] },
-    },
-    l_gulf_loc: {
-      chart: "langmap",
-      state: {
-        measure: "centres",
-        actor: "SAU",
-        labels: ["JOR", "LBN"],
-        footnote: FN13,
-      },
     },
     // ── Students from the Middle East and the Gulf in external actors14 ──────────
     s_intro: { chart: "stud", state: { footnote: FN14 } },
@@ -602,50 +528,25 @@ export default {
         highlight: [
           { from: "Türkiye", to: "SYR" },
           { from: "Türkiye", to: "IRQ" },
-        ],
-        show: ["SYR", "IRQ"],
-        footnote: FN14,
-      },
-    },
-    s_eu: {
-      chart: "stud",
-      state: {
-        highlight: [
           { from: "EU", to: "SYR" },
           { from: "EU", to: "LBN" },
         ],
-        show: ["SYR", "LBN"],
+        show: ["SYR", "IRQ", "LBN"],
         footnote: FN14,
       },
     },
     s_irn: {
       chart: "stud",
       state: {
-        highlight: [{ from: "Iran", to: "IRQ" }],
-        show: ["IRQ"],
-        footnote: FN14,
-      },
-    },
-    s_us: {
-      chart: "stud",
-      state: {
         highlight: [
+          { from: "Iran", to: "IRQ" },
           { from: "US", to: "SAU" },
           { from: "US", to: "KWT" },
-        ],
-        show: ["SAU", "KWT"],
-        footnote: FN14,
-      },
-    },
-    s_sau: {
-      chart: "stud",
-      state: {
-        highlight: [
           { from: "Saudi Arabia", to: "YEM" },
           { from: "Saudi Arabia", to: "SYR" },
           { from: "Saudi Arabia", to: "PSE" },
         ],
-        show: ["YEM", "SYR", "PSE"],
+        show: ["IRQ", "SAU", "KWT", "YEM", "SYR", "PSE"],
         footnote: FN14,
       },
     },
@@ -658,33 +559,13 @@ export default {
         highlight: [
           { from: "Türkiye", to: "SYR" },
           { from: "Türkiye", to: "IRQ" },
-        ],
-        show: ["SYR", "IRQ"],
-        footnote: FN15,
-      },
-    },
-    f_sau: {
-      chart: "migFrom",
-      state: {
-        period: "p2",
-        highlight: [
           { from: "Saudi Arabia", to: "YEM" },
           { from: "Saudi Arabia", to: "SYR" },
           { from: "Saudi Arabia", to: "JOR" },
-        ],
-        show: ["YEM", "SYR", "JOR"],
-        footnote: FN15,
-      },
-    },
-    f_eu: {
-      chart: "migFrom",
-      state: {
-        period: "p2",
-        highlight: [
           { from: "EU", to: "SYR" },
           { from: "EU", to: "IRQ" },
         ],
-        show: ["SYR", "IRQ"],
+        show: ["SYR", "IRQ", "YEM", "JOR"],
         footnote: FN15,
       },
     },
@@ -693,18 +574,8 @@ export default {
       state: {
         period: "p2",
         change: true,
-        changeSuppliers: ["EU", "Türkiye", "Saudi Arabia"],
-        highlight: ["EU", "Türkiye", "Saudi Arabia"],
-        footnote: FN15,
-      },
-    },
-    f_jpn: {
-      chart: "migFrom",
-      state: {
-        period: "p2",
-        change: true,
-        changeSuppliers: ["Japan"],
-        highlight: ["Japan"],
+        changeSuppliers: ["EU", "Türkiye", "Saudi Arabia", "Japan"],
+        highlight: ["EU", "Türkiye", "Saudi Arabia", "Japan"],
         footnote: FN15,
       },
     },
@@ -729,46 +600,24 @@ export default {
         highlight: [
           { from: "EU", to: "ISR" },
           { from: "EU", to: "ARE" },
+          { from: "US", to: "ISR" },
+          { from: "Russia", to: "ISR" },
         ],
         show: ["ISR", "ARE"],
-        footnote: FN16,
-      },
-    },
-    t_us: {
-      chart: "migTo",
-      state: {
-        period: "p2",
-        highlight: [{ from: "US", to: "ISR" }],
-        show: ["ISR"],
-        footnote: FN16,
-      },
-    },
-    t_rus: {
-      chart: "migTo",
-      state: {
-        period: "p2",
-        highlight: [{ from: "Russia", to: "ISR" }],
-        show: ["ISR"],
         footnote: FN16,
       },
     },
 
     // ── Comparison of perceptions of external actors’ influence¹⁷ ──────────
     pc_intro: pc(PERC_ALL, []),
-    pc_top: pc(PERC_ALL, ["perc_CHN", "perc_TUR", "perc_QAT"]),
+    pc_top: pc(["AVG"], ["perc_QAT", "perc_SAU", "perc_TUR"]),
     pc_chn: pc(PERC_ALL, ["perc_CHN"]),
-    pc_chn_pse: pc(["PSE"], ["perc_CHN"]),
-    pc_jor: pc(["JOR"], ["perc_QAT", "perc_TUR"]),
-    pc_pse: pc(["PSE"], ["perc_TUR", "perc_QAT"]),
-    pc_irq: pc(["IRQ"], ["perc_TUR", "perc_QAT"]),
+    pc_jor: pc(["JOR", "PSE"], ["perc_QAT", "perc_SAU", "perc_TUR"]),
+    pc_irq: pc(["IRQ_neg", "LBN_neg"], ["perc_TUR", "perc_QAT"]),
     pc_us: pc(PERC_ALL_NEG, ["perc_USA"]),
-    pc_us_rng: pc(["KWT", "JOR"], ["perc_USA"]),
+    pc_eu: pc(["AVG", "SYR", "JOR", "IRQ_neg", "PSE_neg"], ["perc_EU"]),
     pc_irn: pc(PERC_ALL_NEG, ["perc_IRN"]),
-    pc_irn_fav: pc(["LBN", "IRQ"], ["perc_IRN"]),
-    pc_sau: pc(["JOR"], ["perc_SAU"]),
-    pc_rus: pc(["KWT"], ["perc_RUS"], { rows: PERC_ROWS_KWT }),
-    pc_rus_lim: pc(PERC_ALL, ["perc_RUS"]),
-    pc_ec_us: ec(["IRQ", "LBN"], ["econ_USA"]),
-    pc_ec_irn: ec(ECON_ALL, ["econ_IRN"]),
+    pc_sau: pc(PERC_ALL, ["perc_SAU", "perc_RUS"]),
+    pc_law: pc(["LAW4", "LAW4_not"], LAW_ROWS, { rows: LAW_ROWS }),
   },
 };

@@ -32,6 +32,10 @@
 //   ex_all       text 55 exercises, 52% / 26% / 7% / 11%: check against mil_4_ex_AF.csv
 //   ex_atalanta, ex_fr_es: no separate France / Spain data in the map; the steps highlight
 //                the places named in the text (the EU actor covers all member states)
+//   merged sentences (one step, one chart state; the text keeps both parts): arm_mar_alg (+ arm_isr: the 2016–2025 view; the 2022–25
+//                figures, 376 of Israel's 507 TIV, are text only), bas_intro (+ bas_trans), dep_bilat (+ dep_intro), dep_un_eu (+ dep_un_intro: US, Russia and EU
+//                Member States), ex_chn (+ ex_rus: China's exercises; Russia's one with Egypt is text only), ex_atalanta (+ ex_eu: the
+//                places named for ATALANTA and ASPIDES)
 //   typos kept as in the source: "Egypt is the main recipients", "Israeli's transfers", "considers on
 //                deliveries" (footnote 1), "Russia run", "interforce"
 
@@ -182,6 +186,8 @@ export default {
     arm_mar_alg: {
       chart: "arms",
       state: {
+        // adjectives in this step's text, coloured like the actor names
+        nameForms: { Israeli: "ISR", Chinese: "CHN", Russian: "RUS" },
         depth: "country",
         highlight: [
           { from: "United States", to: "MAR" },
@@ -189,14 +195,6 @@ export default {
           { from: "China", to: "DZA" },
           { from: "Russia", to: "DZA" },
         ],
-      },
-    },
-    arm_isr: {
-      chart: "arms",
-      state: {
-        period: "p2",
-        depth: "country",
-        highlight: [{ from: "Israel", to: "MAR" }],
       },
     },
     arm_change: {
@@ -276,7 +274,6 @@ export default {
     },
 
     // bases and deployments
-    bas_trans: { chart: "forces", state: { bases: true } },
     bas_intro: {
       chart: "forces",
       state: {
@@ -284,7 +281,6 @@ export default {
         labels: ["DJI"],
       },
     },
-    dep_intro: { chart: "forces", state: { bases: true } },
     dep_bilat: {
       chart: "forces",
       state: {
@@ -312,7 +308,6 @@ export default {
         values: ["LBY", "MLI", "CAF"],
       },
     },
-    dep_un_intro: { chart: "forces", state: { types: ["UN"] } },
     dep_un_eu: {
       chart: "forces",
       state: {
@@ -353,12 +348,10 @@ export default {
       chart: "ex",
       state: { actor: "CHN", labels: ["EGY", "ZAF", "MOZ", "TZA"] },
     },
-    ex_rus: { chart: "ex", state: { actor: "RUS", labels: ["EGY"] } },
     ex_ind: {
       chart: "ex",
       state: { actor: "IND", labels: ["GAD", "EGY", "SYC", "ZAF"] },
     },
-    ex_eu: { chart: "ex", state: { actor: "EU" } },
     ex_atalanta: {
       chart: "ex",
       state: {

@@ -1,37 +1,37 @@
 subregion,actor,n,share
-Gulf,ARE,36,80
-Middle East,ARE,9,20
-Gulf,BHR,50,87.7
-Middle East,BHR,7,12.3
+Gulf,ARE,33,73.3
+Middle East,ARE,12,26.7
+Gulf,BHR,50,83.3
+Middle East,BHR,10,16.7
 Gulf,CHN,8,80
 Middle East,CHN,2,20
-Gulf,EU,29,49.2
-Middle East,EU,30,50.8
+Gulf,EU,31,50
+Middle East,EU,31,50
 Gulf,GCC,0,
 Middle East,GCC,0,
-Gulf,IND,39,88.6
-Middle East,IND,5,11.4
-Gulf,IRN,44,54.3
-Middle East,IRN,37,45.7
+Gulf,IND,40,90.9
+Middle East,IND,4,9.1
+Gulf,IRN,48,53.9
+Middle East,IRN,41,46.1
 Gulf,ISR,10,83.3
 Middle East,ISR,2,16.7
-Gulf,JPN,14,63.6
-Middle East,JPN,8,36.4
-Gulf,KOR,15,93.8
-Middle East,KOR,1,6.2
-Gulf,KWT,58,85.3
-Middle East,KWT,10,14.7
-Gulf,OMN,30,81.1
-Middle East,OMN,7,18.9
-Gulf,QAT,52,74.3
-Middle East,QAT,18,25.7
+Gulf,JPN,15,62.5
+Middle East,JPN,9,37.5
+Gulf,KOR,11,91.7
+Middle East,KOR,1,8.3
+Gulf,KWT,54,81.8
+Middle East,KWT,12,18.2
+Gulf,OMN,28,82.4
+Middle East,OMN,6,17.6
+Gulf,QAT,47,72.3
+Middle East,QAT,18,27.7
 Gulf,RUS,20,71.4
 Middle East,RUS,8,28.6
-Gulf,SAU,39,78
-Middle East,SAU,11,22
-Gulf,TUR,70,74.5
-Middle East,TUR,24,25.5
-Gulf,USA,59,53.6
-Middle East,USA,51,46.4
-Gulf,all,573,71.4
-Middle East,all,230,28.6
+Gulf,SAU,40,74.1
+Middle East,SAU,14,25.9
+Gulf,TUR,65,71.4
+Middle East,TUR,26,28.6
+Gulf,USA,56,54.4
+Middle East,USA,47,45.6
+Gulf,all,556,69.6
+Middle East,all,243,30.4

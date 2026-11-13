@@ -943,6 +943,16 @@ body {
   text-wrap: balance;
 }
 
+/* short description text in a card, below the image */
+.fa-landing .fa-theme-body {
+  margin: 0.8em 0 0 !important;
+  font-family: "PT Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
 /* region links inside a card: small map icon + region name */
 .fa-landing .fa-theme-regions {
   display: flex;

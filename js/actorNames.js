@@ -6,6 +6,8 @@
 // Only the names in actors.csv are matched (plus the aliases below), not adjectives
 // ("Russian") and not countries that are not actors. To keep a word plain where it
 // means something else, wrap it in the text: <span class="fa-plain">Gulf</span>
+// A step can also name the actors to colour itself: state: { nameActors: ["EU", "CHN"] }
+// and add written forms for that step only (adjectives): state: { nameForms: { Israeli: "ISR", Chinese: "CHN" } }
 
 import { theme } from "./theme.js";
 
@@ -66,16 +68,21 @@ export function colourActorNames(steps, chapter, actors) {
     const cfg = chapter.steps[step.dataset.step];
     const chartType = chapter.charts[cfg?.chart]?.type;
     const pick = ACTOR_KEYS[chartType]?.(cfg.state ?? {});
+    // state.nameActors (optional, any chart): actors to colour in the text although the chart does not highlight
+    // them, e.g. a map that highlights countries
     const codes = new Set(
-      [pick]
+      [pick, cfg?.state?.nameActors, Object.values(cfg?.state?.nameForms ?? {})]
         .flat()
         .map(codeOf)
         .filter((c) => c && colourOf(c)),
     );
     if (!codes.size) continue;
 
+    // state.nameForms (optional): extra written forms for this step only, e.g. adjectives: { Israeli: "ISR", Chinese: "CHN" }
+    const stepForms = new Map([...forms, ...Object.entries(cfg?.state?.nameForms ?? {})]);
+
     // forms of the highlighted actors only, longest first
-    const mine = [...forms]
+    const mine = [...stepForms]
       .filter(([, code]) => codes.has(code))
       .sort((a, b) => b[0].length - a[0].length);
     if (!mine.length) continue; // an actor without a written name in actors.csv (EIB, France): nothing to colour
@@ -92,7 +99,7 @@ export function colourActorNames(steps, chapter, actors) {
     for (const node of nodes) {
       if (node.parentElement.closest(".fa-plain")) continue;
       const hits = [...node.nodeValue.matchAll(re)].filter((h) => {
-        const code = forms.get(h[0]);
+        const code = stepForms.get(h[0]);
         if (done.has(code)) return false;
         done.add(code);
         return true;
@@ -104,7 +111,7 @@ export function colourActorNames(steps, chapter, actors) {
         frag.append(node.nodeValue.slice(last, hit.index));
         const b = document.createElement("b");
         b.className = "fa-actor";
-        b.style.color = colourOf(forms.get(hit[0]));
+        b.style.color = colourOf(stepForms.get(hit[0]));
         b.style.fontWeight = "700";
         b.textContent = hit[0];
         frag.append(b);

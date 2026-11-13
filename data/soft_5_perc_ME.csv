@@ -1,34 +1,54 @@
-geo,country,actor,favourable,dontknow,unfavourable,n
-IRQ,Iraq,CHN,63.78,0.16,36.05,1190
-IRQ,Iraq,TUR,46.24,0.32,53.44,1190
-IRQ,Iraq,QAT,47.62,0.23,52.15,1190
-IRQ,Iraq,SAU,44.88,0,55.12,1190
-IRQ,Iraq,USA,27.86,0.18,71.96,1190
-IRQ,Iraq,IRN,33.89,0.5,65.61,1190
-IRQ,Iraq,RUS,44.9,0.11,54.99,1190
-JOR,Jordan,CHN,66.65,2.89,30.46,1192
-JOR,Jordan,TUR,78.57,0.79,20.64,1192
-JOR,Jordan,QAT,84.29,0.94,14.77,1192
-JOR,Jordan,SAU,64.96,0.34,34.7,1192
-JOR,Jordan,USA,28.05,1.71,70.24,1192
-JOR,Jordan,IRN,25.38,4.16,70.46,1192
-JOR,Jordan,RUS,46.81,4.31,48.87,1192
-KWT,Kuwait,CHN,55.47,6.45,38.08,1210
-KWT,Kuwait,TUR,55.88,4.25,39.87,1210
-KWT,Kuwait,USA,16.06,4.05,79.89,1210
-KWT,Kuwait,IRN,14.78,5.25,79.97,1210
-KWT,Kuwait,RUS,49.41,7.83,42.76,1210
-LBN,Lebanon,CHN,56.65,3.86,39.49,1227
-LBN,Lebanon,TUR,42.29,4.68,53.03,1196
-LBN,Lebanon,QAT,58.21,3.35,38.44,1196
-LBN,Lebanon,SAU,45.35,3.93,50.72,1196
-LBN,Lebanon,USA,27.14,2.99,69.88,1227
-LBN,Lebanon,IRN,35.57,2.99,61.43,1196
-LBN,Lebanon,RUS,42.94,3.92,53.13,1227
-PSE,Palestine*,CHN,42.5,7.47,50.02,616
-PSE,Palestine*,TUR,64.51,4.35,31.14,616
-PSE,Palestine*,QAT,60.75,5.01,34.24,616
-PSE,Palestine*,SAU,37.86,4.93,57.21,616
-PSE,Palestine*,USA,19.38,6.68,73.95,616
-PSE,Palestine*,IRN,27.7,6.99,65.31,616
-PSE,Palestine*,RUS,29.31,8.79,61.9,616
+geo,country,actor,favourable,dontknow,unfavourable,n,great_medium,notatall
+IRQ,Iraq,QAT,39.2,0.5,60.3,1252,,
+IRQ,Iraq,SAU,37.4,0.5,62.1,1252,,
+IRQ,Iraq,TUR,39.1,0.4,60.5,1252,,
+IRQ,Iraq,CHN,55.3,0.6,44.2,1252,,
+IRQ,Iraq,USA,25.1,0.5,74.4,1252,,
+IRQ,Iraq,EU,34.4,0.7,64.9,1252,,
+IRQ,Iraq,IRN,44,0.7,55.4,1252,,
+IRQ,Iraq,RUS,43.7,0.8,55.5,1252,,
+JOR,Jordan,QAT,76.6,2.7,20.7,1266,,
+JOR,Jordan,SAU,70,2.3,27.7,1266,,
+JOR,Jordan,TUR,69.2,3.8,26.9,1266,,
+JOR,Jordan,CHN,61.8,7.6,30.6,1266,,
+JOR,Jordan,USA,25.8,4.5,69.7,1266,,
+JOR,Jordan,EU,46.2,8,45.8,1266,,
+JOR,Jordan,IRN,24,5.4,70.6,1266,,
+JOR,Jordan,RUS,43.3,9.2,47.5,1266,,
+LBN,Lebanon,QAT,66.1,1.9,32,1200,,
+LBN,Lebanon,SAU,51.5,1.9,46.6,1200,,
+LBN,Lebanon,TUR,34,3.5,62.6,1200,,
+LBN,Lebanon,CHN,50.2,5.9,44,1200,,
+LBN,Lebanon,USA,26.5,1.5,72,1200,,
+LBN,Lebanon,EU,42.3,3.6,54.1,1200,,
+LBN,Lebanon,IRN,31.3,2.4,66.3,1200,,
+LBN,Lebanon,RUS,34.7,3.7,61.6,1200,,
+PSE,Palestine*,QAT,54.1,2.1,43.8,1655,,
+PSE,Palestine*,SAU,30.6,1.7,67.7,1655,,
+PSE,Palestine*,TUR,50.6,2.2,47.2,1655,,
+PSE,Palestine*,CHN,43.5,4.9,51.7,1655,,
+PSE,Palestine*,USA,11.4,1.9,86.7,1655,,
+PSE,Palestine*,EU,34.1,4.5,61.5,1655,,
+PSE,Palestine*,IRN,41.8,2.7,55.5,1655,,
+PSE,Palestine*,RUS,33.4,4.5,62.1,1655,,
+SYR,Syria,QAT,83.3,2.8,13.9,1229,,
+SYR,Syria,SAU,86.9,3.1,10,1229,,
+SYR,Syria,TUR,72.5,2.7,24.8,1229,,
+SYR,Syria,CHN,36.6,15.4,47.9,1229,,
+SYR,Syria,USA,66.3,4.8,28.9,1229,,
+SYR,Syria,EU,69.5,8.2,22.2,1229,,
+SYR,Syria,IRN,4.8,4.2,91,1229,,
+SYR,Syria,RUS,16.2,4.9,78.9,1229,,
+AVG,Average (5 countries),QAT,63.9,2,34.1,6602,,
+AVG,Average (5 countries),SAU,55.3,1.9,42.8,6602,,
+AVG,Average (5 countries),TUR,53.1,2.5,44.4,6602,,
+AVG,Average (5 countries),CHN,49.5,6.9,43.7,6602,,
+AVG,Average (5 countries),USA,31,2.6,66.3,6602,,
+AVG,Average (5 countries),EU,45.3,5,49.7,6602,,
+AVG,Average (5 countries),IRN,29.2,3.1,67.8,6602,,
+AVG,Average (5 countries),RUS,34.3,4.6,61.1,6602,,
+LAW4,Average (4 countries),CHN,,,,,47.3,27.7
+LAW4,Average (4 countries),USA,,,,,28.6,52
+LAW4,Average (4 countries),EU,,,,,41.1,36.7
+LAW4,Average (4 countries),IRN,,,,,30.4,46.5
+LAW4,Average (4 countries),RUS,,,,,35.5,38.6

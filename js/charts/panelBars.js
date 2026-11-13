@@ -472,10 +472,14 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
       d.cl.dot != null && Number.isFinite(d.cl.dot) && d.p.dot
         ? `<br>${d.p.dot.label ?? "Marker"}: ${fmt(d.cl.dot)}`
         : "";
+    // Skip the panel-title line when it would only repeat the single segment's label.
+    const redundantTitle =
+      !d.p.title ||
+      (d.p.segments.length === 1 &&
+        (d.p.segments[0].label ?? d.p.title) === d.p.title);
+    const titleLine = redundantTitle ? "" : `${d.p.title}<br>`;
     tooltip
-      .html(
-        `<strong>${label(d.row)}</strong><br>${d.p.title ?? ""}<br>${lines}${dotLine}`,
-      )
+      .html(`<strong>${label(d.row)}</strong><br>${titleLine}${lines}${dotLine}`)
       .style("opacity", 1);
     hover.enter(event);
   }

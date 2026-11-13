@@ -112,6 +112,9 @@ export function makeRangeChart(el, { actors, rows, spec }) {
     }
   })();
 
+  // lines and dots take the actor's colour (theme.actorColors); actors without one stay dark grey
+  const colourOf = (s) => theme.actorColors[s.actor] ?? theme.neutral;
+
   // ── chart (redrawn when the width changes, so text keeps its size) ─────
   const ROW_H = 38;
   let svg;
@@ -187,7 +190,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("x2", (s) => x(s.last))
       .attr("y1", cy)
       .attr("y2", cy)
-      .attr("stroke", theme.neutral)
+      .attr("stroke", colourOf)
       .attr("stroke-width", 2.5);
     // dotted lead-in to a scheduled or a postponed summit
     rowSel
@@ -199,7 +202,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("x2", (s) => x(s.postponed ?? s.next))
       .attr("y1", cy)
       .attr("y2", cy)
-      .attr("stroke", theme.neutral)
+      .attr("stroke", colourOf)
       .attr("stroke-width", 1.5)
       .attr("stroke-dasharray", "2 3");
 
@@ -210,7 +213,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cy", cy)
       .attr("r", R_END)
       .attr("fill", theme.land)
-      .attr("stroke", theme.neutral)
+      .attr("stroke", colourOf)
       .attr("stroke-width", 1.75);
     rowSel
       .filter((s) => s.last != null && s.last > s.start)
@@ -218,7 +221,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cx", (s) => x(s.last))
       .attr("cy", cy)
       .attr("r", R_END)
-      .attr("fill", theme.neutral)
+      .attr("fill", colourOf)
       .attr("stroke", theme.land)
       .attr("stroke-width", 1.25);
     // postponed: dashed hollow marker at the planned year
@@ -229,7 +232,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cy", cy)
       .attr("r", R_END)
       .attr("fill", theme.land)
-      .attr("stroke", theme.neutral)
+      .attr("stroke", colourOf)
       .attr("stroke-width", 1.5)
       .attr("stroke-dasharray", "2 1.5");
     rowSel
@@ -238,7 +241,7 @@ export function makeRangeChart(el, { actors, rows, spec }) {
       .attr("cx", (s) => x(s.start))
       .attr("cy", cy)
       .attr("r", (s) => rSize(s.count))
-      .attr("fill", theme.neutral)
+      .attr("fill", colourOf)
       .attr("stroke", theme.land)
       .attr("stroke-width", 1.25);
 

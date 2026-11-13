@@ -18,18 +18,21 @@
 // PINNED: where the text and the charts differ. The text is as written; the charts
 // show the data.
 //   missing data (good to fix; see PINNED 4 to 7 in 0 trade.R)
-//     tra_eu_bal, bal_chn   the non-hydrocarbon surplus (EU 90.8bn, China 115.3bn) is not in the
+//     tra_eu_bal, bal_intro (+ bal_chn)   the non-hydrocarbon surplus (EU 90.8bn, China 115.3bn) is not in the
 //                           workbook: the charts show the total balance
-//     bal_groups, bal_tur_iraq   Iraq's part of the EU, US and Türkiye balances is not in the
+//     bal_groups (+ bal_tur_iraq)   Iraq's part of the EU, US and Türkiye balances is not in the
 //                           workbook: the charts show the two income groups
 //     gre_gulf              no green-energy shares for Israel and the GCC (no denominators):
 //                           values in $bn instead
-//     hit_us, hit_ind, hit_kor   no world totals per high-tech basket, so the armament and
+//     hit_us (+ hit_kor), hit_ind   no world totals per high-tech basket, so the armament and
 //                           pharma charts show values in $bn, not the shares the text quotes
 //                           (US 55.8% of armament, India 10.8% of pharma, South Korea 10.2%)
 //   split sentences (the chart shows one geography, actor or basket at a time, so a sentence with
-//   two is cut at the clause boundary): tra_hi / tra_hi_detail / tra_lmi, bal_intro / bal_tur,
-//   hit_israel / hit_excl, hit_us / hit_ind / hit_kor, agri_eu / agri_mix / agri_isr
+//   two is cut at the clause boundary): tra_hi / tra_hi_detail / tra_lmi,
+//   hit_israel / hit_excl, hit_us / hit_ind, agri_eu / agri_mix / agri_isr
+//   merged sentences (one step, one chart state; highlights added up, the text keeps all parts): bal_intro (+ bal_tur, bal_chn: EU, Türkiye
+//   and China), bal_groups (+ bal_tur_iraq: EU, US and Türkiye), hit_us (+ hit_kor: both on the armament chart; the text is re-ordered as
+//   US, South Korea, then India (hit_ind), with the commas and the full stop moved to fit)
 //   tra_eu_bal            sentence 2 of the opening paragraph is about balances, so the step
 //                         shows the balances chart and then goes back to partners
 //   tra_chn               41.3% is the 2024 value (annual data); the chart shows period averages
@@ -204,16 +207,10 @@ export default {
     },
 
     // ── ECON 1.3, 1.4: balances ─────────────────────────────────────────────
-    bal_intro: { chart: "balances", state: { highlight: ["EU"] } },
-    bal_tur: { chart: "balances", state: { highlight: ["TUR"] } },
-    bal_chn: { chart: "balances", state: { highlight: ["CHN", "EU"] } },
+    bal_intro: { chart: "balances", state: { highlight: ["EU", "TUR", "CHN"] } },
     bal_groups: {
       chart: "balances",
-      state: { geos: [HI, LMI], highlight: ["EU", "USA"], footnote: PAL },
-    },
-    bal_tur_iraq: {
-      chart: "balances",
-      state: { geos: [HI, LMI], highlight: ["TUR"], footnote: PAL },
+      state: { geos: [HI, LMI], highlight: ["EU", "USA", "TUR"], footnote: PAL },
     },
     pro_intro: { chart: "balances", state: { highlight: ["CHN", "EU"] } },
 
@@ -268,7 +265,7 @@ export default {
         product: "hitech",
         basket: "armament",
         measure: "value_usd_bn",
-        highlight: ["USA"],
+        highlight: ["USA", "KOR"],
         footnote:
           "* Armament sub-basket in hi-tech products group is not a comprehensive measure of arms transfers or defence dependence.",
       },
@@ -282,17 +279,6 @@ export default {
         measure: "value_usd_bn",
         highlight: ["IND"],
         footnote: PAL,
-      },
-    },
-    hit_kor: {
-      chart: "products",
-      state: {
-        product: "hitech",
-        basket: "armament",
-        measure: "value_usd_bn",
-        highlight: ["KOR"],
-        footnote:
-          "* Armament sub-basket in hi-tech products group is not a comprehensive measure of arms transfers or defence dependence.",
       },
     },
 

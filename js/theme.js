@@ -47,6 +47,7 @@ export const theme = {
     // France and Germany (soft power chapter, rows "of which") use the EU colour: no new colour
     FRA: "#309ebe",
     DEU: "#309ebe",
+    ITA: "#309ebe", // Italy (summits chart, diplomatic chapter): EU colour
   },
 
   // deployment types (spikes), kept apart from the actor colours

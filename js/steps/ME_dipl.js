@@ -246,29 +246,23 @@ export default {
     emb_isr: { chart: "emb", state: { actor: "ISR" } },
     emb_eu: { chart: "emb", state: { actor: "EU", labels: ["OMN"] } },
     emb_rci: { chart: "emb", state: { actor: "CHN", labels: ["PSE"] } },
-    emb_explore: { chart: "emb", state: { actor: "all" } },
 
     vis_intro: { chart: "vis", state: { actor: "all" } },
-    vis_top: { chart: "vis", state: { actor: "all" } },
-    vis_pattern: { chart: "vis", state: { actor: "all" } },
     vis_usa: {
       chart: "vis",
-      state: { actor: "USA", labels: ["ISR", "SAU"] },
+      state: { actor: "USA", labels: ["ISR", "SAU"], labelsLeft: "ISR" },
     },
-    vis_tur: {
+    // intra-regional visits: the six GCC countries added up (bubble = visits received from them)
+    vis_gcc: {
       chart: "vis",
-      state: { actor: "TUR", labels: ["QAT", "SAU"] },
+      state: {
+        actor: ["ARE", "BHR", "KWT", "OMN", "QAT", "SAU"],
+        actorLabel: "GCC countries",
+        subtitle:
+          "Visits by the heads of state or government and foreign ministers of the six GCC countries combined, January 2019–July 2026",
+        labels: ["SAU", "ARE"],
+      },
     },
-    vis_irn: {
-      chart: "vis",
-      state: { actor: "IRN", labels: ["QAT", "IRQ"] },
-    },
-    vis_eu: {
-      chart: "vis",
-      state: { actor: "EU", labels: ["JOR", "ARE"] },
-    },
-    vis_gcc_intro: { chart: "vis", state: { actor: "all" } },
-    vis_gcc: { chart: "vis", state: { actor: "all", labels: ["SAU"] } },
     vis_gcc_time: {
       chart: "vis",
       state: { actor: "IRN", labels: ["OMN", "QAT", "SAU"] },
@@ -277,13 +271,23 @@ export default {
     lab_intro: { chart: "lab", state: { actor: "all" } },
     lab_chn: {
       chart: "lab",
-      state: { actor: "CHN", labels: ["BHR", "SAU", "ARE", "ISR"] },
-    },
-    lab_chn2: {
-      chart: "lab",
+      // both China sentences; Bahrain's label goes left so it does not run into Qatar's
       state: {
         actor: "CHN",
-        labels: ["IRQ", "JOR", "KWT", "OMN", "PSE", "QAT"],
+        labels: [
+          "BHR",
+          "SAU",
+          "ARE",
+          "ISR",
+          "IRQ",
+          "JOR",
+          "KWT",
+          "OMN",
+          "PSE",
+          "QAT",
+          "SYR",
+        ],
+        labelsLeft: ["BHR"],
       },
     },
     lab_usa: {
@@ -292,6 +296,7 @@ export default {
       state: {
         actor: "USA",
         labels: ["BHR", "ISR", "JOR", "KWT", "QAT", "SAU"],
+        labelsLeft: "BHR",
       },
     },
     lab_tur: {
@@ -313,51 +318,19 @@ export default {
 
     sum_intro: { chart: "sum", state: {} },
     sum_eu_usa: { chart: "sum", state: { highlight: ["2", "5"] } }, // EU–GCC, US–GCC
-    sum_chn: { chart: "sum", state: { highlight: ["13"] } },
-    sum_rus: { chart: "sum", state: { highlight: ["9"] } },
+    sum_chn: { chart: "sum", state: { highlight: ["13", "9"] } }, // China–Arab States and Russia–Arab world, both postponed
 
-    unga_ukr_intro: {
-      chart: "unga_ukr",
-      state: { measure: "abs", period: "all" },
-    },
     unga_ukr_abst: {
       chart: "unga_ukr",
       state: { measure: "abs", period: ["1621", "2226"] },
     },
-    unga_ukr_isr: {
-      chart: "unga_ukr",
-      state: {
-        measure: "rus",
-        period: "all",
-        highlight: ["ISR"],
-        values: ["ISR"],
-      },
-    },
-    unga_ukr_syr: {
+    unga_ukr_rus: {
       chart: "unga_ukr",
       state: {
         measure: "rus",
         period: ["1621", "2226"],
-        highlight: ["SYR"],
-        values: ["SYR"],
-      },
-    },
-    unga_ukr_irn: {
-      chart: "unga_ukr",
-      state: {
-        measure: "rus",
-        period: ["1621", "2226"],
-        highlight: ["IRN"],
-        values: ["IRN"],
-      },
-    },
-    unga_ukr_chn_ind: {
-      chart: "unga_ukr",
-      state: {
-        measure: "rus",
-        period: ["1621", "2226"],
-        highlight: ["CHN", "IND"],
-        values: ["CHN", "IND"],
+        highlight: ["ISR", "SYR", "IRN", "CHN", "IND"],
+        values: ["ISR", "SYR", "IRN", "CHN", "IND"],
       },
     },
     unga_ukr_chn_ind_abs: {
@@ -384,10 +357,6 @@ export default {
       state: { measure: "abs", period: "all" },
     },
     unga_ter_isr: {
-      chart: "unga_ter",
-      state: { measure: "isr", period: "all" },
-    },
-    unga_ter_usa: {
       chart: "unga_ter",
       state: {
         measure: "isr",
@@ -422,15 +391,6 @@ export default {
     unga_gaz_eu: {
       chart: "unga_gaz",
       state: { measure: "eu", period: "all" },
-    },
-    unga_gaz_isr: {
-      chart: "unga_gaz",
-      state: {
-        measure: "eu",
-        period: "all",
-        highlight: ["ISR", "USA"],
-        values: ["ISR", "USA"],
-      },
     },
   },
 };

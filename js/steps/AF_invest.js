@@ -24,28 +24,30 @@
 //
 // PINNED: where the text and the charts differ. The text is as written; the charts show the data.
 //   split sentences (the chart shows one actor at a time, or the sentence needs two charts): fdi_gulf / fdi_us,
-//   oda_europe / oda_us / oda_saudi, oda_geo / oda_geo_uae / oda_geo_chn, debt_china / debt_china_flows,
-//   debt_europe / debt_gulf, debt_terms / debt_terms_cn
+//   debt_china / debt_china_flows
+//   merged sentences (one step, one chart state; highlights and footnotes added up, the text keeps all parts): fdi_scale_gulf (+ fdi_scale_ind),
+//   fdi_eu (+ fdi_chn: the 35 + 13 economies led), oda_europe (+ oda_us, oda_saudi), oda_geo (+ oda_geo_uae, oda_geo_chn: EU, US, China, UAE),
+//   debt_europe (+ debt_gulf: EU, Gulf, Russia, US), debt_terms (+ debt_terms_cn: Japan, Korea, EU, China, Gulf)
 //   fdi_*          all figures of the FDI text are in the workbook and are checked in invest_2 fdi_af.R. Not drawn as such:
 //                  the counts (18 of 52 over half, EU 12 / China 5 / Türkiye 1; EU leads 35, China 13) and the GDP and stock
 //                  shares of the economies led (86%, 5.5%, ~12%): the map highlights those economies instead. The highlight
 //                  lists (OVER_HALF, EU_LED, CHN_LED) are typed in below: the R script prints them, compare after a data update
-//   fdi_scale*     the first paragraph is split at sentence level (EU / Gulf / India / US and China); chart shows the seven named
+//   fdi_scale*     the first paragraph is split at sentence level (EU / Gulf and India / US and China); chart shows the seven named
 //                  investors, "other" (43.7% of the stock) is in the data but not drawn
-//   fdi_chn_gdp    split from fdi_chn (the map shows where China leads, the three-panel chart its scale vs GDP-weighted share)
+//   fdi_chn_gdp    split from fdi_eu (+ fdi_chn) (the map shows where China leads, the three-panel chart its scale vs GDP-weighted share)
 //   fdi_gulf       text says "eld" in the source (pasted); read as "held"
 //   fdimap         "all" = total recorded stock per host, tooltip reads "All foreign actors" (it includes unlisted counterparts);
 //                  Sudan and South Sudan are not drawn (no shares); one bubble scale throughout (Mauritius, $342 bn, sets it)
 //   oda_europe     "most of the decline coming from EU Institutions": no EU institutions / member states split
 //   oda_china      "two-thirds infrastructure-related": no sector data. China is commitments (2019–23, constant 2023 US dollars),
 //                  its own chart, never on the OECD axis
-//   oda_geo_uae    "49.3% in Chad": country level, not in the data; Central Africa's share is shown
+//   oda_geo (UAE) "49.3% in Chad": country level, not in the data; Central Africa's share is shown
 //   oda_geo        China's row in the regional chart is the share of its AidData commitments, flagged in the subtitle
 //   oda_multi      the changes (donors down, multilateral +19.7%, total +2.6%) are in the text only; the chart shows totals
 //   debt_europe    "European institutions held $13.8 bn (multilateral)": not in the data
 //   debt_shift     $1,175.5 bn total external debt (+21%) and $264.5 bn multilateral PPG claims (+49%): not in the
 //                  data; the chart shows bilateral stocks (total in the subtitle)
-//   debt_gulf      "Sudan³ Russia’s": full stop missing in the source, kept
+//   debt_europe    (Gulf) "Sudan³ Russia’s": full stop missing in the source, kept
 //   intro          remittances / FDI / ODA by region and the net-transfer figures ($97.0 bn → −7.5 bn): no chart
 //   footnotes      all footnotes and captions on the charts are drafts, from the source document
 //   ODA actors     Israel (0.02 bn) has rows in the data but no text and is not drawn. Kuwait and "Other bilateral"
@@ -376,12 +378,11 @@ export default {
     fdi_scale_gulf: {
       chart: "fdiscale",
       state: {
-        highlight: ["GCC"],
+        highlight: ["GCC", "IND"],
         footnote:
           "Gulf positions should be treated as lower bounds: only Kuwait, of the six Gulf states, reports outward positions to the IMF, leaving other bilateral relationships observable only where the African host reports them.",
       },
     },
-    fdi_scale_ind: { chart: "fdiscale", state: { highlight: ["IND"] } },
     fdi_scale_stable: { chart: "fdiscale", state: { highlight: ["USA", "CHN"] } },
     fdi_conc: {
       chart: "fdimap",
@@ -393,8 +394,15 @@ export default {
           "* Headline continental totals require caution. Mauritius accounted for 36% of recorded African inward FDI stock in 2022–24, and its role as a financial-intermediation hub strongly shaped several actors’ apparent scale, particularly the US, India and Japan. These positions should not be equated with investment in Mauritius’s domestic productive economy.",
       },
     },
-    fdi_eu: { chart: "fdimap", state: { measure: "fdi", actor: "all", highlight: EU_LED } },
-    fdi_chn: { chart: "fdimap", state: { measure: "fdi", actor: "all", highlight: CHN_LED } },
+    fdi_eu: {
+      chart: "fdimap",
+      state: {
+        measure: "fdi",
+        actor: "all",
+        highlight: [...EU_LED, ...CHN_LED],
+        nameActors: ["EU", "CHN"], // the map highlights countries, so name the actors for the text colouring
+      },
+    },
     fdi_chn_gdp: {
       chart: "fdi",
       state: {
@@ -416,9 +424,7 @@ export default {
     fdi_us: { chart: "fdimap", state: { measure: "fdi", actor: "USA", labels: ["EGY", "DZA", "MUS"] } },
 
     // ── ECON 3.1: official development finance ──────────────────────────────
-    oda_europe: { chart: "netoda", state: { highlight: ["EU"] } },
-    oda_us: { chart: "netoda", state: { highlight: ["USA"] } },
-    oda_saudi: { chart: "netoda", state: { highlight: ["SAU"] } },
+    oda_europe: { chart: "netoda", state: { highlight: ["EU", "USA", "SAU"] } },
     oda_grants: {
       chart: "gross",
       state: {
@@ -438,13 +444,11 @@ export default {
     oda_geo: {
       chart: "geo",
       state: {
-        highlight: ["EU", "USA", "CHN"],
+        highlight: ["EU", "USA", "CHN", "ARE"],
         footnote:
           "Country-coded refers to OECD flows allocated to individual African recipient countries; regional and unspecified flows are excluded. Saudi Arabia is therefore excluded from this geographic analysis because its reported Africa flows are available only at aggregate level.",
       },
     },
-    oda_geo_uae: { chart: "geo", state: { highlight: ["ARE"] } },
-    oda_geo_chn: { chart: "geo", state: { highlight: ["CHN"] } },
     oda_multi: { chart: "context", state: {} },
 
     // ── ECON 3.3: official bilateral lending ────────────────────────────────
@@ -464,11 +468,10 @@ export default {
           "Net flows are annual measures, shown as average annual values for 2019–2021 and 2022–2024. All monetary values are current US dollars.",
       },
     },
-    debt_europe: { chart: "debtstock", state: { highlight: ["EU"] } },
-    debt_gulf: {
+    debt_europe: {
       chart: "debtstock",
       state: {
-        highlight: ["GCC", "RUS", "USA"],
+        highlight: ["EU", "GCC", "RUS", "USA"],
         footnote:
           "3 Their recorded stock was lower than in 2019, but the comparison is materially affected by the UAE–Egypt reporting break and should not be read simply as creditor withdrawal.",
       },
@@ -476,17 +479,9 @@ export default {
     debt_terms: {
       chart: "debtterms",
       state: {
-        highlight: ["JPN", "KOR", "EU"],
+        highlight: ["JPN", "KOR", "EU", "CHN", "GCC"],
         footnote:
-          "Concessional per World Bank definition: having an original grant element of 35% or more.",
-      },
-    },
-    debt_terms_cn: {
-      chart: "debtterms",
-      state: {
-        highlight: ["CHN", "GCC"],
-        footnote:
-          "4 Incomplete reporting means that these figures should be treated as minimum estimates rather than directly comparable portfolio averages.",
+          "Concessional per World Bank definition: having an original grant element of 35% or more.\n4 Incomplete reporting means that these figures should be treated as minimum estimates rather than directly comparable portfolio averages.",
       },
     },
     debt_shift: {

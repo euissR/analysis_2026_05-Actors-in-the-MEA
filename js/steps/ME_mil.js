@@ -259,24 +259,15 @@ export default {
         footnote: "Israeli forces are estimates and refer to 2025.",
       },
     },
+    // EU Member States and the UNIFIL contributors (India, China, South Korea, Türkiye) on one map
     dep_un_eu: {
       chart: "forces",
       state: {
         types: ["UN"],
-        actors: ["EU"],
+        actors: ["EU", "IND", "CHN", "KOR", "TUR"],
         spikeK: 0.04,
         keyRef: 500,
         values: ["LBN", "MEA", "GOL"],
-      },
-    },
-    dep_un_unifil: {
-      chart: "forces",
-      state: {
-        types: ["UN"],
-        actors: ["IND", "CHN", "KOR", "TUR"],
-        spikeK: 0.04,
-        keyRef: 500,
-        values: ["LBN"],
       },
     },
     dep_nato: {

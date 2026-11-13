@@ -180,3 +180,5 @@ if (file.exists(f)) {
     finish(file.path(EMBED_DIR, "methodology.html"), blk, basename(f))
   }
 }
+
+setwd(wd1)

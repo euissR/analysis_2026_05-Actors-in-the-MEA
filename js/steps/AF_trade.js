@@ -18,10 +18,14 @@
 // PINNED: where the text and the charts differ. The text is as written; the charts
 // show the data.
 //   split sentences (the chart shows one actor or one basket at a time, so a sentence with
-//   two is cut at the clause boundary): bal_eu_total / bal_eu_hydro / bal_eu_nonhydro,
-//   bal_chn_total / bal_chn_nonhydro, bal_na_regions / bal_na_values, pha_total / pha_india,
-//   hit_eu / hit_chn, agri_eu_exp / agri_eu_imp, cer_intro / cer_eu, fer_intro / fer_na_exp,
+//   two is cut at the clause boundary): bal_eu_hydro / bal_eu_nonhydro, pha_total / pha_india,
+//   hit_eu / hit_chn, cer_intro / cer_eu, fer_intro / fer_na_exp,
 //   fer_ssa_imp / fer_ssa_sup / fer_na_eu
+//   merged sentences (one step, one chart state; the text keeps both parts): tra_transition (+ bal_eu_total: EU and China highlighted),
+//   cer_ind (+ cer_rus: India and Russia highlighted). Merged with the chart of the first part only: bal_chn_total (+ bal_chn_nonhydro:
+//   the non-hydrocarbon surplus is text only), bal_na_regions (+ bal_na_values: the North Africa values are text only), agri_eu_exp
+//   (+ agri_eu_imp: the EU's share of imports is text only), agri_cen (+ agri_cen_goods: the 19% is text only; the "exports" chart is
+//   no longer used by any step)
 //   Sub-Saharan Africa is not in the workbook (Africa + five regions). The R scripts add it as
 //   "Sub-Saharan Africa": the four regions summed (shares: summed values over summed totals).
 //   tra_eu         the Asian four (28.7%) are four separate rows; the sum is not drawn
@@ -34,7 +38,7 @@
 //                  in the data, basket "aerospace")
 //   pha_total      India's 6.2% of total trade is shown on the partners chart
 //   agri_cen       "39% in West and North Africa" is 38.8% and 39.0%: the three regions are shown
-//   agri_cen_goods the 19% is the EU's share of Central Africa's goods exports (all goods, not
+//   agri_cen_goods (merged into agri_cen, no longer drawn) the 19% is the EU's share of Central Africa's goods exports (all goods, not
 //                  agriculture), from trade_1_flows
 //   agri_cen_share "less than 5% of EU–Africa goods trade" (4.8%) is not drawn: the chart shows
 //                  the EU's trade with each region in $bn
@@ -227,7 +231,6 @@ export default {
       chart: "balances",
       state: { highlight: ["EU", "CHN"] },
     },
-    bal_eu_total: { chart: "balances", state: { highlight: ["EU"] } },
     bal_eu_hydro: {
       chart: "balances",
       state: { component: "hydrocarbon", highlight: ["EU"] },
@@ -237,17 +240,9 @@ export default {
       state: { component: "non_hydrocarbon", highlight: ["EU"] },
     },
     bal_chn_total: { chart: "balances", state: { highlight: ["CHN"] } },
-    bal_chn_nonhydro: {
-      chart: "balances",
-      state: { component: "non_hydrocarbon", highlight: ["CHN", "EU"] },
-    },
     bal_na_regions: {
       chart: "balances",
       state: { geos: FIVE, highlight: ["EU", "CHN"] },
-    },
-    bal_na_values: {
-      chart: "balances",
-      state: { geos: ["North Africa"], highlight: ["EU", "CHN"] },
     },
     pro_intro: {
       chart: "balances",
@@ -332,10 +327,6 @@ export default {
       chart: "products",
       state: { product: "agri", flow: "exports", highlight: ["EU"] },
     },
-    agri_eu_imp: {
-      chart: "products",
-      state: { product: "agri", flow: "imports", highlight: ["EU"] },
-    },
     agri_cen: {
       chart: "products",
       state: {
@@ -344,10 +335,6 @@ export default {
         geos: ["North Africa", "West Africa", "Central Africa"],
         highlight: ["EU"],
       },
-    },
-    agri_cen_goods: {
-      chart: "exports",
-      state: { geos: ["Central Africa"], highlight: ["EU"] },
     },
     agri_cen_share: {
       chart: "partners",
@@ -380,10 +367,6 @@ export default {
         footnote:
           "* Despite restrictions on wheat exports from 2022 and on some rice categories from 2023 (both lifted as of 2026 and 2024/25 respectively).",
       },
-    },
-    cer_rus: {
-      chart: "products",
-      state: { product: "cereals", highlight: ["RUS"] },
     },
 
     // ── ECON 2.6: fertilizers (HS31) ────────────────────────────────────────
