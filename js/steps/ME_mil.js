@@ -11,10 +11,11 @@ export default {
       data: "mil_1_arms",
       title: "Arms transfers to the Middle East and the Gulf",
       subtitle: (s, period) =>
-        `SIPRI trend-indicator value (TIV) of delivered ${s.drones ? "drones" : "weapons"}, ${period}`,
+        `SIPRI trend-indicator value (TIV, million) of delivered ${s.drones ? "drones" : "weapons"}, ${period}`,
       source:
         "Data: SIPRI Arms Transfers Database, August 2026. Deliveries 2016–2025; multi-year deliveries are split equally across the years indicated. Not available for all countries; some transfers to non-state armed groups are included.",
-      unit: "SIPRI TIV of delivered weapons",
+      unit: "SIPRI TIV of delivered weapons (million)",
+      tipLabel: "TIV (million):",
       periods: {
         all: { label: "2016–2025" },
         p1: { label: "2018–2021", from: 2018, to: 2021 },
@@ -37,10 +38,10 @@ export default {
       data: "mil_1_arms",
       title: "Arms transfers to the Middle East and the Gulf, by year",
       subtitle: (s) =>
-        `SIPRI trend-indicator value (TIV) of delivered weapons${s.only?.length ? "" : ", by supplier"}`,
+        `SIPRI trend-indicator value (TIV, million) of delivered weapons${s.only?.length ? "" : ", by supplier"}`,
       source:
         "Data: SIPRI Arms Transfers Database, August 2026. Deliveries 2016–2025; multi-year deliveries are split equally across the years indicated. Not available for all countries; some transfers to non-state armed groups are included.",
-      unit: "SIPRI TIV",
+      unit: "SIPRI TIV (million)",
       stackOrder: [
         "USA",
         "EU",

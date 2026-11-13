@@ -13,11 +13,11 @@ RUS,Russia,CAF,Central African Republic,PMC,,1500,TRUE
 RUS,Russia,CAF,Central African Republic,UN,MINUSCA,10,FALSE
 USA,US,CAF,Central African Republic,UN,MINUSCA,9,FALSE
 EU,France,CIV,Côte D’Ivoire,Bilateral,,80,FALSE
-CHN,China,COD,Democratic Republic of The Congo,UN,MONUSCO,13,FALSE
-EU,Czechia,COD,Democratic Republic of The Congo,UN,MONUSCO,2,FALSE
-EU,France,COD,Democratic Republic of The Congo,UN,MONUSCO,2,FALSE
-IND,India,COD,Democratic Republic of The Congo,UN,MONUSCO,1076,FALSE
-RUS,Russia,COD,Democratic Republic of The Congo,UN,MONUSCO,5,FALSE
+CHN,China,COD,DR Congo,UN,MONUSCO,13,FALSE
+EU,Czechia,COD,DR Congo,UN,MONUSCO,2,FALSE
+EU,France,COD,DR Congo,UN,MONUSCO,2,FALSE
+IND,India,COD,DR Congo,UN,MONUSCO,1076,FALSE
+RUS,Russia,COD,DR Congo,UN,MONUSCO,5,FALSE
 CHN,China,DJI,Djibouti,Bilateral,,400,FALSE
 EU,France,DJI,Djibouti,Bilateral,,1500,FALSE
 EU,Italy,DJI,Djibouti,Bilateral,,92,FALSE
@@ -88,4 +88,3 @@ JPN,Japan,SSD,South Sudan,UN,UNMISS,4,FALSE
 KOR,South Korea,SSD,South Sudan,UN,UNMISS,262,FALSE
 RUS,Russia,SSD,South Sudan,UN,UNMISS,3,FALSE
 USA,US,SSD,South Sudan,UN,UNMISS,7,FALSE
-EU,France,TUN,Tunisia,Bilateral,,750,FALSE

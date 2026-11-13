@@ -48,10 +48,11 @@ export default {
       data: "mil_1_arms",
       title: "Arms transfers to Africa",
       subtitle: (s, period) =>
-        `SIPRI trend-indicator value (TIV) of delivered ${s.drones ? "armed drones" : "weapons"}${s.scope === "ssa" ? " to sub-Saharan Africa" : ""}, ${period}`,
+        `SIPRI trend-indicator value (TIV, million) of delivered ${s.drones ? "armed drones" : "weapons"}${s.scope === "ssa" ? " to sub-Saharan Africa" : ""}, ${period}`,
       source:
         "Data: SIPRI Arms Transfers Database, August 2026. Deliveries 2016–2025; multi-year deliveries are split equally across the years indicated.",
-      unit: "SIPRI TIV of delivered weapons",
+      unit: "SIPRI TIV of delivered weapons (million)",
+      tipLabel: "TIV (million):",
       periods: {
         all: { label: "2016–2025" },
         p1: { label: "2018–2021", from: 2018, to: 2021 },
