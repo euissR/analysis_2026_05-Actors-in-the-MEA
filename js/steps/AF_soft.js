@@ -107,7 +107,7 @@ const FN13 =
 const FN14 =
   "¹⁴ These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
 const FN15 =
-  "¹⁵ Afrobarometer, round 10 (2024/2025), 37 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused. Means of country values; the former colonial power is rated in 36 countries.";
+  "¹⁵ Afrobarometer, round 10 (2024/2025), 38 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused. Means of country values; the former colonial power is rated in 37 countries.";
 const FN_ETH = "2015 level shown (54,628); 2024: 26,824. " + FN13;
 
 // dot sizes compare across the two maps: the same value gets the same radius (21 = member states with any presence, the largest count)
