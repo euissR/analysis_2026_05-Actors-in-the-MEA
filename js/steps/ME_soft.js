@@ -417,9 +417,7 @@ export default {
         { label: "Unfavourable", color: "fuchsia2" },
       ],
       panels: [
-        ...PERC_COUNTRIES.map(([geo, title]) =>
-          percPanel(geo, title, geo),
-        ),
+        ...PERC_COUNTRIES.map(([geo, title]) => percPanel(geo, title, geo)),
         ...PERC_COUNTRIES.map(([geo, title]) =>
           percPanel(`${geo}_neg`, title, geo, true),
         ),
@@ -430,7 +428,13 @@ export default {
           title: "Upholds international law to a great or medium extent",
           subtitle: "Average of 4 countries",
           where: { geo: "LAW4" },
-          segments: [{ column: "great_medium", label: "Great or medium extent", color: "teal2" }],
+          segments: [
+            {
+              column: "great_medium",
+              label: "Great or medium extent",
+              color: "teal2",
+            },
+          ],
           domain: [0, 100],
           format: "pct",
         },
@@ -439,7 +443,9 @@ export default {
           title: "Does not at all uphold international law",
           subtitle: "Average of 4 countries",
           where: { geo: "LAW4" },
-          segments: [{ column: "notatall", label: "Not at all", color: "fuchsia2" }],
+          segments: [
+            { column: "notatall", label: "Not at all", color: "fuchsia2" },
+          ],
           domain: [0, 100],
           format: "pct",
         },
@@ -604,6 +610,7 @@ export default {
           { from: "Russia", to: "ISR" },
         ],
         show: ["ISR", "ARE"],
+        nameForms: { Russian: "RUS" },
         footnote: FN16,
       },
     },
