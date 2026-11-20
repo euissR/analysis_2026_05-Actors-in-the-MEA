@@ -1,5 +1,9 @@
 key,iso3,role
 row4,USA,Lead
+row4,MAR,Lead
+row4,GHA,Lead
+row4,SEN,Lead
+row4,TUN,Lead
 row5,IND,Lead
 row5,TZA,Lead
 row5,COM,Participant
@@ -13,9 +17,13 @@ row5,ZAF,Participant
 row6,USA,Lead
 row6,MAR,Lead
 row6,GHA,Lead
-row6,TUN,Lead
 row6,SEN,Lead
+row6,TUN,Lead
 African Lion 2025,USA,Lead
+African Lion 2025,MAR,Lead
+African Lion 2025,GHA,Lead
+African Lion 2025,SEN,Lead
+African Lion 2025,TUN,Lead
 African Lion 2025,BEN,Participant
 African Lion 2025,CPV,Participant
 African Lion 2025,CMR,Participant
@@ -49,7 +57,7 @@ row21,DJI,Participant
 row22,SYC,Lead
 row23,SYC,Lead
 row24,DJI,Lead
-row24,ITA,Participant
+row24,ITA,Lead
 row26,JPN,Lead
 row27,RUS,Lead
 row27,EGY,Lead
@@ -81,6 +89,8 @@ row44,FRA,Lead
 row47,FRA,Lead
 row47,SEN,Lead
 row48,USA,Lead
+row48,MUS,Lead
+row48,SYC,Lead
 row48,COM,Participant
 row48,DJI,Participant
 row48,EGY,Participant
@@ -184,13 +194,13 @@ row90,JPN,Lead
 row91,FRA,Lead
 row92,IND,Lead
 row92,ZAF,Lead
-row92,BRA,Participant
+row92,BRA,Lead
 row95,CIV,Lead
 row95,FRA,Lead
 row96,USA,Lead
-row96,KEN,Participant
-row96,TZA,Participant
-row96,DJI,Participant
+row96,KEN,Lead
+row96,TZA,Lead
+row96,DJI,Lead
 row97,IND,Lead
 row97,SYC,Lead
 row101,MAR,Lead
@@ -232,9 +242,12 @@ row111,PRT,Participant
 row111,COG,Participant
 row111,STP,Participant
 row113,CHN,Lead
+row113,TZA,Lead
+row113,MOZ,Lead
 row113,TZA,Participant
 row113,MOZ,Participant
 row114,USA,Lead
+row114,TUN,Lead
 row114,DZA,Participant
 row114,BEL,Participant
 row114,EGY,Participant

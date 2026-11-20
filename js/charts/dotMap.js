@@ -11,6 +11,7 @@
 //        when blank the category's tooltip text is used
 //   "count" (visits): rows iso3, actor, n   (n blank = own country)
 //      actor "all": n = all actors combined
+//   optional column `members` (exercises map, EU tile): who led which exercises, shown under the count in the tooltip
 // sub (optional): subregion, actor, n, share
 // spec.extraTiles (optional): [{ actor, label }] tiles beyond actors.csv, with rows of their own
 // spec.ownDots (optional): false = places without a row get no dot (default: a small
@@ -299,7 +300,20 @@ export function makeDotMap(
     const label = labelOfActor(state);
     if (counting || state.actor === "all") {
       if (row?.n === "" || row?.n == null) return `${label}: own country`;
-      return spec.tooltipCount(+row.n, label, nActors, d, state.actor);
+      const text = spec.tooltipCount(+row.n, label, nActors, d, state.actor);
+      // optional column `members` (EU tile of the exercises map): "Member (n): exercise; exercise | Member (n): ...",
+      // one line per lead, the first three exercises of each
+      if (!row.members) return text;
+      const esc = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+      const lines = String(row.members)
+        .split(" | ")
+        .map((m) => {
+          const i = m.indexOf(": ");
+          const list = m.slice(i + 2).split("; ");
+          const more = list.length > 3 ? ` +${list.length - 3} more` : "";
+          return `${esc(m.slice(0, i))}: ${esc(list.slice(0, 3).join("; "))}${more}`;
+        });
+      return `${text}<br>${lines.join("<br>")}`;
     }
     const presence = row?.presence ?? "";
     if (!presence) return `${label}: own country`;

@@ -3,10 +3,8 @@ row1,IRQ,Lead
 row1,FRA,Lead
 row3,ARE,Lead
 row3,SAU,Lead
-row9,IND,Lead
-row9,OMN,Lead
-row10,IND,Lead
-row10,OMN,Lead
+Al Najah V 2025,IND,Lead
+Al Najah V 2025,OMN,Lead
 row11,FRA,Lead
 row11,QAT,Lead
 row12,IND,Lead
@@ -24,10 +22,6 @@ row18,SAU,Lead
 row18,USA,Lead
 row20,CHN,Lead
 row20,SAU,Lead
-row24,DJI,Lead
-row24,ITA,Participant
-row27,RUS,Lead
-row27,EGY,Lead
 row28,IND,Lead
 row28,ARE,Lead
 row31,IND,Lead
@@ -130,92 +124,48 @@ row76,RUS,Participant
 row78,CHN,Lead
 row78,IRN,Lead
 row78,RUS,Participant
-row81,ESP,Lead
-row81,NGA,Lead
 row85,IND,Lead
 row85,OMN,Lead
 row86,USA,Lead
 row86,SAU,Lead
-row86,ARE,Participant
+row86,ARE,Lead
 row87,USA,Lead
 row87,JOR,Lead
-row89,ESP,Lead
-row89,NGA,Lead
 row90,JPN,Lead
-row91,FRA,Lead
 row93,USA,Lead
-row93,ISR,Participant
+row93,ISR,Lead
 row94,BHR,Lead
 row94,ARE,Lead
 row102,KWT,Lead
-row102,BHR,Participant
-row102,USA,Participant
-row102,GBR,Participant
-row103,SAU,Lead
-row103,BHR,Participant
-row103,BGD,Participant
-row103,FRA,Participant
-row103,GRC,Participant
-row103,ITA,Participant
-row103,JOR,Participant
-row103,MYS,Participant
-row103,MAR,Participant
-row103,OMN,Participant
-row103,PAK,Participant
-row103,QAT,Participant
-row103,TUR,Participant
-row103,UKR,Participant
-row103,USA,Participant
+row102,BHR,Lead
+row102,USA,Lead
+row102,GBR,Lead
+Spears of Victory 2026,SAU,Lead
+Spears of Victory 2026,BHR,Lead
+Spears of Victory 2026,BHR,Participant
+Spears of Victory 2026,BGD,Participant
+Spears of Victory 2026,FRA,Participant
+Spears of Victory 2026,GRC,Participant
+Spears of Victory 2026,ITA,Participant
+Spears of Victory 2026,JOR,Participant
+Spears of Victory 2026,MYS,Participant
+Spears of Victory 2026,MAR,Participant
+Spears of Victory 2026,OMN,Participant
+Spears of Victory 2026,PAK,Participant
+Spears of Victory 2026,QAT,Participant
+Spears of Victory 2026,TUR,Participant
+Spears of Victory 2026,UKR,Participant
+Spears of Victory 2026,USA,Participant
 row106,ARE,Lead
 row106,FRA,Lead
-row107,ESP,Lead
-row107,NGA,Lead
 row108,ARE,Lead
 row108,FRA,Lead
-row109,USA,Lead
-row109,SEN,Lead
 row110,OMN,Lead
 row110,SAU,Lead
-row111,USA,Lead
-row111,AGO,Participant
-row111,BEN,Participant
-row111,BEL,Participant
-row111,BRA,Participant
-row111,CPV,Participant
-row111,CMR,Participant
-row111,CIV,Participant
-row111,COD,Participant
-row111,DNK,Participant
-row111,FRA,Participant
-row111,GAB,Participant
-row111,GMB,Participant
-row111,GHA,Participant
-row111,GNB,Participant
-row111,ITA,Participant
-row111,LBR,Participant
-row111,MAR,Participant
-row111,NAM,Participant
-row111,NLD,Participant
-row111,NGA,Participant
-row111,PRT,Participant
-row111,COG,Participant
-row111,STP,Participant
 row115,SAU,Lead
 row115,USA,Lead
 row120,OMN,Lead
-row121,SAU,Lead
-row121,FRA,Participant
-row121,ITA,Participant
-row121,BHR,Participant
-row121,BGD,Participant
-row121,JOR,Participant
-row121,MYS,Participant
-row121,MAR,Participant
-row121,TUR,Participant
-row121,USA,Participant
-row121,QAT,Participant
-row121,GBR,Participant
-row121,GRC,Participant
+Spears of Victory 2026,GBR,Participant
 row122,SAU,Lead
 row122,FRA,Participant
 row122,GBR,Participant
@@ -225,5 +175,3 @@ row122,ARE,Participant
 row122,OMN,Participant
 row122,BHR,Participant
 row122,PAK,Participant
-row127,FRA,Lead
-row127,BEN,Lead

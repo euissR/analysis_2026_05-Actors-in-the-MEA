@@ -1,16 +1,20 @@
-iso3,name,lon,lat,subregion
-ARE,United Arab Emirates,54.371,23.934,Gulf
-BHR,Bahrain,50.693,26.291,Gulf
-ISR,Israel,34.966,31.334,Middle East
-IRQ,Iraq,43.796,33.019,Middle East
-JOR,Jordan,36.763,31.242,Middle East
-KWT,Kuwait,47.576,29.329,Gulf
-LBN,Lebanon,35.872,33.912,Middle East
-SAU,Saudi Arabia,44.692,24.094,Gulf
-SYR,Syria,38.47,34.995,Middle East
-OMN,Oman,56.072,20.559,Gulf
-PSE,Palestine,35.276,31.954,Middle East
-QAT,Qatar,51.192,25.29,Gulf
-YEM,Yemen,47.535,15.954,Middle East
-GAD,Gulf of Aden and Indian Ocean,50,12,Sea
-RSE,Red Sea,38.5,20,Sea
+iso3,name,subregion,lon,lat
+BHR,Bahrain,Gulf,50.542,26.056
+IRQ,Iraq,Middle East,43.766,33.05
+ISR,Israel,Middle East,34.622,31.062
+JOR,Jordan,Middle East,37.131,30.655
+KWT,Kuwait,Gulf,47.492,29.538
+LBN,Lebanon,Middle East,35.893,33.923
+OMN,Oman,Gulf,57.88,21.991
+PSE,Palestine*,Middle East,35.257,31.944
+QAT,Qatar,Gulf,51.192,25.286
+SAU,Saudi Arabia,Gulf,44.551,24.125
+SYR,Syria,Middle East,38.498,35.016
+ARE,United Arab Emirates,Gulf,55.184,23.91
+YEM,Yemen,Middle East,45.226,15.226
+GAD,Gulf of Aden and Indian Ocean,Sea,50,12
+RSE,Red Sea,Sea,38.5,20
+GOL,Golan (UNDOF),Sea,36.6,33
+MEA,Middle East (UNTSO),Sea,35.22,31.76
+PGU,Arabian Gulf,Sea,51.5,27.2
+GOM,Gulf of Oman,Sea,58.3,24.6
