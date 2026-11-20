@@ -41,6 +41,9 @@
 
 import { theme } from "../theme.js";
 
+// exercise tiles that are a cut of the exercises (a place's own), not an actor
+const CUTS = ["naval", "bilateral"];
+
 export default {
   charts: {
     arms: {
@@ -155,18 +158,26 @@ export default {
       extra: { pts: "mil_{suffix}_countries" },
       title: "Joint military exercises in Africa",
       subtitleActor:
-        "Joint exercises led or co-led by the selected actor, by African partner or sea area, January 2024–July 2026",
+        "Joint exercises led or co-led by the selected actor, by African co-lead or sea area where held, January 2024–July 2026",
       subtitleAll:
-        "Joint exercises between external partners and African countries, by African partner or sea area, January 2024–July 2026",
+        "Joint exercises led or co-led by external partners and African countries, by African co-lead or sea area where held, January 2024–July 2026",
       source:
-        "NB: An exercise counts once for each place it involves. Data: official ministry websites and news outlets.",
+        "NB: A country counts the exercises it led or co-led, not those it only took part in; a sea area counts the exercises held there. An exercise counts once for each place it involves, so the figures do not add up to the total. Data: official ministry websites and news outlets.",
       allLabel: "All actors",
       // one dot-size scale for every step and tile: the same number is the same size everywhere
       sharedScale: true,
       rMax: 22,
       keySize: "Exercises",
-      tooltipCount: (n, label) =>
-        `${label === "All actors" ? "" : `${label}: `}${n} exercise${n === 1 ? "" : "s"}`,
+      // A country counts the exercises it led or co-led (wherever held); a sea area counts the exercises
+      // held there. `place` is the dot, `actor` the selected tile.
+      tooltipCount: (n, label, nActors, place, actor) => {
+        const ex = `${n} exercise${n === 1 ? "" : "s"}`;
+        const tile = label === "All actors" ? "" : `${label}: `;
+        if (place.subregion === "Sea") return `${tile}${ex} held in the ${place.name}`;
+        if (actor === "all" || CUTS.includes(actor)) return `${tile}${ex} led or co-led by ${place.name}`;
+        if (place.iso3 === actor) return `${label}: ${ex} led or co-led`;
+        return `${label}: ${ex} co-led with ${place.name}`;
+      },
       shareText: () => "",
     },
   },

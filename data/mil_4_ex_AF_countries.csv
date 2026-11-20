@@ -140,13 +140,12 @@ row64,COG,Participant
 row69,IND,Lead
 row69,ITA,Participant
 row69,ESP,Participant
-row72,USA,Lead
-row72,CIV,Lead
-row72,LBY,Participant
-row72,ITA,Participant
-row74,USA,Lead
-row74,LBY,Lead
-row74,CIV,Participant
+Flintlock 2026,USA,Lead
+Flintlock 2026,CIV,Lead
+Flintlock 2026,LBY,Participant
+Flintlock 2026,ITA,Participant
+Flintlock 2026,LBY,Lead
+Flintlock 2026,CIV,Participant
 row75,USA,Lead
 row75,CIV,Lead
 row75,AGO,Participant

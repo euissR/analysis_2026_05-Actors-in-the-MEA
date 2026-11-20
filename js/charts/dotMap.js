@@ -17,6 +17,8 @@
 //   ring, the actor's own country, as in the visits chart)
 // spec.tilesWithData (optional): true = legend tiles only for actors that have data
 // spec.extra { pts: "mil_{suffix}_countries" } (optional): sea areas drawn as extra places
+// spec.tooltipCount(n, label, nActors, place, actor) (count mode): the tooltip text. `place` is the dot's row of
+//   {iso3}_countries.csv (name, subregion; a sea area has subregion "Sea"), `actor` the selected tile's code
 // spec.sharedScale (default: true in count mode, false in presence mode): one dot-size scale for all steps ("all" and single actors),
 //   the largest value in the data (or spec.scaleMax) = radius spec.rMax (default: spec.rMaxAll, else 12); false = the old separate scales
 //   spec.scaleMax (optional, with sharedScale): the value that gets radius spec.rMax, instead of the largest in this chart's data;
@@ -56,7 +58,9 @@ export function makeDotMap(
   // spec.extraTiles: [{ actor, label }], further legend tiles with their own rows in the data
   // (e.g. "naval", "bilateral": a cut of the exercises rather than an actor)
   const extraTiles = spec.extraTiles ?? [];
-  const actorLabel = new Map([...actors, ...extraTiles].map((a) => [a.actor, a.label]));
+  const actorLabel = new Map(
+    [...actors, ...extraTiles].map((a) => [a.actor, a.label]),
+  );
   actorLabel.set("all", spec.allLabel);
 
   // ── data ────────────────────────────────────────────────────────────────
@@ -65,7 +69,8 @@ export function makeDotMap(
   const value = (iso3, actor) => byKey.get(`${iso3}|${actor}`);
   // state.actor as a list (count mode): the visits of all of them added up. A country counts as
   // "own country" only if none of the actors has a number there.
-  const isGroup = (state) => Array.isArray(state.actor) && state.actor.length > 1;
+  const isGroup = (state) =>
+    Array.isArray(state.actor) && state.actor.length > 1;
   const rowOf = (iso3, state) => {
     if (!isGroup(state)) return value(iso3, [state.actor].flat()[0]);
     const rs = state.actor.map((a) => value(iso3, a)).filter(Boolean);
@@ -74,7 +79,10 @@ export function makeDotMap(
     return rs.length ? { n: "" } : undefined;
   };
   const labelOfActor = (state) =>
-    state.actorLabel ?? (isGroup(state) ? state.actor.join(", ") : actorLabel.get([state.actor].flat()[0]));
+    state.actorLabel ??
+    (isGroup(state)
+      ? state.actor.join(", ")
+      : actorLabel.get([state.actor].flat()[0]));
 
   const projection = geoRobinson()
     .rotate([-region.center[0], 0])
@@ -119,11 +127,20 @@ export function makeDotMap(
     actor: d3
       .scaleSqrt()
       .domain([0, shared ? maxAny : maxOf((r) => r.actor !== "all")])
-      .range([0, shared ? (spec.rMax ?? spec.rMaxAll ?? 12) : (spec.rMaxActor ?? 14)]),
+      .range([
+        0,
+        shared ? (spec.rMax ?? spec.rMaxAll ?? 12) : (spec.rMaxActor ?? 14),
+      ]),
     all: d3
       .scaleSqrt()
-      .domain([0, shared ? maxAny : counting ? maxOf((r) => r.actor === "all") : nActors])
-      .range([0, shared ? (spec.rMax ?? spec.rMaxAll ?? 12) : (spec.rMaxAll ?? 11)]),
+      .domain([
+        0,
+        shared ? maxAny : counting ? maxOf((r) => r.actor === "all") : nActors,
+      ])
+      .range([
+        0,
+        shared ? (spec.rMax ?? spec.rMaxAll ?? 12) : (spec.rMaxAll ?? 11),
+      ]),
   };
   const scaleFor = (state) =>
     state.actor === "all" ? scales.all : scales.actor;
@@ -237,14 +254,19 @@ export function makeDotMap(
   // In presence charts the category (rank) is then shown by a lighter tint of that colour
   // (and the size), since the colour itself now says who.
   const actorHue = (actor) =>
-    actor === "all" || Array.isArray(actor) ? null : theme.actorColors?.[actor] ?? null;
+    actor === "all" || Array.isArray(actor)
+      ? null
+      : (theme.actorColors?.[actor] ?? null);
   const countFill = (state) => actorHue(state.actor) ?? theme.neutral;
   const TINTS = [0, 0.45, 0.7]; // strongest category first, in the order of spec.categories
   function catLook(presence, actor) {
     const cat = cats[presence] ?? cats.None;
     const hue = actorHue(actor);
-    const rank = Object.keys(cats).filter((k) => k !== "None").indexOf(presence);
-    if (!hue || rank < 0) return { ...cat, fill: cat.color, stroke: theme.land };
+    const rank = Object.keys(cats)
+      .filter((k) => k !== "None")
+      .indexOf(presence);
+    if (!hue || rank < 0)
+      return { ...cat, fill: cat.color, stroke: theme.land };
     const tint = TINTS[Math.min(rank, TINTS.length - 1)];
     return {
       ...cat,
@@ -277,7 +299,7 @@ export function makeDotMap(
     const label = labelOfActor(state);
     if (counting || state.actor === "all") {
       if (row?.n === "" || row?.n == null) return `${label}: own country`;
-      return spec.tooltipCount(+row.n, label, nActors);
+      return spec.tooltipCount(+row.n, label, nActors, d, state.actor);
     }
     const presence = row?.presence ?? "";
     if (!presence) return `${label}: own country`;
@@ -303,7 +325,8 @@ export function makeDotMap(
 
     tiles.attr("aria-pressed", (d) => d.actor === state.actor);
     $(".fa-subtitle").textContent =
-      state.subtitle ?? (state.actor === "all" ? spec.subtitleAll : spec.subtitleActor);
+      state.subtitle ??
+      (state.actor === "all" ? spec.subtitleAll : spec.subtitleActor);
 
     dots
       .each(function (d) {
@@ -317,7 +340,8 @@ export function makeDotMap(
       .attr("opacity", (d) => (hi.size && !hi.has(d.iso3) ? theme.dim : 1));
 
     // country labels, to the right of their dots (to the left for state.labelsLeft)
-    const onLeft = (d) => d.x > W * 0.78 || (state.labelsLeft ?? []).includes(d.iso3);
+    const onLeft = (d) =>
+      d.x > W * 0.78 || (state.labelsLeft ?? []).includes(d.iso3);
     const labelled = countries.filter((d) =>
       (state.labels ?? []).includes(d.iso3),
     );

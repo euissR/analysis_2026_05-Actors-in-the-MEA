@@ -2,7 +2,7 @@ key,exercise,year,n_countries,lead_iso3,lead_actor,us_led,eu_led,eu_op,area,type
 row4,African Lion,2024,1,USA,USA,TRUE,FALSE,,"Morocco, Ghana, Senegal and Tunisia",Interforces,,https://www.africom.mil/what-we-do/exercises/african-lion,Multilateral
 row5,Africa-India Key Maritime Engagement (Aikeyme),2025,10,IND;TZA,IND,FALSE,FALSE,,Indian Ocean,Naval,,https://adf-magazine.com/2025/06/india-co-hosts-first-joint-african-maritime-exercise/,Multilateral
 row6,African Lion,2026,5,USA;MAR;GHA;TUN;SEN,USA,TRUE,FALSE,,West Africa/Morocco,Interforces,,,Multilateral
-African Lion 2025,African Lion (1/2),2025,26,USA,USA,TRUE,FALSE,,West Africa/Morocco,Interforces,,,Multilateral
+African Lion 2025,African Lion,2025,26,USA,USA,TRUE,FALSE,,West Africa/Morocco,Interforces,,,Multilateral
 row13,Anatolian Eagle,2026,3,TUR;EGY,TUR,FALSE,FALSE,,Turkiye,Air forces,,https://www.egyptindependent.com/egypt-turkey-conclude-anatolian-eagle-2026-air-exercise/,Multilateral
 row21,ALDABRA III,2024,2,SYC,EU,FALSE,TRUE,ATALANTA,Seychelles,Naval,eunavfor atalanta – named exercise,https://eunavfor.eu/news/operation-atalanta-conducts-aldabra-iii-exercise-seychelles,Multilateral
 row22,ALDABRA IV,2025,1,SYC,EU,FALSE,TRUE,ATALANTA,Seychelles,Naval,eunavfor atalanta – named exercise,https://www.facebook.com/eunavalforce/posts/aldabra-iv-exercise-seychelles-the-bilateral-exercise-between-operation-atalanta/1118227470346543/,Multilateral
@@ -13,7 +13,7 @@ row27,Bridge of friendship,2025,2,RUS;EGY,RUS,FALSE,FALSE,,Egypt/Mediterranean s
 row30,Bright Star,2025,13,USA;EGY,USA,TRUE,FALSE,,Egypt,Interforces,,,Multilateral
 row35,Bull Shark 25-1,2024,4,USA;DJI,USA,TRUE,FALSE,,Djibouti,Interforces,,,Multilateral
 row36,Bull Shark 25-2,2025,4,USA;DJI,USA,TRUE,FALSE,,Djibouti,Interforces,,,Multilateral
-row42,Chergui 25,2025,2,MAR;FRA,EU,FALSE,TRUE,,Morocco,Interforces,,https://www.defense.gouv.fr/terre/actualites/exercice-chergui-2025-linteroperabilite-franco-marocaine-testee-desert,Bilateral
+row42,Chergui 25,2025,2,MAR;FRA,EU,FALSE,TRUE,,Morocco,Interforces,bilateral,https://www.defense.gouv.fr/terre/actualites/exercice-chergui-2025-linteroperabilite-franco-marocaine-testee-desert,Bilateral
 row44,Cleopatra 24,2024,2,EGY;FRA,EU,FALSE,TRUE,,Egypt,Naval,bilateral,https://www.defense.gouv.fr/marine/actualites/exercice-cleopatra-24-forces-armees-egyptiennes,Bilateral
 row47,Corymbe,2026,2,FRA;SEN,EU,FALSE,TRUE,,Senegal,Naval,bilateral,https://www.defense.gouv.fr/marine/actualites/corymbe-exercice-entre-marines-francaises-senegalaises-au-large-dakar,Bilateral
 row48,Cutlass Express,2026,19,USA,USA,TRUE,FALSE,,Mauritius/Seychelles,Naval,,https://mu.usembassy.gov/news/exercise-cutlass-express-2026-to-enhance-maritime-security-in-east-africa/,Multilateral
@@ -25,8 +25,7 @@ row54,Eagles of Civilisation,2025,2,CHN;EGY,CHN,FALSE,FALSE,,Egypt,Air forces,bi
 row63,International Maritime Exercise (IMX),2025,20,USA,USA,TRUE,FALSE,,"Arabian Gulf, Gulf of Oman, Gulf of Aden and the Red Sea",Naval,,,Multilateral
 row64,Equato Medichos 2025,2025,8,GAB;FRA,EU,FALSE,TRUE,,Gabon,Interforces,,https://www.defense.gouv.fr/operations/actualites/gabon-exercice-regional-militaire-equato-medichos,Multilateral
 row69,EU–India naval exercise,2025,3,IND,EU;IND,FALSE,TRUE,ATALANTA,Western Indian Ocean,Naval,eunavfor atalanta – co-organised exercise,https://eunavfor.eu/news/eunavfor-atalanta-and-indian-navy-conduct-naval-exercise-indian-ocean,Multilateral
-row72,Flintlock,2026,4,USA;CIV,USA,TRUE,FALSE,,Cote d'Ivoire/Libya,Land / special forces,,https://www.war.gov/News/News-Stories/Article/Article/4460643/africom-commences-exercise-flintlock-2026-in-africa/,Multilateral
-row74,Flintlock,2026,3,USA;LBY,USA,TRUE,FALSE,,Libya,Land / special forces,,,Multilateral
+Flintlock 2026,Flintlock,2026,4,USA;CIV;LBY,USA,TRUE,FALSE,,Cote d'Ivoire/Libya,Land / special forces,,https://www.war.gov/News/News-Stories/Article/Article/4460643/africom-commences-exercise-flintlock-2026-in-africa/,Multilateral
 row75,Flintlock,2025,22,USA;CIV,USA,TRUE,FALSE,,Cote d'Ivoire,Land / special forces,,,Multilateral
 row79,MEDUSA 13,2024,5,GRC;EGY,EU,FALSE,TRUE,,Greece / Egypt,Interforces,,https://sis.gov.eg/en/egypt/military-institution/joint-naval-air-exercise-medusa-13/,Multilateral
 row80,Furor–Niani counter-piracy exercise,2024,2,ESP;SEN,EU,FALSE,TRUE,,"Off Dakar, Senegal / Atlantic",Naval,bilateral,https://emad.defensa.gob.es/operaciones/operaciones-en-el-exterior/61-Presencias_maritimas_coordinadas/noticias/listado/240624-ni-ultima-escala-furor.html,Bilateral
