@@ -19,7 +19,15 @@ import AF_soft from "./AF_soft.js";
 import ME_dipl from "./ME_dipl.js";
 import ME_mil from "./ME_mil.js";
 
-export const CHAPTERS = { AF_dipl, AF_trade, AF_invest, AF_mil, AF_soft, ME_dipl, ME_mil };
+export const CHAPTERS = {
+  AF_dipl,
+  AF_trade,
+  AF_invest,
+  AF_mil,
+  AF_soft,
+  ME_dipl,
+  ME_mil,
+};
 
 export default {
   steps: {
@@ -67,7 +75,17 @@ export default {
     },
 
     // India (and Russia): outsized shares of Africa's cereal imports
-    lf_conc: { chapter: "AF_trade", region: "AF", step: "cer_ind" },
+    lf_conc: {
+      chapter: "AF_trade",
+      region: "AF",
+      step: "cer_ind",
+      override: {
+        // geos: ["Africa"],
+        // measure: "value_usd_bn",
+        highlight: ["IND"],
+        footnote: "",
+      },
+    },
 
     // perceptions: China's influence viewed more positively than the EU's
     lf_partners: { chapter: "AF_soft", region: "AF", step: "pc_chn" },

@@ -173,8 +173,10 @@ export default {
       tooltipCount: (n, label, nActors, place, actor) => {
         const ex = `${n} exercise${n === 1 ? "" : "s"}`;
         const tile = label === "All actors" ? "" : `${label}: `;
-        if (place.subregion === "Sea") return `${tile}${ex} held in the ${place.name}`;
-        if (actor === "all" || CUTS.includes(actor)) return `${tile}${ex} led or co-led by ${place.name}`;
+        if (place.subregion === "Sea")
+          return `${tile}${ex} held in the ${place.name}`;
+        if (actor === "all" || CUTS.includes(actor))
+          return `${tile}${ex} led or co-led by ${place.name}`;
         if (place.iso3 === actor) return `${label}: ${ex} led or co-led`;
         return `${label}: ${ex} co-led with ${place.name}`;
       },
@@ -187,7 +189,13 @@ export default {
     arm_china: {
       chart: "arms",
       state: {
-        highlight: ["China", "United Arab Emirates", "France", "United States", "Russia"],
+        highlight: [
+          "China",
+          "United Arab Emirates",
+          "France",
+          "United States",
+          "Russia",
+        ],
         recipients: true,
       },
     },
@@ -352,7 +360,11 @@ export default {
     // exercises
     ex_intro: {
       chart: "ex",
-      state: { actor: "all", highlight: ["GGU", "GAD"], labels: ["GGU", "GAD"] },
+      state: {
+        actor: "all",
+        highlight: ["GGU", "GAD"],
+        labels: ["GGU", "GAD"],
+      },
     },
     ex_all: { chart: "ex", state: { actor: "all" } },
     ex_us: { chart: "ex", state: { actor: "USA" } },

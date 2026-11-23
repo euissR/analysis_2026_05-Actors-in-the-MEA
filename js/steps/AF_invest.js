@@ -473,7 +473,7 @@ export default {
       state: {
         highlight: ["EU", "GCC", "RUS", "USA"],
         footnote:
-          "3 Their recorded stock was lower than in 2019, but the comparison is materially affected by the UAE–Egypt reporting break and should not be read simply as creditor withdrawal.",
+          "* Their recorded stock was lower than in 2019, but the comparison is materially affected by the UAE–Egypt reporting break and should not be read simply as creditor withdrawal.",
       },
     },
     debt_terms: {
@@ -481,7 +481,7 @@ export default {
       state: {
         highlight: ["JPN", "KOR", "EU", "CHN", "GCC"],
         footnote:
-          "Concessional per World Bank definition: having an original grant element of 35% or more.\n4 Incomplete reporting means that these figures should be treated as minimum estimates rather than directly comparable portfolio averages.",
+          "Concessional per World Bank definition: having an original grant element of 35% or more.\n* Incomplete reporting means that these figures should be treated as minimum estimates rather than directly comparable portfolio averages.",
       },
     },
     debt_shift: {

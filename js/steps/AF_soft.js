@@ -88,26 +88,26 @@ const C = "Central Africa";
 const N = "North Africa";
 
 // footnotes (drafts from the source document)
-const FN3 = "³ European Investment Bank (EIB), ‘Sub-Saharan Africa’, eib.org.";
+const FN3 = "* European Investment Bank (EIB), ‘Sub-Saharan Africa’, eib.org.";
 const FN_ANY =
   "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
-const FN4 = "⁴ Abu Dhabi Fund for Development (ADFD), Annual Report 2025.";
+const FN4 = "* Abu Dhabi Fund for Development (ADFD), Annual Report 2025.";
 const FN5 =
-  "⁵ Where French cooperation is complemented by other EU member states: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
-const FN6 = "⁶ Confucius Institute, ‘Confucius Institutes in Africa’, ci.cn.";
+  "* Where French cooperation is complemented by other EU member states: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
+const FN6 = "* Confucius Institute, ‘Confucius Institutes in Africa’, ci.cn.";
 const FN789 =
-  "⁷ Russkiy Mir Foundation; Rossotrudnichestvo. ⁸ Marangio, R., Chaillot Paper 186, EUISS, 2025, p. 48. ⁹ In the DRC, Kenya, Madagascar, Mali, São Tomé and Príncipe, Senegal, Sierra Leone and Togo (BBC News, 10 September 2026).";
-const FN10 = "¹⁰ Yunus Emre Institute, ‘Merkezlerimiz’, yee.org.tr.";
+  "* Russkiy Mir Foundation; Rossotrudnichestvo. ** Marangio, R., Chaillot Paper 186, EUISS, 2025, p. 48. *** In the DRC, Kenya, Madagascar, Mali, São Tomé and Príncipe, Senegal, Sierra Leone and Togo (BBC News, 10 September 2026).";
+const FN10 = "* Yunus Emre Institute, ‘Merkezlerimiz’, yee.org.tr.";
 const FN11 =
-  "¹¹ Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands.";
+  "* Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands.";
 const FN12 =
-  "¹² UNDESA, International Migrant Stock 2024 (both sexes, mid-year). No records of migrants from Africa in South Korea. Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan).";
+  "* UNDESA, International Migrant Stock 2024 (both sexes, mid-year). No records of migrants from Africa in South Korea. Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan).";
 const FN13 =
-  "¹³ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
+  "* UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
 const FN14 =
-  "¹⁴ These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
+  "* These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
 const FN15 =
-  "¹⁵ Afrobarometer, round 10 (2024/2025), 38 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused. Means of country values; the former colonial power is rated in 37 countries.";
+  "* Afrobarometer, round 10 (2024/2025), 38 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused. Means of country values; the former colonial power is rated in 37 countries.";
 const FN_ETH = "2015 level shown (54,628); 2024: 26,824. " + FN13;
 
 // dot sizes compare across the two maps: the same value gets the same radius (21 = member states with any presence, the largest count)

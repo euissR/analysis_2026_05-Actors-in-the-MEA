@@ -72,33 +72,33 @@ import { theme } from "../theme.js";
 
 // footnotes (drafts from the source document)
 const FN3 =
-  "³ EIB, ‘Offices’; Agence Française de Développement (AFD), ‘Our network in the Orient’; AICS, ‘Field offices’; AECID, ‘Oficinas de la Cooperación Española’; Camões, ‘Co-operation’.";
-const FN4 = "⁴ Japan International Cooperation Agency (JICA), ‘Middle East’.";
+  "** EIB, ‘Offices’; Agence Française de Développement (AFD), ‘Our network in the Orient’; AICS, ‘Field offices’; AECID, ‘Oficinas de la Cooperación Española’; Camões, ‘Co-operation’.";
+const FN4 = "** Japan International Cooperation Agency (JICA), ‘Middle East’.";
 const FN5 =
-  "⁵ Abu Dhabi Fund for Development (ADFD), Annual Report 2025; King Salman Humanitarian Aid and Relief Centre (KSrelief), ‘Statistics’, 2025–2026.";
-const FN6 = "⁶ Turkish Cooperation and Coordination Agency (TİKA), ‘Offices’.";
-const FN7 = "⁷ Rossotrudnichestvo, ‘Map’, projects.";
+  "** Abu Dhabi Fund for Development (ADFD), Annual Report 2025; King Salman Humanitarian Aid and Relief Centre (KSrelief), ‘Statistics’, 2025–2026.";
+const FN6 = "** Turkish Cooperation and Coordination Agency (TİKA), ‘Offices’.";
+const FN7 = "** Rossotrudnichestvo, ‘Map’, projects.";
 const FN8 =
-  "⁸ US International Development Finance Corporation (DFC), 2025 Annual Report, 2025.";
+  "** US International Development Finance Corporation (DFC), 2025 Annual Report, 2025.";
 const FN85 = "\n\n\n\n\n";
 const FN9 =
-  "⁹ Czech Centres; Finnish Institute in the Middle East; Alliances Françaises; Institut français; Goethe-Institut; Hungarian Academy in Jerusalem; Italian MFA, ‘Mappa’; Polish MFA, ‘Polish Institutes’; Instituto Cervantes.";
-const FN10 = "¹⁰ Yunus Emre Enstitüsü, ‘Merkezlerimiz’.\n\n\n\n";
+  "** Czech Centres; Finnish Institute in the Middle East; Alliances Françaises; Institut français; Goethe-Institut; Hungarian Academy in Jerusalem; Italian MFA, ‘Mappa’; Polish MFA, ‘Polish Institutes’; Instituto Cervantes.";
+const FN10 = "** Yunus Emre Enstitüsü, ‘Merkezlerimiz’.\n\n\n\n";
 const FN11 =
-  "¹¹ Russkiy Mir Foundation, catalogue of Russian centres and ‘cabinets’; Rossotrudnichestvo, ‘Russian houses abroad’.\n\n\n\n";
+  "** Russkiy Mir Foundation, catalogue of Russian centres and ‘cabinets’; Rossotrudnichestvo, ‘Russian houses abroad’.\n\n\n\n";
 const FN115 = "\n";
 const FN12 =
-  "¹² Indian Council for Cultural Relations (ICCR); Korean Cultural Centers; King Sejong Institute Foundation; Confucius Institute, ‘Global Network’.";
+  "** Indian Council for Cultural Relations (ICCR); Korean Cultural Centers; King Sejong Institute Foundation; Confucius Institute, ‘Global Network’.";
 const FN13 =
-  "¹³ Ministries of Education and Higher Education of Bahrain, Kuwait, Oman and Saudi Arabia (cultural attachés, offices and missions).";
+  "** Ministries of Education and Higher Education of Bahrain, Kuwait, Oman and Saudi Arabia (cultural attachés, offices and missions).";
 const FN14 =
-  "¹⁴ Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands. UNESCO UIS, OPRI, February 2026.";
+  "** Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands. UNESCO UIS, OPRI, February 2026.";
 const FN15 =
-  "¹⁵ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan); overseas territories excluded.";
+  "** UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan); overseas territories excluded.";
 const FN16 =
-  "¹⁶ UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ by reporting country: foreign-born, foreign citizens, refugees, imputed stock.";
+  "** UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ by reporting country: foreign-born, foreign citizens, refugees, imputed stock.";
 const FN17 =
-  "¹⁷ Arab Barometer Wave IX (August 2025–May 2026), weighted shares of each country’s answers. Countries in the region for which data are available: Iraq, Jordan, Lebanon, Palestine*, Syria.";
+  "** Arab Barometer Wave IX (August 2025–May 2026), weighted shares of each country’s answers. Countries in the region for which data are available: Iraq, Jordan, Lebanon, Palestine*, Syria.";
 const FN_ANY =
   "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
 
