@@ -41,6 +41,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
 import { makeHover } from "./hover.js";
+import { wrapLabel } from "./wrapLabel.js";
 
 export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
   const W = 600;
@@ -242,6 +243,8 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
         .attr("x", 0)
         .attr("y", hasSub ? 18 : M.top - 30);
       head.text(p.title ?? "");
+      // long panel titles (region names) wrap upwards; with panel subtitles there is no room above
+      if (!hasSub) wrapLabel(head, colW + GAP - 4);
       if (p.subtitle) {
         col
           .append("g")
@@ -305,8 +308,22 @@ export function makePanelBars(el, { rows, extra = {}, spec, actors = [] }) {
             .attr("y", (r, i) => yMid(i))
             .attr("opacity", 0)
             .each(function (r) {
-              const lines = String(label(r)).split("\n");
+              let lines = String(label(r)).split("\n");
               const el = d3.select(this);
+              // a label without its own line break that is wider than the label column wraps at the space nearest the middle
+              if (lines.length === 1 && lines[0].includes(" ")) {
+                el.text(lines[0]);
+                const fs = parseFloat(getComputedStyle(this).fontSize) || 13;
+                const w = this.getComputedTextLength?.() || lines[0].length * fs * 0.58;
+                if (w > M.left - 14) {
+                  const s = lines[0];
+                  const mid = s.length / 2;
+                  const spaces = [...s.matchAll(/ /g)].map((m) => m.index);
+                  const cut = spaces.reduce((a, b) => (Math.abs(b - mid) < Math.abs(a - mid) ? b : a));
+                  lines = [s.slice(0, cut), s.slice(cut + 1)];
+                }
+                el.text(null);
+              }
               lines.forEach((ln, k) => {
                 el.append("tspan")
                   .attr("x", M.left - 10)

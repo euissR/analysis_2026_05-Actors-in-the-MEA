@@ -270,10 +270,10 @@ export default {
       subtitle:
         "Share of each creditor’s bilateral debt that is concessional, end-2024. Bubble area: debt outstanding",
       yTitle: "Concessional share of the creditor’s claims, 2024",
-      xTitle: "average annual net flow 2022–24, $bn",
+      xTitle: "average annual net flow 2022–24, $ billion",
       sizeTitle: "Debt outstanding, $ billion",
       keySizes: [1, 5],
-      xShort: "Net flow, $bn a year",
+      xShort: "Net flow, $ billion a year",
       yShort: "Concessional share",
       source: SRC_DEBT,
     },
@@ -290,7 +290,7 @@ export default {
       title: "Net bilateral financial flows",
       subtitle:
         "Disbursements minus principal repayments, $ billion a year. Below zero: the creditor was repaid more than it lent",
-      yTitle: "$bn",
+      yTitle: "$ billion",
       source: SRC_DEBT,
     },
   },

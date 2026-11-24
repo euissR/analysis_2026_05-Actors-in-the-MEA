@@ -37,6 +37,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { theme } from "../theme.js";
 import { makeHover } from "./hover.js";
+import { wrapLabel } from "./wrapLabel.js";
 
 const NUMERIC = ["share_pct", "value_usd_bn", "balance_usd_bn", "net_flow_usd_bn"];
 const FILTERS = ["product", "basket", "flow", "component"];
@@ -233,7 +234,8 @@ export function makePeriodRange(el, { rows, extra = {}, spec, actors = [] }) {
         .attr("y", M.top - 34)
         .attr("text-anchor", "middle")
         .attr("class", "fa-row-actor")
-        .text(geoLabel(g, geos.length > 1));
+        .text(geoLabel(g, geos.length > 1))
+        .call(wrapLabel, colW + GAP - 4); // long region names wrap upwards
       const grid = col.append("g").attr("class", "fa-range-grid");
       grid
         .selectAll("line")
