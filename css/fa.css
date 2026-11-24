@@ -149,6 +149,10 @@ body {
   white-space: pre-line;
 }
 
+.fa-credit {
+  white-space: pre-line;
+}
+
 /* ── legend: actor tiles ────────────────────────────────────────────────── */
 
 .fa-tiles {
@@ -355,6 +359,11 @@ body {
   .fa-footnote {
   white-space: pre-line;
 }
+
+.fa-credit {
+  white-space: pre-line;
+}
+
 }
 
 @media (prefers-reduced-motion: reduce) {

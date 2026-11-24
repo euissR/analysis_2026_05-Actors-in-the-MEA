@@ -84,7 +84,31 @@
 //   Israel have rows but no text of their own
 
 const SOURCE =
-  "Data: Growth Lab, Harvard University, 2026, “International Trade Data (HS12)”, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current US dollars.";
+  "Data: Growth Lab, Harvard University, 2026, ‘International Trade Data (HS12)’, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current USD.";
+
+// footnotes: one per product basket (editors' revision, November 2026)
+const FN_GREEN =
+  "Trade in green energy products is approximated using five six-digit HS 2012 codes covering wind turbines, solar photovoltaic products and liquid biofuels, based on Eurostat’s product groups. For details see methodological note.";
+const FN_HITECH =
+  "High-tech products follow Eurostat’s definition and use the high-tech aggregation under SITC Revision 4. The list is based on the OECD definition and covers technical products whose manufacture involves high R&D intensity. For details see methodological note.";
+const FN_PHARMA =
+  "Pharmaceutical products are defined following Eurostat’s high-technology classification, using selected six-digit HS2012 codes covering hormones, antibiotics, vaccines, immunological products and certain medicines. The basket does not include all pharmaceutical products. For details see methodological note.";
+const FN_ELEC =
+  "Electronics and telecommunications products are defined following Eurostat’s high-technology classification, using selected six-digit HS2012 codes covering telecommunications and networking equipment, semiconductors, integrated circuits, selected audiovisual and radar equipment, and optical-fibre cables. For details see methodological note.";
+const FN_AGRI =
+  "Agricultural goods are defined following Eurostat’s classification (HS chapters 01–24), (sections I–IV), covering animals and animal products, vegetable products, fats and oils, and prepared foodstuffs, beverages and tobacco. For details see methodological note.";
+const FN_CEREALS =
+  "Cereals are defined using HS Chapter 10, covering wheat, rice, maize, barley and other cereals, but excluding cereal flours and prepared cereal-based food products classified under other chapters. For details see methodological note.";
+const FN_FERT =
+  "* Fertilisers are defined using HS Chapter 31, covering organic, mineral and chemical fertilisers and their mixtures, but excluding fertiliser inputs and related chemicals classified under other chapters. For details see methodological note.";
+
+const GEO_SHORT = {
+  "North Africa": "North Africa",
+  "West Africa": "West Africa",
+  "Central Africa": "Central Africa",
+  "East Africa and HoA": "East & Horn of Africa",
+  "Southern Africa and Indian Ocean": "Southern Africa",
+};
 
 const FIVE = [
   "North Africa",
@@ -95,11 +119,11 @@ const FIVE = [
 ];
 
 const PRODUCT = {
-  green: "Green-energy products",
+  green: "Green energy products",
   hitech: "High-tech products",
   agri: "Agri-food products",
   cereals: "Cereals",
-  fertilizers: "Fertilizers",
+  fertilizers: "Fertilisers",
 };
 const BASKET = {
   pharma: "Pharmaceuticals",
@@ -113,7 +137,7 @@ const COMPONENT = {
   non_hydrocarbon: "goods other than hydrocarbons",
 };
 
-const where = (s) => (s.geos?.length > 1 ? "by region" : "");
+const where = (s) => (s.geos?.length > 1 ? ", by region" : "");
 
 export default {
   charts: {
@@ -124,16 +148,10 @@ export default {
       title: "Africa’s trading partners",
       subtitle: (s) =>
         s.measure === "value_usd_bn"
-          ? `Average annual trade with each actor, $bn ${where(s)}`
-          : `Share of total trade (imports and exports) with each actor, % ${where(s)}`,
+          ? `Average annual trade with each actor, $ billion${where(s)}`
+          : `Share of total trade (imports and exports) with each actor, %${where(s)}`,
       source: SOURCE,
-      geoLabelsShort: {
-        "North Africa": "North",
-        "West Africa": "West",
-        "Central Africa": "Central",
-        "East Africa and HoA": "East & Horn",
-        "Southern Africa and Indian Ocean": "Southern",
-      },
+      geoLabelsShort: GEO_SHORT,
     },
 
     exports: {
@@ -144,16 +162,10 @@ export default {
       title: "Africa’s trading partners: exports",
       subtitle: (s) =>
         s.measure === "value_usd_bn"
-          ? `Average annual goods exports to each actor, $bn ${where(s)}`
-          : `Share of goods exports going to each actor, % ${where(s)}`,
+          ? `Average annual goods exports to each actor, $ billion${where(s)}`
+          : `Share of goods exports to each actor, %${where(s)}`,
       source: SOURCE,
-      geoLabelsShort: {
-        "North Africa": "North",
-        "West Africa": "West",
-        "Central Africa": "Central",
-        "East Africa and HoA": "East & Horn",
-        "Southern Africa and Indian Ocean": "Southern",
-      },
+      geoLabelsShort: GEO_SHORT,
     },
 
     balances: {
@@ -163,15 +175,9 @@ export default {
       filter: { component: "total" },
       title: "Trade balances with Africa",
       subtitle: (s) =>
-        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, $bn ${where(s)}. Positive: the actor sells more than it buys`,
+        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, $ billion${where(s)}. A positive balance means the actor sells more than it buys.`,
       source: SOURCE,
-      geoLabelsShort: {
-        "North Africa": "North",
-        "West Africa": "West",
-        "Central Africa": "Central",
-        "East Africa and HoA": "East & Horn",
-        "Southern Africa and Indian Ocean": "Southern",
-      },
+      geoLabelsShort: GEO_SHORT,
     },
 
     products: {
@@ -183,26 +189,19 @@ export default {
       title: (s) => BASKET[s.basket] ?? PRODUCT[s.product ?? "green"],
       subtitle: (s, info) => {
         const flow = s.flow ?? "imports";
-        const dir =
-          flow === "exports" ? "exports going to" : "imports coming from";
+        const dir = flow === "exports" ? "exports to" : "imports from";
         const base =
           s.measure === "value_usd_bn"
-            ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, $bn`
+            ? `Average annual ${dir} each actor, $ billion`
             : `Share of Africa’s ${dir} each actor, %`;
         const tot =
           s.measure === "value_usd_bn" && Number.isFinite(info.total[0])
             ? ` (all partners: ${info.total[0].toFixed(1)} → ${info.total[1].toFixed(1)})`
             : "";
-        return `${base}${tot} ${where(s)}`;
+        return `${base}${tot}${where(s)}`;
       },
       source: SOURCE,
-      geoLabelsShort: {
-        "North Africa": "North",
-        "West Africa": "West",
-        "Central Africa": "Central",
-        "East Africa and HoA": "East & Horn",
-        "Southern Africa and Indian Ocean": "Southern",
-      },
+      geoLabelsShort: GEO_SHORT,
     },
   },
 
@@ -256,13 +255,12 @@ export default {
         product: "green",
         measure: "value_usd_bn",
         highlight: ["CHN"],
-        footnote:
-          "Energy-related trade is approximated using an HS2012 basket informed by Eurostat’s green-energy categories. As the underlying Harvard University dataset contains data on HS six digit rather than 8 digit level, some source codes are broader than the technologies concerned: notably, HS854140 includes photovoltaic cells, other photosensitive devices and LEDs, while HS290919 exceeds the specific biofuel-related subheading. Reported shares therefore refer to the mapped basket rather than exclusively to solar panels or biofuels.",
+        footnote: FN_GREEN,
       },
     },
     gre_share: {
       chart: "products",
-      state: { product: "green", highlight: ["CHN", "EU"] },
+      state: { product: "green", highlight: ["CHN", "EU"], footnote: FN_GREEN },
     },
     gre_na: {
       chart: "products",
@@ -270,6 +268,7 @@ export default {
         product: "green",
         geos: ["North Africa"],
         highlight: ["CHN", "EU"],
+        footnote: FN_GREEN,
       },
     },
 
@@ -279,13 +278,17 @@ export default {
       state: {
         product: "hitech",
         highlight: ["EU", "CHN"],
-        footnote:
-          "High-tech products follow Eurostat’s definition, using the high-tech aggregation under SITC Rev. 4. Based on the OECD definition, the list covers technical products whose manufacture involves high R&D intensity.",
+        footnote: FN_HITECH,
       },
     },
     hit_eu: {
       chart: "products",
-      state: { product: "hitech", basket: "pharma", highlight: ["EU", "CHN"] },
+      state: {
+        product: "hitech",
+        basket: "pharma",
+        highlight: ["EU", "CHN"],
+        footnote: FN_PHARMA,
+      },
     },
     hit_chn: {
       chart: "products",
@@ -293,6 +296,7 @@ export default {
         product: "hitech",
         basket: "electronics",
         highlight: ["CHN", "EU"],
+        footnote: FN_ELEC,
       },
     },
 
@@ -300,7 +304,12 @@ export default {
     pha_total: { chart: "partners", state: { highlight: ["IND"] } },
     pha_india: {
       chart: "products",
-      state: { product: "hitech", basket: "pharma", highlight: ["IND", "EU"] },
+      state: {
+        product: "hitech",
+        basket: "pharma",
+        highlight: ["IND", "EU"],
+        footnote: FN_PHARMA,
+      },
     },
     pha_regions: {
       chart: "products",
@@ -309,6 +318,7 @@ export default {
         basket: "pharma",
         geos: ["West Africa", "Central Africa", "East Africa and HoA"],
         highlight: ["IND"],
+        footnote: FN_PHARMA,
       },
     },
 
@@ -319,13 +329,17 @@ export default {
         product: "agri",
         flow: "imports",
         highlight: ["EU", "CHN", "USA", "IND"],
-        footnote:
-          "Agricultural goods follow the Eurostat definition: HS chapters 1–24 (sections I–IV), covering animal products, vegetable products, fats and oils, and prepared foodstuffs, beverages and tobacco.",
+        footnote: FN_AGRI,
       },
     },
     agri_eu_exp: {
       chart: "products",
-      state: { product: "agri", flow: "exports", highlight: ["EU"] },
+      state: {
+        product: "agri",
+        flow: "exports",
+        highlight: ["EU"],
+        footnote: FN_AGRI,
+      },
     },
     agri_cen: {
       chart: "products",
@@ -334,6 +348,7 @@ export default {
         flow: "exports",
         geos: ["North Africa", "West Africa", "Central Africa"],
         highlight: ["EU"],
+        footnote: FN_AGRI,
       },
     },
     agri_cen_share: {
@@ -347,25 +362,25 @@ export default {
         flow: "imports",
         geos: ["North Africa", "Sub-Saharan Africa"],
         highlight: ["CHN"],
+        footnote: FN_AGRI,
       },
     },
 
     // ── ECON 2.5: cereals ───────────────────────────────────────────────────
     cer_intro: {
       chart: "products",
-      state: { product: "cereals" },
+      state: { product: "cereals", footnote: FN_CEREALS },
     },
     cer_eu: {
       chart: "products",
-      state: { product: "cereals", highlight: ["EU"] },
+      state: { product: "cereals", highlight: ["EU"], footnote: FN_CEREALS },
     },
     cer_ind: {
       chart: "products",
       state: {
         product: "cereals",
         highlight: ["IND", "RUS"],
-        footnote:
-          "* Despite restrictions on wheat exports from 2022 and on some rice categories from 2023 (both lifted as of 2026 and 2024/25 respectively).",
+        footnote: `${FN_CEREALS} * Despite restrictions on wheat exports from 2022 and on some rice categories from 2023, both of which were lifted by 2026 and 2024/25, respectively.`,
       },
     },
 
@@ -378,8 +393,7 @@ export default {
         measure: "value_usd_bn",
         geos: FIVE,
         highlight: ["EU", "IND"],
-        footnote:
-          "* Fertilizers (HS31) are separate from the agri-food HS Sections I–IV basket.",
+        footnote: FN_FERT,
       },
     },
     fer_na_exp: {
@@ -390,6 +404,7 @@ export default {
         measure: "value_usd_bn",
         geos: ["Africa", "North Africa"],
         highlight: ["EU", "IND"],
+        footnote: FN_FERT,
       },
     },
     fer_eu_exp: {
@@ -398,6 +413,7 @@ export default {
         product: "fertilizers",
         flow: "exports",
         highlight: ["EU", "IND", "USA"],
+        footnote: FN_FERT,
       },
     },
     fer_ssa_imp: {
@@ -407,6 +423,7 @@ export default {
         flow: "imports",
         measure: "value_usd_bn",
         geos: ["North Africa", "Sub-Saharan Africa"],
+        footnote: FN_FERT,
       },
     },
     fer_ssa_sup: {
@@ -416,6 +433,7 @@ export default {
         flow: "imports",
         geos: ["Sub-Saharan Africa"],
         highlight: ["GCC", "RUS", "EU"],
+        footnote: FN_FERT,
       },
     },
     fer_na_eu: {
@@ -425,6 +443,7 @@ export default {
         flow: "imports",
         geos: ["North Africa", "Sub-Saharan Africa"],
         highlight: ["EU"],
+        footnote: FN_FERT,
       },
     },
   },

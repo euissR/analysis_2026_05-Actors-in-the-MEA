@@ -30,8 +30,7 @@ export default {
       allLabel: "All actors",
       keySize: "Actors with an embassy",
       keyValuesAll: [1, 8, 16],
-      tooltipCount: (n, label, total) =>
-        `${n} of ${total} actors have an embassy`,
+      tooltipCount: (n, label, total) => `${n} actors have an embassy`,
       // presence values in the data -> how they're drawn and described
       categories: {
         Embassy: {
@@ -66,7 +65,7 @@ export default {
       subtitleAll:
         "Visits by heads of state or government and foreign ministers of all actors, January 2019–July 2026",
       source:
-        "NB: A joint visit counts once. Data: official government sources and media. ",
+        "NB: A joint visit counts once. Data: official government sources and media",
       allLabel: "All actors",
       // one dot-size scale in every view (all actors and single actors): the largest value in the data (127) = radius rMax
       rMax: 30,
@@ -108,7 +107,7 @@ export default {
       data: "dipl_3_emblab",
       title: "Formal partnerships with African countries",
       subtitleActor:
-        "Countries with which the selected actor has a formalised partnership, by rank of the label",
+        "Countries with which the selected actor has a formalised partnership, by rank of designation",
       subtitleAll:
         "Number of actors with a formalised partnership with each country",
       source: "Data: EEAS; foreign ministry websites",
@@ -173,8 +172,8 @@ export default {
       type: "tileGrid",
       data: "dipl_5_un_ter",
       title:
-        "Voting on the Israeli-occupied territories at the UN General Assembly",
-      source: "Source: UN Digital Library",
+        "Voting on the territories occupied by Israel at the UN General Assembly",
+      source: "Data: UN Digital Library",
       actorsLabel: "External actors, for comparison",
       periods: {
         all: { label: "all years", short: "All years" },

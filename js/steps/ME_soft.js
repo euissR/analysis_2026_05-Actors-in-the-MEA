@@ -72,7 +72,7 @@ import { theme } from "../theme.js";
 
 // footnotes (drafts from the source document)
 const FN3 =
-  "** EIB, ‘Offices’; Agence Française de Développement (AFD), ‘Our network in the Orient’; AICS, ‘Field offices’; AECID, ‘Oficinas de la Cooperación Española’; Camões, ‘Co-operation’.";
+  "** EIB, ‘Offices’; Agence française de développement (AFD), ‘Our network in the Orient’; AICS, ‘Field offices’; AECID, ‘Oficinas de la Cooperación Española’; Camões, ‘Co-operation’.";
 const FN4 = "** Japan International Cooperation Agency (JICA), ‘Middle East’.";
 const FN5 =
   "** Abu Dhabi Fund for Development (ADFD), Annual Report 2025; King Salman Humanitarian Aid and Relief Centre (KSrelief), ‘Statistics’, 2025–2026.";
@@ -85,18 +85,18 @@ const FN9 =
   "** Czech Centres; Finnish Institute in the Middle East; Alliances Françaises; Institut français; Goethe-Institut; Hungarian Academy in Jerusalem; Italian MFA, ‘Mappa’; Polish MFA, ‘Polish Institutes’; Instituto Cervantes.";
 const FN10 = "** Yunus Emre Enstitüsü, ‘Merkezlerimiz’.\n\n\n\n";
 const FN11 =
-  "** Russkiy Mir Foundation, catalogue of Russian centres and ‘cabinets’; Rossotrudnichestvo, ‘Russian houses abroad’.\n\n\n\n";
+  "** Russkiy Mir Foundation, catalogue of Russian centres and ‘cabinets’; Rossotrudnichestvo, ‘Russian Houses abroad’.\n\n\n\n";
 const FN115 = "\n";
 const FN12 =
   "** Indian Council for Cultural Relations (ICCR); Korean Cultural Centers; King Sejong Institute Foundation; Confucius Institute, ‘Global Network’.";
 const FN13 =
   "** Ministries of Education and Higher Education of Bahrain, Kuwait, Oman and Saudi Arabia (cultural attachés, offices and missions).";
 const FN14 =
-  "** Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands. UNESCO UIS, OPRI, February 2026.";
+  "** Most data refers to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of Member States, with the exception of Ireland and the Netherlands. UNESCO UIS, OPRI, February 2026.";
 const FN15 =
-  "** UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan); overseas territories excluded.";
+  "** UN DESA, ‘International Migrant Stock 2024’ (both sexes, mid-year). Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan); overseas territories excluded.";
 const FN16 =
-  "** UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Definitions differ by reporting country: foreign-born, foreign citizens, refugees, imputed stock.";
+  "** UN DESA, ‘International Migrant Stock 2024’ (both sexes, mid-year). Definitions differ by reporting country: foreign-born, foreign citizens, refugees, imputed stock.";
 const FN17 =
   "** Arab Barometer Wave IX (August 2025–May 2026), weighted shares of each country’s answers. Countries in the region for which data are available: Iraq, Jordan, Lebanon, Palestine*, Syria.";
 const FN_ANY =
@@ -183,7 +183,7 @@ export default {
       subtitleActor:
         "Countries where the selected actor’s agencies are present, by strongest type of presence",
       subtitleAll:
-        "Number of actors with an office in each country (EU institutions and member states not included)",
+        "Number of actors with an office in each country (EU institutions and Member States not included)",
       source: SRC_DEV,
       allLabel: "All actors (offices)",
       tilesWithData: true,
@@ -231,13 +231,13 @@ export default {
       mode: "count",
       data: "soft_1_dev_ms",
       title:
-        "EU member states’ development agencies in the Middle East and the Gulf",
+        "EU Member States’ development agencies in the Middle East and the Gulf",
       subtitleActor:
-        "Number of EU member states present in each country, by the type of presence selected (separate counts)",
+        "Number of EU Member States present in each country, by the type of presence selected (separate counts)",
       subtitleAll:
-        "Number of EU member states with any presence in each country (office, partner country or project, ODA recipient, not specified)",
+        "Number of EU Member States with any presence in each country (office, partner country or project, ODA recipient, not specified)",
       source:
-        "Data: websites of EU member states’ development agencies and ministries.",
+        "Data: websites of EU Member States’ development agencies and ministries. OECD donors’ profiles.",
       allLabel: "Any presence",
       tilesWithData: true,
       extraTiles: [
@@ -248,7 +248,7 @@ export default {
       sharedScale: true,
       scaleMax: DOT_MAX,
       rMax: DOT_R,
-      keySize: "Member states",
+      keySize: "Member States",
       keyValuesActor: [1, 5, 10, 20],
       keyValuesAll: [1, 5, 10, 20],
       tooltipCount: (n) => `${n} EU member state${n === 1 ? "" : "s"}`,
@@ -274,7 +274,7 @@ export default {
         "KWT",
       ],
       rowLabels: {
-        EU: "EU member states",
+        EU: "EU Member States",
         FRA: "of which France",
         DEU: "of which Germany",
       },
@@ -309,7 +309,7 @@ export default {
       title: "Cultural and language institutes by country",
       source: SRC_CULT,
       rMax: 22,
-      labels: { EU: "EU member states", FRA: "France", DEU: "Germany" },
+      labels: { EU: "EU Member States", FRA: "France", DEU: "Germany" },
       greyLabel: "Other",
       measures: {
         centres: {
@@ -355,7 +355,7 @@ export default {
         "Migrants from the Middle East and the Gulf in the external actors",
       subtitle: (s, period) =>
         `Stock of migrants by country of origin (left) and host actor (right), ${period}`,
-      source: "Data: UNDESA, International Migrant Stock 2024.",
+      source: "UN DESA, ‘International Migrant Stock 2024’.",
       unit: "Migrants (stock, mid-year)",
       tipLabel: "Migrants",
       reverse: true,
@@ -380,7 +380,7 @@ export default {
         "Migrants from the external actors in the Middle East and the Gulf",
       subtitle: (s, period) =>
         `Stock of migrants by actor of origin (left) and country of residence (right), ${period}`,
-      source: "Data: UNDESA, International Migrant Stock 2024.",
+      source: "UN DESA, ‘International Migrant Stock 2024’.",
       unit: "Migrants (stock, mid-year)",
       tipLabel: "Migrants",
       depth: "country",

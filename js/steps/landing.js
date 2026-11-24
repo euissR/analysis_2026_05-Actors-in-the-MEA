@@ -57,7 +57,10 @@ export default {
       override: {
         geos: ["Africa"],
         measure: "value_usd_bn",
-        subtitle: "Recorded inward FDI stock held by each investor, $bn",
+        subtitle: "Recorded inward FDI held by selected investors, $ billion",
+        footnote:
+          AF_invest.steps.fdi_scale_gulf.state.footnote +
+          "\n\n * 2022-24: eight economies switch from official to counterpart-derived data in 2023 or 2024; so changes should be interpreted cautiously. In particular, Gulf positions may be understated due to reporting gaps. For details see methodological note.",
       },
     },
 
@@ -83,7 +86,8 @@ export default {
         // geos: ["Africa"],
         // measure: "value_usd_bn",
         highlight: ["IND"],
-        footnote: "",
+        footnote:
+          "Cereals are defined using HS Chapter 10, covering wheat, rice, maize, barley and other cereals, but excluding cereal flours and prepared cereal-based food products classified under other chapters. For details see methodological note.",
       },
     },
 

@@ -41,25 +41,23 @@
 //                  intro text, no chart
 //   footnotes      all footnotes and captions on the charts are drafts, from the source document
 
-const SRC =
-  "Data: World Bank, PPI Database; World Bank, Contract Awards (Investment Project Financing).";
+const SRC_SHARES =
+  "Data: World Bank, Private Participation in Infrastructure (PPI) Database; World Bank, Contract Awards (Investment Project Financing) Database. Sponsors and contractors are identified using different datasets, periods and denominators; their shares are not directly comparable. For details see methodological note. *Regional includes other African, Middle Eastern and Gulf actors. Contract-award data cover July 2019–December 2024.";
+const SRC_MAP =
+  "Data: World Bank, PPI Database; World Bank, Contract Awards (Investment Project Financing). Bubbles sit on the country dots, not on project sites.";
 
-// footnotes (drafts from the source document)
-const FN_PRO_1 = "* Data available for July 2019 – December 2024.\n\n\n";
-const FN_PRO_2 =
-  "** These figures are likely to understate the Chinese-controlled footprint. Supplier nationality in the World Bank database reflects the country of registration rather than ultimate ownership, meaning that locally incorporated subsidiaries of foreign firms are recorded as domestic suppliers. The findings should not be generalised to the continent’s infrastructure market as a whole.";
-const FN_PPI_1 =
-  "* Actor shares use reported sponsor stakes where available; where all stakes are missing, shares are split equally across named sponsors, while in mixed cases any unallocated residual is divided equally among sponsors without reported stakes. Domestic sponsor stakes and sponsor-country slots that cannot be attributed are excluded from the foreign denominator. The measure captures sponsor participation, not equity ownership, investment value or financing.";
-const FN_PPI_2 =
-  "** These arrangements include projects reaching financial close before 2019; the figures measure the active sponsor footprint through 2024, not only new activity during 2019–2024.\n \n";
-const FN_PPI_3 =
-  "*** PPI sponsor shares and procurement shares use different sources, periods and denominators. The data do not support a direct comparison of investment amounts, capital deployed or asset ownership.\n\n";
+// footnotes (editors' revision, November 2026)
+const FN_REG = "*Regional includes other African, Middle Eastern and Gulf actors.";
+const FN_PRO_1 = `${FN_REG} Contract-award data cover July 2019–December 2024.`;
+const FN_PRO_2 = `${FN_PRO_1} ** These figures may understate the presence of Chinese-controlled firms. Suppliers are classified by country of registration rather than ultimate ownership, so locally incorporated subsidiaries of Chinese firms may be recorded as domestic, while those registered in third countries may be attributed elsewhere. Subcontractors are not captured. As the data covers only World Bank-financed contracts, the findings should not be generalised to Africa’s construction market as a whole. For details see methodological note.`;
+const FN_PPI_1 = `${FN_REG} Sponsor shares are based on attributed foreign stakes in PPI arrangements recorded as active and reaching financial closure in 2000–24. ‘Active’ reflects the database classification, not necessarily current operation. For details see methodological note.`;
+const FN_PPI_3 = `${FN_REG} *** PPI sponsor shares and procurement shares use different sources, periods and denominators. They are not directly comparable and should not be interpreted as shares of a common infrastructure market, investment value or asset ownership. For details see methodological note.`;
 const FN_MAP_PPI =
-  "All-active PPI stock through 2024, including arrangements reaching financial close before 2019. Sponsor-stake PPI measure indicates attributed sponsor participation, not investment value, financing or current asset ownership. PPI uses host country.\n\n";
+  "Figures cover PPI arrangements reaching financial closure in 2000–24, including before 2019. Sponsor stakes measure attributed participation, unweighted by project value, not financing, investment amounts or verified current ownership. ‘Active’ reflects database status, not necessarily current operation. For details see methodological note.";
 const FN_MAP_WORKS =
-  "Supplier nationality in contracts database is country of registration; subcontractors are not observed. Shares cover foreign works awards in this World Bank sample, not the construction market as a whole. Construction uses borrower country.\n\n";
-const FN_MAP_RESIDUAL =
-  " Context/residual categories are retained where they are part of the denominator so country shares remain complete.";
+  "Suppliers are classified by country of registration, not ultimate ownership; subcontractors are not captured. Shares reflect the value of Works contracts awarded to identified non-domestic suppliers in this World Bank-financed sample, not Africa’s construction market as a whole. For details see methodological note.";
+const FN_MAP_WORKS_ACTOR =
+  "Suppliers are classified by country of registration; subcontractors are not captured. Awards are attributed to borrower countries, excluding multi-country borrowers. Figures cover World Bank-financed Works contracts, not Africa’s construction market as a whole. For details see methodological note.";
 
 const ROWS = ["EU", "REG", "CHN", "GCC", "USA", "IND", "TUR", "JPN", "KOR"];
 const CN90 = ["AGO", "KEN", "MDG", "COD", "TZA", "ETH"];
@@ -74,8 +72,8 @@ export default {
       rowLabels: { EU: "EU27", REG: "Regional*", GCC: "Gulf" },
       title: "Foreign actors in African infrastructure",
       subtitle:
-        "Sponsors (PPI) and builders (World Bank-financed procurement): different sources, periods and denominators. *Other African and MENA actors.",
-      source: SRC,
+        "Foreign project sponsors (PPI) and contractors in World Bank-financed projects",
+      source: SRC_SHARES,
       panels: [
         {
           id: "ppi",
@@ -132,10 +130,10 @@ export default {
       type: "geoBubbles",
       data: "infra_2_map",
       title: "Foreign actors in African infrastructure",
-      source: `${SRC} Bubbles sit on the country dots, not on project sites.`,
+      source: SRC_MAP,
       labels: {
         EU: "EU27",
-        REG: "Regional (African / MENA)",
+        REG: "Regional (African/MENA)",
         GBR: "UK",
         other: "Other",
         GCC: "Gulf",
@@ -145,8 +143,8 @@ export default {
           title: "PPI sponsor stakes, by host country",
           subtitle: (a, label) =>
             a === "all"
-              ? "Attributed foreign sponsor stakes in active PPI arrangements through 2024. Bubble area: sponsor-stake equivalents."
-              : `${label}: attributed sponsor stakes in active arrangements through 2024. Bubble area scaled to the actor’s largest country.`,
+              ? "Attributed foreign sponsor stakes in PPI arrangements recorded as active. Bubble area: sponsor-stake equivalents."
+              : `${label}: attributed sponsor stakes in PPI arrangements recorded as active. Bubble area scaled to the actor’s largest country.`,
           unit: "sponsor-stake equivalents",
           sizeTitle: "Sponsor-stake equivalents",
           format: ",.0f",
@@ -156,10 +154,10 @@ export default {
           title: "Foreign works awards, by borrower country",
           subtitle: (a, label) =>
             a === "all"
-              ? "World Bank-financed works awards to foreign firms, July 2019–December 2024. Bubble area: $m."
+              ? "World Bank-financed works contracts awarded to foreign firms, July 2019–December 2024. Bubble area: award value ($ million)."
               : `${label}: works award value, July 2019–December 2024. Bubble area scaled to the actor’s largest country.`,
-          unit: "$m",
-          sizeTitle: "Works awards, $m",
+          unit: "$ million",
+          sizeTitle: "Works awards, $ million",
           format: ",.0f",
           keyAll: [100, 500, 1500],
         },
@@ -189,7 +187,7 @@ export default {
     },
     pro_divide: {
       chart: "map",
-      state: { measure: "works", footnote: FN_MAP_WORKS + FN_MAP_RESIDUAL },
+      state: { measure: "works", footnote: FN_MAP_WORKS },
     },
 
     // ── ECON 4.2: private participation in infrastructure ───────────────────
@@ -198,7 +196,7 @@ export default {
       state: {
         panels: ["ppi"],
         highlight: ["EU", "REG", "GCC", "USA", "CHN"],
-        footnote: FN_PPI_1 + "\n" + FN_PPI_2,
+        footnote: FN_PPI_1,
       },
     },
     ppi_contrast: {
@@ -214,14 +212,14 @@ export default {
     // ── geography and actor patterns ────────────────────────────────────────
     geo_ppi: {
       chart: "map",
-      state: { measure: "ppi", footnote: FN_MAP_PPI + FN_MAP_RESIDUAL },
+      state: { measure: "ppi", footnote: FN_MAP_PPI },
     },
     geo_works: {
       chart: "map",
       state: {
         measure: "works",
         subregion: "East Africa and HoA",
-        footnote: FN_MAP_WORKS + FN_MAP_RESIDUAL,
+        footnote: FN_MAP_WORKS,
       },
     },
     eu_ppi: {
@@ -240,7 +238,7 @@ export default {
         actor: "EU",
         subregion: "North Africa",
         labels: ["EGY"],
-        footnote: FN_MAP_WORKS,
+        footnote: FN_MAP_WORKS_ACTOR,
       },
     },
     chn_ppi: {
@@ -256,7 +254,7 @@ export default {
         highlight: CN90,
         labels: CN90,
         labelsLeft: ["COD"],
-        footnote: FN_MAP_WORKS,
+        footnote: FN_MAP_WORKS_ACTOR,
       },
     },
     // UAE and US on one map, in their own colours, on one bubble scale
@@ -267,8 +265,9 @@ export default {
         actor: ["ARE", "USA"],
         actorLabel: "UAE and US",
         subtitle:
-          "UAE and US: works award value, July 2019–December 2024. Bubble area: $m, the same scale for both actors.",
+          "UAE and US: works award value, July 2019–December 2024. Bubble area: award value ($ million), the same scale for both actors.",
         labels: ["NGA", "NER", "SOM", "ETH"],
+        footnote: FN_MAP_WORKS_ACTOR,
       },
     },
   },

@@ -97,7 +97,7 @@ export default {
         bases: "mil_2_bases_{suffix}",
         pts: "mil_{suffix}_countries",
       },
-      title: "Foreign military presence in Africa",
+      title: "Foreign military presence in Africa (2025)",
       subtitle: (s) => {
         const parts = [];
         if (s.types?.length) parts.push("personnel deployed in 2025 (spikes)");
@@ -162,7 +162,7 @@ export default {
       subtitleAll:
         "Joint exercises led or co-led by external partners and African countries, by African co-lead or sea area where held, January 2024–July 2026",
       source:
-        "NB: A country counts the exercises it led or co-led, not those it only took part in; a sea area counts the exercises held there. An exercise counts once for each place it involves, so the figures do not add up to the total. Data: official ministry websites and news outlets.",
+        "NB: A country counts the exercises it led or co-led, not those in which it merely participated. Each exercise is counted once for every location involved. Data: official ministry websites, websites of Atalanta and Aspides and news outlets.",
       allLabel: "All actors",
       // one dot-size scale for every step and tile: the same number is the same size everywhere
       sharedScale: true,
@@ -354,7 +354,7 @@ export default {
         labels: ["SSD", "SDN"],
         values: ["SSD", "SDN"],
         footnote:
-          "Depiction of borders and region on the map is indicative and not supporting any territorial claims.",
+          "The depiction of borders and regions on the map is indicative and does not imply support for any territorial claims.",
       },
     },
     // exercises

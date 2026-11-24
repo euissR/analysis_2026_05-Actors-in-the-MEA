@@ -93,22 +93,22 @@ const FN_ANY =
   "Any presence: office, partner country or project, ODA recipient, or presence not specified.";
 const FN4 = "* Abu Dhabi Fund for Development (ADFD), Annual Report 2025.";
 const FN5 =
-  "* Where French cooperation is complemented by other EU member states: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
+  "* Where French cooperation is complemented by other EU Member States: Goethe-Institut in Namibia; Instituto Camões in Guinea-Bissau and Mozambique.";
 const FN6 = "* Confucius Institute, ‘Confucius Institutes in Africa’, ci.cn.";
 const FN789 =
-  "* Russkiy Mir Foundation; Rossotrudnichestvo. ** Marangio, R., Chaillot Paper 186, EUISS, 2025, p. 48. *** In the DRC, Kenya, Madagascar, Mali, São Tomé and Príncipe, Senegal, Sierra Leone and Togo (BBC News, 10 September 2026).";
+  "* Russkiy Mir Foundation; Rossotrudnichestvo. ** Marangio, R., Chaillot Paper No. 186, EUISS, 2025, p. 48. *** In the DRC, Kenya, Madagascar, Mali, São Tomé and Príncipe, Senegal, Sierra Leone and Togo (BBC News, 10 September 2026).";
 const FN10 = "* Yunus Emre Institute, ‘Merkezlerimiz’, yee.org.tr.";
 const FN11 =
-  "* Most data refer to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of member states, without Ireland and the Netherlands.";
+  "* Most data refers to 2023; Iran 2022, Saudi Arabia 2024, UAE 2012, Kuwait 2009, Israel 2014. EU: sum of Member States, with the exception of Ireland and the Netherlands.";
 const FN12 =
-  "* UNDESA, International Migrant Stock 2024 (both sexes, mid-year). No records of migrants from Africa in South Korea. Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan).";
+  "* UN DESA, International Migrant Stock 2024 (both sexes, mid-year). No records of migrants from Africa in South Korea. Definitions differ: foreign-born (EU, US, Russia, Türkiye) or foreign citizens (China, India, Iran, Japan).";
 const FN13 =
-  "* UNDESA, International Migrant Stock 2024 (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
+  "* UN DESA, ‘International Migrant Stock 2024’ (both sexes, mid-year). Estimates rest on country of birth for 36 African countries and on citizenship for 13; refugees are included for 48.";
 const FN14 =
   "* These concentrations may partly reflect dual citizenship; historical migration patterns and diaspora ties may also play a role.";
 const FN15 =
-  "* Afrobarometer, round 10 (2024/2025), 38 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused. Means of country values; the former colonial power is rated in 37 countries.";
-const FN_ETH = "2015 level shown (54,628); 2024: 26,824. " + FN13;
+  "* Afrobarometer, round 10 (2024/2025), 38 countries. Share of respondents rating the influence of each actor as positive (very or somewhat), negative (very or somewhat), neither, or who don’t know or refused to answer. Means of country values; the former colonial power is rated in 37 countries.";
+const FN_ETH = "2015 level shown (54 628); 2024: 26 824. " + FN13;
 
 // dot sizes compare across the two maps: the same value gets the same radius (21 = member states with any presence, the largest count)
 const DOT_MAX = 42;
@@ -178,7 +178,7 @@ export default {
       subtitleActor:
         "Countries where the selected actor’s agencies are present, by strongest type of presence",
       subtitleAll:
-        "Number of actors with an office in each country (EU institutions and member states not included)",
+        "Number of actors with an office in each country (EU institutions and Member States not included)",
       source: SRC_DEV,
       allLabel: "All actors (offices)",
       tilesWithData: true,
@@ -225,13 +225,13 @@ export default {
       type: "dotMap",
       mode: "count",
       data: "soft_1_dev_ms",
-      title: "EU member states’ development agencies in Africa",
+      title: "EU Member States’ development agencies in Africa",
       subtitleActor:
-        "Number of EU member states present in each country, by the type of presence selected (separate counts)",
+        "Number of EU Member States present in each country, by the type of presence selected (separate counts)",
       subtitleAll:
-        "Number of EU member states with any presence in each country (office, partner country or project, ODA recipient, not specified)",
+        "Number of EU Member States with any presence in each country (office, partner country or project, ODA recipient, not specified)",
       source:
-        "Data: websites of EU member states’ development agencies and ministries.",
+        "Data: websites of EU Member States’ development agencies and ministries, and OECD.",
       allLabel: "Any presence",
       tilesWithData: true,
       extraTiles: [
@@ -242,7 +242,7 @@ export default {
       sharedScale: true,
       scaleMax: DOT_MAX,
       rMax: DOT_R,
-      keySize: "Member states",
+      keySize: "Member States",
       keyValuesActor: [1, 5, 10, 20],
       keyValuesAll: [1, 5, 10, 20],
       tooltipCount: (n) => `${n} EU member state${n === 1 ? "" : "s"}`,
@@ -254,7 +254,7 @@ export default {
       data: "soft_2_lang",
       rowKey: "actor",
       rows: ["EU", "FRA", "CHN", "RUS", "TUR"],
-      rowLabels: { EU: "EU member states", FRA: "of which France" },
+      rowLabels: { EU: "EU Member States", FRA: "of which France" },
       labelWidth: 125,
       title: "Cultural and language institutes in Africa",
       subtitle:
@@ -303,7 +303,7 @@ export default {
         },
         {
           id: "EU",
-          title: "All EU member states",
+          title: "All EU Member States",
           where: { actor: "EU" },
           segments: [
             { column: "coverage_pct", label: "Coverage", color: "EU" },
@@ -360,7 +360,7 @@ export default {
       title: "Migrants from Africa in the external actors",
       subtitle: (s, period) =>
         `Stock of migrants by region of origin (left) and host actor (right), ${period}`,
-      source: "Data: UNDESA, International Migrant Stock 2024.",
+      source: "UN DESA, International Migrant Stock 2024.",
       unit: "Migrants (stock, mid-year)",
       tipLabel: "Migrants",
       reverse: true,
@@ -382,7 +382,7 @@ export default {
       title: "Migrants from the external actors in Africa",
       subtitle: (s, period) =>
         `Stock of migrants by actor of origin (left) and African ${s.depth === "country" ? "country" : "region"} of residence (right), ${period}`,
-      source: "Data: UNDESA, International Migrant Stock 2024.",
+      source: "UN DESA, International Migrant Stock 2024.",
       unit: "Migrants (stock, mid-year)",
       tipLabel: "Migrants",
       defaultPeriod: "p2",

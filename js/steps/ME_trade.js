@@ -59,7 +59,19 @@
 //   the Gulf as separate states is not in the data (GCC only)
 
 const SOURCE =
-  "Data: Growth Lab, Harvard University, 2026, “International Trade Data (HS12)”, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current US dollars.";
+  "Data: Growth Lab, Harvard University, 2026, ‘International Trade Data (HS12)’, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current USD.";
+
+// footnotes: one per product basket (editors' revision, November 2026; same wording as AF_trade.js)
+const FN_GREEN =
+  "Trade in green energy products is approximated using five six-digit HS 2012 codes covering wind turbines, solar photovoltaic products and liquid biofuels, based on Eurostat’s product groups. For details see methodological note.";
+const FN_HITECH =
+  "High-tech products follow Eurostat’s definition and use the high-tech aggregation under SITC Revision 4. The list is based on the OECD definition and covers technical products whose manufacture involves high R&D intensity. For details see methodological note.";
+const FN_PHARMA =
+  "Pharmaceutical products are defined following Eurostat’s high-technology classification, using selected six-digit HS2012 codes covering hormones, antibiotics, vaccines, immunological products and certain medicines. The basket does not include all pharmaceutical products. For details see methodological note.";
+const FN_AGRI =
+  "Agricultural goods are defined following Eurostat’s classification (HS chapters 01–24), (sections I–IV), covering animals and animal products, vegetable products, fats and oils, and prepared foodstuffs, beverages and tobacco. For details see methodological note.";
+const FN_CEREALS =
+  "Cereals are defined using HS Chapter 10, covering wheat, rice, maize, barley and other cereals, but excluding cereal flours and prepared cereal-based food products classified under other chapters. For details see methodological note.";
 
 const REG = "Middle East and the Gulf";
 const HI = "High-income";
@@ -68,11 +80,11 @@ const LMI = "Low- and middle-income";
 const PAL =
   "* This designation shall not be construed as recognition of a State of Palestine and is without prejudice to the individual positions of the Member States on this issue.";
 const GROUPS =
-  "Countries are divided in two groups: high-income economies (Bahrain, Israel, Kuwait, Oman, Qatar, Saudi Arabia and United Arab Emirates) and low- and middle-income economies (Iraq, Jordan, Lebanon, Palestine*, Syria and Yemen).";
+  "Countries are divided into two groups: high-income economies (Bahrain, Israel, Kuwait, Oman, Qatar, Saudi Arabia and United Arab Emirates) and low- and middle-income economies (Iraq, Jordan, Lebanon, Palestine*, Syria and Yemen).";
 const GROUPS_FOOT = `${GROUPS} ${PAL}`;
 
 const PRODUCT = {
-  green: "Green-energy products",
+  green: "Green energy products",
   hitech: "High-tech products",
   agri: "Agri-food products",
   cereals: "Cereals",
@@ -109,7 +121,7 @@ export default {
       title: "Trading partners of the Middle East and the Gulf",
       subtitle: (s) =>
         s.measure === "value_usd_bn"
-          ? "Average annual trade with each actor, $bn"
+          ? "Average annual trade with each actor, $ billion"
           : "Share of total trade (imports and exports) with each actor, %",
       source: SOURCE,
       ...labels,
@@ -123,7 +135,7 @@ export default {
       geos: [REG],
       title: "Trade balances with the Middle East and the Gulf",
       subtitle: (s) =>
-        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, $bn. Positive: the actor sells more than it buys`,
+        `Average annual balance of each actor in ${COMPONENT[s.component ?? "total"]}, $ billion. A positive balance means the actor sells more than it buys.`,
       source: SOURCE,
       ...labels,
     },
@@ -137,10 +149,10 @@ export default {
       title: (s) => BASKET[s.basket] ?? PRODUCT[s.product ?? "green"],
       subtitle: (s, info) => {
         const flow = s.flow ?? "imports";
-        const dir = flow === "exports" ? "exports going to" : "imports coming from";
+        const dir = flow === "exports" ? "exports to" : "imports from";
         const base =
           s.measure === "value_usd_bn"
-            ? `Average annual ${flow === "exports" ? "exports to" : "imports from"} each actor, $bn`
+            ? `Average annual ${dir} each actor, $ billion`
             : `Share of ${dir} each actor, %`;
         const tot =
           s.measure === "value_usd_bn" && !(s.geos?.length > 1) && Number.isFinite(info.total[0])
@@ -162,7 +174,7 @@ export default {
       part: "Israel",
       partLabel: "Israel",
       restLabel: "Rest of the region",
-      title: "Two-way high-tech trade with the region, 2022–2024 average, $bn",
+      title: "Two-way high-tech trade with the region, 2022–24 average, $ billion",
       subtitle: "",
       note: "Percentages give Israel’s share of each flow.",
       source: SOURCE,
@@ -220,13 +232,12 @@ export default {
       state: {
         product: "green",
         highlight: ["CHN", "EU"],
-        footnote:
-          "Energy-related trade is approximated using an HS2012 basket informed by Eurostat’s green-energy categories. As the underlying Harvard University dataset contains data on HS six digit rather than 8 digit level, some source codes are broader than the technologies concerned: notably, HS854140 includes photovoltaic cells, other photosensitive devices and LEDs, while HS290919 exceeds the specific biofuel-related subheading. Reported shares therefore refer to the mapped basket rather than exclusively to solar panels or biofuels.",
+        footnote: FN_GREEN,
       },
     },
     gre_hi: {
       chart: "products",
-      state: { product: "green", geos: [HI], highlight: ["CHN", "EU"], footnote: PAL },
+      state: { product: "green", geos: [HI], highlight: ["CHN", "EU"], footnote: FN_GREEN },
     },
     gre_gulf: {
       chart: "products",
@@ -236,15 +247,16 @@ export default {
         measure: "value_usd_bn",
         scale: "free", // Israel's imports are small next to the Gulf's
         highlight: ["CHN", "EU"],
+        footnote: FN_GREEN,
       },
     },
     gre_lmi: {
       chart: "products",
-      state: { product: "green", geos: [LMI], highlight: ["CHN", "EU"], footnote: PAL },
+      state: { product: "green", geos: [LMI], highlight: ["CHN", "EU"], footnote: FN_GREEN },
     },
     gre_total: {
       chart: "products",
-      state: { product: "green", measure: "value_usd_bn", highlight: ["CHN"] },
+      state: { product: "green", measure: "value_usd_bn", highlight: ["CHN"], footnote: FN_GREEN },
     },
 
     // ── ECON 2.2: high-tech ─────────────────────────────────────────────────
@@ -253,12 +265,17 @@ export default {
       state: {
         product: "hitech",
         highlight: ["EU", "CHN"],
-        footnote:
-          "High-tech products follow Eurostat’s definition, using the high-tech aggregation under SITC Rev. 4. Based on the OECD definition, the list covers technical products whose manufacture involves high R&D intensity.",
+        footnote: FN_HITECH,
       },
     },
-    hit_israel: { chart: "hitflow", state: { highlight: ["EU", "intra", "USA", "KOR"] } },
-    hit_excl: { chart: "hitflow", state: { exclude: true, highlight: ["CHN"] } },
+    hit_israel: {
+      chart: "hitflow",
+      state: { highlight: ["EU", "intra", "USA", "KOR"], footnote: FN_HITECH },
+    },
+    hit_excl: {
+      chart: "hitflow",
+      state: { exclude: true, highlight: ["CHN"], footnote: FN_HITECH },
+    },
     hit_us: {
       chart: "products",
       state: {
@@ -267,7 +284,7 @@ export default {
         measure: "value_usd_bn",
         highlight: ["USA", "KOR"],
         footnote:
-          "* Armament sub-basket in hi-tech products group is not a comprehensive measure of arms transfers or defence dependence.",
+          "* Armaments sub-basket in the high-tech products group is not a comprehensive measure of arms transfers or defence dependence. For details see methodological note.",
       },
     },
     hit_ind: {
@@ -278,7 +295,7 @@ export default {
         geos: [LMI],
         measure: "value_usd_bn",
         highlight: ["IND"],
-        footnote: PAL,
+        footnote: FN_PHARMA,
       },
     },
 
@@ -289,8 +306,7 @@ export default {
         product: "agri",
         flow: "imports",
         highlight: ["EU"],
-        footnote:
-          "Agricultural goods follow the Eurostat definition: HS chapters 1–24 (sections I–IV), covering animal products, vegetable products, fats and oils, and prepared foodstuffs, beverages and tobacco.",
+        footnote: FN_AGRI,
       },
     },
     agri_mix: {
@@ -300,22 +316,22 @@ export default {
         flow: "imports",
         geos: ["GCC", LMI],
         highlight: ["TUR"],
-        footnote: PAL,
+        footnote: FN_AGRI,
       },
     },
     agri_isr: {
       chart: "products",
-      state: { product: "agri", flow: "imports", geos: ["Israel"], highlight: ["EU"] },
+      state: { product: "agri", flow: "imports", geos: ["Israel"], highlight: ["EU"], footnote: FN_AGRI },
     },
     agri_def: {
       chart: "products",
-      state: { product: "agri", flow: "imports", measure: "value_usd_bn", highlight: ["EU"] },
+      state: { product: "agri", flow: "imports", measure: "value_usd_bn", highlight: ["EU"], footnote: FN_AGRI },
     },
 
     // ── ECON 2.5: cereals ───────────────────────────────────────────────────
     cer_intro: {
       chart: "products",
-      state: { product: "cereals", geos: [HI, LMI], highlight: ["IND"], footnote: PAL },
+      state: { product: "cereals", geos: [HI, LMI], highlight: ["IND"], footnote: FN_CEREALS },
     },
     cer_rus: {
       chart: "products",
@@ -323,7 +339,7 @@ export default {
         product: "cereals",
         geos: ["GCC", "Israel", LMI],
         highlight: ["RUS"],
-        footnote: PAL,
+        footnote: FN_CEREALS,
       },
     },
   },

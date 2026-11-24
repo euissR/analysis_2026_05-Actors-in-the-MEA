@@ -50,20 +50,16 @@
 
 const SRC =
   "Data: World Bank, Private Participation in Infrastructure Database; World Bank, Contract Awards in Investment Project Financing (since FY2020).";
+const SRC_SHARES = `${SRC} Sponsors and contractors are identified using different datasets, periods and denominators; their shares are not directly comparable. For details see methodological note. *Regional includes other Middle Eastern and Gulf actors. Contract-award data cover July 2019–December 2024.`;
 
-// footnotes (drafts from the source document)
-const FN_DIFF =
-  "The panels show different forms of participation, periods and denominators. PPI sponsor shares are not weighted by project value; procurement shares measure award value in a selected World Bank portfolio. They are not shares of a common infrastructure market.";
-const FN_BROAD =
-  "The broad measure covers infrastructure-related awards, including goods and services, not only construction.";
-const FN_DENOM =
-  "Other African and Middle Eastern suppliers, World/UN awards and residual categories stay in the denominator, so the bars do not sum to 100%.";
-const FN_REG = "Supplier country records registration, not ultimate ownership; subcontractors are not observed.";
-const FN_PPI =
-  "The PPI sample contains 70 project proxies with financial closure in 2000–2024, of which 61 have an identified foreign sponsor. “Active” is the source classification. This is neither a reconstructed ownership stock at the end of 2024 nor a complete inventory of active regional infrastructure.";
-const FN_PPI_ACTIVE =
-  "“Active” is the source classification. This is neither a reconstructed ownership stock at the end of 2024 nor a complete inventory of active regional infrastructure.";
-const FN_STAKES = "The measure sums sponsor stakes without weighting by project value.";
+// footnotes (editors' revision, November 2026)
+const FN_REG = "*Regional includes other Middle Eastern and Gulf actors.";
+const FN_PRO = `PPI shares reflect foreign sponsor stakes, not project value; contract-award shares reflect award value in World Bank-financed projects (July 2019–December 2024). The broader procurement category includes goods and services, not just construction. Suppliers are classified by country of registration, not ownership; subcontractors are excluded. For details see methodological note. ${FN_REG}`;
+const FN_PPI = `Sponsor shares are based on attributed foreign stakes in PPI arrangements recorded as active and reaching financial closure in 2000–24. ‘Active’ reflects the database classification, not necessarily current operation. For details see methodological note. ${FN_REG}`;
+const FN_CONC_PPI =
+  "Shares show the distribution of each actor’s attributed foreign sponsor stakes by host country, not project value. PPI covers arrangements recorded as active with financial closure in 2000–2024. For details see methodological note.";
+const FN_CONC_IPF =
+  "Shares show the distribution of each actor’s non-domestic contract-award value by borrower country. Data cover selected infrastructure-related contracts signed under World Bank-financed projects (July 2019–December 2024). The broad category includes goods and services, not just construction. Suppliers are classified by country of registration; subcontractors are not captured. For details see methodological note.";
 
 const ROWS = ["TUR", "GCC", "EU", "USA", "CHN", "REG", "KOR", "JPN", "IND"];
 
@@ -77,8 +73,8 @@ export default {
       rowLabels: { EU: "EU27", REG: "Regional*", GCC: "Gulf" },
       title: "Foreign actors in Middle East infrastructure",
       subtitle:
-        "Sponsors (PPI) and suppliers (World Bank-financed procurement): different sources, periods and denominators. *Other African and Middle Eastern economies.",
-      source: SRC,
+        "Foreign project sponsors (PPI) and contractors in World Bank-financed projects",
+      source: SRC_SHARES,
       panels: [
         {
           id: "ppi",
@@ -165,12 +161,12 @@ export default {
         panels: ["proc"],
         dots: false,
         highlight: ["TUR", "GCC", "EU", "USA", "CHN"],
-        footnote: `${FN_DIFF}\n${FN_DENOM}\n${FN_BROAD}`,
+        footnote: FN_PRO,
       },
     },
     pro_works: {
       chart: "shares",
-      state: { panels: ["proc"], dots: true, highlight: ["TUR"], footnote: FN_REG },
+      state: { panels: ["proc"], dots: true, highlight: ["TUR"], footnote: FN_PRO },
     },
 
     // ── private participation in infrastructure ─────────────────────────────
@@ -179,16 +175,16 @@ export default {
       state: {
         panels: ["ppi"],
         highlight: ["GCC", "EU", "REG", "USA", "KOR"],
-        footnote: `${FN_PPI}\n${FN_STAKES}`,
+        footnote: FN_PPI,
       },
     },
     ppi_uae: {
       chart: "shares",
-      state: { panels: ["ppi"], highlight: ["GCC", "CHN"], footnote: FN_STAKES },
+      state: { panels: ["ppi"], highlight: ["GCC", "CHN"], footnote: FN_PPI },
     },
     ppi_vintage: {
       chart: "shares",
-      state: { panels: ["ppi"], footnote: FN_PPI_ACTIVE },
+      state: { panels: ["ppi"], footnote: FN_PPI },
     },
 
     // ── geographic and contract concentration ───────────────────────────────
@@ -198,7 +194,7 @@ export default {
         panels: ["ppi"],
         rows: ["all", "EU", "GCC"],
         highlight: ["all", "EU", "GCC"], // all rows at full strength; names coloured in the text
-        footnote: FN_STAKES,
+        footnote: FN_CONC_PPI,
       },
     },
     conc_ipf: {
@@ -207,7 +203,7 @@ export default {
         panels: ["proc"],
         rows: ["all", "TUR", "GCC"],
         highlight: ["all", "TUR", "GCC"],
-        footnote: FN_REG,
+        footnote: FN_CONC_IPF,
       },
     },
   },

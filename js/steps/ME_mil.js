@@ -75,7 +75,7 @@ export default {
         bases: "mil_2_bases_{suffix}",
         pts: "mil_{suffix}_countries",
       },
-      title: "Foreign military presence in the Middle East and the Gulf",
+      title: "Foreign military presence in the Middle East and the Gulf (2025)",
       subtitle: (s) => {
         const parts = [];
         if (s.types?.length) parts.push("personnel deployed in 2025 (spikes)");
@@ -150,7 +150,7 @@ export default {
       subtitleAll:
         "Joint exercises led or co-led by countries of the region and external partners, by country or sea area where held, January 2024–July 2026",
       source:
-        "NB: A country counts the exercises it led or co-led, not those it only took part in; a sea area counts the exercises held there. An exercise counts once for each place it involves, so the figures do not add up to the total. Data: official ministry websites and news outlets.",
+        "NB: A country counts the exercises it led or co-led, not those in which it merely participated. Each exercise is counted once for every location involved. Data: official ministry websites, websites of Atalanta and Aspides and news outlets.",
       allLabel: "All actors",
       // one dot-size scale for every step and tile: the same number is the same size everywhere
       sharedScale: true,
@@ -257,7 +257,7 @@ export default {
         actors: ["USA"],
         labels: ["KWT", "BHR", "QAT", "ARE"],
         footnote:
-          "Bases shown are established bilateral presence; presence under other international frameworks is counted under deployments.",
+          "Bases shown represent an established bilateral presence; presence under other international frameworks is counted under deployments.",
       },
     },
     dep_trans: { chart: "forces", state: { bases: true } },
@@ -298,7 +298,7 @@ export default {
         actors: ["TUR"],
         values: ["IRQ"],
         footnote:
-          "On 23 September 2026, Türkiye and Iraq agreed that Turkish forces will gradually hand over the Bashiqa-Zilkan base to Iraq. Data refer to 2025.",
+          "On 23 September 2026, Türkiye and Iraq agreed that Turkish forces will gradually hand over the Bashiqa-Zilkan base to Iraq. Data refers to 2025.",
       },
     },
     dep_oir_us: {
@@ -308,7 +308,7 @@ export default {
         actors: ["USA"],
         values: ["IRQ", "JOR"],
         footnote:
-          "US forces ended Operation Inherent Resolve in Iraq on 30 September 2026; the Combined Joint Task Force (CJTF-OIR) remains operational, headquartered in Jordan. Data refer to 2025.",
+          "US forces ended Operation Inherent Resolve in Iraq on 30 September 2026; the Combined Joint Task Force (CJTF-OIR) remains operational, headquartered in Jordan. Data refers to 2025.",
       },
     },
     dep_oir_eu: {

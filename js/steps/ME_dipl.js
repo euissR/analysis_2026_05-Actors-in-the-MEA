@@ -29,8 +29,7 @@ export default {
       allLabel: "All actors",
       keySize: "Actors with an embassy",
       keyValuesAll: [1, 8, 15], // 15 = every actor but the country's own (tune)
-      tooltipCount: (n, label, total) =>
-        `${n} of ${total} actors have an embassy`,
+      tooltipCount: (n, label, total) => `${n} actors have an embassy`,
       categories: {
         Embassy: {
           label: "Embassy",
@@ -125,7 +124,7 @@ export default {
     sum: {
       type: "rangeChart",
       data: "dipl_4_sum",
-      title: "Summits with the Gulf, Arab and Islamic world",
+      title: "Summits with the Gulf, Arab and Islamic countries and organisations",
       subtitle:
         "Launch year, latest summit and next scheduled summit of each summit series",
       source: "Data: official government sources and media",
@@ -172,7 +171,7 @@ export default {
       type: "tileGrid",
       data: "dipl_5_un_ter",
       title:
-        "Voting on the Israeli-occupied territories at the UN General Assembly",
+        "Voting on the territories occupied by Israel at the UN General Assembly",
       source: "Source: UN Digital Library",
       actorsLabel: "External actors, for comparison",
       gridSize: [0, 9], // frame height in tile rows: keeps the tile size whatever the layout
