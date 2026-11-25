@@ -11,7 +11,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { CONFIG } from "./config.js";
 import { REGIONS } from "./regions.js";
 import { CHAPTERS, ORDER } from "./chapters.js";
-import DECK from "./steps/deck.js";
+import DECK, { INTRO } from "./steps/deck.js";
 import { makeDotMap } from "./charts/dotMap.js";
 import { makeRangeChart } from "./charts/rangeChart.js";
 import { makeTileGrid } from "./charts/tileGrid.js";
@@ -94,12 +94,19 @@ async function init(root) {
     ),
   );
 
-  // 3. each slide = the step's chart and state, with the slide's override on top
-  const slides = [];
+  // 3. each slide = the step's chart and state, with the slide's override on top;
+  //    the two intro slides come first and belong to no section
+  const slides = [{ kind: "title" }, { kind: "overview" }];
+  let lastSection = null;
   listed.forEach((s) => {
     const step = chapters[s.chapter].steps[s.step];
     if (!step) return console.warn(`slides: no step "${s.step}" in ${s.chapter}.js`);
+    if (s.section !== lastSection) {
+      slides.push({ kind: "chapter", section: s.section }); // opens the section
+      lastSection = s.section;
+    }
     slides.push({
+      kind: "chart",
       section: s.section,
       chartKey: `${s.chapter}:${step.chart}`,
       state: { ...step.state, ...s.override },
@@ -123,7 +130,27 @@ async function init(root) {
   count.setAttribute("aria-live", "polite");
   const hint = make("span", "fa-slides-hint", "← → to flip · F full screen");
   bar.append(prev, count, next, hint);
+
+  // intro slide 1: title on a full-page picture (sits over the whole page, the contents hide)
+  // (the chapter slides use the same design, with the chapter's picture and number)
+  function makeCover(image, title, subtitle, number) {
+    const el = make("div", "fa-slide-title");
+    el.style.backgroundImage = `url(${CONFIG.BASE_URL}/${image})`;
+    const text = make("div", "fa-slide-title-text");
+    const h = make("h1");
+    if (number) h.append(make("span", "fa-slide-title-n", String(number)));
+    h.append(title);
+    text.append(h, make("p", null, subtitle));
+    el.append(text);
+    root.append(el);
+    return el;
+  }
+  slides[0].el = makeCover(INTRO.hero, INTRO.title, INTRO.subtitle);
+
+  // intro slide 2: overview of the sections, in the stage (the cards jump to the section)
+  const overview = make("div", "fa-slide-overview");
   root.append(toc, stage, bar);
+  stage.append(overview);
 
   const tocItems = {};
   let number = 0; // numbered by what is in the deck, so an empty section leaves no gap
@@ -141,6 +168,17 @@ async function init(root) {
     li.append(a);
     tocList.append(li);
     tocItems[id] = { li, a };
+    slides[first].el = makeCover(INTRO.images[id], CHAPTERS[id].title, CHAPTERS[id].subtitle, number);
+
+    const card = make("a", "fa-slide-card");
+    card.href = `#${first + 1}`;
+    const img = make("img", "fa-slide-card-img");
+    img.src = `${CONFIG.BASE_URL}/${INTRO.images[id]}`;
+    img.alt = "";
+    const head = make("div", "fa-slide-card-head");
+    head.append(make("span", "fa-slide-card-n", String(number)), make("h2", null, CHAPTERS[id].title));
+    card.append(head, make("p", "fa-slide-card-s", CHAPTERS[id].subtitle), img);
+    overview.append(card);
   });
 
   // 5. build the charts the slides use (hidden until a slide shows them)
@@ -182,8 +220,15 @@ async function init(root) {
     if (i === index) return;
     index = i;
     const slide = slides[i];
+    root.dataset.slide = slide.kind;
+    root.toggleAttribute("data-cover", !!slide.el); // title and chapter slides: contents hide
+    slides.forEach((x) => x.el?.classList.toggle("is-active", x === slide));
+    overview.classList.toggle("is-active", slide.kind === "overview");
     const chart = charts[slide.chartKey];
-    if (chart) {
+    if (slide.kind !== "chart") {
+      Object.values(charts).forEach((c) => c.el.classList.remove("is-active"));
+      active = null; // the next chart comes in without animating
+    } else if (chart) {
       if (chart !== active) {
         Object.values(charts).forEach((c) =>
           c.el.classList.toggle("is-active", c === chart),
