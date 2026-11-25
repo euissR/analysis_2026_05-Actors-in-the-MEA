@@ -69,6 +69,22 @@ async function loadExtra(files = {}, region) {
   return Object.fromEntries(entries);
 }
 
+// the data files of one chart
+async function loadData(spec, region) {
+  const [rows, sub, extra] = await Promise.all([
+    d3.csv(url(`${spec.data}_${region.suffix}.csv`)),
+    // optional subregion aggregates (e.g. dipl_2_vis_sub_AF.csv)
+    spec.sub ? d3.csv(url(`${spec.sub}_${region.suffix}.csv`)) : [],
+    // optional further files, { name: "file_{suffix}" } -> extra.name (rows)
+    loadExtra(spec.extra, region),
+  ]);
+  return { rows, sub, extra };
+}
+
+// ?print in the address: no scrolling, every step gets its own chart right
+// after its text, already in that step's state (for saving the page as PDF)
+const PRINT =new URLSearchParams(location.search).has("print");
+
 async function init(root) {
   const region = REGIONS[root.dataset.region];
   const chapterId = `${root.dataset.region}_${root.dataset.chapter}`;
@@ -80,28 +96,39 @@ async function init(root) {
 
   colourActorNames(steps, chapter, base.actors);
 
+  if (PRINT) {
+    root.classList.add("fa-print");
+    await Promise.all(
+      steps.map(async (stepEl) => {
+        const step = chapter.steps[stepEl.dataset.step];
+        if (!step)
+          return console.warn(`No config for step "${stepEl.dataset.step}" in ${chapterId}.js`);
+        const spec = chapter.charts[step.chart];
+        const data = await loadData(spec, region);
+        // step text + chart as one block, so a page break never separates them;
+        // in the page before the chart is built, so it measures its print width
+        const el = document.createElement("div");
+        el.className = "fa-chart";
+        const pair = document.createElement("div");
+        pair.className = "fa-print-step";
+        stepEl.before(pair);
+        pair.append(stepEl, el);
+        const chart = CHART_TYPES[spec.type](el, { ...base, ...data, spec, region, print: true });
+        chart.update(step.state, { animate: false });
+      }),
+    );
+    return;
+  }
+
   // build every chart of the chapter (hidden until one of its steps is active)
   const charts = {};
   await Promise.all(
     Object.entries(chapter.charts).map(async ([id, spec]) => {
-      const [rows, sub, extra] = await Promise.all([
-        d3.csv(url(`${spec.data}_${region.suffix}.csv`)),
-        // optional subregion aggregates (e.g. dipl_2_vis_sub_AF.csv)
-        spec.sub ? d3.csv(url(`${spec.sub}_${region.suffix}.csv`)) : [],
-        // optional further files, { name: "file_{suffix}" } -> extra.name (rows)
-        loadExtra(spec.extra, region),
-      ]);
+      const data = await loadData(spec, region);
       const el = document.createElement("div");
       el.className = "fa-chart";
       stage.append(el);
-      charts[id] = CHART_TYPES[spec.type](el, {
-        ...base,
-        rows,
-        sub,
-        extra,
-        spec,
-        region,
-      });
+      charts[id] = CHART_TYPES[spec.type](el, { ...base, ...data, spec, region });
     }),
   );
 
@@ -122,10 +149,13 @@ async function init(root) {
   });
 }
 
-document
-  .querySelectorAll(".fa-scrolly")
-  .forEach((root) =>
-    init(root).catch((err) =>
-      console.error("Scrollytelling failed to load:", err),
-    ),
-  );
+// data-fa-status = "ready" | "failed": tools/print/print-all.mjs waits for it
+document.querySelectorAll(".fa-scrolly").forEach((root) =>
+  init(root).then(
+    () => (root.dataset.faStatus = "ready"),
+    (err) => {
+      root.dataset.faStatus = "failed";
+      console.error("Scrollytelling failed to load:", err);
+    },
+  ),
+);
