@@ -56,6 +56,7 @@ export default {
       type: "dotMap",
       mode: "count",
       data: "dipl_2_vis",
+      tilesWithData: true,
       sub: "dipl_2_vis_sub",
       title: "High-level visits to the Middle East and the Gulf",
       subtitleActor:
@@ -124,7 +125,8 @@ export default {
     sum: {
       type: "rangeChart",
       data: "dipl_4_sum",
-      title: "Summits with the Gulf, Arab and Islamic countries and organisations",
+      title:
+        "Summits with the Gulf, Arab and Islamic countries and organisations",
       subtitle:
         "Launch year, latest summit and next scheduled summit of each summit series",
       source: "Data: official government sources and media",

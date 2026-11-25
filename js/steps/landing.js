@@ -38,12 +38,17 @@ export default {
     lf_eu_reach: {
       chapter: "AF_mil",
       region: "AF",
-      step: "dep_un_intro",
-      override: { actors: ["EU", "CHN", "IND"] },
+      step: "dep_un_eu",
+      override: { actors: ["EU", "CHN", "IND"], labels: [], values: [] },
     },
 
     // China: embassies in all 53 African states it recognises
-    lf_chn: { chapter: "AF_dipl", region: "AF", step: "emb_chn" },
+    lf_chn: {
+      chapter: "AF_dipl",
+      region: "AF",
+      step: "emb_chn",
+      override: { labels: [] },
+    },
 
     // US: bases and deployments in the Gulf (no ME military state compares deployments across actors)
     lf_usa: { chapter: "ME_mil", region: "ME", step: "dep_us" },

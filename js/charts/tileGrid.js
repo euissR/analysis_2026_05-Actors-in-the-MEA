@@ -53,7 +53,7 @@ const bin = (v, breaks = BREAKS) =>
   breaks.filter((b) => Math.round(v * 100) / 100 > b).length;
 const pct = (v) => `${Math.round(v * 100)}%`;
 
-export function makeTileGrid(el, { rows, spec }) {
+export function makeTileGrid(el, { rows, spec, print = false }) {
   const periods = spec.periods ?? PERIODS;
   const periodIds = Object.keys(periods);
 
@@ -151,6 +151,10 @@ export function makeTileGrid(el, { rows, spec }) {
   mapEl.style.flex = "none";
   mapEl.style.aspectRatio = "auto";
 
+  // print: the frame has no height of its own, so the grid fills the width
+  // at its own aspect ratio (capped by .fa-print .fa-map in fa.css)
+  if (print) mapEl.style.aspectRatio = `${contentW} / ${contentH}`;
+
   const room = (n) => {
     const cs = getComputedStyle(n);
     if (cs.display === "none") return 0;
@@ -176,8 +180,10 @@ export function makeTileGrid(el, { rows, spec }) {
       .style("width", `${contentW * k}px`)
       .style("height", `${contentH * k}px`);
   }
-  new ResizeObserver(fit).observe(el);
-  fit();
+  if (!print) {
+    new ResizeObserver(fit).observe(el);
+    fit();
+  }
 
   // hatching for "no votes cast"
   const patId = `fa-nodata-${++patternCount}`;
@@ -289,6 +295,8 @@ export function makeTileGrid(el, { rows, spec }) {
         period: ps[Math.min(i, ps.length - 1)],
       }),
     );
+    // print: no playing, the step's end state straight away
+    if (print) return paint(frames.at(-1), false);
     paint(frames[0], animate);
     if (frames.length > 1) {
       timer = setTimeout(() => paint(frames[1], true), spec.playDelay ?? 3000);

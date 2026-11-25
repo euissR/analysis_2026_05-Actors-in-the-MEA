@@ -119,7 +119,7 @@ body {
   --fa-fs: 1;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   :root {
     --fa-fs: 1.5;
   }
@@ -281,7 +281,7 @@ body {
 
 /* ── mobile: chart fills the screen, steps scroll over it ──────────────── */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .fa-scrolly {
     flex-direction: column;
     gap: 0;
@@ -622,7 +622,7 @@ body {
   line-height: 1.4;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .fa-cards-wrap {
     grid-template-columns: 1fr;
   }
@@ -803,7 +803,7 @@ body {
 .fa-nav a.fa-nav-home { grid-column: 2; align-items: center; text-align: center; }
 .fa-nav a.fa-nav-next { grid-column: 3; justify-self: end; text-align: right; }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .fa-nav { grid-template-columns: 1fr 1fr; }
   .fa-nav a.fa-nav-prev { grid-column: 1; grid-row: 1; }
   .fa-nav a.fa-nav-next { grid-column: 2; grid-row: 1; }
@@ -1048,5 +1048,164 @@ body {
 
   .fa-landing-v3 .fa-overview-aside .fa-overview {
     margin-top: 0;
+  }
+}
+
+
+/* ══ print mode: ?print in the address ═══════════════════════════════════════
+   js/main.js and js/landing_scrolly.js add .fa-print to the scrolly and put a
+   chart of its own after every step, so the page reads straight down and can
+   be saved as PDF (tools/print/print-all.mjs). These rules apply on screen
+   too, so the browser shows what the PDF will look like. */
+
+.fa-scrolly.fa-print {
+  display: block;
+  max-width: 180mm;
+}
+
+/* the shared stage stays empty: the charts sit between the steps */
+.fa-print .fa-stage {
+  display: none;
+}
+
+.fa-print .fa-steps {
+  position: static;
+  z-index: auto;
+  flex: none;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.fa-print .fa-step,
+.fa-print .fa-steps > h3 {
+  opacity: 1;
+  margin: 0 0 1rem;
+  padding: 0;
+  background: none;
+  transition: none;
+}
+
+.fa-print .fa-steps > h3,
+.fa-print .fa-step + h3 {
+  margin-top: 2rem;
+  break-after: avoid;
+}
+
+/* a step and its chart (wrapped by the script): never split across pages */
+.fa-print .fa-print-step {
+  margin: 0 0 2.5rem;
+  break-inside: avoid;
+}
+
+.fa-print .fa-chart {
+  position: static;
+  inset: auto;
+  width: 180mm;
+  max-width: 100%;
+  margin: 1rem 0 0;
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+  break-inside: avoid;
+}
+
+/* no stage height to fill: the map follows its own aspect ratio,
+   short enough to share an A4 page with title, legend and footnotes */
+.fa-print .fa-map,
+.fa-print .fa-chart--range .fa-map {
+  flex: none;
+  aspect-ratio: var(--fa-aspect, 1);
+  max-height: 150mm;
+}
+
+.fa-print .fa-tiles {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+/* "click a tile" means nothing on paper */
+.fa-print .fa-tiles-hint,
+.fa-print .fa-tooltip {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .fa-nav,
+  .fa-top,
+  .fa-crumb,
+  .fa-tooltip,
+  .fa-tiles-hint,
+  .fa-more-btn {
+    display: none !important;
+  }
+
+  .fa-landing .fa-js .fa-more-rest {
+    display: inline;
+  }
+
+  .fa-chart,
+  .fa-overview,
+  .fa-theme,
+  .fa-landing .fa-callout,
+  figure {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* printed without ?print: text only, since the shared chart can show only
+     one step at a time */
+  .fa-scrolly:not(.fa-print) {
+    display: block;
+  }
+
+  .fa-scrolly:not(.fa-print) .fa-stage {
+    display: none;
+  }
+
+  .fa-scrolly:not(.fa-print) .fa-steps {
+    max-width: none;
+    padding: 0;
+  }
+
+  .fa-scrolly:not(.fa-print) .fa-step {
+    opacity: 1;
+    margin: 0 0 1rem;
+  }
+
+  .fa-scrolly:not(.fa-print) .fa-step + h3 {
+    margin-top: 1.5rem;
+  }
+
+  /* methodology tables: fit the page instead of scrolling sideways */
+  .fa-table-wrap {
+    overflow: visible;
+  }
+
+  .fa-table {
+    min-width: 0;
+  }
+
+  .fa-table th {
+    position: static;
+  }
+
+  .fa-table tr {
+    break-inside: avoid;
   }
 }

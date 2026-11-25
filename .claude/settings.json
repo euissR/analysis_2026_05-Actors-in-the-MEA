@@ -7,7 +7,9 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Read(//c/Program Files/Google/Chrome/Application/**)",
-      "Bash(node -e \"try{require.resolve\\('playwright'\\);console.log\\('pw'\\)}catch\\(e\\){console.log\\('no pw'\\)}\")"
+      "Bash(node -e \"try{require.resolve\\('playwright'\\);console.log\\('pw'\\)}catch\\(e\\){console.log\\('no pw'\\)}\")",
+      "Bash(ls \"/c/Program Files \\(x86\\)/Microsoft/Edge/Application/\" \"/c/Program Files/Google/Chrome/Application/\" 2>&1 | head; ls ~/AppData/Local/ms-playwright 2>&1)",
+      "Read(//c/Program Files \\\\\\(x86\\\\\\)/Microsoft/Edge/Application//**)"
     ]
   }
 }

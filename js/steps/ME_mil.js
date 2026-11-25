@@ -135,7 +135,6 @@ export default {
       type: "dotMap",
       mode: "count",
       data: "mil_4_ex_map",
-      tilesWithData: true,
       ownDots: false, // no dot for places without exercises
       extraTiles: [
         { actor: "naval", label: "Naval" },

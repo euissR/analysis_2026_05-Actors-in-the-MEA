@@ -186,7 +186,6 @@ export default {
         "Number of actors with an office in each country (EU institutions and Member States not included)",
       source: SRC_DEV,
       allLabel: "All actors (offices)",
-      tilesWithData: true,
       sharedScale: true,
       scaleMax: DOT_MAX,
       rMax: DOT_R,
@@ -239,7 +238,6 @@ export default {
       source:
         "Data: websites of EU Member States’ development agencies and ministries. OECD donors’ profiles.",
       allLabel: "Any presence",
-      tilesWithData: true,
       extraTiles: [
         { actor: "MS_office", label: "Offices" },
         { actor: "MS_partner", label: "Partner countries and projects" },

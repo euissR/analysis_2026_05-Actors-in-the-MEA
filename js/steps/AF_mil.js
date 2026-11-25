@@ -153,7 +153,6 @@ export default {
       type: "dotMap",
       mode: "count",
       data: "mil_4_ex_map",
-      tilesWithData: true,
       ownDots: false, // no dot for places without exercises
       extra: { pts: "mil_{suffix}_countries" },
       title: "Joint military exercises in Africa",

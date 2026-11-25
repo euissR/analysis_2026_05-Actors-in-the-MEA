@@ -65,7 +65,8 @@ const UNKNOWN = "unknown supplier(s)";
 
 export function makeSankey(el, { rows, spec, region, actors = [] }) {
   // On a phone the drawing is narrower, so the labels stay readable when it scales to the screen.
-  const phone = matchMedia("(max-width: 768px)");
+  // "screen": an A4 page is also under 768px wide, but has room for the full drawing
+  const phone = matchMedia("screen and (max-width: 768px)");
   let W, H, M;
   function setSize() {
     W = phone.matches ? 440 : region.width;

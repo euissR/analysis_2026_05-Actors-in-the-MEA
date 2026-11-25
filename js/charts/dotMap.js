@@ -16,7 +16,8 @@
 // spec.extraTiles (optional): [{ actor, label }] tiles beyond actors.csv, with rows of their own
 // spec.ownDots (optional): false = places without a row get no dot (default: a small
 //   ring, the actor's own country, as in the visits chart)
-// spec.tilesWithData (optional): true = legend tiles only for actors that have data
+// spec.tilesWithData (default: true): legend tiles only for actors that have rows in this
+//   chart's data; false = a tile for every actor in actors.csv, with or without data
 // spec.extra { pts: "mil_{suffix}_countries" } (optional): sea areas drawn as extra places
 // spec.tooltipCount(n, label, nActors, place, actor) (count mode): the tooltip text. `place` is the dot's row of
 //   {iso3}_countries.csv (name, subregion; a sea area has subregion "Sea"), `actor` the selected tile's code
@@ -173,9 +174,9 @@ export function makeDotMap(
     .selectAll("button")
     .data([
       { actor: "all", label: spec.allLabel },
-      // spec.tilesWithData: only the actors that have rows in this chart's data
+      // only the actors that have rows in this chart's data (spec.tilesWithData: false = all of actors.csv)
       ...actors.filter(
-        (a) => !spec.tilesWithData || rows.some((r) => r.actor === a.actor),
+        (a) => (spec.tilesWithData ?? true) === false || rows.some((r) => r.actor === a.actor),
       ),
       ...extraTiles.filter((a) => rows.some((r) => r.actor === a.actor)),
     ])

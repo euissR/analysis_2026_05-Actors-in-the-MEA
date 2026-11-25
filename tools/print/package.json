@@ -1,0 +1,13 @@
+{
+  "name": "levers-print",
+  "private": true,
+  "type": "module",
+  "description": "Saves every page of Levers of influence as PDF (see print-all.mjs)",
+  "scripts": {
+    "print": "node print-all.mjs"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.49.0"
+  }
+}

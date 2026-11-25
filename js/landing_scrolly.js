@@ -100,10 +100,53 @@ function resolve(id) {
   };
 }
 
+// ?print in the address: every step gets its own chart right after its text (as in main.js)
+const PRINT = new URLSearchParams(location.search).has("print");
+
+async function initPrint(root, steps, resolved) {
+  root.classList.add("fa-print");
+  colourNames(steps, resolved);
+  await Promise.all(
+    steps.map(async (stepEl) => {
+      const r = resolved[stepEl.dataset.step];
+      if (!r) return;
+      const { spec, region } = r;
+      const [base, rows, sub, extra] = await Promise.all([
+        loadBase(region),
+        d3.csv(url(`${spec.data}_${region.suffix}.csv`)),
+        spec.sub ? d3.csv(url(`${spec.sub}_${region.suffix}.csv`)) : [],
+        loadExtra(spec.extra, region),
+      ]);
+      const el = document.createElement("div");
+      el.className = "fa-chart";
+      const pair = document.createElement("div");
+      pair.className = "fa-print-step";
+      stepEl.before(pair);
+      pair.append(stepEl, el);
+      const chart = CHART_TYPES[spec.type](el, { ...base, rows, sub, extra, spec, region, print: true });
+      chart.update(r.state, { animate: false });
+    }),
+  );
+}
+
+// actor names in the text, as in the chapters (synthetic chapter: landing step -> chart + state)
+function colourNames(steps, resolved) {
+  const chapter = { steps: {}, charts: {} };
+  for (const [id, r] of Object.entries(resolved)) {
+    if (!r) continue;
+    chapter.steps[id] = { chart: r.key, state: r.state };
+    chapter.charts[r.key] = r.spec;
+  }
+  return loadActors()
+    .then((actors) => colourActorNames(steps, chapter, actors))
+    .catch((err) => console.error("Actor names failed:", err));
+}
+
 function init(root) {
   const stage = root.querySelector(".fa-stage");
   const steps = [...root.querySelectorAll("[data-step]")];
   const resolved = Object.fromEntries(steps.map((s) => [s.dataset.step, resolve(s.dataset.step)]));
+  if (PRINT) return initPrint(root, steps, resolved);
 
   // ── charts, built on demand ────────────────────────────────────────────
   const built = {}; // key -> Promise<chart>
@@ -163,7 +206,7 @@ function init(root) {
         preload(steps.indexOf(e.target));
         if (!near) {
           near = true;
-          colourNames();
+          colourNames(steps, resolved);
           show(currentId);
         }
       });
@@ -171,25 +214,17 @@ function init(root) {
     { rootMargin: "100% 0px 100% 0px" },
   );
   steps.forEach((s) => io.observe(s));
-
-  // actor names in the text, as in the chapters (synthetic chapter: landing step -> chart + state)
-  function colourNames() {
-    const chapter = { steps: {}, charts: {} };
-    for (const [id, r] of Object.entries(resolved)) {
-      if (!r) continue;
-      chapter.steps[id] = { chart: r.key, state: r.state };
-      chapter.charts[r.key] = r.spec;
-    }
-    loadActors()
-      .then((actors) => colourActorNames(steps, chapter, actors))
-      .catch((err) => console.error("Actor names failed:", err));
-  }
 }
 
+// data-fa-status = "ready" | "failed": tools/print/print-all.mjs waits for it
 document.querySelectorAll(".fa-scrolly[data-landing]").forEach((root) => {
-  try {
-    init(root);
-  } catch (err) {
-    console.error("Landing scrollytelling failed to load:", err);
-  }
+  Promise.resolve()
+    .then(() => init(root))
+    .then(
+      () => (root.dataset.faStatus = "ready"),
+      (err) => {
+        root.dataset.faStatus = "failed";
+        console.error("Landing scrollytelling failed to load:", err);
+      },
+    );
 });
