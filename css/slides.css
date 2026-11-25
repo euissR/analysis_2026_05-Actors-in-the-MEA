@@ -1,0 +1,217 @@
+/* slides.css: presentation mode (js/slides.js). Loaded after fa.css, which draws the charts
+   (.fa-chart and everything inside it). Everything here sits inside .fa-slides. */
+
+html,
+body {
+  margin: 0;
+  background: #fff;
+}
+
+.fa-slides {
+  --fa-teal: #309ebe; /* the EU's colour: not for UI */
+  --fa-neutral: #333333; /* same as theme.neutral in theme.js */
+  --fa-navy: #1d3956;
+  --fa-ink: #1d1d1b;
+  --fa-muted: #646363;
+  --fa-light: #c6c6c6;
+  --fa-font: "PT Sans Narrow", "Arial Narrow", sans-serif;
+
+  /* contents | stage | empty column of the same width, so the stage sits in the middle */
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr) 14rem;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100vh;
+  height: 100svh;
+  font-family: var(--fa-font);
+  color: var(--fa-ink);
+}
+
+.fa-slides.is-loading .fa-slides-stage::after {
+  content: "Loading…";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--fa-muted);
+}
+
+/* ── stage: the charts sit in here, one visible at a time ─────────────────── */
+
+.fa-slides-stage {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 0;
+}
+
+/* ── floating contents: the six sections, the current one marked ──────────── */
+
+.fa-slides-toc {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  padding-left: 1.25rem;
+  z-index: 3;
+}
+
+.fa-slides-toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fa-slides-toc a {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  column-gap: 0.4rem;
+  padding: 0.5rem 0 0.5rem 0.75rem;
+  border-left: 3px solid var(--fa-light);
+  color: var(--fa-muted);
+  text-decoration: none;
+  font-size: 1.0625rem;
+  line-height: 1.2;
+}
+
+.fa-slides-toc a:hover,
+.fa-slides-toc a:focus-visible {
+  color: var(--fa-ink);
+  border-left-color: var(--fa-muted);
+}
+
+.fa-slides-toc-n {
+  font-variant-numeric: tabular-nums;
+}
+
+.fa-slides-toc-t {
+  grid-column: 2;
+}
+
+/* the subtitle is only shown for the current section */
+.fa-slides-toc-s {
+  grid-column: 2;
+  display: none;
+  margin-top: 0.15rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.fa-slides-toc li.is-current a {
+  border-left-color: var(--fa-navy);
+  color: var(--fa-ink);
+  font-weight: 700;
+}
+
+.fa-slides-toc li.is-current .fa-slides-toc-s {
+  display: block;
+  color: var(--fa-muted);
+}
+
+/* ── bar: previous / counter / next ───────────────────────────────────────── */
+
+.fa-slides-bar {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0 0.75rem;
+  position: relative;
+}
+
+.fa-slides-count {
+  min-width: 5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--fa-muted);
+}
+
+.fa-slides-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--fa-light);
+  background: #fff;
+  color: var(--fa-navy);
+  font: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.fa-slides-btn:hover:not(:disabled) {
+  background: var(--fa-navy);
+  border-color: var(--fa-navy);
+  color: #fff;
+}
+
+.fa-slides-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.fa-slides-hint {
+  position: absolute;
+  right: 0;
+  font-size: 0.8125rem;
+  color: var(--fa-muted);
+}
+
+/* ── narrow screens: contents as a strip on top ───────────────────────────── */
+
+@media (max-width: 900px) {
+  .fa-slides {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  .fa-slides-toc {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    padding: 0.5rem 0.75rem 0;
+    overflow-x: auto;
+  }
+
+  .fa-slides-toc ol {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .fa-slides-toc a {
+    padding: 0.3rem 0.6rem;
+    border-left: 0;
+    border-bottom: 3px solid var(--fa-light);
+    white-space: nowrap;
+    font-size: 0.9375rem;
+  }
+
+  .fa-slides-toc li.is-current a {
+    border-bottom-color: var(--fa-navy);
+  }
+
+  .fa-slides-toc-n,
+  .fa-slides-toc-s,
+  .fa-slides-toc li.is-current .fa-slides-toc-s {
+    display: none;
+  }
+
+  .fa-slides-toc-t {
+    grid-column: 1 / -1;
+  }
+
+  .fa-slides-stage {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .fa-slides-bar {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .fa-slides-hint {
+    display: none;
+  }
+}
