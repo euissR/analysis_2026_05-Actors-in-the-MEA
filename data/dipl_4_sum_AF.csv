@@ -23,7 +23,7 @@ id,actor,name,n,when,value,shape
 11,SAU,Saudi-African Summit,1,start_year,2023,past
 11,SAU,Saudi-African Summit,1,last_summit,2023,past
 11,SAU,Saudi-African Summit,1,next_summit,2026,future
-8,RUS,Russia–Africa Summit and Economic Forum,2,start_year,2019,past
+8,RUS,Russia–Africa Summit and Economic Forum,3,start_year,2019,past
 8,RUS,Russia–Africa Summit and Economic Forum,1,last_summit,2026,past
 8,RUS,Russia–Africa Summit and Economic Forum,1,next_summit,,future
 14,KOR,Korea–Africa Summit,1,start_year,2024,past
