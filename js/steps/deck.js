@@ -23,7 +23,8 @@
 // Images are looked up under BASE_URL, like the data.
 export const INTRO = {
   title: "Levers of influence",
-  subtitle: "Mapping international engagement across Africa, the Middle East and the Gulf",
+  subtitle:
+    "Mapping international engagement across Africa, the Middle East and the Gulf",
   hero: "src/hero.jpg",
   // section id -> picture on the overview slide
   images: {
@@ -177,7 +178,7 @@ export default {
     { chapter: "AF_mil", step: "arm_intro" },
     { chapter: "AF_mil", step: "arm_change" },
     { chapter: "ME_mil", step: "arm_peak" },
-    { chapter: "ME_mil", step: "arm_me_fall" },
+    { chapter: "ME_mil", step: "arm_me_fall", override: { highlight: [] } },
     // foreign military presence
     { chapter: "AF_mil", step: "dep_bilat" },
     { chapter: "ME_mil", step: "mil_trans" },
