@@ -62,8 +62,8 @@ export default {
       supplierColors: {
         "United States": theme.actorColors.USA,
         France: "#309ebe",
-        Italy: "#64c2c7",
-        Germany: "#3E4E6F",
+        Italy: "#309ebe",
+        Germany: "#309ebe",
       },
       labels: { "United States": "US" },
     },
@@ -160,8 +160,10 @@ export default {
       tooltipCount: (n, label, nActors, place, actor) => {
         const ex = `${n} exercise${n === 1 ? "" : "s"}`;
         const tile = label === "All actors" ? "" : `${label}: `;
-        if (place.subregion === "Sea") return `${tile}${ex} held in the ${place.name}`;
-        if (actor === "all" || CUTS.includes(actor)) return `${tile}${ex} led or co-led by ${place.name}`;
+        if (place.subregion === "Sea")
+          return `${tile}${ex} held in the ${place.name}`;
+        if (actor === "all" || CUTS.includes(actor))
+          return `${tile}${ex} led or co-led by ${place.name}`;
         if (place.iso3 === actor) return `${label}: ${ex} led or co-led`;
         return `${label}: ${ex} co-led with ${place.name}`;
       },
