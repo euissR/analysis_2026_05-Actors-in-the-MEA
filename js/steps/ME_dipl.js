@@ -191,7 +191,7 @@ export default {
         },
         eu: {
           label: "Alignment with the EU",
-          subtitle: "Share of votes in which the country voted with the EU",
+          subtitle: "Share of votes in which the country voted with the EU (average)",
           color: theme.navy,
           breaks: [0.4, 0.5, 0.6, 0.75],
           binLabels: ["Up to 40%", "41–50%", "51–60%", "61–75%", "Over 75%"],

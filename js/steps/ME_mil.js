@@ -145,9 +145,9 @@ export default {
       extra: { pts: "mil_{suffix}_countries" },
       title: "Joint military exercises in the Middle East and the Gulf",
       subtitleActor:
-        "Joint exercises led or co-led by the selected actor, by co-leading country or sea area where held, January 2024–July 2026",
+        "Joint exercises led or co-led by the selected actor, by country or sea area, January 2024–July 2026",
       subtitleAll:
-        "Joint exercises led or co-led by countries of the region and external partners, by country or sea area where held, January 2024–July 2026",
+        "Joint exercises involving external partners and countries of the region, by country or sea area, January 2024–July 2026",
       source:
         "NB: A country counts the exercises it led or co-led, not those in which it merely participated. Each exercise is counted once for every location involved. Data: official ministry websites, websites of Atalanta and Aspides and news outlets.",
       allLabel: "All actors",

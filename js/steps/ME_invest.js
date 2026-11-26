@@ -62,6 +62,8 @@
 
 const P1 = "2019\u201321";
 const P2 = "2022\u201324";
+// long forms for what is shown; P1/P2 stay as they are because they match the period column in the data
+const PL = { [P1]: "2019–2021", [P2]: "2022–2024" };
 
 const HI = "High income";
 const LM = "Lower and middle income";
@@ -72,7 +74,7 @@ const SRC_FDI =
 const SRC_OECD =
   "Data: OECD DAC (DAC2A, DAC2B, DAC3A), USD at constant 2024 prices; cumulative three-year totals.";
 const SRC_AIDDATA =
-  "Data: AidData, 2025, ‘China’s Loans and Grants to Low- and Middle-Income Countries’, Version 1.0 (released 18 November 2025). Project-level commitments at constant 2023 prices, 2019–23.";
+  "Data: AidData, 2025, ‘China’s Loans and Grants to Low- and Middle-Income Countries’, Version 1.0 (released 18 November 2025). Project-level commitments at constant 2023 prices, 2019–2023.";
 const SRC_DEBT = "Data: World Bank, ‘International Debt Statistics’. Current USD.";
 
 const FDI_ACTORS = ["EU", "USA", "GCC", "CHN", "IND", "JPN", "KOR"];
@@ -115,7 +117,7 @@ const GEO_SHORT = { [HI]: "High income", [LM]: "Lower and middle income" };
 
 // footnotes: one per section (editors' revision, November 2026)
 const FDI_NOTE =
-  "Figures show average year-end net inward FDI positions in current USD for 2019–21 and 2022–24, not investment flows. Positions are attributed to immediate rather than ultimate investors. Official host data are used where available, otherwise counterpart-derived estimates; missing years are excluded from averages. Comparability is affected by Saudi Arabia’s switch to counterpart-derived data in 2024 and incomplete bilateral reporting. For details see methodological note.";
+  "Figures show average year-end net inward FDI positions in current USD for 2019–2021 and 2022–2024, not investment flows. Positions are attributed to immediate rather than ultimate investors. Official host data are used where available, otherwise counterpart-derived estimates; missing years are excluded from averages. Comparability is affected by Saudi Arabia’s switch to counterpart-derived data in 2024 and incomplete bilateral reporting. For details see methodological note.";
 const ODA_NOTE =
   "ODA dataset covers exclusively lower- and middle-income economies. Donor rankings refer only to selected reporting actors. The regional aggregate excludes country-coded Iran but retains regional and unspecified allocations. Saudi Arabia is included in regional comparisons but excluded from country-level analysis because recipient-level allocations are unavailable.";
 const DEBT_CORE =
@@ -139,7 +141,7 @@ export default {
       geoLabelsShort: GEO_SHORT,
       title: "Who are the largest recorded foreign investors across the Middle East and the Gulf?",
       subtitle:
-        "Share of recorded inward FDI stock by counterpart, 2019–21 and 2022–24 averages",
+        "Share of recorded inward FDI stock by counterpart, 2019–2021 and 2022–2024 averages",
       source: SRC_FDI,
     },
     fdigulf: {
@@ -160,7 +162,7 @@ export default {
       },
       title: "Where the Gulf’s investment is concentrated",
       subtitle:
-        "Each Gulf state’s share of the Gulf’s recorded FDI stock, 2019–21 and 2022–24 averages",
+        "Each Gulf state’s share of the Gulf’s recorded FDI stock, 2019–2021 and 2022–2024 averages",
       source: SRC_FDI,
     },
 
@@ -202,7 +204,7 @@ export default {
       source: SRC_OECD,
       panels: [P1, P2].map((p) => ({
         id: p,
-        title: p,
+        title: PL[p],
         where: { geo: "Middle East", period: p },
         segments: [
           { column: "grant_share_pct", label: "Grants", color: "actor" },
@@ -223,12 +225,12 @@ export default {
       rowKey: "geo",
       title: "China’s official finance commitments",
       subtitle:
-        "Adjusted commitments 2019–23 by recipient, $ billion at constant 2023 prices.",
+        "Adjusted commitments 2019–2023 by recipient, $ billion at constant 2023 prices.",
       source: SRC_AIDDATA,
       panels: [
         {
           id: "china",
-          title: "2019–23",
+          title: "2019–2023",
           segments: [
             { column: "total_usd_bn", label: "Commitments", color: "CHN" },
           ],
@@ -270,7 +272,7 @@ export default {
       subtitle:
         "Share of each creditor’s bilateral debt that is concessional, end-2024. Bubble area: debt outstanding",
       yTitle: "Concessional share of the creditor’s claims, 2024",
-      xTitle: "average annual net flow 2022–24, $ billion",
+      xTitle: "average annual net flow 2022–2024, $ billion",
       sizeTitle: "Debt outstanding, $ billion",
       keySizes: [1, 5],
       xShort: "Net flow, $ billion a year",
@@ -310,7 +312,7 @@ export default {
         geos: [HI],
         measure: "value_usd_bn",
         subtitle:
-          "Recorded inward FDI stock in high-income economies by counterpart, $ billion, 2019–21 and 2022–24 averages",
+          "Recorded inward FDI stock in high-income economies by counterpart, $ billion, 2019–2021 and 2022–2024 averages",
         highlight: ["USA"],
         footnote: FDI_NOTE,
       },
@@ -322,7 +324,7 @@ export default {
         measure: "value_usd_bn",
         title: "Foreign direct investment in Israel",
         subtitle:
-          "Recorded inward FDI stock by counterpart, $ billion, 2019–21 and 2022–24 averages",
+          "Recorded inward FDI stock by counterpart, $ billion, 2019–2021 and 2022–2024 averages",
         highlight: ["USA"],
         footnote: FDI_NOTE,
       },
@@ -333,7 +335,7 @@ export default {
         geos: [HI],
         measure: "value_usd_bn",
         subtitle:
-          "Recorded inward FDI stock in high-income economies by counterpart, $ billion, 2019–21 and 2022–24 averages",
+          "Recorded inward FDI stock in high-income economies by counterpart, $ billion, 2019–2021 and 2022–2024 averages",
         highlight: ["GCC", "CHN", "IND", "JPN", "KOR"],
         footnote: FDI_NOTE,
       },
@@ -401,7 +403,7 @@ export default {
       state: {
         // highlight: ["Iraq"],
         footnote:
-          "China’s figures are based on AidData’s adjusted official finance commitments for 2019–23, expressed in constant 2023 USD. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings.",
+          "China’s figures are based on AidData’s adjusted official finance commitments for 2019–2023, expressed in constant 2023 USD. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings.",
       },
     },
 
@@ -449,7 +451,7 @@ export default {
       state: {
         highlight: ["KOR", "EU", "GCC", "CHN"],
         subtitle:
-          "Concessional share of bilateral debt (end-2024) against average annual net flows (2022–24). Bubble area: debt outstanding",
+          "Concessional share of bilateral debt (end-2024) against average annual net flows (2022–2024). Bubble area: debt outstanding",
         footnote: TERMS_NOTE,
       },
     },
@@ -488,7 +490,7 @@ export default {
         endLabels: false,
         showTotal: true,
         average: { from: 2022, to: 2024 },
-        footnote: `All bilateral creditors together; the dashed line is the 2022–24 average of the annual totals. ${FLOW_NOTE}`,
+        footnote: `All bilateral creditors together; the dashed line is the 2022–2024 average of the annual totals. ${FLOW_NOTE}`,
       },
     },
   },

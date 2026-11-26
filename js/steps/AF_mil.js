@@ -157,9 +157,9 @@ export default {
       extra: { pts: "mil_{suffix}_countries" },
       title: "Joint military exercises in Africa",
       subtitleActor:
-        "Joint exercises led or co-led by the selected actor, by African co-lead or sea area where held, January 2024–July 2026",
+        "Joint exercises led or co-led by the selected actor, by African partner or sea area, January 2024–July 2026",
       subtitleAll:
-        "Joint exercises led or co-led by external partners and African countries, by African co-lead or sea area where held, January 2024–July 2026",
+        "Joint exercises between external partners and African countries, by African partner or sea area, January 2024–July 2026",
       source:
         "NB: A country counts the exercises it led or co-led, not those in which it merely participated. Each exercise is counted once for every location involved. Data: official ministry websites, websites of Atalanta and Aspides and news outlets.",
       allLabel: "All actors",

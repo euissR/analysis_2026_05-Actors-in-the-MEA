@@ -84,7 +84,7 @@
 //   Israel have rows but no text of their own
 
 const SOURCE =
-  "Data: Growth Lab, Harvard University, 2026, ‘International Trade Data (HS12)’, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current USD.";
+  "Data: Growth Lab, Harvard University, 2026, ‘International Trade Data (HS12)’, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–2021 vs 2022–2024. Values in current USD.";
 
 // footnotes: one per product basket (editors' revision, November 2026)
 const FN_GREEN =

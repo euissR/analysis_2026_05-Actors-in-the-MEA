@@ -59,7 +59,7 @@
 //   the Gulf as separate states is not in the data (GCC only)
 
 const SOURCE =
-  "Data: Growth Lab, Harvard University, 2026, ‘International Trade Data (HS12)’, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–21 vs 2022–24. Values in current USD.";
+  "Data: Growth Lab, Harvard University, 2026, ‘International Trade Data (HS12)’, Harvard Dataverse, https://doi.org/10.7910/DVN/YAVJDF. Period averages, 2019–2021 vs 2022–2024. Values in current USD.";
 
 // footnotes: one per product basket (editors' revision, November 2026; same wording as AF_trade.js)
 const FN_GREEN =
@@ -174,7 +174,7 @@ export default {
       part: "Israel",
       partLabel: "Israel",
       restLabel: "Rest of the region",
-      title: "Two-way high-tech trade with the region, 2022–24 average, $ billion",
+      title: "Two-way high-tech trade with the region, 2022–2024 average, $ billion",
       subtitle: "",
       note: "Percentages give Israel’s share of each flow.",
       source: SOURCE,

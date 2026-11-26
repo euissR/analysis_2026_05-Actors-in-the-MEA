@@ -58,6 +58,8 @@
 
 const P1 = "2019\u201321";
 const P2 = "2022\u201324";
+// long forms for what is shown; P1/P2 stay as they are because they match the period column in the data
+const PL = { [P1]: "2019–2021", [P2]: "2022–2024" };
 
 const FIVE = [
   "North Africa",
@@ -77,17 +79,17 @@ const GEO_SHORT = {
 
 // sources: editors' revision, November 2026
 const SRC_FDI =
-  "IMF, ‘Direct Investment Positions by Counterpart Economy’; World Bank, World Development Indicators. Figures show average year-end net inward FDI stocks, in current USD, attributed to immediate rather than ultimate investors. Official host data is used where available, otherwise counterpart-derived estimates; positions are averaged over observed years. * 2022–24: eight economies switch from official to counterpart-derived data in 2023 or 2024, so changes should be interpreted cautiously. In particular, Gulf positions may be understated due to reporting gaps. For details see methodological note.";
+  "IMF, ‘Direct Investment Positions by Counterpart Economy’; World Bank, World Development Indicators. Figures show average year-end net inward FDI stocks, in current USD, attributed to immediate rather than ultimate investors. Official host data is used where available, otherwise counterpart-derived estimates; positions are averaged over observed years. * 2022–2024: eight economies switch from official to counterpart-derived data in 2023 or 2024, so changes should be interpreted cautiously. In particular, Gulf positions may be understated due to reporting gaps. For details see methodological note.";
 const SRC_NETODA =
-  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. Figures show net ODA disbursements, summed over 2019–21 and 2022–24, in constant 2024 USD. Africa totals exclude Saint Helena but include regional and unspecified allocations. Europe comprises the EU27 and EU institutions; ‘Other bilateral’ covers 13 additional donors, including the UK, Canada, Norway and Switzerland. For details see methodological note.";
+  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. Figures show net ODA disbursements, summed over 2019–2021 and 2022–2024, in constant 2024 USD. Africa totals exclude Saint Helena but include regional and unspecified allocations. Europe comprises the EU27 and EU institutions; ‘Other bilateral’ covers 13 additional donors, including the UK, Canada, Norway and Switzerland. For details see methodological note.";
 const SRC_GROSS =
-  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. Figures show gross official finance (ODA and OOF grants and gross loan disbursements, excluding OOF equity) summed over 2019–21 and 2022–24, in constant 2024 USD. Africa totals exclude Saint Helena but include regional and unspecified allocations. Europe comprises the EU27 and EU institutions; ‘Other bilateral’ covers 13 additional donors, including the UK, Canada, Norway and Switzerland. For details see methodological note.";
+  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. Figures show gross official finance (ODA and OOF grants and gross loan disbursements, excluding OOF equity) summed over 2019–2021 and 2022–2024, in constant 2024 USD. Africa totals exclude Saint Helena but include regional and unspecified allocations. Europe comprises the EU27 and EU institutions; ‘Other bilateral’ covers 13 additional donors, including the UK, Canada, Norway and Switzerland. For details see methodological note.";
 const SRC_CHINA =
-  "AidData, 2025, ‘China’s Loans and Grants to Low- and Middle-Income Countries’, Version 1.0 (released 18 November 2025). Figures show adjusted project-level Chinese official finance commitments for 2019–23, in constant 2023 USD, including ODA-like, OOF-like and unclassified financing. Commitments represent funding agreed rather than actual disbursements and are not directly comparable with OECD disbursement figures or donor rankings. For details see methodological note.";
+  "AidData, 2025, ‘China’s Loans and Grants to Low- and Middle-Income Countries’, Version 1.0 (released 18 November 2025). Figures show adjusted project-level Chinese official finance commitments for 2019–2023, in constant 2023 USD, including ODA-like, OOF-like and unclassified financing. Commitments represent funding agreed rather than actual disbursements and are not directly comparable with OECD disbursement figures or donor rankings. For details see methodological note.";
 const SRC_GEO =
-  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. AidData, 2025, ‘China’s Loans and Grants to Low- and Middle-Income Countries’, Version 1.0 (released 18 November 2025). Figures show gross official finance (ODA and OOF grants and gross loan disbursements, excluding OOF equity) summed over 2019–21 and 2022–24, in constant 2024 USD. Europe comprises the EU27 and EU institutions. Country-coded flows are those allocated to individual African recipient countries, excluding regional and unspecified allocations. Saudi Arabia is excluded from the geographic breakdown because its reported flows are available only at the Africa-wide level. For details see methodological note.";
+  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. AidData, 2025, ‘China’s Loans and Grants to Low- and Middle-Income Countries’, Version 1.0 (released 18 November 2025). Figures show gross official finance (ODA and OOF grants and gross loan disbursements, excluding OOF equity) summed over 2019–2021 and 2022–2024, in constant 2024 USD. Europe comprises the EU27 and EU institutions. Country-coded flows are those allocated to individual African recipient countries, excluding regional and unspecified allocations. Saudi Arabia is excluded from the geographic breakdown because its reported flows are available only at the Africa-wide level. For details see methodological note.";
 const SRC_CONTEXT =
-  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. Figures show gross official finance (ODA and OOF grants and gross loan disbursements, excluding OOF equity), summed over 2019–21 and 2022–24 in constant 2024 USD. Africa totals exclude Saint Helena but retain regional and unspecified allocations. For details see methodological note. *Donors comprise sovereign donors and EU institutions.";
+  "OECD Development Assistance Committee, DAC2A, DAC2B, DAC3A databases. Figures show gross official finance (ODA and OOF grants and gross loan disbursements, excluding OOF equity), summed over 2019–2021 and 2022–2024 in constant 2024 USD. Africa totals exclude Saint Helena but retain regional and unspecified allocations. For details see methodological note. *Donors comprise sovereign donors and EU institutions.";
 const SRC_DEBTSTOCK =
   "Data: World Bank, ‘International Debt Statistics’. Figures show outstanding bilateral debt stocks in current USD. Total recorded debt owed to all bilateral creditors was $150.0 billion at end-2019 and $148.7 billion at end-2024. *Data is unavailable for Libya, Namibia, Seychelles and South Sudan. A reporting break affecting UAE–Egypt debt positions materially affects comparisons between 2019 and 2024. For details see methodological note.";
 const SRC_DEBTFLOWS =
@@ -126,7 +128,7 @@ export default {
       subtitle: (s, info) =>
         `Share of recorded inward FDI stock by investor${
           Number.isFinite(info.total[0])
-            ? `. Total stock: $${info.total[0].toFixed(0)} billion in ${P1}, $${info.total[1].toFixed(0)} billion in ${P2}*`
+            ? `. Total stock: $${info.total[0].toFixed(0)} billion in ${PL[P1]}, $${info.total[1].toFixed(0)} billion in ${PL[P2]}*`
             : ""
         }`,
       source: SRC_FDI,
@@ -140,8 +142,8 @@ export default {
           title: "Where is Africa’s foreign investment concentrated?",
           subtitle: (actor, label) =>
             actor === "all"
-              ? `Recorded inward FDI stock by host economy, $ billion, ${P2}*. Colour: the leading listed investor.`
-              : `${label}’s recorded FDI position by host economy, $ billion, ${P2}*`,
+              ? `Recorded inward FDI stock by host economy, $ billion, ${PL[P2]}*. Colour: the leading listed investor.`
+              : `${label}’s recorded FDI position by host economy, $ billion, ${PL[P2]}*`,
           unit: "$ billion",
           format: ",.2~f", // 342, 62.6, 0.01: no trailing zeros, also for the size key
           sizeTitle: "Bubble area, $ billion",
@@ -162,7 +164,7 @@ export default {
       rowLabels: { GCC: "Gulf" },
       title: "Foreign investment positions in Africa",
       subtitle:
-        "Three dimensions of each investor’s position, 2022–24*. Each panel has its own scale; bars are not comparable across panels.",
+        "Three dimensions of each investor’s position, 2022–2024*. Each panel has its own scale; bars are not comparable across panels.",
       source: SRC_FDI,
       panels: [
         {
@@ -222,7 +224,7 @@ export default {
       source: SRC_GROSS,
       panels: [P1, P2].map((p) => ({
         id: p,
-        title: p,
+        title: PL[p],
         where: { geo: "Africa", period: p },
         segments: [
           { column: "grant_share_pct", label: "Grants", color: "actor" },
@@ -245,12 +247,12 @@ export default {
       rows: ["Africa", ...FIVE],
       rowLabels: GEO_SHORT,
       title: "China’s official finance commitments to Africa",
-      subtitle: "Adjusted commitments 2019–23, $ billion at constant 2023 prices. Commitments, not disbursements: not comparable with the OECD figures.",
+      subtitle: "Adjusted commitments 2019–2023, $ billion at constant 2023 prices. Commitments, not disbursements: not comparable with the OECD figures.",
       source: SRC_CHINA,
       panels: [
         {
           id: "china",
-          title: "2019–23",
+          title: "2019–2023",
           segments: [
             { column: "oda_like_usd_bn", label: "ODA-like", color: "CHN", opacity: 1 },
             { column: "oof_like_usd_bn", label: "OOF-like", color: "CHN", opacity: 0.55 },
@@ -275,7 +277,7 @@ export default {
       rowLabels: { EU: "Europe", CHN: "China*" },
       title: "How do external actors distribute official finance across Africa?",
       subtitle:
-        "Share of each actor’s country-coded gross official finance by subregion, 2022–24, %. * For China, the share of AidData commitments, 2019–23.",
+        "Share of each actor’s country-coded gross official finance by subregion, 2022–2024, %. * For China, the share of AidData commitments, 2019–2023.",
       source: SRC_GEO,
       // OECD: gross finance by subregion as a share of the five subregions; China: the same for commitments
       prepare: ({ rows, extra }) => {
@@ -314,7 +316,7 @@ export default {
       source: SRC_CONTEXT,
       panels: [P1, P2].map((p) => ({
         id: p,
-        title: p,
+        title: PL[p],
         where: { period: p },
         segments: [
           { column: "grants_usd_bn", label: "Grants", color: "teal3" },
@@ -368,11 +370,11 @@ export default {
       actors: DEBT_ACTORS,
       labels: { EU: "EU27", GCC: "Gulf" },
       geoLabels: GEO_SHORT,
-      xTitle: "net bilateral flows 2022–24, $ billion a year",
+      xTitle: "net bilateral flows 2022–2024, $ billion a year",
       yTitle: "Concessional share of debt outstanding, end-2024",
       sizeTitle: "Debt outstanding, end-2024, $ billion",
       yShort: "Concessional share",
-      xShort: "Net flows 2022–24, $ billion a year",
+      xShort: "Net flows 2022–2024, $ billion a year",
       title: "Africa’s bilateral creditors: terms and direction of lending",
       subtitle: "Net flows, concessional share and debt outstanding of each creditor",
       source: SRC_DEBTTERMS,
@@ -398,7 +400,7 @@ export default {
         actor: "all",
         highlight: OVER_HALF,
         footnote:
-          "* Headline continental totals require caution. Mauritius accounted for 36% of recorded African inward FDI stock in 2022–24, and its role as a financial-intermediation hub strongly shaped the apparent scale of investment by several actors, particularly the US, India and Japan. These positions should not be equated with investment in Mauritius’s domestic productive economy.",
+          "* Headline continental totals require caution. Mauritius accounted for 36% of recorded African inward FDI stock in 2022–2024, and its role as a financial-intermediation hub strongly shaped the apparent scale of investment by several actors, particularly the US, India and Japan. These positions should not be equated with investment in Mauritius’s domestic productive economy.",
       },
     },
     fdi_eu: {
@@ -445,7 +447,7 @@ export default {
       state: {
         highlight: ["Africa"],
         footnote:
-          "China’s figures are based on AidData’s adjusted official finance commitments for 2019–23, expressed in constant 2023 USD. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings.",
+          "China’s figures are based on AidData’s adjusted official finance commitments for 2019–2023, expressed in constant 2023 USD. These cover commitments rather than actual disbursements, include ODA-like and OOF-like financing, and are not directly comparable with OECD disbursement figures or added to OECD donor rankings.",
       },
     },
     oda_geo: {

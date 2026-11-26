@@ -55,7 +55,7 @@ const SRC_SHARES = `${SRC} Sponsors and contractors are identified using differe
 // footnotes (editors' revision, November 2026)
 const FN_REG = "*Regional includes other Middle Eastern and Gulf actors.";
 const FN_PRO = `PPI shares reflect foreign sponsor stakes, not project value; contract-award shares reflect award value in World Bank-financed projects (July 2019–December 2024). The broader procurement category includes goods and services, not just construction. Suppliers are classified by country of registration, not ownership; subcontractors are excluded. For details see methodological note. ${FN_REG}`;
-const FN_PPI = `Sponsor shares are based on attributed foreign stakes in PPI arrangements recorded as active and reaching financial closure in 2000–24. ‘Active’ reflects the database classification, not necessarily current operation. For details see methodological note. ${FN_REG}`;
+const FN_PPI = `Sponsor shares are based on attributed foreign stakes in PPI arrangements recorded as active and reaching financial closure in 2000–2024. ‘Active’ reflects the database classification, not necessarily current operation. For details see methodological note. ${FN_REG}`;
 const FN_CONC_PPI =
   "Shares show the distribution of each actor’s attributed foreign sponsor stakes by host country, not project value. PPI covers arrangements recorded as active with financial closure in 2000–2024. For details see methodological note.";
 const FN_CONC_IPF =
