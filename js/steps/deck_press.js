@@ -19,6 +19,33 @@ export default {
     { chapter: "ME_soft", step: "pc_law" }, // 36
   ],
 
+  // ── Competing for markets ─────────────────────────────────────────────────
+  trade: [
+    {
+      chapter: "AF_trade",
+      step: "bal_na_regions",
+      override: { highlight: [] },
+    }, // 40
+    { chapter: "ME_trade", step: "tra_hi" }, // 49
+  ],
+
+  // ── Financing influence ───────────────────────────────────────────────────
+  invest: [
+    { chapter: "AF_invest", step: "fdi_conc", override: { highlight: [] } }, // 59
+    {
+      chapter: "ME_invest",
+      step: "debt_terms_others",
+      override: { highlight: [] },
+    }, // not in the full deck
+  ],
+
+  // ── Anchoring ties ────────────────────────────────────────────────────────
+  infra: [
+    // the two Middle East slides sit next to each other
+    { chapter: "ME_infra", step: "pro_works", override: { highlight: [] } }, // not in the full deck; Türkiye with the works-award dots
+    { chapter: "ME_infra", step: "ppi_gulf", override: { highlight: [] } }, // not in the full deck (it has ppi_vintage)
+  ],
+
   // ── Securing interests ────────────────────────────────────────────────────
   mil: [
     { chapter: "AF_mil", step: "ex_all" }, // 87
