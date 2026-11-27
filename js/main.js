@@ -103,6 +103,7 @@ async function init(root) {
         const step = chapter.steps[stepEl.dataset.step];
         if (!step)
           return console.warn(`No config for step "${stepEl.dataset.step}" in ${chapterId}.js`);
+        if (!step.chart) return; // text-only step
         const spec = chapter.charts[step.chart];
         const data = await loadData(spec, region);
         // step text + chart as one block, so a page break never separates them;
@@ -137,12 +138,14 @@ async function init(root) {
     const step = chapter.steps[stepId];
     if (!step)
       return console.warn(`No config for step "${stepId}" in ${chapterId}.js`);
-    const chart = charts[step.chart];
+    const chart = step.chart ? charts[step.chart] : null;
     if (chart !== active) {
       Object.values(charts).forEach((c) =>
         c.el.classList.toggle("is-active", c === chart),
       );
     }
+    // text-only step (chart: null): every chart hidden, the card text only
+    if (!chart) return void (active = null);
     // animate within a chart; switch instantly when a new chart comes in
     chart.update(step.state, { animate: chart === active });
     active = chart;

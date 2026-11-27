@@ -6,7 +6,7 @@
 //   extra: further data files, { name: "file_{suffix}" } -> extra.name
 //
 // steps: one entry per data-step="..." in the page text
-//   chart: which chart the step shows
+//   chart: which chart the step shows (null: text only, no chart)
 //   state: what the chart shows (see the top of js/charts/periodRange.js)
 //
 // All charts compare annual averages 2019–21 and 2022–24, current US dollars (Growth Lab, HS12).
@@ -243,10 +243,7 @@ export default {
       chart: "balances",
       state: { geos: FIVE, highlight: ["EU", "CHN"] },
     },
-    pro_intro: {
-      chart: "balances",
-      state: { highlight: ["EU", "CHN"] },
-    },
+    pro_intro: { chart: null }, // text only: no chart
 
     // ── ECON 2.1: green energy ──────────────────────────────────────────────
     gre_intro: {
