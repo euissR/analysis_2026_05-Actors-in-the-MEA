@@ -42,8 +42,8 @@ export default {
   // ── Anchoring ties ────────────────────────────────────────────────────────
   infra: [
     // the two Middle East slides sit next to each other
+    { chapter: "AF_infra", step: "ppi_contrast", override: { highlight: [] } }, // not in the full deck; Türkiye with the works-award dots
     { chapter: "ME_infra", step: "pro_works", override: { highlight: [] } }, // not in the full deck; Türkiye with the works-award dots
-    { chapter: "AF_infra", step: "pro_works", override: { highlight: [] } }, // not in the full deck; Türkiye with the works-award dots
     { chapter: "ME_infra", step: "ppi_gulf", override: { highlight: [] } }, // not in the full deck (it has ppi_vintage)
   ],
 
