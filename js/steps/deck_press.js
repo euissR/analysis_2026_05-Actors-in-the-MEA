@@ -43,6 +43,7 @@ export default {
   infra: [
     // the two Middle East slides sit next to each other
     { chapter: "ME_infra", step: "pro_works", override: { highlight: [] } }, // not in the full deck; Türkiye with the works-award dots
+    { chapter: "AF_infra", step: "pro_works", override: { highlight: [] } }, // not in the full deck; Türkiye with the works-award dots
     { chapter: "ME_infra", step: "ppi_gulf", override: { highlight: [] } }, // not in the full deck (it has ppi_vintage)
   ],
 
