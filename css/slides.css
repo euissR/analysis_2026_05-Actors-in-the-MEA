@@ -46,6 +46,10 @@ body {
   width: 100%;
   margin: 0 auto;
   min-height: 0;
+  /* a little shorter than the space it has, centred, so tall charts keep their titles in view;
+     change 90% to taste (100% = the whole height) */
+  height: 90%;
+  align-self: center;
 }
 
 /* ── title slide and chapter slides: text on a full-page picture ──────────────────────────── */
