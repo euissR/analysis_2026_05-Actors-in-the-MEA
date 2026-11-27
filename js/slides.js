@@ -4,14 +4,14 @@
 // F toggles full screen; the number in the address (#12) is the slide, so a slide can be linked.
 //
 // Markup it needs (see index_slides.html):
-//   <div class="fa-slides"></div>
+//   <div class="fa-slides"></div>                           the full deck, steps/deck.js
+//   <div class="fa-slides" data-deck="deck_press"></div>    a shorter deck, steps/deck_press.js
 // It builds the rest itself: the chart stage, the floating contents (the six sections, current one
 // marked) and the bar with previous / next and the slide counter.
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { CONFIG } from "./config.js";
 import { REGIONS } from "./regions.js";
 import { CHAPTERS, ORDER } from "./chapters.js";
-import DECK, { INTRO } from "./steps/deck.js";
 import { makeDotMap } from "./charts/dotMap.js";
 import { makeRangeChart } from "./charts/rangeChart.js";
 import { makeTileGrid } from "./charts/tileGrid.js";
@@ -79,6 +79,10 @@ function make(tag, cls, text) {
 
 async function init(root) {
   root.classList.add("is-loading");
+
+  // 0. which deck: data-deck="deck_press" on the .fa-slides element picks steps/deck_press.js;
+  //    without it the full deck (steps/deck.js). A deck exports its slides (default) and INTRO.
+  const { default: DECK, INTRO } = await import(`./steps/${root.dataset.deck || "deck"}.js`);
 
   // 1. the slides, in reading order (sections as on the page)
   const sectionIds = ORDER.AF.filter((id) => DECK[id]?.length);
